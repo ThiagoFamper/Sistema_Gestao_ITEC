@@ -20,12 +20,9 @@ object ListaColaborador: TListaColaborador
     Height = 154
     Align = alTop
     BevelEdges = [beBottom]
-    BevelKind = bkFlat
-    BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1455
     object Label7: TLabel
       Left = 461
       Top = 65
@@ -2308,12 +2305,9 @@ object ListaColaborador: TListaColaborador
     Height = 37
     Align = alTop
     BevelEdges = [beBottom]
-    BevelKind = bkFlat
-    BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1455
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2327,16 +2321,17 @@ object ListaColaborador: TListaColaborador
   end
   object Panel5: TPanel
     Left = 0
-    Top = 572
+    Top = 530
     Width = 1457
-    Height = 212
-    Align = alBottom
+    Height = 254
+    Align = alClient
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
     ExplicitTop = 564
     ExplicitWidth = 1455
+    ExplicitHeight = 212
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -2534,18 +2529,17 @@ object ListaColaborador: TListaColaborador
     Left = 0
     Top = 305
     Width = 1457
-    Height = 267
-    Align = alClient
+    Height = 225
+    Align = alTop
     BevelEdges = []
     BevelOuter = bvNone
     TabOrder = 4
     ExplicitWidth = 1455
-    ExplicitHeight = 259
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1457
-      Height = 267
+      Height = 225
       Hint = 'Pesquisar Colaborador'
       Align = alClient
       DataSource = DM.dsFDTabColaborador
