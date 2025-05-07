@@ -54,6 +54,7 @@ type
     Label15: TLabel;
     Panel7: TPanel;
     DBText5: TDBText;
+    SBnovo: TSpeedButton;
     procedure Button7Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton8Click(Sender: TObject);
