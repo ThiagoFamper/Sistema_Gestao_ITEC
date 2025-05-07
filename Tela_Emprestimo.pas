@@ -27,20 +27,18 @@ type
     DBGrid1: TDBGrid;
     Panel13: TPanel;
     Label9: TLabel;
-    DBEdit4: TDBEdit;
+    DBEdit1: TDBEdit;
     Panel12: TPanel;
     Label10: TLabel;
-    DBEdit5: TDBEdit;
+    DBEdit2: TDBEdit;
     Panel14: TPanel;
     Label1: TLabel;
-    Panel6: TPanel;
-    DBText4: TDBText;
     Panel15: TPanel;
     Label12: TLabel;
     DBComboBox1: TDBComboBox;
     Panel16: TPanel;
     Label13: TLabel;
-    TDBedit3: TDBEdit;
+    DBedit4: TDBEdit;
     Panel17: TPanel;
     Label14: TLabel;
     MaskEdit2: TMaskEdit;
@@ -52,14 +50,21 @@ type
     DBComboBox3: TDBComboBox;
     Panel20: TPanel;
     Label15: TLabel;
-    Panel7: TPanel;
-    DBText5: TDBText;
     SBnovo: TSpeedButton;
-    procedure Button7Click(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
-    procedure SpeedButton8Click(Sender: TObject);
+    DBEdit3: TDBEdit;
+    DBEdit5: TDBEdit;
     procedure SBsairClick(Sender: TObject);
+    procedure HabilitaCampos;
+    procedure DesabilitaCampos;
+    procedure LimpaCampos;
+    procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);
+    procedure DBEdit3KeyPress(Sender: TObject; var Key: Char);
+    procedure DBEdit4KeyPress(Sender: TObject; var Key: Char);
+    procedure SBnovoClick(Sender: TObject);
+    procedure SBsalvarClick(Sender: TObject);
+    procedure SBcancelarClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -75,19 +80,28 @@ implementation
 
 uses Tela_Devolucao, Lista_Emprestimo, Data_Module, Tela_Principal;
 
-procedure TTelaEmprestimo.Button7Click(Sender: TObject);
+procedure TTelaEmprestimo.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
-    TelaDevolucao.Show;
+  SBpesquisar.Enabled  := True;
+  SBsair.Enabled       := True;
+  SBnovo.Enabled       := True;
+  SBsalvar.Enabled     := False;
+  SBcancelar.Enabled   := False;
+  DesabilitaCampos();
+  dm.FDTabProduto.Cancel;
+  LimpaCampos();
 end;
 
-procedure TTelaEmprestimo.SpeedButton1Click(Sender: TObject);
+procedure TTelaEmprestimo.SBnovoClick(Sender: TObject); // botão de novo
 begin
-    ListaEmprestimo.Show;
-end;
-
-procedure TTelaEmprestimo.SpeedButton8Click(Sender: TObject);
-begin
-    teladevolucao.Show;
+  HabilitaCampos();
+  SBcancelar.Enabled   := True;
+  SBsalvar.Enabled     := True;
+  SBpesquisar.Enabled  := False;
+  SBsair.Enabled       := False;
+  SBnovo.Enabled       := False;
+  dm.FDTabProduto.Append;
+  DBEdit2.SetFocus;
 end;
 
 procedure TTelaEmprestimo.SBpesquisarClick(Sender: TObject);
@@ -97,7 +111,93 @@ end;
 
 procedure TTelaEmprestimo.SBsairClick(Sender: TObject);
 begin
-  Close(); // botão de sair
+  Close; // botão de sair
+end;
+
+procedure TTelaEmprestimo.SBsalvarClick(Sender: TObject); // botão de salvar
+begin
+    if DBEdit2.Text = '' then
+      begin
+        ShowMessage('O Campo "Código" deve ser preenchido!');
+        DBEdit2.SetFocus;
+      end
+  else
+    if DBEdit3.Text = '' then
+      begin
+        ShowMessage('O Campo "Descrição" deve ser preenchido!');
+        DBEdit3.SetFocus;
+      end
+  else
+    if DBEdit4.Text = '' then
+      begin
+        ShowMessage('O Campo "Marca" deve ser preenchido!');
+        DBEdit4.SetFocus;
+      end
+  else
+    if DBEdit5.Text = '' then
+      begin
+        ShowMessage('O Campo "Modelo" deve ser preenchido!');
+        DBEdit5.SetFocus;
+      end
+  else
+    begin
+      dm.FDTabProduto.Post;
+      ShowMessage('Cadastrado com Sucesso!');
+      LimpaCampos();
+      DesabilitaCampos();
+      SBpesquisar.Enabled  := True;
+      SBsair.Enabled       := True;
+      SBnovo.Enabled       := True;
+      SBsalvar.Enabled     := False;
+      SBcancelar.Enabled   := False;
+    end;
+
+end;
+
+// foco com enter
+procedure TTelaEmprestimo.DBEdit2KeyPress(Sender: TObject; var Key: Char);
+begin
+  if key = #13 then
+    DBEdit3.SetFocus;
+end;
+
+procedure TTelaEmprestimo.DBEdit3KeyPress(Sender: TObject; var Key: Char);
+begin
+  if key = #13 then
+    DBEdit4.SetFocus;
+end;
+
+procedure TTelaEmprestimo.DBEdit4KeyPress(Sender: TObject; var Key: Char);
+begin
+  if key = #13 then
+    DBEdit5.SetFocus;
+end;
+
+procedure TTelaEmprestimo.HabilitaCampos; // habilitar campos
+begin
+    DBEdit1.Enabled            := True;
+    DBEdit2.Enabled            := True;
+    DBEdit3.Enabled            := True;
+    DBEdit4.Enabled            := True;
+    DBEdit5.Enabled            := True;
+end;
+
+procedure TTelaEmprestimo.DesabilitaCampos; // desabilitar campos
+begin
+    DBEdit1.Enabled            := False;
+    DBEdit2.Enabled            := False;
+    DBEdit3.Enabled            := False;
+    DBEdit4.Enabled            := False;
+    DBEdit5.Enabled            := False;
+end;
+
+procedure TTelaEmprestimo.LimpaCampos; // limpar campos
+begin
+    DBEdit1.Clear;
+    DBEdit2.Clear;
+    DBEdit3.Clear;
+    DBEdit4.Clear;
+    DBEdit5.Clear;
 end;
 
 end.

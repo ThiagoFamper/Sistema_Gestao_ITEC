@@ -48,7 +48,7 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 54
       end
-      object DBEdit3: TDBEdit
+      object DBEdit1: TDBEdit
         Left = 0
         Top = 20
         Width = 105
@@ -81,29 +81,15 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 144
       end
-      object Panel6: TPanel
+      object DBEdit3: TDBEdit
         Left = 0
         Top = 20
         Width = 508
         Height = 23
         Align = alTop
-        BevelOuter = bvSpace
-        BiDiMode = bdLeftToRight
         Color = clBtnHighlight
-        ParentBiDiMode = False
-        ParentBackground = False
+        Enabled = False
         TabOrder = 0
-        object DBText4: TDBText
-          Left = 1
-          Top = 1
-          Width = 506
-          Height = 17
-          Align = alTop
-          Enabled = False
-          ExplicitLeft = 0
-          ExplicitTop = -1
-          ExplicitWidth = 465
-        end
       end
     end
     object Panel15: TPanel
@@ -224,7 +210,7 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 78
       end
-      object TDBedit3: TDBEdit
+      object DBedit4: TDBEdit
         Left = 0
         Top = 20
         Width = 84
@@ -289,7 +275,7 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 128
       end
-      object DBEdit4: TDBEdit
+      object DBEdit2: TDBEdit
         Left = 0
         Top = 20
         Width = 228
@@ -322,29 +308,16 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 160
       end
-      object Panel7: TPanel
+      object DBEdit5: TDBEdit
         Left = 0
         Top = 20
         Width = 172
         Height = 23
         Align = alTop
-        BevelOuter = bvSpace
-        BiDiMode = bdLeftToRight
         Color = clBtnHighlight
-        ParentBiDiMode = False
-        ParentBackground = False
+        Enabled = False
         TabOrder = 0
-        object DBText1: TDBText
-          Left = 1
-          Top = 1
-          Width = 170
-          Height = 17
-          Align = alTop
-          Enabled = False
-          ExplicitLeft = 9
-          ExplicitTop = -2
-          ExplicitWidth = 74
-        end
+        ExplicitTop = 28
       end
     end
   end
@@ -687,6 +660,7 @@ object SaidaProd: TSaidaProd
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBsairClick
     end
     object SBpesquisar: TSpeedButton
       Left = 539
@@ -1014,6 +988,7 @@ object SaidaProd: TSaidaProd
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBpesquisarClick
     end
     object SBsalvar: TSpeedButton
       Left = 443
@@ -1342,6 +1317,7 @@ object SaidaProd: TSaidaProd
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBsalvarClick
     end
     object SBcancelar: TSpeedButton
       Left = 347
@@ -1670,6 +1646,7 @@ object SaidaProd: TSaidaProd
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBcancelarClick
     end
     object SBnovo: TSpeedButton
       Left = 247
@@ -1997,6 +1974,7 @@ object SaidaProd: TSaidaProd
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBnovoClick
     end
     object Panel3: TPanel
       Left = 0

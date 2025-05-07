@@ -48,7 +48,7 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 97
       end
-      object DBEdit4: TDBEdit
+      object DBEdit1: TDBEdit
         Left = 0
         Top = 20
         Width = 105
@@ -81,7 +81,7 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 128
       end
-      object DBEdit5: TDBEdit
+      object DBEdit2: TDBEdit
         Left = 0
         Top = 20
         Width = 224
@@ -90,6 +90,7 @@ object TelaEmprestimo: TTelaEmprestimo
         Color = clBtnHighlight
         Enabled = False
         TabOrder = 0
+        ExplicitTop = 26
       end
     end
     object Panel14: TPanel
@@ -114,29 +115,16 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 144
       end
-      object Panel6: TPanel
+      object DBEdit3: TDBEdit
         Left = 0
         Top = 20
         Width = 512
         Height = 23
         Align = alTop
-        BevelOuter = bvSpace
-        BiDiMode = bdLeftToRight
         Color = clBtnHighlight
-        ParentBiDiMode = False
-        ParentBackground = False
+        Enabled = False
         TabOrder = 0
-        object DBText4: TDBText
-          Left = 1
-          Top = 1
-          Width = 510
-          Height = 17
-          Align = alTop
-          Enabled = False
-          ExplicitLeft = 81
-          ExplicitTop = -10
-          ExplicitWidth = 498
-        end
+        ExplicitTop = 28
       end
     end
     object Panel15: TPanel
@@ -193,7 +181,7 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 78
       end
-      object TDBedit3: TDBEdit
+      object DBedit4: TDBEdit
         Left = 0
         Top = 20
         Width = 88
@@ -322,29 +310,15 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 160
       end
-      object Panel7: TPanel
+      object DBEdit5: TDBEdit
         Left = 0
         Top = 20
         Width = 374
         Height = 23
         Align = alTop
-        BevelOuter = bvSpace
-        BiDiMode = bdLeftToRight
-        Color = clBtnHighlight
-        ParentBiDiMode = False
-        ParentBackground = False
+        Enabled = False
         TabOrder = 0
-        object DBText5: TDBText
-          Left = 1
-          Top = 1
-          Width = 372
-          Height = 17
-          Align = alTop
-          Enabled = False
-          ExplicitLeft = 7
-          ExplicitTop = 60
-          ExplicitWidth = 111
-        end
+        ExplicitTop = 28
       end
     end
   end
@@ -687,6 +661,7 @@ object TelaEmprestimo: TTelaEmprestimo
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBsairClick
     end
     object SBpesquisar: TSpeedButton
       Left = 539
@@ -1014,6 +989,7 @@ object TelaEmprestimo: TTelaEmprestimo
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBpesquisarClick
     end
     object SBsalvar: TSpeedButton
       Left = 443
@@ -1342,6 +1318,7 @@ object TelaEmprestimo: TTelaEmprestimo
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBsalvarClick
     end
     object SBcancelar: TSpeedButton
       Left = 347
@@ -1670,6 +1647,7 @@ object TelaEmprestimo: TTelaEmprestimo
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBcancelarClick
     end
     object SBnovo: TSpeedButton
       Left = 247
@@ -1997,6 +1975,7 @@ object TelaEmprestimo: TTelaEmprestimo
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBnovoClick
     end
     object Panel3: TPanel
       Left = 0

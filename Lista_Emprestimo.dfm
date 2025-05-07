@@ -774,6 +774,7 @@ object ListaEmprestimo: TListaEmprestimo
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBsairClick
     end
     object SBrelatorio: TSpeedButton
       Left = 644
@@ -1428,6 +1429,7 @@ object ListaEmprestimo: TListaEmprestimo
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBexcluirClick
     end
     object SBsalvar: TSpeedButton
       Left = 448
@@ -1756,6 +1758,7 @@ object ListaEmprestimo: TListaEmprestimo
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBsalvarClick
     end
     object SBcancelar: TSpeedButton
       Left = 345
@@ -2084,6 +2087,7 @@ object ListaEmprestimo: TListaEmprestimo
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBcancelarClick
     end
     object SpeedButton1: TSpeedButton
       Left = 16
@@ -2713,6 +2717,7 @@ object ListaEmprestimo: TListaEmprestimo
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBeditarClick
     end
     object Panel6: TPanel
       Left = 0
