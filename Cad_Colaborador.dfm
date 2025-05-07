@@ -1151,8 +1151,8 @@ object CadColaborador: TCadColaborador
     object SBcancelar: TSpeedButton
       Left = 347
       Top = 8
-      Width = 73
-      Height = 72
+      Width = 70
+      Height = 70
       Cursor = crHandPoint
       Hint = 'Cancelar'
       Enabled = False
@@ -1455,7 +1455,7 @@ object CadColaborador: TCadColaborador
       Left = 247
       Top = 8
       Width = 73
-      Height = 72
+      Height = 73
       Cursor = crHandPoint
       Hint = 'Novo'
       Flat = True
