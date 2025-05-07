@@ -32,8 +32,6 @@ type
     Panel10: TPanel;
     Label1: TLabel;
     DBEdit1: TDBEdit;
-    procedure HabilitaBotoes;
-    procedure DesabilitaBotoes;
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
     procedure LimpaCampos;
@@ -42,7 +40,7 @@ type
     procedure SBsairClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
-    procedure DBEdit1KeyPress(Sender: TObject; var Key: Char);
+
   private
     { Private declarations }
   public
@@ -65,18 +63,25 @@ end;
 
 procedure TCadGrupo.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
-  HabilitaBotoes();
+  SBpesquisar.Enabled  := True;
+  SBsair.Enabled       := True;
+  SBnovo.Enabled       := True;
+  SBsalvar.Enabled     := False;
+  SBcancelar.Enabled   := False;
   DesabilitaCampos();
-  dm.FDTabGrupo.Cancel;
+  dm.FDTabProduto.Cancel;
   LimpaCampos();
 end;
 
 procedure TCadGrupo.SBnovoClick(Sender: TObject); // botão de novo
 begin
   HabilitaCampos();
-  DesabilitaBotoes();
-  dm.FDTabGrupo.Insert;
-  dm.FDTabGrupo.Append;
+  SBcancelar.Enabled   := True;
+  SBsalvar.Enabled     := True;
+  SBpesquisar.Enabled  := False;
+  SBsair.Enabled       := False;
+  SBnovo.Enabled       := False;
+  dm.FDTabProduto.Append;
   DBEdit2.SetFocus;
 end;
 
@@ -96,36 +101,20 @@ begin
   else
     begin
       dm.FDTabGrupo.Post;
-      dm.FDTabGrupo.Close;
-      dm.FDTabGrupo.Open;
-      dm.FDTabGrupo.Last;
       ShowMessage('Cadastrado com Sucesso!');
-      HabilitaBotoes();
       LimpaCampos();
+      DesabilitaCampos();
+      SBpesquisar.Enabled  := True;
+      SBsair.Enabled       := True;
+      SBnovo.Enabled       := True;
+      SBsalvar.Enabled     := False;
+      SBcancelar.Enabled   := False;
     end;
 end;
 
 procedure TCadGrupo.SBsairClick(Sender: TObject);
 begin
   close(); // botão de sair
-end;
-
-procedure TCadGrupo.HabilitaBotoes; // habilitar botões
-begin
-  SBnovo.Enabled       := True;
-  SBcancelar.Enabled   := True;
-  SBsalvar.Enabled     := True;
-  SBpesquisar.Enabled  := True;
-  SBsair.Enabled       := True;
-end;
-
-procedure TCadGrupo.DesabilitaBotoes; // desabilitar botões
-begin
-  SBnovo.Enabled       := False;
-  SBcancelar.Enabled   := True;
-  SBsalvar.Enabled     := True;
-  SBpesquisar.Enabled  := False;
-  SBsair.Enabled       := False;
 end;
 
 procedure TCadGrupo.HabilitaCampos; // habilitar campos
@@ -144,13 +133,6 @@ procedure TCadGrupo.LimpaCampos; // limpar campos
 begin
     DBEdit1.Clear;
     DBEdit2.Clear;
-end;
-
-// foco com tab
-procedure TCadGrupo.DBEdit1KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit2.SetFocus;
 end;
 
 end.

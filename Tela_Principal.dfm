@@ -1262,14 +1262,14 @@ object TelaPrincipal: TTelaPrincipal
   object pnlConteudo: TPanel
     Left = 241
     Top = 81
-    Width = 2716
+    Width = 2714
     Height = 1004
     Anchors = [akLeft, akTop, akRight, akBottom]
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
     TabOrder = 5
-    ExplicitWidth = 2714
+    ExplicitWidth = 2712
     ExplicitHeight = 996
   end
 end

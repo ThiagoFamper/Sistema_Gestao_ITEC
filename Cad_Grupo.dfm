@@ -1338,6 +1338,7 @@ object CadGrupo: TCadGrupo
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBcancelarClick
     end
     object SBnovo: TSpeedButton
       Left = 247

@@ -1222,6 +1222,7 @@ object CadColaborador: TCadColaborador
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBsalvarClick
     end
     object SBcancelar: TSpeedButton
       Left = 347
@@ -1550,6 +1551,7 @@ object CadColaborador: TCadColaborador
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBcancelarClick
     end
     object SBnovo: TSpeedButton
       Left = 247
@@ -1877,6 +1879,7 @@ object CadColaborador: TCadColaborador
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBnovoClick
     end
     object Panel3: TPanel
       Left = 0

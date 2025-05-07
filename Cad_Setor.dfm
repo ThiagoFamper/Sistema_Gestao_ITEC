@@ -1117,6 +1117,7 @@ object CadSetor: TCadSetor
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBsalvarClick
     end
     object SBcancelar: TSpeedButton
       Left = 347
@@ -1445,6 +1446,7 @@ object CadSetor: TCadSetor
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBcancelarClick
     end
     object SBnovo: TSpeedButton
       Left = 247
@@ -1772,6 +1774,7 @@ object CadSetor: TCadSetor
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBnovoClick
     end
     object Panel3: TPanel
       Left = 0
