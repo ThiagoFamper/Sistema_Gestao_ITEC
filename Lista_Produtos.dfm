@@ -2224,10 +2224,10 @@ object ListaProdutos: TListaProdutos
   end
   object Panel1: TPanel
     Left = 0
-    Top = 574
+    Top = 561
     Width = 2714
-    Height = 235
-    Align = alBottom
+    Height = 248
+    Align = alClient
     BevelEdges = []
     BevelKind = bkFlat
     BevelOuter = bvNone
@@ -2236,6 +2236,7 @@ object ListaProdutos: TListaProdutos
     TabOrder = 1
     ExplicitTop = 566
     ExplicitWidth = 2712
+    ExplicitHeight = 235
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -2610,17 +2611,17 @@ object ListaProdutos: TListaProdutos
     Left = 0
     Top = 336
     Width = 2714
-    Height = 238
-    Align = alClient
+    Height = 225
+    Align = alTop
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitLeft = 2
     ExplicitWidth = 2712
-    ExplicitHeight = 230
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 2714
-      Height = 238
+      Height = 225
       Hint = 'Pesquisar Produtos'
       Align = alClient
       DataSource = DM.dsFDTabProduto

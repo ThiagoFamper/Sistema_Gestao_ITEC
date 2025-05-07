@@ -15,15 +15,17 @@ object ListaEntrada: TListaEntrada
   TextHeight = 15
   object Panel5: TPanel
     Left = 0
-    Top = 585
+    Top = 526
     Width = 1048
-    Height = 212
-    Align = alBottom
+    Height = 271
+    Align = alClient
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 525
+    ExplicitTop = 577
+    ExplicitWidth = 1046
+    ExplicitHeight = 212
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -44,8 +46,6 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 16
-        ExplicitTop = 17
         ExplicitWidth = 68
       end
       object DBEdit1: TDBEdit
@@ -56,8 +56,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 26
-        ExplicitWidth = 241
       end
     end
     object Panel14: TPanel
@@ -80,8 +78,6 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 16
-        ExplicitTop = 39
         ExplicitWidth = 128
       end
       object DBEdit2: TDBEdit
@@ -92,8 +88,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 26
-        ExplicitWidth = 241
       end
     end
     object Panel15: TPanel
@@ -116,8 +110,6 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 16
-        ExplicitTop = 39
         ExplicitWidth = 65
       end
       object DBEdit3: TDBEdit
@@ -128,9 +120,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 8
-        ExplicitTop = 36
-        ExplicitWidth = 241
       end
     end
     object Panel16: TPanel
@@ -153,8 +142,6 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 162
-        ExplicitTop = 12
         ExplicitWidth = 87
       end
       object DBEdit4: TDBEdit
@@ -165,9 +152,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 8
-        ExplicitTop = 36
-        ExplicitWidth = 241
       end
     end
     object Panel17: TPanel
@@ -190,8 +174,6 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 171
-        ExplicitTop = 39
         ExplicitWidth = 78
       end
       object DBEdit5: TDBEdit
@@ -202,8 +184,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 16
-        ExplicitTop = 19
       end
     end
     object Panel18: TPanel
@@ -258,8 +238,6 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 176
-        ExplicitTop = 16
         ExplicitWidth = 73
       end
       object DBEdit7: TDBEdit
@@ -270,9 +248,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 6
-        ExplicitTop = 26
-        ExplicitWidth = 163
       end
     end
     object Panel20: TPanel
@@ -295,8 +270,6 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 178
-        ExplicitTop = 39
         ExplicitWidth = 71
       end
       object DBEdit8: TDBEdit
@@ -307,9 +280,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 8
-        ExplicitTop = 36
-        ExplicitWidth = 241
       end
     end
     object Panel21: TPanel
@@ -332,8 +302,6 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 158
-        ExplicitTop = 39
         ExplicitWidth = 91
       end
       object DBEdit9: TDBEdit
@@ -344,9 +312,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 8
-        ExplicitTop = 36
-        ExplicitWidth = 241
       end
     end
     object Panel22: TPanel
@@ -369,8 +334,6 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 89
-        ExplicitTop = 12
         ExplicitWidth = 160
       end
       object DBEdit10: TDBEdit
@@ -381,9 +344,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 61
-        ExplicitTop = 36
-        ExplicitWidth = 188
       end
     end
   end
@@ -397,6 +357,7 @@ object ListaEntrada: TListaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1046
     object Label10: TLabel
       Left = 606
       Top = 114
@@ -518,6 +479,7 @@ object ListaEntrada: TListaEntrada
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 744
       Top = 8
@@ -2717,6 +2679,7 @@ object ListaEntrada: TListaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2732,16 +2695,17 @@ object ListaEntrada: TListaEntrada
     Left = 0
     Top = 301
     Width = 1048
-    Height = 284
-    Align = alClient
+    Height = 225
+    Align = alTop
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitHeight = 224
+    ExplicitLeft = 2
+    ExplicitWidth = 1046
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1048
-      Height = 284
+      Height = 225
       Hint = 'Pesquisar Entrada'
       Align = alClient
       DataSource = DM.dsFDTabEntrada

@@ -15,19 +15,22 @@ object TelaDevolucao: TTelaDevolucao
   TextHeight = 15
   object Panel5: TPanel
     Left = 0
-    Top = 756
+    Top = 535
     Width = 1384
-    Height = 212
-    Align = alBottom
+    Height = 433
+    Align = alClient
     BevelEdges = []
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitLeft = 16
+    ExplicitTop = 558
+    ExplicitHeight = 658
     object Panel8: TPanel
-      Left = 1152
+      Left = 1032
       Top = 5
-      Width = 201
+      Width = 321
       Height = 223
       BevelEdges = [beLeft]
       BevelKind = bkFlat
@@ -396,6 +399,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1382
     object Label5: TLabel
       Left = 644
       Top = 121
@@ -517,6 +521,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1382
     object SBsair: TSpeedButton
       Left = 744
       Top = 8
@@ -2716,6 +2721,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1382
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2731,14 +2737,16 @@ object TelaDevolucao: TTelaDevolucao
     Left = 0
     Top = 310
     Width = 1384
-    Height = 446
-    Align = alClient
+    Height = 225
+    Align = alTop
+    BevelOuter = bvNone
     TabOrder = 4
+    ExplicitTop = 309
     object DBGrid1: TDBGrid
-      Left = 1
-      Top = 1
-      Width = 1382
-      Height = 444
+      Left = 0
+      Top = 0
+      Width = 1384
+      Height = 225
       Hint = 'Pesquisar Devolucao'
       Align = alClient
       DataSource = DM.dsFDTabEmprestimoProd

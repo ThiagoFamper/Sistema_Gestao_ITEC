@@ -15,15 +15,17 @@ object ListaSaida: TListaSaida
   TextHeight = 15
   object Panel5: TPanel
     Left = 0
-    Top = 585
+    Top = 529
     Width = 1048
-    Height = 212
-    Align = alBottom
+    Height = 268
+    Align = alClient
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 528
+    ExplicitTop = 577
+    ExplicitWidth = 1046
+    ExplicitHeight = 212
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -44,8 +46,6 @@ object ListaSaida: TListaSaida
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 16
-        ExplicitTop = 17
         ExplicitWidth = 54
       end
       object DBEdit1: TDBEdit
@@ -56,9 +56,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 16
-        ExplicitTop = 36
-        ExplicitWidth = 217
       end
     end
     object Panel14: TPanel
@@ -81,8 +78,6 @@ object ListaSaida: TListaSaida
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 16
-        ExplicitTop = 39
         ExplicitWidth = 128
       end
       object DBEdit2: TDBEdit
@@ -93,9 +88,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 16
-        ExplicitTop = 36
-        ExplicitWidth = 217
       end
     end
     object Panel15: TPanel
@@ -118,8 +110,6 @@ object ListaSaida: TListaSaida
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 16
-        ExplicitTop = 39
         ExplicitWidth = 65
       end
       object DBEdit3: TDBEdit
@@ -130,9 +120,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 16
-        ExplicitTop = 36
-        ExplicitWidth = 217
       end
     end
     object Panel16: TPanel
@@ -155,8 +142,6 @@ object ListaSaida: TListaSaida
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 176
-        ExplicitTop = 12
         ExplicitWidth = 73
       end
       object DBEdit4: TDBEdit
@@ -167,9 +152,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 32
-        ExplicitTop = 36
-        ExplicitWidth = 217
       end
     end
     object Panel17: TPanel
@@ -192,8 +174,6 @@ object ListaSaida: TListaSaida
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 171
-        ExplicitTop = 39
         ExplicitWidth = 78
       end
       object DBEdit5: TDBEdit
@@ -204,9 +184,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 32
-        ExplicitTop = 36
-        ExplicitWidth = 217
       end
     end
     object Panel18: TPanel
@@ -229,8 +206,6 @@ object ListaSaida: TListaSaida
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 185
-        ExplicitTop = 39
         ExplicitWidth = 64
       end
       object DBEdit6: TDBEdit
@@ -241,9 +216,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 32
-        ExplicitTop = 32
-        ExplicitWidth = 217
       end
     end
     object Panel19: TPanel
@@ -266,8 +238,6 @@ object ListaSaida: TListaSaida
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 165
-        ExplicitTop = 16
         ExplicitWidth = 84
       end
       object DBEdit7: TDBEdit
@@ -278,9 +248,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 32
-        ExplicitTop = 36
-        ExplicitWidth = 217
       end
     end
     object Panel20: TPanel
@@ -303,8 +270,6 @@ object ListaSaida: TListaSaida
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 214
-        ExplicitTop = 39
         ExplicitWidth = 35
       end
       object DBEdit8: TDBEdit
@@ -315,9 +280,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 32
-        ExplicitTop = 36
-        ExplicitWidth = 217
       end
     end
     object Panel21: TPanel
@@ -340,8 +302,6 @@ object ListaSaida: TListaSaida
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 89
-        ExplicitTop = 39
         ExplicitWidth = 160
       end
       object DBEdit9: TDBEdit
@@ -352,9 +312,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 32
-        ExplicitTop = 36
-        ExplicitWidth = 217
       end
     end
   end
@@ -368,6 +325,7 @@ object ListaSaida: TListaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1046
     object Label10: TLabel
       Left = 606
       Top = 114
@@ -489,6 +447,7 @@ object ListaSaida: TListaSaida
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 744
       Top = 8
@@ -2688,6 +2647,7 @@ object ListaSaida: TListaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2703,16 +2663,16 @@ object ListaSaida: TListaSaida
     Left = 0
     Top = 304
     Width = 1048
-    Height = 281
-    Align = alClient
+    Height = 225
+    Align = alTop
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitHeight = 224
+    ExplicitWidth = 1046
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1048
-      Height = 281
+      Height = 225
       Hint = 'Pesquisar Saida'
       Align = alClient
       DataSource = DM.dsFDTabSaida

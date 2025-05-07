@@ -15,14 +15,17 @@ object ListaGrupos: TListaGrupos
   TextHeight = 15
   object Panel5: TPanel
     Left = 0
-    Top = 523
+    Top = 516
     Width = 1047
-    Height = 243
-    Align = alBottom
+    Height = 250
+    Align = alClient
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 515
+    ExplicitWidth = 1045
+    ExplicitHeight = 243
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -98,6 +101,7 @@ object ListaGrupos: TListaGrupos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1045
     object CheckBox1: TCheckBox
       Left = 16
       Top = 16
@@ -127,6 +131,7 @@ object ListaGrupos: TListaGrupos
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1045
     object SBsair: TSpeedButton
       Left = 744
       Top = 8
@@ -2326,6 +2331,7 @@ object ListaGrupos: TListaGrupos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1045
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2341,15 +2347,16 @@ object ListaGrupos: TListaGrupos
     Left = 0
     Top = 291
     Width = 1047
-    Height = 232
-    Align = alClient
+    Height = 225
+    Align = alTop
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitWidth = 1045
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1047
-      Height = 232
+      Height = 225
       Hint = 'Pesquisar Grupos'
       Align = alClient
       DataSource = DM.dsFDTabGrupo

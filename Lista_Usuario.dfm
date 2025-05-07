@@ -17,12 +17,13 @@ object ListaUsuario: TListaUsuario
     Left = 0
     Top = 114
     Width = 1048
-    Height = 162
+    Height = 156
     Align = alTop
     BevelEdges = [beBottom]
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1046
     object CheckBox1: TCheckBox
       Left = 16
       Top = 19
@@ -86,15 +87,17 @@ object ListaUsuario: TListaUsuario
   end
   object Panel5: TPanel
     Left = 0
-    Top = 585
+    Top = 532
     Width = 1048
-    Height = 212
-    Align = alBottom
+    Height = 265
+    Align = alClient
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 535
+    ExplicitTop = 577
+    ExplicitWidth = 1046
+    ExplicitHeight = 212
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -115,8 +118,6 @@ object ListaUsuario: TListaUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 16
-        ExplicitTop = 17
         ExplicitWidth = 67
       end
       object DBEdit1: TDBEdit
@@ -127,9 +128,6 @@ object ListaUsuario: TListaUsuario
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 16
-        ExplicitTop = 36
-        ExplicitWidth = 221
       end
     end
     object Panel14: TPanel
@@ -152,8 +150,6 @@ object ListaUsuario: TListaUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 16
-        ExplicitTop = 39
         ExplicitWidth = 117
       end
       object DBEdit2: TDBEdit
@@ -164,9 +160,6 @@ object ListaUsuario: TListaUsuario
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 16
-        ExplicitTop = 36
-        ExplicitWidth = 221
       end
     end
     object Panel15: TPanel
@@ -189,8 +182,6 @@ object ListaUsuario: TListaUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 16
-        ExplicitTop = 39
         ExplicitWidth = 34
       end
       object DBEdit3: TDBEdit
@@ -201,9 +192,6 @@ object ListaUsuario: TListaUsuario
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 16
-        ExplicitTop = 36
-        ExplicitWidth = 221
       end
     end
     object Panel16: TPanel
@@ -226,8 +214,6 @@ object ListaUsuario: TListaUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 209
-        ExplicitTop = 17
         ExplicitWidth = 40
       end
       object DBEdit4: TDBEdit
@@ -238,9 +224,6 @@ object ListaUsuario: TListaUsuario
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 28
-        ExplicitTop = 36
-        ExplicitWidth = 221
       end
     end
     object Panel17: TPanel
@@ -263,8 +246,6 @@ object ListaUsuario: TListaUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 205
-        ExplicitTop = 39
         ExplicitWidth = 44
       end
       object DBEdit5: TDBEdit
@@ -275,9 +256,6 @@ object ListaUsuario: TListaUsuario
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 28
-        ExplicitTop = 36
-        ExplicitWidth = 221
       end
     end
   end
@@ -293,6 +271,7 @@ object ListaUsuario: TListaUsuario
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 744
       Top = 8
@@ -2484,7 +2463,7 @@ object ListaUsuario: TListaUsuario
   end
   object Panel4: TPanel
     Left = 0
-    Top = 276
+    Top = 270
     Width = 1048
     Height = 37
     Align = alTop
@@ -2492,6 +2471,8 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitTop = 276
+    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2505,18 +2486,19 @@ object ListaUsuario: TListaUsuario
   end
   object Panel3: TPanel
     Left = 0
-    Top = 313
+    Top = 307
     Width = 1048
-    Height = 272
-    Align = alClient
+    Height = 225
+    Align = alTop
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitHeight = 222
+    ExplicitTop = 313
+    ExplicitWidth = 1046
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1048
-      Height = 272
+      Height = 225
       Hint = 'Pesquisar Usuario'
       Align = alClient
       DataSource = DM.dsFDTabUsuario

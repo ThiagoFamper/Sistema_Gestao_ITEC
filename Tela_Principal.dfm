@@ -1260,10 +1260,10 @@ object TelaPrincipal: TTelaPrincipal
     end
   end
   object pnlConteudo: TPanel
-    Left = 239
+    Left = 241
     Top = 81
     Width = 2720
-    Height = 998
+    Height = 1004
     Anchors = [akLeft, akTop, akRight, akBottom]
     BevelOuter = bvNone
     Color = clWhite

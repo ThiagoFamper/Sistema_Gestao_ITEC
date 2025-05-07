@@ -15,15 +15,18 @@ object ListaEmprestimo: TListaEmprestimo
   TextHeight = 15
   object Panel5: TPanel
     Left = 0
-    Top = 585
+    Top = 529
     Width = 1048
-    Height = 212
-    Align = alBottom
+    Height = 268
+    Align = alClient
     BevelEdges = [beLeft, beRight, beBottom]
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 577
+    ExplicitWidth = 1046
+    ExplicitHeight = 212
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -323,6 +326,7 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1046
     object Label9: TLabel
       Left = 598
       Top = 114
@@ -444,6 +448,7 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 744
       Top = 8
@@ -2643,6 +2648,7 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2658,15 +2664,16 @@ object ListaEmprestimo: TListaEmprestimo
     Left = 0
     Top = 304
     Width = 1048
-    Height = 281
-    Align = alClient
+    Height = 225
+    Align = alTop
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitWidth = 1046
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1048
-      Height = 281
+      Height = 225
       Hint = 'Pesquisar Emprestimo'
       Align = alClient
       DataSource = DM.dsFDTabEmprestimoProd
