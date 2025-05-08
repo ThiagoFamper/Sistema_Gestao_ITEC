@@ -1970,7 +1970,7 @@ object CadColaborador: TCadColaborador
       Width = 73
       Height = 20
       BevelOuter = bvNone
-      Caption = 'Sair'
+      Caption = 'Fechar'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -15

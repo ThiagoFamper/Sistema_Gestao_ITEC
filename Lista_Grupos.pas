@@ -16,7 +16,6 @@ type
     Edit1: TEdit;
     Panel2: TPanel;
     SBsair: TSpeedButton;
-    SBrelatorio: TSpeedButton;
     SBexcluir: TSpeedButton;
     SBsalvar: TSpeedButton;
     SBcancelar: TSpeedButton;
@@ -27,7 +26,6 @@ type
     Panel8: TPanel;
     Panel9: TPanel;
     Panel10: TPanel;
-    Panel11: TPanel;
     Panel12: TPanel;
     Panel4: TPanel;
     DBNavigator1: TDBNavigator;
@@ -77,7 +75,6 @@ begin
     HabilitaCamposPesquisa();
     dm.FDTabGrupo.Cancel;
     DBGrid1.Enabled      := True;
-    SBrelatorio.Enabled  := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -93,7 +90,6 @@ begin
     DBGrid1.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
-    SBrelatorio.Enabled  := False;
     SBexcluir.Enabled    := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
@@ -118,7 +114,6 @@ begin
       DesabilitaCampos();
       HabilitaCamposPesquisa();
       DBGrid1.Enabled      := True;
-      SBrelatorio.Enabled  := True;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
       SBeditar.Enabled     := True;

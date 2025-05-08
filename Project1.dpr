@@ -22,7 +22,9 @@ uses
   Lista_Usuario in 'Lista_Usuario.pas' {ListaUsuario},
   Tela_Login in 'Tela_Login.pas' {TelaLogin},
   Data_Module in 'Data_Module.pas' {DM: TDataModule},
-  Tela_Relatorio in 'Tela_Relatorio.pas' {TelaRelatorio};
+  Tela_Relatorio in 'Tela_Relatorio.pas' {TelaRelatorio},
+  Cad_Sede in 'Cad_Sede.pas' {CadSede},
+  Lista_Sede in 'Lista_Sede.pas' {ListaSede};
 
 {$R *.res}
 
@@ -50,5 +52,8 @@ begin
   Application.CreateForm(TTelaLogin, TelaLogin);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TTelaRelatorio, TelaRelatorio);
+  Application.CreateForm(TCadSede, CadSede);
+  Application.CreateForm(TCadSede, CadSede);
+  Application.CreateForm(TListaSede, ListaSede);
   Application.Run;
 end.

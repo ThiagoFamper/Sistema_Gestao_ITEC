@@ -1,21 +1,24 @@
-unit Lista_Setor;
+unit Lista_Sede;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.DBCtrls, Vcl.StdCtrls,
-  Vcl.ExtCtrls, Vcl.Buttons, Vcl.Grids, Vcl.DBGrids, Vcl.Mask,
-  Vcl.Imaging.pngimage;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.Buttons, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls;
 
 type
-  TListaSetor = class(TForm)
+  TListaSede = class(TForm)
     Panel5: TPanel;
+    Panel13: TPanel;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    Panel14: TPanel;
+    Label5: TLabel;
+    DBEdit2: TDBEdit;
     Panel1: TPanel;
     CheckBox1: TCheckBox;
-    CheckBox2: TCheckBox;
     Edit1: TEdit;
-    Edit2: TEdit;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBexcluir: TSpeedButton;
@@ -33,15 +36,6 @@ type
     DBNavigator1: TDBNavigator;
     Panel3: TPanel;
     DBGrid1: TDBGrid;
-    Panel13: TPanel;
-    Label1: TLabel;
-    DBEdit1: TDBEdit;
-    Panel14: TPanel;
-    Label5: TLabel;
-    DBEdit2: TDBEdit;
-    Panel15: TPanel;
-    Label2: TLabel;
-    DBEdit3: TDBEdit;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -52,7 +46,6 @@ type
     procedure SBcancelarClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
-    procedure Edit2Change(Sender: TObject);
 
   private
     { Private declarations }
@@ -61,25 +54,25 @@ type
   end;
 
 var
-  ListaSetor: TListaSetor;
+  ListaSede: TListaSede;
 
 implementation
 
 {$R *.dfm}
 
-uses Cad_Setor, Data_Module;
+uses Cad_Sede, Data_Module;
 
-procedure TListaSetor.SBexcluirClick(Sender: TObject); // botão de excluir
+procedure TListaSede.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
   if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
   dm.FDTabProduto.Delete;
 end;
 
-procedure TListaSetor.SBcancelarClick(Sender: TObject); // botão de cancelar
+procedure TListaSede.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos();
     HabilitaCamposPesquisa();
-    dm.FDTabProduto.Cancel;
+    dm.FDTabSede.Cancel;
     DBGrid1.Enabled      := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
@@ -88,11 +81,11 @@ begin
     SBsalvar.Enabled     := False;
 end;
 
-procedure TListaSetor.SBeditarClick(Sender: TObject); // botão de editar
+procedure TListaSede.SBeditarClick(Sender: TObject); // botão de editar
 begin
     HabilitaCampos();
     DesabilitaCamposPesquisa();
-    dm.FDTabProduto.Edit;
+    dm.FDTabSede.Edit;
     DBGrid1.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
@@ -101,28 +94,22 @@ begin
     SBeditar.Enabled     := False;
 end;
 
-procedure TListaSetor.SBsairClick(Sender: TObject);
+procedure TListaSede.SBsairClick(Sender: TObject);
 begin
   Close(); // botão de sair
 end;
 
-procedure TListaSetor.SBsalvarClick(Sender: TObject); // botão de salvar
+procedure TListaSede.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
     if DBEdit2.Text = '' then
       begin
-        ShowMessage('O Campo "Código" deve ser preenchido!');
+        ShowMessage('O campo "Código" deve ser preenchido!');
         DBEdit2.SetFocus;
       end
   else
-    if DBEdit3.Text = '' then
-      begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
-        DBEdit3.SetFocus;
-      end
-  else
     begin
-      dm.FDTabProduto.Post;
-      ShowMessage('Editado com Sucesso!');
+      dm.FDTabSede.Post;
+      ShowMessage('Sede editada com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
       DBGrid1.Enabled      := True;
@@ -134,40 +121,31 @@ begin
     end;
 end;
 
-procedure TListaSetor.HabilitaCampos; // habilitar campos
+procedure TListaSede.HabilitaCampos; // habilitar campos
 begin
     DBEdit1.Enabled            := True;
     DBEdit2.Enabled            := True;
-    DBEdit3.Enabled            := True;
 end;
 
-procedure TListaSetor.DesabilitaCampos; // desabilitar campos
+procedure TListaSede.DesabilitaCampos; // desabilitar campos
 begin
     DBEdit1.Enabled            := False;
     DBEdit2.Enabled            := False;
-    DBEdit3.Enabled            := False;
 end;
 
-procedure TListaSetor.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
+procedure TListaSede.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
     Edit1.Enabled            := False;
-    Edit2.Enabled            := False;
 end;
 
-procedure TListaSetor.Edit1Change(Sender: TObject); // pesquisa código
+procedure TListaSede.Edit1Change(Sender: TObject); // pesquisa descricao
 begin
-    dm.FDTabColaborador.Locate('id', Edit1.Text, [loPartialKey, loCaseInsensitive]);
+    dm.FDTabProduto.Locate('descricao', Edit1.Text, [loPartialKey, loCaseInsensitive]);
 end;
 
-procedure TListaSetor.Edit2Change(Sender: TObject); // pesquisa descricao
-begin
-    dm.FDTabColaborador.Locate('descricao', Edit2.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TListaSetor.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
+procedure TListaSede.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
-    Edit2.Enabled            := True;
 end;
 
 end.

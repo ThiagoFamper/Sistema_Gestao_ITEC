@@ -3,7 +3,7 @@ object CadGrupo: TCadGrupo
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'dbg'
+  Caption = 'Cadastrar Grupo'
   ClientHeight = 782
   ClientWidth = 1114
   Color = clBtnFace
@@ -1752,7 +1752,7 @@ object CadGrupo: TCadGrupo
       Width = 73
       Height = 20
       BevelOuter = bvNone
-      Caption = 'Sair'
+      Caption = 'Fechar'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
