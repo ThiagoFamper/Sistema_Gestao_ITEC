@@ -109,7 +109,7 @@ begin
   else
     begin
       dm.FDTabSetor.Post;
-      ShowMessage('Cadastrado com Sucesso!');
+      ShowMessage('Setor cadastrado com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;

@@ -110,14 +110,14 @@ object ListaUsuario: TListaUsuario
         Width = 249
         Height = 20
         Align = alTop
-        Caption = 'Id Usu'#225'rio'
+        Caption = 'ID'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 67
+        ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
         Left = 0
@@ -142,14 +142,14 @@ object ListaUsuario: TListaUsuario
         Width = 249
         Height = 20
         Align = alTop
-        Caption = 'Nome do Usu'#225'rio'
+        Caption = 'Nome'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 117
+        ExplicitWidth = 41
       end
       object DBEdit2: TDBEdit
         Left = 0
@@ -174,14 +174,14 @@ object ListaUsuario: TListaUsuario
         Width = 249
         Height = 20
         Align = alTop
-        Caption = 'login'
+        Caption = 'Login'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 34
+        ExplicitWidth = 37
       end
       object DBEdit3: TDBEdit
         Left = 0

@@ -37,14 +37,14 @@ object CadUsuario: TCadUsuario
         Width = 105
         Height = 20
         Align = alTop
-        Caption = 'Id Usu'#225'rio'
+        Caption = 'ID'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 67
+        ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
         Left = 0
@@ -69,14 +69,14 @@ object CadUsuario: TCadUsuario
         Width = 679
         Height = 20
         Align = alTop
-        Caption = 'Nome do Usu'#225'rio'
+        Caption = 'Nome'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 117
+        ExplicitWidth = 41
       end
       object DBEdit2: TDBEdit
         Left = 0

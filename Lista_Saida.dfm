@@ -38,14 +38,14 @@ object ListaSaida: TListaSaida
         Width = 249
         Height = 20
         Align = alTop
-        Caption = 'Id Saida'
+        Caption = 'ID'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 54
+        ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
         Left = 0
@@ -70,14 +70,14 @@ object ListaSaida: TListaSaida
         Width = 249
         Height = 20
         Align = alTop
-        Caption = 'C'#243'digo do Produto'
+        Caption = 'C'#243'digo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 128
+        ExplicitWidth = 49
       end
       object DBEdit2: TDBEdit
         Left = 0

@@ -39,14 +39,14 @@ object EntradaProd: TEntradaProd
         Width = 105
         Height = 20
         Align = alTop
-        Caption = 'Id Entrada'
+        Caption = 'ID'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 68
+        ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
         Left = 0
@@ -72,14 +72,14 @@ object EntradaProd: TEntradaProd
         Width = 214
         Height = 20
         Align = alTop
-        Caption = 'C'#243'digo do Produto'
+        Caption = 'C'#243'digo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 128
+        ExplicitWidth = 49
       end
       object DBEdit2: TDBEdit
         Left = 0
@@ -90,6 +90,7 @@ object EntradaProd: TEntradaProd
         Color = clBtnHighlight
         Enabled = False
         TabOrder = 0
+        ExplicitTop = 26
       end
     end
     object Panel14: TPanel
@@ -105,34 +106,25 @@ object EntradaProd: TEntradaProd
         Width = 505
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o do Produto'
+        Caption = 'Descri'#231#227'o'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 144
+        ExplicitWidth = 65
       end
-      object Panel6: TPanel
+      object DBEdit3: TDBEdit
         Left = 0
         Top = 20
         Width = 505
         Height = 23
         Align = alTop
-        BevelOuter = bvSpace
-        BiDiMode = bdLeftToRight
         Color = clBtnHighlight
-        ParentBiDiMode = False
-        ParentBackground = False
+        Enabled = False
         TabOrder = 0
-        object DBText1: TDBText
-          Left = 11
-          Top = 0
-          Width = 465
-          Height = 17
-          Enabled = False
-        end
+        ExplicitTop = 28
       end
     end
     object Panel15: TPanel
@@ -189,7 +181,7 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 78
       end
-      object TDBedit3: TDBEdit
+      object DBedit4: TDBEdit
         Left = 0
         Top = 20
         Width = 81
@@ -254,7 +246,7 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 73
       end
-      object TDBedit4: TDBEdit
+      object DBedit5: TDBEdit
         Left = 0
         Top = 20
         Width = 214
@@ -286,7 +278,7 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 91
       end
-      object TDBedit6: TDBEdit
+      object DBedit7: TDBEdit
         Left = 0
         Top = 20
         Width = 110
@@ -318,7 +310,7 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 75
       end
-      object TDBedit5: TDBEdit
+      object DBedit6: TDBEdit
         Left = 0
         Top = 20
         Width = 110
@@ -350,18 +342,15 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 160
       end
-      object Panel7: TPanel
+      object DBEdit8: TDBEdit
         Left = 0
         Top = 20
         Width = 168
         Height = 23
         Align = alTop
-        BevelOuter = bvSpace
-        BiDiMode = bdLeftToRight
-        Color = clBtnHighlight
-        ParentBiDiMode = False
-        ParentBackground = False
+        Enabled = False
         TabOrder = 0
+        ExplicitTop = 28
       end
     end
   end

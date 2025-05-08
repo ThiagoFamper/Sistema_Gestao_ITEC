@@ -38,14 +38,14 @@ object ListaGrupos: TListaGrupos
         Width = 249
         Height = 20
         Align = alTop
-        Caption = 'Id Grupo'
+        Caption = 'ID'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 58
+        ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
         Left = 0

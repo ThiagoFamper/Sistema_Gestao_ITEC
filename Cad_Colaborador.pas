@@ -108,42 +108,34 @@ end;
 
 procedure TCadColaborador.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-  if SBnovo.Enabled = True then
-    begin
-      ShowMessage('Cadastro não está em modo de inclusão. Realize o Cadastro agora');
-      SBnovo.Click;
-    end
-  else
     if DBEdit2.Text = '' then
       begin
-        ShowMessage('O Campo "Código" deve ser preenchido !');
+        ShowMessage('O Campo "Código" deve ser preenchido!');
         DBEdit2.SetFocus;
       end
   else
     if DBEdit3.Text = '' then
       begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido !');
+        ShowMessage('O Campo "Descrição" deve ser preenchido!');
         DBEdit3.SetFocus;
       end
   else
     if DBEdit4.Text = '' then
       begin
-        ShowMessage('O Campo "Cargo" deve ser preenchido !');
+        ShowMessage('O Campo "Cargo" deve ser preenchido!');
         DBEdit4.SetFocus;
       end
   else
     if DBLookupComboBox1.Text = '' then
       begin
-        ShowMessage('O Campo "Setor" deve ser preenchido !');
+        ShowMessage('O Campo "Setor" deve ser preenchido!');
         DBLookupComboBox1.SetFocus;
       end
   else
     begin
       dm.FDTabColaborador.Post;
       dm.FDTabColaborador.Close;
-      dm.FDTabColaborador.Open;
-      dm.FDTabColaborador.Last;
-      ShowMessage('Cadastrado com Sucesso!');
+      ShowMessage('Colaborador cadastrado com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;

@@ -2496,14 +2496,14 @@ object ListaColaborador: TListaColaborador
         Width = 347
         Height = 20
         Align = alTop
-        Caption = 'Id Colaborador'
+        Caption = 'ID'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 101
+        ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
         Left = 0
@@ -2528,14 +2528,14 @@ object ListaColaborador: TListaColaborador
         Width = 347
         Height = 20
         Align = alTop
-        Caption = 'C'#243'digo do Colaborador'
+        Caption = 'C'#243'digo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 159
+        ExplicitWidth = 49
       end
       object DBEdit2: TDBEdit
         Left = 0
@@ -2560,14 +2560,14 @@ object ListaColaborador: TListaColaborador
         Width = 347
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o do Colaborador'
+        Caption = 'Descri'#231#227'o'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 175
+        ExplicitWidth = 65
       end
       object DBEdit3: TDBEdit
         Left = 0

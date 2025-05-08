@@ -87,21 +87,15 @@ end;
 
 procedure TCadGrupo.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-  if SBnovo.Enabled = True then
-    begin
-      ShowMessage('Cadastro não está em modo de inclusão. Realize o Cadastro agora');
-      SBnovo.Click;
-    end
-  else
     if DBEdit2.Text = '' then
       begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido !');
+        ShowMessage('O Campo "Descrição" deve ser preenchido!');
         DBEdit2.SetFocus;
       end
   else
     begin
       dm.FDTabGrupo.Post;
-      ShowMessage('Cadastrado com Sucesso!');
+      ShowMessage('Grupo cadastrado com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;

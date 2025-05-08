@@ -38,14 +38,14 @@ object ListaSetor: TListaSetor
         Width = 249
         Height = 20
         Align = alTop
-        Caption = 'Id Setor'
+        Caption = 'ID'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 52
+        ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
         Left = 0
@@ -70,14 +70,14 @@ object ListaSetor: TListaSetor
         Width = 249
         Height = 20
         Align = alTop
-        Caption = 'C'#243'digo do Setor'
+        Caption = 'C'#243'digo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 110
+        ExplicitWidth = 49
       end
       object DBEdit2: TDBEdit
         Left = 0
@@ -102,14 +102,14 @@ object ListaSetor: TListaSetor
         Width = 249
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o do Setor'
+        Caption = 'Descri'#231#227'o'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 126
+        ExplicitWidth = 65
       end
       object DBEdit3: TDBEdit
         Left = 0

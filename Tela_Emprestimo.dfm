@@ -39,14 +39,14 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 105
         Height = 20
         Align = alTop
-        Caption = 'Id Empr'#233'stimo'
+        Caption = 'ID'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 97
+        ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
         Left = 0
@@ -72,14 +72,14 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 224
         Height = 20
         Align = alTop
-        Caption = 'C'#243'digo do Produto'
+        Caption = 'C'#243'digo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 128
+        ExplicitWidth = 49
       end
       object DBEdit2: TDBEdit
         Left = 0
@@ -90,7 +90,6 @@ object TelaEmprestimo: TTelaEmprestimo
         Color = clBtnHighlight
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 26
       end
     end
     object Panel14: TPanel
@@ -106,14 +105,14 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 512
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o do Produto'
+        Caption = 'Descri'#231#227'o'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 144
+        ExplicitWidth = 65
       end
       object DBEdit3: TDBEdit
         Left = 0
@@ -124,7 +123,6 @@ object TelaEmprestimo: TTelaEmprestimo
         Color = clBtnHighlight
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 28
       end
     end
     object Panel15: TPanel
@@ -318,7 +316,6 @@ object TelaEmprestimo: TTelaEmprestimo
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 28
       end
     end
   end

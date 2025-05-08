@@ -2399,14 +2399,14 @@ object ListaProdutos: TListaProdutos
         Width = 318
         Height = 20
         Align = alTop
-        Caption = 'Id Produto'
+        Caption = 'ID'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 70
+        ExplicitWidth = 15
       end
       object Edit6: TEdit
         Left = 0
@@ -2431,14 +2431,14 @@ object ListaProdutos: TListaProdutos
         Width = 318
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o do Produto'
+        Caption = 'Descri'#231#227'o'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 144
+        ExplicitWidth = 65
       end
       object Edit2: TEdit
         Left = 0

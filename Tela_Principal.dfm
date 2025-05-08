@@ -630,7 +630,7 @@ object TelaPrincipal: TTelaPrincipal
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone
-      Caption = 'Consulta de Produto'
+      Caption = 'Produto'
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
@@ -687,7 +687,7 @@ object TelaPrincipal: TTelaPrincipal
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone
-      Caption = 'Consulta de Colaborador'
+      Caption = 'Colaborador'
       Color = clWhite
       ParentBackground = False
       TabOrder = 1
@@ -731,7 +731,7 @@ object TelaPrincipal: TTelaPrincipal
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone
-      Caption = 'Consulta de  Setor'
+      Caption = 'Setor'
       Color = clWhite
       ParentBackground = False
       TabOrder = 2
@@ -782,7 +782,7 @@ object TelaPrincipal: TTelaPrincipal
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone
-      Caption = 'Consulta de Grupo'
+      Caption = 'Grupo'
       Color = clWhite
       ParentBackground = False
       TabOrder = 3
@@ -884,7 +884,7 @@ object TelaPrincipal: TTelaPrincipal
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone
-      Caption = 'Consulta de Usu'#225'rio'
+      Caption = 'Usu'#225'rio'
       Color = clWhite
       ParentBackground = False
       TabOrder = 6
@@ -949,7 +949,7 @@ object TelaPrincipal: TTelaPrincipal
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone
-      Caption = 'Consulta de Entrada '
+      Caption = 'Entrada de Produto'
       Color = clWhite
       ParentBackground = False
       TabOrder = 7
@@ -987,7 +987,7 @@ object TelaPrincipal: TTelaPrincipal
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone
-      Caption = 'Consulta de Sa'#237'da '
+      Caption = 'Sa'#237'da de Produto'
       Color = clWhite
       ParentBackground = False
       TabOrder = 8
@@ -1025,7 +1025,7 @@ object TelaPrincipal: TTelaPrincipal
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone
-      Caption = 'Consulta de Empr'#233'stimo'
+      Caption = 'Empr'#233'stimo de Produto'
       Color = clWhite
       ParentBackground = False
       TabOrder = 9
@@ -1262,14 +1262,12 @@ object TelaPrincipal: TTelaPrincipal
   object pnlConteudo: TPanel
     Left = 241
     Top = 81
-    Width = 2714
+    Width = 2712
     Height = 1004
     Anchors = [akLeft, akTop, akRight, akBottom]
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
     TabOrder = 5
-    ExplicitWidth = 2712
-    ExplicitHeight = 996
   end
 end

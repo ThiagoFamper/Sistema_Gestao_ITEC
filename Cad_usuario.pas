@@ -121,7 +121,7 @@ begin
   else
     begin
       dm.FDTabProduto.Post;
-      ShowMessage('Cadastrado com Sucesso!');
+      ShowMessage('Usuário cadastrado com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;
