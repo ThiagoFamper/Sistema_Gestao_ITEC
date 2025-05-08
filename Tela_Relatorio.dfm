@@ -2,8 +2,8 @@ object TelaRelatorio: TTelaRelatorio
   Left = 0
   Top = 0
   Caption = 'Relat'#243'rios'
-  ClientHeight = 687
-  ClientWidth = 882
+  ClientHeight = 367
+  ClientWidth = 478
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -26,12 +26,12 @@ object TelaRelatorio: TTelaRelatorio
       'begin'
       ''
       'end.')
-    Left = 96
+    Left = 104
     Top = 80
     Datasets = <
       item
-        DataSet = RelatProduto.FDTable1
-        DataSetName = 'FDTable1'
+        DataSet = RelatProduto.FDTabProduto
+        DataSetName = 'FDTabProduto'
       end>
     Variables = <>
     Style = <>
@@ -39,7 +39,7 @@ object TelaRelatorio: TTelaRelatorio
     object Data: TfrxDataPage
       Height = 1000.000000000000000000
       Width = 1000.000000000000000000
-      object FDDatabase1: TfrxFDDatabase
+      object FDDatabase: TfrxFDDatabase
         Left = 112.000000000000000000
         Top = 208.000000000000000000
         DriverName = 'PG'
@@ -55,17 +55,17 @@ object TelaRelatorio: TTelaRelatorio
         pLeft = 112
         pTop = 208
       end
-      object FDTable1: TfrxFDTable
-        UserName = 'FDTable1'
+      object FDTabProduto: TfrxFDTable
+        UserName = 'FDTabProduto'
         CloseDataSource = True
         BCDToCurrency = False
         DataSetOptions = []
-        Left = 180.000000000000000000
+        Left = 192.000000000000000000
         Top = 208.000000000000000000
         TableName = 'estoqueitec.produto'
         IndexFieldNames = 'id'
-        Database = RelatProduto.FDDatabase1
-        pLeft = 180
+        Database = RelatProduto.FDDatabase
+        pLeft = 192
         pTop = 208
         FieldDefs = <
           item
@@ -129,8 +129,8 @@ object TelaRelatorio: TTelaRelatorio
         Height = 362.834880000000000000
         Top = 60.000000000000000000
         Width = 740.409927000000000000
-        DataSet = RelatProduto.FDTable1
-        DataSetName = 'FDTable1'
+        DataSet = RelatProduto.FDTabProduto
+        DataSetName = 'FDTabProduto'
         RowCount = 0
       end
       object PageFooter1: TfrxPageFooter

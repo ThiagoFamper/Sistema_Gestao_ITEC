@@ -97,6 +97,7 @@ begin
   else
     begin
       dm.FDTabGrupo.Post;
+      dm.FDTabGrupo.Close;
       ShowMessage('Grupo cadastrado com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
@@ -105,6 +106,8 @@ begin
       SBnovo.Enabled       := True;
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
+      dm.FDTabGrupo.Open;
+      dm.FDTabGrupo.Last;
     end;
 end;
 

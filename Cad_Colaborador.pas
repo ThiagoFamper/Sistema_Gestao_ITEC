@@ -11,10 +11,6 @@ uses
 type
   TCadColaborador = class(TForm)
     Panel4: TPanel;
-    RadioGroup1: TRadioGroup;
-    RadioButton3: TRadioButton;
-    RadioButton2: TRadioButton;
-    RadioButton1: TRadioButton;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBpesquisar: TSpeedButton;
@@ -44,6 +40,9 @@ type
     Panel14: TPanel;
     Label4: TLabel;
     DBLookupComboBox1: TDBLookupComboBox;
+    Panel15: TPanel;
+    Label6: TLabel;
+    DBLookupComboBox2: TDBLookupComboBox;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
@@ -68,7 +67,7 @@ implementation
 
 {$R *.dfm}
 
-uses Cad_Setor, Lista_Colaborador, Data_Module, Tela_Principal;
+uses Cad_Setor, Lista_Setor, Lista_Colaborador, Data_Module, Tela_Principal;
 
 procedure TCadColaborador.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
@@ -142,6 +141,8 @@ begin
       SBnovo.Enabled       := True;
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
+      dm.FDTabColaborador.Open;
+      dm.FDTabColaborador.Last;
     end;
 end;
 
@@ -170,6 +171,7 @@ begin
     DBEdit3.Enabled            := True;
     DBEdit4.Enabled            := True;
     DBLookupComboBox1.Enabled  := True;
+    DBLookupComboBox2.Enabled  := True;
 end;
 
 procedure TCadColaborador.DesabilitaCampos; // desabilitar campos
@@ -178,6 +180,7 @@ begin
     DBEdit3.Enabled            := False;
     DBEdit4.Enabled            := False;
     DBLookupComboBox1.Enabled  := False;
+    DBLookupComboBox2.Enabled  := False;
 end;
 
 procedure TCadColaborador.LimpaCampos; // limpar campos
@@ -186,6 +189,7 @@ begin
     DBEdit3.Clear;
     DBEdit4.Clear;
     DBLookupComboBox1.KeyValue := 0;
+    DBLookupComboBox2.KeyValue := 0;
 end;
 
 end.

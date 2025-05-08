@@ -35,7 +35,6 @@ type
     FDTabColaboradordescricao: TWideStringField;
     FDTabColaboradorcargo: TWideStringField;
     FDTabColaboradorsetor_id: TLargeintField;
-    FDTabColaboradorsede: TWideStringField;
     FDTabSetor: TFDTable;
     dsFDTabSetor: TDataSource;
     FDTabSetorid: TLargeintField;
@@ -89,6 +88,11 @@ type
     FDTabEmprestimoItemid: TLargeintField;
     FDTabEmprestimoItemdata_devolucao: TDateField;
     FDTabEmprestimoItemqtd_devolvida: TIntegerField;
+    dsFDTabSede: TDataSource;
+    FDTabSede: TFDTable;
+    FDTabColaboradorsede_id: TLargeintField;
+    FDTabSedeid: TLargeintField;
+    FDTabSededescricao: TWideStringField;
   private
     { Private declarations }
   public

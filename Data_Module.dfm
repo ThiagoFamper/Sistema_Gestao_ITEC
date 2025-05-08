@@ -105,7 +105,6 @@ object DM: TDM
     Top = 324
   end
   object FDTabColaborador: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -133,8 +132,8 @@ object DM: TDM
     object FDTabColaboradorsetor_id: TLargeintField
       FieldName = 'setor_id'
     end
-    object FDTabColaboradorsede: TWideStringField
-      FieldName = 'sede'
+    object FDTabColaboradorsede_id: TLargeintField
+      FieldName = 'sede_id'
     end
   end
   object FDTabSetor: TFDTable
@@ -416,5 +415,31 @@ object DM: TDM
     DataSet = FDTabEmprestimoItem
     Left = 512
     Top = 508
+  end
+  object dsFDTabSede: TDataSource
+    DataSet = FDTabSede
+    Left = 808
+    Top = 500
+  end
+  object FDTabSede: TFDTable
+    IndexFieldNames = 'id'
+    Connection = FDEstoqueItec
+    Transaction = FDTransaction1
+    UpdateTransaction = FDTransaction1
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    SchemaName = 'estoqueitec'
+    TableName = 'sede'
+    Left = 688
+    Top = 500
+    object FDTabSedeid: TLargeintField
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object FDTabSededescricao: TWideStringField
+      FieldName = 'descricao'
+      Origin = 'descricao'
+      Size = 45
+    end
   end
 end

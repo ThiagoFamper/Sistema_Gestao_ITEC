@@ -25,52 +25,13 @@ object CadColaborador: TCadColaborador
     ParentBackground = False
     TabOrder = 0
     ExplicitWidth = 1124
-    object RadioGroup1: TRadioGroup
-      Left = 568
-      Top = 129
-      Width = 185
-      Height = 96
-      Caption = 'Sede'
-      Enabled = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 0
-    end
-    object RadioButton3: TRadioButton
-      Left = 590
-      Top = 197
-      Width = 129
-      Height = 17
-      Caption = 'Filial - Pernambuco'
-      TabOrder = 1
-    end
-    object RadioButton2: TRadioButton
-      Left = 590
-      Top = 174
-      Width = 113
-      Height = 17
-      Caption = 'FIlial - S'#227'o Paulo'
-      TabOrder = 2
-    end
-    object RadioButton1: TRadioButton
-      Left = 590
-      Top = 151
-      Width = 113
-      Height = 17
-      Caption = 'Matriz - Paran'#225
-      TabOrder = 3
-    end
     object Panel10: TPanel
       Left = 16
       Top = 6
       Width = 105
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 4
+      TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
@@ -104,7 +65,7 @@ object CadColaborador: TCadColaborador
       Width = 225
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 5
+      TabOrder = 1
       object Label5: TLabel
         Left = 0
         Top = 0
@@ -139,7 +100,7 @@ object CadColaborador: TCadColaborador
       Width = 505
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 6
+      TabOrder = 2
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -173,7 +134,7 @@ object CadColaborador: TCadColaborador
       Width = 313
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 7
+      TabOrder = 3
       object Label3: TLabel
         Left = 0
         Top = 0
@@ -207,7 +168,7 @@ object CadColaborador: TCadColaborador
       Width = 313
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 8
+      TabOrder = 4
       object Label4: TLabel
         Left = 0
         Top = 0
@@ -230,6 +191,40 @@ object CadColaborador: TCadColaborador
         Height = 23
         Align = alTop
         DataField = 'setor_id'
+        DataSource = DM.dsFDTabColaborador
+        Enabled = False
+        TabOrder = 0
+      end
+    end
+    object Panel15: TPanel
+      Left = 568
+      Top = 136
+      Width = 313
+      Height = 59
+      BevelOuter = bvNone
+      TabOrder = 5
+      object Label6: TLabel
+        Left = 0
+        Top = 0
+        Width = 313
+        Height = 20
+        Align = alTop
+        Caption = 'Sede'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 33
+      end
+      object DBLookupComboBox2: TDBLookupComboBox
+        Left = 0
+        Top = 20
+        Width = 313
+        Height = 23
+        Align = alTop
+        DataField = 'sede_id'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
