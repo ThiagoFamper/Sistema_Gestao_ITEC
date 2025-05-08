@@ -2003,16 +2003,6 @@ object CadProduto: TCadProduto
     ParentBackground = False
     TabOrder = 2
     ExplicitWidth = 1106
-    object DBNavigator1: TDBNavigator
-      AlignWithMargins = True
-      Left = 0
-      Top = 6
-      Width = 224
-      Height = 25
-      DataSource = DM.dsFDTabProduto
-      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
-      TabOrder = 0
-    end
   end
   object DBGrid1: TDBGrid
     Left = 0
@@ -2021,12 +2011,14 @@ object CadProduto: TCadProduto
     Height = 320
     Align = alClient
     DataSource = DM.dsFDTabProduto
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
+    ReadOnly = True
     TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText

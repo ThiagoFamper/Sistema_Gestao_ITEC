@@ -52,6 +52,8 @@ object CadUsuario: TCadUsuario
         Width = 105
         Height = 23
         Align = alTop
+        DataField = 'id'
+        DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
       end
@@ -85,6 +87,8 @@ object CadUsuario: TCadUsuario
         Height = 23
         Align = alTop
         Color = clBtnHighlight
+        DataField = 'nome'
+        DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
       end
@@ -117,6 +121,8 @@ object CadUsuario: TCadUsuario
         Width = 216
         Height = 23
         Align = alTop
+        DataField = 'login'
+        DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
       end
@@ -149,6 +155,8 @@ object CadUsuario: TCadUsuario
         Width = 312
         Height = 23
         Align = alTop
+        DataField = 'senha'
+        DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
       end
@@ -1937,19 +1945,10 @@ object CadUsuario: TCadUsuario
     Align = alTop
     BevelEdges = [beBottom]
     Color = clWhitesmoke
+    Enabled = False
     ParentBackground = False
     TabOrder = 2
     ExplicitWidth = 1116
-    object DBNavigator1: TDBNavigator
-      AlignWithMargins = True
-      Left = 0
-      Top = 6
-      Width = 224
-      Height = 25
-      DataSource = DM.dsFDTabUsuario
-      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
-      TabOrder = 0
-    end
   end
   object DBGrid1: TDBGrid
     Left = 0
@@ -1958,12 +1957,14 @@ object CadUsuario: TCadUsuario
     Height = 367
     Align = alClient
     DataSource = DM.dsFDTabUsuario
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
+    ReadOnly = True
     TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText

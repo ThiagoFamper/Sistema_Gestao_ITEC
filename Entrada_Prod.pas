@@ -24,7 +24,6 @@ type
     Panel9: TPanel;
     Panel10: TPanel;
     Panel11: TPanel;
-    DBNavigator1: TDBNavigator;
     DBGrid1: TDBGrid;
     Panel12: TPanel;
     Label9: TLabel;

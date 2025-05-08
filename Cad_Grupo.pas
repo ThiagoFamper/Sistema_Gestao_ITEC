@@ -6,7 +6,9 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
   Vcl.DBCtrls, Vcl.Imaging.pngimage, Vcl.Buttons, Data.DB, Vcl.Grids,
-  Vcl.DBGrids;
+  Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TCadGrupo = class(TForm)
@@ -24,7 +26,6 @@ type
     Panel9: TPanel;
     Panel5: TPanel;
     Panel1: TPanel;
-    DBNavigator1: TDBNavigator;
     DBGrid1: TDBGrid;
     Panel11: TPanel;
     Label2: TLabel;
@@ -69,7 +70,7 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
-  dm.FDTabProduto.Cancel;
+  dm.FDTabGrupo.Cancel;
   LimpaCampos();
 end;
 
@@ -81,7 +82,8 @@ begin
   SBpesquisar.Enabled  := False;
   SBsair.Enabled       := False;
   SBnovo.Enabled       := False;
-  dm.FDTabProduto.Append;
+  dm.FDTabGrupo.Open;
+  dm.FDTabGrupo.Append;
   DBEdit2.SetFocus;
 end;
 
@@ -113,19 +115,16 @@ end;
 
 procedure TCadGrupo.HabilitaCampos; // habilitar campos
 begin
-    DBEdit1.Enabled            := True;
     DBEdit2.Enabled            := True;
 end;
 
 procedure TCadGrupo.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit1.Enabled            := False;
     DBEdit2.Enabled            := False;
 end;
 
 procedure TCadGrupo.LimpaCampos; // limpar campos
 begin
-    DBEdit1.Clear;
     DBEdit2.Clear;
 end;
 

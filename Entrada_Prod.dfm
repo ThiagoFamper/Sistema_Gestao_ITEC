@@ -55,6 +55,8 @@ object EntradaProd: TEntradaProd
         Height = 23
         Align = alTop
         Color = clBtnHighlight
+        DataField = 'id'
+        DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
       end
@@ -88,9 +90,10 @@ object EntradaProd: TEntradaProd
         Height = 23
         Align = alTop
         Color = clBtnHighlight
+        DataField = 'produto_id'
+        DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 26
       end
     end
     object Panel14: TPanel
@@ -122,9 +125,10 @@ object EntradaProd: TEntradaProd
         Height = 23
         Align = alTop
         Color = clBtnHighlight
+        DataField = 'descricao'
+        DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 28
       end
     end
     object Panel15: TPanel
@@ -155,6 +159,8 @@ object EntradaProd: TEntradaProd
         Width = 505
         Height = 23
         Align = alTop
+        DataField = 'operador'
+        DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
       end
@@ -187,6 +193,8 @@ object EntradaProd: TEntradaProd
         Width = 81
         Height = 23
         Align = alTop
+        DataField = 'quantidade'
+        DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
       end
@@ -252,6 +260,8 @@ object EntradaProd: TEntradaProd
         Width = 214
         Height = 23
         Align = alTop
+        DataField = 'nota_fiscal'
+        DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
       end
@@ -284,6 +294,8 @@ object EntradaProd: TEntradaProd
         Width = 110
         Height = 23
         Align = alTop
+        DataField = 'valor_unitario'
+        DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
       end
@@ -316,6 +328,8 @@ object EntradaProd: TEntradaProd
         Width = 110
         Height = 23
         Align = alTop
+        DataField = 'valor_total'
+        DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
       end
@@ -348,9 +362,10 @@ object EntradaProd: TEntradaProd
         Width = 168
         Height = 23
         Align = alTop
+        DataField = 'saldo'
+        DataSource = DM.dsFDTabEstoque
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 28
       end
     end
   end
@@ -2111,16 +2126,6 @@ object EntradaProd: TEntradaProd
     ParentBackground = False
     TabOrder = 2
     ExplicitWidth = 1115
-    object DBNavigator1: TDBNavigator
-      AlignWithMargins = True
-      Left = 0
-      Top = 6
-      Width = 224
-      Height = 25
-      DataSource = DM.dsFDTabEntrada
-      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
-      TabOrder = 0
-    end
   end
   object DBGrid1: TDBGrid
     Left = 0
@@ -2129,12 +2134,14 @@ object EntradaProd: TEntradaProd
     Height = 393
     Align = alClient
     DataSource = DM.dsFDTabEntrada
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
+    ReadOnly = True
     TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText

@@ -24,7 +24,6 @@ type
     Panel6: TPanel;
     Panel8: TPanel;
     Panel9: TPanel;
-    DBNavigator1: TDBNavigator;
     DBGrid1: TDBGrid;
     Panel10: TPanel;
     Label1: TLabel;
@@ -79,6 +78,7 @@ begin
   SBpesquisar.Enabled  := False;
   SBsair.Enabled       := False;
   SBnovo.Enabled       := False;
+  dm.FDTabSetor.Open;
   dm.FDTabSetor.Append;
   DBEdit2.SetFocus;
 end;
@@ -109,6 +109,7 @@ begin
   else
     begin
       dm.FDTabSetor.Post;
+      dm.FDTabSetor.Close;
       ShowMessage('Setor cadastrado com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
@@ -130,21 +131,18 @@ end;
 
 procedure TCadSetor.HabilitaCampos; // habilitar campos
 begin
-    DBEdit1.Enabled            := True;
     DBEdit2.Enabled            := True;
     DBEdit3.Enabled            := True;
 end;
 
 procedure TCadSetor.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit1.Enabled            := False;
     DBEdit2.Enabled            := False;
     DBEdit3.Enabled            := False;
 end;
 
 procedure TCadSetor.LimpaCampos; // limpar campos
 begin
-    DBEdit1.Clear;
     DBEdit2.Clear;
     DBEdit3.Clear;
 end;

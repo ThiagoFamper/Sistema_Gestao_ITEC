@@ -23,7 +23,6 @@ type
     Panel6: TPanel;
     Panel8: TPanel;
     Panel9: TPanel;
-    DBNavigator1: TDBNavigator;
     DBGrid1: TDBGrid;
     Panel10: TPanel;
     Label1: TLabel;
@@ -73,7 +72,7 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
-  dm.FDTabProduto.Cancel;
+  dm.FDTabUsuario.Cancel;
   LimpaCampos();
 end;
 
@@ -85,7 +84,8 @@ begin
   SBpesquisar.Enabled  := False;
   SBsair.Enabled       := False;
   SBnovo.Enabled       := False;
-  dm.FDTabProduto.Append;
+  dm.FDTabUsuario.Open;
+  dm.FDTabUsuario.Append;
   DBEdit2.SetFocus;
 end;
 
@@ -120,7 +120,9 @@ begin
       end
   else
     begin
-      dm.FDTabProduto.Post;
+      dm.FDTabUsuario.FieldByName('Admin').AsBoolean := Checkbox1.Checked;
+      dm.FDTabUsuario.Post;
+      dm.FDTabUsuario.Close;
       ShowMessage('Usuário cadastrado com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
@@ -148,26 +150,26 @@ end;
 
 procedure TCadUsuario.HabilitaCampos; // habilitar campos
 begin
-    DBEdit1.Enabled            := True;
     DBEdit2.Enabled            := True;
     DBEdit3.Enabled            := True;
     DBEdit4.Enabled            := True;
+    CheckBox1.Enabled          := True;
 end;
 
 procedure TCadUsuario.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit1.Enabled            := False;
     DBEdit2.Enabled            := False;
     DBEdit3.Enabled            := False;
     DBEdit4.Enabled            := False;
+    CheckBox1.Enabled          := False;
 end;
 
 procedure TCadUsuario.LimpaCampos; // limpar campos
 begin
-    DBEdit1.Clear;
     DBEdit2.Clear;
     DBEdit3.Clear;
     DBEdit4.Clear;
+    CheckBox1.Checked := False;
 end;
 
 end.

@@ -1841,6 +1841,7 @@ object CadGrupo: TCadGrupo
         Height = 28
         Align = alTop
         DataField = 'id'
+        DataSource = DM.dsFDTabGrupo
         Enabled = False
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -1863,16 +1864,6 @@ object CadGrupo: TCadGrupo
     ParentBackground = False
     TabOrder = 2
     ExplicitWidth = 1112
-    object DBNavigator1: TDBNavigator
-      AlignWithMargins = True
-      Left = 0
-      Top = 6
-      Width = 224
-      Height = 25
-      DataSource = DM.dsFDTabGrupo
-      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
-      TabOrder = 0
-    end
   end
   object DBGrid1: TDBGrid
     Left = 0
@@ -1881,12 +1872,14 @@ object CadGrupo: TCadGrupo
     Height = 488
     Align = alClient
     DataSource = DM.dsFDTabGrupo
+    Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
     Font.Name = 'Segoe UI Light'
     Font.Style = []
     ParentFont = False
+    ReadOnly = True
     TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText

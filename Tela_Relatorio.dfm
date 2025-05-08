@@ -20,7 +20,7 @@ object TelaRelatorio: TTelaRelatorio
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45784.892783194400000000
-    ReportOptions.LastChange = 45784.961690196760000000
+    ReportOptions.LastChange = 45785.052810578700000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -60,12 +60,12 @@ object TelaRelatorio: TTelaRelatorio
         CloseDataSource = True
         BCDToCurrency = False
         DataSetOptions = []
-        Left = 176.000000000000000000
+        Left = 180.000000000000000000
         Top = 208.000000000000000000
         TableName = 'estoqueitec.produto'
         IndexFieldNames = 'id'
         Database = RelatProduto.FDDatabase1
-        pLeft = 176
+        pLeft = 180
         pTop = 208
         FieldDefs = <
           item
@@ -116,7 +116,7 @@ object TelaRelatorio: TTelaRelatorio
         FillGap.Right = 0
         Frame.Typ = []
         Height = 22.677180000000000000
-        Top = 18.897650000000000000
+        Top = 16.000000000000000000
         Width = 740.409927000000000000
       end
       object MasterData1: TfrxMasterData
@@ -127,7 +127,7 @@ object TelaRelatorio: TTelaRelatorio
         FillGap.Right = 0
         Frame.Typ = []
         Height = 362.834880000000000000
-        Top = 102.047310000000000000
+        Top = 60.000000000000000000
         Width = 740.409927000000000000
         DataSet = RelatProduto.FDTable1
         DataSetName = 'FDTable1'
@@ -141,7 +141,7 @@ object TelaRelatorio: TTelaRelatorio
         FillGap.Right = 0
         Frame.Typ = []
         Height = 22.677180000000000000
-        Top = 525.354670000000000000
+        Top = 444.000000000000000000
         Width = 740.409927000000000000
       end
     end

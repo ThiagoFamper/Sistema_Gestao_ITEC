@@ -27,9 +27,9 @@ object CadColaborador: TCadColaborador
     ExplicitWidth = 1124
     object RadioGroup1: TRadioGroup
       Left = 568
-      Top = 128
+      Top = 129
       Width = 185
-      Height = 102
+      Height = 96
       Caption = 'Sede'
       Enabled = False
       Font.Charset = DEFAULT_CHARSET
@@ -92,6 +92,8 @@ object CadColaborador: TCadColaborador
         Width = 105
         Height = 23
         Align = alTop
+        DataField = 'id'
+        DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
       end
@@ -118,13 +120,15 @@ object CadColaborador: TCadColaborador
         ParentFont = False
         ExplicitWidth = 49
       end
-      object DBEdit4: TDBEdit
+      object DBEdit2: TDBEdit
         Left = 0
         Top = 20
         Width = 225
         Height = 23
         Align = alTop
         Color = clBtnHighlight
+        DataField = 'cod_colaborador'
+        DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
       end
@@ -151,12 +155,14 @@ object CadColaborador: TCadColaborador
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit2: TDBEdit
+      object DBEdit3: TDBEdit
         Left = 0
         Top = 20
         Width = 505
         Height = 23
         Align = alTop
+        DataField = 'descricao'
+        DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
       end
@@ -183,12 +189,14 @@ object CadColaborador: TCadColaborador
         ParentFont = False
         ExplicitWidth = 40
       end
-      object DBEdit3: TDBEdit
+      object DBEdit4: TDBEdit
         Left = 0
         Top = 20
         Width = 313
         Height = 23
         Align = alTop
+        DataField = 'cargo'
+        DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
       end
@@ -221,6 +229,8 @@ object CadColaborador: TCadColaborador
         Width = 313
         Height = 23
         Align = alTop
+        DataField = 'setor_id'
+        DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
       end
@@ -1986,16 +1996,6 @@ object CadColaborador: TCadColaborador
     ParentBackground = False
     TabOrder = 2
     ExplicitWidth = 1124
-    object DBNavigator1: TDBNavigator
-      AlignWithMargins = True
-      Left = 0
-      Top = 6
-      Width = 224
-      Height = 25
-      DataSource = DM.dsFDTabColaborador
-      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
-      TabOrder = 0
-    end
   end
   object DBGrid1: TDBGrid
     Left = 0
@@ -2004,12 +2004,14 @@ object CadColaborador: TCadColaborador
     Height = 394
     Align = alClient
     DataSource = DM.dsFDTabColaborador
+    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
+    ReadOnly = True
     TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
