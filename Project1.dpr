@@ -21,7 +21,8 @@ uses
   Cad_usuario in 'Cad_usuario.pas' {CadUsuario},
   Lista_Usuario in 'Lista_Usuario.pas' {ListaUsuario},
   Tela_Login in 'Tela_Login.pas' {TelaLogin},
-  Data_Module in 'Data_Module.pas' {DM: TDataModule};
+  Data_Module in 'Data_Module.pas' {DM: TDataModule},
+  Tela_Relatorio in 'Tela_Relatorio.pas' {TelaRelatorio};
 
 {$R *.res}
 
@@ -48,5 +49,6 @@ begin
   Application.CreateForm(TListaUsuario, ListaUsuario);
   Application.CreateForm(TTelaLogin, TelaLogin);
   Application.CreateForm(TDM, DM);
+  Application.CreateForm(TTelaRelatorio, TelaRelatorio);
   Application.Run;
 end.

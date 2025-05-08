@@ -1,4 +1,4 @@
-unit TelaRelatorio;
+unit Tela_Relatorio;
 
 interface
 
@@ -8,8 +8,8 @@ uses
   frxDBSet, frxFDQueryBuilder, frxFDComponents;
 
 type
-  TForm1 = class(TForm)
-    frxReport1: TfrxReport;
+  TTelaRelatorio = class(TForm)
+    RelatProduto: TfrxReport;
   private
     { Private declarations }
   public
@@ -17,7 +17,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  TelaRelatorio: TTelaRelatorio;
 
 implementation
 

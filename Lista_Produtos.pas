@@ -90,7 +90,7 @@ implementation
 
 {$R *.dfm}
 
-uses Cad_Produto, Data_Module, TelaRelatorio;
+uses Cad_Produto, Data_Module, Tela_Relatorio;
 
 procedure TListaProdutos.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
@@ -100,7 +100,7 @@ end;
 
 procedure TListaProdutos.SBrelatorioClick(Sender: TObject);
 begin
-    TelaRelatorio.Form1.frxReport1.ShowReport();
+    Tela_Relatorio.TelaRelatorio.RelatProduto.ShowReport();
 end;
 
 procedure TListaProdutos.SBcancelarClick(Sender: TObject); // botão de cancelar
