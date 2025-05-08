@@ -681,6 +681,7 @@ object ListaProdutos: TListaProdutos
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBrelatorioClick
     end
     object SBexcluir: TSpeedButton
       Left = 549
