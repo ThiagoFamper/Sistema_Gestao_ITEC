@@ -93,6 +93,9 @@ type
     FDTabColaboradorsede_id: TLargeintField;
     FDTabSedeid: TLargeintField;
     FDTabSededescricao: TWideStringField;
+    frxRelatEnt: TfrxReport;
+    frxDSEnt: TfrxDBDataset;
+    FDQuery1: TFDQuery;
   private
     { Private declarations }
   public
@@ -107,5 +110,6 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
 
 end.

@@ -216,6 +216,10 @@
             <Form>ListaSede</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="FiltroRealtorioEntrada.pas">
+            <Form>RelatorioEntrada</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

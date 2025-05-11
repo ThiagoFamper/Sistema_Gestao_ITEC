@@ -380,7 +380,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 2
     Visible = False
-    ExplicitLeft = 235
+    ExplicitHeight = 972
     object pnpMovEnt: TPanel
       Left = 0
       Top = 114
@@ -1348,11 +1348,13 @@ object TelaPrincipal: TTelaPrincipal
     Left = 241
     Top = 81
     Width = 2716
-    Height = 1010
+    Height = 1022
     Anchors = [akLeft, akTop, akRight, akBottom]
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
     TabOrder = 5
+    ExplicitWidth = 2714
+    ExplicitHeight = 1014
   end
 end

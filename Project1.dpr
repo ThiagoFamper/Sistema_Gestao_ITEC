@@ -24,7 +24,8 @@ uses
   Data_Module in 'Data_Module.pas' {DM: TDataModule},
   Tela_Relatorio in 'Tela_Relatorio.pas' {TelaRelatorio},
   Cad_Sede in 'Cad_Sede.pas' {CadSede},
-  Lista_Sede in 'Lista_Sede.pas' {ListaSede};
+  Lista_Sede in 'Lista_Sede.pas' {ListaSede},
+  FiltroRealtorioEntrada in 'FiltroRealtorioEntrada.pas' {RelatorioEntrada};
 
 {$R *.res}
 
@@ -55,5 +56,6 @@ begin
   Application.CreateForm(TCadSede, CadSede);
   Application.CreateForm(TCadSede, CadSede);
   Application.CreateForm(TListaSede, ListaSede);
+  Application.CreateForm(TRelatorioEntrada, RelatorioEntrada);
   Application.Run;
 end.

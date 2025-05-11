@@ -9,7 +9,8 @@ uses
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.PG,
   FireDAC.Phys.PGDef, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
-  Vcl.Imaging.pngimage;
+  Vcl.Imaging.pngimage, Tela_Relatorio, frxSmartMemo, frCoreClasses, frxClass,
+  frxDBSet, frxFDQueryBuilder, frxFDComponents;
 
 type
   TTelaPrincipal = class(TForm)
@@ -142,7 +143,8 @@ implementation
 uses Cad_Produto, Cad_Colaborador, Cad_Setor, Entrada_Prod, Saida_Prod,
   Tela_Emprestimo, Cad_Grupo, Lista_Colaborador, Lista_Emprestimo,
   Lista_Entrada, Lista_Grupos, Lista_Produtos, Lista_Saida, Lista_Setor,
-  Tela_Devolucao, Cad_usuario, Lista_Usuario, Tela_Login;
+  Tela_Devolucao, Cad_usuario, Lista_Usuario, Tela_Login, Lista_Sede, Cad_Sede,
+  Data_Module;
 
 procedure TTelaPrincipal.Button1Click(Sender: TObject);
 begin
