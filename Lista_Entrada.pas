@@ -89,7 +89,6 @@ type
     procedure Edit3Change(Sender: TObject);
     procedure Edit4Change(Sender: TObject);
     procedure Edit5Change(Sender: TObject);
-    procedure SBrelatorioClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -104,17 +103,12 @@ implementation
 
 {$R *.dfm}
 
-uses Data_Module, Tela_Relatorio;
+uses Data_Module;
 
 procedure TListaEntrada.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
   if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
   dm.FDTabProduto.Delete;
-end;
-
-procedure TListaEntrada.SBrelatorioClick(Sender: TObject);
-begin
-  Tela_Relatorio.TelaRelatorio.frxRelatEnt.ShowReport();
 end;
 
 procedure TListaEntrada.SBcancelarClick(Sender: TObject); // botão de cancelar

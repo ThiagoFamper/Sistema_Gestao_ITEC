@@ -204,21 +204,12 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="Tela_Relatorio.pas">
-            <Form>TelaRelatorio</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="Cad_Sede.pas">
             <Form>CadSede</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Lista_Sede.pas">
             <Form>ListaSede</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="FiltroRealtorioEntrada.pas">
-            <Form>RelatorioEntrada</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
