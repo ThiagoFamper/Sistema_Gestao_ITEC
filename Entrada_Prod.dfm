@@ -25,7 +25,14 @@ object EntradaProd: TEntradaProd
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1115
+    object Label7: TLabel
+      Left = 952
+      Top = 120
+      Width = 68
+      Height = 15
+      Caption = 'data_entrada'
+      FocusControl = DBEdit9
+    end
     object Panel12: TPanel
       Left = 16
       Top = 6
@@ -230,6 +237,7 @@ object EntradaProd: TEntradaProd
         Enabled = False
         TabOrder = 0
         Text = '___/___/___'
+        ExplicitTop = 26
       end
     end
     object Panel18: TPanel
@@ -368,6 +376,15 @@ object EntradaProd: TEntradaProd
         TabOrder = 0
       end
     end
+    object DBEdit9: TDBEdit
+      Left = 952
+      Top = 141
+      Width = 154
+      Height = 23
+      DataField = 'data_entrada'
+      DataSource = DM.dsFDTabEntrada
+      TabOrder = 10
+    end
   end
   object Panel2: TPanel
     Left = 0
@@ -381,7 +398,6 @@ object EntradaProd: TEntradaProd
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1115
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -2125,7 +2141,16 @@ object EntradaProd: TEntradaProd
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1115
+    object DBNavigator1: TDBNavigator
+      AlignWithMargins = True
+      Left = 0
+      Top = 6
+      Width = 224
+      Height = 25
+      DataSource = DM.dsFDTabEntrada
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      TabOrder = 0
+    end
   end
   object DBGrid1: TDBGrid
     Left = 0
@@ -2134,7 +2159,6 @@ object EntradaProd: TEntradaProd
     Height = 393
     Align = alClient
     DataSource = DM.dsFDTabEntrada
-    Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12

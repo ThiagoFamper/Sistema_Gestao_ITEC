@@ -5,11 +5,14 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frxSmartMemo, frCoreClasses, frxClass,
-  frxDBSet, frxFDQueryBuilder, frxFDComponents;
+  frxDBSet, frxFDQueryBuilder, frxFDComponents, Data_Module;
 
 type
   TTelaRelatorio = class(TForm)
-    RelatProduto: TfrxReport;
+    frxDSProd: TfrxDBDataset;
+    frxRelatProd: TfrxReport;
+    frxRelatEnt: TfrxReport;
+    frxDSEnt: TfrxDBDataset;
   private
     { Private declarations }
   public

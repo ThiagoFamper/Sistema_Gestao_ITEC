@@ -55,6 +55,9 @@ type
     Label5: TLabel;
     DBEdit3: TDBEdit;
     DBEdit8: TDBEdit;
+    DBNavigator1: TDBNavigator;
+    Label7: TLabel;
+    DBEdit9: TDBEdit;
     procedure SBsairClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
   private

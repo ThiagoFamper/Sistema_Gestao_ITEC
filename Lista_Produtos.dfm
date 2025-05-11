@@ -681,7 +681,6 @@ object ListaProdutos: TListaProdutos
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
-      OnClick = SBrelatorioClick
     end
     object SBexcluir: TSpeedButton
       Left = 549
@@ -2397,7 +2396,7 @@ object ListaProdutos: TListaProdutos
       object Label7: TLabel
         Left = 0
         Top = 0
-        Width = 318
+        Width = 15
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -2407,7 +2406,6 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 15
       end
       object Edit6: TEdit
         Left = 0
@@ -2429,7 +2427,7 @@ object ListaProdutos: TListaProdutos
       object Label11: TLabel
         Left = 0
         Top = 0
-        Width = 318
+        Width = 65
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -2439,7 +2437,6 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 65
       end
       object Edit2: TEdit
         Left = 0
@@ -2461,7 +2458,7 @@ object ListaProdutos: TListaProdutos
       object Label10: TLabel
         Left = 0
         Top = 0
-        Width = 318
+        Width = 49
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -2471,7 +2468,6 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 49
       end
       object Edit1: TEdit
         Left = 0
@@ -2493,7 +2489,7 @@ object ListaProdutos: TListaProdutos
       object Label8: TLabel
         Left = 0
         Top = 0
-        Width = 318
+        Width = 52
         Height = 20
         Align = alTop
         Caption = 'Modelo'
@@ -2503,7 +2499,6 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 52
       end
       object Edit4: TEdit
         Left = 0
@@ -2525,7 +2520,7 @@ object ListaProdutos: TListaProdutos
       object Label12: TLabel
         Left = 0
         Top = 0
-        Width = 318
+        Width = 41
         Height = 20
         Align = alTop
         Caption = 'Grupo'
@@ -2535,7 +2530,6 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 41
       end
       object Edit3: TEdit
         Left = 0
@@ -2557,7 +2551,7 @@ object ListaProdutos: TListaProdutos
       object Label9: TLabel
         Left = 0
         Top = 0
-        Width = 318
+        Width = 41
         Height = 20
         Align = alTop
         Caption = 'Marca'
@@ -2567,7 +2561,6 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 41
       end
       object Edit5: TEdit
         Left = 0
