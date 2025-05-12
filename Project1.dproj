@@ -215,6 +215,22 @@
             <Form>RelatorioEntrada</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Relatorio_Saida.pas">
+            <Form>RelatorioSaida</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Relatorio_Emprestimo.pas">
+            <Form>RelatorioEmprestimo</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Relatorio_Devolucao.pas">
+            <Form>RelatorioDevolucao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Relatorio_Produto.pas">
+            <Form>RelatorioProduto</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -24,7 +24,11 @@ uses
   Data_Module in 'Data_Module.pas' {DM: TDataModule},
   Cad_Sede in 'Cad_Sede.pas' {CadSede},
   Lista_Sede in 'Lista_Sede.pas' {ListaSede},
-  Relatorio_Entrada in 'Relatorio_Entrada.pas' {RelatorioEntrada};
+  Relatorio_Entrada in 'Relatorio_Entrada.pas' {RelatorioEntrada},
+  Relatorio_Saida in 'Relatorio_Saida.pas' {RelatorioSaida},
+  Relatorio_Emprestimo in 'Relatorio_Emprestimo.pas' {RelatorioEmprestimo},
+  Relatorio_Devolucao in 'Relatorio_Devolucao.pas' {RelatorioDevolucao},
+  Relatorio_Produto in 'Relatorio_Produto.pas' {RelatorioProduto};
 
 {$R *.res}
 
@@ -55,5 +59,9 @@ begin
   Application.CreateForm(TCadSede, CadSede);
   Application.CreateForm(TListaSede, ListaSede);
   Application.CreateForm(TRelatorioEntrada, RelatorioEntrada);
+  Application.CreateForm(TRelatorioSaida, RelatorioSaida);
+  Application.CreateForm(TRelatorioEmprestimo, RelatorioEmprestimo);
+  Application.CreateForm(TRelatorioDevolucao, RelatorioDevolucao);
+  Application.CreateForm(TRelatorioProduto, RelatorioProduto);
   Application.Run;
 end.
