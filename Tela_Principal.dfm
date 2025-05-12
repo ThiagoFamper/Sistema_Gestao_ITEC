@@ -34,7 +34,6 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 1153
   end
   object pnpCadastro: TPanel
     Left = 482
@@ -48,7 +47,6 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 1
     Visible = False
-    ExplicitHeight = 972
     object pnpCadProd: TPanel
       Left = 0
       Top = 112
@@ -380,7 +378,6 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 2
     Visible = False
-    ExplicitHeight = 972
     object pnpMovEnt: TPanel
       Left = 0
       Top = 114
@@ -667,7 +664,6 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 3
     Visible = False
-    ExplicitHeight = 972
     object pnpConProd: TPanel
       Left = 0
       Top = 114
@@ -1150,7 +1146,6 @@ object TelaPrincipal: TTelaPrincipal
     Color = clTeal
     ParentBackground = False
     TabOrder = 4
-    ExplicitHeight = 972
     object pnpCad: TPanel
       Left = 0
       Top = 114
@@ -1345,7 +1340,7 @@ object TelaPrincipal: TTelaPrincipal
     end
   end
   object pnlConteudo: TPanel
-    Left = 241
+    Left = 239
     Top = 81
     Width = 2716
     Height = 1022
@@ -1354,7 +1349,5 @@ object TelaPrincipal: TTelaPrincipal
     Color = clWhite
     ParentBackground = False
     TabOrder = 5
-    ExplicitWidth = 2714
-    ExplicitHeight = 1014
   end
 end

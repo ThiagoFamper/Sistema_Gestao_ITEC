@@ -211,6 +211,10 @@
         <DCCReference Include="Lista_Sede.pas">
             <Form>ListaSede</Form>
         </DCCReference>
+        <DCCReference Include="Relatorio_Entrada.pas">
+            <Form>RelatorioEntrada</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

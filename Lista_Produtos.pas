@@ -89,7 +89,7 @@ implementation
 
 {$R *.dfm}
 
-uses Cad_Produto, Data_Module, Tela_Relatorio;
+uses Cad_Produto, Data_Module;
 
 procedure TListaProdutos.SBexcluirClick(Sender: TObject); // botão de excluir
 begin

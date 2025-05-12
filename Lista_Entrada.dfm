@@ -23,8 +23,6 @@ object ListaEntrada: TListaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1046
-    ExplicitHeight = 263
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -356,7 +354,6 @@ object ListaEntrada: TListaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1046
     object Label10: TLabel
       Left = 606
       Top = 114
@@ -478,7 +475,6 @@ object ListaEntrada: TListaEntrada
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 744
       Top = 7
@@ -1133,6 +1129,7 @@ object ListaEntrada: TListaEntrada
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBrelatorioClick
     end
     object SBexcluir: TSpeedButton
       Left = 549
@@ -2833,7 +2830,6 @@ object ListaEntrada: TListaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2853,7 +2849,6 @@ object ListaEntrada: TListaEntrada
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1046
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

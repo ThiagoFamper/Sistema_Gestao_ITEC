@@ -23,7 +23,8 @@ uses
   Tela_Login in 'Tela_Login.pas' {TelaLogin},
   Data_Module in 'Data_Module.pas' {DM: TDataModule},
   Cad_Sede in 'Cad_Sede.pas' {CadSede},
-  Lista_Sede in 'Lista_Sede.pas' {ListaSede};
+  Lista_Sede in 'Lista_Sede.pas' {ListaSede},
+  Relatorio_Entrada in 'Relatorio_Entrada.pas' {RelatorioEntrada};
 
 {$R *.res}
 
@@ -53,5 +54,6 @@ begin
   Application.CreateForm(TCadSede, CadSede);
   Application.CreateForm(TCadSede, CadSede);
   Application.CreateForm(TListaSede, ListaSede);
+  Application.CreateForm(TRelatorioEntrada, RelatorioEntrada);
   Application.Run;
 end.

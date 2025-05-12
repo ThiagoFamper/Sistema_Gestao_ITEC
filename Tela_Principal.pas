@@ -9,7 +9,7 @@ uses
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.PG,
   FireDAC.Phys.PGDef, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
-  Vcl.Imaging.pngimage, Tela_Relatorio, frxSmartMemo, frCoreClasses, frxClass,
+  Vcl.Imaging.pngimage, frxSmartMemo, frCoreClasses, frxClass,
   frxDBSet, frxFDQueryBuilder, frxFDComponents;
 
 type
