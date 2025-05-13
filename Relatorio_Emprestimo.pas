@@ -4,10 +4,20 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frxSmartMemo, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  frxClass, frxDBSet, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  frCoreClasses, Vcl.StdCtrls, Vcl.Buttons, Vcl.ComCtrls;
 
 type
   TRelatorioEmprestimo = class(TForm)
+    DateTimeInicial: TDateTimePicker;
+    DateTimeFinal: TDateTimePicker;
+    BitBtn1: TBitBtn;
+    frxRelatEmp: TfrxReport;
+    FDQueryRelatEmp: TFDQuery;
+    frxDSRelatEmp: TfrxDBDataset;
   private
     { Private declarations }
   public

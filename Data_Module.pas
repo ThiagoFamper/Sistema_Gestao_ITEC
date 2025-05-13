@@ -59,25 +59,8 @@ type
     FDTabEntradavalor_unitario: TFMTBCDField;
     FDTabEmprestimoProd: TFDTable;
     dsFDTabEmprestimoProd: TDataSource;
-    FDTabEmprestimoProdid: TLargeintField;
-    FDTabEmprestimoProdproduto_id: TLargeintField;
-    FDTabEmprestimoProddescricao: TWideStringField;
-    FDTabEmprestimoProdoperador: TWideStringField;
-    FDTabEmprestimoProdquantidade: TIntegerField;
-    FDTabEmprestimoProddata_emprestimo: TDateField;
-    FDTabEmprestimoProdcolaborador_id: TLargeintField;
-    FDTabEmprestimoProdsetor: TWideStringField;
-    FDTabEmprestimoProdsaldo: TFMTBCDField;
-    FDTabEmprestimoProddevolvido: TWideStringField;
     FDTabSaida: TFDTable;
     dsFDTabSaida: TDataSource;
-    FDTabSaidaid: TLargeintField;
-    FDTabSaidaproduto_id: TLargeintField;
-    FDTabSaidaoperador: TWideStringField;
-    FDTabSaidaquantidade: TIntegerField;
-    FDTabSaidadata_saida: TDateField;
-    FDTabSaidacolaborador_id: TLargeintField;
-    FDTabSaidasetor: TWideStringField;
     FDTabEstoque: TFDTable;
     dsFDTabEstoque: TDataSource;
     FDTabEmprestimoItem: TFDTable;
@@ -93,6 +76,23 @@ type
     FDTabColaboradorsede_id: TLargeintField;
     FDTabSedeid: TLargeintField;
     FDTabSededescricao: TWideStringField;
+    FDTabSaidaid: TLargeintField;
+    FDTabSaidaproduto_id: TLargeintField;
+    FDTabSaidaoperador: TWideStringField;
+    FDTabSaidaquantidade: TIntegerField;
+    FDTabSaidadata_saida: TDateField;
+    FDTabSaidacolaborador_id: TLargeintField;
+    FDTabSaidasetor_id: TLargeintField;
+    FDTabEmprestimoProdid: TLargeintField;
+    FDTabEmprestimoProdproduto_id: TLargeintField;
+    FDTabEmprestimoProddescricao: TWideStringField;
+    FDTabEmprestimoProdoperador: TWideStringField;
+    FDTabEmprestimoProdquantidade: TIntegerField;
+    FDTabEmprestimoProddata_emprestimo: TDateField;
+    FDTabEmprestimoProdcolaborador_id: TLargeintField;
+    FDTabEmprestimoProdsetor_id: TLargeintField;
+    FDTabEmprestimoProdsaldo: TFMTBCDField;
+    FDTabEmprestimoProddevolvido: TWideStringField;
   private
     { Private declarations }
   public

@@ -29,7 +29,6 @@ object DM: TDM
     Top = 24
   end
   object FDTabProduto: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -73,7 +72,6 @@ object DM: TDM
     Top = 112
   end
   object FDTabGrupo: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -136,7 +134,6 @@ object DM: TDM
     end
   end
   object FDTabSetor: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -168,7 +165,6 @@ object DM: TDM
     Top = 336
   end
   object FDTabUsuario: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -209,7 +205,6 @@ object DM: TDM
     Top = 406
   end
   object FDTabEntrada: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -267,38 +262,48 @@ object DM: TDM
     Top = 182
     object FDTabEmprestimoProdid: TLargeintField
       FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
     object FDTabEmprestimoProdproduto_id: TLargeintField
       FieldName = 'produto_id'
+      Origin = 'produto_id'
     end
     object FDTabEmprestimoProddescricao: TWideStringField
       FieldName = 'descricao'
+      Origin = 'descricao'
       Size = 75
     end
     object FDTabEmprestimoProdoperador: TWideStringField
       FieldName = 'operador'
+      Origin = 'operador'
       Size = 75
     end
     object FDTabEmprestimoProdquantidade: TIntegerField
       FieldName = 'quantidade'
+      Origin = 'quantidade'
     end
     object FDTabEmprestimoProddata_emprestimo: TDateField
       FieldName = 'data_emprestimo'
+      Origin = 'data_emprestimo'
     end
     object FDTabEmprestimoProdcolaborador_id: TLargeintField
       FieldName = 'colaborador_id'
+      Origin = 'colaborador_id'
     end
-    object FDTabEmprestimoProdsetor: TWideStringField
-      FieldName = 'setor'
-      Size = 45
+    object FDTabEmprestimoProdsetor_id: TLargeintField
+      FieldName = 'setor_id'
+      Origin = 'setor_id'
     end
     object FDTabEmprestimoProdsaldo: TFMTBCDField
       FieldName = 'saldo'
+      Origin = 'saldo'
       Precision = 64
       Size = 64
     end
     object FDTabEmprestimoProddevolvido: TWideStringField
       FieldName = 'devolvido'
+      Origin = 'devolvido'
       Size = 3
     end
   end
@@ -344,10 +349,9 @@ object DM: TDM
       FieldName = 'colaborador_id'
       Origin = 'colaborador_id'
     end
-    object FDTabSaidasetor: TWideStringField
-      FieldName = 'setor'
-      Origin = 'setor'
-      Size = 45
+    object FDTabSaidasetor_id: TLargeintField
+      FieldName = 'setor_id'
+      Origin = 'setor_id'
     end
   end
   object dsFDTabSaida: TDataSource
@@ -356,7 +360,6 @@ object DM: TDM
     Top = 259
   end
   object FDTabEstoque: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -386,7 +389,6 @@ object DM: TDM
     Top = 336
   end
   object FDTabEmprestimoItem: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
