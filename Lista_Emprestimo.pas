@@ -87,6 +87,7 @@ type
     procedure Edit3Change(Sender: TObject);
     procedure Edit4Change(Sender: TObject);
     procedure Edit5Change(Sender: TObject);
+    procedure SBrelatorioClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -101,12 +102,19 @@ implementation
 
 {$R *.dfm}
 
-uses Data_Module;
+uses Data_Module, Relatorio_Emprestimo;
 
 procedure TListaEmprestimo.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
   if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
   dm.FDTabProduto.Delete;
+end;
+
+procedure TListaEmprestimo.SBrelatorioClick(Sender: TObject);
+begin
+  Application.CreateForm(TRelatorioEmprestimo, RelatorioEmprestimo);
+  RelatorioEmprestimo.ShowModal;
+  RelatorioEmprestimo.Free;
 end;
 
 procedure TListaEmprestimo.SBcancelarClick(Sender: TObject); // botão de cancelar

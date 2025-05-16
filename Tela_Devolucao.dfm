@@ -4,7 +4,7 @@ object TelaDevolucao: TTelaDevolucao
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Devolu'#231#227'o de Produto'
-  ClientHeight = 968
+  ClientHeight = 1012
   ClientWidth = 1384
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,17 +15,17 @@ object TelaDevolucao: TTelaDevolucao
   TextHeight = 15
   object Panel5: TPanel
     Left = 0
-    Top = 535
+    Top = 770
     Width = 1384
-    Height = 433
-    Align = alClient
+    Height = 242
+    Align = alBottom
     BevelEdges = []
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1382
-    ExplicitHeight = 425
+    ExplicitLeft = 109
+    ExplicitTop = 527
     object Panel8: TPanel
       Left = 1032
       Top = 5
@@ -398,7 +398,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1382
     object Label5: TLabel
       Left = 644
       Top = 121
@@ -520,7 +519,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1382
     object SBsair: TSpeedButton
       Left = 744
       Top = 7
@@ -1175,6 +1173,7 @@ object TelaDevolucao: TTelaDevolucao
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBrelatorioClick
     end
     object SBexcluir: TSpeedButton
       Left = 549
@@ -2875,7 +2874,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1382
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2891,16 +2889,17 @@ object TelaDevolucao: TTelaDevolucao
     Left = 0
     Top = 310
     Width = 1384
-    Height = 225
-    Align = alTop
+    Height = 460
+    Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1382
+    ExplicitTop = 309
+    ExplicitHeight = 269
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1384
-      Height = 225
+      Height = 460
       Hint = 'Pesquisar Devolucao'
       Align = alClient
       DataSource = DM.dsFDTabEmprestimoProd

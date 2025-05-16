@@ -36,6 +36,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     Height = 25
     Caption = 'BitBtn1'
     TabOrder = 2
+    OnClick = BitBtn1Click
   end
   object frxRelatEmp: TfrxReport
     Version = '2025.2.1'
@@ -52,23 +53,245 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       'begin'
       ''
       'end.')
-    Left = 144
-    Top = 344
-    Datasets = <>
+    Left = 168
+    Top = 336
+    Datasets = <
+      item
+        DataSet = frxDSRelatEmp
+        DataSetName = 'frxDSRelatEmp'
+      end>
     Variables = <>
     Style = <>
     Watermarks = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+      MirrorMode = []
+      object ReportTitle1: TfrxReportTitle
+        FillType = ftBrush
+        FillGap.Top = 0
+        FillGap.Left = 0
+        FillGap.Bottom = 0
+        FillGap.Right = 0
+        Frame.Typ = []
+        Height = 22.677180000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+      end
+      object Header1: TfrxHeader
+        FillType = ftBrush
+        FillGap.Top = 0
+        FillGap.Left = 0
+        FillGap.Bottom = 0
+        FillGap.Right = 0
+        Frame.Typ = []
+        Height = 22.677180000000000000
+        Top = 102.047310000000000000
+        Width = 718.110700000000000000
+      end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        FillGap.Top = 0
+        FillGap.Left = 0
+        FillGap.Bottom = 0
+        FillGap.Right = 0
+        Frame.Typ = []
+        Height = 154.960730000000000000
+        Top = 147.401670000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDSRelatEmp
+        DataSetName = 'frxDSRelatEmp'
+        RowCount = 0
+        object MemofrxDSRelatEmpcod: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 7.559060000000000000
+          Top = 15.118120000000000000
+          Width = 52.913420000000000000
+          Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          DataField = 'cod'
+          DataSet = frxDSRelatEmp
+          DataSetName = 'frxDSRelatEmp'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDSRelatEmp."cod"]')
+        end
+        object MemofrxDSRelatEmpdescricao: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 64.252010000000000000
+          Top = 15.118120000000000000
+          Width = 90.708720000000000000
+          Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          DataField = 'descricao'
+          DataSet = frxDSRelatEmp
+          DataSetName = 'frxDSRelatEmp'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDSRelatEmp."descricao"]')
+        end
+        object MemofrxDSRelatEmpoperador: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 158.740260000000000000
+          Top = 15.118120000000000000
+          Width = 120.944960000000000000
+          Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          DataField = 'operador'
+          DataSet = frxDSRelatEmp
+          DataSetName = 'frxDSRelatEmp'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDSRelatEmp."operador"]')
+        end
+        object MemofrxDSRelatEmpquantidade: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 287.244280000000000000
+          Top = 15.118120000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          DataField = 'quantidade'
+          DataSet = frxDSRelatEmp
+          DataSetName = 'frxDSRelatEmp'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDSRelatEmp."quantidade"]')
+        end
+        object MemofrxDSRelatEmpdata: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 374.173470000000000000
+          Top = 15.118120000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          DataField = 'data'
+          DataSet = frxDSRelatEmp
+          DataSetName = 'frxDSRelatEmp'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDSRelatEmp."data"]')
+        end
+        object MemofrxDSRelatEmpcolab: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 461.102660000000000000
+          Top = 15.118120000000000000
+          Width = 113.385900000000000000
+          Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          DataField = 'colab'
+          DataSet = frxDSRelatEmp
+          DataSetName = 'frxDSRelatEmp'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDSRelatEmp."colab"]')
+        end
+        object MemofrxDSRelatEmpsetor: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 578.268090000000000000
+          Top = 15.118120000000000000
+          Width = 64.252010000000000000
+          Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          DataField = 'setor'
+          DataSet = frxDSRelatEmp
+          DataSetName = 'frxDSRelatEmp'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDSRelatEmp."setor"]')
+        end
+        object MemofrxDSRelatEmpdevolvido: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 646.299630000000000000
+          Top = 15.118120000000000000
+          Width = 56.692950000000000000
+          Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          DataField = 'devolvido'
+          DataSet = frxDSRelatEmp
+          DataSetName = 'frxDSRelatEmp'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDSRelatEmp."devolvido"]')
+        end
+      end
+    end
   end
   object FDQueryRelatEmp: TFDQuery
-    Left = 248
-    Top = 344
+    MasterSource = DM.dsFDTabEmprestimoProd
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'select'
+      '   p.cod_produto AS cod,'
+      '   p.descricao,'
+      '   emp.operador,'
+      '   emp.quantidade,'
+      '   emp.data_emprestimo AS data,'
+      '   c.descricao AS colab,'
+      '   s.descricao AS setor,'
+      '   emp.devolvido'
+      'FROM '
+      '  estoqueitec.emprestimo_produto emp'
+      'JOIN'
+      '  estoqueitec.produto p ON p.id = emp.produto_id'
+      'JOIN'
+      '  estoqueitec.colaborador c ON c.id = emp.colaborador_id'
+      'JOIN'
+      '  estoqueitec.setor s ON s.id = emp.setor_id'
+      'WHERE '
+      '  emp.data_emprestimo BETWEEN :data_inicial AND :data_final'
+      'ORDER BY'
+      '  emp.data_emprestimo;'
+      '   ')
+    Left = 280
+    Top = 336
+    ParamData = <
+      item
+        Name = 'DATA_INICIAL'
+        DataType = ftDate
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'DATA_FINAL'
+        DataType = ftDate
+        ParamType = ptInput
+        Value = Null
+      end>
   end
   object frxDSRelatEmp: TfrxDBDataset
     UserName = 'frxDSRelatEmp'
     CloseDataSource = False
+    DataSet = FDQueryRelatEmp
     BCDToCurrency = False
     DataSetOptions = []
-    Left = 368
-    Top = 352
+    Left = 400
+    Top = 336
   end
 end

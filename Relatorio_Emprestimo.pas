@@ -18,6 +18,7 @@ type
     frxRelatEmp: TfrxReport;
     FDQueryRelatEmp: TFDQuery;
     frxDSRelatEmp: TfrxDBDataset;
+    procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,5 +31,22 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Data_Module;
+
+procedure TRelatorioEmprestimo.BitBtn1Click(Sender: TObject);
+begin
+  try
+    FDQueryRelatEmp.Close;
+    FDQueryRelatEmp.ParamByName('data_inicial').AsDate := DateTimeInicial.Date;
+    FDQueryRelatEmp.ParamByName('data_final').AsDate := DateTimeFinal.Date;
+    FDQueryRelatEmp.Open;
+
+    frxRelatEmp.ShowReport;
+  except
+    on E: Exception do
+      ShowMessage('Erro ao gerar relatório: ' + E.Message);
+  end;
+end;
 
 end.

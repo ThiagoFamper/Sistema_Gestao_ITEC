@@ -85,13 +85,11 @@ type
     FDTabSaidasetor_id: TLargeintField;
     FDTabEmprestimoProdid: TLargeintField;
     FDTabEmprestimoProdproduto_id: TLargeintField;
-    FDTabEmprestimoProddescricao: TWideStringField;
     FDTabEmprestimoProdoperador: TWideStringField;
     FDTabEmprestimoProdquantidade: TIntegerField;
     FDTabEmprestimoProddata_emprestimo: TDateField;
     FDTabEmprestimoProdcolaborador_id: TLargeintField;
     FDTabEmprestimoProdsetor_id: TLargeintField;
-    FDTabEmprestimoProdsaldo: TFMTBCDField;
     FDTabEmprestimoProddevolvido: TWideStringField;
   private
     { Private declarations }

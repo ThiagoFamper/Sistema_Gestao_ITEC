@@ -124,7 +124,6 @@ object TelaEmprestimo: TTelaEmprestimo
         Height = 23
         Align = alTop
         Color = clBtnHighlight
-        DataField = 'descricao'
         DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
@@ -2004,7 +2003,6 @@ object TelaEmprestimo: TTelaEmprestimo
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-      ExplicitTop = 2
     end
     object Panel1: TPanel
       Left = 443

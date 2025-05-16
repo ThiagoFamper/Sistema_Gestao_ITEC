@@ -250,7 +250,6 @@ object DM: TDM
     Top = 112
   end
   object FDTabEmprestimoProd: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -263,16 +262,10 @@ object DM: TDM
     object FDTabEmprestimoProdid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
     object FDTabEmprestimoProdproduto_id: TLargeintField
       FieldName = 'produto_id'
       Origin = 'produto_id'
-    end
-    object FDTabEmprestimoProddescricao: TWideStringField
-      FieldName = 'descricao'
-      Origin = 'descricao'
-      Size = 75
     end
     object FDTabEmprestimoProdoperador: TWideStringField
       FieldName = 'operador'
@@ -295,12 +288,6 @@ object DM: TDM
       FieldName = 'setor_id'
       Origin = 'setor_id'
     end
-    object FDTabEmprestimoProdsaldo: TFMTBCDField
-      FieldName = 'saldo'
-      Origin = 'saldo'
-      Precision = 64
-      Size = 64
-    end
     object FDTabEmprestimoProddevolvido: TWideStringField
       FieldName = 'devolvido'
       Origin = 'devolvido'
@@ -313,7 +300,6 @@ object DM: TDM
     Top = 182
   end
   object FDTabSaida: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
