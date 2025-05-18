@@ -1,42 +1,96 @@
 object RelatorioEmprestimo: TRelatorioEmprestimo
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Relat'#243'rio de Empr'#233'stimo'
-  ClientHeight = 470
-  ClientWidth = 673
+  ClientHeight = 394
+  ClientWidth = 340
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
-  object DateTimeInicial: TDateTimePicker
-    Left = 208
-    Top = 168
-    Width = 186
-    Height = 23
-    Date = 45789.000000000000000000
-    Time = 0.970958333331509500
+  object Panel6: TPanel
+    Left = 0
+    Top = 0
+    Width = 340
+    Height = 65
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Relat'#243'rio Empr'#233'stimo de Produto'
+    Color = clCadetblue
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -18
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
     TabOrder = 0
+    ExplicitLeft = 8
+    ExplicitTop = 6
+    ExplicitWidth = 921
   end
-  object DateTimeFinal: TDateTimePicker
-    Left = 208
-    Top = 208
-    Width = 186
-    Height = 23
-    Date = 45789.000000000000000000
-    Time = 0.970958333331509500
+  object Panel1: TPanel
+    Left = 0
+    Top = 65
+    Width = 340
+    Height = 329
+    Align = alClient
+    BevelEdges = []
+    BevelOuter = bvNone
+    Color = clWhitesmoke
+    ParentBackground = False
     TabOrder = 1
-  end
-  object BitBtn1: TBitBtn
-    Left = 256
-    Top = 272
-    Width = 75
-    Height = 25
-    Caption = 'BitBtn1'
-    TabOrder = 2
-    OnClick = BitBtn1Click
+    ExplicitLeft = 395
+    ExplicitTop = 87
+    ExplicitWidth = 457
+    ExplicitHeight = 454
+    object Label1: TLabel
+      Left = 32
+      Top = 40
+      Width = 58
+      Height = 15
+      Caption = 'Data Inicial'
+    end
+    object Label2: TLabel
+      Left = 32
+      Top = 104
+      Width = 52
+      Height = 15
+      Caption = 'Data Final'
+    end
+    object DateTimeInicial: TDateTimePicker
+      Left = 96
+      Top = 40
+      Width = 186
+      Height = 23
+      Date = 45789.000000000000000000
+      Time = 0.970958333331509500
+      TabOrder = 0
+    end
+    object DateTimeFinal: TDateTimePicker
+      Left = 96
+      Top = 104
+      Width = 186
+      Height = 23
+      Date = 45789.000000000000000000
+      Time = 0.970958333331509500
+      TabOrder = 1
+    end
+    object BitBtn1: TBitBtn
+      Left = 200
+      Top = 153
+      Width = 82
+      Height = 25
+      Caption = 'Gerar Relat'#243'rio'
+      TabOrder = 2
+      OnClick = BitBtn1Click
+    end
   end
   object frxRelatEmp: TfrxReport
     Version = '2025.2.1'
@@ -53,8 +107,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       'begin'
       ''
       'end.')
-    Left = 168
-    Top = 336
+    Left = 24
+    Top = 256
     Datasets = <
       item
         DataSet = frxDSRelatEmp
@@ -269,8 +323,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       'ORDER BY'
       '  emp.data_emprestimo;'
       '   ')
-    Left = 280
-    Top = 336
+    Left = 120
+    Top = 256
     ParamData = <
       item
         Name = 'DATA_INICIAL'
@@ -291,7 +345,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     DataSet = FDQueryRelatEmp
     BCDToCurrency = False
     DataSetOptions = []
-    Left = 400
-    Top = 336
+    Left = 240
+    Top = 256
   end
 end

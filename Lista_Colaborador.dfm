@@ -23,7 +23,6 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1455
     object Label7: TLabel
       Left = 461
       Top = 65
@@ -61,7 +60,7 @@ object ListaColaborador: TListaColaborador
     end
     object Edit1: TEdit
       Left = 119
-      Top = 16
+      Top = 13
       Width = 299
       Height = 23
       TabOrder = 0
@@ -108,7 +107,6 @@ object ListaColaborador: TListaColaborador
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1455
     object SBsair: TSpeedButton
       Left = 640
       Top = 7
@@ -2123,7 +2121,6 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1455
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2145,8 +2142,6 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1455
-    ExplicitHeight = 246
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -2157,7 +2152,7 @@ object ListaColaborador: TListaColaborador
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 15
+        Width = 347
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -2167,6 +2162,7 @@ object ListaColaborador: TListaColaborador
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
         Left = 0
@@ -2188,7 +2184,7 @@ object ListaColaborador: TListaColaborador
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 49
+        Width = 347
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -2198,6 +2194,7 @@ object ListaColaborador: TListaColaborador
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 49
       end
       object DBEdit2: TDBEdit
         Left = 0
@@ -2219,7 +2216,7 @@ object ListaColaborador: TListaColaborador
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 65
+        Width = 347
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -2229,6 +2226,7 @@ object ListaColaborador: TListaColaborador
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 65
       end
       object DBEdit3: TDBEdit
         Left = 0
@@ -2250,7 +2248,7 @@ object ListaColaborador: TListaColaborador
       object Label4: TLabel
         Left = 0
         Top = 0
-        Width = 35
+        Width = 347
         Height = 20
         Align = alTop
         Caption = 'Setor'
@@ -2260,6 +2258,7 @@ object ListaColaborador: TListaColaborador
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 35
       end
       object DBEdit4: TDBEdit
         Left = 0
@@ -2281,7 +2280,7 @@ object ListaColaborador: TListaColaborador
       object Label3: TLabel
         Left = 0
         Top = 0
-        Width = 40
+        Width = 347
         Height = 20
         Align = alTop
         Caption = 'Cargo'
@@ -2291,6 +2290,7 @@ object ListaColaborador: TListaColaborador
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 40
       end
       object DBEdit5: TDBEdit
         Left = 0
@@ -2312,7 +2312,7 @@ object ListaColaborador: TListaColaborador
       object Label6: TLabel
         Left = 0
         Top = 0
-        Width = 33
+        Width = 347
         Height = 20
         Align = alTop
         Caption = 'Sede'
@@ -2322,6 +2322,7 @@ object ListaColaborador: TListaColaborador
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 33
       end
       object DBEdit6: TDBEdit
         Left = 0
@@ -2343,7 +2344,6 @@ object ListaColaborador: TListaColaborador
     BevelEdges = []
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1455
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

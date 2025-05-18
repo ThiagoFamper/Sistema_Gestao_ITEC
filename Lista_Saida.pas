@@ -12,17 +12,11 @@ type
   TListaSaida = class(TForm)
     Panel5: TPanel;
     Panel1: TPanel;
-    CheckBox1: TCheckBox;
-    CheckBox3: TCheckBox;
-    CheckBox2: TCheckBox;
-    CheckBox5: TCheckBox;
-    CheckBox4: TCheckBox;
     Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
     Edit4: TEdit;
     Edit5: TEdit;
-    CheckBox6: TCheckBox;
     DateTimePicker1: TDateTimePicker;
     DateTimePicker2: TDateTimePicker;
     Label10: TLabel;
@@ -72,6 +66,12 @@ type
     Panel21: TPanel;
     Label19: TLabel;
     DBEdit9: TDBEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

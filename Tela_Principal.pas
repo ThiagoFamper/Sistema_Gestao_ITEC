@@ -72,6 +72,7 @@ type
     Image10: TImage;
     Panel3: TPanel;
     pnlConteudo: TPanel;
+    pnpCadSede: TPanel;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -96,8 +97,8 @@ type
     procedure Usuario1Click(Sender: TObject);
     procedure ListaUsurios1Click(Sender: TObject);
     procedure Login1Click(Sender: TObject);
-    procedure Panel4MouseEnter(Sender: TObject);
-    procedure Panel4MouseLeave(Sender: TObject);
+    procedure pnpConSedeMouseEnter(Sender: TObject);
+    procedure pnpConSedeMouseLeave(Sender: TObject);
     procedure pnpCadClick(Sender: TObject);
     procedure pnpMovClick(Sender: TObject);
     procedure pnpConsClick(Sender: TObject);
@@ -125,6 +126,7 @@ type
     procedure pnpConEmpClick(Sender: TObject);
 
     procedure AbrirFormulario(ClasseForm: TFormClass);
+    procedure pnpCadSedeClick(Sender: TObject);
 
   private
      procedure selecionaMenu(nMENU: integer);
@@ -251,14 +253,19 @@ begin
     TelaLogin.Show;
 end;
 
-procedure TTelaPrincipal.Panel4MouseEnter(Sender: TObject);
+procedure TTelaPrincipal.pnpCadSedeClick(Sender: TObject);
+begin
+  AbrirFormulario(TCadSede); // abre a tela de cadastro de sede
+end;
+
+procedure TTelaPrincipal.pnpConSedeMouseEnter(Sender: TObject);
 begin
     if not (sender is TPanel) then
         exit;
     (sender as TPanel).Color:=RGB(192,192,192);
 end;
 
-procedure TTelaPrincipal.Panel4MouseLeave(Sender: TObject);
+procedure TTelaPrincipal.pnpConSedeMouseLeave(Sender: TObject);
 begin
     if not (sender is TPanel) then
         exit;
@@ -292,7 +299,7 @@ end;
 
 procedure TTelaPrincipal.pnpCadUserClick(Sender: TObject);
 begin
-  AbrirFormulario(TCadUsuario); // abre a tela de cadastro de usuario
+  AbrirFormulario(TCadUsuario); // abre a tela de cadastro de Sede
 end;
 
 procedure TTelaPrincipal.pnpCadVoltarClick(Sender: TObject);

@@ -11,8 +11,6 @@ uses
 type
   TListaUsuario = class(TForm)
     Panel1: TPanel;
-    CheckBox1: TCheckBox;
-    CheckBox2: TCheckBox;
     Edit1: TEdit;
     Edit2: TEdit;
     Panel5: TPanel;
@@ -51,6 +49,8 @@ type
     Panel17: TPanel;
     Label3: TLabel;
     DBEdit5: TDBEdit;
+    Label6: TLabel;
+    Label7: TLabel;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

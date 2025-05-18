@@ -12,8 +12,6 @@ type
   TListaSetor = class(TForm)
     Panel5: TPanel;
     Panel1: TPanel;
-    CheckBox1: TCheckBox;
-    CheckBox2: TCheckBox;
     Edit1: TEdit;
     Edit2: TEdit;
     Panel2: TPanel;
@@ -42,6 +40,8 @@ type
     Panel15: TPanel;
     Label2: TLabel;
     DBEdit3: TDBEdit;
+    Label3: TLabel;
+    Label4: TLabel;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

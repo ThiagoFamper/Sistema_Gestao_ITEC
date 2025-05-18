@@ -23,8 +23,6 @@ object ListaGrupos: TListaGrupos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1045
-    ExplicitHeight = 242
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -35,7 +33,7 @@ object ListaGrupos: TListaGrupos
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 15
+        Width = 249
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -45,6 +43,7 @@ object ListaGrupos: TListaGrupos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
         Left = 0
@@ -66,7 +65,7 @@ object ListaGrupos: TListaGrupos
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 65
+        Width = 249
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -76,6 +75,7 @@ object ListaGrupos: TListaGrupos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 65
       end
       object DBEdit2: TDBEdit
         Left = 0
@@ -98,21 +98,19 @@ object ListaGrupos: TListaGrupos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1045
-    object CheckBox1: TCheckBox
+    object Label2: TLabel
       Left = 16
       Top = 16
-      Width = 97
-      Height = 20
+      Width = 51
+      Height = 15
       Caption = 'Descri'#231#227'o'
-      TabOrder = 0
     end
     object Edit1: TEdit
       Left = 95
       Top = 16
       Width = 299
       Height = 23
-      TabOrder = 1
+      TabOrder = 0
       Text = 'Edit1'
     end
   end
@@ -128,7 +126,6 @@ object ListaGrupos: TListaGrupos
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitTop = -6
     object SBsair: TSpeedButton
       Left = 640
       Top = 8
@@ -2142,7 +2139,6 @@ object ListaGrupos: TListaGrupos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1045
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2162,7 +2158,6 @@ object ListaGrupos: TListaGrupos
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1045
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

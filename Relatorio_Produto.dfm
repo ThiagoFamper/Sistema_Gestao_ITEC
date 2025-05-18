@@ -1,42 +1,137 @@
 object RelatorioProduto: TRelatorioProduto
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Relat'#243'rio de Produto'
-  ClientHeight = 441
-  ClientWidth = 624
+  ClientHeight = 355
+  ClientWidth = 340
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
-  object DateTimeInicial: TDateTimePicker
-    Left = 192
-    Top = 136
-    Width = 186
-    Height = 23
-    Date = 45789.000000000000000000
-    Time = 0.863774629629915600
+  object Panel6: TPanel
+    Left = 0
+    Top = 0
+    Width = 340
+    Height = 65
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Relat'#243'rio Produto'
+    Color = clCadetblue
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -18
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
     TabOrder = 0
+    ExplicitTop = -6
   end
-  object DateTimeFinal: TDateTimePicker
-    Left = 192
-    Top = 176
-    Width = 186
-    Height = 23
-    Date = 45789.000000000000000000
-    Time = 0.863774629629915600
+  object Panel1: TPanel
+    Left = 0
+    Top = 65
+    Width = 340
+    Height = 290
+    Align = alClient
+    BevelEdges = []
+    BevelOuter = bvNone
+    Color = clWhitesmoke
+    ParentBackground = False
     TabOrder = 1
+    ExplicitTop = 57
+    object Label2: TLabel
+      Left = 39
+      Top = 104
+      Width = 52
+      Height = 15
+      Caption = 'Data Final'
+    end
+    object Label1: TLabel
+      Left = 39
+      Top = 56
+      Width = 58
+      Height = 15
+      Caption = 'Data Inicial'
+    end
+    object BitBtn1: TBitBtn
+      Left = 224
+      Top = 149
+      Width = 90
+      Height = 28
+      Caption = 'Gerar Relat'#243'rio'
+      TabOrder = 0
+      OnClick = BitBtn1Click
+    end
+    object DateTimeFinal: TDateTimePicker
+      Left = 128
+      Top = 104
+      Width = 186
+      Height = 23
+      Date = 45789.000000000000000000
+      Time = 0.863774629629915600
+      TabOrder = 1
+    end
+    object DateTimeInicial: TDateTimePicker
+      Left = 128
+      Top = 56
+      Width = 186
+      Height = 23
+      Date = 45789.000000000000000000
+      Time = 0.863774629629915600
+      TabOrder = 2
+    end
   end
-  object BitBtn1: TBitBtn
-    Left = 232
-    Top = 320
-    Width = 75
-    Height = 25
-    Caption = 'BitBtn1'
-    TabOrder = 2
-    OnClick = BitBtn1Click
+  object frxDSRelatProd: TfrxDBDataset
+    UserName = 'frxDSRelatProd'
+    CloseDataSource = False
+    DataSet = FDQueryRelatProd
+    BCDToCurrency = False
+    DataSetOptions = []
+    Left = 216
+    Top = 264
+  end
+  object FDQueryRelatProd: TFDQuery
+    Active = True
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT '
+      '  p.id,'
+      '  p.cod_produto,'
+      '  p.descricao,'
+      '  g.descricao AS grupo_descricao,'
+      '  p.marca,'
+      '  p.modelo,'
+      '  p.grupo_id,'
+      '  TO_CHAR(p.data, '#39'DD/MM/YYYY'#39') AS data'
+      'FROM '
+      '  estoqueitec.produto p'
+      'JOIN '
+      '  estoqueitec.grupo g ON g.id = p.grupo_id'
+      'WHERE '
+      '  p.data BETWEEN :data_inicial AND :data_final'
+      'ORDER BY '
+      '  p.data;')
+    Left = 144
+    Top = 264
+    ParamData = <
+      item
+        Name = 'DATA_INICIAL'
+        DataType = ftDate
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'DATA_FINAL'
+        DataType = ftDate
+        ParamType = ptInput
+        Value = Null
+      end>
   end
   object frxRelatProd: TfrxReport
     Version = '2025.2.1'
@@ -53,8 +148,8 @@ object RelatorioProduto: TRelatorioProduto
       'begin'
       ''
       'end.')
-    Left = 152
-    Top = 232
+    Left = 64
+    Top = 256
     Datasets = <
       item
         DataSet = frxDSRelatProd
@@ -194,86 +289,5 @@ object RelatorioProduto: TRelatorioProduto
         end
       end
     end
-  end
-  object FDQueryRelatProd: TFDQuery
-    Active = True
-    Connection = DM.FDEstoqueItec
-    SQL.Strings = (
-      'SELECT '
-      '  p.id,'
-      '  p.cod_produto,'
-      '  p.descricao,'
-      '  g.descricao AS grupo_descricao,'
-      '  p.marca,'
-      '  p.modelo,'
-      '  p.grupo_id,'
-      '  TO_CHAR(p.data, '#39'DD/MM/YYYY'#39') AS data'
-      'FROM '
-      '  estoqueitec.produto p'
-      'JOIN '
-      '  estoqueitec.grupo g ON g.id = p.grupo_id'
-      'WHERE '
-      '  p.data BETWEEN :data_inicial AND :data_final'
-      'ORDER BY '
-      '  p.data;')
-    Left = 256
-    Top = 232
-    ParamData = <
-      item
-        Name = 'DATA_INICIAL'
-        DataType = ftDate
-        ParamType = ptInput
-        Value = Null
-      end
-      item
-        Name = 'DATA_FINAL'
-        DataType = ftDate
-        ParamType = ptInput
-        Value = Null
-      end>
-  end
-  object frxDSRelatProd: TfrxDBDataset
-    UserName = 'frxDSRelatProd'
-    CloseDataSource = False
-    DataSet = FDQueryRelatProd
-    BCDToCurrency = False
-    DataSetOptions = []
-    Left = 360
-    Top = 232
-    FieldDefs = <
-      item
-        FieldName = 'id'
-      end
-      item
-        FieldName = 'cod_produto'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'grupo_descricao'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'marca'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'modelo'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'grupo_id'
-      end
-      item
-        FieldName = 'data'
-      end>
   end
 end

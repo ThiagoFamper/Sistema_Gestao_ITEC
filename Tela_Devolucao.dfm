@@ -24,8 +24,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 109
-    ExplicitTop = 527
     object Panel8: TPanel
       Left = 1032
       Top = 5
@@ -399,112 +397,106 @@ object TelaDevolucao: TTelaDevolucao
     ParentBackground = False
     TabOrder = 1
     object Label5: TLabel
-      Left = 644
+      Left = 620
       Top = 121
       Width = 16
       Height = 15
       Caption = 'at'#233
     end
-    object CheckBox1: TCheckBox
-      Left = 14
-      Top = 23
-      Width = 73
-      Height = 17
-      Caption = 'C'#243'digo'
-      TabOrder = 0
-    end
-    object CheckBox3: TCheckBox
-      Left = 454
-      Top = 70
-      Width = 77
-      Height = 17
-      Caption = 'Operador'
-      TabOrder = 1
-    end
-    object CheckBox2: TCheckBox
-      Left = 14
-      Top = 70
-      Width = 73
-      Height = 17
+    object Label3: TLabel
+      Left = 16
+      Top = 67
+      Width = 51
+      Height = 16
       Caption = 'Descri'#231#227'o'
-      TabOrder = 2
     end
-    object CheckBox5: TCheckBox
-      Left = 14
-      Top = 116
-      Width = 89
-      Height = 17
+    object Label4: TLabel
+      Left = 16
+      Top = 23
+      Width = 39
+      Height = 15
+      Caption = 'C'#243'digo'
+    end
+    object Label6: TLabel
+      Left = 454
+      Top = 118
+      Width = 24
+      Height = 15
+      Caption = 'Data'
+    end
+    object Label7: TLabel
+      Left = 16
+      Top = 113
+      Width = 66
+      Height = 15
       Caption = 'Colaborador'
-      TabOrder = 3
     end
-    object CheckBox4: TCheckBox
+    object Label8: TLabel
+      Left = 454
+      Top = 67
+      Width = 50
+      Height = 15
+      Caption = 'Operador'
+    end
+    object Label10: TLabel
       Left = 454
       Top = 23
-      Width = 53
-      Height = 17
+      Width = 27
+      Height = 15
       Caption = 'Setor'
-      TabOrder = 4
     end
     object Edit1: TEdit
-      Left = 109
+      Left = 88
       Top = 23
       Width = 299
       Height = 23
-      TabOrder = 5
+      TabOrder = 0
     end
     object Edit2: TEdit
-      Left = 109
+      Left = 88
       Top = 67
       Width = 299
       Height = 23
-      TabOrder = 6
+      TabOrder = 1
     end
     object Edit3: TEdit
-      Left = 109
+      Left = 88
       Top = 113
       Width = 299
       Height = 23
-      TabOrder = 7
+      TabOrder = 2
     end
     object Edit4: TEdit
-      Left = 537
-      Top = 24
+      Left = 510
+      Top = 23
       Width = 299
       Height = 23
-      TabOrder = 8
+      TabOrder = 3
     end
     object Edit5: TEdit
-      Left = 537
+      Left = 510
       Top = 67
       Width = 299
       Height = 23
-      TabOrder = 9
-    end
-    object CheckBox6: TCheckBox
-      Left = 454
-      Top = 116
-      Width = 51
-      Height = 15
-      Caption = 'Data'
-      TabOrder = 10
+      TabOrder = 4
     end
     object DateTimePicker1: TDateTimePicker
-      Left = 537
+      Left = 510
       Top = 118
       Width = 89
       Height = 23
       Date = 45581.000000000000000000
       Time = 0.832999849539191900
-      TabOrder = 11
+      TabOrder = 5
     end
     object DateTimePicker2: TDateTimePicker
-      Left = 678
+      Left = 662
       Top = 118
       Width = 89
       Height = 23
       Date = 45581.000000000000000000
       Time = 0.832999849539191900
-      TabOrder = 12
+      TabOrder = 6
     end
   end
   object Panel2: TPanel
@@ -2893,8 +2885,6 @@ object TelaDevolucao: TTelaDevolucao
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitTop = 309
-    ExplicitHeight = 269
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

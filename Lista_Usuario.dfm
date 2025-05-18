@@ -23,36 +23,33 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1046
-    object CheckBox1: TCheckBox
-      Left = 16
-      Top = 19
-      Width = 97
-      Height = 17
+    object Label6: TLabel
+      Left = 23
+      Top = 16
+      Width = 33
+      Height = 15
       Caption = 'Nome'
-      TabOrder = 0
     end
-    object CheckBox2: TCheckBox
-      Left = 16
-      Top = 63
-      Width = 97
-      Height = 17
+    object Label7: TLabel
+      Left = 23
+      Top = 61
+      Width = 30
+      Height = 15
       Caption = 'Login'
-      TabOrder = 1
     end
     object Edit1: TEdit
       Left = 119
       Top = 16
       Width = 299
       Height = 23
-      TabOrder = 2
+      TabOrder = 0
     end
     object Edit2: TEdit
       Left = 119
       Top = 61
       Width = 299
       Height = 23
-      TabOrder = 3
+      TabOrder = 1
     end
     object RadioGroup1: TRadioGroup
       Left = 16
@@ -66,7 +63,7 @@ object ListaUsuario: TListaUsuario
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
-      TabOrder = 4
+      TabOrder = 2
     end
     object RadioButton2: TRadioButton
       Left = 31
@@ -74,7 +71,7 @@ object ListaUsuario: TListaUsuario
       Width = 52
       Height = 17
       Caption = 'Sim'
-      TabOrder = 5
+      TabOrder = 3
     end
     object RadioButton3: TRadioButton
       Left = 119
@@ -82,7 +79,7 @@ object ListaUsuario: TListaUsuario
       Width = 50
       Height = 17
       Caption = 'N'#227'o'
-      TabOrder = 6
+      TabOrder = 4
     end
   end
   object Panel5: TPanel
@@ -95,8 +92,6 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1046
-    ExplicitHeight = 257
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -107,7 +102,7 @@ object ListaUsuario: TListaUsuario
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 15
+        Width = 249
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -117,6 +112,7 @@ object ListaUsuario: TListaUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
         Left = 0
@@ -138,7 +134,7 @@ object ListaUsuario: TListaUsuario
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 41
+        Width = 249
         Height = 20
         Align = alTop
         Caption = 'Nome'
@@ -148,6 +144,7 @@ object ListaUsuario: TListaUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 41
       end
       object DBEdit2: TDBEdit
         Left = 0
@@ -169,7 +166,7 @@ object ListaUsuario: TListaUsuario
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 37
+        Width = 249
         Height = 20
         Align = alTop
         Caption = 'Login'
@@ -179,6 +176,7 @@ object ListaUsuario: TListaUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 37
       end
       object DBEdit3: TDBEdit
         Left = 0
@@ -200,7 +198,7 @@ object ListaUsuario: TListaUsuario
       object Label4: TLabel
         Left = 0
         Top = 0
-        Width = 40
+        Width = 249
         Height = 20
         Align = alTop
         Caption = 'Senha'
@@ -210,6 +208,7 @@ object ListaUsuario: TListaUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 40
       end
       object DBEdit4: TDBEdit
         Left = 0
@@ -231,7 +230,7 @@ object ListaUsuario: TListaUsuario
       object Label3: TLabel
         Left = 0
         Top = 0
-        Width = 44
+        Width = 249
         Height = 20
         Align = alTop
         Caption = 'Admin'
@@ -241,6 +240,7 @@ object ListaUsuario: TListaUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 44
       end
       object DBEdit5: TDBEdit
         Left = 0
@@ -265,7 +265,6 @@ object ListaUsuario: TListaUsuario
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 640
       Top = 7
@@ -2284,7 +2283,6 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2304,7 +2302,6 @@ object ListaUsuario: TListaUsuario
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1046
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

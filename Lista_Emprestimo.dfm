@@ -330,88 +330,82 @@ object ListaEmprestimo: TListaEmprestimo
       Height = 15
       Caption = 'at'#233
     end
-    object CheckBox1: TCheckBox
+    object Label2: TLabel
       Left = 8
       Top = 16
-      Width = 73
-      Height = 17
+      Width = 39
+      Height = 15
       Caption = 'C'#243'digo'
-      TabOrder = 0
     end
-    object CheckBox3: TCheckBox
-      Left = 412
-      Top = 62
-      Width = 77
-      Height = 17
-      Caption = 'Operador'
-      TabOrder = 1
-    end
-    object CheckBox2: TCheckBox
+    object Label3: TLabel
       Left = 8
-      Top = 63
-      Width = 73
-      Height = 17
+      Top = 59
+      Width = 51
+      Height = 15
       Caption = 'Descri'#231#227'o'
-      TabOrder = 2
     end
-    object CheckBox5: TCheckBox
+    object Label6: TLabel
       Left = 8
-      Top = 108
-      Width = 89
-      Height = 17
+      Top = 109
+      Width = 66
+      Height = 15
       Caption = 'Colaborador'
-      TabOrder = 3
     end
-    object CheckBox4: TCheckBox
+    object Label7: TLabel
       Left = 412
       Top = 16
-      Width = 53
-      Height = 17
+      Width = 27
+      Height = 15
       Caption = 'Setor'
-      TabOrder = 4
+    end
+    object Label14: TLabel
+      Left = 412
+      Top = 59
+      Width = 50
+      Height = 15
+      Caption = 'Operador'
+    end
+    object Label16: TLabel
+      Left = 412
+      Top = 110
+      Width = 24
+      Height = 15
+      Caption = 'Data'
     end
     object Edit1: TEdit
-      Left = 103
-      Top = 15
+      Left = 90
+      Top = 16
       Width = 299
       Height = 23
-      TabOrder = 5
+      TabOrder = 0
     end
     object Edit2: TEdit
-      Left = 107
-      Top = 61
+      Left = 90
+      Top = 59
       Width = 299
       Height = 23
-      TabOrder = 6
+      TabOrder = 1
     end
     object Edit3: TEdit
-      Left = 103
+      Left = 90
       Top = 109
       Width = 299
       Height = 23
-      TabOrder = 7
+      TabOrder = 2
     end
     object Edit4: TEdit
       Left = 487
       Top = 15
       Width = 299
       Height = 23
-      TabOrder = 8
+      TabOrder = 3
     end
     object Edit5: TEdit
       Left = 487
       Top = 64
       Width = 299
       Height = 23
-      TabOrder = 9
-    end
-    object CheckBox6: TCheckBox
-      Left = 412
-      Top = 109
-      Width = 53
-      Height = 28
-      Caption = 'Data'
-      TabOrder = 10
+      TabOrder = 4
     end
     object DateTimePicker1: TDateTimePicker
       Left = 487
@@ -420,7 +414,7 @@ object ListaEmprestimo: TListaEmprestimo
       Height = 23
       Date = 45581.000000000000000000
       Time = 0.832999849539191900
-      TabOrder = 11
+      TabOrder = 5
     end
     object DateTimePicker2: TDateTimePicker
       Left = 647
@@ -429,7 +423,7 @@ object ListaEmprestimo: TListaEmprestimo
       Height = 23
       Date = 45581.000000000000000000
       Time = 0.832999849539191900
-      TabOrder = 12
+      TabOrder = 6
     end
   end
   object Panel2: TPanel

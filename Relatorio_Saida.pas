@@ -8,10 +8,14 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   frxClass, frxDBSet, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  frCoreClasses, Vcl.StdCtrls, Vcl.Buttons, Vcl.ComCtrls;
+  frCoreClasses, Vcl.StdCtrls, Vcl.Buttons, Vcl.ComCtrls, Vcl.ExtCtrls;
 
 type
   TRelatorioSaida = class(TForm)
+    Panel6: TPanel;
+    Panel1: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
     DateTimeInicial: TDateTimePicker;
     DateTimeFinal: TDateTimePicker;
     BitBtn1: TBitBtn;

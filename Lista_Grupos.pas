@@ -12,7 +12,6 @@ type
   TListaGrupos = class(TForm)
     Panel5: TPanel;
     Panel1: TPanel;
-    CheckBox1: TCheckBox;
     Edit1: TEdit;
     Panel2: TPanel;
     SBsair: TSpeedButton;
@@ -37,6 +36,7 @@ type
     Panel14: TPanel;
     Label5: TLabel;
     DBEdit2: TDBEdit;
+    Label2: TLabel;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

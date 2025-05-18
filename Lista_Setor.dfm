@@ -3,7 +3,7 @@ object ListaSetor: TListaSetor
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Consulta de  Setor'
+  Caption = 'v'
   ClientHeight = 735
   ClientWidth = 1048
   Color = clBtnFace
@@ -23,8 +23,6 @@ object ListaSetor: TListaSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1046
-    ExplicitHeight = 202
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -35,7 +33,7 @@ object ListaSetor: TListaSetor
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 15
+        Width = 249
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -45,6 +43,7 @@ object ListaSetor: TListaSetor
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
         Left = 0
@@ -66,7 +65,7 @@ object ListaSetor: TListaSetor
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 49
+        Width = 249
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -76,6 +75,7 @@ object ListaSetor: TListaSetor
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 49
       end
       object DBEdit2: TDBEdit
         Left = 0
@@ -97,7 +97,7 @@ object ListaSetor: TListaSetor
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 65
+        Width = 249
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -107,6 +107,7 @@ object ListaSetor: TListaSetor
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 65
       end
       object DBEdit3: TDBEdit
         Left = 0
@@ -129,36 +130,33 @@ object ListaSetor: TListaSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1046
-    object CheckBox1: TCheckBox
-      Left = 16
-      Top = 19
-      Width = 97
-      Height = 17
+    object Label3: TLabel
+      Left = 33
+      Top = 16
+      Width = 39
+      Height = 15
       Caption = 'C'#243'digo'
-      TabOrder = 0
     end
-    object CheckBox2: TCheckBox
-      Left = 16
-      Top = 63
-      Width = 97
-      Height = 17
+    object Label4: TLabel
+      Left = 33
+      Top = 61
+      Width = 51
+      Height = 15
       Caption = 'Descri'#231#227'o'
-      TabOrder = 1
     end
     object Edit1: TEdit
       Left = 119
       Top = 16
       Width = 299
       Height = 23
-      TabOrder = 2
+      TabOrder = 0
     end
     object Edit2: TEdit
       Left = 119
       Top = 61
       Width = 299
       Height = 23
-      TabOrder = 3
+      TabOrder = 1
     end
   end
   object Panel2: TPanel
@@ -173,7 +171,6 @@ object ListaSetor: TListaSetor
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 640
       Top = 7
@@ -2192,7 +2189,6 @@ object ListaSetor: TListaSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2212,7 +2208,6 @@ object ListaSetor: TListaSetor
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1046
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

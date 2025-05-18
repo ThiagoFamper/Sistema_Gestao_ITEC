@@ -8,16 +8,20 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   Vcl.StdCtrls, Vcl.Buttons, Vcl.ComCtrls, frxClass, frxDBSet, Data.DB,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, frCoreClasses;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, frCoreClasses, Vcl.ExtCtrls;
 
 type
   TRelatorioDevolucao = class(TForm)
+    Panel6: TPanel;
+    Panel1: TPanel;
+    BitBtn1: TBitBtn;
+    DateTimeFinal: TDateTimePicker;
+    DateTimeInicial: TDateTimePicker;
     frxRelatDev: TfrxReport;
     FDQueryRelatDev: TFDQuery;
     frxDSRelatDev: TfrxDBDataset;
-    DateTimeInicial: TDateTimePicker;
-    DateTimeFinal: TDateTimePicker;
-    BitBtn1: TBitBtn;
+    Label1: TLabel;
+    Label2: TLabel;
     procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }

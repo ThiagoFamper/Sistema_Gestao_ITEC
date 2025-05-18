@@ -1,42 +1,95 @@
 object RelatorioSaida: TRelatorioSaida
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Relat'#243'rio de Sa'#237'da'
-  ClientHeight = 441
-  ClientWidth = 624
+  ClientHeight = 355
+  ClientWidth = 340
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
-  object DateTimeInicial: TDateTimePicker
-    Left = 200
-    Top = 152
-    Width = 186
-    Height = 23
-    Date = 45789.000000000000000000
-    Time = 0.944744328706292400
+  object Panel6: TPanel
+    Left = 0
+    Top = 0
+    Width = 340
+    Height = 65
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Relat'#243'rio Sa'#237'da de Produto'
+    Color = clCadetblue
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -18
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
     TabOrder = 0
+    ExplicitLeft = 16
+    ExplicitTop = 24
+    ExplicitWidth = 241
   end
-  object DateTimeFinal: TDateTimePicker
-    Left = 200
-    Top = 200
-    Width = 186
-    Height = 23
-    Date = 45789.000000000000000000
-    Time = 0.944744328706292400
+  object Panel1: TPanel
+    Left = 0
+    Top = 65
+    Width = 340
+    Height = 290
+    Align = alClient
+    BevelEdges = []
+    BevelOuter = bvNone
+    Color = clWhitesmoke
+    ParentBackground = False
     TabOrder = 1
-  end
-  object BitBtn1: TBitBtn
-    Left = 240
-    Top = 272
-    Width = 75
-    Height = 25
-    Caption = 'BitBtn1'
-    TabOrder = 2
-    OnClick = BitBtn1Click
+    ExplicitTop = 81
+    ExplicitWidth = 902
+    ExplicitHeight = 492
+    object Label1: TLabel
+      Left = 23
+      Top = 43
+      Width = 58
+      Height = 15
+      Caption = 'Data Inicial'
+    end
+    object Label2: TLabel
+      Left = 23
+      Top = 104
+      Width = 52
+      Height = 15
+      Caption = 'Data Final'
+    end
+    object DateTimeInicial: TDateTimePicker
+      Left = 104
+      Top = 43
+      Width = 186
+      Height = 23
+      Date = 45789.000000000000000000
+      Time = 0.944744328706292400
+      TabOrder = 0
+    end
+    object DateTimeFinal: TDateTimePicker
+      Left = 104
+      Top = 104
+      Width = 186
+      Height = 23
+      Date = 45789.000000000000000000
+      Time = 0.944744328706292400
+      TabOrder = 1
+    end
+    object BitBtn1: TBitBtn
+      Left = 201
+      Top = 152
+      Width = 89
+      Height = 25
+      Caption = 'Gerar Relat'#243'rio'
+      TabOrder = 2
+      OnClick = BitBtn1Click
+    end
   end
   object frxRelatSai: TfrxReport
     Version = '2025.2.1'
@@ -53,8 +106,8 @@ object RelatorioSaida: TRelatorioSaida
       'begin'
       ''
       'end.')
-    Left = 152
-    Top = 320
+    Left = 24
+    Top = 280
     Datasets = <
       item
         DataSet = frxDSRelatSai
@@ -252,8 +305,8 @@ object RelatorioSaida: TRelatorioSaida
       '  sp.data_saida BETWEEN :data_inicial AND :data_final'
       'ORDER BY '
       '  sp.data_saida;')
-    Left = 248
-    Top = 320
+    Left = 104
+    Top = 280
     ParamData = <
       item
         Name = 'DATA_INICIAL'
@@ -274,40 +327,7 @@ object RelatorioSaida: TRelatorioSaida
     DataSet = FDQueryRelatSai
     BCDToCurrency = False
     DataSetOptions = []
-    Left = 352
-    Top = 320
-    FieldDefs = <
-      item
-        FieldName = 'id'
-      end
-      item
-        FieldName = 'produto_id'
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'operador'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'quantidade'
-      end
-      item
-        FieldName = 'data_saida'
-      end
-      item
-        FieldName = 'colab_descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'setor_descricao'
-        FieldType = fftString
-        Size = 75
-      end>
+    Left = 192
+    Top = 280
   end
 end

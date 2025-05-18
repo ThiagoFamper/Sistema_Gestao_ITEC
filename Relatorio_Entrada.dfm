@@ -1,42 +1,142 @@
 object RelatorioEntrada: TRelatorioEntrada
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Relat'#243'rio de Entrada'
-  ClientHeight = 535
-  ClientWidth = 770
+  ClientHeight = 355
+  ClientWidth = 340
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
-  object DateTimeInicial: TDateTimePicker
-    Left = 216
-    Top = 152
-    Width = 186
-    Height = 23
-    Date = 45788.000000000000000000
-    Time = 0.960387824074132400
+  object Panel6: TPanel
+    Left = 0
+    Top = 0
+    Width = 340
+    Height = 65
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Relat'#243'rio Entrada de Produto'
+    Color = clCadetblue
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -18
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
     TabOrder = 0
+    ExplicitLeft = 16
+    ExplicitTop = 24
+    ExplicitWidth = 241
   end
-  object DateTimeFinal: TDateTimePicker
-    Left = 216
-    Top = 192
-    Width = 186
-    Height = 23
-    Date = 45788.000000000000000000
-    Time = 0.960387824074132400
+  object Panel1: TPanel
+    Left = 0
+    Top = 65
+    Width = 340
+    Height = 290
+    Align = alClient
+    BevelEdges = []
+    BevelOuter = bvNone
+    Color = clWhitesmoke
+    ParentBackground = False
     TabOrder = 1
+    ExplicitLeft = -8
+    ExplicitTop = 71
+    object Label1: TLabel
+      Left = 56
+      Top = 51
+      Width = 58
+      Height = 14
+      Caption = 'Data Inicial'
+    end
+    object Label2: TLabel
+      Left = 56
+      Top = 104
+      Width = 52
+      Height = 15
+      Caption = 'Data Final'
+    end
+    object DateTimeInicial: TDateTimePicker
+      Left = 120
+      Top = 51
+      Width = 186
+      Height = 23
+      Date = 45788.000000000000000000
+      Time = 0.960387824074132400
+      TabOrder = 0
+    end
+    object DateTimeFinal: TDateTimePicker
+      Left = 120
+      Top = 104
+      Width = 186
+      Height = 23
+      Date = 45788.000000000000000000
+      Time = 0.960387824074132400
+      TabOrder = 1
+    end
+    object BitBtn1: TBitBtn
+      Left = 209
+      Top = 174
+      Width = 97
+      Height = 25
+      Caption = 'Gerar Relat'#243'rio'
+      TabOrder = 2
+      OnClick = BitBtn1Click
+    end
   end
-  object BitBtn1: TBitBtn
-    Left = 272
-    Top = 376
-    Width = 75
-    Height = 25
-    Caption = 'BitBtn1'
-    TabOrder = 2
-    OnClick = BitBtn1Click
+  object frxDSEnt: TfrxDBDataset
+    UserName = 'frxDSEnt'
+    CloseDataSource = False
+    DataSet = FDQueryRelatEnt
+    BCDToCurrency = False
+    DataSetOptions = []
+    Left = 184
+    Top = 304
+  end
+  object FDQueryRelatEnt: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT '
+      '  ep.id,'
+      '  ep.produto_id,'
+      '  p.cod_produto,'
+      '  p.descricao,'
+      '  ep.operador,'
+      '  ep.quantidade,'
+      '  TO_CHAR(ep.data_entrada, '#39'DD/MM/YYYY'#39') AS data_entrada,'
+      '  ep.nota_fiscal,'
+      '  ep.valor_unitario,'
+      '  ep.valor_total'
+      'FROM '
+      '  estoqueitec.entrada_produto ep'
+      'JOIN '
+      '  estoqueitec.produto p ON p.id = ep.produto_id'
+      'WHERE '
+      '  ep.data_entrada BETWEEN :data_inicial AND :data_final'
+      'ORDER BY '
+      '  ep.data_entrada;'
+      '')
+    Left = 113
+    Top = 304
+    ParamData = <
+      item
+        Name = 'DATA_INICIAL'
+        DataType = ftDate
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'DATA_FINAL'
+        DataType = ftDate
+        ParamType = ptInput
+        Value = Null
+      end>
   end
   object frxRelatEnt: TfrxReport
     Version = '2025.2.1'
@@ -53,8 +153,8 @@ object RelatorioEntrada: TRelatorioEntrada
       'begin'
       ''
       'end.')
-    Left = 200
-    Top = 280
+    Left = 32
+    Top = 304
     Datasets = <
       item
         DataSet = frxDSEnt
@@ -242,94 +342,5 @@ object RelatorioEntrada: TRelatorioEntrada
         end
       end
     end
-  end
-  object FDQueryRelatEnt: TFDQuery
-    Connection = DM.FDEstoqueItec
-    SQL.Strings = (
-      'SELECT '
-      '  ep.id,'
-      '  ep.produto_id,'
-      '  p.cod_produto,'
-      '  p.descricao,'
-      '  ep.operador,'
-      '  ep.quantidade,'
-      '  TO_CHAR(ep.data_entrada, '#39'DD/MM/YYYY'#39') AS data_entrada,'
-      '  ep.nota_fiscal,'
-      '  ep.valor_unitario,'
-      '  ep.valor_total'
-      'FROM '
-      '  estoqueitec.entrada_produto ep'
-      'JOIN '
-      '  estoqueitec.produto p ON p.id = ep.produto_id'
-      'WHERE '
-      '  ep.data_entrada BETWEEN :data_inicial AND :data_final'
-      'ORDER BY '
-      '  ep.data_entrada;'
-      '')
-    Left = 289
-    Top = 280
-    ParamData = <
-      item
-        Name = 'DATA_INICIAL'
-        DataType = ftDate
-        ParamType = ptInput
-        Value = Null
-      end
-      item
-        Name = 'DATA_FINAL'
-        DataType = ftDate
-        ParamType = ptInput
-        Value = Null
-      end>
-  end
-  object frxDSEnt: TfrxDBDataset
-    UserName = 'frxDSEnt'
-    CloseDataSource = False
-    DataSet = FDQueryRelatEnt
-    BCDToCurrency = False
-    DataSetOptions = []
-    Left = 376
-    Top = 280
-    FieldDefs = <
-      item
-        FieldName = 'id'
-      end
-      item
-        FieldName = 'produto_id'
-      end
-      item
-        FieldName = 'cod_produto'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'operador'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'quantidade'
-      end
-      item
-        FieldName = 'data_entrada'
-      end
-      item
-        FieldName = 'nota_fiscal'
-        FieldType = fftString
-        Size = 20
-      end
-      item
-        FieldName = 'valor_unitario'
-        Size = 64
-      end
-      item
-        FieldName = 'valor_total'
-        Size = 64
-      end>
   end
 end

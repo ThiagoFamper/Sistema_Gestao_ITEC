@@ -17,7 +17,6 @@ type
     Label5: TLabel;
     DBEdit2: TDBEdit;
     Panel1: TPanel;
-    CheckBox1: TCheckBox;
     Edit1: TEdit;
     Panel2: TPanel;
     SBsair: TSpeedButton;
@@ -36,6 +35,7 @@ type
     DBNavigator1: TDBNavigator;
     Panel3: TPanel;
     DBGrid1: TDBGrid;
+    Label2: TLabel;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

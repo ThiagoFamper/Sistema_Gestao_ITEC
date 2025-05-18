@@ -1,42 +1,95 @@
 object RelatorioDevolucao: TRelatorioDevolucao
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'Relat'#243'rio de Devolu'#231#227'o'
-  ClientHeight = 551
-  ClientWidth = 779
+  ClientHeight = 355
+  ClientWidth = 340
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
-  object DateTimeInicial: TDateTimePicker
-    Left = 232
-    Top = 208
-    Width = 186
-    Height = 23
-    Date = 45792.000000000000000000
-    Time = 0.960898009259835800
+  object Panel6: TPanel
+    Left = 0
+    Top = 0
+    Width = 340
+    Height = 65
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Relat'#243'rio Devolu'#231#227'o de Produto'
+    Color = clCadetblue
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -18
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
     TabOrder = 0
+    ExplicitLeft = 16
+    ExplicitTop = 24
+    ExplicitWidth = 241
   end
-  object DateTimeFinal: TDateTimePicker
-    Left = 232
-    Top = 248
-    Width = 186
-    Height = 23
-    Date = 45792.000000000000000000
-    Time = 0.960952118053683100
+  object Panel1: TPanel
+    Left = 0
+    Top = 65
+    Width = 340
+    Height = 290
+    Align = alClient
+    AutoSize = True
+    BevelEdges = []
+    BevelOuter = bvNone
+    Color = clWhitesmoke
+    ParentBackground = False
     TabOrder = 1
-  end
-  object BitBtn1: TBitBtn
-    Left = 288
-    Top = 304
-    Width = 75
-    Height = 25
-    Caption = 'BitBtn1'
-    TabOrder = 2
-    OnClick = BitBtn1Click
+    ExplicitTop = 57
+    ExplicitWidth = 453
+    object Label1: TLabel
+      Left = 39
+      Top = 56
+      Width = 58
+      Height = 15
+      Caption = 'Data Inicial'
+    end
+    object Label2: TLabel
+      Left = 39
+      Top = 112
+      Width = 52
+      Height = 15
+      Caption = 'Data Final'
+    end
+    object BitBtn1: TBitBtn
+      Left = 182
+      Top = 181
+      Width = 107
+      Height = 25
+      Caption = 'Gerar Relat'#243'rio'
+      TabOrder = 0
+      OnClick = BitBtn1Click
+    end
+    object DateTimeFinal: TDateTimePicker
+      Left = 103
+      Top = 112
+      Width = 186
+      Height = 23
+      Date = 45792.000000000000000000
+      Time = 0.960952118053683100
+      TabOrder = 1
+    end
+    object DateTimeInicial: TDateTimePicker
+      Left = 103
+      Top = 56
+      Width = 186
+      Height = 23
+      Date = 45792.000000000000000000
+      Time = 0.960898009259835800
+      TabOrder = 2
+    end
   end
   object frxRelatDev: TfrxReport
     Version = '2025.2.1'
@@ -53,8 +106,8 @@ object RelatorioDevolucao: TRelatorioDevolucao
       'begin'
       ''
       'end.')
-    Left = 216
-    Top = 392
+    Left = 24
+    Top = 304
     Datasets = <
       item
         DataSet = frxDSRelatDev
@@ -304,8 +357,8 @@ object RelatorioDevolucao: TRelatorioDevolucao
       '  ip.data_devolucao between :data_inicial and :data_final'
       'order by'
       '  ip.data_devolucao')
-    Left = 312
-    Top = 384
+    Left = 120
+    Top = 304
     ParamData = <
       item
         Name = 'DATA_INICIAL'
@@ -326,49 +379,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
     DataSet = FDQueryRelatDev
     BCDToCurrency = False
     DataSetOptions = []
-    Left = 416
-    Top = 384
-    FieldDefs = <
-      item
-        FieldName = 'cod_produto'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'operador'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'quantidade'
-      end
-      item
-        FieldName = 'data_emp'
-      end
-      item
-        FieldName = 'colab'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'setor'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'devolvido'
-        FieldType = fftString
-      end
-      item
-        FieldName = 'data_dev'
-      end
-      item
-        FieldName = 'qtd_devolvida'
-      end>
+    Left = 224
+    Top = 304
   end
 end
