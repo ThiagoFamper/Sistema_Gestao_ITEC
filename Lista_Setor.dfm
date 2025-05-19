@@ -18,7 +18,7 @@ object ListaSetor: TListaSetor
     Top = 525
     Width = 1048
     Height = 210
-    Align = alClient
+    Align = alBottom
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
@@ -130,33 +130,73 @@ object ListaSetor: TListaSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    object Label3: TLabel
-      Left = 33
-      Top = 16
-      Width = 39
-      Height = 15
-      Caption = 'C'#243'digo'
-    end
-    object Label4: TLabel
-      Left = 33
-      Top = 61
-      Width = 51
-      Height = 15
-      Caption = 'Descri'#231#227'o'
-    end
-    object Edit1: TEdit
-      Left = 119
-      Top = 16
-      Width = 299
-      Height = 23
+    object Panel11: TPanel
+      Left = 16
+      Top = 6
+      Width = 249
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 0
+      object Label6: TLabel
+        Left = 0
+        Top = 0
+        Width = 249
+        Height = 20
+        Align = alTop
+        Caption = 'C'#243'digo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 49
+      end
+      object Edit1: TEdit
+        Left = 0
+        Top = 20
+        Width = 249
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -50
+        ExplicitTop = 16
+        ExplicitWidth = 299
+      end
     end
-    object Edit2: TEdit
-      Left = 119
-      Top = 61
-      Width = 299
-      Height = 23
+    object Panel16: TPanel
+      Left = 16
+      Top = 84
+      Width = 249
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 1
+      object Label7: TLabel
+        Left = 0
+        Top = 0
+        Width = 249
+        Height = 20
+        Align = alTop
+        Caption = 'Descri'#231#227'o'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 65
+      end
+      object Edit2: TEdit
+        Left = 0
+        Top = 20
+        Width = 249
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -50
+        ExplicitTop = 36
+        ExplicitWidth = 299
+      end
     end
   end
   object Panel2: TPanel
@@ -2205,7 +2245,7 @@ object ListaSetor: TListaSetor
     Top = 300
     Width = 1048
     Height = 225
-    Align = alTop
+    Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
     object DBGrid1: TDBGrid

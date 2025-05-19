@@ -12,7 +12,6 @@ type
   TListaGrupos = class(TForm)
     Panel5: TPanel;
     Panel1: TPanel;
-    Edit1: TEdit;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBexcluir: TSpeedButton;
@@ -36,7 +35,9 @@ type
     Panel14: TPanel;
     Label5: TLabel;
     DBEdit2: TDBEdit;
-    Label2: TLabel;
+    Panel11: TPanel;
+    Label3: TLabel;
+    Edit1: TEdit;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

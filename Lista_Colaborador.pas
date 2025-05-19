@@ -12,16 +12,6 @@ type
   TListaColaborador = class(TForm)
     Panel5: TPanel;
     Panel1: TPanel;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    Edit4: TEdit;
-    Edit5: TEdit;
-    Label7: TLabel;
-    Label8: TLabel;
-    Label9: TLabel;
-    Label10: TLabel;
-    Label11: TLabel;
-    Edit1: TEdit;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBexcluir: TSpeedButton;
@@ -57,6 +47,21 @@ type
     Panel18: TPanel;
     Label6: TLabel;
     DBEdit6: TDBEdit;
+    Panel11: TPanel;
+    Label12: TLabel;
+    Edit1: TEdit;
+    Panel19: TPanel;
+    Label11: TLabel;
+    Edit2: TEdit;
+    Panel20: TPanel;
+    Label8: TLabel;
+    Edit3: TEdit;
+    Panel21: TPanel;
+    Label9: TLabel;
+    Edit4: TEdit;
+    Panel22: TPanel;
+    Label7: TLabel;
+    Edit5: TEdit;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

@@ -18,7 +18,7 @@ object ListaSaida: TListaSaida
     Top = 529
     Width = 1048
     Height = 268
-    Align = alClient
+    Align = alBottom
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
@@ -322,107 +322,241 @@ object ListaSaida: TListaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    object Label10: TLabel
-      Left = 574
-      Top = 114
-      Width = 16
-      Height = 15
-      Caption = 'at'#233
-    end
-    object Label1: TLabel
-      Left = 8
-      Top = 15
-      Width = 39
-      Height = 15
-      Caption = 'C'#243'digo'
-    end
-    object Label2: TLabel
-      Left = 8
-      Top = 61
-      Width = 51
-      Height = 15
-      Caption = 'Descri'#231#227'o'
-    end
-    object Label3: TLabel
-      Left = 8
-      Top = 109
-      Width = 66
-      Height = 15
-      Caption = 'Colaborador'
-    end
-    object Label4: TLabel
-      Left = 404
-      Top = 15
-      Width = 27
-      Height = 15
-      Caption = 'Setor'
-    end
-    object Label5: TLabel
-      Left = 404
-      Top = 110
-      Width = 24
-      Height = 15
-      Caption = 'Data'
-    end
-    object Label6: TLabel
-      Left = 404
-      Top = 61
-      Width = 50
-      Height = 15
-      Caption = 'Operador'
-    end
-    object Edit1: TEdit
-      Left = 80
-      Top = 15
-      Width = 299
-      Height = 23
+    object Panel22: TPanel
+      Left = 16
+      Top = 4
+      Width = 249
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 0
+      object Label5: TLabel
+        Left = 0
+        Top = 0
+        Width = 249
+        Height = 20
+        Align = alTop
+        Caption = 'C'#243'digo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 49
+      end
+      object Edit1: TEdit
+        Left = 0
+        Top = 20
+        Width = 249
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -50
+        ExplicitTop = 15
+        ExplicitWidth = 299
+      end
     end
-    object Edit2: TEdit
-      Left = 80
-      Top = 61
-      Width = 299
-      Height = 23
+    object Panel23: TPanel
+      Left = 16
+      Top = 88
+      Width = 249
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 1
+      object Label7: TLabel
+        Left = 0
+        Top = 0
+        Width = 249
+        Height = 20
+        Align = alTop
+        Caption = 'Descri'#231#227'o'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 65
+      end
+      object Edit2: TEdit
+        Left = 0
+        Top = 20
+        Width = 249
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -50
+        ExplicitTop = 36
+        ExplicitWidth = 299
+      end
     end
-    object Edit3: TEdit
-      Left = 80
-      Top = 109
-      Width = 299
-      Height = 23
-      TabOrder = 2
-    end
-    object Edit4: TEdit
-      Left = 460
-      Top = 15
-      Width = 299
-      Height = 23
-      TabOrder = 3
-    end
-    object Edit5: TEdit
-      Left = 460
-      Top = 61
-      Width = 299
-      Height = 23
-      TabOrder = 4
-    end
-    object DateTimePicker1: TDateTimePicker
-      Left = 460
-      Top = 110
-      Width = 89
-      Height = 23
-      Date = 45581.000000000000000000
-      Time = 0.832999849539191900
-      TabOrder = 5
-    end
-    object DateTimePicker2: TDateTimePicker
+    object Panel24: TPanel
       Left = 624
-      Top = 110
-      Width = 89
-      Height = 23
-      Date = 45581.000000000000000000
-      Time = 0.832999849539191900
+      Top = 88
+      Width = 249
+      Height = 59
+      BevelOuter = bvNone
+      TabOrder = 2
+      object Label8: TLabel
+        Left = 0
+        Top = 0
+        Width = 249
+        Height = 20
+        Align = alTop
+        Caption = 'Colaborador'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 84
+      end
+      object Edit3: TEdit
+        Left = 0
+        Top = 20
+        Width = 249
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -50
+        ExplicitTop = 36
+        ExplicitWidth = 299
+      end
+    end
+    object Panel25: TPanel
+      Left = 896
+      Top = 6
+      Width = 249
+      Height = 59
+      BevelOuter = bvNone
+      TabOrder = 3
+      object Label1: TLabel
+        Left = 0
+        Top = 0
+        Width = 249
+        Height = 20
+        Align = alTop
+        Caption = 'Setor'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitTop = -6
+      end
+      object Edit4: TEdit
+        Left = 0
+        Top = 20
+        Width = 249
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -50
+        ExplicitTop = 15
+        ExplicitWidth = 299
+      end
+    end
+    object Panel26: TPanel
+      Left = 624
+      Top = 6
+      Width = 249
+      Height = 59
+      BevelOuter = bvNone
+      TabOrder = 4
+      object Label2: TLabel
+        Left = 0
+        Top = 0
+        Width = 249
+        Height = 20
+        Align = alTop
+        Caption = 'Operador'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 64
+      end
+      object Edit5: TEdit
+        Left = 0
+        Top = 20
+        Width = 249
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -50
+        ExplicitTop = 36
+        ExplicitWidth = 299
+      end
+    end
+    object Panel27: TPanel
+      Left = 320
+      Top = 88
+      Width = 221
+      Height = 59
+      BevelOuter = bvNone
+      TabOrder = 5
+      object Label3: TLabel
+        Left = 0
+        Top = 0
+        Width = 221
+        Height = 20
+        Align = alTop
+        Caption = 'Data Inicial'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 75
+      end
+      object DateTimeInicial: TDateTimePicker
+        Left = 0
+        Top = 20
+        Width = 221
+        Height = 23
+        Align = alTop
+        Date = 45581.000000000000000000
+        Time = 0.832999849539191900
+        TabOrder = 0
+      end
+    end
+    object Panel28: TPanel
+      Left = 320
+      Top = 6
+      Width = 221
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 6
+      object Label4: TLabel
+        Left = 0
+        Top = 0
+        Width = 221
+        Height = 20
+        Align = alTop
+        Caption = 'Data Final'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 67
+      end
+      object DateTimeFinal: TDateTimePicker
+        Left = 0
+        Top = 20
+        Width = 221
+        Height = 23
+        Align = alTop
+        Date = 45581.000000000000000000
+        Time = 0.832999849539191900
+        TabOrder = 0
+      end
     end
   end
   object Panel2: TPanel
@@ -437,7 +571,6 @@ object ListaSaida: TListaSaida
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitTop = -6
     object SBsair: TSpeedButton
       Left = 744
       Top = 7
@@ -2809,7 +2942,7 @@ object ListaSaida: TListaSaida
     Top = 304
     Width = 1048
     Height = 225
-    Align = alTop
+    Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
     object DBGrid1: TDBGrid

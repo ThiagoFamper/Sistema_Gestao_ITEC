@@ -197,46 +197,13 @@ object TelaEmprestimo: TTelaEmprestimo
         TabOrder = 0
       end
     end
-    object Panel17: TPanel
-      Left = 566
-      Top = 6
-      Width = 125
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 5
-      object Label14: TLabel
-        Left = 0
-        Top = 0
-        Width = 125
-        Height = 20
-        Align = alTop
-        Caption = 'Data Empr'#233'stimo'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 116
-      end
-      object MaskEdit2: TMaskEdit
-        Left = 0
-        Top = 20
-        Width = 125
-        Height = 23
-        Align = alTop
-        Enabled = False
-        TabOrder = 0
-        Text = '___/___/___'
-      end
-    end
     object Panel18: TPanel
       Left = 566
-      Top = 71
+      Top = 6
       Width = 507
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 6
+      TabOrder = 5
       object Label8: TLabel
         Left = 0
         Top = 0
@@ -266,11 +233,11 @@ object TelaEmprestimo: TTelaEmprestimo
     end
     object Panel19: TPanel
       Left = 566
-      Top = 136
+      Top = 71
       Width = 507
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 7
+      TabOrder = 6
       object Label11: TLabel
         Left = 0
         Top = 0
@@ -300,11 +267,11 @@ object TelaEmprestimo: TTelaEmprestimo
     end
     object Panel20: TPanel
       Left = 566
-      Top = 201
+      Top = 136
       Width = 374
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 8
+      TabOrder = 7
       object Label15: TLabel
         Left = 0
         Top = 0

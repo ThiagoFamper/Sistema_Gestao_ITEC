@@ -12,8 +12,6 @@ type
   TListaSetor = class(TForm)
     Panel5: TPanel;
     Panel1: TPanel;
-    Edit1: TEdit;
-    Edit2: TEdit;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBexcluir: TSpeedButton;
@@ -40,8 +38,12 @@ type
     Panel15: TPanel;
     Label2: TLabel;
     DBEdit3: TDBEdit;
-    Label3: TLabel;
-    Label4: TLabel;
+    Panel11: TPanel;
+    Label6: TLabel;
+    Panel16: TPanel;
+    Label7: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

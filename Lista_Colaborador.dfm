@@ -23,76 +23,176 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    object Label7: TLabel
-      Left = 461
-      Top = 65
-      Width = 25
-      Height = 15
-      Caption = 'Sede'
-    end
-    object Label8: TLabel
-      Left = 40
-      Top = 63
-      Width = 51
-      Height = 15
-      Caption = 'Descri'#231#227'o'
-    end
-    object Label9: TLabel
-      Left = 40
-      Top = 111
-      Width = 27
-      Height = 15
-      Caption = 'Setor'
-    end
-    object Label10: TLabel
-      Left = 461
-      Top = 16
-      Width = 32
-      Height = 15
-      Caption = 'Cargo'
-    end
-    object Label11: TLabel
-      Left = 40
-      Top = 17
-      Width = 39
-      Height = 15
-      Caption = 'C'#243'digo'
-    end
-    object Edit1: TEdit
-      Left = 119
-      Top = 13
-      Width = 299
-      Height = 23
+    object Panel11: TPanel
+      Left = 16
+      Top = 4
+      Width = 347
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 0
-      StyleName = 'Edit1'
+      object Label12: TLabel
+        Left = 0
+        Top = 0
+        Width = 347
+        Height = 20
+        Align = alTop
+        Caption = 'C'#243'digo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 49
+      end
+      object Edit1: TEdit
+        Left = 0
+        Top = 20
+        Width = 347
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        StyleName = 'Edit1'
+        ExplicitLeft = 48
+        ExplicitTop = 13
+        ExplicitWidth = 299
+      end
     end
-    object Edit2: TEdit
-      Left = 119
-      Top = 61
-      Width = 299
-      Height = 23
+    object Panel19: TPanel
+      Left = 16
+      Top = 69
+      Width = 347
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 1
+      object Label11: TLabel
+        Left = 0
+        Top = 0
+        Width = 347
+        Height = 20
+        Align = alTop
+        Caption = 'Descri'#231#227'o'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 65
+      end
+      object Edit2: TEdit
+        Left = 0
+        Top = 20
+        Width = 347
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = 48
+        ExplicitTop = 36
+        ExplicitWidth = 299
+      end
     end
-    object Edit3: TEdit
-      Left = 119
-      Top = 109
-      Width = 299
-      Height = 23
+    object Panel20: TPanel
+      Left = 416
+      Top = 6
+      Width = 347
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 2
+      object Label8: TLabel
+        Left = 0
+        Top = 0
+        Width = 347
+        Height = 20
+        Align = alTop
+        Caption = 'Setor'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 35
+      end
+      object Edit3: TEdit
+        Left = 0
+        Top = 20
+        Width = 347
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = 48
+        ExplicitTop = 36
+        ExplicitWidth = 299
+      end
     end
-    object Edit4: TEdit
-      Left = 543
-      Top = 13
-      Width = 299
-      Height = 23
+    object Panel21: TPanel
+      Left = 416
+      Top = 69
+      Width = 347
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 3
+      object Label9: TLabel
+        Left = 0
+        Top = 0
+        Width = 347
+        Height = 20
+        Align = alTop
+        Caption = 'Cargo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 40
+      end
+      object Edit4: TEdit
+        Left = 0
+        Top = 20
+        Width = 347
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = 48
+        ExplicitTop = 13
+        ExplicitWidth = 299
+      end
     end
-    object Edit5: TEdit
-      Left = 543
-      Top = 64
-      Width = 299
-      Height = 23
+    object Panel22: TPanel
+      Left = 776
+      Top = 6
+      Width = 347
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 4
+      object Label7: TLabel
+        Left = 0
+        Top = 0
+        Width = 347
+        Height = 20
+        Align = alTop
+        Caption = 'Sede'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 33
+      end
+      object Edit5: TEdit
+        Left = 0
+        Top = 20
+        Width = 347
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = 48
+        ExplicitTop = 36
+        ExplicitWidth = 299
+      end
     end
   end
   object Panel2: TPanel
@@ -2137,7 +2237,7 @@ object ListaColaborador: TListaColaborador
     Top = 530
     Width = 1457
     Height = 254
-    Align = alClient
+    Align = alBottom
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
@@ -2239,7 +2339,7 @@ object ListaColaborador: TListaColaborador
       end
     end
     object Panel16: TPanel
-      Left = 510
+      Left = 416
       Top = 17
       Width = 347
       Height = 59
@@ -2271,7 +2371,7 @@ object ListaColaborador: TListaColaborador
       end
     end
     object Panel17: TPanel
-      Left = 510
+      Left = 416
       Top = 82
       Width = 347
       Height = 59
@@ -2303,7 +2403,7 @@ object ListaColaborador: TListaColaborador
       end
     end
     object Panel18: TPanel
-      Left = 510
+      Left = 416
       Top = 147
       Width = 347
       Height = 59
@@ -2340,7 +2440,7 @@ object ListaColaborador: TListaColaborador
     Top = 305
     Width = 1457
     Height = 225
-    Align = alTop
+    Align = alClient
     BevelEdges = []
     BevelOuter = bvNone
     TabOrder = 4

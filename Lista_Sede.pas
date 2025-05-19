@@ -17,7 +17,6 @@ type
     Label5: TLabel;
     DBEdit2: TDBEdit;
     Panel1: TPanel;
-    Edit1: TEdit;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBexcluir: TSpeedButton;
@@ -35,7 +34,9 @@ type
     DBNavigator1: TDBNavigator;
     Panel3: TPanel;
     DBGrid1: TDBGrid;
-    Label2: TLabel;
+    Panel11: TPanel;
+    Label3: TLabel;
+    Edit1: TEdit;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

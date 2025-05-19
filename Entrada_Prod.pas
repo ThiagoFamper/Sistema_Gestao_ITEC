@@ -39,9 +39,6 @@ type
     Panel16: TPanel;
     Label13: TLabel;
     DBedit4: TDBEdit;
-    Panel17: TPanel;
-    Label14: TLabel;
-    MaskEdit1: TMaskEdit;
     Panel18: TPanel;
     Label2: TLabel;
     DBedit5: TDBEdit;
@@ -56,8 +53,6 @@ type
     DBEdit3: TDBEdit;
     DBEdit8: TDBEdit;
     DBNavigator1: TDBNavigator;
-    Label7: TLabel;
-    DBEdit9: TDBEdit;
     procedure SBsairClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
   private

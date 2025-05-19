@@ -12,14 +12,6 @@ type
   TListaSaida = class(TForm)
     Panel5: TPanel;
     Panel1: TPanel;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    Edit4: TEdit;
-    Edit5: TEdit;
-    DateTimePicker1: TDateTimePicker;
-    DateTimePicker2: TDateTimePicker;
-    Label10: TLabel;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBrelatorio: TSpeedButton;
@@ -66,12 +58,27 @@ type
     Panel21: TPanel;
     Label19: TLabel;
     DBEdit9: TDBEdit;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
+    Panel22: TPanel;
     Label5: TLabel;
-    Label6: TLabel;
+    Panel23: TPanel;
+    Label7: TLabel;
+    Panel24: TPanel;
+    Label8: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Panel25: TPanel;
+    Label1: TLabel;
+    Edit4: TEdit;
+    Panel26: TPanel;
+    Label2: TLabel;
+    Edit5: TEdit;
+    Panel27: TPanel;
+    Label3: TLabel;
+    DateTimeInicial: TDateTimePicker;
+    Panel28: TPanel;
+    Label4: TLabel;
+    DateTimeFinal: TDateTimePicker;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -247,8 +254,8 @@ begin
     Edit3.Enabled            := False;
     Edit4.Enabled            := False;
     Edit5.Enabled            := False;
-    DateTimePicker1.enabled  := False;
-    DateTimePicker2.enabled  := False;
+    DateTimeInicial.enabled  := False;
+    DateTimeFinal.enabled  := False;
 end;
 
 procedure TListaSaida.Edit1Change(Sender: TObject); // pesquisa código
@@ -283,8 +290,8 @@ begin
     Edit3.Enabled            := True;
     Edit4.Enabled            := True;
     Edit5.Enabled            := True;
-    DateTimePicker1.enabled  := True;
-    DateTimePicker2.enabled  := True;
+    DateTimeInicial.enabled  := True;
+    DateTimeFinal.enabled  := True;
 end;
 
 end.

@@ -25,14 +25,6 @@ object EntradaProd: TEntradaProd
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
-    object Label7: TLabel
-      Left = 952
-      Top = 120
-      Width = 68
-      Height = 15
-      Caption = 'data_entrada'
-      FocusControl = DBEdit9
-    end
     object Panel12: TPanel
       Left = 16
       Top = 6
@@ -206,47 +198,13 @@ object EntradaProd: TEntradaProd
         TabOrder = 0
       end
     end
-    object Panel17: TPanel
-      Left = 588
-      Top = 6
-      Width = 116
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 5
-      object Label14: TLabel
-        Left = 0
-        Top = 0
-        Width = 116
-        Height = 20
-        Align = alTop
-        Caption = 'Data Entrada'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 87
-      end
-      object MaskEdit1: TMaskEdit
-        Left = 0
-        Top = 20
-        Width = 116
-        Height = 23
-        Align = alTop
-        Enabled = False
-        TabOrder = 0
-        Text = '___/___/___'
-        ExplicitTop = 26
-      end
-    end
     object Panel18: TPanel
       Left = 588
-      Top = 71
+      Top = 6
       Width = 214
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 6
+      TabOrder = 5
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -276,11 +234,11 @@ object EntradaProd: TEntradaProd
     end
     object Panel19: TPanel
       Left = 588
-      Top = 201
+      Top = 136
       Width = 110
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 7
+      TabOrder = 6
       object Label4: TLabel
         Left = 0
         Top = 0
@@ -310,11 +268,11 @@ object EntradaProd: TEntradaProd
     end
     object Panel20: TPanel
       Left = 588
-      Top = 136
+      Top = 71
       Width = 110
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 8
+      TabOrder = 7
       object Label3: TLabel
         Left = 0
         Top = 0
@@ -344,11 +302,11 @@ object EntradaProd: TEntradaProd
     end
     object Panel21: TPanel
       Left = 588
-      Top = 262
+      Top = 201
       Width = 168
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 9
+      TabOrder = 8
       object Label5: TLabel
         Left = 0
         Top = 0
@@ -375,15 +333,6 @@ object EntradaProd: TEntradaProd
         Enabled = False
         TabOrder = 0
       end
-    end
-    object DBEdit9: TDBEdit
-      Left = 952
-      Top = 141
-      Width = 154
-      Height = 23
-      DataField = 'data_entrada'
-      DataSource = DM.dsFDTabEntrada
-      TabOrder = 10
     end
   end
   object Panel2: TPanel

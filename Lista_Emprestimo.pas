@@ -13,14 +13,6 @@ type
   TListaEmprestimo = class(TForm)
     Panel5: TPanel;
     Panel1: TPanel;
-    Label9: TLabel;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    Edit4: TEdit;
-    Edit5: TEdit;
-    DateTimePicker1: TDateTimePicker;
-    DateTimePicker2: TDateTimePicker;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBrelatorio: TSpeedButton;
@@ -67,12 +59,27 @@ type
     Panel21: TPanel;
     Label8: TLabel;
     DBEdit9: TDBEdit;
+    Panel22: TPanel;
+    Label9: TLabel;
+    Edit1: TEdit;
+    Panel23: TPanel;
     Label2: TLabel;
+    Edit2: TEdit;
+    Panel24: TPanel;
     Label3: TLabel;
+    Edit3: TEdit;
+    Panel25: TPanel;
     Label6: TLabel;
+    Edit4: TEdit;
+    Panel26: TPanel;
     Label7: TLabel;
-    Label14: TLabel;
+    Edit5: TEdit;
+    Panel27: TPanel;
     Label16: TLabel;
+    DateTimeInicial: TDateTimePicker;
+    Panel28: TPanel;
+    Label14: TLabel;
+    DateTimeFinal: TDateTimePicker;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -248,8 +255,8 @@ begin
     Edit3.Enabled            := False;
     Edit4.Enabled            := False;
     Edit5.Enabled            := False;
-    DateTimePicker1.enabled  := False;
-    DateTimePicker2.enabled  := False;
+    DateTimeInicial.enabled  := False;
+    DateTimeFinal.enabled  := False;
 end;
 
 procedure TListaEmprestimo.Edit1Change(Sender: TObject); // pesquisa código
@@ -284,8 +291,8 @@ begin
     Edit3.Enabled            := True;
     Edit4.Enabled            := True;
     Edit5.Enabled            := True;
-    DateTimePicker1.enabled  := True;
-    DateTimePicker2.enabled  := True;
+    DateTimeInicial.enabled  := True;
+    DateTimeFinal.enabled  := True;
 end;
 
 end.

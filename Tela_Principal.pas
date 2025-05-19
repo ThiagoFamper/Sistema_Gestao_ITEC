@@ -73,6 +73,7 @@ type
     Panel3: TPanel;
     pnlConteudo: TPanel;
     pnpCadSede: TPanel;
+    pnpConSede: TPanel;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -127,6 +128,7 @@ type
 
     procedure AbrirFormulario(ClasseForm: TFormClass);
     procedure pnpCadSedeClick(Sender: TObject);
+    procedure pnpConSedeClick(Sender: TObject);
 
   private
      procedure selecionaMenu(nMENU: integer);
@@ -256,6 +258,11 @@ end;
 procedure TTelaPrincipal.pnpCadSedeClick(Sender: TObject);
 begin
   AbrirFormulario(TCadSede); // abre a tela de cadastro de sede
+end;
+
+procedure TTelaPrincipal.pnpConSedeClick(Sender: TObject);
+begin
+  AbrirFormulario(TListaSede);  // abre a tela de consulta de sede
 end;
 
 procedure TTelaPrincipal.pnpConSedeMouseEnter(Sender: TObject);

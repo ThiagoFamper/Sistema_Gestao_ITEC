@@ -20,66 +20,124 @@ object ListaUsuario: TListaUsuario
     Height = 156
     Align = alTop
     BevelEdges = [beBottom]
+    BevelKind = bkFlat
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    object Label6: TLabel
-      Left = 23
-      Top = 16
-      Width = 33
-      Height = 15
-      Caption = 'Nome'
-    end
-    object Label7: TLabel
-      Left = 23
-      Top = 61
-      Width = 30
-      Height = 15
-      Caption = 'Login'
-    end
-    object Edit1: TEdit
-      Left = 119
-      Top = 16
-      Width = 299
-      Height = 23
-      TabOrder = 0
-    end
-    object Edit2: TEdit
-      Left = 119
-      Top = 61
-      Width = 299
-      Height = 23
-      TabOrder = 1
-    end
-    object RadioGroup1: TRadioGroup
+    object Panel11: TPanel
       Left = 16
-      Top = 90
-      Width = 177
-      Height = 57
-      Caption = 'Admin'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
+      Top = 6
+      Width = 249
+      Height = 59
+      BevelOuter = bvNone
+      TabOrder = 0
+      object Label8: TLabel
+        Left = 0
+        Top = 0
+        Width = 249
+        Height = 20
+        Align = alTop
+        Caption = 'Nome'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 41
+      end
+      object Edit1: TEdit
+        Left = 0
+        Top = 20
+        Width = 249
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -50
+        ExplicitTop = 13
+        ExplicitWidth = 299
+      end
+    end
+    object Panel18: TPanel
+      Left = 16
+      Top = 91
+      Width = 249
+      Height = 59
+      BevelOuter = bvNone
+      TabOrder = 1
+      object Label6: TLabel
+        Left = 0
+        Top = 0
+        Width = 249
+        Height = 20
+        Align = alTop
+        Caption = 'Login'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 37
+      end
+      object Edit2: TEdit
+        Left = 0
+        Top = 20
+        Width = 249
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -50
+        ExplicitTop = 36
+        ExplicitWidth = 299
+      end
+    end
+    object Panel19: TPanel
+      Left = 373
+      Top = 26
+      Width = 249
+      Height = 75
+      BevelKind = bkFlat
+      BevelOuter = bvNone
       TabOrder = 2
-    end
-    object RadioButton2: TRadioButton
-      Left = 31
-      Top = 117
-      Width = 52
-      Height = 17
-      Caption = 'Sim'
-      TabOrder = 3
-    end
-    object RadioButton3: TRadioButton
-      Left = 119
-      Top = 117
-      Width = 50
-      Height = 17
-      Caption = 'N'#227'o'
-      TabOrder = 4
+      object Label7: TLabel
+        Left = 0
+        Top = 0
+        Width = 245
+        Height = 20
+        Align = alTop
+        Caption = 'Admin'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitTop = -7
+        ExplicitWidth = 249
+      end
+      object RadioButton2: TRadioButton
+        Left = 0
+        Top = 37
+        Width = 245
+        Height = 17
+        Align = alBottom
+        Caption = 'Sim'
+        TabOrder = 0
+        ExplicitTop = 42
+        ExplicitWidth = 249
+      end
+      object RadioButton3: TRadioButton
+        Left = 0
+        Top = 54
+        Width = 245
+        Height = 17
+        Align = alBottom
+        Caption = 'N'#227'o'
+        TabOrder = 1
+        ExplicitTop = 43
+        ExplicitWidth = 249
+      end
     end
   end
   object Panel5: TPanel
@@ -87,7 +145,7 @@ object ListaUsuario: TListaUsuario
     Top = 532
     Width = 1048
     Height = 265
-    Align = alClient
+    Align = alBottom
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
@@ -2299,7 +2357,7 @@ object ListaUsuario: TListaUsuario
     Top = 307
     Width = 1048
     Height = 225
-    Align = alTop
+    Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
     object DBGrid1: TDBGrid

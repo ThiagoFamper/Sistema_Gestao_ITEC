@@ -39,9 +39,6 @@ type
     Panel16: TPanel;
     Label13: TLabel;
     DBedit4: TDBEdit;
-    Panel17: TPanel;
-    Label14: TLabel;
-    MaskEdit2: TMaskEdit;
     Panel18: TPanel;
     Label8: TLabel;
     DBComboBox2: TDBComboBox;

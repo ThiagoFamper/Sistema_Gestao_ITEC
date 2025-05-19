@@ -130,7 +130,7 @@ object SaidaProd: TSaidaProd
     end
     object Panel16: TPanel
       Left = 573
-      Top = 71
+      Top = 6
       Width = 506
       Height = 59
       BevelOuter = bvNone
@@ -164,7 +164,7 @@ object SaidaProd: TSaidaProd
     end
     object Panel17: TPanel
       Left = 573
-      Top = 136
+      Top = 71
       Width = 506
       Height = 59
       BevelOuter = bvNone
@@ -230,46 +230,13 @@ object SaidaProd: TSaidaProd
         TabOrder = 0
       end
     end
-    object Panel19: TPanel
-      Left = 573
-      Top = 6
-      Width = 107
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 6
-      object Label14: TLabel
-        Left = 0
-        Top = 0
-        Width = 107
-        Height = 20
-        Align = alTop
-        Caption = 'Data Sa'#237'da'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 73
-      end
-      object MaskEdit2: TMaskEdit
-        Left = 0
-        Top = 20
-        Width = 107
-        Height = 23
-        Align = alTop
-        Enabled = False
-        TabOrder = 0
-        Text = '___/___/___'
-      end
-    end
     object Panel20: TPanel
       Left = 13
       Top = 71
       Width = 228
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 7
+      TabOrder = 6
       object Label10: TLabel
         Left = 0
         Top = 0
@@ -300,11 +267,11 @@ object SaidaProd: TSaidaProd
     end
     object Panel21: TPanel
       Left = 573
-      Top = 201
+      Top = 136
       Width = 172
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 8
+      TabOrder = 7
       object Label5: TLabel
         Left = 0
         Top = 0

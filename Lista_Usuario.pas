@@ -11,12 +11,7 @@ uses
 type
   TListaUsuario = class(TForm)
     Panel1: TPanel;
-    Edit1: TEdit;
-    Edit2: TEdit;
     Panel5: TPanel;
-    RadioGroup1: TRadioGroup;
-    RadioButton2: TRadioButton;
-    RadioButton3: TRadioButton;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBexcluir: TSpeedButton;
@@ -49,8 +44,16 @@ type
     Panel17: TPanel;
     Label3: TLabel;
     DBEdit5: TDBEdit;
+    Panel11: TPanel;
+    Label8: TLabel;
+    Edit1: TEdit;
+    Panel18: TPanel;
     Label6: TLabel;
+    Edit2: TEdit;
+    Panel19: TPanel;
     Label7: TLabel;
+    RadioButton2: TRadioButton;
+    RadioButton3: TRadioButton;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

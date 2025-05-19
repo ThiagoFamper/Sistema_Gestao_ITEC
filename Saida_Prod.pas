@@ -43,9 +43,6 @@ type
     Panel18: TPanel;
     Label13: TLabel;
     DBedit4: TDBEdit;
-    Panel19: TPanel;
-    Label14: TLabel;
-    MaskEdit2: TMaskEdit;
     Panel20: TPanel;
     Label10: TLabel;
     DBEdit2: TDBEdit;

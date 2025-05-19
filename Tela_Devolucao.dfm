@@ -396,107 +396,241 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    object Label5: TLabel
-      Left = 620
-      Top = 121
-      Width = 16
-      Height = 15
-      Caption = 'at'#233
-    end
-    object Label3: TLabel
+    object Panel23: TPanel
       Left = 16
-      Top = 67
-      Width = 51
-      Height = 16
-      Caption = 'Descri'#231#227'o'
-    end
-    object Label4: TLabel
-      Left = 16
-      Top = 23
-      Width = 39
-      Height = 15
-      Caption = 'C'#243'digo'
-    end
-    object Label6: TLabel
-      Left = 454
-      Top = 118
-      Width = 24
-      Height = 15
-      Caption = 'Data'
-    end
-    object Label7: TLabel
-      Left = 16
-      Top = 113
-      Width = 66
-      Height = 15
-      Caption = 'Colaborador'
-    end
-    object Label8: TLabel
-      Left = 454
-      Top = 67
-      Width = 50
-      Height = 15
-      Caption = 'Operador'
-    end
-    object Label10: TLabel
-      Left = 454
-      Top = 23
-      Width = 27
-      Height = 15
-      Caption = 'Setor'
-    end
-    object Edit1: TEdit
-      Left = 88
-      Top = 23
-      Width = 299
-      Height = 23
+      Top = 6
+      Width = 208
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 0
+      object Label19: TLabel
+        Left = 0
+        Top = 0
+        Width = 208
+        Height = 20
+        Align = alTop
+        Caption = 'C'#243'digo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 49
+      end
+      object Edit1: TEdit
+        Left = 0
+        Top = 20
+        Width = 208
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -91
+        ExplicitTop = 23
+        ExplicitWidth = 299
+      end
     end
-    object Edit2: TEdit
-      Left = 88
-      Top = 67
-      Width = 299
-      Height = 23
+    object Panel24: TPanel
+      Left = 16
+      Top = 94
+      Width = 208
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 1
+      object Label4: TLabel
+        Left = 0
+        Top = 0
+        Width = 208
+        Height = 20
+        Align = alTop
+        Caption = 'Descri'#231#227'o'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 65
+      end
+      object Edit2: TEdit
+        Left = 0
+        Top = 20
+        Width = 208
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -91
+        ExplicitTop = 36
+        ExplicitWidth = 299
+      end
     end
-    object Edit3: TEdit
-      Left = 88
-      Top = 113
-      Width = 299
-      Height = 23
+    object Panel25: TPanel
+      Left = 736
+      Top = 6
+      Width = 208
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 2
+      object Label3: TLabel
+        Left = 0
+        Top = 0
+        Width = 208
+        Height = 20
+        Align = alTop
+        Caption = 'Operador'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 64
+      end
+      object Edit5: TEdit
+        Left = 0
+        Top = 20
+        Width = 208
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -91
+        ExplicitTop = 36
+        ExplicitWidth = 299
+      end
     end
-    object Edit4: TEdit
-      Left = 510
-      Top = 23
-      Width = 299
-      Height = 23
+    object Panel26: TPanel
+      Left = 736
+      Top = 94
+      Width = 208
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 3
+      object Label5: TLabel
+        Left = 0
+        Top = 0
+        Width = 208
+        Height = 20
+        Align = alTop
+        Caption = 'Colaborador'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 84
+      end
+      object Edit3: TEdit
+        Left = 0
+        Top = 20
+        Width = 208
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -91
+        ExplicitTop = 36
+        ExplicitWidth = 299
+      end
     end
-    object Edit5: TEdit
-      Left = 510
-      Top = 67
-      Width = 299
-      Height = 23
+    object Panel27: TPanel
+      Left = 1032
+      Top = 6
+      Width = 208
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 4
+      object Label10: TLabel
+        Left = 0
+        Top = 0
+        Width = 208
+        Height = 20
+        Align = alTop
+        Caption = 'Setor'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 35
+      end
+      object Edit4: TEdit
+        Left = 0
+        Top = 20
+        Width = 208
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        ExplicitLeft = -91
+        ExplicitTop = 24
+        ExplicitWidth = 299
+      end
     end
-    object DateTimePicker1: TDateTimePicker
-      Left = 510
-      Top = 118
-      Width = 89
-      Height = 23
-      Date = 45581.000000000000000000
-      Time = 0.832999849539191900
+    object Panel28: TPanel
+      Left = 376
+      Top = 6
+      Width = 221
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 5
+      object Label6: TLabel
+        Left = 0
+        Top = 0
+        Width = 221
+        Height = 20
+        Align = alTop
+        Caption = 'Data Final'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 67
+      end
+      object DateTimeFinal: TDateTimePicker
+        Left = 0
+        Top = 20
+        Width = 221
+        Height = 23
+        Align = alTop
+        Date = 45581.000000000000000000
+        Time = 0.832999849539191900
+        TabOrder = 0
+      end
     end
-    object DateTimePicker2: TDateTimePicker
-      Left = 662
-      Top = 118
-      Width = 89
-      Height = 23
-      Date = 45581.000000000000000000
-      Time = 0.832999849539191900
+    object Panel29: TPanel
+      Left = 376
+      Top = 94
+      Width = 221
+      Height = 59
+      BevelOuter = bvNone
       TabOrder = 6
+      object Label7: TLabel
+        Left = 0
+        Top = 0
+        Width = 221
+        Height = 20
+        Align = alTop
+        Caption = 'Data Inicial'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 75
+      end
+      object DateTimeInicial: TDateTimePicker
+        Left = 0
+        Top = 20
+        Width = 221
+        Height = 23
+        Align = alTop
+        Date = 45581.000000000000000000
+        Time = 0.832999849539191900
+        TabOrder = 0
+      end
     end
   end
   object Panel2: TPanel

@@ -12,14 +12,6 @@ type
   TListaEntrada = class(TForm)
     Panel5: TPanel;
     Panel1: TPanel;
-    Label10: TLabel;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    Edit4: TEdit;
-    Edit5: TEdit;
-    DateTimePicker1: TDateTimePicker;
-    DateTimePicker2: TDateTimePicker;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBrelatorio: TSpeedButton;
@@ -69,12 +61,24 @@ type
     Panel22: TPanel;
     Label20: TLabel;
     DBEdit10: TDBEdit;
+    Panel23: TPanel;
+    Label7: TLabel;
+    Edit1: TEdit;
+    Panel24: TPanel;
     Label1: TLabel;
+    Edit2: TEdit;
+    Panel25: TPanel;
     Label2: TLabel;
+    Edit3: TEdit;
+    Panel26: TPanel;
     Label3: TLabel;
+    Edit4: TEdit;
+    Panel28: TPanel;
+    DateTimeFinal: TDateTimePicker;
     Label4: TLabel;
+    Panel29: TPanel;
     Label5: TLabel;
-    Label6: TLabel;
+    DateTimeInicial: TDateTimePicker;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -88,7 +92,6 @@ type
     procedure Edit2Change(Sender: TObject);
     procedure Edit3Change(Sender: TObject);
     procedure Edit4Change(Sender: TObject);
-    procedure Edit5Change(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
 
   private
@@ -256,9 +259,8 @@ begin
     Edit2.Enabled            := False;
     Edit3.Enabled            := False;
     Edit4.Enabled            := False;
-    Edit5.Enabled            := False;
-    DateTimePicker1.enabled  := False;
-    DateTimePicker2.enabled  := False;
+    DateTimeInicial.enabled  := False;
+    DateTimeFinal.enabled  := False;
 end;
 
 procedure TListaEntrada.Edit1Change(Sender: TObject); // pesquisa código
@@ -281,20 +283,14 @@ begin
     dm.FDTabColaborador.Locate('setor', Edit4.Text, [loPartialKey, loCaseInsensitive]);
 end;
 
-procedure TListaEntrada.Edit5Change(Sender: TObject); // pesquisa sede
-begin
-    dm.FDTabColaborador.Locate('operador', Edit5.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
 procedure TListaEntrada.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
     Edit2.Enabled            := True;
     Edit3.Enabled            := True;
     Edit4.Enabled            := True;
-    Edit5.Enabled            := True;
-    DateTimePicker1.enabled  := True;
-    DateTimePicker2.enabled  := True;
+    DateTimeInicial.enabled  := True;
+    DateTimeFinal.enabled  := True;
 end;
 
 end.

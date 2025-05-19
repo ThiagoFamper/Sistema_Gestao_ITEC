@@ -13,9 +13,6 @@ object TelaPrincipal: TTelaPrincipal
   Position = poDesigned
   WindowState = wsMaximized
   OnShow = FormShow
-  DesignSize = (
-    1155
-    1061)
   TextHeight = 15
   object Panel2: TPanel
     Left = 0
@@ -36,7 +33,7 @@ object TelaPrincipal: TTelaPrincipal
     TabOrder = 0
   end
   object pnpCadastro: TPanel
-    Left = 482
+    Left = 723
     Top = 81
     Width = 241
     Height = 980
@@ -47,6 +44,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 1
     Visible = False
+    ExplicitLeft = 611
     object pnpCadProd: TPanel
       Left = 0
       Top = 114
@@ -379,6 +377,8 @@ object TelaPrincipal: TTelaPrincipal
       ParentBackground = False
       TabOrder = 7
       OnClick = pnpCadSedeClick
+      OnMouseEnter = pnpConSedeMouseEnter
+      OnMouseLeave = pnpConSedeMouseLeave
     end
   end
   object pnpMovimentacao: TPanel
@@ -392,6 +392,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 2
     Visible = False
+    ExplicitLeft = 129
     object pnpMovEnt: TPanel
       Left = 0
       Top = 114
@@ -668,7 +669,7 @@ object TelaPrincipal: TTelaPrincipal
     end
   end
   object pnpConulta: TPanel
-    Left = 723
+    Left = 482
     Top = 81
     Width = 241
     Height = 980
@@ -678,9 +679,10 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 3
     Visible = False
+    ExplicitLeft = 723
     object pnpConProd: TPanel
-      Left = 6
-      Top = 116
+      Left = 0
+      Top = 114
       Width = 241
       Height = 64
       BevelEdges = [beRight]
@@ -1042,7 +1044,7 @@ object TelaPrincipal: TTelaPrincipal
     end
     object pnpConSai: TPanel
       Left = 0
-      Top = 626
+      Top = 562
       Width = 241
       Height = 64
       BevelEdges = [beRight]
@@ -1085,7 +1087,7 @@ object TelaPrincipal: TTelaPrincipal
     end
     object pnpConEmp: TPanel
       Left = 0
-      Top = 562
+      Top = 626
       Width = 241
       Height = 64
       BevelEdges = [beRight]
@@ -1149,6 +1151,22 @@ object TelaPrincipal: TTelaPrincipal
         Transparent = True
       end
     end
+    object pnpConSede: TPanel
+      Left = 0
+      Top = 306
+      Width = 241
+      Height = 64
+      BevelEdges = [beRight]
+      BevelKind = bkFlat
+      BevelOuter = bvNone
+      Caption = 'Sede'
+      Color = clWhite
+      ParentBackground = False
+      TabOrder = 10
+      OnClick = pnpConSedeClick
+      OnMouseEnter = pnpConSedeMouseEnter
+      OnMouseLeave = pnpConSedeMouseLeave
+    end
   end
   object pnpPrincipal: TPanel
     Left = 0
@@ -1160,6 +1178,7 @@ object TelaPrincipal: TTelaPrincipal
     Color = clTeal
     ParentBackground = False
     TabOrder = 4
+    ExplicitLeft = -112
     object pnpCad: TPanel
       Left = 0
       Top = 114
@@ -1354,14 +1373,18 @@ object TelaPrincipal: TTelaPrincipal
     end
   end
   object pnlConteudo: TPanel
-    Left = 1144
+    Left = 964
     Top = 81
-    Width = 1819
-    Height = 1022
-    Anchors = [akLeft, akTop, akRight, akBottom]
+    Width = 191
+    Height = 980
+    Align = alClient
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
     TabOrder = 5
+    ExplicitLeft = 247
+    ExplicitTop = 87
+    ExplicitWidth = 725
+    ExplicitHeight = 806
   end
 end

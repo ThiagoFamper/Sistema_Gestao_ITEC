@@ -29,37 +29,40 @@ type
     Panel4: TPanel;
     DBNavigator1: TDBNavigator;
     Panel5: TPanel;
-    Label1: TLabel;
-    Label5: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    Label6: TLabel;
-    DBEdit1: TDBEdit;
-    DBEdit2: TDBEdit;
-    DBEdit3: TDBEdit;
-    DBEdit4: TDBEdit;
-    DBEdit5: TDBEdit;
-    DBLookupComboBox1: TDBLookupComboBox;
     Panel3: TPanel;
     DBGrid1: TDBGrid;
     Panel13: TPanel;
-    Label7: TLabel;
-    Edit6: TEdit;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
     Panel14: TPanel;
-    Label11: TLabel;
-    Edit2: TEdit;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
     Panel15: TPanel;
-    Edit1: TEdit;
-    Label10: TLabel;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
     Panel16: TPanel;
-    Label8: TLabel;
-    Edit4: TEdit;
     Panel17: TPanel;
-    Label12: TLabel;
-    Edit3: TEdit;
     Panel18: TPanel;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Label5: TLabel;
+    DBEdit5: TDBEdit;
+    Label6: TLabel;
+    DBEdit6: TDBEdit;
+    Panel19: TPanel;
+    Label7: TLabel;
+    Panel20: TPanel;
+    Label8: TLabel;
+    Panel21: TPanel;
     Label9: TLabel;
+    Panel22: TPanel;
+    Label10: TLabel;
+    Panel23: TPanel;
+    Label11: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
     Edit5: TEdit;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
@@ -140,34 +143,34 @@ end;
 
 procedure TListaProdutos.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
+    if DBEdit1.Text = '' then
       begin
         ShowMessage('O Campo "Código" deve ser preenchido!');
+        DBEdit1.SetFocus;
+      end
+  else
+    if DBEdit2.Text = '' then
+      begin
+        ShowMessage('O Campo "Descrição" deve ser preenchido!');
         DBEdit2.SetFocus;
       end
   else
     if DBEdit3.Text = '' then
       begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
+        ShowMessage('O Campo "Marca" deve ser preenchido!');
         DBEdit3.SetFocus;
       end
   else
     if DBEdit4.Text = '' then
       begin
-        ShowMessage('O Campo "Marca" deve ser preenchido!');
+        ShowMessage('O Campo "Modelo" deve ser preenchido!');
         DBEdit4.SetFocus;
       end
   else
     if DBEdit5.Text = '' then
       begin
-        ShowMessage('O Campo "Modelo" deve ser preenchido!');
-        DBEdit5.SetFocus;
-      end
-  else
-    if DBLookupComboBox1.Text = '' then
-      begin
         ShowMessage('O Campo "Grupo" deve ser preenchido!');
-        DBLookupComboBox1.SetFocus;
+        DBEdit5.SetFocus;
       end
   else
     begin
@@ -192,7 +195,7 @@ begin
     DBEdit3.Enabled            := True;
     DBEdit4.Enabled            := True;
     DBEdit5.Enabled            := True;
-    DBLookupComboBox1.Enabled  := True;
+    DBEdit4.Enabled            := True;
 end;
 
 procedure TListaProdutos.DesabilitaCampos; // desabilitar campos
@@ -202,7 +205,7 @@ begin
     DBEdit3.Enabled            := False;
     DBEdit4.Enabled            := False;
     DBEdit5.Enabled            := False;
-    DBLookupComboBox1.Enabled  := False;
+    DBEdit4.Enabled            := False;
 end;
 
 procedure TListaProdutos.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
@@ -224,9 +227,9 @@ begin
     dm.FDTabProduto.Locate('descricao', Edit2.Text, [loPartialKey, loCaseInsensitive]);
 end;
 
-procedure TListaProdutos.Edit3Change(Sender: TObject); // pesquisa grupo
+procedure TListaProdutos.Edit3Change(Sender: TObject); // pesquisa marca
 begin
-    dm.FDTabProduto.Locate('grupo', Edit3.Text, [loPartialKey, loCaseInsensitive]);
+    dm.FDTabProduto.Locate('marca', Edit3.Text, [loPartialKey, loCaseInsensitive]);
 end;
 
 procedure TListaProdutos.Edit4Change(Sender: TObject); // pesquisa modelo
@@ -234,10 +237,11 @@ begin
     dm.FDTabProduto.Locate('modelo', Edit4.Text, [loPartialKey, loCaseInsensitive]);
 end;
 
-procedure TListaProdutos.Edit5Change(Sender: TObject); // pesquisa marca
+procedure TListaProdutos.Edit5Change(Sender: TObject); // pesquisa grupo
 begin
-    dm.FDTabProduto.Locate('marca', Edit5.Text, [loPartialKey, loCaseInsensitive]);
+    dm.FDTabProduto.Locate('grupo', Edit5.Text, [loPartialKey, loCaseInsensitive]);
 end;
+
 
 procedure TListaProdutos.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
