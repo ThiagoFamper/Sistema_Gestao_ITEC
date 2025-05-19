@@ -31,6 +31,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 1153
   end
   object pnpCadastro: TPanel
     Left = 723
@@ -44,7 +45,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 1
     Visible = False
-    ExplicitLeft = 611
+    ExplicitHeight = 972
     object pnpCadProd: TPanel
       Left = 0
       Top = 114
@@ -379,6 +380,25 @@ object TelaPrincipal: TTelaPrincipal
       OnClick = pnpCadSedeClick
       OnMouseEnter = pnpConSedeMouseEnter
       OnMouseLeave = pnpConSedeMouseLeave
+      object Image2: TImage
+        Left = 16
+        Top = 6
+        Width = 50
+        Height = 50
+        Picture.Data = {
+          0954506E67496D61676589504E470D0A1A0A0000000D49484452000000320000
+          003208060000001E3F88B10000011C4944415478DAEDD9310E82301406600B97
+          7020B0B87B0107DD3C86DEC0CD33B879033D069B0E5EC0DD05C2E025A03E128C
+          8A954029F280FF5FD0F451DEA7968628463D8968BB014000611E40D2789E274D
+          36130481763F80F41612C7F1223F6EDBF6960ECBECAD4F353B45CD891544D584
+          EBBA0721C42A7D2DA53C8661B8AE3A07208000D230C4F4ADB54C00191C24DDEC
+          A2283A17D574628D00020820C5108A4F8DDCBF4ECE9A7C36AA98664635936CFC
+          46878BC61C1F517D1855206CF2EB5B1B1CA4B59F168D8F47AF87B37A903617BB
+          E338F3324F91800002880108A700C22D8DAF91B217AC7ACEDF173B20800C1942
+          9BD92649926BBEE6FD022620AABF262CCB9AD2A6BA3702D1890EA4CEBC807406
+          D2B500C22D80704B6F200FA3704951F62A15A90000000049454E44AE426082}
+        Transparent = True
+      end
     end
   end
   object pnpMovimentacao: TPanel
@@ -392,7 +412,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 2
     Visible = False
-    ExplicitLeft = 129
+    ExplicitHeight = 972
     object pnpMovEnt: TPanel
       Left = 0
       Top = 114
@@ -679,7 +699,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 3
     Visible = False
-    ExplicitLeft = 723
+    ExplicitHeight = 972
     object pnpConProd: TPanel
       Left = 0
       Top = 114
@@ -1166,6 +1186,25 @@ object TelaPrincipal: TTelaPrincipal
       OnClick = pnpConSedeClick
       OnMouseEnter = pnpConSedeMouseEnter
       OnMouseLeave = pnpConSedeMouseLeave
+      object Image1: TImage
+        Left = 6
+        Top = 8
+        Width = 50
+        Height = 50
+        Picture.Data = {
+          0954506E67496D61676589504E470D0A1A0A0000000D49484452000000320000
+          003208060000001E3F88B10000011C4944415478DAEDD9310E82301406600B97
+          7020B0B87B0107DD3C86DEC0CD33B879033D069B0E5EC0DD05C2E025A03E128C
+          8A954029F280FF5FD0F451DEA7968628463D8968BB014000611E40D2789E274D
+          36130481763F80F41612C7F1223F6EDBF6960ECBECAD4F353B45CD891544D584
+          EBBA0721C42A7D2DA53C8661B8AE3A07208000D230C4F4ADB54C00191C24DDEC
+          A2283A17D574628D00020820C5108A4F8DDCBF4ECE9A7C36AA98664635936CFC
+          46878BC61C1F517D1855206CF2EB5B1B1CA4B59F168D8F47AF87B37A903617BB
+          E338F3324F91800002880108A700C22D8DAF91B217AC7ACEDF173B20800C1942
+          9BD92649926BBEE6FD022620AABF262CCB9AD2A6BA3702D1890EA4CEBC807406
+          D2B500C22D80704B6F200FA3704951F62A15A90000000049454E44AE426082}
+        Transparent = True
+      end
     end
   end
   object pnpPrincipal: TPanel
@@ -1178,7 +1217,7 @@ object TelaPrincipal: TTelaPrincipal
     Color = clTeal
     ParentBackground = False
     TabOrder = 4
-    ExplicitLeft = -112
+    ExplicitHeight = 972
     object pnpCad: TPanel
       Left = 0
       Top = 114
@@ -1382,9 +1421,7 @@ object TelaPrincipal: TTelaPrincipal
     Color = clWhite
     ParentBackground = False
     TabOrder = 5
-    ExplicitLeft = 247
-    ExplicitTop = 87
-    ExplicitWidth = 725
-    ExplicitHeight = 806
+    ExplicitWidth = 189
+    ExplicitHeight = 972
   end
 end

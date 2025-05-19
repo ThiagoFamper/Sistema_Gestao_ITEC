@@ -74,6 +74,8 @@ type
     pnlConteudo: TPanel;
     pnpCadSede: TPanel;
     pnpConSede: TPanel;
+    Image1: TImage;
+    Image2: TImage;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
