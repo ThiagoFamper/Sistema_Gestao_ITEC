@@ -2237,6 +2237,19 @@ object ListaSetor: TListaSetor
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
       StyleElements = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'descricao'
+          Title.Caption = 'Descri'#231#227'o'
+          Width = 500
+          Visible = True
+        end>
     end
   end
 end

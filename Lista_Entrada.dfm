@@ -2954,6 +2954,52 @@ object ListaEntrada: TListaEntrada
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
       StyleElements = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'produto_id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'operador'
+          Title.Caption = 'Operador'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'quantidade'
+          Title.Caption = 'Quantidade'
+          Width = 70
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'valor_unitario'
+          Title.Caption = 'Valor Unit'#225'rio'
+          Width = 100
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'nota_fiscal'
+          Title.Caption = 'Nota Fiscal'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'data_entrada'
+          Title.Caption = 'Data'
+          Width = 70
+          Visible = True
+        end>
     end
   end
 end

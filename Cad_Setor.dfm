@@ -23,6 +23,7 @@ object CadSetor: TCadSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1116
     object Panel10: TPanel
       Left = 16
       Top = 4
@@ -104,6 +105,7 @@ object CadSetor: TCadSetor
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1116
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1850,6 +1852,7 @@ object CadSetor: TCadSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1116
   end
   object DBGrid1: TDBGrid
     Left = 0
@@ -1873,5 +1876,18 @@ object CadSetor: TCadSetor
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     StyleElements = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'descricao'
+        Title.Caption = 'Descri'#231#227'o'
+        Width = 500
+        Visible = True
+      end>
   end
 end

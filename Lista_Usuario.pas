@@ -49,10 +49,8 @@ type
     Label6: TLabel;
     Edit2: TEdit;
     Panel19: TPanel;
-    Label7: TLabel;
-    RadioButton2: TRadioButton;
-    RadioButton3: TRadioButton;
     CheckBox1: TCheckBox;
+    CheckBox2: TCheckBox;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -174,6 +172,7 @@ procedure TListaUsuario.DesabilitaCamposPesquisa; // desabilitar campos de pesqu
 begin
     Edit1.Enabled            := False;
     Edit2.Enabled            := False;
+    CheckBox2.Enabled        := False;
 end;
 
 procedure TListaUsuario.Edit1Change(Sender: TObject); // pesquisa código
@@ -190,6 +189,7 @@ procedure TListaUsuario.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
     Edit2.Enabled            := True;
+    CheckBox2.Enabled        := True;
 end;
 
 end.

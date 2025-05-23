@@ -1887,5 +1887,17 @@ object CadSede: TCadSede
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     StyleElements = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'descricao'
+        Title.Caption = 'Descri'#231#227'o'
+        Visible = True
+      end>
   end
 end

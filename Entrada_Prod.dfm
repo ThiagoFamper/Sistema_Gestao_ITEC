@@ -153,15 +153,17 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 64
       end
-      object DBComboBox1: TDBComboBox
+      object DBLookupComboBox1: TDBLookupComboBox
         Left = 0
-        Top = 20
+        Top = 26
         Width = 505
         Height = 23
-        Align = alTop
         DataField = 'operador'
         DataSource = DM.dsFDTabEntrada
         Enabled = False
+        KeyField = 'id'
+        ListField = 'descricao'
+        ListSource = DM.dsFDTabColaborador
         TabOrder = 0
       end
     end
@@ -235,7 +237,7 @@ object EntradaProd: TEntradaProd
     end
     object Panel19: TPanel
       Left = 588
-      Top = 136
+      Top = 71
       Width = 110
       Height = 59
       BevelOuter = bvNone
@@ -269,7 +271,7 @@ object EntradaProd: TEntradaProd
     end
     object Panel21: TPanel
       Left = 588
-      Top = 201
+      Top = 136
       Width = 168
       Height = 59
       BevelOuter = bvNone
@@ -1298,6 +1300,7 @@ object EntradaProd: TEntradaProd
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBsalvarClick
     end
     object SBcancelar: TSpeedButton
       Left = 347
@@ -1626,6 +1629,7 @@ object EntradaProd: TEntradaProd
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBcancelarClick
     end
     object SBnovo: TSpeedButton
       Left = 247
@@ -1953,6 +1957,7 @@ object EntradaProd: TEntradaProd
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBnovoClick
     end
     object Panel3: TPanel
       Left = 0
@@ -2091,5 +2096,51 @@ object EntradaProd: TEntradaProd
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     StyleElements = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'produto_id'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'operador'
+        Title.Caption = 'Operador'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'quantidade'
+        Title.Caption = 'Quantidade'
+        Width = 70
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'valor_unitario'
+        Title.Caption = 'Valor Unit'#225'rio'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nota_fiscal'
+        Title.Caption = 'Nota Fiscal'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'data_entrada'
+        Title.Caption = 'Data'
+        Width = 70
+        Visible = True
+      end>
   end
 end

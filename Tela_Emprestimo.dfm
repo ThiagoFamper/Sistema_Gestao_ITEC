@@ -25,6 +25,7 @@ object TelaEmprestimo: TTelaEmprestimo
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1122
     object Panel13: TPanel
       Left = 17
       Top = 6
@@ -311,6 +312,7 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1122
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -2057,6 +2059,7 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1122
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2082,5 +2085,54 @@ object TelaEmprestimo: TTelaEmprestimo
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     StyleElements = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'produto_id'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'operador'
+        Title.Caption = 'Operador'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'quantidade'
+        Title.Caption = 'Quantidade'
+        Width = 70
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'data_emprestimo'
+        Title.Caption = 'Data'
+        Width = 70
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'colaborador_id'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'setor_id'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'devolvido'
+        Title.Caption = 'Devolvido'
+        Width = 70
+        Visible = True
+      end>
   end
 end

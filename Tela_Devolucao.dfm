@@ -24,6 +24,8 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 762
+    ExplicitWidth = 1382
     object Panel8: TPanel
       Left = 1032
       Top = 5
@@ -396,6 +398,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1382
     object Panel23: TPanel
       Left = 16
       Top = 6
@@ -425,9 +428,6 @@ object TelaDevolucao: TTelaDevolucao
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -91
-        ExplicitTop = 23
-        ExplicitWidth = 299
       end
     end
     object Panel24: TPanel
@@ -459,9 +459,6 @@ object TelaDevolucao: TTelaDevolucao
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -91
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
     object Panel25: TPanel
@@ -493,9 +490,6 @@ object TelaDevolucao: TTelaDevolucao
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -91
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
     object Panel26: TPanel
@@ -527,9 +521,6 @@ object TelaDevolucao: TTelaDevolucao
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -91
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
     object Panel27: TPanel
@@ -561,9 +552,6 @@ object TelaDevolucao: TTelaDevolucao
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -91
-        ExplicitTop = 24
-        ExplicitWidth = 299
       end
     end
     object Panel28: TPanel
@@ -645,6 +633,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1382
     object SBsair: TSpeedButton
       Left = 744
       Top = 7
@@ -3000,6 +2989,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1382
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -3019,6 +3009,8 @@ object TelaDevolucao: TTelaDevolucao
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitWidth = 1382
+    ExplicitHeight = 452
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
@@ -3034,6 +3026,55 @@ object TelaDevolucao: TTelaDevolucao
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
       StyleElements = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'produto_id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'operador'
+          Title.Caption = 'Operador'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'quantidade'
+          Title.Caption = 'Quantidade'
+          Width = 70
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'data_emprestimo'
+          Title.Caption = 'Data'
+          Width = 70
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'colaborador_id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'setor_id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'devolvido'
+          Title.Caption = 'Devolvido'
+          Width = 70
+          Visible = True
+        end>
     end
   end
 end

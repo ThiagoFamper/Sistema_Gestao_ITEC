@@ -1972,5 +1972,39 @@ object CadUsuario: TCadUsuario
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     StyleElements = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Title.Caption = 'Nome'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'login'
+        Title.Caption = 'Login'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'senha'
+        Title.Caption = 'Senha'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'admin'
+        Title.Caption = 'Admin'
+        Width = 70
+        Visible = True
+      end>
   end
 end

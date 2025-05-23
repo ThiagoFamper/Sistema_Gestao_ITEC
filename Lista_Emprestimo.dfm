@@ -2954,6 +2954,55 @@ object ListaEmprestimo: TListaEmprestimo
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
       StyleElements = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'produto_id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'operador'
+          Title.Caption = 'Operador'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'quantidade'
+          Title.Caption = 'Quantidade'
+          Width = 70
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'data_emprestimo'
+          Title.Caption = 'Data'
+          Width = 70
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'colaborador_id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'setor_id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'devolvido'
+          Title.Caption = 'Devolvido'
+          Width = 70
+          Visible = True
+        end>
     end
   end
 end

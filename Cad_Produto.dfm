@@ -2026,5 +2026,49 @@ object CadProduto: TCadProduto
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     StyleElements = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'descricao'
+        Title.Caption = 'Descri'#231#227'o'
+        Width = 500
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'marca'
+        Title.Caption = 'Marca'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'modelo'
+        Title.Caption = 'Modelo'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'grupo_id'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'cod_produto'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'data'
+        Title.Caption = 'Data'
+        Width = 70
+        Visible = True
+      end>
   end
 end

@@ -95,38 +95,24 @@ object ListaUsuario: TListaUsuario
       BevelKind = bkFlat
       BevelOuter = bvNone
       TabOrder = 2
-      object Label7: TLabel
+      object CheckBox2: TCheckBox
         Left = 0
         Top = 0
         Width = 245
-        Height = 20
-        Align = alTop
-        Caption = 'Admin'
+        Height = 71
+        Align = alClient
+        Caption = 'Administrador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
+        Font.Height = -12
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 44
-      end
-      object RadioButton2: TRadioButton
-        Left = 0
-        Top = 37
-        Width = 245
-        Height = 17
-        Align = alBottom
-        Caption = 'Sim'
         TabOrder = 0
-      end
-      object RadioButton3: TRadioButton
-        Left = 0
-        Top = 54
-        Width = 245
-        Height = 17
-        Align = alBottom
-        Caption = 'N'#227'o'
-        TabOrder = 1
+        ExplicitLeft = 64
+        ExplicitTop = 32
+        ExplicitWidth = 97
+        ExplicitHeight = 17
       end
     end
   end
@@ -2373,6 +2359,40 @@ object ListaUsuario: TListaUsuario
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
       StyleElements = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'nome'
+          Title.Caption = 'Nome'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'login'
+          Title.Caption = 'Login'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'senha'
+          Title.Caption = 'Senha'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'admin'
+          Title.Caption = 'Admin'
+          Width = 70
+          Visible = True
+        end>
     end
   end
 end

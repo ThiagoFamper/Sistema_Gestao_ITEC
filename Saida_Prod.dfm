@@ -25,6 +25,7 @@ object SaidaProd: TSaidaProd
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1121
     object Panel13: TPanel
       Left = 13
       Top = 6
@@ -312,6 +313,7 @@ object SaidaProd: TSaidaProd
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1121
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -2058,6 +2060,7 @@ object SaidaProd: TSaidaProd
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1121
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2077,6 +2080,8 @@ object SaidaProd: TSaidaProd
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
+    ExplicitWidth = 1121
+    ExplicitHeight = 327
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
@@ -2091,6 +2096,48 @@ object SaidaProd: TSaidaProd
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
       StyleElements = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'produto_id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'operador'
+          Title.Caption = 'Operador'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'quantidade'
+          Title.Caption = 'Quantidade'
+          Width = 70
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'data_saida'
+          Title.Caption = 'Data'
+          Width = 70
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'colaborador_id'
+          Visible = False
+        end
+        item
+          Expanded = False
+          FieldName = 'setor_id'
+          Visible = False
+        end>
     end
   end
 end
