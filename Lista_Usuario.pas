@@ -42,8 +42,6 @@ type
     Label4: TLabel;
     DBEdit4: TDBEdit;
     Panel17: TPanel;
-    Label3: TLabel;
-    DBEdit5: TDBEdit;
     Panel11: TPanel;
     Label8: TLabel;
     Edit1: TEdit;
@@ -54,6 +52,7 @@ type
     Label7: TLabel;
     RadioButton2: TRadioButton;
     RadioButton3: TRadioButton;
+    CheckBox1: TCheckBox;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -84,14 +83,14 @@ uses Cad_Usuario, Data_Module;
 procedure TListaUsuario.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
   if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
-  dm.FDTabProduto.Delete;
+  dm.FDTabUsuario.Delete;
 end;
 
 procedure TListaUsuario.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos();
     HabilitaCamposPesquisa();
-    dm.FDTabProduto.Cancel;
+    dm.FDTabUsuario.Cancel;
     DBGrid1.Enabled      := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
@@ -104,7 +103,7 @@ procedure TListaUsuario.SBeditarClick(Sender: TObject); // botão de editar
 begin
     HabilitaCampos();
     DesabilitaCamposPesquisa();
-    dm.FDTabProduto.Edit;
+    dm.FDTabUsuario.Edit;
     DBGrid1.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
@@ -138,14 +137,9 @@ begin
         DBEdit4.SetFocus;
       end
   else
-    if DBEdit5.Text = '' then
-      begin
-        ShowMessage('O Campo "Admin" deve ser preenchido!');
-        DBEdit5.SetFocus;
-      end
-  else
     begin
-      dm.FDTabProduto.Post;
+      dm.FDTabUsuario.FieldByName('Admin').AsBoolean := Checkbox1.Checked;
+      dm.FDTabUsuario.Post;
       ShowMessage('Usuário editado com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
@@ -164,7 +158,7 @@ begin
     DBEdit2.Enabled            := True;
     DBEdit3.Enabled            := True;
     DBEdit4.Enabled            := True;
-    DBEdit5.Enabled            := True;
+    CheckBox1.Enabled          := True;
 end;
 
 procedure TListaUsuario.DesabilitaCampos; // desabilitar campos
@@ -173,7 +167,7 @@ begin
     DBEdit2.Enabled            := False;
     DBEdit3.Enabled            := False;
     DBEdit4.Enabled            := False;
-    DBEdit5.Enabled            := False;
+    CheckBox1.Enabled          := False;
 end;
 
 procedure TListaUsuario.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa

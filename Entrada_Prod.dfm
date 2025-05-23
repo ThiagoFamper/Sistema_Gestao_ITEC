@@ -25,6 +25,7 @@ object EntradaProd: TEntradaProd
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1115
     object Panel12: TPanel
       Left = 16
       Top = 6
@@ -266,47 +267,13 @@ object EntradaProd: TEntradaProd
         TabOrder = 0
       end
     end
-    object Panel20: TPanel
-      Left = 588
-      Top = 71
-      Width = 110
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 7
-      object Label3: TLabel
-        Left = 0
-        Top = 0
-        Width = 110
-        Height = 20
-        Align = alTop
-        Caption = 'Valor Total '
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 75
-      end
-      object DBedit6: TDBEdit
-        Left = 0
-        Top = 20
-        Width = 110
-        Height = 23
-        Align = alTop
-        DataField = 'valor_total'
-        DataSource = DM.dsFDTabEntrada
-        Enabled = False
-        TabOrder = 0
-      end
-    end
     object Panel21: TPanel
       Left = 588
       Top = 201
       Width = 168
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 8
+      TabOrder = 7
       object Label5: TLabel
         Left = 0
         Top = 0
@@ -347,6 +314,7 @@ object EntradaProd: TEntradaProd
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1115
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -2090,6 +2058,7 @@ object EntradaProd: TEntradaProd
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1115
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0

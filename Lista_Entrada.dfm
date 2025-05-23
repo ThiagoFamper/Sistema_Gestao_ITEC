@@ -23,6 +23,8 @@ object ListaEntrada: TListaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 518
+    ExplicitWidth = 1046
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -354,8 +356,7 @@ object ListaEntrada: TListaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 48
-    ExplicitTop = 88
+    ExplicitWidth = 1046
     object Panel23: TPanel
       Left = 16
       Top = 6
@@ -385,9 +386,6 @@ object ListaEntrada: TListaEntrada
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -50
-        ExplicitTop = 13
-        ExplicitWidth = 299
       end
     end
     object Panel24: TPanel
@@ -410,8 +408,7 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = -128
-        ExplicitTop = 49
+        ExplicitWidth = 65
       end
       object Edit2: TEdit
         Left = 0
@@ -420,7 +417,6 @@ object ListaEntrada: TListaEntrada
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitTop = 42
       end
     end
     object Panel25: TPanel
@@ -443,8 +439,7 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = -144
-        ExplicitTop = -6
+        ExplicitWidth = 64
       end
       object Edit3: TEdit
         Left = 0
@@ -453,9 +448,6 @@ object ListaEntrada: TListaEntrada
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -50
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
     object Panel26: TPanel
@@ -487,9 +479,6 @@ object ListaEntrada: TListaEntrada
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -50
-        ExplicitTop = 13
-        ExplicitWidth = 299
       end
     end
     object Panel28: TPanel
@@ -512,7 +501,6 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitTop = 39
         ExplicitWidth = 67
       end
       object DateTimeFinal: TDateTimePicker
@@ -524,9 +512,6 @@ object ListaEntrada: TListaEntrada
         Date = 45581.000000000000000000
         Time = 0.832999849539191900
         TabOrder = 0
-        ExplicitLeft = 24
-        ExplicitTop = 66
-        ExplicitWidth = 89
       end
     end
     object Panel29: TPanel
@@ -549,7 +534,7 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitTop = -1
+        ExplicitWidth = 75
       end
       object DateTimeInicial: TDateTimePicker
         Left = 0
@@ -560,7 +545,6 @@ object ListaEntrada: TListaEntrada
         Date = 45581.000000000000000000
         Time = 0.832999849539191900
         TabOrder = 0
-        ExplicitTop = 8
       end
     end
   end
@@ -576,6 +560,7 @@ object ListaEntrada: TListaEntrada
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 744
       Top = 7
@@ -2931,6 +2916,7 @@ object ListaEntrada: TListaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2950,6 +2936,8 @@ object ListaEntrada: TListaEntrada
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitWidth = 1046
+    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
@@ -2958,6 +2946,7 @@ object ListaEntrada: TListaEntrada
       Hint = 'Pesquisar Entrada'
       Align = alClient
       DataSource = DM.dsFDTabEntrada
+      ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText

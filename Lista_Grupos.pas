@@ -67,7 +67,7 @@ uses Cad_Grupo, Data_Module;
 procedure TListaGrupos.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
   if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
-  dm.FDTabProduto.Delete;
+  dm.FDTabGrupo.Delete;
 end;
 
 procedure TListaGrupos.SBcancelarClick(Sender: TObject); // botão de cancelar

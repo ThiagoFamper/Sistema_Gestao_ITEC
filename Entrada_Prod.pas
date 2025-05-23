@@ -45,9 +45,6 @@ type
     Panel19: TPanel;
     Label4: TLabel;
     DBedit7: TDBEdit;
-    Panel20: TPanel;
-    Label3: TLabel;
-    DBedit6: TDBEdit;
     Panel21: TPanel;
     Label5: TLabel;
     DBEdit3: TDBEdit;

@@ -53,6 +53,8 @@ object ListaGrupos: TListaGrupos
         Width = 249
         Height = 23
         Align = alTop
+        DataField = 'id'
+        DataSource = DM.dsFDTabGrupo
         Enabled = False
         TabOrder = 0
       end
@@ -85,6 +87,8 @@ object ListaGrupos: TListaGrupos
         Width = 249
         Height = 23
         Align = alTop
+        DataField = 'descricao'
+        DataSource = DM.dsFDTabGrupo
         Enabled = False
         TabOrder = 0
       end
@@ -473,6 +477,7 @@ object ListaGrupos: TListaGrupos
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBsairClick
     end
     object SBexcluir: TSpeedButton
       Left = 549
@@ -800,6 +805,7 @@ object ListaGrupos: TListaGrupos
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBexcluirClick
     end
     object SBsalvar: TSpeedButton
       Left = 448
@@ -1128,6 +1134,7 @@ object ListaGrupos: TListaGrupos
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBsalvarClick
     end
     object SBcancelar: TSpeedButton
       Left = 345
@@ -1456,6 +1463,7 @@ object ListaGrupos: TListaGrupos
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBcancelarClick
     end
     object SpeedButton1: TSpeedButton
       Left = 16
@@ -2085,6 +2093,7 @@ object ListaGrupos: TListaGrupos
         00000000000000000000}
       ParentShowHint = False
       ShowHint = True
+      OnClick = SBeditarClick
     end
     object Panel6: TPanel
       Left = 0
@@ -2190,6 +2199,7 @@ object ListaGrupos: TListaGrupos
       Hint = 'Pesquisar Grupos'
       Align = alClient
       DataSource = DM.dsFDTabGrupo
+      ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText

@@ -2946,6 +2946,7 @@ object ListaEmprestimo: TListaEmprestimo
       Hint = 'Pesquisar Emprestimo'
       Align = alClient
       DataSource = DM.dsFDTabEmprestimoProd
+      ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText

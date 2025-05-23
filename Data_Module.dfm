@@ -229,11 +229,6 @@ object DM: TDM
     object FDTabEntradanota_fiscal: TWideStringField
       FieldName = 'nota_fiscal'
     end
-    object FDTabEntradavalor_total: TFMTBCDField
-      FieldName = 'valor_total'
-      Precision = 64
-      Size = 64
-    end
     object FDTabEntradavalor_unitario: TFMTBCDField
       FieldName = 'valor_unitario'
       Precision = 64

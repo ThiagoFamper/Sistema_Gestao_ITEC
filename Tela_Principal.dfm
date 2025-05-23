@@ -704,7 +704,7 @@ object TelaPrincipal: TTelaPrincipal
       Left = 0
       Top = 114
       Width = 241
-      Height = 64
+      Height = 65
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone
@@ -759,9 +759,9 @@ object TelaPrincipal: TTelaPrincipal
     end
     object pnpConColab: TPanel
       Left = -6
-      Top = 178
-      Width = 241
-      Height = 64
+      Top = 179
+      Width = 247
+      Height = 62
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone
@@ -803,9 +803,9 @@ object TelaPrincipal: TTelaPrincipal
     end
     object pnpConSet: TPanel
       Left = 0
-      Top = 242
+      Top = 241
       Width = 241
-      Height = 64
+      Height = 65
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone

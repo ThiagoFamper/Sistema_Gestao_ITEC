@@ -53,6 +53,8 @@ object ListaSetor: TListaSetor
         Width = 249
         Height = 23
         Align = alTop
+        DataField = 'id'
+        DataSource = DM.dsFDTabSetor
         Enabled = False
         TabOrder = 0
       end
@@ -85,6 +87,8 @@ object ListaSetor: TListaSetor
         Width = 249
         Height = 23
         Align = alTop
+        DataField = 'descricao'
+        DataSource = DM.dsFDTabSetor
         Enabled = False
         TabOrder = 0
       end
@@ -2225,6 +2229,7 @@ object ListaSetor: TListaSetor
       Hint = 'Pesquisar Setor'
       Align = alClient
       DataSource = DM.dsFDTabSetor
+      ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText

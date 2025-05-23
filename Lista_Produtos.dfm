@@ -2809,6 +2809,7 @@ object ListaProdutos: TListaProdutos
       DataSource = DM.dsFDTabProduto
       FixedColor = clWhitesmoke
       ParentColor = True
+      ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText

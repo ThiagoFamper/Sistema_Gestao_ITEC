@@ -53,7 +53,6 @@ type
     FDTabEntradaquantidade: TIntegerField;
     FDTabEntradadata_entrada: TDateField;
     FDTabEntradanota_fiscal: TWideStringField;
-    FDTabEntradavalor_total: TFMTBCDField;
     FDTabEntradavalor_unitario: TFMTBCDField;
     FDTabEmprestimoProd: TFDTable;
     dsFDTabEmprestimoProd: TDataSource;

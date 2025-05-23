@@ -112,7 +112,7 @@ uses Data_Module, Relatorio_Entrada;
 procedure TListaEntrada.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
   if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
-  dm.FDTabProduto.Delete;
+  dm.FDTabEntrada.Delete;
 end;
 
 procedure TListaEntrada.SBrelatorioClick(Sender: TObject);

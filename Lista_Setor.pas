@@ -71,14 +71,14 @@ uses Cad_Setor, Data_Module;
 procedure TListaSetor.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
   if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
-  dm.FDTabProduto.Delete;
+  dm.FDTabSetor.Delete;
 end;
 
 procedure TListaSetor.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos();
     HabilitaCamposPesquisa();
-    dm.FDTabProduto.Cancel;
+    dm.FDTabSetor.Cancel;
     DBGrid1.Enabled      := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
@@ -91,7 +91,7 @@ procedure TListaSetor.SBeditarClick(Sender: TObject); // botão de editar
 begin
     HabilitaCampos();
     DesabilitaCamposPesquisa();
-    dm.FDTabProduto.Edit;
+    dm.FDTabSetor.Edit;
     DBGrid1.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
@@ -114,7 +114,7 @@ begin
       end
   else
     begin
-      dm.FDTabProduto.Post;
+      dm.FDTabSetor.Post;
       ShowMessage('Setor editado com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();

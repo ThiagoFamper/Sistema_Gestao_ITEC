@@ -170,6 +170,8 @@ object ListaUsuario: TListaUsuario
         Width = 249
         Height = 23
         Align = alTop
+        DataField = 'id'
+        DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
       end
@@ -202,6 +204,8 @@ object ListaUsuario: TListaUsuario
         Width = 249
         Height = 23
         Align = alTop
+        DataField = 'nome'
+        DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
       end
@@ -234,6 +238,8 @@ object ListaUsuario: TListaUsuario
         Width = 249
         Height = 23
         Align = alTop
+        DataField = 'login'
+        DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
       end
@@ -266,6 +272,8 @@ object ListaUsuario: TListaUsuario
         Width = 249
         Height = 23
         Align = alTop
+        DataField = 'senha'
+        DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
       end
@@ -274,31 +282,24 @@ object ListaUsuario: TListaUsuario
       Left = 411
       Top = 82
       Width = 249
-      Height = 59
+      Height = 95
       BevelOuter = bvNone
       TabOrder = 4
-      object Label3: TLabel
-        Left = 0
-        Top = 0
-        Width = 249
-        Height = 20
-        Align = alTop
-        Caption = 'Admin'
+      object CheckBox1: TCheckBox
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 243
+        Height = 89
+        Align = alClient
+        Caption = 'Administrador'
+        Enabled = False
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
+        Font.Height = -12
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 44
-      end
-      object DBEdit5: TDBEdit
-        Left = 0
-        Top = 20
-        Width = 249
-        Height = 23
-        Align = alTop
-        Enabled = False
         TabOrder = 0
       end
     end
@@ -2364,6 +2365,7 @@ object ListaUsuario: TListaUsuario
       Hint = 'Pesquisar Usuario'
       Align = alClient
       DataSource = DM.dsFDTabUsuario
+      ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText

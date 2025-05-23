@@ -2199,6 +2199,7 @@ object ListaSede: TListaSede
       Hint = 'Pesquisar Grupos'
       Align = alClient
       DataSource = DM.dsFDTabSede
+      ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText

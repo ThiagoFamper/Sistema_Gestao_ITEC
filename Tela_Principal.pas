@@ -264,6 +264,7 @@ end;
 
 procedure TTelaPrincipal.pnpConSedeClick(Sender: TObject);
 begin
+  dm.FDTabSede.Open;
   AbrirFormulario(TListaSede);  // abre a tela de consulta de sede
 end;
 
@@ -353,6 +354,8 @@ end;
 
 procedure TTelaPrincipal.pnpConColabClick(Sender: TObject);
 begin
+  dm.FDTabSetor.Open;
+  dm.FDTabSede.Open;
   dm.FDTabColaborador.Open;
   AbrirFormulario(TListaColaborador); // abre a tela de consulta colaborador
 end;
@@ -375,6 +378,7 @@ end;
 
 procedure TTelaPrincipal.pnpConProdClick(Sender: TObject);
 begin
+  dm.FDTabGrupo.Open;
   dm.FDTabProduto.Open;
   AbrirFormulario(TListaProdutos);  // abre a tela de consulta produto
 end;

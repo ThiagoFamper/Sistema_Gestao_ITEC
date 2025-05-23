@@ -23,6 +23,8 @@ object ListaSaida: TListaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 521
+    ExplicitWidth = 1046
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -322,6 +324,7 @@ object ListaSaida: TListaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1046
     object Panel22: TPanel
       Left = 16
       Top = 4
@@ -351,9 +354,6 @@ object ListaSaida: TListaSaida
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -50
-        ExplicitTop = 15
-        ExplicitWidth = 299
       end
     end
     object Panel23: TPanel
@@ -385,9 +385,6 @@ object ListaSaida: TListaSaida
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -50
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
     object Panel24: TPanel
@@ -419,9 +416,6 @@ object ListaSaida: TListaSaida
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -50
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
     object Panel25: TPanel
@@ -444,7 +438,7 @@ object ListaSaida: TListaSaida
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitTop = -6
+        ExplicitWidth = 35
       end
       object Edit4: TEdit
         Left = 0
@@ -453,9 +447,6 @@ object ListaSaida: TListaSaida
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -50
-        ExplicitTop = 15
-        ExplicitWidth = 299
       end
     end
     object Panel26: TPanel
@@ -487,9 +478,6 @@ object ListaSaida: TListaSaida
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -50
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
     object Panel27: TPanel
@@ -571,6 +559,7 @@ object ListaSaida: TListaSaida
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 744
       Top = 7
@@ -2926,6 +2915,7 @@ object ListaSaida: TListaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2945,6 +2935,8 @@ object ListaSaida: TListaSaida
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitWidth = 1046
+    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
@@ -2953,6 +2945,7 @@ object ListaSaida: TListaSaida
       Hint = 'Pesquisar Saida'
       Align = alClient
       DataSource = DM.dsFDTabSaida
+      ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText

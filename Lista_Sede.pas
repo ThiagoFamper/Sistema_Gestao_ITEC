@@ -66,7 +66,7 @@ uses Cad_Sede, Data_Module;
 procedure TListaSede.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
   if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
-  dm.FDTabProduto.Delete;
+  dm.FDTabSede.Delete;
 end;
 
 procedure TListaSede.SBcancelarClick(Sender: TObject); // botão de cancelar
