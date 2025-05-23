@@ -48,7 +48,6 @@ type
     Label5: TLabel;
     DBEdit5: TDBEdit;
     Label6: TLabel;
-    DBEdit6: TDBEdit;
     Panel19: TPanel;
     Label7: TLabel;
     Panel20: TPanel;
@@ -64,6 +63,7 @@ type
     Edit3: TEdit;
     Edit4: TEdit;
     Edit5: TEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -143,39 +143,39 @@ end;
 
 procedure TListaProdutos.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit1.Text = '' then
-      begin
-        ShowMessage('O Campo "Código" deve ser preenchido!');
-        DBEdit1.SetFocus;
-      end
-  else
     if DBEdit2.Text = '' then
       begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
+        ShowMessage('O Campo "Código" deve ser preenchido!');
         DBEdit2.SetFocus;
       end
   else
     if DBEdit3.Text = '' then
       begin
-        ShowMessage('O Campo "Marca" deve ser preenchido!');
+        ShowMessage('O Campo "Descrição" deve ser preenchido!');
         DBEdit3.SetFocus;
       end
   else
     if DBEdit4.Text = '' then
       begin
-        ShowMessage('O Campo "Modelo" deve ser preenchido!');
+        ShowMessage('O Campo "Marca" deve ser preenchido!');
         DBEdit4.SetFocus;
       end
   else
     if DBEdit5.Text = '' then
       begin
-        ShowMessage('O Campo "Grupo" deve ser preenchido!');
+        ShowMessage('O Campo "Modelo" deve ser preenchido!');
         DBEdit5.SetFocus;
+      end
+  else
+    if DBLookupComboBox1.Text = '' then
+      begin
+        ShowMessage('O Campo "Grupo" deve ser preenchido!');
+        DBLookupComboBox1.SetFocus;
       end
   else
     begin
       dm.FDTabProduto.Post;
-      ShowMessage('Editado com Sucesso!');
+      ShowMessage('Produto editado com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
       DBGrid1.Enabled      := True;
@@ -195,7 +195,7 @@ begin
     DBEdit3.Enabled            := True;
     DBEdit4.Enabled            := True;
     DBEdit5.Enabled            := True;
-    DBEdit4.Enabled            := True;
+    DBLookupComboBox1.Enabled  := True;
 end;
 
 procedure TListaProdutos.DesabilitaCampos; // desabilitar campos
@@ -205,7 +205,7 @@ begin
     DBEdit3.Enabled            := False;
     DBEdit4.Enabled            := False;
     DBEdit5.Enabled            := False;
-    DBEdit4.Enabled            := False;
+    DBLookupComboBox1.Enabled  := False;
 end;
 
 procedure TListaProdutos.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
@@ -243,7 +243,7 @@ begin
 end;
 
 
-procedure TListaProdutos.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
+procedure TListaProdutos.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
     Edit2.Enabled            := True;

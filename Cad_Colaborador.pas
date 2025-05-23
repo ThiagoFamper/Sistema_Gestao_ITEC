@@ -28,9 +28,6 @@ type
     Panel10: TPanel;
     Label1: TLabel;
     DBEdit1: TDBEdit;
-    Panel11: TPanel;
-    Label5: TLabel;
-    DBEdit2: TDBEdit;
     Panel12: TPanel;
     Label2: TLabel;
     DBEdit3: TDBEdit;
@@ -77,12 +74,16 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
+  dm.FDTabSetor.Cancel;
+  dm.FDTabSede.Cancel;
   dm.FDTabColaborador.Cancel;
   LimpaCampos();
 end;
 
 procedure TCadColaborador.SBnovoClick(Sender: TObject); // botão de novo
 begin
+  dm.FDTabSetor.Open;
+  dm.FDTabSede.Open;
   HabilitaCampos();
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
@@ -91,11 +92,12 @@ begin
   SBnovo.Enabled       := False;
   dm.FDTabColaborador.Open;
   dm.FDTabColaborador.Append;
-  DBEdit2.SetFocus;
+  DBEdit3.SetFocus;
 end;
 
 procedure TCadColaborador.SBpesquisarClick(Sender: TObject);
 begin
+  dm.FDTabColaborador.Open;
   TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaColaborador); // botão de pesquisar
 end;
 
@@ -106,12 +108,6 @@ end;
 
 procedure TCadColaborador.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
-      begin
-        ShowMessage('O Campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
-      end
-  else
     if DBEdit3.Text = '' then
       begin
         ShowMessage('O Campo "Descrição" deve ser preenchido!');
@@ -132,6 +128,8 @@ begin
   else
     begin
       dm.FDTabColaborador.Post;
+      dm.FDTabSetor.Close;
+      dm.FDTabSede.Close;
       dm.FDTabColaborador.Close;
       ShowMessage('Colaborador cadastrado com sucesso!');
       LimpaCampos();
@@ -167,7 +165,6 @@ end;
 
 procedure TCadColaborador.HabilitaCampos; // habilitar campos
 begin
-    DBEdit2.Enabled            := True;
     DBEdit3.Enabled            := True;
     DBEdit4.Enabled            := True;
     DBLookupComboBox1.Enabled  := True;
@@ -176,7 +173,6 @@ end;
 
 procedure TCadColaborador.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit2.Enabled            := False;
     DBEdit3.Enabled            := False;
     DBEdit4.Enabled            := False;
     DBLookupComboBox1.Enabled  := False;
@@ -185,7 +181,6 @@ end;
 
 procedure TCadColaborador.LimpaCampos; // limpar campos
 begin
-    DBEdit2.Clear;
     DBEdit3.Clear;
     DBEdit4.Clear;
     DBLookupComboBox1.KeyValue := 0;

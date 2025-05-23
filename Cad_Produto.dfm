@@ -1931,14 +1931,14 @@ object CadProduto: TCadProduto
         Width = 500
         Height = 20
         Align = alTop
-        Caption = 'Modelo'
+        Caption = 'Grupo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 52
+        ExplicitWidth = 41
       end
       object DBLookupComboBox1: TDBLookupComboBox
         Left = 0
@@ -1969,14 +1969,14 @@ object CadProduto: TCadProduto
         Width = 679
         Height = 20
         Align = alTop
-        Caption = 'Grupo'
+        Caption = 'Modelo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 41
+        ExplicitWidth = 52
       end
       object DBEdit5: TDBEdit
         Left = 0

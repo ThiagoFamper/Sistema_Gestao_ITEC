@@ -28,9 +28,6 @@ type
     Panel10: TPanel;
     Label1: TLabel;
     DBEdit1: TDBEdit;
-    Panel11: TPanel;
-    Label2: TLabel;
-    DBEdit2: TDBEdit;
     Panel12: TPanel;
     Label3: TLabel;
     DBEdit3: TDBEdit;
@@ -80,11 +77,12 @@ begin
   SBnovo.Enabled       := False;
   dm.FDTabSetor.Open;
   dm.FDTabSetor.Append;
-  DBEdit2.SetFocus;
+  DBEdit3.SetFocus;
 end;
 
 procedure TCadSetor.SBpesquisarClick(Sender: TObject);
 begin
+  dm.FDTabSetor.Open;
   TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaSetor); // botão de pesquisar
 end;
 
@@ -95,12 +93,6 @@ end;
 
 procedure TCadSetor.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
-      begin
-        ShowMessage('O Campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
-      end
-  else
     if DBEdit3.Text = '' then
       begin
         ShowMessage('O Campo "Descrição" deve ser preenchido!');
@@ -118,6 +110,8 @@ begin
       SBnovo.Enabled       := True;
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
+      dm.FDTabSetor.Open;
+      dm.FDTabSetor.Last;
     end;
 
 end;
@@ -131,19 +125,16 @@ end;
 
 procedure TCadSetor.HabilitaCampos; // habilitar campos
 begin
-    DBEdit2.Enabled            := True;
     DBEdit3.Enabled            := True;
 end;
 
 procedure TCadSetor.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit2.Enabled            := False;
     DBEdit3.Enabled            := False;
 end;
 
 procedure TCadSetor.LimpaCampos; // limpar campos
 begin
-    DBEdit2.Clear;
     DBEdit3.Clear;
 end;
 

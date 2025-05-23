@@ -758,7 +758,7 @@ object TelaPrincipal: TTelaPrincipal
       end
     end
     object pnpConColab: TPanel
-      Left = 0
+      Left = -6
       Top = 178
       Width = 241
       Height = 64
@@ -773,7 +773,7 @@ object TelaPrincipal: TTelaPrincipal
       OnMouseEnter = pnpConSedeMouseEnter
       OnMouseLeave = pnpConSedeMouseLeave
       object Image23: TImage
-        Left = 6
+        Left = 12
         Top = 8
         Width = 50
         Height = 50

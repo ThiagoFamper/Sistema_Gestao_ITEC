@@ -23,7 +23,6 @@ object CadSetor: TCadSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1116
     object Panel10: TPanel
       Left = 16
       Top = 4
@@ -58,47 +57,13 @@ object CadSetor: TCadSetor
         TabOrder = 0
       end
     end
-    object Panel11: TPanel
-      Left = 16
-      Top = 69
-      Width = 213
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 1
-      object Label2: TLabel
-        Left = 0
-        Top = 0
-        Width = 213
-        Height = 20
-        Align = alTop
-        Caption = 'C'#243'digo'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 49
-      end
-      object DBEdit2: TDBEdit
-        Left = 0
-        Top = 20
-        Width = 213
-        Height = 23
-        Align = alTop
-        DataField = 'cod_setor'
-        DataSource = DM.dsFDTabSetor
-        Enabled = False
-        TabOrder = 0
-      end
-    end
     object Panel12: TPanel
       Left = 16
       Top = 134
       Width = 681
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 2
+      TabOrder = 1
       object Label3: TLabel
         Left = 0
         Top = 0
@@ -139,7 +104,6 @@ object CadSetor: TCadSetor
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1116
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1886,7 +1850,6 @@ object CadSetor: TCadSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1116
   end
   object DBGrid1: TDBGrid
     Left = 0

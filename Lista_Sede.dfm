@@ -23,6 +23,8 @@ object ListaSede: TListaSede
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 508
+    ExplicitWidth = 1045
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -102,6 +104,7 @@ object ListaSede: TListaSede
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1045
     object Panel11: TPanel
       Left = 16
       Top = 6
@@ -122,8 +125,7 @@ object ListaSede: TListaSede
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 64
-        ExplicitTop = -6
+        ExplicitWidth = 65
       end
       object Edit1: TEdit
         Left = 0
@@ -133,9 +135,6 @@ object ListaSede: TListaSede
         Align = alTop
         TabOrder = 0
         Text = 'Edit1'
-        ExplicitLeft = -50
-        ExplicitTop = 16
-        ExplicitWidth = 299
       end
     end
   end
@@ -151,6 +150,7 @@ object ListaSede: TListaSede
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1045
     object SBsair: TSpeedButton
       Left = 640
       Top = 8
@@ -2169,6 +2169,7 @@ object ListaSede: TListaSede
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1045
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2188,6 +2189,8 @@ object ListaSede: TListaSede
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitWidth = 1045
+    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

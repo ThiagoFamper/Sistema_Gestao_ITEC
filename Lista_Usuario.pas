@@ -146,7 +146,7 @@ begin
   else
     begin
       dm.FDTabProduto.Post;
-      ShowMessage('Editado com Sucesso!');
+      ShowMessage('Usuário editado com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
       DBGrid1.Enabled      := True;
@@ -192,7 +192,7 @@ begin
     dm.FDTabColaborador.Locate('descricao', Edit2.Text, [loPartialKey, loCaseInsensitive]);
 end;
 
-procedure TListaUsuario.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
+procedure TListaUsuario.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
     Edit2.Enabled            := True;

@@ -111,7 +111,7 @@ begin
   else
     begin
       dm.FDTabGrupo.Post;
-      ShowMessage('Editado com Sucesso!');
+      ShowMessage('Grupo editado com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
       DBGrid1.Enabled      := True;
@@ -145,7 +145,7 @@ begin
     dm.FDTabProduto.Locate('descricao', Edit1.Text, [loPartialKey, loCaseInsensitive]);
 end;
 
-procedure TListaGrupos.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
+procedure TListaGrupos.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
 end;

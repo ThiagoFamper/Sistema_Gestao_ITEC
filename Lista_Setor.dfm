@@ -23,6 +23,8 @@ object ListaSetor: TListaSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 517
+    ExplicitWidth = 1046
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -55,45 +57,13 @@ object ListaSetor: TListaSetor
         TabOrder = 0
       end
     end
-    object Panel14: TPanel
-      Left = 16
-      Top = 82
-      Width = 249
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 1
-      object Label5: TLabel
-        Left = 0
-        Top = 0
-        Width = 249
-        Height = 20
-        Align = alTop
-        Caption = 'C'#243'digo'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 49
-      end
-      object DBEdit2: TDBEdit
-        Left = 0
-        Top = 20
-        Width = 249
-        Height = 23
-        Align = alTop
-        Enabled = False
-        TabOrder = 0
-      end
-    end
     object Panel15: TPanel
       Left = 16
       Top = 147
       Width = 249
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 2
+      TabOrder = 1
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -130,6 +100,7 @@ object ListaSetor: TListaSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1046
     object Panel11: TPanel
       Left = 16
       Top = 6
@@ -159,9 +130,6 @@ object ListaSetor: TListaSetor
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -50
-        ExplicitTop = 16
-        ExplicitWidth = 299
       end
     end
     object Panel16: TPanel
@@ -193,9 +161,6 @@ object ListaSetor: TListaSetor
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -50
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
   end
@@ -211,6 +176,7 @@ object ListaSetor: TListaSetor
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 640
       Top = 7
@@ -2229,6 +2195,7 @@ object ListaSetor: TListaSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2248,6 +2215,8 @@ object ListaSetor: TListaSetor
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitWidth = 1046
+    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

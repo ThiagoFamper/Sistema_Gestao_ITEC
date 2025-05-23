@@ -23,6 +23,7 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1455
     object Panel11: TPanel
       Left = 16
       Top = 4
@@ -53,9 +54,6 @@ object ListaColaborador: TListaColaborador
         Align = alTop
         TabOrder = 0
         StyleName = 'Edit1'
-        ExplicitLeft = 48
-        ExplicitTop = 13
-        ExplicitWidth = 299
       end
     end
     object Panel19: TPanel
@@ -87,9 +85,6 @@ object ListaColaborador: TListaColaborador
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = 48
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
     object Panel20: TPanel
@@ -121,9 +116,6 @@ object ListaColaborador: TListaColaborador
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = 48
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
     object Panel21: TPanel
@@ -155,9 +147,6 @@ object ListaColaborador: TListaColaborador
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = 48
-        ExplicitTop = 13
-        ExplicitWidth = 299
       end
     end
     object Panel22: TPanel
@@ -189,9 +178,6 @@ object ListaColaborador: TListaColaborador
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = 48
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
   end
@@ -207,6 +193,7 @@ object ListaColaborador: TListaColaborador
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1455
     object SBsair: TSpeedButton
       Left = 640
       Top = 7
@@ -2221,6 +2208,7 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1455
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2242,6 +2230,8 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 522
+    ExplicitWidth = 1455
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -2274,45 +2264,13 @@ object ListaColaborador: TListaColaborador
         TabOrder = 0
       end
     end
-    object Panel14: TPanel
-      Left = 16
-      Top = 82
-      Width = 347
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 1
-      object Label5: TLabel
-        Left = 0
-        Top = 0
-        Width = 347
-        Height = 20
-        Align = alTop
-        Caption = 'C'#243'digo'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 49
-      end
-      object DBEdit2: TDBEdit
-        Left = 0
-        Top = 20
-        Width = 347
-        Height = 23
-        Align = alTop
-        Enabled = False
-        TabOrder = 0
-      end
-    end
     object Panel15: TPanel
       Left = 16
       Top = 147
       Width = 347
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 2
+      TabOrder = 1
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -2344,21 +2302,21 @@ object ListaColaborador: TListaColaborador
       Width = 347
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 3
+      TabOrder = 2
       object Label4: TLabel
         Left = 0
         Top = 0
         Width = 347
         Height = 20
         Align = alTop
-        Caption = 'Setor'
+        Caption = 'Cargo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 35
+        ExplicitWidth = 40
       end
       object DBEdit4: TDBEdit
         Left = 0
@@ -2376,29 +2334,32 @@ object ListaColaborador: TListaColaborador
       Width = 347
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 4
+      TabOrder = 3
       object Label3: TLabel
         Left = 0
         Top = 0
         Width = 347
         Height = 20
         Align = alTop
-        Caption = 'Cargo'
+        Caption = 'Setor'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 40
+        ExplicitWidth = 35
       end
-      object DBEdit5: TDBEdit
+      object DBLookupComboBox1: TDBLookupComboBox
         Left = 0
-        Top = 20
-        Width = 347
+        Top = 18
+        Width = 345
         Height = 23
-        Align = alTop
-        Enabled = False
+        DataField = 'setor_id'
+        DataSource = DM.dsFDTabColaborador
+        KeyField = 'id'
+        ListField = 'descricao'
+        ListSource = DM.dsFDTabSetor
         TabOrder = 0
       end
     end
@@ -2408,7 +2369,7 @@ object ListaColaborador: TListaColaborador
       Width = 347
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 5
+      TabOrder = 4
       object Label6: TLabel
         Left = 0
         Top = 0
@@ -2424,13 +2385,16 @@ object ListaColaborador: TListaColaborador
         ParentFont = False
         ExplicitWidth = 33
       end
-      object DBEdit6: TDBEdit
+      object DBLookupComboBox2: TDBLookupComboBox
         Left = 0
-        Top = 20
-        Width = 347
+        Top = 18
+        Width = 345
         Height = 23
-        Align = alTop
-        Enabled = False
+        DataField = 'sede_id'
+        DataSource = DM.dsFDTabColaborador
+        KeyField = 'id'
+        ListField = 'descricao'
+        ListSource = DM.dsFDTabSede
         TabOrder = 0
       end
     end
@@ -2444,6 +2408,8 @@ object ListaColaborador: TListaColaborador
     BevelEdges = []
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitWidth = 1455
+    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

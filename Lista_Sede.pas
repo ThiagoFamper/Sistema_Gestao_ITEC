@@ -144,7 +144,7 @@ begin
     dm.FDTabProduto.Locate('descricao', Edit1.Text, [loPartialKey, loCaseInsensitive]);
 end;
 
-procedure TListaSede.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
+procedure TListaSede.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
 end;

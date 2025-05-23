@@ -79,12 +79,14 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
+  dm.FDTabGrupo.Cancel;
   dm.FDTabProduto.Cancel;
   LimpaCampos();
 end;
 
 procedure TCadProduto.SBnovoClick(Sender: TObject); // botão de novo
 begin
+  dm.FDTabGrupo.Open;
   HabilitaCampos();
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
@@ -98,6 +100,7 @@ end;
 
 procedure TCadProduto.SBpesquisarClick(Sender: TObject);
 begin
+  dm.FDTabProduto.Open;
   TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaProdutos); // botão de pesquisar
 end;
 
@@ -140,6 +143,7 @@ begin
   else
     begin
       dm.FDTabProduto.Post;
+      dm.FDTabGrupo.Close;
       dm.FDTabProduto.Close;
       ShowMessage('Produto cadastrado com sucesso!');
       LimpaCampos();
@@ -149,6 +153,8 @@ begin
       SBnovo.Enabled       := True;
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
+      dm.FDTabProduto.Open;
+      dm.FDTabProduto.Last;
     end;
 
 end;

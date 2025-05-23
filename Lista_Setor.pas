@@ -32,9 +32,6 @@ type
     Panel13: TPanel;
     Label1: TLabel;
     DBEdit1: TDBEdit;
-    Panel14: TPanel;
-    Label5: TLabel;
-    DBEdit2: TDBEdit;
     Panel15: TPanel;
     Label2: TLabel;
     DBEdit3: TDBEdit;
@@ -110,12 +107,6 @@ end;
 
 procedure TListaSetor.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
-      begin
-        ShowMessage('O Campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
-      end
-  else
     if DBEdit3.Text = '' then
       begin
         ShowMessage('O Campo "Descrição" deve ser preenchido!');
@@ -124,7 +115,7 @@ begin
   else
     begin
       dm.FDTabProduto.Post;
-      ShowMessage('Editado com Sucesso!');
+      ShowMessage('Setor editado com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
       DBGrid1.Enabled      := True;
@@ -139,14 +130,12 @@ end;
 procedure TListaSetor.HabilitaCampos; // habilitar campos
 begin
     DBEdit1.Enabled            := True;
-    DBEdit2.Enabled            := True;
     DBEdit3.Enabled            := True;
 end;
 
 procedure TListaSetor.DesabilitaCampos; // desabilitar campos
 begin
     DBEdit1.Enabled            := False;
-    DBEdit2.Enabled            := False;
     DBEdit3.Enabled            := False;
 end;
 
@@ -166,7 +155,7 @@ begin
     dm.FDTabColaborador.Locate('descricao', Edit2.Text, [loPartialKey, loCaseInsensitive]);
 end;
 
-procedure TListaSetor.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
+procedure TListaSetor.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
     Edit2.Enabled            := True;

@@ -24,7 +24,8 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1048
+    ExplicitTop = 521
+    ExplicitWidth = 1152
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -324,6 +325,7 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1152
     object Panel22: TPanel
       Left = 16
       Top = 6
@@ -353,9 +355,6 @@ object ListaEmprestimo: TListaEmprestimo
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -78
-        ExplicitTop = 16
-        ExplicitWidth = 299
       end
     end
     object Panel23: TPanel
@@ -387,9 +386,6 @@ object ListaEmprestimo: TListaEmprestimo
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -78
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
     object Panel24: TPanel
@@ -412,7 +408,7 @@ object ListaEmprestimo: TListaEmprestimo
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = -176
+        ExplicitWidth = 84
       end
       object Edit3: TEdit
         Left = 0
@@ -421,9 +417,6 @@ object ListaEmprestimo: TListaEmprestimo
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -78
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
     object Panel25: TPanel
@@ -455,9 +448,6 @@ object ListaEmprestimo: TListaEmprestimo
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -78
-        ExplicitTop = 15
-        ExplicitWidth = 299
       end
     end
     object Panel26: TPanel
@@ -480,8 +470,7 @@ object ListaEmprestimo: TListaEmprestimo
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 88
-        ExplicitTop = -6
+        ExplicitWidth = 64
       end
       object Edit5: TEdit
         Left = 0
@@ -490,9 +479,6 @@ object ListaEmprestimo: TListaEmprestimo
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -78
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
     object Panel27: TPanel
@@ -526,7 +512,6 @@ object ListaEmprestimo: TListaEmprestimo
         Date = 45581.000000000000000000
         Time = 0.832999849539191900
         TabOrder = 0
-        ExplicitWidth = 347
       end
     end
     object Panel28: TPanel
@@ -549,7 +534,6 @@ object ListaEmprestimo: TListaEmprestimo
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitTop = 39
         ExplicitWidth = 67
       end
       object DateTimeFinal: TDateTimePicker
@@ -561,9 +545,6 @@ object ListaEmprestimo: TListaEmprestimo
         Date = 45581.000000000000000000
         Time = 0.832999849539191900
         TabOrder = 0
-        ExplicitLeft = -104
-        ExplicitTop = 91
-        ExplicitWidth = 347
       end
     end
   end
@@ -579,7 +560,7 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1048
+    ExplicitWidth = 1152
     object SBsair: TSpeedButton
       Left = 744
       Top = 7
@@ -2935,8 +2916,7 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitTop = 339
-    ExplicitWidth = 1048
+    ExplicitWidth = 1152
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2956,10 +2936,8 @@ object ListaEmprestimo: TListaEmprestimo
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitLeft = 8
-    ExplicitTop = 400
-    ExplicitWidth = 1048
-    ExplicitHeight = 225
+    ExplicitWidth = 1152
+    ExplicitHeight = 211
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

@@ -32,21 +32,15 @@ type
     Panel13: TPanel;
     Label1: TLabel;
     DBEdit1: TDBEdit;
-    Panel14: TPanel;
-    Label5: TLabel;
-    DBEdit2: TDBEdit;
     Panel15: TPanel;
     Label2: TLabel;
     DBEdit3: TDBEdit;
     Panel16: TPanel;
     Label4: TLabel;
-    DBEdit4: TDBEdit;
     Panel17: TPanel;
     Label3: TLabel;
-    DBEdit5: TDBEdit;
     Panel18: TPanel;
     Label6: TLabel;
-    DBEdit6: TDBEdit;
     Panel11: TPanel;
     Label12: TLabel;
     Edit1: TEdit;
@@ -62,6 +56,9 @@ type
     Panel22: TPanel;
     Label7: TLabel;
     Edit5: TEdit;
+    DBEdit4: TDBEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBLookupComboBox2: TDBLookupComboBox;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -131,12 +128,6 @@ end;
 
 procedure TListaColaborador.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
-      begin
-        ShowMessage('O Campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
-      end
-  else
     if DBEdit3.Text = '' then
       begin
         ShowMessage('O Campo "Descrição" deve ser preenchido!');
@@ -145,19 +136,25 @@ begin
   else
     if DBEdit4.Text = '' then
       begin
-        ShowMessage('O Campo "Marca" deve ser preenchido!');
+        ShowMessage('O Campo "Cargo" deve ser preenchido!');
         DBEdit4.SetFocus;
       end
   else
-    if DBEdit5.Text = '' then
+    if DBLookupComboBox1.Text = '' then
       begin
-        ShowMessage('O Campo "Modelo" deve ser preenchido!');
-        DBEdit5.SetFocus;
+        ShowMessage('O Campo "Setor" deve ser preenchido!');
+        DBLookupComboBox1.SetFocus;
+      end
+  else
+    if DBLookupComboBox2.Text = '' then
+      begin
+        ShowMessage('O Campo "Sede" deve ser preenchido!');
+        DBLookupComboBox2.SetFocus;
       end
   else
     begin
       dm.FDTabProduto.Post;
-      ShowMessage('Editado com Sucesso!');
+      ShowMessage('Colaborador editado com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
       DBGrid1.Enabled      := True;
@@ -172,21 +169,19 @@ end;
 procedure TListaColaborador.HabilitaCampos; // habilitar campos
 begin
     DBEdit1.Enabled            := True;
-    DBEdit2.Enabled            := True;
     DBEdit3.Enabled            := True;
     DBEdit4.Enabled            := True;
-    DBEdit5.Enabled            := True;
-    DBEdit6.Enabled            := True;
+    DBLookupComboBox1.Enabled  := True;
+    DBLookupComboBox2.Enabled  := True;
 end;
 
 procedure TListaColaborador.DesabilitaCampos; // desabilitar campos
 begin
     DBEdit1.Enabled            := False;
-    DBEdit2.Enabled            := False;
     DBEdit3.Enabled            := False;
     DBEdit4.Enabled            := False;
-    DBEdit5.Enabled            := False;
-    DBEdit6.Enabled            := False;
+    DBLookupComboBox1.Enabled  := False;
+    DBLookupComboBox2.Enabled  := False;
 end;
 
 procedure TListaColaborador.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
@@ -223,7 +218,7 @@ begin
     dm.FDTabColaborador.Locate('sede', Edit5.Text, [loPartialKey, loCaseInsensitive]);
 end;
 
-procedure TListaColaborador.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
+procedure TListaColaborador.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
     Edit2.Enabled            := True;

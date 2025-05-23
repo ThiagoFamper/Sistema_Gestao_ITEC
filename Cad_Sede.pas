@@ -56,6 +56,7 @@ uses Lista_Sede, Data_Module, Tela_Principal;
 
 procedure TCadSede.SBpesquisarClick(Sender: TObject);
 begin
+  dm.FDTabSede.Open;
   TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaSede); // botão de pesquisar
 end;
 
@@ -95,7 +96,7 @@ begin
     begin
       dm.FDTabSede.Post;
       dm.FDTabSede.Close;
-      ShowMessage('Grupo cadastrado com sucesso!');
+      ShowMessage('Sede cadastrada com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;

@@ -91,6 +91,7 @@ end;
 
 procedure TCadUsuario.SBpesquisarClick(Sender: TObject);
 begin
+  dm.FDTabUsuario.Open;
   TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaUsuario); // botão de pesquisar
 end;
 
@@ -131,6 +132,8 @@ begin
       SBnovo.Enabled       := True;
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
+      dm.FDTabUsuario.Open;
+      dm.FDTabUsuario.Last;
     end;
 
 end;

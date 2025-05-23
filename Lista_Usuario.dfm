@@ -24,6 +24,7 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1046
     object Panel11: TPanel
       Left = 16
       Top = 6
@@ -53,9 +54,6 @@ object ListaUsuario: TListaUsuario
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -50
-        ExplicitTop = 13
-        ExplicitWidth = 299
       end
     end
     object Panel18: TPanel
@@ -87,9 +85,6 @@ object ListaUsuario: TListaUsuario
         Height = 23
         Align = alTop
         TabOrder = 0
-        ExplicitLeft = -50
-        ExplicitTop = 36
-        ExplicitWidth = 299
       end
     end
     object Panel19: TPanel
@@ -113,8 +108,7 @@ object ListaUsuario: TListaUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitTop = -7
-        ExplicitWidth = 249
+        ExplicitWidth = 44
       end
       object RadioButton2: TRadioButton
         Left = 0
@@ -124,8 +118,6 @@ object ListaUsuario: TListaUsuario
         Align = alBottom
         Caption = 'Sim'
         TabOrder = 0
-        ExplicitTop = 42
-        ExplicitWidth = 249
       end
       object RadioButton3: TRadioButton
         Left = 0
@@ -135,8 +127,6 @@ object ListaUsuario: TListaUsuario
         Align = alBottom
         Caption = 'N'#227'o'
         TabOrder = 1
-        ExplicitTop = 43
-        ExplicitWidth = 249
       end
     end
   end
@@ -150,6 +140,8 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitTop = 524
+    ExplicitWidth = 1046
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -323,6 +315,7 @@ object ListaUsuario: TListaUsuario
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 640
       Top = 7
@@ -2341,6 +2334,7 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2360,6 +2354,8 @@ object ListaUsuario: TListaUsuario
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitWidth = 1046
+    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

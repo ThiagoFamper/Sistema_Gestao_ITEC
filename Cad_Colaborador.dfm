@@ -59,48 +59,13 @@ object CadColaborador: TCadColaborador
         TabOrder = 0
       end
     end
-    object Panel11: TPanel
-      Left = 16
-      Top = 71
-      Width = 225
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 1
-      object Label5: TLabel
-        Left = 0
-        Top = 0
-        Width = 225
-        Height = 20
-        Align = alTop
-        Caption = 'C'#243'digo'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 49
-      end
-      object DBEdit2: TDBEdit
-        Left = 0
-        Top = 20
-        Width = 225
-        Height = 23
-        Align = alTop
-        Color = clBtnHighlight
-        DataField = 'cod_colaborador'
-        DataSource = DM.dsFDTabColaborador
-        Enabled = False
-        TabOrder = 0
-      end
-    end
     object Panel12: TPanel
       Left = 16
       Top = 136
       Width = 505
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 2
+      TabOrder = 1
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -134,7 +99,7 @@ object CadColaborador: TCadColaborador
       Width = 313
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 3
+      TabOrder = 2
       object Label3: TLabel
         Left = 0
         Top = 0
@@ -168,7 +133,7 @@ object CadColaborador: TCadColaborador
       Width = 313
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 4
+      TabOrder = 3
       object Label4: TLabel
         Left = 0
         Top = 0
@@ -193,6 +158,9 @@ object CadColaborador: TCadColaborador
         DataField = 'setor_id'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
+        KeyField = 'id'
+        ListField = 'descricao'
+        ListSource = DM.dsFDTabSetor
         TabOrder = 0
       end
     end
@@ -202,7 +170,7 @@ object CadColaborador: TCadColaborador
       Width = 313
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 5
+      TabOrder = 4
       object Label6: TLabel
         Left = 0
         Top = 0
@@ -227,6 +195,9 @@ object CadColaborador: TCadColaborador
         DataField = 'sede_id'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
+        KeyField = 'id'
+        ListField = 'descricao'
+        ListSource = DM.dsFDTabSede
         TabOrder = 0
       end
     end

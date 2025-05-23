@@ -26,6 +26,7 @@ object ListaProdutos: TListaProdutos
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 2712
     object SBsair: TSpeedButton
       Left = 744
       Top = 7
@@ -2384,7 +2385,8 @@ object ListaProdutos: TListaProdutos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 567
+    ExplicitTop = 553
+    ExplicitWidth = 2712
     object Panel13: TPanel
       Left = 24
       Top = 17
@@ -2405,8 +2407,6 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 16
-        ExplicitTop = 4
         ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
@@ -2421,9 +2421,6 @@ object ListaProdutos: TListaProdutos
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 40
-        ExplicitTop = 36
-        ExplicitWidth = 209
       end
     end
     object Panel14: TPanel
@@ -2446,8 +2443,6 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 192
-        ExplicitTop = 39
         ExplicitWidth = 49
       end
       object DBEdit2: TDBEdit
@@ -2460,9 +2455,6 @@ object ListaProdutos: TListaProdutos
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 24
-        ExplicitTop = 26
-        ExplicitWidth = 209
       end
     end
     object Panel15: TPanel
@@ -2485,8 +2477,6 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 184
-        ExplicitTop = 39
         ExplicitWidth = 65
       end
       object DBEdit3: TDBEdit
@@ -2499,9 +2489,6 @@ object ListaProdutos: TListaProdutos
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 40
-        ExplicitTop = 36
-        ExplicitWidth = 209
       end
     end
     object Panel16: TPanel
@@ -2524,8 +2511,6 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 208
-        ExplicitTop = 39
         ExplicitWidth = 41
       end
       object DBEdit4: TDBEdit
@@ -2538,9 +2523,6 @@ object ListaProdutos: TListaProdutos
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 40
-        ExplicitTop = 36
-        ExplicitWidth = 209
       end
     end
     object Panel17: TPanel
@@ -2563,23 +2545,19 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 208
-        ExplicitTop = 39
         ExplicitWidth = 41
       end
-      object DBEdit6: TDBEdit
+      object DBLookupComboBox1: TDBLookupComboBox
         Left = 0
-        Top = 20
+        Top = 26
         Width = 249
         Height = 23
-        Align = alTop
         DataField = 'grupo_id'
         DataSource = DM.dsFDTabProduto
-        Enabled = False
+        KeyField = 'id'
+        ListField = 'descricao'
+        ListSource = DM.dsFDTabGrupo
         TabOrder = 0
-        ExplicitLeft = 40
-        ExplicitTop = 36
-        ExplicitWidth = 209
       end
     end
     object Panel18: TPanel
@@ -2602,8 +2580,6 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = 197
-        ExplicitTop = 39
         ExplicitWidth = 52
       end
       object DBEdit5: TDBEdit
@@ -2616,9 +2592,6 @@ object ListaProdutos: TListaProdutos
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
-        ExplicitLeft = 40
-        ExplicitTop = 36
-        ExplicitWidth = 209
       end
     end
   end
@@ -2632,6 +2605,7 @@ object ListaProdutos: TListaProdutos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 2712
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2653,6 +2627,7 @@ object ListaProdutos: TListaProdutos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 2712
     object Panel19: TPanel
       Left = 24
       Top = 22
@@ -2683,9 +2658,6 @@ object ListaProdutos: TListaProdutos
         Align = alTop
         TabOrder = 0
         Text = 'Edit1'
-        ExplicitLeft = 80
-        ExplicitTop = 36
-        ExplicitWidth = 121
       end
     end
     object Panel20: TPanel
@@ -2718,8 +2690,6 @@ object ListaProdutos: TListaProdutos
         Align = alTop
         TabOrder = 0
         Text = 'Edit2'
-        ExplicitLeft = -7
-        ExplicitTop = 11
       end
     end
     object Panel21: TPanel
@@ -2752,9 +2722,6 @@ object ListaProdutos: TListaProdutos
         Align = alTop
         TabOrder = 0
         Text = 'Edit3'
-        ExplicitLeft = 128
-        ExplicitTop = 36
-        ExplicitWidth = 121
       end
     end
     object Panel22: TPanel
@@ -2777,8 +2744,7 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitLeft = -24
-        ExplicitTop = -6
+        ExplicitWidth = 52
       end
       object Edit4: TEdit
         Left = 0
@@ -2788,9 +2754,6 @@ object ListaProdutos: TListaProdutos
         Align = alTop
         TabOrder = 0
         Text = 'Edit4'
-        ExplicitLeft = 128
-        ExplicitTop = 36
-        ExplicitWidth = 121
       end
     end
     object Panel23: TPanel
@@ -2823,9 +2786,6 @@ object ListaProdutos: TListaProdutos
         Align = alTop
         TabOrder = 0
         Text = 'Edit5'
-        ExplicitLeft = 80
-        ExplicitTop = 26
-        ExplicitWidth = 121
       end
     end
   end
@@ -2837,9 +2797,8 @@ object ListaProdutos: TListaProdutos
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitLeft = -224
-    ExplicitTop = 441
-    ExplicitHeight = 302
+    ExplicitWidth = 2712
+    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
