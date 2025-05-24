@@ -12,6 +12,7 @@ object ListaGrupos: TListaGrupos
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Panel5: TPanel
     Left = 0
@@ -134,7 +135,7 @@ object ListaGrupos: TListaGrupos
         Height = 23
         Align = alTop
         TabOrder = 0
-        Text = 'Edit1'
+        OnChange = Edit1Change
       end
     end
   end
@@ -2198,7 +2199,7 @@ object ListaGrupos: TListaGrupos
       Height = 225
       Hint = 'Pesquisar Grupos'
       Align = alClient
-      DataSource = DM.dsFDTabGrupo
+      DataSource = DataSource1
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -2210,16 +2211,32 @@ object ListaGrupos: TListaGrupos
       Columns = <
         item
           Expanded = False
-          FieldName = 'id'
-          Visible = False
-        end
-        item
-          Expanded = False
           FieldName = 'descricao'
           Title.Caption = 'Descri'#231#227'o'
           Width = 500
           Visible = True
         end>
     end
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 504
+    Top = 242
+  end
+  object FDQuery1: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT *'
+      'FROM estoqueitec.grupo'
+      'WHERE'
+      '    (UPPER(descricao) LIKE UPPER(:descricao));'
+      '')
+    Left = 424
+    Top = 242
+    ParamData = <
+      item
+        Name = 'DESCRICAO'
+        ParamType = ptInput
+      end>
   end
 end

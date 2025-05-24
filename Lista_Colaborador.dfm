@@ -12,6 +12,7 @@ object ListaColaborador: TListaColaborador
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -24,45 +25,13 @@ object ListaColaborador: TListaColaborador
     ParentBackground = False
     TabOrder = 1
     ExplicitWidth = 1455
-    object Panel11: TPanel
+    object Panel19: TPanel
       Left = 16
-      Top = 4
+      Top = 6
       Width = 347
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
-      object Label12: TLabel
-        Left = 0
-        Top = 0
-        Width = 347
-        Height = 20
-        Align = alTop
-        Caption = 'C'#243'digo'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 49
-      end
-      object Edit1: TEdit
-        Left = 0
-        Top = 20
-        Width = 347
-        Height = 23
-        Align = alTop
-        TabOrder = 0
-        StyleName = 'Edit1'
-      end
-    end
-    object Panel19: TPanel
-      Left = 16
-      Top = 69
-      Width = 347
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 1
       object Label11: TLabel
         Left = 0
         Top = 0
@@ -78,22 +47,23 @@ object ListaColaborador: TListaColaborador
         ParentFont = False
         ExplicitWidth = 65
       end
-      object Edit2: TEdit
+      object Edit1: TEdit
         Left = 0
         Top = 20
         Width = 347
         Height = 23
         Align = alTop
         TabOrder = 0
+        OnChange = Edit1Change
       end
     end
     object Panel20: TPanel
-      Left = 416
+      Left = 400
       Top = 6
       Width = 347
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 2
+      TabOrder = 1
       object Label8: TLabel
         Left = 0
         Top = 0
@@ -116,15 +86,16 @@ object ListaColaborador: TListaColaborador
         Height = 23
         Align = alTop
         TabOrder = 0
+        OnChange = Edit3Change
       end
     end
     object Panel21: TPanel
-      Left = 416
-      Top = 69
+      Left = 16
+      Top = 71
       Width = 347
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 3
+      TabOrder = 2
       object Label9: TLabel
         Left = 0
         Top = 0
@@ -140,22 +111,23 @@ object ListaColaborador: TListaColaborador
         ParentFont = False
         ExplicitWidth = 40
       end
-      object Edit4: TEdit
+      object Edit2: TEdit
         Left = 0
         Top = 20
         Width = 347
         Height = 23
         Align = alTop
         TabOrder = 0
+        OnChange = Edit2Change
       end
     end
     object Panel22: TPanel
-      Left = 776
-      Top = 6
+      Left = 400
+      Top = 71
       Width = 347
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 4
+      TabOrder = 3
       object Label7: TLabel
         Left = 0
         Top = 0
@@ -171,13 +143,14 @@ object ListaColaborador: TListaColaborador
         ParentFont = False
         ExplicitWidth = 33
       end
-      object Edit5: TEdit
+      object Edit4: TEdit
         Left = 0
         Top = 20
         Width = 347
         Height = 23
         Align = alTop
         TabOrder = 0
+        OnChange = Edit4Change
       end
     end
   end
@@ -2272,7 +2245,7 @@ object ListaColaborador: TListaColaborador
     end
     object Panel15: TPanel
       Left = 16
-      Top = 147
+      Top = 82
       Width = 347
       Height = 59
       BevelOuter = bvNone
@@ -2305,8 +2278,8 @@ object ListaColaborador: TListaColaborador
       end
     end
     object Panel16: TPanel
-      Left = 416
-      Top = 17
+      Left = 16
+      Top = 147
       Width = 347
       Height = 59
       BevelOuter = bvNone
@@ -2340,7 +2313,7 @@ object ListaColaborador: TListaColaborador
     end
     object Panel17: TPanel
       Left = 416
-      Top = 82
+      Top = 18
       Width = 347
       Height = 59
       BevelOuter = bvNone
@@ -2375,7 +2348,7 @@ object ListaColaborador: TListaColaborador
     end
     object Panel18: TPanel
       Left = 416
-      Top = 147
+      Top = 83
       Width = 347
       Height = 59
       BevelOuter = bvNone
@@ -2427,7 +2400,7 @@ object ListaColaborador: TListaColaborador
       Height = 225
       Hint = 'Pesquisar Colaborador'
       Align = alClient
-      DataSource = DM.dsFDTabColaborador
+      DataSource = DataSource1
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -2437,11 +2410,6 @@ object ListaColaborador: TListaColaborador
       TitleFont.Style = []
       StyleElements = []
       Columns = <
-        item
-          Expanded = False
-          FieldName = 'id'
-          Visible = False
-        end
         item
           Expanded = False
           FieldName = 'descricao'
@@ -2458,14 +2426,56 @@ object ListaColaborador: TListaColaborador
         end
         item
           Expanded = False
-          FieldName = 'setor_id'
-          Visible = False
+          FieldName = 'setor'
+          Title.Caption = 'Setor'
+          Width = 200
+          Visible = True
         end
         item
           Expanded = False
-          FieldName = 'sede_id'
-          Visible = False
+          FieldName = 'sede'
+          Title.Caption = 'Sede'
+          Width = 200
+          Visible = True
         end>
     end
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 504
+    Top = 258
+  end
+  object FDQuery1: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT c.*, st.descricao AS Setor, sd.descricao AS Sede '
+      'FROM estoqueitec.colaborador c'
+      'JOIN estoqueitec.setor st ON c.setor_id = st.id'
+      'JOIN estoqueitec.sede sd ON c.sede_id = sd.id'
+      'WHERE'
+      '    (UPPER(c.descricao) LIKE UPPER(:descricao)) AND'
+      '    (UPPER(st.descricao) LIKE UPPER(:setor)) AND'
+      '    (UPPER(sd.descricao) LIKE UPPER(:sede)) AND'
+      '    (UPPER(cargo) LIKE UPPER(:cargo));'
+      '')
+    Left = 424
+    Top = 258
+    ParamData = <
+      item
+        Name = 'DESCRICAO'
+        ParamType = ptInput
+      end
+      item
+        Name = 'SETOR'
+        ParamType = ptInput
+      end
+      item
+        Name = 'SEDE'
+        ParamType = ptInput
+      end
+      item
+        Name = 'CARGO'
+        ParamType = ptInput
+      end>
   end
 end

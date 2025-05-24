@@ -6,7 +6,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.ExtCtrls,
   Vcl.Buttons, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Mask,
-  Vcl.Imaging.pngimage;
+  Vcl.Imaging.pngimage, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
 
 type
   TListaColaborador = class(TForm)
@@ -41,24 +44,23 @@ type
     Label3: TLabel;
     Panel18: TPanel;
     Label6: TLabel;
-    Panel11: TPanel;
-    Label12: TLabel;
-    Edit1: TEdit;
     Panel19: TPanel;
     Label11: TLabel;
-    Edit2: TEdit;
+    Edit1: TEdit;
     Panel20: TPanel;
     Label8: TLabel;
     Edit3: TEdit;
     Panel21: TPanel;
     Label9: TLabel;
-    Edit4: TEdit;
+    Edit2: TEdit;
     Panel22: TPanel;
     Label7: TLabel;
-    Edit5: TEdit;
+    Edit4: TEdit;
     DBEdit4: TDBEdit;
     DBLookupComboBox1: TDBLookupComboBox;
     DBLookupComboBox2: TDBLookupComboBox;
+    DataSource1: TDataSource;
+    FDQuery1: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -68,11 +70,12 @@ type
     procedure SBeditarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
+    procedure Filtro;
+    procedure FormShow(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
     procedure Edit2Change(Sender: TObject);
     procedure Edit3Change(Sender: TObject);
     procedure Edit4Change(Sender: TObject);
-    procedure Edit5Change(Sender: TObject);
 
   private
     { Private declarations }
@@ -168,7 +171,6 @@ end;
 
 procedure TListaColaborador.HabilitaCampos; // habilitar campos
 begin
-    DBEdit1.Enabled            := True;
     DBEdit3.Enabled            := True;
     DBEdit4.Enabled            := True;
     DBLookupComboBox1.Enabled  := True;
@@ -177,7 +179,6 @@ end;
 
 procedure TListaColaborador.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit1.Enabled            := False;
     DBEdit3.Enabled            := False;
     DBEdit4.Enabled            := False;
     DBLookupComboBox1.Enabled  := False;
@@ -190,32 +191,26 @@ begin
     Edit2.Enabled            := False;
     Edit3.Enabled            := False;
     Edit4.Enabled            := False;
-    Edit5.Enabled            := False;
 end;
 
-procedure TListaColaborador.Edit1Change(Sender: TObject); // pesquisa código
+procedure TListaColaborador.Edit1Change(Sender: TObject);
 begin
-    dm.FDTabColaborador.Locate('cod_colaborador', Edit1.Text, [loPartialKey, loCaseInsensitive]);
+  Filtro;
 end;
 
-procedure TListaColaborador.Edit2Change(Sender: TObject); // pesquisa descricao
+procedure TListaColaborador.Edit2Change(Sender: TObject);
 begin
-    dm.FDTabColaborador.Locate('descricao', Edit2.Text, [loPartialKey, loCaseInsensitive]);
+  Filtro;
 end;
 
-procedure TListaColaborador.Edit3Change(Sender: TObject); // pesquisa cargo
+procedure TListaColaborador.Edit3Change(Sender: TObject);
 begin
-    dm.FDTabColaborador.Locate('cargo', Edit3.Text, [loPartialKey, loCaseInsensitive]);
+  Filtro;
 end;
 
-procedure TListaColaborador.Edit4Change(Sender: TObject); // pesquisa setor
+procedure TListaColaborador.Edit4Change(Sender: TObject);
 begin
-    dm.FDTabColaborador.Locate('setor_id', Edit4.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TListaColaborador.Edit5Change(Sender: TObject); // pesquisa sede
-begin
-    dm.FDTabColaborador.Locate('sede', Edit5.Text, [loPartialKey, loCaseInsensitive]);
+  Filtro;
 end;
 
 procedure TListaColaborador.HabilitaCamposPesquisa; // habilitar campos de pesquisa
@@ -224,7 +219,25 @@ begin
     Edit2.Enabled            := True;
     Edit3.Enabled            := True;
     Edit4.Enabled            := True;
-    Edit5.Enabled            := True;
+end;
+
+procedure TListaColaborador.Filtro; // pesquisa com sql query
+begin
+  FDQuery1.ParamByName('descricao').AsString := '%' + Edit1.Text + '%';
+  FDQuery1.ParamByName('cargo').AsString := '%' + Edit2.Text + '%';
+  FDQuery1.ParamByName('setor').AsString := '%' + Edit3.Text + '%';
+  FDQuery1.ParamByName('sede').AsString := '%' + Edit4.Text + '%';
+
+  FDQuery1.Close;
+  FDQuery1.Open;
+end;
+
+procedure TListaColaborador.FormShow(Sender: TObject);
+begin
+  dm.FDTabColaborador.Open;
+  dm.FDTabSetor.Open;
+  dm.FDTabSede.Open;
+  Filtro;
 end;
 
 end.

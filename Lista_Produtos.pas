@@ -6,7 +6,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.DBCtrls,
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.Grids, Vcl.DBGrids, Vcl.Menus, Vcl.Mask,
-  Vcl.Imaging.pngimage;
+  Vcl.Imaging.pngimage, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
 
 type
   TListaProdutos = class(TForm)
@@ -64,6 +67,8 @@ type
     Edit4: TEdit;
     Edit5: TEdit;
     DBLookupComboBox1: TDBLookupComboBox;
+    FDQuery1: TFDQuery;
+    DataSource1: TDataSource;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -73,12 +78,14 @@ type
     procedure SBeditarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
+    procedure SBrelatorioClick(Sender: TObject);
+    procedure Filtro;
     procedure Edit1Change(Sender: TObject);
     procedure Edit2Change(Sender: TObject);
     procedure Edit3Change(Sender: TObject);
     procedure Edit4Change(Sender: TObject);
     procedure Edit5Change(Sender: TObject);
-    procedure SBrelatorioClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -190,7 +197,6 @@ end;
 
 procedure TListaProdutos.HabilitaCampos; // habilitar campos
 begin
-    DBEdit1.Enabled            := True;
     DBEdit2.Enabled            := True;
     DBEdit3.Enabled            := True;
     DBEdit4.Enabled            := True;
@@ -200,7 +206,6 @@ end;
 
 procedure TListaProdutos.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit1.Enabled            := False;
     DBEdit2.Enabled            := False;
     DBEdit3.Enabled            := False;
     DBEdit4.Enabled            := False;
@@ -217,32 +222,6 @@ begin
     Edit5.Enabled            := False;
 end;
 
-procedure TListaProdutos.Edit1Change(Sender: TObject); // pesquisa código
-begin
-    dm.FDTabProduto.Locate('cod_produto', Edit1.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TListaProdutos.Edit2Change(Sender: TObject); // pesquisa descricao
-begin
-    dm.FDTabProduto.Locate('descricao', Edit2.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TListaProdutos.Edit3Change(Sender: TObject); // pesquisa marca
-begin
-    dm.FDTabProduto.Locate('marca', Edit3.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TListaProdutos.Edit4Change(Sender: TObject); // pesquisa modelo
-begin
-    dm.FDTabProduto.Locate('modelo', Edit4.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TListaProdutos.Edit5Change(Sender: TObject); // pesquisa grupo
-begin
-    dm.FDTabProduto.Locate('grupo', Edit5.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-
 procedure TListaProdutos.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
@@ -250,6 +229,50 @@ begin
     Edit3.Enabled            := True;
     Edit4.Enabled            := True;
     Edit5.Enabled            := True;
+end;
+
+procedure TListaProdutos.Filtro; // pesquisa com sql query
+begin
+  FDQuery1.ParamByName('codigo').AsString := '%' + Edit1.Text + '%';
+  FDQuery1.ParamByName('descricao').AsString := '%' + Edit2.Text + '%';
+  FDQuery1.ParamByName('marca').AsString := '%' + Edit3.Text + '%';
+  FDQuery1.ParamByName('modelo').AsString := '%' + Edit4.Text + '%';
+  FDQuery1.ParamByName('grupo').AsString := '%' + Edit5.Text + '%';
+
+  FDQuery1.Close;
+  FDQuery1.Open;
+end;
+
+procedure TListaProdutos.FormShow(Sender: TObject);
+begin
+  dm.FDTabProduto.Open;
+  dm.FDTabGrupo.Open;
+  Filtro;
+end;
+
+procedure TListaProdutos.Edit1Change(Sender: TObject);
+begin
+  Filtro;
+end;
+
+procedure TListaProdutos.Edit2Change(Sender: TObject);
+begin
+  Filtro;
+end;
+
+procedure TListaProdutos.Edit3Change(Sender: TObject);
+begin
+  Filtro;
+end;
+
+procedure TListaProdutos.Edit4Change(Sender: TObject);
+begin
+  Filtro;
+end;
+
+procedure TListaProdutos.Edit5Change(Sender: TObject);
+begin
+  Filtro;
 end;
 
 end.

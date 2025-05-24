@@ -61,7 +61,7 @@ object CadColaborador: TCadColaborador
     end
     object Panel12: TPanel
       Left = 16
-      Top = 136
+      Top = 71
       Width = 505
       Height = 59
       BevelOuter = bvNone
@@ -94,8 +94,8 @@ object CadColaborador: TCadColaborador
       end
     end
     object Panel13: TPanel
-      Left = 568
-      Top = 6
+      Left = 16
+      Top = 136
       Width = 313
       Height = 59
       BevelOuter = bvNone
@@ -129,7 +129,7 @@ object CadColaborador: TCadColaborador
     end
     object Panel14: TPanel
       Left = 568
-      Top = 71
+      Top = 6
       Width = 313
       Height = 59
       BevelOuter = bvNone
@@ -166,7 +166,7 @@ object CadColaborador: TCadColaborador
     end
     object Panel15: TPanel
       Left = 568
-      Top = 136
+      Top = 71
       Width = 313
       Height = 59
       BevelOuter = bvNone

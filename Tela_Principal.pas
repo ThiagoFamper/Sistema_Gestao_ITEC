@@ -264,7 +264,6 @@ end;
 
 procedure TTelaPrincipal.pnpConSedeClick(Sender: TObject);
 begin
-  dm.FDTabSede.Open;
   AbrirFormulario(TListaSede);  // abre a tela de consulta de sede
 end;
 
@@ -354,9 +353,6 @@ end;
 
 procedure TTelaPrincipal.pnpConColabClick(Sender: TObject);
 begin
-  dm.FDTabSetor.Open;
-  dm.FDTabSede.Open;
-  dm.FDTabColaborador.Open;
   AbrirFormulario(TListaColaborador); // abre a tela de consulta colaborador
 end;
 
@@ -372,14 +368,11 @@ end;
 
 procedure TTelaPrincipal.pnpConGruClick(Sender: TObject);
 begin
-  dm.FDTabGrupo.Open;
   AbrirFormulario(TListaGrupos); // abre a tela de consulta grupo
 end;
 
 procedure TTelaPrincipal.pnpConProdClick(Sender: TObject);
 begin
-  dm.FDTabGrupo.Open;
-  dm.FDTabProduto.Open;
   AbrirFormulario(TListaProdutos);  // abre a tela de consulta produto
 end;
 
@@ -395,13 +388,11 @@ end;
 
 procedure TTelaPrincipal.pnpConSetClick(Sender: TObject);
 begin
-  dm.FDTabSetor.Open;
   AbrirFormulario(TListaSetor); // abre a tela de consulta setor
 end;
 
 procedure TTelaPrincipal.pnpConUserClick(Sender: TObject);
 begin
-  dm.FDTabUsuario.Open;
   AbrirFormulario(TListaUsuario); // abre a tela de consulta usuario
 end;
 

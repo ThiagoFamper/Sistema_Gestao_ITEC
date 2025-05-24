@@ -108,6 +108,7 @@ begin
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
       dm.FDTabGrupo.Open;
+      dm.FDTabGrupo.Refresh;
       dm.FDTabGrupo.Last;
     end;
 end;

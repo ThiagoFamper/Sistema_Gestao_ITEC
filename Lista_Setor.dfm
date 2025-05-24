@@ -12,6 +12,7 @@ object ListaSetor: TListaSetor
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Panel5: TPanel
     Left = 0
@@ -61,7 +62,7 @@ object ListaSetor: TListaSetor
     end
     object Panel15: TPanel
       Left = 16
-      Top = 147
+      Top = 91
       Width = 249
       Height = 59
       BevelOuter = bvNone
@@ -81,7 +82,7 @@ object ListaSetor: TListaSetor
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit3: TDBEdit
+      object DBEdit2: TDBEdit
         Left = 0
         Top = 20
         Width = 249
@@ -105,44 +106,13 @@ object ListaSetor: TListaSetor
     ParentBackground = False
     TabOrder = 1
     ExplicitWidth = 1046
-    object Panel11: TPanel
+    object Panel16: TPanel
       Left = 16
-      Top = 6
+      Top = 20
       Width = 249
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
-      object Label6: TLabel
-        Left = 0
-        Top = 0
-        Width = 249
-        Height = 20
-        Align = alTop
-        Caption = 'C'#243'digo'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 49
-      end
-      object Edit1: TEdit
-        Left = 0
-        Top = 20
-        Width = 249
-        Height = 23
-        Align = alTop
-        TabOrder = 0
-      end
-    end
-    object Panel16: TPanel
-      Left = 16
-      Top = 84
-      Width = 249
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 1
       object Label7: TLabel
         Left = 0
         Top = 0
@@ -158,13 +128,14 @@ object ListaSetor: TListaSetor
         ParentFont = False
         ExplicitWidth = 65
       end
-      object Edit2: TEdit
+      object Edit1: TEdit
         Left = 0
         Top = 20
         Width = 249
         Height = 23
         Align = alTop
         TabOrder = 0
+        OnChange = Edit1Change
       end
     end
   end
@@ -2228,7 +2199,7 @@ object ListaSetor: TListaSetor
       Height = 225
       Hint = 'Pesquisar Setor'
       Align = alClient
-      DataSource = DM.dsFDTabSetor
+      DataSource = DataSource1
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -2240,16 +2211,32 @@ object ListaSetor: TListaSetor
       Columns = <
         item
           Expanded = False
-          FieldName = 'id'
-          Visible = False
-        end
-        item
-          Expanded = False
           FieldName = 'descricao'
           Title.Caption = 'Descri'#231#227'o'
           Width = 500
           Visible = True
         end>
     end
+  end
+  object FDQuery1: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT *'
+      'FROM estoqueitec.setor'
+      'WHERE'
+      '    (UPPER(descricao) LIKE UPPER(:descricao));'
+      '')
+    Left = 424
+    Top = 250
+    ParamData = <
+      item
+        Name = 'DESCRICAO'
+        ParamType = ptInput
+      end>
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 504
+    Top = 250
   end
 end

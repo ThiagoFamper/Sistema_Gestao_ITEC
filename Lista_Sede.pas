@@ -5,7 +5,10 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  Vcl.Buttons, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls;
+  Vcl.Buttons, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TListaSede = class(TForm)
@@ -37,6 +40,8 @@ type
     Panel11: TPanel;
     Label3: TLabel;
     Edit1: TEdit;
+    FDQuery1: TFDQuery;
+    DataSource1: TDataSource;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -47,6 +52,8 @@ type
     procedure SBcancelarClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
+    procedure Filtro;
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -124,13 +131,11 @@ end;
 
 procedure TListaSede.HabilitaCampos; // habilitar campos
 begin
-    DBEdit1.Enabled            := True;
     DBEdit2.Enabled            := True;
 end;
 
 procedure TListaSede.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit1.Enabled            := False;
     DBEdit2.Enabled            := False;
 end;
 
@@ -139,14 +144,28 @@ begin
     Edit1.Enabled            := False;
 end;
 
-procedure TListaSede.Edit1Change(Sender: TObject); // pesquisa descricao
-begin
-    dm.FDTabProduto.Locate('descricao', Edit1.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
 procedure TListaSede.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
+end;
+
+procedure TListaSede.Filtro; // pesquisa com sql query
+begin
+  FDQuery1.ParamByName('descricao').AsString := '%' + Edit1.Text + '%';
+
+  FDQuery1.Close;
+  FDQuery1.Open;
+end;
+
+procedure TListaSede.FormShow(Sender: TObject);
+begin
+  dm.FDTabSede.Open;
+  Filtro;
+end;
+
+procedure TListaSede.Edit1Change(Sender: TObject);
+begin
+  Filtro;
 end;
 
 end.

@@ -12,6 +12,7 @@ object ListaUsuario: TListaUsuario
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -54,6 +55,7 @@ object ListaUsuario: TListaUsuario
         Height = 23
         Align = alTop
         TabOrder = 0
+        OnChange = Edit1Change
       end
     end
     object Panel18: TPanel
@@ -85,6 +87,7 @@ object ListaUsuario: TListaUsuario
         Height = 23
         Align = alTop
         TabOrder = 0
+        OnChange = Edit2Change
       end
     end
     object Panel19: TPanel
@@ -109,10 +112,7 @@ object ListaUsuario: TListaUsuario
         Font.Style = []
         ParentFont = False
         TabOrder = 0
-        ExplicitLeft = 64
-        ExplicitTop = 32
-        ExplicitWidth = 97
-        ExplicitHeight = 17
+        OnClick = CheckBox2Click
       end
     end
   end
@@ -2350,7 +2350,7 @@ object ListaUsuario: TListaUsuario
       Height = 225
       Hint = 'Pesquisar Usuario'
       Align = alClient
-      DataSource = DM.dsFDTabUsuario
+      DataSource = DataSource1
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -2360,11 +2360,6 @@ object ListaUsuario: TListaUsuario
       TitleFont.Style = []
       StyleElements = []
       Columns = <
-        item
-          Expanded = False
-          FieldName = 'id'
-          Visible = False
-        end
         item
           Expanded = False
           FieldName = 'nome'
@@ -2394,5 +2389,36 @@ object ListaUsuario: TListaUsuario
           Visible = True
         end>
     end
+  end
+  object FDQuery1: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT *'
+      'FROM estoqueitec.usuario'
+      'WHERE'
+      '    (UPPER(nome) LIKE UPPER(:nome)) AND'
+      '    (UPPER(login) LIKE UPPER(:login)) AND'
+      '    (admin = :admin);'
+      '')
+    Left = 424
+    Top = 258
+    ParamData = <
+      item
+        Name = 'NOME'
+        ParamType = ptInput
+      end
+      item
+        Name = 'LOGIN'
+        ParamType = ptInput
+      end
+      item
+        Name = 'ADMIN'
+        ParamType = ptInput
+      end>
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 504
+    Top = 258
   end
 end

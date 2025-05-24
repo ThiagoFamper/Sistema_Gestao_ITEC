@@ -158,6 +158,7 @@ begin
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
       dm.FDTabEntrada.Open;
+      dm.FDTabEntrada.Refresh;
       dm.FDTabEntrada.Last;
     end;
 

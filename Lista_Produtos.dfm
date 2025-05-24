@@ -13,6 +13,7 @@ object ListaProdutos: TListaProdutos
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Panel2: TPanel
     Left = 0
@@ -2657,7 +2658,7 @@ object ListaProdutos: TListaProdutos
         Height = 23
         Align = alTop
         TabOrder = 0
-        Text = 'Edit1'
+        OnChange = Edit1Change
       end
     end
     object Panel20: TPanel
@@ -2689,7 +2690,7 @@ object ListaProdutos: TListaProdutos
         Height = 23
         Align = alTop
         TabOrder = 0
-        Text = 'Edit2'
+        OnChange = Edit2Change
       end
     end
     object Panel21: TPanel
@@ -2721,7 +2722,7 @@ object ListaProdutos: TListaProdutos
         Height = 23
         Align = alTop
         TabOrder = 0
-        Text = 'Edit3'
+        OnChange = Edit3Change
       end
     end
     object Panel22: TPanel
@@ -2753,7 +2754,7 @@ object ListaProdutos: TListaProdutos
         Height = 23
         Align = alTop
         TabOrder = 0
-        Text = 'Edit4'
+        OnChange = Edit4Change
       end
     end
     object Panel23: TPanel
@@ -2785,7 +2786,7 @@ object ListaProdutos: TListaProdutos
         Height = 23
         Align = alTop
         TabOrder = 0
-        Text = 'Edit5'
+        OnChange = Edit5Change
       end
     end
   end
@@ -2806,7 +2807,7 @@ object ListaProdutos: TListaProdutos
       Height = 225
       Hint = 'Pesquisar Produtos'
       Align = alClient
-      DataSource = DM.dsFDTabProduto
+      DataSource = DataSource1
       FixedColor = clWhitesmoke
       ParentColor = True
       ReadOnly = True
@@ -2819,8 +2820,10 @@ object ListaProdutos: TListaProdutos
       Columns = <
         item
           Expanded = False
-          FieldName = 'id'
-          Visible = False
+          FieldName = 'cod_produto'
+          Title.Caption = 'C'#243'digo'
+          Width = 70
+          Visible = True
         end
         item
           Expanded = False
@@ -2845,13 +2848,10 @@ object ListaProdutos: TListaProdutos
         end
         item
           Expanded = False
-          FieldName = 'grupo_id'
-          Visible = False
-        end
-        item
-          Expanded = False
-          FieldName = 'cod_produto'
-          Visible = False
+          FieldName = 'grupo'
+          Title.Caption = 'Grupo'
+          Width = 150
+          Visible = True
         end
         item
           Expanded = False
@@ -2861,5 +2861,47 @@ object ListaProdutos: TListaProdutos
           Visible = True
         end>
     end
+  end
+  object FDQuery1: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT p.*, g.descricao AS Grupo '
+      'FROM estoqueitec.produto p'
+      'JOIN estoqueitec.grupo g ON p.grupo_id = g.id'
+      'WHERE'
+      '    (UPPER(cod_produto) LIKE UPPER(:codigo)) AND'
+      '    (UPPER(p.descricao) LIKE UPPER(:descricao)) AND'
+      '    (UPPER(marca) LIKE UPPER(:marca)) AND'
+      '    (UPPER(modelo) LIKE UPPER(:modelo)) AND'
+      '    (UPPER(g.descricao) LIKE UPPER(:grupo));'
+      '')
+    Left = 432
+    Top = 290
+    ParamData = <
+      item
+        Name = 'CODIGO'
+        ParamType = ptInput
+      end
+      item
+        Name = 'DESCRICAO'
+        ParamType = ptInput
+      end
+      item
+        Name = 'MARCA'
+        ParamType = ptInput
+      end
+      item
+        Name = 'MODELO'
+        ParamType = ptInput
+      end
+      item
+        Name = 'GRUPO'
+        ParamType = ptInput
+      end>
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 512
+    Top = 290
   end
 end

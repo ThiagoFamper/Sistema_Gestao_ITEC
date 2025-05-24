@@ -6,7 +6,9 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Buttons, Vcl.DBCtrls,
   Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage,
-  Vcl.Mask;
+  Vcl.Mask, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TListaUsuario = class(TForm)
@@ -51,6 +53,8 @@ type
     Panel19: TPanel;
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
+    FDQuery1: TFDQuery;
+    DataSource1: TDataSource;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -60,8 +64,11 @@ type
     procedure SBeditarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure Filtro;
     procedure Edit1Change(Sender: TObject);
     procedure Edit2Change(Sender: TObject);
+    procedure CheckBox2Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -159,6 +166,11 @@ begin
     CheckBox1.Enabled          := True;
 end;
 
+procedure TListaUsuario.CheckBox2Click(Sender: TObject);
+begin
+  Filtro;
+end;
+
 procedure TListaUsuario.DesabilitaCampos; // desabilitar campos
 begin
     DBEdit1.Enabled            := False;
@@ -175,14 +187,30 @@ begin
     CheckBox2.Enabled        := False;
 end;
 
-procedure TListaUsuario.Edit1Change(Sender: TObject); // pesquisa código
+procedure TListaUsuario.Edit1Change(Sender: TObject);
 begin
-    dm.FDTabColaborador.Locate('id', Edit1.Text, [loPartialKey, loCaseInsensitive]);
+  Filtro;
 end;
 
-procedure TListaUsuario.Edit2Change(Sender: TObject); // pesquisa descricao
+procedure TListaUsuario.Edit2Change(Sender: TObject);
 begin
-    dm.FDTabColaborador.Locate('descricao', Edit2.Text, [loPartialKey, loCaseInsensitive]);
+  Filtro;
+end;
+
+procedure TListaUsuario.Filtro; // pesquisa com sql query
+begin
+  FDQuery1.ParamByName('nome').AsString := '%' + Edit1.Text + '%';
+  FDQuery1.ParamByName('login').AsString := '%' + Edit2.Text + '%';
+  FDQuery1.ParamByName('admin').AsBoolean := CheckBox2.Checked;
+
+  FDQuery1.Close;
+  FDQuery1.Open;
+end;
+
+procedure TListaUsuario.FormShow(Sender: TObject);
+begin
+  dm.FDTabUsuario.Open;
+  Filtro;
 end;
 
 procedure TListaUsuario.HabilitaCamposPesquisa; // habilitar campos de pesquisa

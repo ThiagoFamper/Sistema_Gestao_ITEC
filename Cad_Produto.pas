@@ -6,7 +6,9 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask,
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.Imaging.pngimage, Data.DB, Vcl.Grids,
-  Vcl.DBGrids;
+  Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TCadProduto = class(TForm)
@@ -110,6 +112,8 @@ begin
 end;
 
 procedure TCadProduto.SBsalvarClick(Sender: TObject); // botão de salvar
+var
+  NewID: Integer;
 begin
     if DBEdit2.Text = '' then
       begin
@@ -154,6 +158,7 @@ begin
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
       dm.FDTabProduto.Open;
+      dm.FDTabProduto.Refresh;
       dm.FDTabProduto.Last;
     end;
 

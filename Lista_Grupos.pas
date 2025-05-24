@@ -6,7 +6,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Mask,
   Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Buttons, Vcl.Grids, Vcl.DBGrids,
-  Vcl.Imaging.pngimage;
+  Vcl.Imaging.pngimage, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
 
 type
   TListaGrupos = class(TForm)
@@ -38,6 +41,8 @@ type
     Panel11: TPanel;
     Label3: TLabel;
     Edit1: TEdit;
+    DataSource1: TDataSource;
+    FDQuery1: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -48,6 +53,8 @@ type
     procedure SBcancelarClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
+    procedure Filtro;
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -125,13 +132,11 @@ end;
 
 procedure TListaGrupos.HabilitaCampos; // habilitar campos
 begin
-    DBEdit1.Enabled            := True;
     DBEdit2.Enabled            := True;
 end;
 
 procedure TListaGrupos.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit1.Enabled            := False;
     DBEdit2.Enabled            := False;
 end;
 
@@ -140,14 +145,28 @@ begin
     Edit1.Enabled            := False;
 end;
 
-procedure TListaGrupos.Edit1Change(Sender: TObject); // pesquisa descricao
-begin
-    dm.FDTabProduto.Locate('descricao', Edit1.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
 procedure TListaGrupos.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
+end;
+
+procedure TListaGrupos.Filtro; // pesquisa com sql query
+begin
+  FDQuery1.ParamByName('descricao').AsString := '%' + Edit1.Text + '%';
+
+  FDQuery1.Close;
+  FDQuery1.Open;
+end;
+
+procedure TListaGrupos.FormShow(Sender: TObject);
+begin
+  dm.FDTabGrupo.Open;
+  Filtro;
+end;
+
+procedure TListaGrupos.Edit1Change(Sender: TObject);
+begin
+  Filtro;
 end;
 
 end.
