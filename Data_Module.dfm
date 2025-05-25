@@ -29,7 +29,6 @@ object DM: TDM
     Top = 24
   end
   object FDTabProduto: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -77,7 +76,6 @@ object DM: TDM
     Top = 112
   end
   object FDTabGrupo: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -108,7 +106,6 @@ object DM: TDM
     Top = 259
   end
   object FDTabColaborador: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -137,7 +134,6 @@ object DM: TDM
     end
   end
   object FDTabSetor: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -164,7 +160,6 @@ object DM: TDM
     Top = 336
   end
   object FDTabUsuario: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -246,7 +241,6 @@ object DM: TDM
     Top = 112
   end
   object FDTabEmprestimoProd: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -297,7 +291,6 @@ object DM: TDM
     Top = 182
   end
   object FDTabSaida: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -344,7 +337,6 @@ object DM: TDM
     Top = 259
   end
   object FDTabEstoque: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -374,7 +366,6 @@ object DM: TDM
     Top = 336
   end
   object FDTabEmprestimoItem: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -409,7 +400,6 @@ object DM: TDM
     Top = 400
   end
   object FDTabSede: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1

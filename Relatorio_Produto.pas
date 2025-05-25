@@ -15,14 +15,19 @@ type
     Panel6: TPanel;
     Panel1: TPanel;
     frxDSRelatProd: TfrxDBDataset;
-    BitBtn1: TBitBtn;
     FDQueryRelatProd: TFDQuery;
     frxRelatProd: TfrxReport;
-    DateTimeFinal: TDateTimePicker;
-    DateTimeInicial: TDateTimePicker;
-    Label2: TLabel;
+    Panel2: TPanel;
+    Panel3: TPanel;
     Label1: TLabel;
+    DateTimeInicial: TDateTimePicker;
+    Panel4: TPanel;
+    Panel5: TPanel;
+    Label2: TLabel;
+    DateTimeFinal: TDateTimePicker;
+    BitBtn1: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,6 +60,11 @@ begin
     on E: Exception do
       ShowMessage('Erro ao gerar relatório: ' + E.Message);
   end;
+end;
+
+procedure TRelatorioProduto.FormShow(Sender: TObject);
+begin
+  BitBtn1.Left := (ClientWidth - BitBtn1.Width) div 2;  // centraliza verticalmente o botão de gerar relatório em tempo de execução
 end;
 
 end.

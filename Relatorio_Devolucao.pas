@@ -14,15 +14,20 @@ type
   TRelatorioDevolucao = class(TForm)
     Panel6: TPanel;
     Panel1: TPanel;
-    BitBtn1: TBitBtn;
-    DateTimeFinal: TDateTimePicker;
-    DateTimeInicial: TDateTimePicker;
     frxRelatDev: TfrxReport;
     FDQueryRelatDev: TFDQuery;
     frxDSRelatDev: TfrxDBDataset;
-    Label1: TLabel;
+    Panel5: TPanel;
     Label2: TLabel;
+    DateTimeFinal: TDateTimePicker;
+    Panel4: TPanel;
+    Panel3: TPanel;
+    Label1: TLabel;
+    DateTimeInicial: TDateTimePicker;
+    Panel2: TPanel;
+    BitBtn1: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -51,6 +56,11 @@ begin
     on E: Exception do
       ShowMessage('Erro ao gerar relatório: ' + E.Message);
   end;
+end;
+
+procedure TRelatorioDevolucao.FormShow(Sender: TObject);
+begin
+  BitBtn1.Left := (ClientWidth - BitBtn1.Width) div 2;  // centraliza verticalmente o botão de gerar relatório em tempo de execução
 end;
 
 end.

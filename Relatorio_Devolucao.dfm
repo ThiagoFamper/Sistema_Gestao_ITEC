@@ -13,6 +13,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnShow = FormShow
   TextHeight = 15
   object Panel6: TPanel
     Left = 0
@@ -45,46 +46,102 @@ object RelatorioDevolucao: TRelatorioDevolucao
     ParentBackground = False
     TabOrder = 1
     ExplicitTop = 71
-    object Label1: TLabel
-      Left = 39
-      Top = 56
-      Width = 58
-      Height = 15
-      Caption = 'Data Inicial'
+    DesignSize = (
+      340
+      290)
+    object Panel5: TPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 132
+      Width = 334
+      Height = 41
+      Align = alTop
+      BevelOuter = bvNone
+      TabOrder = 0
+      ExplicitTop = 135
+      object Label2: TLabel
+        Left = 0
+        Top = 0
+        Width = 334
+        Height = 15
+        Align = alTop
+        Caption = 'Data Final'
+        ExplicitWidth = 52
+      end
+      object DateTimeFinal: TDateTimePicker
+        Left = 83
+        Top = 0
+        Width = 241
+        Height = 23
+        Date = 45789.000000000000000000
+        Time = 0.944744328706292400
+        TabOrder = 0
+      end
     end
-    object Label2: TLabel
-      Left = 39
-      Top = 112
-      Width = 52
-      Height = 15
-      Caption = 'Data Final'
+    object Panel4: TPanel
+      Left = 0
+      Top = 88
+      Width = 340
+      Height = 41
+      Align = alTop
+      BevelEdges = [beBottom]
+      BevelOuter = bvNone
+      TabOrder = 1
+      ExplicitTop = 105
+    end
+    object Panel3: TPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 44
+      Width = 334
+      Height = 41
+      Align = alTop
+      BevelEdges = []
+      BevelOuter = bvNone
+      TabOrder = 2
+      ExplicitLeft = 24
+      ExplicitTop = 167
+      ExplicitWidth = 340
+      object Label1: TLabel
+        Left = 0
+        Top = 0
+        Width = 334
+        Height = 15
+        Align = alTop
+        Caption = 'Data Inicial'
+        ExplicitWidth = 58
+      end
+      object DateTimeInicial: TDateTimePicker
+        Left = 83
+        Top = 0
+        Width = 241
+        Height = 23
+        Date = 45789.000000000000000000
+        Time = 0.944744328706292400
+        TabOrder = 0
+      end
+    end
+    object Panel2: TPanel
+      Left = 0
+      Top = 0
+      Width = 340
+      Height = 41
+      Align = alTop
+      BevelEdges = [beBottom]
+      BevelOuter = bvNone
+      TabOrder = 3
+      ExplicitTop = 8
     end
     object BitBtn1: TBitBtn
-      Left = 182
-      Top = 181
-      Width = 107
+      Left = 110
+      Top = 200
+      Width = 89
       Height = 25
+      Anchors = []
       Caption = 'Gerar Relat'#243'rio'
-      TabOrder = 0
+      Layout = blGlyphTop
+      TabOrder = 4
       OnClick = BitBtn1Click
-    end
-    object DateTimeFinal: TDateTimePicker
-      Left = 103
-      Top = 112
-      Width = 186
-      Height = 23
-      Date = 45792.000000000000000000
-      Time = 0.960952118053683100
-      TabOrder = 1
-    end
-    object DateTimeInicial: TDateTimePicker
-      Left = 103
-      Top = 56
-      Width = 186
-      Height = 23
-      Date = 45792.000000000000000000
-      Time = 0.960898009259835800
-      TabOrder = 2
     end
   end
   object frxRelatDev: TfrxReport
@@ -95,15 +152,15 @@ object RelatorioDevolucao: TRelatorioDevolucao
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 45802.108313044000000000
-    ReportOptions.LastChange = 45802.108313044000000000
+    ReportOptions.CreateDate = 45802.600467835650000000
+    ReportOptions.LastChange = 45802.676784039350000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
       'begin'
       ''
       'end.')
-    Left = 24
+    Left = 36
     Top = 304
     Datasets = <
       item
@@ -191,7 +248,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 26.456710000000000000
+        Height = 37.795300000000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
@@ -199,6 +256,8 @@ object RelatorioDevolucao: TRelatorioDevolucao
           AllowVectorExport = True
           Width = 718.110717773437500000
           Height = 22.677180000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWhite
           Font.Height = -16
@@ -208,7 +267,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
           Fill.BackColor = clGray
           HAlign = haCenter
           Memo.UTF8W = (
-            'Report')
+            'RELAT'#211'RIO DEVOLU'#199#195'O DE PRODUTO')
           ParentFont = False
           Style = 'Title'
           VAlign = vaCenter
@@ -221,8 +280,8 @@ object RelatorioDevolucao: TRelatorioDevolucao
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 207.874150000000000000
-        Top = 105.826840000000000000
+        Height = 253.228510000000000000
+        Top = 117.165430000000000000
         Width = 718.110700000000000000
         DataSet = frxDSRelatDev
         DataSetName = 'frxDSRelatDev'
@@ -233,14 +292,20 @@ object RelatorioDevolucao: TRelatorioDevolucao
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataSet = frxDSRelatDev
-          DataSetName = 'frxDSRelatDev'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clMaroon
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = []
+          Highlight.Font.Charset = ANSI_CHARSET
+          Highlight.Font.Color = clMaroon
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Segoe UI'
+          Highlight.Font.Style = [fsBold]
+          Highlight.Condition = 'Value = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Frame.Typ = []
           Memo.UTF8W = (
             'C'#211'DIGO')
           ParentFont = False
@@ -248,7 +313,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         end
         object Memo3: TfrxMemoView
           AllowVectorExport = True
-          Left = 112.897650000000000000
+          Left = 188.488250000000000000
           Width = 335.000000000000000000
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -280,17 +345,27 @@ object RelatorioDevolucao: TRelatorioDevolucao
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = []
+          Highlight.Font.Charset = ANSI_CHARSET
+          Highlight.Font.Color = clMaroon
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Segoe UI'
+          Highlight.Font.Style = [fsBold]
+          Highlight.Condition = 'Value = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Frame.Typ = []
           Memo.UTF8W = (
-            'descricao')
+            'DESCRI'#199#195'O')
           ParentFont = False
           Style = 'Header'
         end
         object Memo5: TfrxMemoView
           AllowVectorExport = True
-          Left = 112.897650000000000000
+          Left = 188.488250000000000000
           Top = 18.897650000000000000
-          Width = 556.000000000000000000
+          Width = 555.968503940000000000
           Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'descricao'
           DataSet = frxDSRelatDev
           DataSetName = 'frxDSRelatDev'
@@ -307,26 +382,38 @@ object RelatorioDevolucao: TRelatorioDevolucao
         end
         object Memo6: TfrxMemoView
           AllowVectorExport = True
-          Top = 37.795300000000000000
+          Top = 38.574830000000000000
           Width = 94.000000000000000000
           Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clMaroon
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = []
+          Highlight.Font.Charset = ANSI_CHARSET
+          Highlight.Font.Color = clMaroon
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Segoe UI'
+          Highlight.Font.Style = [fsBold]
+          Highlight.Condition = 'Value = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Frame.Typ = []
           Memo.UTF8W = (
-            'operador')
+            'OPERADOR')
           ParentFont = False
           Style = 'Header'
         end
         object Memo7: TfrxMemoView
           AllowVectorExport = True
-          Left = 112.897650000000000000
+          Left = 188.488250000000000000
           Top = 37.795300000000000000
           Width = 556.000000000000000000
           Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'operador'
           DataSet = frxDSRelatDev
           DataSetName = 'frxDSRelatDev'
@@ -343,26 +430,38 @@ object RelatorioDevolucao: TRelatorioDevolucao
         end
         object Memo8: TfrxMemoView
           AllowVectorExport = True
-          Top = 56.692950000000000000
+          Top = 57.472480000000000000
           Width = 94.000000000000000000
           Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clMaroon
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = []
+          Highlight.Font.Charset = ANSI_CHARSET
+          Highlight.Font.Color = clMaroon
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Segoe UI'
+          Highlight.Font.Style = [fsBold]
+          Highlight.Condition = 'Value = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Frame.Typ = []
           Memo.UTF8W = (
-            'quantidade')
+            'QUANTIDADE')
           ParentFont = False
           Style = 'Header'
         end
         object Memo9: TfrxMemoView
           AllowVectorExport = True
-          Left = 112.897650000000000000
+          Left = 188.488250000000000000
           Top = 56.692950000000000000
           Width = 78.000000000000000000
           Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'quantidade'
           DataSet = frxDSRelatDev
           DataSetName = 'frxDSRelatDev'
@@ -377,64 +476,40 @@ object RelatorioDevolucao: TRelatorioDevolucao
           ParentFont = False
           Style = 'Data'
         end
-        object Memo10: TfrxMemoView
-          AllowVectorExport = True
-          Top = 75.590600000000000000
-          Width = 94.000000000000000000
-          Height = 18.897650000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'data_emp')
-          ParentFont = False
-          Style = 'Header'
-        end
-        object Memo11: TfrxMemoView
-          AllowVectorExport = True
-          Left = 112.897650000000000000
-          Top = 75.590600000000000000
-          Width = 78.000000000000000000
-          Height = 18.897650000000000000
-          DataField = 'data_emp'
-          DataSet = frxDSRelatDev
-          DataSetName = 'frxDSRelatDev'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDSRelatDev."data_emp"]')
-          ParentFont = False
-          Style = 'Data'
-        end
         object Memo12: TfrxMemoView
           AllowVectorExport = True
-          Top = 94.488250000000000000
-          Width = 94.000000000000000000
+          Top = 95.267780000000000000
+          Width = 120.456710000000000000
           Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clMaroon
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = []
+          Highlight.Font.Charset = ANSI_CHARSET
+          Highlight.Font.Color = clMaroon
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Segoe UI'
+          Highlight.Font.Style = [fsBold]
+          Highlight.Condition = 'Value = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Frame.Typ = []
           Memo.UTF8W = (
-            'colab')
+            'COLABORADOR')
           ParentFont = False
           Style = 'Header'
         end
         object Memo13: TfrxMemoView
           AllowVectorExport = True
-          Left = 112.897650000000000000
+          Left = 188.488250000000000000
           Top = 94.488250000000000000
           Width = 556.000000000000000000
-          Height = 18.897650000000000000
+          Height = 18.897637800000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'colab'
           DataSet = frxDSRelatDev
           DataSetName = 'frxDSRelatDev'
@@ -451,26 +526,38 @@ object RelatorioDevolucao: TRelatorioDevolucao
         end
         object Memo14: TfrxMemoView
           AllowVectorExport = True
-          Top = 113.385900000000000000
+          Top = 114.385900000000000000
           Width = 94.000000000000000000
           Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clMaroon
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = []
+          Highlight.Font.Charset = ANSI_CHARSET
+          Highlight.Font.Color = clMaroon
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Segoe UI'
+          Highlight.Font.Style = [fsBold]
+          Highlight.Condition = 'Value = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Frame.Typ = []
           Memo.UTF8W = (
-            'setor')
+            'SETOR')
           ParentFont = False
           Style = 'Header'
         end
         object Memo15: TfrxMemoView
           AllowVectorExport = True
-          Left = 112.897650000000000000
+          Left = 188.488250000000000000
           Top = 113.385900000000000000
           Width = 556.000000000000000000
           Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'setor'
           DataSet = frxDSRelatDev
           DataSetName = 'frxDSRelatDev'
@@ -487,26 +574,38 @@ object RelatorioDevolucao: TRelatorioDevolucao
         end
         object Memo16: TfrxMemoView
           AllowVectorExport = True
-          Top = 132.283550000000000000
+          Top = 133.063080000000000000
           Width = 94.000000000000000000
           Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clMaroon
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = []
+          Highlight.Font.Charset = ANSI_CHARSET
+          Highlight.Font.Color = clMaroon
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Segoe UI'
+          Highlight.Font.Style = [fsBold]
+          Highlight.Condition = 'Value = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Frame.Typ = []
           Memo.UTF8W = (
-            'devolvido')
+            'DEVOLVIDO')
           ParentFont = False
           Style = 'Header'
         end
         object Memo17: TfrxMemoView
           AllowVectorExport = True
-          Left = 112.897650000000000000
+          Left = 188.488250000000000000
           Top = 132.283550000000000000
-          Width = 78.000000000000000000
+          Width = 569.338900000000000000
           Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'devolvido'
           DataSet = frxDSRelatDev
           DataSetName = 'frxDSRelatDev'
@@ -521,28 +620,88 @@ object RelatorioDevolucao: TRelatorioDevolucao
           ParentFont = False
           Style = 'Data'
         end
-        object Memo18: TfrxMemoView
+        object Memo10: TfrxMemoView
           AllowVectorExport = True
-          Top = 151.181200000000000000
-          Width = 94.000000000000000000
-          Height = 18.897650000000000000
+          Top = 76.370130000000000000
+          Width = 139.354360000000000000
+          Height = 18.897637800000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clMaroon
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = []
+          Highlight.Font.Charset = ANSI_CHARSET
+          Highlight.Font.Color = clMaroon
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Segoe UI'
+          Highlight.Font.Style = [fsBold]
+          Highlight.Condition = 'Value = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Frame.Typ = []
           Memo.UTF8W = (
-            'data_dev')
+            'DATA EMPR'#201'STIMO')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo11: TfrxMemoView
+          AllowVectorExport = True
+          Left = 188.488250000000000000
+          Top = 75.590600000000000000
+          Width = 558.000310000000000000
+          Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          DataField = 'data_emp'
+          DataSet = frxDSRelatDev
+          DataSetName = 'frxDSRelatDev'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDSRelatDev."data_emp"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo18: TfrxMemoView
+          AllowVectorExport = True
+          Top = 151.960730000000000000
+          Width = 131.795300000000000000
+          Height = 18.897637800000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Highlight.Font.Charset = ANSI_CHARSET
+          Highlight.Font.Color = clMaroon
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Segoe UI'
+          Highlight.Font.Style = [fsBold]
+          Highlight.Condition = 'Value = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Frame.Typ = []
+          Memo.UTF8W = (
+            'DATA DEVOLU'#199#195'O')
           ParentFont = False
           Style = 'Header'
         end
         object Memo19: TfrxMemoView
           AllowVectorExport = True
-          Left = 112.897650000000000000
+          Left = 188.488250000000000000
           Top = 151.181200000000000000
-          Width = 78.000000000000000000
-          Height = 18.897650000000000000
+          Width = 569.338900000000000000
+          Height = 18.897637800000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'data_dev'
           DataSet = frxDSRelatDev
           DataSetName = 'frxDSRelatDev'
@@ -559,26 +718,38 @@ object RelatorioDevolucao: TRelatorioDevolucao
         end
         object Memo20: TfrxMemoView
           AllowVectorExport = True
-          Top = 170.078850000000000000
-          Width = 94.000000000000000000
+          Top = 171.637910000000000000
+          Width = 177.149660000000000000
           Height = 18.897650000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clMaroon
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = []
+          Highlight.Font.Charset = ANSI_CHARSET
+          Highlight.Font.Color = clMaroon
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Segoe UI'
+          Highlight.Font.Style = [fsBold]
+          Highlight.Condition = 'Value = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Frame.Typ = []
           Memo.UTF8W = (
-            'qtd_devolvida')
+            'QUANTIDADE DEVOLVIDA')
           ParentFont = False
           Style = 'Header'
         end
         object Memo21: TfrxMemoView
           AllowVectorExport = True
-          Left = 112.897650000000000000
-          Top = 170.078850000000000000
-          Width = 78.000000000000000000
-          Height = 18.897650000000000000
+          Left = 188.488250000000000000
+          Top = 171.078850000000000000
+          Width = 569.338900000000000000
+          Height = 18.897637800000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'qtd_devolvida'
           DataSet = frxDSRelatDev
           DataSetName = 'frxDSRelatDev'
@@ -593,6 +764,16 @@ object RelatorioDevolucao: TRelatorioDevolucao
           ParentFont = False
           Style = 'Data'
         end
+        object Memo25: TfrxMemoView
+          Align = baWidth
+          AllowVectorExport = True
+          Top = 215.433210000000000000
+          Width = 718.110717773437500000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Frame.Typ = [ftTop]
+          Frame.Width = 2.000000000000000000
+        end
       end
       object PageFooter1: TfrxPageFooter
         FillType = ftBrush
@@ -602,12 +783,14 @@ object RelatorioDevolucao: TRelatorioDevolucao
         FillGap.Right = 0
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 374.173470000000000000
+        Top = 430.866420000000000000
         Width = 718.110700000000000000
         object Memo22: TfrxMemoView
           Align = baWidth
           AllowVectorExport = True
           Width = 718.110717773437500000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           Frame.Typ = [ftTop]
           Frame.Width = 2.000000000000000000
         end
@@ -627,8 +810,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
           Top = 1.000000000000000000
           Width = 75.590600000000000000
           Height = 22.677180000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
           Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
@@ -638,7 +819,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
     end
   end
   object FDQueryRelatDev: TFDQuery
-    Active = True
     MasterSource = DM.dsFDTabEmprestimoProd
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
@@ -689,7 +869,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
     DataSet = FDQueryRelatDev
     BCDToCurrency = False
     DataSetOptions = []
-    Left = 224
+    Left = 211
     Top = 304
     FieldDefs = <
       item

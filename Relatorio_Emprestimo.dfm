@@ -4,7 +4,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Relat'#243'rio de Empr'#233'stimo'
-  ClientHeight = 394
+  ClientHeight = 355
   ClientWidth = 340
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -13,6 +13,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnShow = FormShow
   TextHeight = 15
   object Panel6: TPanel
     Left = 0
@@ -36,53 +37,111 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     Left = 0
     Top = 65
     Width = 340
-    Height = 329
+    Height = 290
     Align = alClient
     BevelEdges = []
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 71
-    object Label1: TLabel
-      Left = 32
-      Top = 40
-      Width = 58
-      Height = 15
-      Caption = 'Data Inicial'
-    end
-    object Label2: TLabel
-      Left = 32
-      Top = 104
-      Width = 52
-      Height = 15
-      Caption = 'Data Final'
-    end
-    object DateTimeInicial: TDateTimePicker
-      Left = 96
-      Top = 40
-      Width = 186
-      Height = 23
-      Date = 45789.000000000000000000
-      Time = 0.970958333331509500
+    ExplicitHeight = 329
+    DesignSize = (
+      340
+      290)
+    object Panel2: TPanel
+      Left = 0
+      Top = 0
+      Width = 340
+      Height = 41
+      Align = alTop
+      BevelEdges = [beBottom]
+      BevelOuter = bvNone
       TabOrder = 0
+      ExplicitTop = 8
     end
-    object DateTimeFinal: TDateTimePicker
-      Left = 96
-      Top = 104
-      Width = 186
-      Height = 23
-      Date = 45789.000000000000000000
-      Time = 0.970958333331509500
+    object Panel3: TPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 44
+      Width = 334
+      Height = 41
+      Align = alTop
+      BevelEdges = []
+      BevelOuter = bvNone
       TabOrder = 1
+      ExplicitLeft = 0
+      ExplicitTop = 47
+      ExplicitWidth = 340
+      object Label1: TLabel
+        Left = 0
+        Top = 0
+        Width = 334
+        Height = 15
+        Align = alTop
+        Caption = 'Data Inicial'
+        ExplicitWidth = 58
+      end
+      object DateTimeInicial: TDateTimePicker
+        Left = 83
+        Top = 0
+        Width = 241
+        Height = 23
+        Date = 45789.000000000000000000
+        Time = 0.944744328706292400
+        TabOrder = 0
+      end
+    end
+    object Panel4: TPanel
+      Left = 0
+      Top = 88
+      Width = 340
+      Height = 41
+      Align = alTop
+      BevelEdges = [beBottom]
+      BevelOuter = bvNone
+      TabOrder = 2
+      ExplicitTop = 105
+    end
+    object Panel5: TPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 132
+      Width = 334
+      Height = 41
+      Align = alTop
+      BevelOuter = bvNone
+      TabOrder = 3
+      ExplicitLeft = 0
+      ExplicitTop = 124
+      ExplicitWidth = 340
+      object Label2: TLabel
+        Left = 0
+        Top = 0
+        Width = 334
+        Height = 15
+        Align = alTop
+        Caption = 'Data Final'
+        ExplicitWidth = 52
+      end
+      object DateTimeFinal: TDateTimePicker
+        Left = 83
+        Top = 0
+        Width = 241
+        Height = 23
+        Date = 45789.000000000000000000
+        Time = 0.944744328706292400
+        TabOrder = 0
+      end
     end
     object BitBtn1: TBitBtn
-      Left = 200
-      Top = 153
-      Width = 82
+      Left = 110
+      Top = 199
+      Width = 89
       Height = 25
+      Anchors = []
       Caption = 'Gerar Relat'#243'rio'
-      TabOrder = 2
+      Layout = blGlyphTop
+      TabOrder = 4
       OnClick = BitBtn1Click
     end
   end
@@ -95,7 +154,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45802.123382199100000000
-    ReportOptions.LastChange = 45802.155345671290000000
+    ReportOptions.LastChange = 45802.674358668980000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -103,7 +162,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       ''
       'end.')
     Left = 32
-    Top = 256
+    Top = 296
     Datasets = <
       item
         DataSet = frxDSRelatEmp
@@ -209,7 +268,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
           Fill.BackColor = clGray
           HAlign = haCenter
           Memo.UTF8W = (
-            'RELAT'#211'RIO DE EMPR'#201'STIMO')
+            'RELAT'#211'RIO EMPR'#201'STIMO DE PRODUTO')
           ParentFont = False
           Style = 'Title'
           VAlign = vaCenter
@@ -222,7 +281,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 196.535560000000000000
+        Height = 222.992270000000000000
         Top = 117.165430000000000000
         Width = 718.110700000000000000
         DataSet = frxDSRelatEmp
@@ -615,7 +674,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         object Memo22: TfrxMemoView
           Align = baWidth
           AllowVectorExport = True
-          Top = 177.637910000000000000
+          Top = 185.196970000000000000
           Width = 718.110717773437500000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -638,7 +697,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         FillGap.Right = 0
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 374.173470000000000000
+        Top = 400.630180000000000000
         Width = 718.110700000000000000
         object Memo19: TfrxMemoView
           AllowVectorExport = True
@@ -706,8 +765,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       'ORDER BY'
       '  emp.data_emprestimo;'
       '   ')
-    Left = 128
-    Top = 256
+    Left = 120
+    Top = 296
     ParamData = <
       item
         Name = 'DATA_INICIAL'
@@ -728,8 +787,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     DataSet = FDQueryRelatEmp
     BCDToCurrency = False
     DataSetOptions = []
-    Left = 240
-    Top = 256
+    Left = 215
+    Top = 296
     FieldDefs = <
       item
         FieldName = 'cod'
