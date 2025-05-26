@@ -32,6 +32,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -45,6 +46,8 @@ object RelatorioDevolucao: TRelatorioDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     DesignSize = (
       340
       290)
@@ -57,6 +60,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -85,6 +89,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -96,6 +101,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 0
         Top = 0
@@ -124,9 +130,10 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 3
+      ExplicitWidth = 338
     end
     object BitBtn1: TBitBtn
-      Left = 110
+      Left = 109
       Top = 200
       Width = 89
       Height = 25
@@ -135,6 +142,8 @@ object RelatorioDevolucao: TRelatorioDevolucao
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
+      ExplicitLeft = 108
+      ExplicitTop = 194
     end
   end
   object frxRelatDev: TfrxReport
@@ -146,7 +155,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45802.600467835650000000
-    ReportOptions.LastChange = 45802.676784039350000000
+    ReportOptions.LastChange = 45803.141593067130000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -469,105 +478,9 @@ object RelatorioDevolucao: TRelatorioDevolucao
           ParentFont = False
           Style = 'Data'
         end
-        object Memo12: TfrxMemoView
-          AllowVectorExport = True
-          Top = 95.267780000000000000
-          Width = 120.456710000000000000
-          Height = 18.897650000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Highlight.Font.Charset = ANSI_CHARSET
-          Highlight.Font.Color = clMaroon
-          Highlight.Font.Height = -13
-          Highlight.Font.Name = 'Segoe UI'
-          Highlight.Font.Style = [fsBold]
-          Highlight.Condition = 'Value = 0'
-          Highlight.FillType = ftBrush
-          Highlight.Frame.Typ = []
-          Memo.UTF8W = (
-            'COLABORADOR')
-          ParentFont = False
-          Style = 'Header'
-        end
-        object Memo13: TfrxMemoView
-          AllowVectorExport = True
-          Left = 188.488250000000000000
-          Top = 94.488250000000000000
-          Width = 556.000000000000000000
-          Height = 18.897637800000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataField = 'colab'
-          DataSet = frxDSRelatDev
-          DataSetName = 'frxDSRelatDev'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDSRelatDev."colab"]')
-          ParentFont = False
-          Style = 'Data'
-        end
-        object Memo14: TfrxMemoView
-          AllowVectorExport = True
-          Top = 114.385900000000000000
-          Width = 94.000000000000000000
-          Height = 18.897650000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Highlight.Font.Charset = ANSI_CHARSET
-          Highlight.Font.Color = clMaroon
-          Highlight.Font.Height = -13
-          Highlight.Font.Name = 'Segoe UI'
-          Highlight.Font.Style = [fsBold]
-          Highlight.Condition = 'Value = 0'
-          Highlight.FillType = ftBrush
-          Highlight.Frame.Typ = []
-          Memo.UTF8W = (
-            'SETOR')
-          ParentFont = False
-          Style = 'Header'
-        end
-        object Memo15: TfrxMemoView
-          AllowVectorExport = True
-          Left = 188.488250000000000000
-          Top = 113.385900000000000000
-          Width = 556.000000000000000000
-          Height = 18.897650000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataField = 'setor'
-          DataSet = frxDSRelatDev
-          DataSetName = 'frxDSRelatDev'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDSRelatDev."setor"]')
-          ParentFont = False
-          Style = 'Data'
-        end
         object Memo16: TfrxMemoView
           AllowVectorExport = True
-          Top = 133.063080000000000000
+          Top = 95.267780000000000000
           Width = 94.000000000000000000
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -594,7 +507,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         object Memo17: TfrxMemoView
           AllowVectorExport = True
           Left = 188.488250000000000000
-          Top = 132.283550000000000000
+          Top = 94.488250000000000000
           Width = 569.338900000000000000
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -663,7 +576,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         end
         object Memo18: TfrxMemoView
           AllowVectorExport = True
-          Top = 151.960730000000000000
+          Top = 114.165430000000000000
           Width = 131.795300000000000000
           Height = 18.897637800000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -690,7 +603,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         object Memo19: TfrxMemoView
           AllowVectorExport = True
           Left = 188.488250000000000000
-          Top = 151.181200000000000000
+          Top = 113.385900000000000000
           Width = 569.338900000000000000
           Height = 18.897637800000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -711,7 +624,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         end
         object Memo20: TfrxMemoView
           AllowVectorExport = True
-          Top = 171.637910000000000000
+          Top = 133.842610000000000000
           Width = 177.149660000000000000
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -738,7 +651,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         object Memo21: TfrxMemoView
           AllowVectorExport = True
           Left = 188.488250000000000000
-          Top = 171.078850000000000000
+          Top = 133.283550000000000000
           Width = 569.338900000000000000
           Height = 18.897637800000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -812,7 +725,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
     end
   end
   object FDQueryRelatDev: TFDQuery
-    Active = True
     MasterSource = DM.dsFDTabEmprestimoProd
     Connection = DM.FDEstoqueItec
     Transaction = DM.FDTransaction1
@@ -833,7 +745,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       'join'
       '  estoqueitec.produto p ON p.id = emp.produto_id'
       'join'
-      '  estoqueitec.colaborador c ON c.id = emp.colaborador_id'
+      '  estoqueitec.colaborador c ON c.id = emp.operador'
       'join'
       '  estoqueitec.setor s ON s.id = emp.setor_id'
       'join'

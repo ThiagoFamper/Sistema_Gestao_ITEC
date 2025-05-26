@@ -83,16 +83,14 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit3: TDBEdit
+      object Edit1: TEdit
         Left = 0
-        Top = 20
-        Width = 508
+        Top = 26
+        Width = 505
         Height = 23
-        Align = alTop
-        Color = clBtnHighlight
-        DataSource = DM.dsFDTabSaida
         Enabled = False
         TabOrder = 0
+        Text = 'Edit1'
       end
     end
     object Panel15: TPanel
@@ -117,83 +115,16 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 64
       end
-      object DBComboBox1: TDBComboBox
+      object DBLookupComboBox1: TDBLookupComboBox
         Left = 0
-        Top = 20
-        Width = 506
+        Top = 26
+        Width = 505
         Height = 23
-        Align = alTop
         DataField = 'operador'
         DataSource = DM.dsFDTabSaida
-        Enabled = False
-        TabOrder = 0
-      end
-    end
-    object Panel16: TPanel
-      Left = 573
-      Top = 6
-      Width = 506
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 3
-      object Label1: TLabel
-        Left = 0
-        Top = 0
-        Width = 506
-        Height = 20
-        Align = alTop
-        Caption = 'Colaborador'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 84
-      end
-      object DBComboBox2: TDBComboBox
-        Left = 0
-        Top = 20
-        Width = 506
-        Height = 23
-        Align = alTop
-        DataField = 'colaborador_id'
-        DataSource = DM.dsFDTabSaida
-        Enabled = False
-        TabOrder = 0
-      end
-    end
-    object Panel17: TPanel
-      Left = 573
-      Top = 71
-      Width = 506
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 4
-      object Label2: TLabel
-        Left = 0
-        Top = 0
-        Width = 506
-        Height = 20
-        Align = alTop
-        Caption = 'Setor'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 35
-      end
-      object DBComboBox3: TDBComboBox
-        Left = 0
-        Top = 20
-        Width = 506
-        Height = 23
-        Align = alTop
-        DataField = 'setor_id'
-        DataSource = DM.dsFDTabSaida
-        Enabled = False
+        KeyField = 'id'
+        ListField = 'descricao'
+        ListSource = DM.dsFDTabColaborador
         TabOrder = 0
       end
     end
@@ -203,7 +134,7 @@ object SaidaProd: TSaidaProd
       Width = 84
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 5
+      TabOrder = 3
       object Label13: TLabel
         Left = 0
         Top = 0
@@ -237,7 +168,7 @@ object SaidaProd: TSaidaProd
       Width = 228
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 6
+      TabOrder = 4
       object Label10: TLabel
         Left = 0
         Top = 0
@@ -268,11 +199,11 @@ object SaidaProd: TSaidaProd
     end
     object Panel21: TPanel
       Left = 573
-      Top = 136
+      Top = 26
       Width = 172
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 7
+      TabOrder = 5
       object Label5: TLabel
         Left = 0
         Top = 0
@@ -288,16 +219,14 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 160
       end
-      object DBEdit5: TDBEdit
+      object Edit2: TEdit
         Left = 0
-        Top = 20
-        Width = 172
+        Top = 26
+        Width = 169
         Height = 23
-        Align = alTop
-        Color = clBtnHighlight
-        DataSource = DM.dsFDTabSaida
         Enabled = False
         TabOrder = 0
+        Text = 'Edit2'
       end
     end
   end
@@ -2127,17 +2056,41 @@ object SaidaProd: TSaidaProd
           Title.Caption = 'Data'
           Width = 70
           Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'colaborador_id'
-          Visible = False
-        end
-        item
-          Expanded = False
-          FieldName = 'setor_id'
-          Visible = False
         end>
     end
+  end
+  object FDQuery1: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT saldo'
+      'FROM estoqueitec.estoque'
+      'WHERE produto_id = :produto_id;'
+      '')
+    Left = 432
+    Top = 418
+    ParamData = <
+      item
+        Name = 'PRODUTO_ID'
+        ParamType = ptInput
+      end>
+  end
+  object FDQuery2: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'UPDATE estoqueitec.estoque'
+      'SET saldo = saldo - :quantidade'
+      'WHERE produto_id = :produto_id;'
+      '')
+    Left = 520
+    Top = 416
+    ParamData = <
+      item
+        Name = 'QUANTIDADE'
+        ParamType = ptInput
+      end
+      item
+        Name = 'PRODUTO_ID'
+        ParamType = ptInput
+      end>
   end
 end

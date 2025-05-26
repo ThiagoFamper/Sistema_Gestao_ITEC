@@ -74,18 +74,9 @@ type
     Panel25: TPanel;
     Label3: TLabel;
     Edit5: TEdit;
-    Panel26: TPanel;
-    Label5: TLabel;
-    Edit3: TEdit;
     Panel27: TPanel;
     Label10: TLabel;
     Edit4: TEdit;
-    Panel28: TPanel;
-    Label6: TLabel;
-    DateTimeFinal: TDateTimePicker;
-    Panel29: TPanel;
-    Label7: TLabel;
-    DateTimeInicial: TDateTimePicker;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -95,11 +86,6 @@ type
     procedure SBeditarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
-    procedure Edit1Change(Sender: TObject);
-    procedure Edit2Change(Sender: TObject);
-    procedure Edit3Change(Sender: TObject);
-    procedure Edit4Change(Sender: TObject);
-    procedure Edit5Change(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
 
   private
@@ -258,47 +244,16 @@ procedure TTelaDevolucao.DesabilitaCamposPesquisa; // desabilitar campos de pesq
 begin
     Edit1.Enabled            := False;
     Edit2.Enabled            := False;
-    Edit3.Enabled            := False;
     Edit4.Enabled            := False;
     Edit5.Enabled            := False;
-    DateTimeInicial.enabled  := False;
-    DateTimeFinal.enabled    := False;
-end;
-
-procedure TTelaDevolucao.Edit1Change(Sender: TObject); // pesquisa código
-begin
-    dm.FDTabColaborador.Locate('id', Edit1.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TTelaDevolucao.Edit2Change(Sender: TObject); // pesquisa descricao
-begin
-    dm.FDTabColaborador.Locate('descricao', Edit2.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TTelaDevolucao.Edit3Change(Sender: TObject); // pesquisa colaborador
-begin
-    dm.FDTabColaborador.Locate('colaborador', Edit3.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TTelaDevolucao.Edit4Change(Sender: TObject); // pesquisa setor
-begin
-    dm.FDTabColaborador.Locate('setor', Edit4.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TTelaDevolucao.Edit5Change(Sender: TObject); // pesquisa operador
-begin
-    dm.FDTabColaborador.Locate('operador', Edit5.Text, [loPartialKey, loCaseInsensitive]);
 end;
 
 procedure TTelaDevolucao.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
     Edit2.Enabled            := True;
-    Edit3.Enabled            := True;
     Edit4.Enabled            := True;
     Edit5.Enabled            := True;
-    DateTimeInicial.enabled  := True;
-    DateTimeFinal.enabled    := True;
 end;
 
 end.

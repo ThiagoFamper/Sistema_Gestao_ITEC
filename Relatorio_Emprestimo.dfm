@@ -32,6 +32,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -44,7 +45,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitHeight = 329
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     DesignSize = (
       340
       290)
@@ -57,7 +59,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitTop = 8
+      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -69,9 +71,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 0
-      ExplicitTop = 47
-      ExplicitWidth = 340
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 0
         Top = 0
@@ -100,7 +100,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitTop = 105
+      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -111,9 +111,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitLeft = 0
-      ExplicitTop = 124
-      ExplicitWidth = 340
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -134,7 +132,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       end
     end
     object BitBtn1: TBitBtn
-      Left = 110
+      Left = 109
       Top = 199
       Width = 89
       Height = 25
@@ -143,6 +141,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
+      ExplicitLeft = 108
+      ExplicitTop = 193
     end
   end
   object frxRelatEmp: TfrxReport
@@ -154,7 +154,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45802.123382199100000000
-    ReportOptions.LastChange = 45802.674358668980000000
+    ReportOptions.LastChange = 45803.139975937500000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -527,105 +527,9 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
           ParentFont = False
           Style = 'Data'
         end
-        object Memo12: TfrxMemoView
-          AllowVectorExport = True
-          Top = 94.488250000000000000
-          Width = 112.795300000000000000
-          Height = 18.897650000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Highlight.Font.Charset = ANSI_CHARSET
-          Highlight.Font.Color = clMaroon
-          Highlight.Font.Height = -13
-          Highlight.Font.Name = 'Segoe UI'
-          Highlight.Font.Style = [fsBold]
-          Highlight.Condition = 'Value = 0'
-          Highlight.FillType = ftBrush
-          Highlight.Frame.Typ = []
-          Memo.UTF8W = (
-            'COLABORADOR')
-          ParentFont = False
-          Style = 'Header'
-        end
-        object Memo13: TfrxMemoView
-          AllowVectorExport = True
-          Left = 146.811070000000000000
-          Top = 94.488250000000000000
-          Width = 556.000000000000000000
-          Height = 18.897650000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataField = 'colab'
-          DataSet = frxDSRelatEmp
-          DataSetName = 'frxDSRelatEmp'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDSRelatEmp."colab"]')
-          ParentFont = False
-          Style = 'Data'
-        end
-        object Memo14: TfrxMemoView
-          AllowVectorExport = True
-          Top = 113.385900000000000000
-          Width = 75.000000000000000000
-          Height = 18.897650000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Highlight.Font.Charset = ANSI_CHARSET
-          Highlight.Font.Color = clMaroon
-          Highlight.Font.Height = -13
-          Highlight.Font.Name = 'Segoe UI'
-          Highlight.Font.Style = [fsBold]
-          Highlight.Condition = 'Value = 0'
-          Highlight.FillType = ftBrush
-          Highlight.Frame.Typ = []
-          Memo.UTF8W = (
-            'SETOR')
-          ParentFont = False
-          Style = 'Header'
-        end
-        object Memo15: TfrxMemoView
-          AllowVectorExport = True
-          Left = 146.811070000000000000
-          Top = 113.385900000000000000
-          Width = 556.000000000000000000
-          Height = 18.897650000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataField = 'setor'
-          DataSet = frxDSRelatEmp
-          DataSetName = 'frxDSRelatEmp'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDSRelatEmp."setor"]')
-          ParentFont = False
-          Style = 'Data'
-        end
         object Memo16: TfrxMemoView
           AllowVectorExport = True
-          Top = 132.283550000000000000
+          Top = 94.488250000000000000
           Width = 82.559060000000000000
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -652,7 +556,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         object Memo17: TfrxMemoView
           AllowVectorExport = True
           Left = 146.811070000000000000
-          Top = 132.283550000000000000
+          Top = 94.488250000000000000
           Width = 78.000000000000000000
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -738,7 +642,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     end
   end
   object FDQueryRelatEmp: TFDQuery
-    Active = True
     MasterSource = DM.dsFDTabEmprestimoProd
     Connection = DM.FDEstoqueItec
     Transaction = DM.FDTransaction1
@@ -757,7 +660,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       'JOIN'
       '  estoqueitec.produto p ON p.id = emp.produto_id'
       'JOIN'
-      '  estoqueitec.colaborador c ON c.id = emp.colaborador_id'
+      '  estoqueitec.colaborador c ON c.id = emp.operador'
       'JOIN'
       '  estoqueitec.setor s ON s.id = emp.setor_id'
       'WHERE '
@@ -789,42 +692,5 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     DataSetOptions = []
     Left = 215
     Top = 296
-    FieldDefs = <
-      item
-        FieldName = 'cod'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'operador'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'quantidade'
-      end
-      item
-        FieldName = 'data'
-        FieldType = fftDateTime
-      end
-      item
-        FieldName = 'colab'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'setor'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'devolvido'
-        FieldType = fftString
-      end>
   end
 end

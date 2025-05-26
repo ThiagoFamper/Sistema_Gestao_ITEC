@@ -1,6 +1,7 @@
 object DM: TDM
-  Height = 517
-  Width = 795
+  Height = 646
+  Width = 994
+  PixelsPerInch = 120
   object FDEstoqueItec: TFDConnection
     Params.Strings = (
       'Database=estoqueitec'
@@ -10,26 +11,25 @@ object DM: TDM
       'DriverID=PG')
     Connected = True
     LoginPrompt = False
-    Left = 40
-    Top = 24
+    Left = 50
+    Top = 30
   end
   object FDTransaction1: TFDTransaction
     Connection = FDEstoqueItec
-    Left = 136
-    Top = 24
+    Left = 170
+    Top = 30
   end
   object FDPhysPgDriverLink1: TFDPhysPgDriverLink
     VendorLib = 'C:\Program Files (x86)\PostgreSQL\psqlODBC\bin\libpq.dll'
-    Left = 248
-    Top = 24
+    Left = 310
+    Top = 30
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 368
-    Top = 24
+    Left = 460
+    Top = 30
   end
   object FDTabProduto: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -37,8 +37,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'produto'
-    Left = 32
-    Top = 112
+    Left = 40
+    Top = 140
     object FDTabProdutoid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -73,11 +73,10 @@ object DM: TDM
   end
   object dsFDTabProduto: TDataSource
     DataSet = FDTabProduto
-    Left = 128
-    Top = 112
+    Left = 160
+    Top = 140
   end
   object FDTabGrupo: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -85,8 +84,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'grupo'
-    Left = 32
-    Top = 184
+    Left = 40
+    Top = 230
     object FDTabGrupoid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -99,16 +98,15 @@ object DM: TDM
   end
   object dsFDTabGrupo: TDataSource
     DataSet = FDTabGrupo
-    Left = 128
-    Top = 184
+    Left = 160
+    Top = 230
   end
   object dsFDTabColaborador: TDataSource
     DataSet = FDTabColaborador
-    Left = 166
-    Top = 259
+    Left = 208
+    Top = 324
   end
   object FDTabColaborador: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -116,8 +114,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'colaborador'
-    Left = 45
-    Top = 259
+    Left = 56
+    Top = 324
     object FDTabColaboradorid: TLargeintField
       FieldName = 'id'
     end
@@ -137,7 +135,6 @@ object DM: TDM
     end
   end
   object FDTabSetor: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -145,8 +142,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'setor'
-    Left = 32
-    Top = 336
+    Left = 40
+    Top = 420
     object FDTabSetorid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -160,11 +157,10 @@ object DM: TDM
   end
   object dsFDTabSetor: TDataSource
     DataSet = FDTabSetor
-    Left = 115
-    Top = 336
+    Left = 144
+    Top = 420
   end
   object FDTabUsuario: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -172,8 +168,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'usuario'
-    Left = 32
-    Top = 406
+    Left = 40
+    Top = 508
     object FDTabUsuarioid: TIntegerField
       FieldName = 'id'
       Origin = 'id'
@@ -201,11 +197,10 @@ object DM: TDM
   end
   object dsFDTabUsuario: TDataSource
     DataSet = FDTabUsuario
-    Left = 128
-    Top = 406
+    Left = 160
+    Top = 508
   end
   object FDTabEntrada: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -213,17 +208,13 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'entrada_produto'
-    Left = 237
-    Top = 112
+    Left = 296
+    Top = 140
     object FDTabEntradaid: TLargeintField
       FieldName = 'id'
     end
     object FDTabEntradaproduto_id: TLargeintField
       FieldName = 'produto_id'
-    end
-    object FDTabEntradaoperador: TWideStringField
-      FieldName = 'operador'
-      Size = 75
     end
     object FDTabEntradaquantidade: TIntegerField
       FieldName = 'quantidade'
@@ -239,14 +230,17 @@ object DM: TDM
       Precision = 64
       Size = 64
     end
+    object FDTabEntradaoperador: TLargeintField
+      FieldName = 'operador'
+      Origin = 'operador'
+    end
   end
   object dsFDTabEntrada: TDataSource
     DataSet = FDTabEntrada
-    Left = 333
-    Top = 112
+    Left = 416
+    Top = 140
   end
   object FDTabEmprestimoProd: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -254,8 +248,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'emprestimo_produto'
-    Left = 262
-    Top = 182
+    Left = 328
+    Top = 228
     object FDTabEmprestimoProdid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -263,11 +257,6 @@ object DM: TDM
     object FDTabEmprestimoProdproduto_id: TLargeintField
       FieldName = 'produto_id'
       Origin = 'produto_id'
-    end
-    object FDTabEmprestimoProdoperador: TWideStringField
-      FieldName = 'operador'
-      Origin = 'operador'
-      Size = 75
     end
     object FDTabEmprestimoProdquantidade: TIntegerField
       FieldName = 'quantidade'
@@ -277,27 +266,33 @@ object DM: TDM
       FieldName = 'data_emprestimo'
       Origin = 'data_emprestimo'
     end
-    object FDTabEmprestimoProdcolaborador_id: TLargeintField
-      FieldName = 'colaborador_id'
-      Origin = 'colaborador_id'
-    end
-    object FDTabEmprestimoProdsetor_id: TLargeintField
-      FieldName = 'setor_id'
-      Origin = 'setor_id'
-    end
     object FDTabEmprestimoProddevolvido: TWideStringField
       FieldName = 'devolvido'
       Origin = 'devolvido'
       Size = 3
     end
+    object FDTabEmprestimoProddescricao: TWideStringField
+      FieldName = 'descricao'
+      Origin = 'descricao'
+      Size = 75
+    end
+    object FDTabEmprestimoProdsaldo: TFMTBCDField
+      FieldName = 'saldo'
+      Origin = 'saldo'
+      Precision = 64
+      Size = 64
+    end
+    object FDTabEmprestimoProdoperador: TLargeintField
+      FieldName = 'operador'
+      Origin = 'operador'
+    end
   end
   object dsFDTabEmprestimoProd: TDataSource
     DataSet = FDTabEmprestimoProd
-    Left = 410
-    Top = 182
+    Left = 513
+    Top = 228
   end
   object FDTabSaida: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -305,8 +300,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'saida_produto'
-    Left = 288
-    Top = 259
+    Left = 360
+    Top = 324
     object FDTabSaidaid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -316,11 +311,6 @@ object DM: TDM
       FieldName = 'produto_id'
       Origin = 'produto_id'
     end
-    object FDTabSaidaoperador: TWideStringField
-      FieldName = 'operador'
-      Origin = 'operador'
-      Size = 75
-    end
     object FDTabSaidaquantidade: TIntegerField
       FieldName = 'quantidade'
       Origin = 'quantidade'
@@ -329,22 +319,17 @@ object DM: TDM
       FieldName = 'data_saida'
       Origin = 'data_saida'
     end
-    object FDTabSaidacolaborador_id: TLargeintField
-      FieldName = 'colaborador_id'
-      Origin = 'colaborador_id'
-    end
-    object FDTabSaidasetor_id: TLargeintField
-      FieldName = 'setor_id'
-      Origin = 'setor_id'
+    object FDTabSaidaoperador: TLargeintField
+      FieldName = 'operador'
+      Origin = 'operador'
     end
   end
   object dsFDTabSaida: TDataSource
     DataSet = FDTabSaida
-    Left = 371
-    Top = 259
+    Left = 464
+    Top = 324
   end
   object FDTabEstoque: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -352,26 +337,24 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'estoque'
-    Left = 230
-    Top = 336
+    Left = 288
+    Top = 420
     object FDTabEstoqueid: TLargeintField
       FieldName = 'id'
     end
     object FDTabEstoquesaldo: TIntegerField
       FieldName = 'saldo'
     end
-    object FDTabEstoquecod_produto: TWideStringField
-      FieldName = 'cod_produto'
-      Size = 8190
+    object FDTabEstoqueproduto_id: TLargeintField
+      FieldName = 'produto_id'
     end
   end
   object dsFDTabEstoque: TDataSource
     DataSet = FDTabEstoque
-    Left = 326
-    Top = 336
+    Left = 408
+    Top = 420
   end
   object FDTabEmprestimoItem: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -379,8 +362,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'item_emprestimo'
-    Left = 262
-    Top = 406
+    Left = 328
+    Top = 508
     object FDTabEmprestimoItemid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -397,16 +380,15 @@ object DM: TDM
   end
   object dsFDTabEmprestimoItem: TDataSource
     DataSet = FDTabEmprestimoItem
-    Left = 410
-    Top = 406
+    Left = 513
+    Top = 508
   end
   object dsFDTabSede: TDataSource
     DataSet = FDTabSede
-    Left = 646
-    Top = 400
+    Left = 808
+    Top = 500
   end
   object FDTabSede: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -414,8 +396,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'sede'
-    Left = 550
-    Top = 400
+    Left = 688
+    Top = 500
     object FDTabSedeid: TLargeintField
       FieldName = 'id'
       Origin = 'id'

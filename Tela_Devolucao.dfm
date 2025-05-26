@@ -24,6 +24,8 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 762
+    ExplicitWidth = 1382
     object Panel8: TPanel
       Left = 1032
       Top = 5
@@ -396,6 +398,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1382
     object Panel23: TPanel
       Left = 16
       Top = 6
@@ -461,7 +464,7 @@ object TelaDevolucao: TTelaDevolucao
       end
     end
     object Panel25: TPanel
-      Left = 736
+      Left = 247
       Top = 6
       Width = 208
       Height = 59
@@ -492,45 +495,13 @@ object TelaDevolucao: TTelaDevolucao
         TabOrder = 0
       end
     end
-    object Panel26: TPanel
-      Left = 736
-      Top = 94
-      Width = 208
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 3
-      object Label5: TLabel
-        Left = 0
-        Top = 0
-        Width = 208
-        Height = 20
-        Align = alTop
-        Caption = 'Colaborador'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 84
-      end
-      object Edit3: TEdit
-        Left = 0
-        Top = 20
-        Width = 208
-        Height = 23
-        Align = alTop
-        CharCase = ecUpperCase
-        TabOrder = 0
-      end
-    end
     object Panel27: TPanel
       Left = 1032
       Top = 6
       Width = 208
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 4
+      TabOrder = 3
       object Label10: TLabel
         Left = 0
         Top = 0
@@ -556,72 +527,6 @@ object TelaDevolucao: TTelaDevolucao
         TabOrder = 0
       end
     end
-    object Panel28: TPanel
-      Left = 376
-      Top = 6
-      Width = 221
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 5
-      object Label6: TLabel
-        Left = 0
-        Top = 0
-        Width = 221
-        Height = 20
-        Align = alTop
-        Caption = 'Data Final'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 67
-      end
-      object DateTimeFinal: TDateTimePicker
-        Left = 0
-        Top = 20
-        Width = 221
-        Height = 23
-        Align = alTop
-        Date = 45581.000000000000000000
-        Time = 0.832999849539191900
-        TabOrder = 0
-      end
-    end
-    object Panel29: TPanel
-      Left = 376
-      Top = 94
-      Width = 221
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 6
-      object Label7: TLabel
-        Left = 0
-        Top = 0
-        Width = 221
-        Height = 20
-        Align = alTop
-        Caption = 'Data Inicial'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 75
-      end
-      object DateTimeInicial: TDateTimePicker
-        Left = 0
-        Top = 20
-        Width = 221
-        Height = 23
-        Align = alTop
-        Date = 45581.000000000000000000
-        Time = 0.832999849539191900
-        TabOrder = 0
-      end
-    end
   end
   object Panel2: TPanel
     Left = 0
@@ -635,6 +540,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1382
     object SBsair: TSpeedButton
       Left = 744
       Top = 7
@@ -2990,6 +2896,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1382
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -3009,6 +2916,8 @@ object TelaDevolucao: TTelaDevolucao
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitWidth = 1382
+    ExplicitHeight = 452
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
@@ -3055,16 +2964,6 @@ object TelaDevolucao: TTelaDevolucao
           Title.Caption = 'Data'
           Width = 70
           Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'colaborador_id'
-          Visible = False
-        end
-        item
-          Expanded = False
-          FieldName = 'setor_id'
-          Visible = False
         end
         item
           Expanded = False

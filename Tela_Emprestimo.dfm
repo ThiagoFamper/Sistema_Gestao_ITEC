@@ -25,6 +25,7 @@ object TelaEmprestimo: TTelaEmprestimo
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1122
     object Panel13: TPanel
       Left = 17
       Top = 6
@@ -119,15 +120,11 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit3: TDBEdit
+      object Edit2: TEdit
         Left = 0
-        Top = 20
-        Width = 512
+        Top = 26
+        Width = 513
         Height = 23
-        Align = alTop
-        CharCase = ecUpperCase
-        Color = clBtnHighlight
-        DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
       end
@@ -154,15 +151,11 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 64
       end
-      object DBComboBox1: TDBComboBox
+      object DBLookupComboBox1: TDBLookupComboBox
         Left = 0
-        Top = 20
-        Width = 512
+        Top = 26
+        Width = 513
         Height = 23
-        Align = alTop
-        DataField = 'operador'
-        DataSource = DM.dsFDTabEmprestimoProd
-        Enabled = False
         TabOrder = 0
       end
     end
@@ -201,81 +194,13 @@ object TelaEmprestimo: TTelaEmprestimo
         TabOrder = 0
       end
     end
-    object Panel18: TPanel
-      Left = 566
-      Top = 6
-      Width = 507
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 5
-      object Label8: TLabel
-        Left = 0
-        Top = 0
-        Width = 507
-        Height = 20
-        Align = alTop
-        Caption = 'Colaborador'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 84
-      end
-      object DBComboBox2: TDBComboBox
-        Left = 0
-        Top = 20
-        Width = 507
-        Height = 23
-        Align = alTop
-        DataField = 'colaborador_id'
-        DataSource = DM.dsFDTabEmprestimoProd
-        Enabled = False
-        TabOrder = 0
-      end
-    end
-    object Panel19: TPanel
-      Left = 566
-      Top = 71
-      Width = 507
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 6
-      object Label11: TLabel
-        Left = 0
-        Top = 0
-        Width = 507
-        Height = 20
-        Align = alTop
-        Caption = 'Setor'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 35
-      end
-      object DBComboBox3: TDBComboBox
-        Left = 0
-        Top = 20
-        Width = 507
-        Height = 23
-        Align = alTop
-        DataField = 'setor_id'
-        DataSource = DM.dsFDTabEmprestimoProd
-        Enabled = False
-        TabOrder = 0
-      end
-    end
     object Panel20: TPanel
       Left = 566
-      Top = 136
+      Top = 6
       Width = 374
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 7
+      TabOrder = 5
       object Label15: TLabel
         Left = 0
         Top = 0
@@ -291,14 +216,11 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 160
       end
-      object DBEdit5: TDBEdit
+      object Edit1: TEdit
         Left = 0
-        Top = 20
-        Width = 374
+        Top = 26
+        Width = 369
         Height = 23
-        Align = alTop
-        CharCase = ecUpperCase
-        DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
       end
@@ -316,6 +238,7 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1122
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -2062,6 +1985,7 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1122
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2118,16 +2042,6 @@ object TelaEmprestimo: TTelaEmprestimo
         Title.Caption = 'Data'
         Width = 70
         Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'colaborador_id'
-        Visible = False
-      end
-      item
-        Expanded = False
-        FieldName = 'setor_id'
-        Visible = False
       end
       item
         Expanded = False

@@ -32,6 +32,7 @@ object RelatorioProduto: TRelatorioProduto
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -44,6 +45,8 @@ object RelatorioProduto: TRelatorioProduto
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     DesignSize = (
       340
       290)
@@ -56,8 +59,7 @@ object RelatorioProduto: TRelatorioProduto
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitLeft = 8
-      ExplicitTop = -16
+      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -69,8 +71,7 @@ object RelatorioProduto: TRelatorioProduto
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 11
-      ExplicitTop = 28
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 0
         Top = 0
@@ -99,8 +100,7 @@ object RelatorioProduto: TRelatorioProduto
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitLeft = 8
-      ExplicitTop = 72
+      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -111,8 +111,7 @@ object RelatorioProduto: TRelatorioProduto
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitLeft = 11
-      ExplicitTop = 116
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -133,7 +132,7 @@ object RelatorioProduto: TRelatorioProduto
       end
     end
     object BitBtn1: TBitBtn
-      Left = 118
+      Left = 117
       Top = 200
       Width = 89
       Height = 25
@@ -142,6 +141,8 @@ object RelatorioProduto: TRelatorioProduto
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
+      ExplicitLeft = 116
+      ExplicitTop = 194
     end
   end
   object frxDSRelatProd: TfrxDBDataset

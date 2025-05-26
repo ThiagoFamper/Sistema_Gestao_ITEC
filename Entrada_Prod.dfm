@@ -25,6 +25,7 @@ object EntradaProd: TEntradaProd
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1115
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1771,6 +1772,7 @@ object EntradaProd: TEntradaProd
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1115
   end
   object DBGrid1: TDBGrid
     Left = 0
@@ -1853,6 +1855,7 @@ object EntradaProd: TEntradaProd
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1115
     object Panel12: TPanel
       Left = 16
       Top = 6
@@ -1918,10 +1921,9 @@ object EntradaProd: TEntradaProd
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
-        DataField = 'cod_produto'
-        DataSource = DM.dsFDTabProduto
+        DataField = 'produto_id'
+        DataSource = DM.dsFDTabEntrada
         TabOrder = 0
-        OnExit = DBEdit2Exit
       end
     end
     object Panel14: TPanel
@@ -1946,15 +1948,12 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit3: TDBEdit
+      object Edit1: TEdit
         Left = 0
-        Top = 20
+        Top = 26
         Width = 505
         Height = 23
-        Align = alTop
-        CharCase = ecUpperCase
-        DataField = 'descricao'
-        DataSource = DM.dsFDTabProduto
+        Enabled = False
         TabOrder = 0
       end
     end
@@ -2121,97 +2120,63 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 160
       end
-      object DBEdit8: TDBEdit
+      object Edit2: TEdit
         Left = 0
-        Top = 20
-        Width = 168
+        Top = 26
+        Width = 161
         Height = 23
-        Align = alTop
-        DataField = 'saldo'
-        DataSource = dsFDQueryEstoque
         Enabled = False
         TabOrder = 0
       end
     end
   end
-  object FDQueryEstoque: TFDQuery
-    MasterSource = DM.dsFDTabEstoque
+  object FDQuery1: TFDQuery
     Connection = DM.FDEstoqueItec
-    Transaction = DM.FDTransaction1
     SQL.Strings = (
-      'select e.saldo'
-      '   from estoqueitec.estoque e'
-      '       where e.cod_produto = :Pcodproduto')
-    Left = 168
-    Top = 386
+      'SELECT COUNT(*) AS qtd'
+      'FROM estoqueitec.estoque'
+      'WHERE produto_id = :produto_id;')
+    Left = 384
+    Top = 418
     ParamData = <
       item
-        Name = 'PCODPRODUTO'
-        DataType = ftWideString
+        Name = 'PRODUTO_ID'
         ParamType = ptInput
-        Value = Null
       end>
-    object FDQueryEstoquesaldo: TIntegerField
-      FieldName = 'saldo'
-    end
   end
-  object dsFDQueryEstoque: TDataSource
-    DataSet = FDQueryEstoque
-    Left = 270
-    Top = 386
-  end
-  object FDQueryAtualizaEstoque: TFDQuery
-    MasterSource = DM.dsFDTabEstoque
+  object FDQuery2: TFDQuery
     Connection = DM.FDEstoqueItec
-    Transaction = DM.FDTransaction1
     SQL.Strings = (
-      'update estoqueitec.estoque '
-      ' set saldo = :Psaldo'
-      '   where cod_produto = :Pcodproduto')
-    Left = 440
-    Top = 386
+      'UPDATE estoqueitec.estoque'
+      'SET saldo = saldo + :quantidade'
+      'WHERE produto_id = :produto_id;')
+    Left = 480
+    Top = 418
     ParamData = <
       item
-        Name = 'PSALDO'
-        DataType = ftInteger
+        Name = 'QUANTIDADE'
         ParamType = ptInput
-        Value = Null
       end
       item
-        Name = 'PCODPRODUTO'
-        DataType = ftWideString
+        Name = 'PRODUTO_ID'
         ParamType = ptInput
-        Value = Null
       end>
   end
-  object dsFDQueryAtualizaEstoque: TDataSource
-    DataSet = FDQueryAtualizaEstoque
-    Left = 584
-    Top = 386
-  end
-  object FDQueryEntProd: TFDQuery
-    MasterSource = DM.dsFDTabEntrada
+  object FDQuery3: TFDQuery
     Connection = DM.FDEstoqueItec
-    Transaction = DM.FDTransaction1
     SQL.Strings = (
-      'select p.descricao,'
-      '       p.cod_produto,'
-      '       p.id'
-      'from estoqueitec.produto p'
-      'where p.cod_produto = :Pcodproduto')
-    Left = 736
-    Top = 386
+      'INSERT INTO estoqueitec.estoque (produto_id, saldo)'
+      'VALUES (:produto_id, :quantidade);')
+    Left = 576
+    Top = 418
     ParamData = <
       item
-        Name = 'PCODPRODUTO'
-        DataType = ftWideString
+        Name = 'PRODUTO_ID'
         ParamType = ptInput
-        Value = Null
+      end
+      item
+        Name = 'QUANTIDADE'
+        ParamType = ptInput
       end>
-  end
-  object dsFDQueryEntProd: TDataSource
-    DataSet = FDQueryEntProd
-    Left = 838
-    Top = 386
   end
 end

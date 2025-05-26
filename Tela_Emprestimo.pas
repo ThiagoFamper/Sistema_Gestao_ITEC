@@ -35,28 +35,20 @@ type
     Label1: TLabel;
     Panel15: TPanel;
     Label12: TLabel;
-    DBComboBox1: TDBComboBox;
     Panel16: TPanel;
     Label13: TLabel;
     DBedit4: TDBEdit;
-    Panel18: TPanel;
-    Label8: TLabel;
-    DBComboBox2: TDBComboBox;
-    Panel19: TPanel;
-    Label11: TLabel;
-    DBComboBox3: TDBComboBox;
     Panel20: TPanel;
     Label15: TLabel;
     SBnovo: TSpeedButton;
-    DBEdit3: TDBEdit;
-    DBEdit5: TDBEdit;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
     procedure LimpaCampos;
-    procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);
     procedure DBEdit3KeyPress(Sender: TObject; var Key: Char);
-    procedure DBEdit4KeyPress(Sender: TObject; var Key: Char);
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
@@ -119,22 +111,10 @@ begin
         DBEdit2.SetFocus;
       end
   else
-    if DBEdit3.Text = '' then
-      begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
-        DBEdit3.SetFocus;
-      end
-  else
     if DBEdit4.Text = '' then
       begin
         ShowMessage('O Campo "Marca" deve ser preenchido!');
         DBEdit4.SetFocus;
-      end
-  else
-    if DBEdit5.Text = '' then
-      begin
-        ShowMessage('O Campo "Modelo" deve ser preenchido!');
-        DBEdit5.SetFocus;
       end
   else
     begin
@@ -152,49 +132,31 @@ begin
 end;
 
 // foco com enter
-procedure TTelaEmprestimo.DBEdit2KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit3.SetFocus;
-end;
-
 procedure TTelaEmprestimo.DBEdit3KeyPress(Sender: TObject; var Key: Char);
 begin
   if key = #13 then
     DBEdit4.SetFocus;
 end;
 
-procedure TTelaEmprestimo.DBEdit4KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit5.SetFocus;
-end;
-
 procedure TTelaEmprestimo.HabilitaCampos; // habilitar campos
 begin
     DBEdit1.Enabled            := True;
     DBEdit2.Enabled            := True;
-    DBEdit3.Enabled            := True;
     DBEdit4.Enabled            := True;
-    DBEdit5.Enabled            := True;
 end;
 
 procedure TTelaEmprestimo.DesabilitaCampos; // desabilitar campos
 begin
     DBEdit1.Enabled            := False;
     DBEdit2.Enabled            := False;
-    DBEdit3.Enabled            := False;
     DBEdit4.Enabled            := False;
-    DBEdit5.Enabled            := False;
 end;
 
 procedure TTelaEmprestimo.LimpaCampos; // limpar campos
 begin
     DBEdit1.Clear;
     DBEdit2.Clear;
-    DBEdit3.Clear;
     DBEdit4.Clear;
-    DBEdit5.Clear;
 end;
 
 end.

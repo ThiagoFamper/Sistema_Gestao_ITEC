@@ -6,7 +6,9 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
   Vcl.DBCtrls, Vcl.Buttons, Vcl.Imaging.pngimage, Data.DB, Vcl.Grids,
-  Vcl.DBGrids;
+  Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TSaidaProd = class(TForm)
@@ -33,13 +35,6 @@ type
     Panel15: TPanel;
     SBnovo: TSpeedButton;
     Label12: TLabel;
-    DBComboBox1: TDBComboBox;
-    Panel16: TPanel;
-    Label1: TLabel;
-    DBComboBox2: TDBComboBox;
-    Panel17: TPanel;
-    Label2: TLabel;
-    DBComboBox3: TDBComboBox;
     Panel18: TPanel;
     Label13: TLabel;
     DBedit4: TDBEdit;
@@ -49,15 +44,16 @@ type
     Panel21: TPanel;
     Label5: TLabel;
     DBNavigator1: TDBNavigator;
-    DBEdit3: TDBEdit;
-    DBEdit5: TDBEdit;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+    FDQuery1: TFDQuery;
+    FDQuery2: TFDQuery;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
     procedure LimpaCampos;
-    procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);
     procedure DBEdit3KeyPress(Sender: TObject; var Key: Char);
-    procedure DBEdit4KeyPress(Sender: TObject; var Key: Char);
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
@@ -87,18 +83,25 @@ begin
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
   dm.FDTabProduto.Cancel;
+  dm.FDTabColaborador.Cancel;
+  dm.FDTabEstoque.Cancel;
+  dm.FDTabSaida.Cancel;
   LimpaCampos();
 end;
 
 procedure TSaidaProd.SBnovoClick(Sender: TObject); // botão de novo
 begin
+  dm.FDTabColaborador.Open;
+  dm.FDTabEstoque.Open;
+  dm.FDTabProduto.Open;
   HabilitaCampos();
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
   SBpesquisar.Enabled  := False;
   SBsair.Enabled       := False;
   SBnovo.Enabled       := False;
-  dm.FDTabProduto.Append;
+  dm.FDTabSaida.Open;
+  dm.FDTabSaida.Append;
   DBEdit2.SetFocus;
 end;
 
@@ -113,17 +116,13 @@ begin
 end;
 
 procedure TSaidaProd.SBsalvarClick(Sender: TObject); // botão de salvar
+var
+  produtoID, quantidade, saldoAtual: Integer;
 begin
     if DBEdit2.Text = '' then
       begin
         ShowMessage('O Campo "Código" deve ser preenchido!');
         DBEdit2.SetFocus;
-      end
-  else
-    if DBEdit3.Text = '' then
-      begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
-        DBEdit3.SetFocus;
       end
   else
     if DBEdit4.Text = '' then
@@ -132,15 +131,35 @@ begin
         DBEdit4.SetFocus;
       end
   else
-    if DBEdit5.Text = '' then
-      begin
-        ShowMessage('O Campo "Quantidade em Estoque" deve ser preenchido!');
-        DBEdit5.SetFocus;
-      end
-  else
     begin
-      dm.FDTabProduto.Post;
-      ShowMessage('Cadastrado com Sucesso!');
+      produtoID := StrToInt(DBEdit2.Text);
+      quantidade := StrToInt(DBEdit4.Text);
+
+      FDQuery1.Close;
+      FDQuery1.ParamByName('produto_id').AsInteger := produtoID;
+      FDQuery1.Open;
+
+    if FDQuery1.IsEmpty then
+    begin
+      ShowMessage('Produto não encontrado no estoque!');
+      Exit;
+    end;
+
+      saldoAtual := FDQuery1.FieldByName('saldo').AsInteger;
+
+    if saldoAtual < quantidade then
+    begin
+      ShowMessage('Saldo insuficiente para esta saída!');
+      Exit;
+    end;
+
+      dm.FDTabSaida.Post;
+
+      FDQuery2.ParamByName('produto_id').AsInteger := produtoID;
+      FDQuery2.ParamByName('quantidade').AsInteger := quantidade;
+      FDQuery2.ExecSQL;
+
+      ShowMessage('Saida cadastrada com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;
@@ -148,54 +167,39 @@ begin
       SBnovo.Enabled       := True;
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
+      dm.FDTabSaida.Open;
+      dm.FDTabSaida.Refresh;
+      dm.FDTabSaida.Last;
     end;
 
 end;
 
 // foco com enter
-procedure TSaidaProd.DBEdit2KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit3.SetFocus;
-end;
-
 procedure TSaidaProd.DBEdit3KeyPress(Sender: TObject; var Key: Char);
 begin
   if key = #13 then
     DBEdit4.SetFocus;
 end;
 
-procedure TSaidaProd.DBEdit4KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit5.SetFocus;
-end;
-
 procedure TSaidaProd.HabilitaCampos; // habilitar campos
 begin
-    DBEdit1.Enabled            := True;
     DBEdit2.Enabled            := True;
-    DBEdit3.Enabled            := True;
     DBEdit4.Enabled            := True;
-    DBEdit5.Enabled            := True;
+    DBLookupComboBox1.Enabled  := True;
 end;
 
 procedure TSaidaProd.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit1.Enabled            := False;
     DBEdit2.Enabled            := False;
-    DBEdit3.Enabled            := False;
     DBEdit4.Enabled            := False;
-    DBEdit5.Enabled            := False;
+    DBLookupComboBox1.Enabled  := False;
 end;
 
 procedure TSaidaProd.LimpaCampos; // limpar campos
 begin
-    DBEdit1.Clear;
     DBEdit2.Clear;
-    DBEdit3.Clear;
     DBEdit4.Clear;
-    DBEdit5.Clear;
+    DBLookupComboBox1.KeyValue := 0;
 end;
 
 end.

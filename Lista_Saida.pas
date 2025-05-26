@@ -37,48 +37,21 @@ type
     Panel14: TPanel;
     Label12: TLabel;
     DBEdit2: TDBEdit;
-    Panel15: TPanel;
-    Label13: TLabel;
-    DBEdit3: TDBEdit;
-    Panel16: TPanel;
-    Label14: TLabel;
-    DBEdit4: TDBEdit;
     Panel17: TPanel;
     Label16: TLabel;
     DBEdit5: TDBEdit;
     Panel18: TPanel;
     Label17: TLabel;
     DBEdit6: TDBEdit;
-    Panel19: TPanel;
-    Label18: TLabel;
-    DBEdit7: TDBEdit;
-    Panel20: TPanel;
-    Label15: TLabel;
-    DBEdit8: TDBEdit;
-    Panel21: TPanel;
-    Label19: TLabel;
-    DBEdit9: TDBEdit;
     Panel22: TPanel;
     Label5: TLabel;
     Panel23: TPanel;
     Label7: TLabel;
-    Panel24: TPanel;
-    Label8: TLabel;
     Edit1: TEdit;
     Edit2: TEdit;
-    Edit3: TEdit;
-    Panel25: TPanel;
-    Label1: TLabel;
-    Edit4: TEdit;
     Panel26: TPanel;
     Label2: TLabel;
     Edit5: TEdit;
-    Panel27: TPanel;
-    Label3: TLabel;
-    DateTimeInicial: TDateTimePicker;
-    Panel28: TPanel;
-    Label4: TLabel;
-    DateTimeFinal: TDateTimePicker;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -88,11 +61,6 @@ type
     procedure SBeditarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
-    procedure Edit1Change(Sender: TObject);
-    procedure Edit2Change(Sender: TObject);
-    procedure Edit3Change(Sender: TObject);
-    procedure Edit4Change(Sender: TObject);
-    procedure Edit5Change(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
 
   private
@@ -164,18 +132,6 @@ begin
         DBEdit2.SetFocus;
       end
   else
-    if DBEdit3.Text = '' then
-      begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
-        DBEdit3.SetFocus;
-      end
-  else
-    if DBEdit4.Text = '' then
-      begin
-        ShowMessage('O Campo "Data Saida" deve ser preenchido!');
-        DBEdit4.SetFocus;
-      end
-  else
     if DBEdit5.Text = '' then
       begin
         ShowMessage('O Campo "Quantidade" deve ser preenchido!');
@@ -186,24 +142,6 @@ begin
       begin
         ShowMessage('O Campo "Operador" deve ser preenchido!');
         DBEdit6.SetFocus;
-      end
-  else
-    if DBEdit7.Text = '' then
-      begin
-        ShowMessage('O Campo "Colaborador" deve ser preenchido!');
-        DBEdit7.SetFocus;
-      end
-  else
-    if DBEdit8.Text = '' then
-      begin
-        ShowMessage('O Campo "Setor" deve ser preenchido!');
-        DBEdit8.SetFocus;
-      end
-  else
-    if DBEdit9.Text = '' then
-      begin
-        ShowMessage('O Campo "Quantidade em Estoque" deve ser preenchido!');
-        DBEdit9.SetFocus;
       end
   else
     begin
@@ -225,73 +163,30 @@ procedure TListaSaida.HabilitaCampos; // habilitar campos
 begin
     DBEdit1.Enabled            := True;
     DBEdit2.Enabled            := True;
-    DBEdit3.Enabled            := True;
-    DBEdit4.Enabled            := True;
     DBEdit5.Enabled            := True;
     DBEdit6.Enabled            := True;
-    DBEdit7.Enabled            := True;
-    DBEdit8.Enabled            := True;
-    DBEdit9.Enabled            := True;
 end;
 
 procedure TListaSaida.DesabilitaCampos; // desabilitar campos
 begin
     DBEdit1.Enabled            := False;
     DBEdit2.Enabled            := False;
-    DBEdit3.Enabled            := False;
-    DBEdit4.Enabled            := False;
     DBEdit5.Enabled            := False;
     DBEdit6.Enabled            := False;
-    DBEdit7.Enabled            := False;
-    DBEdit8.Enabled            := False;
-    DBEdit9.Enabled            := False;
 end;
 
 procedure TListaSaida.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
     Edit1.Enabled            := False;
     Edit2.Enabled            := False;
-    Edit3.Enabled            := False;
-    Edit4.Enabled            := False;
     Edit5.Enabled            := False;
-    DateTimeInicial.enabled  := False;
-    DateTimeFinal.enabled  := False;
-end;
-
-procedure TListaSaida.Edit1Change(Sender: TObject); // pesquisa código
-begin
-    dm.FDTabColaborador.Locate('id', Edit1.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TListaSaida.Edit2Change(Sender: TObject); // pesquisa descricao
-begin
-    dm.FDTabColaborador.Locate('descricao', Edit2.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TListaSaida.Edit3Change(Sender: TObject); // pesquisa colaborador
-begin
-    dm.FDTabColaborador.Locate('colaborador', Edit3.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TListaSaida.Edit4Change(Sender: TObject); // pesquisa setor
-begin
-    dm.FDTabColaborador.Locate('setor', Edit4.Text, [loPartialKey, loCaseInsensitive]);
-end;
-
-procedure TListaSaida.Edit5Change(Sender: TObject); // pesquisa operador
-begin
-    dm.FDTabColaborador.Locate('operador', Edit5.Text, [loPartialKey, loCaseInsensitive]);
 end;
 
 procedure TListaSaida.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
     Edit2.Enabled            := True;
-    Edit3.Enabled            := True;
-    Edit4.Enabled            := True;
     Edit5.Enabled            := True;
-    DateTimeInicial.enabled  := True;
-    DateTimeFinal.enabled  := True;
 end;
 
 end.

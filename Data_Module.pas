@@ -49,7 +49,6 @@ type
     dsFDTabEntrada: TDataSource;
     FDTabEntradaid: TLargeintField;
     FDTabEntradaproduto_id: TLargeintField;
-    FDTabEntradaoperador: TWideStringField;
     FDTabEntradaquantidade: TIntegerField;
     FDTabEntradadata_entrada: TDateField;
     FDTabEntradanota_fiscal: TWideStringField;
@@ -72,23 +71,22 @@ type
     FDTabSededescricao: TWideStringField;
     FDTabSaidaid: TLargeintField;
     FDTabSaidaproduto_id: TLargeintField;
-    FDTabSaidaoperador: TWideStringField;
     FDTabSaidaquantidade: TIntegerField;
     FDTabSaidadata_saida: TDateField;
-    FDTabSaidacolaborador_id: TLargeintField;
-    FDTabSaidasetor_id: TLargeintField;
     FDTabEmprestimoProdid: TLargeintField;
     FDTabEmprestimoProdproduto_id: TLargeintField;
-    FDTabEmprestimoProdoperador: TWideStringField;
     FDTabEmprestimoProdquantidade: TIntegerField;
     FDTabEmprestimoProddata_emprestimo: TDateField;
-    FDTabEmprestimoProdcolaborador_id: TLargeintField;
-    FDTabEmprestimoProdsetor_id: TLargeintField;
     FDTabEmprestimoProddevolvido: TWideStringField;
     FDTabProdutodata: TDateField;
     FDTabEstoqueid: TLargeintField;
     FDTabEstoquesaldo: TIntegerField;
-    FDTabEstoquecod_produto: TWideStringField;
+    FDTabEstoqueproduto_id: TLargeintField;
+    FDTabEmprestimoProddescricao: TWideStringField;
+    FDTabEmprestimoProdsaldo: TFMTBCDField;
+    FDTabEntradaoperador: TLargeintField;
+    FDTabSaidaoperador: TLargeintField;
+    FDTabEmprestimoProdoperador: TLargeintField;
   private
     { Private declarations }
   public
