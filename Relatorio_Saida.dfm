@@ -32,6 +32,7 @@ object RelatorioSaida: TRelatorioSaida
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -44,8 +45,8 @@ object RelatorioSaida: TRelatorioSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 8
-    ExplicitTop = 71
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     DesignSize = (
       340
       290)
@@ -59,7 +60,7 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitTop = 28
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 0
         Top = 0
@@ -67,9 +68,7 @@ object RelatorioSaida: TRelatorioSaida
         Height = 15
         Align = alTop
         Caption = 'Data Inicial'
-        ExplicitLeft = 16
-        ExplicitTop = 6
-        ExplicitWidth = 340
+        ExplicitWidth = 58
       end
       object DateTimeInicial: TDateTimePicker
         Left = 83
@@ -90,7 +89,7 @@ object RelatorioSaida: TRelatorioSaida
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitTop = 116
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -98,8 +97,7 @@ object RelatorioSaida: TRelatorioSaida
         Height = 15
         Align = alTop
         Caption = 'Data Final'
-        ExplicitLeft = 40
-        ExplicitWidth = 332
+        ExplicitWidth = 52
       end
       object DateTimeFinal: TDateTimePicker
         Left = 83
@@ -120,7 +118,7 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitTop = 72
+      ExplicitWidth = 338
     end
     object Panel5: TPanel
       Left = 0
@@ -131,10 +129,10 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitTop = 8
+      ExplicitWidth = 338
     end
     object BitBtn1: TBitBtn
-      Left = 104
+      Left = 103
       Top = 192
       Width = 89
       Height = 25
@@ -143,6 +141,8 @@ object RelatorioSaida: TRelatorioSaida
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
+      ExplicitLeft = 102
+      ExplicitTop = 186
     end
   end
   object frxRelatSai: TfrxReport
@@ -154,7 +154,7 @@ object RelatorioSaida: TRelatorioSaida
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45802.640130405100000000
-    ReportOptions.LastChange = 45802.680349513890000000
+    ReportOptions.LastChange = 45803.743196377310000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -281,7 +281,7 @@ object RelatorioSaida: TRelatorioSaida
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 196.535560000000000000
+        Height = 177.637910000000000000
         Top = 117.165430000000000000
         Width = 718.110700000000000000
         DataSet = frxDSRelatSai
@@ -515,102 +515,10 @@ object RelatorioSaida: TRelatorioSaida
           ParentFont = False
           Style = 'Data'
         end
-        object Memo12: TfrxMemoView
-          AllowVectorExport = True
-          Top = 94.488250000000000000
-          Width = 111.779530000000000000
-          Height = 18.897650000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Highlight.Font.Charset = ANSI_CHARSET
-          Highlight.Font.Color = clMaroon
-          Highlight.Font.Height = -13
-          Highlight.Font.Name = 'Segoe UI'
-          Highlight.Font.Style = [fsBold]
-          Highlight.Condition = 'Value = 0'
-          Highlight.FillType = ftBrush
-          Highlight.Frame.Typ = []
-          Memo.UTF8W = (
-            'COLABORADOR')
-          ParentFont = False
-          Style = 'Header'
-        end
-        object Memo13: TfrxMemoView
-          AllowVectorExport = True
-          Left = 126.897650000000000000
-          Top = 94.488250000000000000
-          Width = 556.000000000000000000
-          Height = 18.897650000000000000
-          DataField = 'colab_descricao'
-          DataSet = frxDSRelatSai
-          DataSetName = 'frxDSRelatSai'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDSRelatSai."colab_descricao"]')
-          ParentFont = False
-          Style = 'Data'
-        end
-        object Memo14: TfrxMemoView
-          AllowVectorExport = True
-          Top = 113.385900000000000000
-          Width = 108.000000000000000000
-          Height = 18.897650000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Highlight.Font.Charset = ANSI_CHARSET
-          Highlight.Font.Color = clMaroon
-          Highlight.Font.Height = -13
-          Highlight.Font.Name = 'Segoe UI'
-          Highlight.Font.Style = [fsBold]
-          Highlight.Condition = 'Value = 0'
-          Highlight.FillType = ftBrush
-          Highlight.Frame.Typ = []
-          Memo.UTF8W = (
-            'SETOR')
-          ParentFont = False
-          Style = 'Header'
-        end
-        object Memo15: TfrxMemoView
-          AllowVectorExport = True
-          Left = 126.897650000000000000
-          Top = 113.385900000000000000
-          Width = 556.000000000000000000
-          Height = 18.897650000000000000
-          DataField = 'setor_descricao'
-          DataSet = frxDSRelatSai
-          DataSetName = 'frxDSRelatSai'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = []
-          Memo.UTF8W = (
-            '[frxDSRelatSai."setor_descricao"]')
-          ParentFont = False
-          Style = 'Data'
-        end
         object Memo19: TfrxMemoView
           Align = baWidth
           AllowVectorExport = True
-          Top = 158.740260000000000000
+          Top = 136.063080000000000000
           Width = 718.110717773437500000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -626,7 +534,7 @@ object RelatorioSaida: TRelatorioSaida
         FillGap.Right = 0
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 374.173470000000000000
+        Top = 355.275820000000000000
         Width = 718.110700000000000000
         object Memo16: TfrxMemoView
           Align = baWidth
@@ -669,17 +577,11 @@ object RelatorioSaida: TRelatorioSaida
       '  p.descricao,'
       '  sp.operador,'
       '  sp.quantidade,'
-      '  TO_CHAR(sp.data_saida, '#39'DD/MM/YYYY'#39') AS data_saida,'
-      '  c.descricao AS colab_descricao,'
-      '  s.descricao AS setor_descricao'
+      '  TO_CHAR(sp.data_saida, '#39'DD/MM/YYYY'#39') AS data_saida'
       'FROM '
       '  estoqueitec.saida_produto sp'
       'JOIN '
       '  estoqueitec.produto p ON p.id = sp.produto_id'
-      'JOIN '
-      '  estoqueitec.colaborador c ON c.id = sp.colaborador_id'
-      'JOIN '
-      '  estoqueitec.setor s ON s.id = sp.setor_id'
       'WHERE '
       '  sp.data_saida BETWEEN :data_inicial AND :data_final'
       'ORDER BY '
@@ -721,24 +623,12 @@ object RelatorioSaida: TRelatorioSaida
       end
       item
         FieldName = 'operador'
-        FieldType = fftString
-        Size = 75
       end
       item
         FieldName = 'quantidade'
       end
       item
         FieldName = 'data_saida'
-      end
-      item
-        FieldName = 'colab_descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'setor_descricao'
-        FieldType = fftString
-        Size = 75
       end>
   end
 end

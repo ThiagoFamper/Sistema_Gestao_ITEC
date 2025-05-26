@@ -132,7 +132,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       end
     end
     object BitBtn1: TBitBtn
-      Left = 109
+      Left = 108
       Top = 199
       Width = 89
       Height = 25
@@ -141,7 +141,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
-      ExplicitLeft = 108
+      ExplicitLeft = 107
       ExplicitTop = 193
     end
   end
@@ -154,7 +154,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45802.123382199100000000
-    ReportOptions.LastChange = 45803.139975937500000000
+    ReportOptions.LastChange = 45803.744812627320000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -281,7 +281,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 222.992270000000000000
+        Height = 188.976500000000000000
         Top = 117.165430000000000000
         Width = 718.110700000000000000
         DataSet = frxDSRelatEmp
@@ -578,7 +578,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         object Memo22: TfrxMemoView
           Align = baWidth
           AllowVectorExport = True
-          Top = 185.196970000000000000
+          Top = 151.181200000000000000
           Width = 718.110717773437500000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -601,7 +601,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         FillGap.Right = 0
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 400.630180000000000000
+        Top = 366.614410000000000000
         Width = 718.110700000000000000
         object Memo19: TfrxMemoView
           AllowVectorExport = True
@@ -653,7 +653,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       '   emp.quantidade,'
       '   emp.data_emprestimo AS data,'
       '   c.descricao AS colab,'
-      '   s.descricao AS setor,'
       '   emp.devolvido'
       'FROM '
       '  estoqueitec.emprestimo_produto emp'
@@ -661,8 +660,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       '  estoqueitec.produto p ON p.id = emp.produto_id'
       'JOIN'
       '  estoqueitec.colaborador c ON c.id = emp.operador'
-      'JOIN'
-      '  estoqueitec.setor s ON s.id = emp.setor_id'
       'WHERE '
       '  emp.data_emprestimo BETWEEN :data_inicial AND :data_final'
       'ORDER BY'
@@ -692,5 +689,35 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     DataSetOptions = []
     Left = 215
     Top = 296
+    FieldDefs = <
+      item
+        FieldName = 'cod'
+        FieldType = fftString
+        Size = 45
+      end
+      item
+        FieldName = 'descricao'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'operador'
+      end
+      item
+        FieldName = 'quantidade'
+      end
+      item
+        FieldName = 'data'
+        FieldType = fftDateTime
+      end
+      item
+        FieldName = 'colab'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'devolvido'
+        FieldType = fftBoolean
+      end>
   end
 end

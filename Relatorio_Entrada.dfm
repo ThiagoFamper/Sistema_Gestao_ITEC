@@ -32,6 +32,7 @@ object RelatorioEntrada: TRelatorioEntrada
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -44,7 +45,8 @@ object RelatorioEntrada: TRelatorioEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = -1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     DesignSize = (
       340
       290)
@@ -57,7 +59,7 @@ object RelatorioEntrada: TRelatorioEntrada
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitTop = 8
+      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -69,9 +71,7 @@ object RelatorioEntrada: TRelatorioEntrada
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 0
-      ExplicitTop = 47
-      ExplicitWidth = 340
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 0
         Top = 0
@@ -100,7 +100,7 @@ object RelatorioEntrada: TRelatorioEntrada
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitTop = 105
+      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -111,9 +111,7 @@ object RelatorioEntrada: TRelatorioEntrada
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitLeft = 0
-      ExplicitTop = 124
-      ExplicitWidth = 340
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -134,7 +132,7 @@ object RelatorioEntrada: TRelatorioEntrada
       end
     end
     object BitBtn1: TBitBtn
-      Left = 110
+      Left = 109
       Top = 200
       Width = 89
       Height = 25
@@ -143,6 +141,8 @@ object RelatorioEntrada: TRelatorioEntrada
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
+      ExplicitLeft = 108
+      ExplicitTop = 194
     end
   end
   object frxDSEnt: TfrxDBDataset
@@ -166,8 +166,6 @@ object RelatorioEntrada: TRelatorioEntrada
       end
       item
         FieldName = 'operador'
-        FieldType = fftString
-        Size = 75
       end
       item
         FieldName = 'quantidade'
@@ -357,7 +355,7 @@ object RelatorioEntrada: TRelatorioEntrada
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 196.535560000000000000
+        Height = 211.653680000000000000
         Top = 117.165430000000000000
         Width = 718.110700000000000000
         DataSet = frxDSEnt
@@ -700,8 +698,9 @@ object RelatorioEntrada: TRelatorioEntrada
         object Memo19: TfrxMemoView
           Align = baWidth
           AllowVectorExport = True
-          Top = 158.740260000000000000
+          Top = 173.858380000000000000
           Width = 718.110717773437500000
+          Height = 7.559060000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           Frame.Typ = [ftTop]
@@ -716,7 +715,7 @@ object RelatorioEntrada: TRelatorioEntrada
         FillGap.Right = 0
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 374.173470000000000000
+        Top = 389.291590000000000000
         Width = 718.110700000000000000
         object Memo16: TfrxMemoView
           Align = baWidth

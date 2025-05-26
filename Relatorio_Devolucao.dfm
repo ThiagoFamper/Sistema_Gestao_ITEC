@@ -133,7 +133,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       ExplicitWidth = 338
     end
     object BitBtn1: TBitBtn
-      Left = 109
+      Left = 108
       Top = 200
       Width = 89
       Height = 25
@@ -142,7 +142,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
-      ExplicitLeft = 108
+      ExplicitLeft = 107
       ExplicitTop = 194
     end
   end
@@ -282,7 +282,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 253.228510000000000000
+        Height = 226.771800000000000000
         Top = 117.165430000000000000
         Width = 718.110700000000000000
         DataSet = frxDSRelatDev
@@ -673,7 +673,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         object Memo25: TfrxMemoView
           Align = baWidth
           AllowVectorExport = True
-          Top = 215.433210000000000000
+          Top = 188.976500000000000000
           Width = 718.110717773437500000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -689,7 +689,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         FillGap.Right = 0
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 430.866420000000000000
+        Top = 404.409710000000000000
         Width = 718.110700000000000000
         object Memo22: TfrxMemoView
           Align = baWidth
@@ -736,7 +736,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
       '  emp.quantidade,'
       '  TO_CHAR(emp.data_emprestimo, '#39'DD/MM/YYYY'#39') as data_emp,'
       '  c.descricao as colab,'
-      '  s.descricao as setor,'
       '  emp.devolvido,'
       '  TO_CHAR(ip.data_devolucao, '#39'DD/MM/YYYY'#39') as data_dev,'
       '  ip.qtd_devolvida'
@@ -746,8 +745,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
       '  estoqueitec.produto p ON p.id = emp.produto_id'
       'join'
       '  estoqueitec.colaborador c ON c.id = emp.operador'
-      'join'
-      '  estoqueitec.setor s ON s.id = emp.setor_id'
       'join'
       '  estoqueitec.item_emprestimo ip ON ip.id = emp.id'
       'where'
@@ -778,5 +775,40 @@ object RelatorioDevolucao: TRelatorioDevolucao
     DataSetOptions = []
     Left = 211
     Top = 304
+    FieldDefs = <
+      item
+        FieldName = 'cod_produto'
+        FieldType = fftString
+        Size = 45
+      end
+      item
+        FieldName = 'descricao'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'operador'
+      end
+      item
+        FieldName = 'quantidade'
+      end
+      item
+        FieldName = 'data_emp'
+      end
+      item
+        FieldName = 'colab'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'devolvido'
+        FieldType = fftBoolean
+      end
+      item
+        FieldName = 'data_dev'
+      end
+      item
+        FieldName = 'qtd_devolvida'
+      end>
   end
 end

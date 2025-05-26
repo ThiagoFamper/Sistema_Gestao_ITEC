@@ -132,7 +132,7 @@ object RelatorioProduto: TRelatorioProduto
       end
     end
     object BitBtn1: TBitBtn
-      Left = 117
+      Left = 116
       Top = 200
       Width = 89
       Height = 25
@@ -141,7 +141,7 @@ object RelatorioProduto: TRelatorioProduto
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
-      ExplicitLeft = 116
+      ExplicitLeft = 115
       ExplicitTop = 194
     end
   end
@@ -353,7 +353,7 @@ object RelatorioProduto: TRelatorioProduto
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 177.637910000000000000
+        Height = 181.417440000000000000
         Top = 117.165430000000000000
         Width = 718.110700000000000000
         DataSet = frxDSRelatProd
@@ -636,7 +636,7 @@ object RelatorioProduto: TRelatorioProduto
         object Memo17: TfrxMemoView
           Align = baWidth
           AllowVectorExport = True
-          Top = 139.842610000000000000
+          Top = 143.622140000000000000
           Width = 718.110717773437500000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -652,7 +652,7 @@ object RelatorioProduto: TRelatorioProduto
         FillGap.Right = 0
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 355.275820000000000000
+        Top = 359.055350000000000000
         Width = 718.110700000000000000
         object Memo14: TfrxMemoView
           Align = baWidth
