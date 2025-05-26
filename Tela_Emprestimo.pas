@@ -6,7 +6,9 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
   Vcl.DBCtrls, Vcl.Buttons, Vcl.Imaging.pngimage, Data.DB, Vcl.Grids,
-  Vcl.DBGrids;
+  Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TTelaEmprestimo = class(TForm)
@@ -44,6 +46,9 @@ type
     Edit1: TEdit;
     Edit2: TEdit;
     DBLookupComboBox1: TDBLookupComboBox;
+    FDQuery1: TFDQuery;
+    FDQuery2: TFDQuery;
+    FDQuery3: TFDQuery;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
@@ -77,19 +82,25 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
-  dm.FDTabProduto.Cancel;
+  dm.FDTabEmprestimoProd.Cancel;
   LimpaCampos();
 end;
 
 procedure TTelaEmprestimo.SBnovoClick(Sender: TObject); // botão de novo
 begin
+  dm.FDTabColaborador.Open;
+  dm.FDTabProduto.Open;
+  dm.FDTabEstoque.Open;
   HabilitaCampos();
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
   SBpesquisar.Enabled  := False;
   SBsair.Enabled       := False;
   SBnovo.Enabled       := False;
-  dm.FDTabProduto.Append;
+  dm.FDTabEmprestimoProd.Open;
+  dm.FDTabEmprestimoItem.Open;
+  dm.FDTabEmprestimoProd.Append;
+  dm.FDTabEmprestimoItem.Append;
   DBEdit2.SetFocus;
 end;
 
@@ -104,6 +115,8 @@ begin
 end;
 
 procedure TTelaEmprestimo.SBsalvarClick(Sender: TObject); // botão de salvar
+var
+  produtoID, quantidade, saldoAtual, emprestimoID: Integer;
 begin
     if DBEdit2.Text = '' then
       begin
@@ -118,8 +131,43 @@ begin
       end
   else
     begin
-      dm.FDTabProduto.Post;
-      ShowMessage('Cadastrado com Sucesso!');
+      produtoID := StrToInt(DBEdit2.Text);
+      quantidade := StrToInt(DBEdit4.Text);
+
+      FDQuery1.Close;
+      FDQuery1.ParamByName('produto_id').AsInteger := produtoID;
+      FDQuery1.Open;
+
+    if FDQuery1.IsEmpty then
+    begin
+      ShowMessage('Produto não encontrado no estoque!');
+      Exit;
+    end;
+
+      saldoAtual := FDQuery1.FieldByName('saldo').AsInteger;
+
+    if saldoAtual < quantidade then
+    begin
+      ShowMessage('Saldo insuficiente para este empréstimo!');
+      Exit;
+    end;
+
+      dm.FDTabEmprestimoProd.FieldByName('saldo').AsInteger := quantidade;
+      dm.FDTabEmprestimoProd.Post;
+      dm.FDTabEmprestimoProd.Refresh;
+      dm.FDTabEmprestimoProd.Last;
+
+      emprestimoID := dm.FDTabEmprestimoProd.FieldByName('id').AsInteger;
+
+      FDQuery2.ParamByName('produto_id').AsInteger := produtoID;
+      FDQuery2.ParamByName('quantidade').AsInteger := quantidade;
+      FDQuery2.ExecSQL;
+
+      FDQuery3.ParamByName('emprestimo_id').AsInteger := emprestimoID;
+      FDQuery3.ExecSQL;
+
+      dm.FDTabEmprestimoProd.Close;
+      ShowMessage('Empréstimo cadastrado com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;
@@ -127,6 +175,9 @@ begin
       SBnovo.Enabled       := True;
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
+      dm.FDTabEmprestimoProd.Open;
+      dm.FDTabEmprestimoProd.Refresh;
+      dm.FDTabEmprestimoProd.Last;
     end;
 
 end;
@@ -140,21 +191,18 @@ end;
 
 procedure TTelaEmprestimo.HabilitaCampos; // habilitar campos
 begin
-    DBEdit1.Enabled            := True;
     DBEdit2.Enabled            := True;
     DBEdit4.Enabled            := True;
 end;
 
 procedure TTelaEmprestimo.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit1.Enabled            := False;
     DBEdit2.Enabled            := False;
     DBEdit4.Enabled            := False;
 end;
 
 procedure TTelaEmprestimo.LimpaCampos; // limpar campos
 begin
-    DBEdit1.Clear;
     DBEdit2.Clear;
     DBEdit4.Clear;
 end;

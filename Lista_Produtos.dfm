@@ -27,6 +27,7 @@ object ListaProdutos: TListaProdutos
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 2712
     object SBsair: TSpeedButton
       Left = 744
       Top = 7
@@ -2385,6 +2386,8 @@ object ListaProdutos: TListaProdutos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitTop = 553
+    ExplicitWidth = 2712
     object Panel13: TPanel
       Left = 24
       Top = 17
@@ -2552,6 +2555,7 @@ object ListaProdutos: TListaProdutos
         Height = 23
         DataField = 'grupo_id'
         DataSource = DM.dsFDTabProduto
+        Enabled = False
         KeyField = 'id'
         ListField = 'descricao'
         ListSource = DM.dsFDTabGrupo
@@ -2603,6 +2607,7 @@ object ListaProdutos: TListaProdutos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 2712
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2624,6 +2629,7 @@ object ListaProdutos: TListaProdutos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 2712
     object Panel19: TPanel
       Left = 24
       Top = 22
@@ -2798,6 +2804,8 @@ object ListaProdutos: TListaProdutos
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitWidth = 2712
+    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

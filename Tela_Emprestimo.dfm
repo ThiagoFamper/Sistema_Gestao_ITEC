@@ -156,6 +156,11 @@ object TelaEmprestimo: TTelaEmprestimo
         Top = 26
         Width = 513
         Height = 23
+        DataField = 'operador'
+        DataSource = DM.dsFDTabEmprestimoProd
+        KeyField = 'id'
+        ListField = 'descricao'
+        ListSource = DM.dsFDTabColaborador
         TabOrder = 0
       end
     end
@@ -2049,6 +2054,53 @@ object TelaEmprestimo: TTelaEmprestimo
         Title.Caption = 'Devolvido'
         Width = 70
         Visible = True
+      end>
+  end
+  object FDQuery1: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT saldo'
+      'FROM estoqueitec.estoque'
+      'WHERE produto_id = :produto_id;'
+      '')
+    Left = 360
+    Top = 410
+    ParamData = <
+      item
+        Name = 'PRODUTO_ID'
+        ParamType = ptInput
+      end>
+  end
+  object FDQuery2: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'UPDATE estoqueitec.estoque'
+      'SET saldo = saldo - :quantidade'
+      'WHERE produto_id = :produto_id;'
+      '')
+    Left = 448
+    Top = 410
+    ParamData = <
+      item
+        Name = 'QUANTIDADE'
+        ParamType = ptInput
+      end
+      item
+        Name = 'PRODUTO_ID'
+        ParamType = ptInput
+      end>
+  end
+  object FDQuery3: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'INSERT INTO estoqueitec.item_emprestimo (emprestimo_id)'
+      'VALUES (:emprestimo_id);')
+    Left = 536
+    Top = 410
+    ParamData = <
+      item
+        Name = 'EMPRESTIMO_ID'
+        ParamType = ptInput
       end>
   end
 end

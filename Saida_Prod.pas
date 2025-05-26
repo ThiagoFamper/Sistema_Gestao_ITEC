@@ -159,6 +159,7 @@ begin
       FDQuery2.ParamByName('quantidade').AsInteger := quantidade;
       FDQuery2.ExecSQL;
 
+      dm.FDTabSaida.Close;
       ShowMessage('Saida cadastrada com sucesso!');
       LimpaCampos();
       DesabilitaCampos();

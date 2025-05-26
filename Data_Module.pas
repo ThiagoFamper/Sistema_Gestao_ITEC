@@ -77,16 +77,16 @@ type
     FDTabEmprestimoProdproduto_id: TLargeintField;
     FDTabEmprestimoProdquantidade: TIntegerField;
     FDTabEmprestimoProddata_emprestimo: TDateField;
-    FDTabEmprestimoProddevolvido: TWideStringField;
     FDTabProdutodata: TDateField;
     FDTabEstoqueid: TLargeintField;
     FDTabEstoquesaldo: TIntegerField;
     FDTabEstoqueproduto_id: TLargeintField;
-    FDTabEmprestimoProddescricao: TWideStringField;
-    FDTabEmprestimoProdsaldo: TFMTBCDField;
     FDTabEntradaoperador: TLargeintField;
     FDTabSaidaoperador: TLargeintField;
     FDTabEmprestimoProdoperador: TLargeintField;
+    FDTabEmprestimoProddevolvido: TBooleanField;
+    FDTabEmprestimoItememprestimo_id: TLargeintField;
+    FDTabEmprestimoProdsaldo: TIntegerField;
   private
     { Private declarations }
   public

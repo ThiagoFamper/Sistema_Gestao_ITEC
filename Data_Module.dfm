@@ -266,25 +266,17 @@ object DM: TDM
       FieldName = 'data_emprestimo'
       Origin = 'data_emprestimo'
     end
-    object FDTabEmprestimoProddevolvido: TWideStringField
-      FieldName = 'devolvido'
-      Origin = 'devolvido'
-      Size = 3
-    end
-    object FDTabEmprestimoProddescricao: TWideStringField
-      FieldName = 'descricao'
-      Origin = 'descricao'
-      Size = 75
-    end
-    object FDTabEmprestimoProdsaldo: TFMTBCDField
-      FieldName = 'saldo'
-      Origin = 'saldo'
-      Precision = 64
-      Size = 64
-    end
     object FDTabEmprestimoProdoperador: TLargeintField
       FieldName = 'operador'
       Origin = 'operador'
+    end
+    object FDTabEmprestimoProddevolvido: TBooleanField
+      FieldName = 'devolvido'
+      Origin = 'devolvido'
+    end
+    object FDTabEmprestimoProdsaldo: TIntegerField
+      FieldName = 'saldo'
+      Origin = 'saldo'
     end
   end
   object dsFDTabEmprestimoProd: TDataSource
@@ -376,6 +368,10 @@ object DM: TDM
     object FDTabEmprestimoItemqtd_devolvida: TIntegerField
       FieldName = 'qtd_devolvida'
       Origin = 'qtd_devolvida'
+    end
+    object FDTabEmprestimoItememprestimo_id: TLargeintField
+      FieldName = 'emprestimo_id'
+      Origin = 'emprestimo_id'
     end
   end
   object dsFDTabEmprestimoItem: TDataSource
