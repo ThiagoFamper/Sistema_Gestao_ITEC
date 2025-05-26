@@ -29,7 +29,6 @@ object CadProduto: TCadProduto
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1106
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1778,7 +1777,6 @@ object CadProduto: TCadProduto
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1106
     object Panel10: TPanel
       Left = 17
       Top = 6
@@ -1807,6 +1805,7 @@ object CadProduto: TCadProduto
         Width = 105
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         DataField = 'id'
         DataSource = DM.dsFDTabProduto
         Enabled = False
@@ -1841,6 +1840,7 @@ object CadProduto: TCadProduto
         Width = 248
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         DataField = 'cod_produto'
         DataSource = DM.dsFDTabProduto
         Enabled = False
@@ -1876,6 +1876,7 @@ object CadProduto: TCadProduto
         Width = 679
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         DataField = 'descricao'
         DataSource = DM.dsFDTabProduto
         Enabled = False
@@ -1911,6 +1912,7 @@ object CadProduto: TCadProduto
         Width = 679
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         DataField = 'marca'
         DataSource = DM.dsFDTabProduto
         Enabled = False
@@ -1984,6 +1986,7 @@ object CadProduto: TCadProduto
         Width = 679
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         DataField = 'modelo'
         DataSource = DM.dsFDTabProduto
         Enabled = False
@@ -2002,7 +2005,6 @@ object CadProduto: TCadProduto
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1106
   end
   object DBGrid1: TDBGrid
     Left = 0

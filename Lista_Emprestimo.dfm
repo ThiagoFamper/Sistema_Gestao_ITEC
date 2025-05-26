@@ -24,8 +24,6 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 521
-    ExplicitWidth = 1152
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -325,7 +323,6 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1152
     object Panel22: TPanel
       Left = 16
       Top = 6
@@ -354,6 +351,7 @@ object ListaEmprestimo: TListaEmprestimo
         Width = 221
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -385,6 +383,7 @@ object ListaEmprestimo: TListaEmprestimo
         Width = 221
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -416,6 +415,7 @@ object ListaEmprestimo: TListaEmprestimo
         Width = 221
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -447,6 +447,7 @@ object ListaEmprestimo: TListaEmprestimo
         Width = 221
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -478,6 +479,7 @@ object ListaEmprestimo: TListaEmprestimo
         Width = 221
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -560,7 +562,6 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1152
     object SBsair: TSpeedButton
       Left = 744
       Top = 7
@@ -2916,7 +2917,6 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1152
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2936,8 +2936,6 @@ object ListaEmprestimo: TListaEmprestimo
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1152
-    ExplicitHeight = 211
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

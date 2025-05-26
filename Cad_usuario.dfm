@@ -23,7 +23,6 @@ object CadUsuario: TCadUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1116
     object Panel10: TPanel
       Left = 14
       Top = 6
@@ -52,6 +51,7 @@ object CadUsuario: TCadUsuario
         Width = 105
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         DataField = 'id'
         DataSource = DM.dsFDTabUsuario
         Enabled = False
@@ -86,6 +86,7 @@ object CadUsuario: TCadUsuario
         Width = 679
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         Color = clBtnHighlight
         DataField = 'nome'
         DataSource = DM.dsFDTabUsuario
@@ -121,6 +122,7 @@ object CadUsuario: TCadUsuario
         Width = 216
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         DataField = 'login'
         DataSource = DM.dsFDTabUsuario
         Enabled = False
@@ -155,6 +157,7 @@ object CadUsuario: TCadUsuario
         Width = 312
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         DataField = 'senha'
         DataSource = DM.dsFDTabUsuario
         Enabled = False
@@ -200,7 +203,6 @@ object CadUsuario: TCadUsuario
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1116
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1948,7 +1950,6 @@ object CadUsuario: TCadUsuario
     Enabled = False
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1116
   end
   object DBGrid1: TDBGrid
     Left = 0

@@ -24,8 +24,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 762
-    ExplicitWidth = 1382
     object Panel8: TPanel
       Left = 1032
       Top = 5
@@ -398,7 +396,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1382
     object Panel23: TPanel
       Left = 16
       Top = 6
@@ -427,6 +424,7 @@ object TelaDevolucao: TTelaDevolucao
         Width = 208
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -458,6 +456,7 @@ object TelaDevolucao: TTelaDevolucao
         Width = 208
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -489,6 +488,7 @@ object TelaDevolucao: TTelaDevolucao
         Width = 208
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -520,6 +520,7 @@ object TelaDevolucao: TTelaDevolucao
         Width = 208
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -551,6 +552,7 @@ object TelaDevolucao: TTelaDevolucao
         Width = 208
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -633,7 +635,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1382
     object SBsair: TSpeedButton
       Left = 744
       Top = 7
@@ -2989,7 +2990,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1382
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -3009,8 +3009,6 @@ object TelaDevolucao: TTelaDevolucao
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1382
-    ExplicitHeight = 452
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

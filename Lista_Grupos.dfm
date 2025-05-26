@@ -24,8 +24,6 @@ object ListaGrupos: TListaGrupos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 508
-    ExplicitWidth = 1045
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -105,7 +103,6 @@ object ListaGrupos: TListaGrupos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1045
     object Panel11: TPanel
       Left = 16
       Top = 6
@@ -134,6 +131,7 @@ object ListaGrupos: TListaGrupos
         Width = 249
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit1Change
       end
@@ -151,7 +149,6 @@ object ListaGrupos: TListaGrupos
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1045
     object SBsair: TSpeedButton
       Left = 640
       Top = 8
@@ -2170,7 +2167,6 @@ object ListaGrupos: TListaGrupos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1045
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2190,8 +2186,6 @@ object ListaGrupos: TListaGrupos
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1045
-    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

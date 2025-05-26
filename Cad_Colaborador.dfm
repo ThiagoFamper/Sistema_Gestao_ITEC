@@ -24,7 +24,6 @@ object CadColaborador: TCadColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1124
     object Panel10: TPanel
       Left = 16
       Top = 6
@@ -53,6 +52,7 @@ object CadColaborador: TCadColaborador
         Width = 105
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         DataField = 'id'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
@@ -87,6 +87,7 @@ object CadColaborador: TCadColaborador
         Width = 505
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         DataField = 'descricao'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
@@ -121,6 +122,7 @@ object CadColaborador: TCadColaborador
         Width = 313
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         DataField = 'cargo'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
@@ -214,7 +216,6 @@ object CadColaborador: TCadColaborador
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1124
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1961,7 +1962,6 @@ object CadColaborador: TCadColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1124
   end
   object DBGrid1: TDBGrid
     Left = 0

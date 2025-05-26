@@ -25,7 +25,6 @@ object CadSede: TCadSede
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1112
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1771,7 +1770,6 @@ object CadSede: TCadSede
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1112
     object Panel11: TPanel
       Left = 16
       Top = 71
@@ -1800,6 +1798,7 @@ object CadSede: TCadSede
         Width = 679
         Height = 28
         Align = alTop
+        CharCase = ecUpperCase
         DataField = 'descricao'
         DataSource = DM.dsFDTabSede
         Enabled = False
@@ -1840,6 +1839,7 @@ object CadSede: TCadSede
         Width = 105
         Height = 28
         Align = alTop
+        CharCase = ecUpperCase
         DataField = 'id'
         DataSource = DM.dsFDTabSede
         Enabled = False
@@ -1863,7 +1863,6 @@ object CadSede: TCadSede
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1112
   end
   object DBGrid1: TDBGrid
     Left = 0

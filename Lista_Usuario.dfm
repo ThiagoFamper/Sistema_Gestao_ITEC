@@ -25,7 +25,6 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1046
     object Panel11: TPanel
       Left = 16
       Top = 6
@@ -54,6 +53,7 @@ object ListaUsuario: TListaUsuario
         Width = 249
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit1Change
       end
@@ -86,6 +86,7 @@ object ListaUsuario: TListaUsuario
         Width = 249
         Height = 23
         Align = alTop
+        CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit2Change
       end
@@ -126,8 +127,6 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 524
-    ExplicitWidth = 1046
     object Panel13: TPanel
       Left = 16
       Top = 17
@@ -302,7 +301,6 @@ object ListaUsuario: TListaUsuario
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 640
       Top = 7
@@ -2321,7 +2319,6 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2341,8 +2338,6 @@ object ListaUsuario: TListaUsuario
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1046
-    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

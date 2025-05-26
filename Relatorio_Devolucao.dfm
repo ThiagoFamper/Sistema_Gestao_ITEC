@@ -45,7 +45,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 71
     DesignSize = (
       340
       290)
@@ -58,7 +57,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitTop = 135
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -87,7 +85,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitTop = 105
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -99,9 +96,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitLeft = 24
-      ExplicitTop = 167
-      ExplicitWidth = 340
       object Label1: TLabel
         Left = 0
         Top = 0
@@ -130,7 +124,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitTop = 8
     end
     object BitBtn1: TBitBtn
       Left = 110
@@ -819,8 +812,10 @@ object RelatorioDevolucao: TRelatorioDevolucao
     end
   end
   object FDQueryRelatDev: TFDQuery
+    Active = True
     MasterSource = DM.dsFDTabEmprestimoProd
     Connection = DM.FDEstoqueItec
+    Transaction = DM.FDTransaction1
     SQL.Strings = (
       'select'
       '  p.cod_produto,'
@@ -871,47 +866,5 @@ object RelatorioDevolucao: TRelatorioDevolucao
     DataSetOptions = []
     Left = 211
     Top = 304
-    FieldDefs = <
-      item
-        FieldName = 'cod_produto'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'operador'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'quantidade'
-      end
-      item
-        FieldName = 'data_emp'
-      end
-      item
-        FieldName = 'colab'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'setor'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'devolvido'
-        FieldType = fftString
-      end
-      item
-        FieldName = 'data_dev'
-      end
-      item
-        FieldName = 'qtd_devolvida'
-      end>
   end
 end

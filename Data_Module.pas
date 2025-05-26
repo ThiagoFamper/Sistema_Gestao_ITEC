@@ -62,9 +62,6 @@ type
     dsFDTabEstoque: TDataSource;
     FDTabEmprestimoItem: TFDTable;
     dsFDTabEmprestimoItem: TDataSource;
-    FDTabEstoqueid: TLargeintField;
-    FDTabEstoqueproduto_id: TLargeintField;
-    FDTabEstoquesaldo: TIntegerField;
     FDTabEmprestimoItemid: TLargeintField;
     FDTabEmprestimoItemdata_devolucao: TDateField;
     FDTabEmprestimoItemqtd_devolvida: TIntegerField;
@@ -89,6 +86,9 @@ type
     FDTabEmprestimoProdsetor_id: TLargeintField;
     FDTabEmprestimoProddevolvido: TWideStringField;
     FDTabProdutodata: TDateField;
+    FDTabEstoqueid: TLargeintField;
+    FDTabEstoquesaldo: TIntegerField;
+    FDTabEstoquecod_produto: TWideStringField;
   private
     { Private declarations }
   public

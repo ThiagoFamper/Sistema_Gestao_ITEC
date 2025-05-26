@@ -6,11 +6,12 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
   Vcl.DBCtrls, Vcl.Buttons, Vcl.Imaging.pngimage, Data.DB, Vcl.Grids,
-  Vcl.DBGrids;
+  Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TEntradaProd = class(TForm)
-    Panel4: TPanel;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBpesquisar: TSpeedButton;
@@ -25,16 +26,24 @@ type
     Panel10: TPanel;
     Panel11: TPanel;
     DBGrid1: TDBGrid;
+    FDQueryEstoque: TFDQuery;
+    dsFDQueryEstoque: TDataSource;
+    FDQueryEstoquesaldo: TIntegerField;
+    FDQueryAtualizaEstoque: TFDQuery;
+    dsFDQueryAtualizaEstoque: TDataSource;
+    FDQueryEntProd: TFDQuery;
+    dsFDQueryEntProd: TDataSource;
+    Panel4: TPanel;
     Panel12: TPanel;
     Label9: TLabel;
     DBEdit1: TDBEdit;
     Panel13: TPanel;
     Label6: TLabel;
-    DBEdit2: TDBEdit;
     Panel14: TPanel;
     Label1: TLabel;
     Panel15: TPanel;
     Label12: TLabel;
+    DBLookupComboBox1: TDBLookupComboBox;
     Panel16: TPanel;
     Label13: TLabel;
     DBedit4: TDBEdit;
@@ -46,10 +55,9 @@ type
     DBedit7: TDBEdit;
     Panel21: TPanel;
     Label5: TLabel;
-    DBEdit3: TDBEdit;
     DBEdit8: TDBEdit;
-    DBNavigator1: TDBNavigator;
-    DBLookupComboBox1: TDBLookupComboBox;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
@@ -61,8 +69,10 @@ type
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
+    procedure DBEdit2Exit(Sender: TObject);
 
   private
+    produto_id: Int64;
     { Private declarations }
   public
     { Public declarations }
@@ -75,7 +85,7 @@ implementation
 
 {$R *.dfm}
 
-uses Lista_Entrada, Data_Module, Tela_Principal;
+uses Lista_Entrada, Data_Module, Tela_Principal, Cad_Produto;
 
 procedure TEntradaProd.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
@@ -131,40 +141,115 @@ begin
         DBEdit3.SetFocus;
       end
   else
+    if DBLookupComboBox1.Text = '' then
+      begin
+        ShowMessage('O Campo "Operador" deve ser preenchido!');
+        DBLookupComboBox1.SetFocus;
+      end
+    else
     if DBEdit4.Text = '' then
       begin
-        ShowMessage('O Campo "Marca" deve ser preenchido!');
+        ShowMessage('O Campo "Quantidade" deve ser preenchido!');
         DBEdit4.SetFocus;
       end
   else
     if DBEdit5.Text = '' then
       begin
-        ShowMessage('O Campo "Modelo" deve ser preenchido!');
+        ShowMessage('O Campo "Nota Fiscal" deve ser preenchido!');
         DBEdit5.SetFocus;
       end
   else
+    if DBedit7.Text = '' then
+      begin
+        ShowMessage('O Campo "Valor Unitário" deve ser preenchido!');
+        DBedit7.SetFocus;
+      end
+  else
     begin
-      dm.FDTabEntrada.Post;
-      dm.FDTabEstoque.Post;
-      dm.FDTabEstoque.Close;
-      dm.FDTabProduto.Close;
-      dm.FDTabEntrada.Close;
-      ShowMessage('Produto cadastrado com sucesso!');
-      LimpaCampos();
-      DesabilitaCampos();
+      if produto_id = 0 then
+      begin
+        ShowMessage('Erro: Produto não identificado. Verifique o código.');
+        Exit;
+      end;
       SBpesquisar.Enabled  := True;
       SBsair.Enabled       := True;
       SBnovo.Enabled       := True;
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
-      dm.FDTabEntrada.Open;
-      dm.FDTabEntrada.Refresh;
-      dm.FDTabEntrada.Last;
+      DesabilitaCampos();
+      if dm.FDTabEntrada.State in [dsEdit, dsInsert] then
+      begin
+        dm.FDTabEntradaproduto_id.AsInteger    := produto_id;
+        dm.FDTabEntradaoperador.AsString       := DBLookupComboBox1.Text;
+        dm.FDTabEntradaquantidade.AsInteger    := StrToInt(DBEdit4.Text);
+        dm.FDTabEntradanota_fiscal.AsString    := DBEdit5.Text;
+        dm.FDTabEntradavalor_unitario.AsFloat  := StrToFloat(DBEdit7.Text);
+      end;
+
+      if dm.FDTabEstoque.State in [dsEdit, dsInsert] then
+        dm.FDTabEstoque.Post;
+
+        if DBEdit8.Text = '' then
+          begin
+            dm.FDTabEstoque.Insert;
+            dm.FDTabEstoquecod_produto.AsString := DBEdit2.Text;
+            dm.FDTabEstoquesaldo.AsInteger      := StrToInt(DBedit4.Text);
+            dm.FDTabEstoque.Post;
+          end
+        else
+        begin
+          FDQueryAtualizaEstoque.Close;
+          FDQueryAtualizaEstoque.ParamByName('Psaldo').AsInteger      := (StrToIntDef(DBedit4.Text, 0) + StrToIntDef(DBEdit8.Text, 0));
+          FDQueryAtualizaEstoque.ParamByName('Pcodproduto').AsString  := DBEdit2.Text;
+          FDQueryAtualizaEstoque.ExecSQL;
+        end;
+        dm.FDTabEstoque.Close;
+        dm.FDTabProduto.Close;
+        dm.FDTabEntrada.Close;
+        dm.FDTabEntrada.Open;
+        dm.FDTabEntrada.Refresh;
+        dm.FDTabEntrada.Last;
+        ShowMessage('Produto cadastrado com sucesso!');
+        LimpaCampos();
     end;
 
 end;
 
 // foco com enter
+procedure TEntradaProd.DBEdit2Exit(Sender: TObject);
+begin
+  if DBEdit2.Text <> '' then
+    begin
+      FDQueryEntProd.Close;
+      FDQueryEntProd.ParamByName('Pcodproduto').AsString := DBEdit2.Text;
+      FDQueryEntProd.Open;
+
+      FDQueryEstoque.Close;
+      FDQueryEstoque.ParamByName('Pcodproduto').AsString  := DBEdit2.Text;
+      FDQueryEstoque.Open;
+
+      if FDQueryEntProd.IsEmpty then
+        begin
+          ShowMessage('Produto não encontrado, por favor digite outro código');
+          DBEdit2.Clear;
+          DBEdit3.Clear;
+          DBEdit2.SetFocus;
+
+          if MessageDlg('Você deseja incluir um Novo Produto?',mtConfirmation,[mbyes,mbno],0)=mryes then
+          begin
+            CadProduto.ShowModal;
+            LimpaCampos;
+          end;
+        end
+      else
+      begin
+        DBEdit3.Text := FDQueryEntProd.FieldByName('descricao').AsString;
+        produto_id   := FDQueryEntProd.FieldByName('id').AsLargeInt;
+        DBedit4.SetFocus;
+      end;
+    end;
+end;
+
 procedure TEntradaProd.DBEdit2KeyPress(Sender: TObject; var Key: Char);
 begin
   if key = #13 then
@@ -190,7 +275,7 @@ begin
     DBEdit4.Enabled            := True;
     DBEdit5.Enabled            := True;
     DBEdit7.Enabled            := True;
-    DBEdit8.Enabled            := True;
+    DBEdit8.Enabled            := False;
     DBLookupComboBox1.Enabled  := True;
 end;
 

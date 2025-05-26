@@ -29,6 +29,7 @@ object DM: TDM
     Top = 24
   end
   object FDTabProduto: TFDTable
+    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -76,6 +77,7 @@ object DM: TDM
     Top = 112
   end
   object FDTabGrupo: TFDTable
+    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -106,6 +108,7 @@ object DM: TDM
     Top = 259
   end
   object FDTabColaborador: TFDTable
+    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -134,6 +137,7 @@ object DM: TDM
     end
   end
   object FDTabSetor: TFDTable
+    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -160,6 +164,7 @@ object DM: TDM
     Top = 336
   end
   object FDTabUsuario: TFDTable
+    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -241,6 +246,7 @@ object DM: TDM
     Top = 112
   end
   object FDTabEmprestimoProd: TFDTable
+    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -291,6 +297,7 @@ object DM: TDM
     Top = 182
   end
   object FDTabSaida: TFDTable
+    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -337,6 +344,7 @@ object DM: TDM
     Top = 259
   end
   object FDTabEstoque: TFDTable
+    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -348,16 +356,13 @@ object DM: TDM
     Top = 336
     object FDTabEstoqueid: TLargeintField
       FieldName = 'id'
-      Origin = 'id'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object FDTabEstoqueproduto_id: TLargeintField
-      FieldName = 'produto_id'
-      Origin = 'produto_id'
     end
     object FDTabEstoquesaldo: TIntegerField
       FieldName = 'saldo'
-      Origin = 'saldo'
+    end
+    object FDTabEstoquecod_produto: TWideStringField
+      FieldName = 'cod_produto'
+      Size = 8190
     end
   end
   object dsFDTabEstoque: TDataSource
@@ -366,6 +371,7 @@ object DM: TDM
     Top = 336
   end
   object FDTabEmprestimoItem: TFDTable
+    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -400,6 +406,7 @@ object DM: TDM
     Top = 400
   end
   object FDTabSede: TFDTable
+    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
