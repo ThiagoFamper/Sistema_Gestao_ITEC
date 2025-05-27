@@ -57,7 +57,6 @@ object CadSetor: TCadSetor
         DataSource = DM.dsFDTabSetor
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 105
       end
     end
     object Panel12: TPanel
@@ -93,7 +92,6 @@ object CadSetor: TCadSetor
         DataSource = DM.dsFDTabSetor
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 681
       end
     end
   end

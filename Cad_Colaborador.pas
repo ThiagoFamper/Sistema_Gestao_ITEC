@@ -109,20 +109,26 @@ procedure TCadColaborador.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
     if DBEdit3.Text = '' then
       begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
+        ShowMessage('O campo "Descrição" deve ser preenchido!');
         DBEdit3.SetFocus;
       end
   else
     if DBEdit4.Text = '' then
       begin
-        ShowMessage('O Campo "Cargo" deve ser preenchido!');
+        ShowMessage('O campo "Cargo" deve ser preenchido!');
         DBEdit4.SetFocus;
       end
   else
     if DBLookupComboBox1.Text = '' then
       begin
-        ShowMessage('O Campo "Setor" deve ser preenchido!');
+        ShowMessage('O campo "Setor" deve ser preenchido!');
         DBLookupComboBox1.SetFocus;
+      end
+  else
+    if DBLookupComboBox2.Text = '' then
+      begin
+        ShowMessage('O campo "Sede" deve ser preenchido!');
+        DBLookupComboBox2.SetFocus;
       end
   else
     begin

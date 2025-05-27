@@ -34,7 +34,6 @@ type
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
     procedure LimpaCampos;
-    procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
@@ -94,7 +93,7 @@ procedure TCadSetor.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
     if DBEdit3.Text = '' then
       begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
+        ShowMessage('O campo "Descrição" deve ser preenchido!');
         DBEdit3.SetFocus;
       end
   else
@@ -110,16 +109,10 @@ begin
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
       dm.FDTabSetor.Open;
+      dm.FDTabSetor.Refresh;
       dm.FDTabSetor.Last;
     end;
 
-end;
-
-// foco com enter
-procedure TCadSetor.DBEdit2KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit3.SetFocus;
 end;
 
 procedure TCadSetor.HabilitaCampos; // habilitar campos

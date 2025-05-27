@@ -58,7 +58,6 @@ uses Lista_Grupos, Data_Module, Tela_Principal;
 
 procedure TCadGrupo.SBpesquisarClick(Sender: TObject);
 begin
-  dm.FDTabGrupo.Open;
   TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaGrupos); // botão de pesquisar
 end;
 
@@ -91,7 +90,7 @@ procedure TCadGrupo.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
     if DBEdit2.Text = '' then
       begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
+        ShowMessage('O campo "Descrição" deve ser preenchido!');
         DBEdit2.SetFocus;
       end
   else

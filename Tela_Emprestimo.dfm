@@ -25,6 +25,7 @@ object TelaEmprestimo: TTelaEmprestimo
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1122
     object Panel13: TPanel
       Left = 17
       Top = 6
@@ -59,7 +60,6 @@ object TelaEmprestimo: TTelaEmprestimo
         DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 105
       end
     end
     object Panel12: TPanel
@@ -96,7 +96,7 @@ object TelaEmprestimo: TTelaEmprestimo
         DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 224
+        OnKeyPress = DBEdit2KeyPress
       end
     end
     object Panel14: TPanel
@@ -129,8 +129,6 @@ object TelaEmprestimo: TTelaEmprestimo
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 26
-        ExplicitWidth = 513
       end
     end
     object Panel15: TPanel
@@ -167,8 +165,8 @@ object TelaEmprestimo: TTelaEmprestimo
         ListField = 'descricao'
         ListSource = DM.dsFDTabColaborador
         TabOrder = 0
+        OnKeyPress = DBLookupComboBox1KeyPress
         ExplicitTop = 26
-        ExplicitWidth = 513
       end
     end
     object Panel16: TPanel
@@ -204,7 +202,6 @@ object TelaEmprestimo: TTelaEmprestimo
         DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 88
       end
     end
     object Panel20: TPanel
@@ -237,8 +234,6 @@ object TelaEmprestimo: TTelaEmprestimo
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 26
-        ExplicitWidth = 369
       end
     end
   end
@@ -2001,7 +1996,6 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitTop = 443
     ExplicitWidth = 1122
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
@@ -2021,6 +2015,8 @@ object TelaEmprestimo: TTelaEmprestimo
     Height = 451
     Align = alClient
     DataSource = DM.dsFDTabEmprestimoProd
+    Enabled = False
+    ReadOnly = True
     TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -2075,7 +2071,7 @@ object TelaEmprestimo: TTelaEmprestimo
       'FROM estoqueitec.estoque'
       'WHERE produto_id = :produto_id;'
       '')
-    Left = 952
+    Left = 912
     Top = 322
     ParamData = <
       item
@@ -2090,8 +2086,8 @@ object TelaEmprestimo: TTelaEmprestimo
       'SET saldo = saldo - :quantidade'
       'WHERE produto_id = :produto_id;'
       '')
-    Left = 1000
-    Top = 306
+    Left = 976
+    Top = 322
     ParamData = <
       item
         Name = 'QUANTIDADE'

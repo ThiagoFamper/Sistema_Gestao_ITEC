@@ -101,6 +101,7 @@ begin
     SBexcluir.Enabled    := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
+    DBEdit2.SetFocus;
 end;
 
 procedure TListaGrupos.SBsairClick(Sender: TObject);
@@ -112,12 +113,13 @@ procedure TListaGrupos.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
     if DBEdit2.Text = '' then
       begin
-        ShowMessage('O Campo "Código" deve ser preenchido!');
+        ShowMessage('O campo "Descrição" deve ser preenchido!');
         DBEdit2.SetFocus;
       end
   else
     begin
       dm.FDTabGrupo.Post;
+      dm.FDTabGrupo.Close;
       ShowMessage('Grupo editado com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
@@ -127,6 +129,9 @@ begin
       SBeditar.Enabled     := True;
       SBcancelar.Enabled   := False;
       SBsalvar.Enabled     := False;
+      dm.FDTabGrupo.Open;
+      dm.FDTabGrupo.Refresh;
+      dm.FDTabGrupo.Last;
     end;
 end;
 

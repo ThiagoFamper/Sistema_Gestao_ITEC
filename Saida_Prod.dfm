@@ -25,6 +25,7 @@ object SaidaProd: TSaidaProd
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1121
     object Panel13: TPanel
       Left = 13
       Top = 6
@@ -58,7 +59,6 @@ object SaidaProd: TSaidaProd
         DataSource = DM.dsFDTabSaida
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 105
       end
     end
     object Panel14: TPanel
@@ -92,8 +92,6 @@ object SaidaProd: TSaidaProd
         Enabled = False
         TabOrder = 0
         Text = 'Edit1'
-        ExplicitTop = 26
-        ExplicitWidth = 505
       end
     end
     object Panel15: TPanel
@@ -130,8 +128,7 @@ object SaidaProd: TSaidaProd
         ListField = 'descricao'
         ListSource = DM.dsFDTabColaborador
         TabOrder = 0
-        ExplicitTop = 26
-        ExplicitWidth = 505
+        OnKeyPress = DBLookupComboBox1KeyPress
       end
     end
     object Panel18: TPanel
@@ -166,7 +163,6 @@ object SaidaProd: TSaidaProd
         DataSource = DM.dsFDTabSaida
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 84
       end
     end
     object Panel20: TPanel
@@ -202,7 +198,7 @@ object SaidaProd: TSaidaProd
         DataSource = DM.dsFDTabSaida
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 228
+        OnKeyPress = DBEdit2KeyPress
       end
     end
     object Panel21: TPanel
@@ -236,8 +232,6 @@ object SaidaProd: TSaidaProd
         Enabled = False
         TabOrder = 0
         Text = 'Edit2'
-        ExplicitTop = 26
-        ExplicitWidth = 169
       end
     end
   end
@@ -1998,9 +1992,8 @@ object SaidaProd: TSaidaProd
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 2
-    ExplicitTop = 480
     ExplicitWidth = 1121
-    ExplicitHeight = 327
+    ExplicitHeight = 414
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
@@ -2008,6 +2001,8 @@ object SaidaProd: TSaidaProd
       Height = 422
       Align = alClient
       DataSource = DM.dsFDTabSaida
+      Enabled = False
+      ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -2056,7 +2051,7 @@ object SaidaProd: TSaidaProd
       'FROM estoqueitec.estoque'
       'WHERE produto_id = :produto_id;'
       '')
-    Left = 824
+    Left = 848
     Top = 330
     ParamData = <
       item

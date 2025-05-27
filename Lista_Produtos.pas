@@ -152,31 +152,31 @@ procedure TListaProdutos.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
     if DBEdit2.Text = '' then
       begin
-        ShowMessage('O Campo "Código" deve ser preenchido!');
+        ShowMessage('O campo "Código" deve ser preenchido!');
         DBEdit2.SetFocus;
       end
   else
     if DBEdit3.Text = '' then
       begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
+        ShowMessage('O campo "Descrição" deve ser preenchido!');
         DBEdit3.SetFocus;
       end
   else
     if DBEdit4.Text = '' then
       begin
-        ShowMessage('O Campo "Marca" deve ser preenchido!');
+        ShowMessage('O campo "Marca" deve ser preenchido!');
         DBEdit4.SetFocus;
       end
   else
     if DBEdit5.Text = '' then
       begin
-        ShowMessage('O Campo "Modelo" deve ser preenchido!');
+        ShowMessage('O campo "Modelo" deve ser preenchido!');
         DBEdit5.SetFocus;
       end
   else
     if DBLookupComboBox1.Text = '' then
       begin
-        ShowMessage('O Campo "Grupo" deve ser preenchido!');
+        ShowMessage('O campo "Grupo" deve ser preenchido!');
         DBLookupComboBox1.SetFocus;
       end
   else

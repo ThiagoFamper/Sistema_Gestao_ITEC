@@ -189,7 +189,6 @@ object CadUsuario: TCadUsuario
         Font.Style = []
         ParentFont = False
         TabOrder = 0
-        ExplicitTop = -2
       end
     end
   end

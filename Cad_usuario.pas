@@ -103,19 +103,19 @@ procedure TCadUsuario.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
     if DBEdit2.Text = '' then
       begin
-        ShowMessage('O Campo "Nome" deve ser preenchido!');
+        ShowMessage('O campo "Nome" deve ser preenchido!');
         DBEdit2.SetFocus;
       end
   else
     if DBEdit3.Text = '' then
       begin
-        ShowMessage('O Campo "Login" deve ser preenchido!');
+        ShowMessage('O campo "Login" deve ser preenchido!');
         DBEdit3.SetFocus;
       end
   else
     if DBEdit4.Text = '' then
       begin
-        ShowMessage('O Campo "Senha" deve ser preenchido!');
+        ShowMessage('O campo "Senha" deve ser preenchido!');
         DBEdit4.SetFocus;
       end
   else
@@ -132,6 +132,7 @@ begin
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
       dm.FDTabUsuario.Open;
+      dm.FDTabUsuario.Refresh;
       dm.FDTabUsuario.Last;
     end;
 

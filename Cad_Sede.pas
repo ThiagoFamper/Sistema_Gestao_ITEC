@@ -88,7 +88,7 @@ procedure TCadSede.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
     if DBEdit2.Text = '' then
       begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
+        ShowMessage('O campo "Descrição" deve ser preenchido!');
         DBEdit2.SetFocus;
       end
   else
@@ -104,6 +104,7 @@ begin
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
       dm.FDTabSede.Open;
+      dm.FDTabSede.Refresh;
       dm.FDTabSede.Last;
     end;
 end;

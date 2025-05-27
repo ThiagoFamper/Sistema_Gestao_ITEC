@@ -51,11 +51,12 @@ type
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
     procedure LimpaCampos;
-    procedure DBEdit3KeyPress(Sender: TObject; var Key: Char);
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
+    procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);
+    procedure DBLookupComboBox1KeyPress(Sender: TObject; var Key: Char);
 
   private
     { Private declarations }
@@ -80,18 +81,12 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
-  dm.FDTabProduto.Cancel;
-  dm.FDTabColaborador.Cancel;
-  dm.FDTabEstoque.Cancel;
   dm.FDTabSaida.Cancel;
   LimpaCampos();
 end;
 
 procedure TSaidaProd.SBnovoClick(Sender: TObject); // botão de novo
 begin
-  dm.FDTabColaborador.Open;
-  dm.FDTabEstoque.Open;
-  dm.FDTabProduto.Open;
   HabilitaCampos();
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
@@ -119,13 +114,19 @@ var
 begin
     if DBEdit2.Text = '' then
       begin
-        ShowMessage('O Campo "Código" deve ser preenchido!');
+        ShowMessage('O campo "Código" deve ser preenchido!');
         DBEdit2.SetFocus;
+      end
+  else
+    if DBLookupComboBox1.Text = '' then
+      begin
+        ShowMessage('O campo "Operador" deve ser preenchido!');
+        DBLookupComboBox1.SetFocus;
       end
   else
     if DBEdit4.Text = '' then
       begin
-        ShowMessage('O Campo "Quantidade" deve ser preenchido!');
+        ShowMessage('O campo "Quantidade" deve ser preenchido!');
         DBEdit4.SetFocus;
       end
   else
@@ -174,7 +175,13 @@ begin
 end;
 
 // foco com enter
-procedure TSaidaProd.DBEdit3KeyPress(Sender: TObject; var Key: Char);
+procedure TSaidaProd.DBEdit2KeyPress(Sender: TObject; var Key: Char);
+begin
+  if key = #13 then
+    DBLookupComboBox1.SetFocus;
+end;
+
+procedure TSaidaProd.DBLookupComboBox1KeyPress(Sender: TObject; var Key: Char);
 begin
   if key = #13 then
     DBEdit4.SetFocus;

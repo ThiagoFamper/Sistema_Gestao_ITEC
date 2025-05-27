@@ -1843,6 +1843,7 @@ object EntradaProd: TEntradaProd
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1115
     object Panel12: TPanel
       Left = 16
       Top = 6
@@ -1877,7 +1878,6 @@ object EntradaProd: TEntradaProd
         DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 105
       end
     end
     object Panel13: TPanel
@@ -1911,8 +1911,8 @@ object EntradaProd: TEntradaProd
         CharCase = ecUpperCase
         DataField = 'produto_id'
         DataSource = DM.dsFDTabEntrada
+        Enabled = False
         TabOrder = 0
-        ExplicitWidth = 214
       end
     end
     object Panel14: TPanel
@@ -1945,8 +1945,6 @@ object EntradaProd: TEntradaProd
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 26
-        ExplicitWidth = 505
       end
     end
     object Panel15: TPanel
@@ -1984,8 +1982,7 @@ object EntradaProd: TEntradaProd
         ListField = 'descricao'
         ListSource = DM.dsFDTabColaborador
         TabOrder = 0
-        ExplicitTop = 26
-        ExplicitWidth = 505
+        OnKeyPress = DBLookupComboBox1KeyPress
       end
     end
     object Panel16: TPanel
@@ -2021,7 +2018,6 @@ object EntradaProd: TEntradaProd
         DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 26
       end
     end
     object Panel18: TPanel
@@ -2057,7 +2053,7 @@ object EntradaProd: TEntradaProd
         DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 214
+        OnKeyPress = DBedit5KeyPress
       end
     end
     object Panel19: TPanel
@@ -2093,6 +2089,7 @@ object EntradaProd: TEntradaProd
         DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
+        OnKeyPress = DBedit7KeyPress
       end
     end
     object Panel21: TPanel
@@ -2125,8 +2122,6 @@ object EntradaProd: TEntradaProd
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 26
-        ExplicitWidth = 161
       end
     end
   end
@@ -2136,8 +2131,8 @@ object EntradaProd: TEntradaProd
       'SELECT COUNT(*) AS qtd'
       'FROM estoqueitec.estoque'
       'WHERE produto_id = :produto_id;')
-    Left = 776
-    Top = 322
+    Left = 760
+    Top = 314
     ParamData = <
       item
         Name = 'PRODUTO_ID'
@@ -2150,8 +2145,8 @@ object EntradaProd: TEntradaProd
       'UPDATE estoqueitec.estoque'
       'SET saldo = saldo + :quantidade'
       'WHERE produto_id = :produto_id;')
-    Left = 880
-    Top = 306
+    Left = 832
+    Top = 314
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2167,8 +2162,8 @@ object EntradaProd: TEntradaProd
     SQL.Strings = (
       'INSERT INTO estoqueitec.estoque (produto_id, saldo)'
       'VALUES (:produto_id, :quantidade);')
-    Left = 1008
-    Top = 330
+    Left = 904
+    Top = 314
     ParamData = <
       item
         Name = 'PRODUTO_ID'

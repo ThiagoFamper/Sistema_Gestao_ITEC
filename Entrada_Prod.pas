@@ -58,12 +58,14 @@ type
     procedure DesabilitaCampos;
     procedure LimpaCampos;
     procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);
-    procedure DBEdit3KeyPress(Sender: TObject; var Key: Char);
     procedure DBEdit4KeyPress(Sender: TObject; var Key: Char);
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
+    procedure DBLookupComboBox1KeyPress(Sender: TObject; var Key: Char);
+    procedure DBedit5KeyPress(Sender: TObject; var Key: Char);
+    procedure DBedit7KeyPress(Sender: TObject; var Key: Char);
 
   private
     produto_id: Int64;
@@ -89,18 +91,12 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
-  dm.FDTabProduto.Cancel;
-  dm.FDTabColaborador.Cancel;
-  dm.FDTabEstoque.Cancel;
   dm.FDTabEntrada.Cancel;
   LimpaCampos();
 end;
 
 procedure TEntradaProd.SBnovoClick(Sender: TObject); // botão de novo
 begin
-  dm.FDTabColaborador.Open;
-  dm.FDTabEstoque.Open;
-  dm.FDTabProduto.Open;
   HabilitaCampos();
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
@@ -109,7 +105,6 @@ begin
   SBnovo.Enabled       := False;
   dm.FDTabEntrada.Open;
   dm.FDTabEntrada.Append;
-  dm.FDTabEstoque.Append;
   DBEdit2.SetFocus;
 end;
 
@@ -129,32 +124,32 @@ var
 begin
     if DBEdit2.Text = '' then
       begin
-        ShowMessage('O Campo "Código" deve ser preenchido!');
+        ShowMessage('O campo "Código" deve ser preenchido!');
         DBEdit2.SetFocus;
       end
   else
     if DBLookupComboBox1.Text = '' then
       begin
-        ShowMessage('O Campo "Operador" deve ser preenchido!');
+        ShowMessage('O campo "Operador" deve ser preenchido!');
         DBLookupComboBox1.SetFocus;
       end
     else
-    if DBEdit4.Text = '' then
-      begin
-        ShowMessage('O Campo "Quantidade" deve ser preenchido!');
-        DBEdit4.SetFocus;
-      end
-  else
     if DBEdit5.Text = '' then
       begin
-        ShowMessage('O Campo "Nota Fiscal" deve ser preenchido!');
+        ShowMessage('O campo "Nota Fiscal" deve ser preenchido!');
         DBEdit5.SetFocus;
       end
   else
     if DBedit7.Text = '' then
       begin
-        ShowMessage('O Campo "Valor Unitário" deve ser preenchido!');
+        ShowMessage('O campo "Valor Unitário" deve ser preenchido!');
         DBedit7.SetFocus;
+      end
+  else
+    if DBedit4.Text = '' then
+      begin
+        ShowMessage('O campo "Quantidade" deve ser preenchido!');
+        DBedit4.SetFocus;
       end
   else
     begin
@@ -197,19 +192,33 @@ begin
 
 end;
 
+//foco com enter
 procedure TEntradaProd.DBEdit2KeyPress(Sender: TObject; var Key: Char);
 begin
   if key = #13 then
-    DBEdit2.SetFocus;
+    DBLookupComboBox1.SetFocus;
 end;
 
-procedure TEntradaProd.DBEdit3KeyPress(Sender: TObject; var Key: Char);
+procedure TEntradaProd.DBEdit4KeyPress(Sender: TObject; var Key: Char);
+begin
+  if key = #13 then
+    DBEdit5.SetFocus;
+end;
+
+procedure TEntradaProd.DBedit5KeyPress(Sender: TObject; var Key: Char);
+begin
+  if key = #13 then
+    DBEdit7.SetFocus;
+end;
+
+procedure TEntradaProd.DBedit7KeyPress(Sender: TObject; var Key: Char);
 begin
   if key = #13 then
     DBEdit4.SetFocus;
 end;
 
-procedure TEntradaProd.DBEdit4KeyPress(Sender: TObject; var Key: Char);
+procedure TEntradaProd.DBLookupComboBox1KeyPress(Sender: TObject;
+  var Key: Char);
 begin
   if key = #13 then
     DBEdit5.SetFocus;

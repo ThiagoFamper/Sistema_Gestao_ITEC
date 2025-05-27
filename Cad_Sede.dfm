@@ -1811,7 +1811,6 @@ object CadSede: TCadSede
         Font.Style = []
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 679
       end
     end
     object Panel10: TPanel
@@ -1853,7 +1852,6 @@ object CadSede: TCadSede
         Font.Style = []
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 105
       end
     end
   end
