@@ -69,7 +69,7 @@ implementation
 
 {$R *.dfm}
 
-uses Cad_Grupo, Data_Module;
+uses Cad_Grupo, Data_Module, Tela_Principal;
 
 procedure TListaGrupos.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
@@ -162,6 +162,13 @@ procedure TListaGrupos.FormShow(Sender: TObject);
 begin
   dm.FDTabGrupo.Open;
   Filtro;
+
+  if not TelaPrincipal.isAdmin then
+  begin
+    SBeditar.Enabled  := False;
+    SBexcluir.Enabled := False;
+  end;
+
 end;
 
 procedure TListaGrupos.Edit1Change(Sender: TObject);

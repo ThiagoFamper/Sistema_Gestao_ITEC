@@ -58,7 +58,6 @@ object ListaSede: TListaSede
         DataSource = DM.dsFDTabSede
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel14: TPanel
@@ -93,7 +92,6 @@ object ListaSede: TListaSede
         DataSource = DM.dsFDTabSede
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
   end
@@ -107,6 +105,7 @@ object ListaSede: TListaSede
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1045
     object Panel11: TPanel
       Left = 16
       Top = 6
@@ -138,7 +137,6 @@ object ListaSede: TListaSede
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit1Change
-        ExplicitWidth = 249
       end
     end
   end
@@ -2173,7 +2171,6 @@ object ListaSede: TListaSede
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitTop = 254
     ExplicitWidth = 1045
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
@@ -2194,9 +2191,8 @@ object ListaSede: TListaSede
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitTop = 291
     ExplicitWidth = 1045
-    ExplicitHeight = 217
+    ExplicitHeight = 276
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

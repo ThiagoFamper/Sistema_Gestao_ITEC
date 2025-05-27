@@ -100,7 +100,7 @@ implementation
 
 {$R *.dfm}
 
-uses Cad_Produto, Data_Module, Relatorio_Produto;
+uses Cad_Produto, Data_Module, Relatorio_Produto, Tela_Principal;
 
 procedure TListaProdutos.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
@@ -248,6 +248,13 @@ begin
   dm.FDTabProduto.Open;
   dm.FDTabGrupo.Open;
   Filtro;
+
+  if not TelaPrincipal.isAdmin then
+  begin
+    SBeditar.Enabled  := False;
+    SBexcluir.Enabled := False;
+  end;
+
 end;
 
 procedure TListaProdutos.Edit1Change(Sender: TObject);

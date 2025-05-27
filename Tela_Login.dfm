@@ -12,6 +12,8 @@ object TelaLogin: TTelaLogin
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
+  OnShow = FormShow
   TextHeight = 15
   object Label2: TLabel
     Left = 104
@@ -39,20 +41,6 @@ object TelaLogin: TTelaLogin
     Font.Style = []
     ParentFont = False
   end
-  object DBEdit2: TDBEdit
-    Left = 104
-    Top = 155
-    Width = 306
-    Height = 23
-    TabOrder = 0
-  end
-  object DBEdit3: TDBEdit
-    Left = 104
-    Top = 220
-    Width = 306
-    Height = 23
-    TabOrder = 1
-  end
   object Panel3: TPanel
     Left = 0
     Top = -5
@@ -61,7 +49,7 @@ object TelaLogin: TTelaLogin
     BevelOuter = bvLowered
     Color = clCadetblue
     ParentBackground = False
-    TabOrder = 2
+    TabOrder = 0
     object Image1: TImage
       Left = -75
       Top = -10
@@ -124,7 +112,8 @@ object TelaLogin: TTelaLogin
     Width = 75
     Height = 25
     Caption = 'Entrar'
-    TabOrder = 3
+    TabOrder = 1
+    OnClick = Button1Click
   end
   object Button2: TButton
     Left = 256
@@ -132,6 +121,43 @@ object TelaLogin: TTelaLogin
     Width = 75
     Height = 25
     Caption = 'Cancelar'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object Edit1: TEdit
+    Left = 104
+    Top = 155
+    Width = 306
+    Height = 23
+    TabOrder = 3
+    OnKeyPress = Edit1KeyPress
+  end
+  object Edit2: TEdit
+    Left = 104
+    Top = 220
+    Width = 306
+    Height = 23
+    PasswordChar = '*'
     TabOrder = 4
+    OnKeyPress = Edit2KeyPress
+  end
+  object FDQuery1: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT login, senha, admin'
+      'FROM estoqueitec.usuario'
+      'WHERE login = :login'
+      'AND senha = :senha;')
+    Left = 456
+    Top = 267
+    ParamData = <
+      item
+        Name = 'LOGIN'
+        ParamType = ptInput
+      end
+      item
+        Name = 'SENHA'
+        ParamType = ptInput
+      end>
   end
 end

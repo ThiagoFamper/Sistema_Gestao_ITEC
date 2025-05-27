@@ -24,6 +24,7 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1455
     object Panel19: TPanel
       Left = 16
       Top = 6
@@ -55,7 +56,6 @@ object ListaColaborador: TListaColaborador
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit1Change
-        ExplicitWidth = 347
       end
     end
     object Panel20: TPanel
@@ -89,7 +89,6 @@ object ListaColaborador: TListaColaborador
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit3Change
-        ExplicitWidth = 347
       end
     end
     object Panel21: TPanel
@@ -123,7 +122,6 @@ object ListaColaborador: TListaColaborador
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit2Change
-        ExplicitWidth = 347
       end
     end
     object Panel22: TPanel
@@ -157,7 +155,6 @@ object ListaColaborador: TListaColaborador
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit4Change
-        ExplicitWidth = 347
       end
     end
   end
@@ -2192,7 +2189,7 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitTop = 268
+    ExplicitWidth = 1455
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2214,7 +2211,8 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 536
+    ExplicitTop = 522
+    ExplicitWidth = 1455
     object Panel13: TPanel
       Left = 16
       Top = 6
@@ -2247,7 +2245,6 @@ object ListaColaborador: TListaColaborador
         DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 347
       end
     end
     object Panel15: TPanel
@@ -2282,7 +2279,6 @@ object ListaColaborador: TListaColaborador
         DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 347
       end
     end
     object Panel16: TPanel
@@ -2317,7 +2313,6 @@ object ListaColaborador: TListaColaborador
         DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 347
       end
     end
     object Panel17: TPanel
@@ -2340,7 +2335,7 @@ object ListaColaborador: TListaColaborador
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitTop = -6
+        ExplicitWidth = 35
       end
       object DBLookupComboBox1: TDBLookupComboBox
         Left = 0
@@ -2354,8 +2349,6 @@ object ListaColaborador: TListaColaborador
         ListField = 'descricao'
         ListSource = DM.dsFDTabSetor
         TabOrder = 0
-        ExplicitTop = 18
-        ExplicitWidth = 345
       end
     end
     object Panel18: TPanel
@@ -2392,8 +2385,6 @@ object ListaColaborador: TListaColaborador
         ListField = 'descricao'
         ListSource = DM.dsFDTabSede
         TabOrder = 0
-        ExplicitTop = 18
-        ExplicitWidth = 345
       end
     end
   end
@@ -2406,9 +2397,8 @@ object ListaColaborador: TListaColaborador
     BevelEdges = []
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitTop = 305
     ExplicitWidth = 1455
-    ExplicitHeight = 217
+    ExplicitHeight = 223
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

@@ -12,6 +12,7 @@ object ListaEntrada: TListaEntrada
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Panel5: TPanel
     Left = 0
@@ -55,7 +56,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel14: TPanel
@@ -88,7 +88,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel17: TPanel
@@ -121,7 +120,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel18: TPanel
@@ -154,7 +152,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel19: TPanel
@@ -187,7 +184,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel21: TPanel
@@ -220,7 +216,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
   end
@@ -265,7 +260,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel24: TPanel
@@ -298,7 +292,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel25: TPanel
@@ -331,7 +324,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel26: TPanel
@@ -364,7 +356,6 @@ object ListaEntrada: TListaEntrada
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
   end

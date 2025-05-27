@@ -22,7 +22,6 @@ type
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBrelatorio: TSpeedButton;
-    SBexcluir: TSpeedButton;
     SBsalvar: TSpeedButton;
     SBcancelar: TSpeedButton;
     SpeedButton1: TSpeedButton;
@@ -31,7 +30,6 @@ type
     Panel7: TPanel;
     Panel3: TPanel;
     Panel9: TPanel;
-    Panel10: TPanel;
     Panel11: TPanel;
     Panel12: TPanel;
     Panel13: TPanel;
@@ -72,10 +70,8 @@ type
     procedure DesabilitaCampos;
     procedure DesabilitaCamposPesquisa;
     procedure SBsairClick(Sender: TObject);
-    procedure SBexcluirClick(Sender: TObject);
     procedure SBeditarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
-    procedure SBsalvarClick(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -96,12 +92,6 @@ implementation
 
 uses Data_Module, Relatorio_Devolucao;
 
-procedure TTelaDevolucao.SBexcluirClick(Sender: TObject); // botão de excluir
-begin
-  if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
-  dm.FDTabProduto.Delete;
-end;
-
 procedure TTelaDevolucao.SBrelatorioClick(Sender: TObject);
 begin
   Application.CreateForm(TRelatorioDevolucao, RelatorioDevolucao);
@@ -116,7 +106,6 @@ begin
     dm.FDTabEmprestimoProd.Cancel;
     DBGrid1.Enabled      := True;
     SBrelatorio.Enabled  := True;
-    SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
     SBcancelar.Enabled   := False;
@@ -132,7 +121,6 @@ begin
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBrelatorio.Enabled  := False;
-    SBexcluir.Enabled    := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
 end;
@@ -140,53 +128,6 @@ end;
 procedure TTelaDevolucao.SBsairClick(Sender: TObject);
 begin
   Close(); // botão de sair
-end;
-
-procedure TTelaDevolucao.SBsalvarClick(Sender: TObject); // botão de salvar
-begin
-    if DBEdit2.Text = '' then
-      begin
-        ShowMessage('O Campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
-      end
-  else
-    if DBEdit3.Text = '' then
-      begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
-        DBEdit3.SetFocus;
-      end
-  else
-    if DBEdit4.Text = '' then
-      begin
-        ShowMessage('O Campo "Data Empréstimo" deve ser preenchido!');
-        DBEdit4.SetFocus;
-      end
-  else
-    if DBEdit5.Text = '' then
-      begin
-        ShowMessage('O Campo "Quantidade" deve ser preenchido!');
-        DBEdit5.SetFocus;
-      end
-  else
-    if DBEdit6.Text = '' then
-      begin
-        ShowMessage('O Campo "Operador" deve ser preenchido!');
-        DBEdit6.SetFocus;
-      end
-  else
-    begin
-      dm.FDTabEmprestimoProd.Post;
-      ShowMessage('Editado com Sucesso!');
-      DesabilitaCampos();
-      HabilitaCamposPesquisa();
-      DBGrid1.Enabled      := True;
-      SBrelatorio.Enabled  := True;
-      SBexcluir.Enabled    := True;
-      SBsair.Enabled       := True;
-      SBeditar.Enabled     := True;
-      SBcancelar.Enabled   := False;
-      SBsalvar.Enabled     := False;
-    end;
 end;
 
 procedure TTelaDevolucao.HabilitaCampos; // habilitar campos
@@ -246,7 +187,6 @@ begin
     HabilitaCamposPesquisa();
     DBGrid1.Enabled      := True;
     SBrelatorio.Enabled  := True;
-    SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
     SBcancelar.Enabled   := False;

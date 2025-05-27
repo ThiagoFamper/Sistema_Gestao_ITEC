@@ -90,7 +90,7 @@ implementation
 
 {$R *.dfm}
 
-uses Cad_Colaborador, Data_Module;
+uses Cad_Colaborador, Data_Module, Tela_Principal;
 
 procedure TListaColaborador.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
@@ -238,6 +238,13 @@ begin
   dm.FDTabSetor.Open;
   dm.FDTabSede.Open;
   Filtro;
+
+  if not TelaPrincipal.isAdmin then
+  begin
+    SBeditar.Enabled  := False;
+    SBexcluir.Enabled := False;
+  end;
+
 end;
 
 end.

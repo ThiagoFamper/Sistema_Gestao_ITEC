@@ -12,6 +12,7 @@ object ListaSaida: TListaSaida
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Panel5: TPanel
     Left = 0
@@ -55,7 +56,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel14: TPanel
@@ -88,7 +88,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel17: TPanel
@@ -121,7 +120,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel18: TPanel
@@ -154,7 +152,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
   end
@@ -168,6 +165,7 @@ object ListaSaida: TListaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1046
     object Panel22: TPanel
       Left = 16
       Top = 6
@@ -198,7 +196,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel26: TPanel
@@ -231,7 +228,6 @@ object ListaSaida: TListaSaida
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
   end
@@ -2603,7 +2599,6 @@ object ListaSaida: TListaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitTop = 267
     ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
@@ -2624,9 +2619,8 @@ object ListaSaida: TListaSaida
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitTop = 304
     ExplicitWidth = 1046
-    ExplicitHeight = 217
+    ExplicitHeight = 223
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

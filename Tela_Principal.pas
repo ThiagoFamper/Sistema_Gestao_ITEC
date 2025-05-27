@@ -30,16 +30,6 @@ type
     pnpCadUser: TPanel;
     Image16: TImage;
     pnpMovimentacao: TPanel;
-    pnpMovEnt: TPanel;
-    Image17: TImage;
-    pnpMovSai: TPanel;
-    Image18: TImage;
-    pnpMovEmp: TPanel;
-    Image19: TImage;
-    pnpMovDev: TPanel;
-    Image20: TImage;
-    pnpMovVoltar: TPanel;
-    Image21: TImage;
     Panel29: TPanel;
     pnpConulta: TPanel;
     pnpConProd: TPanel;
@@ -62,20 +52,32 @@ type
     pnpConEmp: TPanel;
     Image30: TImage;
     pnpPrincipal: TPanel;
-    pnpCad: TPanel;
-    Image6: TImage;
-    pnpMov: TPanel;
-    Image7: TImage;
-    pnpCons: TPanel;
-    Image8: TImage;
-    pnpSair: TPanel;
-    Image10: TImage;
     Panel3: TPanel;
     pnlConteudo: TPanel;
     pnpCadSede: TPanel;
     pnpConSede: TPanel;
     Image1: TImage;
     Image2: TImage;
+    FlowPanel1: TFlowPanel;
+    pnpSair: TPanel;
+    Image10: TImage;
+    pnpCons: TPanel;
+    Image8: TImage;
+    pnpMov: TPanel;
+    Image7: TImage;
+    pnpCad: TPanel;
+    Image6: TImage;
+    FlowPanel2: TFlowPanel;
+    pnpMovVoltar: TPanel;
+    Image21: TImage;
+    pnpMovDev: TPanel;
+    Image20: TImage;
+    pnpMovEmp: TPanel;
+    Image19: TImage;
+    pnpMovSai: TPanel;
+    Image18: TImage;
+    pnpMovEnt: TPanel;
+    Image17: TImage;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -137,6 +139,8 @@ type
     { Private declarations }
   public
     { Public declarations }
+    usuarioLogado: string;
+    isAdmin: Boolean;
   end;
 
 var
@@ -220,6 +224,15 @@ end;
 procedure TTelaPrincipal.FormShow(Sender: TObject);
 begin
   selecionaMenu(0);
+
+  if not isAdmin then
+  begin
+    pnpCad.Enabled    := False;
+    pnpCad.Visible    := False;
+    pnpMovEnt.Enabled := False;
+    pnpMovEnt.Visible := False;
+  end;
+
 end;
 
 procedure TTelaPrincipal.Grupo1Click(Sender: TObject);

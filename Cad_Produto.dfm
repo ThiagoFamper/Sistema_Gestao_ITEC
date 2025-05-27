@@ -1778,6 +1778,7 @@ object CadProduto: TCadProduto
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1106
     object Panel10: TPanel
       Left = 17
       Top = 4
@@ -1833,7 +1834,7 @@ object CadProduto: TCadProduto
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitTop = -1
+        ExplicitWidth = 49
       end
       object DBEdit2: TDBEdit
         Left = 0
@@ -1847,7 +1848,6 @@ object CadProduto: TCadProduto
         Enabled = False
         TabOrder = 0
         OnKeyPress = DBEdit2KeyPress
-        ExplicitWidth = 248
       end
     end
     object Panel12: TPanel
@@ -1884,7 +1884,6 @@ object CadProduto: TCadProduto
         Enabled = False
         TabOrder = 0
         OnKeyPress = DBEdit3KeyPress
-        ExplicitWidth = 679
       end
     end
     object Panel13: TPanel
@@ -1921,7 +1920,6 @@ object CadProduto: TCadProduto
         Enabled = False
         TabOrder = 0
         OnKeyPress = DBEdit4KeyPress
-        ExplicitWidth = 679
       end
     end
     object Panel14: TPanel
@@ -1960,7 +1958,6 @@ object CadProduto: TCadProduto
         ListField = 'descricao'
         ListSource = DM.dsFDTabGrupo
         TabOrder = 0
-        ExplicitWidth = 500
       end
     end
     object Panel15: TPanel
@@ -1997,7 +1994,6 @@ object CadProduto: TCadProduto
         Enabled = False
         TabOrder = 0
         OnKeyPress = DBEdit5KeyPress
-        ExplicitWidth = 679
       end
     end
   end

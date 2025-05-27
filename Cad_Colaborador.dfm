@@ -24,6 +24,7 @@ object CadColaborador: TCadColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1124
     object Panel10: TPanel
       Left = 16
       Top = 6
@@ -57,7 +58,6 @@ object CadColaborador: TCadColaborador
         DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 105
       end
     end
     object Panel12: TPanel
@@ -93,7 +93,6 @@ object CadColaborador: TCadColaborador
         DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 520
       end
     end
     object Panel13: TPanel
@@ -129,7 +128,6 @@ object CadColaborador: TCadColaborador
         DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 313
       end
     end
     object Panel14: TPanel
@@ -167,7 +165,6 @@ object CadColaborador: TCadColaborador
         ListField = 'descricao'
         ListSource = DM.dsFDTabSetor
         TabOrder = 0
-        ExplicitWidth = 313
       end
     end
     object Panel15: TPanel
@@ -190,7 +187,7 @@ object CadColaborador: TCadColaborador
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitTop = -1
+        ExplicitWidth = 33
       end
       object DBLookupComboBox2: TDBLookupComboBox
         Left = 0
@@ -205,7 +202,6 @@ object CadColaborador: TCadColaborador
         ListField = 'descricao'
         ListSource = DM.dsFDTabSede
         TabOrder = 0
-        ExplicitTop = -12
       end
     end
   end

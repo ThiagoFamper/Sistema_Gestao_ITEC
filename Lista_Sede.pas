@@ -68,7 +68,7 @@ implementation
 
 {$R *.dfm}
 
-uses Cad_Sede, Data_Module;
+uses Cad_Sede, Data_Module, Tela_Principal;
 
 procedure TListaSede.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
@@ -161,6 +161,13 @@ procedure TListaSede.FormShow(Sender: TObject);
 begin
   dm.FDTabSede.Open;
   Filtro;
+
+  if not TelaPrincipal.isAdmin then
+  begin
+    SBeditar.Enabled  := False;
+    SBexcluir.Enabled := False;
+  end;
+
 end;
 
 procedure TListaSede.Edit1Change(Sender: TObject);

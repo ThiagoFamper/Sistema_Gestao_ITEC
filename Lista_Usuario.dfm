@@ -24,6 +24,7 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1046
     object Panel11: TPanel
       Left = 16
       Top = 6
@@ -55,7 +56,6 @@ object ListaUsuario: TListaUsuario
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit1Change
-        ExplicitWidth = 249
       end
     end
     object Panel18: TPanel
@@ -89,7 +89,6 @@ object ListaUsuario: TListaUsuario
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit2Change
-        ExplicitWidth = 249
       end
     end
     object Panel19: TPanel
@@ -129,7 +128,8 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 538
+    ExplicitTop = 524
+    ExplicitWidth = 1046
     object Panel13: TPanel
       Left = 16
       Top = 6
@@ -162,7 +162,6 @@ object ListaUsuario: TListaUsuario
         DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel14: TPanel
@@ -197,7 +196,6 @@ object ListaUsuario: TListaUsuario
         DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel15: TPanel
@@ -232,7 +230,6 @@ object ListaUsuario: TListaUsuario
         DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel16: TPanel
@@ -267,7 +264,6 @@ object ListaUsuario: TListaUsuario
         DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 249
       end
     end
     object Panel17: TPanel
@@ -293,7 +289,6 @@ object ListaUsuario: TListaUsuario
         Font.Style = []
         ParentFont = False
         TabOrder = 0
-        ExplicitTop = 0
       end
     end
   end
@@ -2328,7 +2323,6 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitTop = 270
     ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
@@ -2349,9 +2343,8 @@ object ListaUsuario: TListaUsuario
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitTop = 307
     ExplicitWidth = 1046
-    ExplicitHeight = 217
+    ExplicitHeight = 230
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

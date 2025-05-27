@@ -12,6 +12,7 @@ object ListaEmprestimo: TListaEmprestimo
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Panel5: TPanel
     Left = 0
@@ -56,7 +57,6 @@ object ListaEmprestimo: TListaEmprestimo
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 221
       end
     end
     object Panel14: TPanel
@@ -89,7 +89,6 @@ object ListaEmprestimo: TListaEmprestimo
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 221
       end
     end
     object Panel18: TPanel
@@ -122,7 +121,6 @@ object ListaEmprestimo: TListaEmprestimo
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 221
       end
     end
     object Panel19: TPanel
@@ -155,7 +153,6 @@ object ListaEmprestimo: TListaEmprestimo
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitWidth = 221
       end
     end
   end
@@ -169,6 +166,7 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1152
     object Panel22: TPanel
       Left = 16
       Top = 6
@@ -199,7 +197,6 @@ object ListaEmprestimo: TListaEmprestimo
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
-        ExplicitWidth = 221
       end
     end
     object Panel23: TPanel
@@ -232,7 +229,6 @@ object ListaEmprestimo: TListaEmprestimo
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
-        ExplicitTop = 12
       end
     end
     object Panel26: TPanel
@@ -265,7 +261,6 @@ object ListaEmprestimo: TListaEmprestimo
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
-        ExplicitWidth = 221
       end
     end
   end
@@ -2637,7 +2632,6 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitTop = 273
     ExplicitWidth = 1152
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
@@ -2658,9 +2652,8 @@ object ListaEmprestimo: TListaEmprestimo
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitTop = 310
     ExplicitWidth = 1152
-    ExplicitHeight = 211
+    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0

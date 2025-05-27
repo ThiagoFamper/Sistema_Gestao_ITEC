@@ -83,7 +83,7 @@ implementation
 
 {$R *.dfm}
 
-uses Cad_Usuario, Data_Module;
+uses Cad_Usuario, Data_Module, Tela_Principal;
 
 procedure TListaUsuario.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
@@ -211,6 +211,13 @@ procedure TListaUsuario.FormShow(Sender: TObject);
 begin
   dm.FDTabUsuario.Open;
   Filtro;
+
+  if not TelaPrincipal.isAdmin then
+  begin
+    SBeditar.Enabled  := False;
+    SBexcluir.Enabled := False;
+  end;
+
 end;
 
 procedure TListaUsuario.HabilitaCamposPesquisa; // habilitar campos de pesquisa

@@ -63,6 +63,7 @@ type
     procedure SBcancelarClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -77,7 +78,7 @@ implementation
 
 {$R *.dfm}
 
-uses Data_Module, Relatorio_Emprestimo;
+uses Data_Module, Relatorio_Emprestimo, Tela_Principal;
 
 procedure TListaEmprestimo.SBexcluirClick(Sender: TObject); // botão de excluir
 begin
@@ -181,6 +182,15 @@ begin
     Edit1.Enabled            := False;
     Edit2.Enabled            := False;
     Edit5.Enabled            := False;
+end;
+
+procedure TListaEmprestimo.FormShow(Sender: TObject);
+begin
+  if not TelaPrincipal.isAdmin then
+  begin
+    SBeditar.Enabled  := False;
+    SBexcluir.Enabled := False;
+  end;
 end;
 
 procedure TListaEmprestimo.HabilitaCamposPesquisa; // desabilitar campos de pesquisa

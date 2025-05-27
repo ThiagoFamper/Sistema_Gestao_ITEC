@@ -35,6 +35,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+    Application.CreateForm(TTelaLogin, TelaLogin);
   Application.CreateForm(TTelaPrincipal, TelaPrincipal);
   Application.CreateForm(TCadProduto, CadProduto);
   Application.CreateForm(TCadColaborador, CadColaborador);
@@ -53,7 +54,6 @@ begin
   Application.CreateForm(TListaEmprestimo, ListaEmprestimo);
   Application.CreateForm(TCadUsuario, CadUsuario);
   Application.CreateForm(TListaUsuario, ListaUsuario);
-  Application.CreateForm(TTelaLogin, TelaLogin);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(TCadSede, CadSede);
   Application.CreateForm(TCadSede, CadSede);
