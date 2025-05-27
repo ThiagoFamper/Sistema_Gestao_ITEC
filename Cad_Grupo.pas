@@ -25,7 +25,6 @@ type
     Panel8: TPanel;
     Panel9: TPanel;
     Panel5: TPanel;
-    Panel1: TPanel;
     DBGrid1: TDBGrid;
     Panel11: TPanel;
     Label2: TLabel;

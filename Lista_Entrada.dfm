@@ -27,15 +27,15 @@ object ListaEntrada: TListaEntrada
     ExplicitWidth = 1046
     object Panel13: TPanel
       Left = 16
-      Top = 17
-      Width = 249
+      Top = 6
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label11: TLabel
         Left = 0
         Top = 0
-        Width = 15
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -45,28 +45,30 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 15
       end
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 50
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel14: TPanel
       Left = 16
-      Top = 82
-      Width = 249
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label12: TLabel
         Left = 0
         Top = 0
-        Width = 49
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -76,28 +78,30 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 49
       end
       object DBEdit2: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel17: TPanel
       Left = 16
-      Top = 147
-      Width = 249
+      Top = 136
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label16: TLabel
         Left = 0
         Top = 0
-        Width = 78
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Quantidade'
@@ -107,28 +111,30 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 78
       end
       object DBEdit5: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel18: TPanel
-      Left = 309
-      Top = 18
-      Width = 249
+      Left = 525
+      Top = 10
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label17: TLabel
         Left = 0
         Top = 0
-        Width = 64
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Operador'
@@ -138,28 +144,30 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 64
       end
       object DBEdit6: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel19: TPanel
-      Left = 309
-      Top = 83
-      Width = 249
+      Left = 525
+      Top = 75
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 4
       object Label18: TLabel
         Left = 0
         Top = 0
-        Width = 73
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Nota Fiscal'
@@ -169,28 +177,30 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 73
       end
       object DBEdit7: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel21: TPanel
-      Left = 309
-      Top = 148
-      Width = 249
+      Left = 525
+      Top = 140
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 5
       object Label19: TLabel
         Left = 0
         Top = 0
-        Width = 91
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Valor Unit'#225'rio'
@@ -200,15 +210,17 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 91
       end
       object DBEdit9: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
   end
@@ -226,14 +238,14 @@ object ListaEntrada: TListaEntrada
     object Panel23: TPanel
       Left = 16
       Top = 6
-      Width = 249
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label7: TLabel
         Left = 0
         Top = 0
-        Width = 49
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -243,28 +255,30 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 49
       end
       object Edit1: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel24: TPanel
       Left = 16
       Top = 71
-      Width = 249
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 65
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -274,28 +288,30 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 65
       end
       object Edit2: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel25: TPanel
-      Left = 317
+      Left = 525
       Top = 71
-      Width = 249
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 64
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Operador'
@@ -305,28 +321,30 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 64
       end
       object Edit3: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel26: TPanel
-      Left = 317
+      Left = 525
       Top = 6
-      Width = 249
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label3: TLabel
         Left = 0
         Top = 0
-        Width = 73
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Nota Fiscal'
@@ -336,15 +354,17 @@ object ListaEntrada: TListaEntrada
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 73
       end
       object Edit4: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
   end

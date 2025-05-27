@@ -24,7 +24,6 @@ type
     Panel8: TPanel;
     Panel9: TPanel;
     Panel10: TPanel;
-    Panel11: TPanel;
     DBGrid1: TDBGrid;
     Panel4: TPanel;
     Panel12: TPanel;

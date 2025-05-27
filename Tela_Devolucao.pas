@@ -34,8 +34,6 @@ type
     Panel10: TPanel;
     Panel11: TPanel;
     Panel12: TPanel;
-    Panel4: TPanel;
-    DBNavigator1: TDBNavigator;
     Panel13: TPanel;
     Label9: TLabel;
     DBEdit1: TDBEdit;

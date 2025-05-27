@@ -25,6 +25,7 @@ object CadSede: TCadSede
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1112
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1770,17 +1771,18 @@ object CadSede: TCadSede
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1112
     object Panel11: TPanel
       Left = 16
       Top = 71
-      Width = 679
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 679
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -1795,8 +1797,8 @@ object CadSede: TCadSede
       object DBEdit2: TDBEdit
         Left = 0
         Top = 20
-        Width = 679
-        Height = 28
+        Width = 400
+        Height = 23
         Align = alTop
         CharCase = ecUpperCase
         DataField = 'descricao'
@@ -1804,24 +1806,25 @@ object CadSede: TCadSede
         Enabled = False
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
+        Font.Height = -12
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
         TabOrder = 0
+        ExplicitWidth = 679
       end
     end
     object Panel10: TPanel
       Left = 16
       Top = 6
-      Width = 105
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 105
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -1836,8 +1839,8 @@ object CadSede: TCadSede
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 105
-        Height = 28
+        Width = 50
+        Height = 23
         Align = alTop
         CharCase = ecUpperCase
         DataField = 'id'
@@ -1845,30 +1848,20 @@ object CadSede: TCadSede
         Enabled = False
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -15
+        Font.Height = -12
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
         TabOrder = 0
+        ExplicitWidth = 105
       end
     end
   end
-  object Panel1: TPanel
+  object DBGrid1: TDBGrid
     Left = 0
     Top = 257
     Width = 1114
-    Height = 37
-    Align = alTop
-    BevelEdges = [beBottom]
-    Color = clWhitesmoke
-    ParentBackground = False
-    TabOrder = 2
-  end
-  object DBGrid1: TDBGrid
-    Left = 0
-    Top = 294
-    Width = 1114
-    Height = 488
+    Height = 525
     Align = alClient
     DataSource = DM.dsFDTabSede
     Enabled = False
@@ -1879,7 +1872,7 @@ object CadSede: TCadSede
     Font.Style = []
     ParentFont = False
     ReadOnly = True
-    TabOrder = 3
+    TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12

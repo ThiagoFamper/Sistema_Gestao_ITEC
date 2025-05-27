@@ -24,7 +24,6 @@ type
     Panel8: TPanel;
     Panel9: TPanel;
     Panel10: TPanel;
-    Panel11: TPanel;
     Panel12: TPanel;
     DBGrid1: TDBGrid;
     Panel13: TPanel;
@@ -43,7 +42,6 @@ type
     DBEdit2: TDBEdit;
     Panel21: TPanel;
     Label5: TLabel;
-    DBNavigator1: TDBNavigator;
     Edit1: TEdit;
     Edit2: TEdit;
     DBLookupComboBox1: TDBLookupComboBox;

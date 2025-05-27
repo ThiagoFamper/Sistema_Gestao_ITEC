@@ -133,8 +133,8 @@ object RelatorioDevolucao: TRelatorioDevolucao
       ExplicitWidth = 338
     end
     object BitBtn1: TBitBtn
-      Left = 108
-      Top = 200
+      Left = 107
+      Top = 192
       Width = 89
       Height = 25
       Anchors = []
@@ -142,8 +142,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
-      ExplicitLeft = 107
-      ExplicitTop = 194
     end
   end
   object frxRelatDev: TfrxReport

@@ -1762,23 +1762,11 @@ object EntradaProd: TEntradaProd
       TabOrder = 5
     end
   end
-  object Panel11: TPanel
-    Left = 0
-    Top = 441
-    Width = 1117
-    Height = 37
-    Align = alTop
-    BevelEdges = [beBottom]
-    Color = clWhitesmoke
-    ParentBackground = False
-    TabOrder = 1
-    ExplicitWidth = 1115
-  end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 478
+    Top = 393
     Width = 1117
-    Height = 393
+    Height = 478
     Align = alClient
     DataSource = DM.dsFDTabEntrada
     Enabled = False
@@ -1789,7 +1777,7 @@ object EntradaProd: TEntradaProd
     Font.Style = []
     ParentFont = False
     ReadOnly = True
-    TabOrder = 2
+    TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -1847,26 +1835,25 @@ object EntradaProd: TEntradaProd
     Left = 0
     Top = 114
     Width = 1117
-    Height = 327
+    Height = 279
     Align = alTop
     BevelEdges = [beBottom]
     BiDiMode = bdLeftToRight
     Color = clWhitesmoke
     ParentBiDiMode = False
     ParentBackground = False
-    TabOrder = 3
-    ExplicitWidth = 1115
+    TabOrder = 2
     object Panel12: TPanel
       Left = 16
       Top = 6
-      Width = 105
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label9: TLabel
         Left = 0
         Top = 0
-        Width = 105
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -1881,7 +1868,7 @@ object EntradaProd: TEntradaProd
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 105
+        Width = 50
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -1890,19 +1877,20 @@ object EntradaProd: TEntradaProd
         DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 105
       end
     end
     object Panel13: TPanel
       Left = 16
       Top = 71
-      Width = 214
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label6: TLabel
         Left = 0
         Top = 0
-        Width = 214
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -1917,26 +1905,27 @@ object EntradaProd: TEntradaProd
       object DBEdit2: TDBEdit
         Left = 0
         Top = 20
-        Width = 214
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         DataField = 'produto_id'
         DataSource = DM.dsFDTabEntrada
         TabOrder = 0
+        ExplicitWidth = 214
       end
     end
     object Panel14: TPanel
-      Left = 17
+      Left = 16
       Top = 136
-      Width = 505
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 505
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -1950,24 +1939,27 @@ object EntradaProd: TEntradaProd
       end
       object Edit1: TEdit
         Left = 0
-        Top = 26
-        Width = 505
+        Top = 20
+        Width = 400
         Height = 23
+        Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitTop = 26
+        ExplicitWidth = 505
       end
     end
     object Panel15: TPanel
-      Left = 17
+      Left = 16
       Top = 201
-      Width = 505
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label12: TLabel
         Left = 0
         Top = 0
-        Width = 505
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Operador'
@@ -1981,9 +1973,10 @@ object EntradaProd: TEntradaProd
       end
       object DBLookupComboBox1: TDBLookupComboBox
         Left = 0
-        Top = 26
-        Width = 505
+        Top = 20
+        Width = 400
         Height = 23
+        Align = alTop
         DataField = 'operador'
         DataSource = DM.dsFDTabEntrada
         Enabled = False
@@ -1991,11 +1984,13 @@ object EntradaProd: TEntradaProd
         ListField = 'descricao'
         ListSource = DM.dsFDTabColaborador
         TabOrder = 0
+        ExplicitTop = 26
+        ExplicitWidth = 505
       end
     end
     object Panel16: TPanel
-      Left = 16
-      Top = 266
+      Left = 516
+      Top = 136
       Width = 81
       Height = 59
       BevelOuter = bvNone
@@ -2026,19 +2021,20 @@ object EntradaProd: TEntradaProd
         DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
+        ExplicitTop = 26
       end
     end
     object Panel18: TPanel
-      Left = 588
+      Left = 516
       Top = 6
-      Width = 214
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 5
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 214
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Nota Fiscal'
@@ -2053,7 +2049,7 @@ object EntradaProd: TEntradaProd
       object DBedit5: TDBEdit
         Left = 0
         Top = 20
-        Width = 214
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -2061,10 +2057,11 @@ object EntradaProd: TEntradaProd
         DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 214
       end
     end
     object Panel19: TPanel
-      Left = 588
+      Left = 516
       Top = 71
       Width = 110
       Height = 59
@@ -2099,34 +2096,37 @@ object EntradaProd: TEntradaProd
       end
     end
     object Panel21: TPanel
-      Left = 588
-      Top = 136
-      Width = 168
+      Left = 516
+      Top = 201
+      Width = 81
       Height = 59
       BevelOuter = bvNone
       TabOrder = 7
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 168
+        Width = 81
         Height = 20
         Align = alTop
-        Caption = 'Quantidade em Estoque'
+        Caption = 'Estoque'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 160
+        ExplicitWidth = 53
       end
       object Edit2: TEdit
         Left = 0
-        Top = 26
-        Width = 161
+        Top = 20
+        Width = 81
         Height = 23
+        Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitTop = 26
+        ExplicitWidth = 161
       end
     end
   end
@@ -2136,8 +2136,8 @@ object EntradaProd: TEntradaProd
       'SELECT COUNT(*) AS qtd'
       'FROM estoqueitec.estoque'
       'WHERE produto_id = :produto_id;')
-    Left = 384
-    Top = 418
+    Left = 776
+    Top = 322
     ParamData = <
       item
         Name = 'PRODUTO_ID'
@@ -2150,8 +2150,8 @@ object EntradaProd: TEntradaProd
       'UPDATE estoqueitec.estoque'
       'SET saldo = saldo + :quantidade'
       'WHERE produto_id = :produto_id;')
-    Left = 480
-    Top = 418
+    Left = 880
+    Top = 306
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2167,8 +2167,8 @@ object EntradaProd: TEntradaProd
     SQL.Strings = (
       'INSERT INTO estoqueitec.estoque (produto_id, saldo)'
       'VALUES (:produto_id, :quantidade);')
-    Left = 576
-    Top = 418
+    Left = 1008
+    Top = 330
     ParamData = <
       item
         Name = 'PRODUTO_ID'

@@ -17,23 +17,24 @@ object CadUsuario: TCadUsuario
     Left = 0
     Top = 114
     Width = 1118
-    Height = 343
+    Height = 217
     Align = alTop
     BevelEdges = [beBottom]
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1116
     object Panel10: TPanel
       Left = 14
       Top = 6
-      Width = 105
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 105
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -48,7 +49,7 @@ object CadUsuario: TCadUsuario
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 105
+        Width = 50
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -61,14 +62,14 @@ object CadUsuario: TCadUsuario
     object Panel11: TPanel
       Left = 14
       Top = 71
-      Width = 679
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 679
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Nome'
@@ -83,7 +84,7 @@ object CadUsuario: TCadUsuario
       object DBEdit2: TDBEdit
         Left = 0
         Top = 20
-        Width = 679
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -97,14 +98,14 @@ object CadUsuario: TCadUsuario
     object Panel12: TPanel
       Left = 14
       Top = 136
-      Width = 216
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 216
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Login'
@@ -119,7 +120,7 @@ object CadUsuario: TCadUsuario
       object DBEdit3: TDBEdit
         Left = 0
         Top = 20
-        Width = 216
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -130,16 +131,16 @@ object CadUsuario: TCadUsuario
       end
     end
     object Panel13: TPanel
-      Left = 14
-      Top = 201
-      Width = 312
+      Left = 518
+      Top = 6
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label3: TLabel
         Left = 0
         Top = 0
-        Width = 312
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Senha'
@@ -154,7 +155,7 @@ object CadUsuario: TCadUsuario
       object DBEdit4: TDBEdit
         Left = 0
         Top = 20
-        Width = 312
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -165,10 +166,10 @@ object CadUsuario: TCadUsuario
       end
     end
     object Panel14: TPanel
-      Left = 14
-      Top = 266
-      Width = 174
-      Height = 67
+      Left = 518
+      Top = 71
+      Width = 131
+      Height = 59
       BevelKind = bkSoft
       BevelOuter = bvNone
       TabOrder = 4
@@ -176,8 +177,8 @@ object CadUsuario: TCadUsuario
         AlignWithMargins = True
         Left = 3
         Top = 3
-        Width = 164
-        Height = 57
+        Width = 121
+        Height = 49
         Align = alClient
         Caption = 'Administrador'
         Enabled = False
@@ -188,6 +189,7 @@ object CadUsuario: TCadUsuario
         Font.Style = []
         ParentFont = False
         TabOrder = 0
+        ExplicitTop = -2
       end
     end
   end
@@ -203,6 +205,7 @@ object CadUsuario: TCadUsuario
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1116
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1939,23 +1942,11 @@ object CadUsuario: TCadUsuario
       TabOrder = 5
     end
   end
-  object Panel9: TPanel
-    Left = 0
-    Top = 457
-    Width = 1118
-    Height = 37
-    Align = alTop
-    BevelEdges = [beBottom]
-    Color = clWhitesmoke
-    Enabled = False
-    ParentBackground = False
-    TabOrder = 2
-  end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 494
+    Top = 331
     Width = 1118
-    Height = 367
+    Height = 530
     Align = alClient
     DataSource = DM.dsFDTabUsuario
     Enabled = False
@@ -1966,7 +1957,7 @@ object CadUsuario: TCadUsuario
     Font.Style = []
     ParentFont = False
     ReadOnly = True
-    TabOrder = 3
+    TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12

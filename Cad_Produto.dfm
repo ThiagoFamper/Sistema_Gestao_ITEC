@@ -29,6 +29,7 @@ object CadProduto: TCadProduto
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1106
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1769,7 +1770,7 @@ object CadProduto: TCadProduto
     Left = 0
     Top = 114
     Width = 1108
-    Height = 399
+    Height = 207
     Align = alTop
     BevelEdges = [beBottom]
     BiDiMode = bdLeftToRight
@@ -1779,15 +1780,15 @@ object CadProduto: TCadProduto
     TabOrder = 1
     object Panel10: TPanel
       Left = 17
-      Top = 6
-      Width = 105
+      Top = 4
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 105
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -1802,7 +1803,7 @@ object CadProduto: TCadProduto
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 105
+        Width = 50
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -1814,15 +1815,15 @@ object CadProduto: TCadProduto
     end
     object Panel11: TPanel
       Left = 17
-      Top = 71
-      Width = 248
+      Top = 69
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 248
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -1832,12 +1833,12 @@ object CadProduto: TCadProduto
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 49
+        ExplicitTop = -1
       end
       object DBEdit2: TDBEdit
         Left = 0
         Top = 20
-        Width = 248
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -1846,19 +1847,20 @@ object CadProduto: TCadProduto
         Enabled = False
         TabOrder = 0
         OnKeyPress = DBEdit2KeyPress
+        ExplicitWidth = 248
       end
     end
     object Panel12: TPanel
       Left = 17
-      Top = 136
-      Width = 679
+      Top = 134
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label3: TLabel
         Left = 0
         Top = 0
-        Width = 679
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -1873,7 +1875,7 @@ object CadProduto: TCadProduto
       object DBEdit3: TDBEdit
         Left = 0
         Top = 20
-        Width = 679
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -1882,19 +1884,20 @@ object CadProduto: TCadProduto
         Enabled = False
         TabOrder = 0
         OnKeyPress = DBEdit3KeyPress
+        ExplicitWidth = 679
       end
     end
     object Panel13: TPanel
-      Left = 17
-      Top = 201
-      Width = 679
+      Left = 513
+      Top = 6
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label4: TLabel
         Left = 0
         Top = 0
-        Width = 679
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Marca'
@@ -1909,7 +1912,7 @@ object CadProduto: TCadProduto
       object DBEdit4: TDBEdit
         Left = 0
         Top = 20
-        Width = 679
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -1918,19 +1921,20 @@ object CadProduto: TCadProduto
         Enabled = False
         TabOrder = 0
         OnKeyPress = DBEdit4KeyPress
+        ExplicitWidth = 679
       end
     end
     object Panel14: TPanel
-      Left = 17
-      Top = 266
-      Width = 500
+      Left = 513
+      Top = 136
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 4
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 500
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Grupo'
@@ -1945,7 +1949,7 @@ object CadProduto: TCadProduto
       object DBLookupComboBox1: TDBLookupComboBox
         Left = 0
         Top = 20
-        Width = 500
+        Width = 400
         Height = 23
         Align = alTop
         Color = clBtnHighlight
@@ -1956,19 +1960,20 @@ object CadProduto: TCadProduto
         ListField = 'descricao'
         ListSource = DM.dsFDTabGrupo
         TabOrder = 0
+        ExplicitWidth = 500
       end
     end
     object Panel15: TPanel
-      Left = 17
-      Top = 331
-      Width = 679
+      Left = 513
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 5
       object Label6: TLabel
         Left = 0
         Top = 0
-        Width = 679
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Modelo'
@@ -1983,7 +1988,7 @@ object CadProduto: TCadProduto
       object DBEdit5: TDBEdit
         Left = 0
         Top = 20
-        Width = 679
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -1992,25 +1997,15 @@ object CadProduto: TCadProduto
         Enabled = False
         TabOrder = 0
         OnKeyPress = DBEdit5KeyPress
+        ExplicitWidth = 679
       end
     end
   end
-  object Panel9: TPanel
-    Left = 0
-    Top = 513
-    Width = 1108
-    Height = 37
-    Align = alTop
-    BevelEdges = [beBottom]
-    Color = clWhitesmoke
-    ParentBackground = False
-    TabOrder = 2
-  end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 550
+    Top = 321
     Width = 1108
-    Height = 320
+    Height = 549
     Align = alClient
     DataSource = DM.dsFDTabProduto
     Enabled = False
@@ -2021,7 +2016,7 @@ object CadProduto: TCadProduto
     Font.Style = []
     ParentFont = False
     ReadOnly = True
-    TabOrder = 3
+    TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12

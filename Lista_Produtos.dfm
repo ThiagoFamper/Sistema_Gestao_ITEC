@@ -2387,18 +2387,17 @@ object ListaProdutos: TListaProdutos
     ParentBackground = False
     TabOrder = 1
     ExplicitTop = 553
-    ExplicitWidth = 2712
     object Panel13: TPanel
-      Left = 24
-      Top = 17
-      Width = 249
+      Left = 16
+      Top = 6
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -2413,7 +2412,7 @@ object ListaProdutos: TListaProdutos
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 50
         Height = 23
         Align = alTop
         BevelInner = bvLowered
@@ -2422,19 +2421,20 @@ object ListaProdutos: TListaProdutos
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel14: TPanel
-      Left = 24
-      Top = 89
-      Width = 249
+      Left = 16
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -2449,26 +2449,27 @@ object ListaProdutos: TListaProdutos
       object DBEdit2: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         DataField = 'cod_produto'
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel15: TPanel
-      Left = 24
-      Top = 162
-      Width = 249
+      Left = 16
+      Top = 136
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label3: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -2483,26 +2484,27 @@ object ListaProdutos: TListaProdutos
       object DBEdit3: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         DataField = 'descricao'
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel16: TPanel
-      Left = 400
-      Top = 24
-      Width = 249
+      Left = 520
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label4: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Marca'
@@ -2512,31 +2514,34 @@ object ListaProdutos: TListaProdutos
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 41
+        ExplicitLeft = 72
+        ExplicitTop = -6
+        ExplicitWidth = 249
       end
       object DBEdit4: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         DataField = 'marca'
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel17: TPanel
-      Left = 400
-      Top = 162
-      Width = 249
+      Left = 520
+      Top = 136
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 4
       object Label6: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Grupo'
@@ -2550,9 +2555,10 @@ object ListaProdutos: TListaProdutos
       end
       object DBLookupComboBox1: TDBLookupComboBox
         Left = 0
-        Top = 26
-        Width = 249
+        Top = 20
+        Width = 400
         Height = 23
+        Align = alTop
         DataField = 'grupo_id'
         DataSource = DM.dsFDTabProduto
         Enabled = False
@@ -2560,19 +2566,21 @@ object ListaProdutos: TListaProdutos
         ListField = 'descricao'
         ListSource = DM.dsFDTabGrupo
         TabOrder = 0
+        ExplicitTop = 26
+        ExplicitWidth = 249
       end
     end
     object Panel18: TPanel
-      Left = 400
-      Top = 89
-      Width = 249
+      Left = 520
+      Top = 6
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 5
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Modelo'
@@ -2587,19 +2595,20 @@ object ListaProdutos: TListaProdutos
       object DBEdit5: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         DataField = 'modelo'
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
   end
   object Panel4: TPanel
     Left = 0
-    Top = 299
+    Top = 321
     Width = 2714
     Height = 37
     Align = alTop
@@ -2607,6 +2616,7 @@ object ListaProdutos: TListaProdutos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitTop = 299
     ExplicitWidth = 2712
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
@@ -2623,24 +2633,25 @@ object ListaProdutos: TListaProdutos
     Left = 0
     Top = 114
     Width = 2714
-    Height = 185
+    Height = 207
     Align = alTop
     BevelEdges = [beBottom]
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 2712
+    ExplicitLeft = -40
+    ExplicitTop = 130
     object Panel19: TPanel
-      Left = 24
-      Top = 22
-      Width = 249
+      Left = 16
+      Top = 6
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label7: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -2655,25 +2666,26 @@ object ListaProdutos: TListaProdutos
       object Edit1: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit1Change
+        ExplicitWidth = 249
       end
     end
     object Panel20: TPanel
-      Left = 24
-      Top = 109
-      Width = 249
+      Left = 16
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label8: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -2688,25 +2700,26 @@ object ListaProdutos: TListaProdutos
       object Edit2: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit2Change
+        ExplicitWidth = 249
       end
     end
     object Panel21: TPanel
-      Left = 400
-      Top = 22
-      Width = 249
+      Left = 520
+      Top = 6
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label9: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Marca'
@@ -2721,25 +2734,26 @@ object ListaProdutos: TListaProdutos
       object Edit3: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit3Change
+        ExplicitWidth = 249
       end
     end
     object Panel22: TPanel
-      Left = 400
-      Top = 109
-      Width = 249
+      Left = 16
+      Top = 136
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label10: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Modelo'
@@ -2754,25 +2768,26 @@ object ListaProdutos: TListaProdutos
       object Edit4: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit4Change
+        ExplicitWidth = 249
       end
     end
     object Panel23: TPanel
-      Left = 711
-      Top = 22
-      Width = 249
+      Left = 520
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 4
       object Label11: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Grupo'
@@ -2787,30 +2802,32 @@ object ListaProdutos: TListaProdutos
       object Edit5: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit5Change
+        ExplicitWidth = 249
       end
     end
   end
   object Panel3: TPanel
     Left = 0
-    Top = 336
+    Top = 358
     Width = 2714
-    Height = 225
+    Height = 203
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitTop = 336
     ExplicitWidth = 2712
     ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 2714
-      Height = 225
+      Height = 203
       Hint = 'Pesquisar Produtos'
       Align = alClient
       DataSource = DataSource1
@@ -2881,8 +2898,8 @@ object ListaProdutos: TListaProdutos
       '    (UPPER(modelo) LIKE UPPER(:modelo)) AND'
       '    (UPPER(g.descricao) LIKE UPPER(:grupo));'
       '')
-    Left = 432
-    Top = 290
+    Left = 960
+    Top = 258
     ParamData = <
       item
         Name = 'CODIGO'
@@ -2907,7 +2924,7 @@ object ListaProdutos: TListaProdutos
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
-    Left = 512
-    Top = 290
+    Left = 1040
+    Top = 258
   end
 end

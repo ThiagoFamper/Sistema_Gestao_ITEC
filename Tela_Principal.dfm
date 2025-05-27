@@ -472,7 +472,7 @@ object TelaPrincipal: TTelaPrincipal
       OnMouseEnter = pnpConSedeMouseEnter
       OnMouseLeave = pnpConSedeMouseLeave
       object Image18: TImage
-        Left = 0
+        Left = -2
         Top = 6
         Width = 50
         Height = 50
@@ -701,10 +701,10 @@ object TelaPrincipal: TTelaPrincipal
     Visible = False
     ExplicitHeight = 972
     object pnpConProd: TPanel
-      Left = 0
+      Left = -6
       Top = 114
-      Width = 241
-      Height = 65
+      Width = 247
+      Height = 64
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone
@@ -716,7 +716,7 @@ object TelaPrincipal: TTelaPrincipal
       OnMouseEnter = pnpConSedeMouseEnter
       OnMouseLeave = pnpConSedeMouseLeave
       object Image22: TImage
-        Left = 6
+        Left = 12
         Top = 8
         Width = 50
         Height = 50
@@ -759,9 +759,9 @@ object TelaPrincipal: TTelaPrincipal
     end
     object pnpConColab: TPanel
       Left = -6
-      Top = 179
+      Top = 178
       Width = 247
-      Height = 62
+      Height = 64
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone
@@ -803,9 +803,9 @@ object TelaPrincipal: TTelaPrincipal
     end
     object pnpConSet: TPanel
       Left = 0
-      Top = 241
+      Top = 242
       Width = 241
-      Height = 65
+      Height = 64
       BevelEdges = [beRight]
       BevelKind = bkFlat
       BevelOuter = bvNone
@@ -900,7 +900,7 @@ object TelaPrincipal: TTelaPrincipal
     end
     object pnpConVoltar: TPanel
       Left = 0
-      Top = 690
+      Top = 688
       Width = 241
       Height = 64
       BevelEdges = [beRight]
@@ -1020,9 +1020,9 @@ object TelaPrincipal: TTelaPrincipal
       end
     end
     object pnpConEnt: TPanel
-      Left = 0
+      Left = -6
       Top = 498
-      Width = 241
+      Width = 247
       Height = 64
       BevelEdges = [beRight]
       BevelKind = bkFlat
@@ -1035,7 +1035,7 @@ object TelaPrincipal: TTelaPrincipal
       OnMouseEnter = pnpConSedeMouseEnter
       OnMouseLeave = pnpConSedeMouseLeave
       object Image28: TImage
-        Left = 6
+        Left = 12
         Top = 8
         Width = 50
         Height = 50
@@ -1107,7 +1107,7 @@ object TelaPrincipal: TTelaPrincipal
     end
     object pnpConEmp: TPanel
       Left = 0
-      Top = 626
+      Top = 625
       Width = 241
       Height = 64
       BevelEdges = [beRight]

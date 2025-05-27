@@ -18,24 +18,23 @@ object ListaUsuario: TListaUsuario
     Left = 0
     Top = 114
     Width = 1048
-    Height = 156
+    Height = 143
     Align = alTop
     BevelEdges = [beBottom]
-    BevelKind = bkFlat
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
     object Panel11: TPanel
       Left = 16
       Top = 6
-      Width = 249
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label8: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Nome'
@@ -50,25 +49,26 @@ object ListaUsuario: TListaUsuario
       object Edit1: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit1Change
+        ExplicitWidth = 249
       end
     end
     object Panel18: TPanel
       Left = 16
-      Top = 91
-      Width = 249
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label6: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Login'
@@ -83,32 +83,34 @@ object ListaUsuario: TListaUsuario
       object Edit2: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit2Change
+        ExplicitWidth = 249
       end
     end
     object Panel19: TPanel
-      Left = 373
-      Top = 26
-      Width = 249
-      Height = 75
+      Left = 517
+      Top = 6
+      Width = 131
+      Height = 59
       BevelKind = bkFlat
       BevelOuter = bvNone
       TabOrder = 2
       object CheckBox2: TCheckBox
-        Left = 0
-        Top = 0
-        Width = 245
-        Height = 71
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 121
+        Height = 49
         Align = alClient
         Caption = 'Administrador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -12
+        Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
@@ -127,17 +129,18 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitTop = 538
     object Panel13: TPanel
       Left = 16
-      Top = 17
-      Width = 249
+      Top = 6
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -152,26 +155,27 @@ object ListaUsuario: TListaUsuario
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 50
         Height = 23
         Align = alTop
         DataField = 'id'
         DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel14: TPanel
       Left = 16
-      Top = 82
-      Width = 249
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Nome'
@@ -186,26 +190,27 @@ object ListaUsuario: TListaUsuario
       object DBEdit2: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         DataField = 'nome'
         DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel15: TPanel
       Left = 16
-      Top = 147
-      Width = 249
+      Top = 136
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Login'
@@ -220,26 +225,27 @@ object ListaUsuario: TListaUsuario
       object DBEdit3: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         DataField = 'login'
         DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel16: TPanel
-      Left = 411
-      Top = 17
-      Width = 249
+      Left = 517
+      Top = 6
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label4: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Senha'
@@ -254,38 +260,40 @@ object ListaUsuario: TListaUsuario
       object DBEdit4: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         DataField = 'senha'
         DataSource = DM.dsFDTabUsuario
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel17: TPanel
-      Left = 411
-      Top = 82
-      Width = 249
-      Height = 95
+      Left = 517
+      Top = 71
+      Width = 131
+      Height = 59
       BevelOuter = bvNone
       TabOrder = 4
       object CheckBox1: TCheckBox
         AlignWithMargins = True
         Left = 3
         Top = 3
-        Width = 243
-        Height = 89
+        Width = 125
+        Height = 53
         Align = alClient
         Caption = 'Administrador'
         Enabled = False
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -12
+        Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
         TabOrder = 0
+        ExplicitTop = 0
       end
     end
   end
@@ -301,6 +309,7 @@ object ListaUsuario: TListaUsuario
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 640
       Top = 7
@@ -2311,7 +2320,7 @@ object ListaUsuario: TListaUsuario
   end
   object Panel4: TPanel
     Left = 0
-    Top = 270
+    Top = 257
     Width = 1048
     Height = 37
     Align = alTop
@@ -2319,6 +2328,8 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitTop = 270
+    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2332,17 +2343,20 @@ object ListaUsuario: TListaUsuario
   end
   object Panel3: TPanel
     Left = 0
-    Top = 307
+    Top = 294
     Width = 1048
-    Height = 225
+    Height = 238
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitTop = 307
+    ExplicitWidth = 1046
+    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1048
-      Height = 225
+      Height = 238
       Hint = 'Pesquisar Usuario'
       Align = alClient
       DataSource = DataSource1
@@ -2395,8 +2409,8 @@ object ListaUsuario: TListaUsuario
       '    (UPPER(login) LIKE UPPER(:login)) AND'
       '    (admin = :admin);'
       '')
-    Left = 424
-    Top = 258
+    Left = 912
+    Top = 178
     ParamData = <
       item
         Name = 'NOME'
@@ -2413,7 +2427,7 @@ object ListaUsuario: TListaUsuario
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
-    Left = 504
-    Top = 258
+    Left = 832
+    Top = 210
   end
 end

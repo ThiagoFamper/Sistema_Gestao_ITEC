@@ -28,15 +28,15 @@ object ListaEmprestimo: TListaEmprestimo
     ExplicitWidth = 1152
     object Panel13: TPanel
       Left = 16
-      Top = 17
-      Width = 221
+      Top = 6
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label10: TLabel
         Left = 0
         Top = 0
-        Width = 221
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -51,24 +51,25 @@ object ListaEmprestimo: TListaEmprestimo
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 221
+        Width = 50
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 221
       end
     end
     object Panel14: TPanel
       Left = 16
-      Top = 82
-      Width = 221
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label11: TLabel
         Left = 0
         Top = 0
-        Width = 221
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -83,24 +84,25 @@ object ListaEmprestimo: TListaEmprestimo
       object DBEdit2: TDBEdit
         Left = 0
         Top = 20
-        Width = 221
+        Width = 400
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 221
       end
     end
     object Panel18: TPanel
-      Left = 16
-      Top = 154
-      Width = 221
+      Left = 520
+      Top = 6
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 221
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Quantidade'
@@ -115,25 +117,25 @@ object ListaEmprestimo: TListaEmprestimo
       object DBEdit5: TDBEdit
         Left = 0
         Top = 20
-        Width = 221
+        Width = 400
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
-        ExplicitTop = 26
+        ExplicitWidth = 221
       end
     end
     object Panel19: TPanel
-      Left = 280
-      Top = 19
-      Width = 221
+      Left = 16
+      Top = 136
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 221
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Operador'
@@ -148,11 +150,12 @@ object ListaEmprestimo: TListaEmprestimo
       object DBEdit6: TDBEdit
         Left = 0
         Top = 20
-        Width = 221
+        Width = 400
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 221
       end
     end
   end
@@ -160,24 +163,23 @@ object ListaEmprestimo: TListaEmprestimo
     Left = 0
     Top = 114
     Width = 1154
-    Height = 159
+    Height = 153
     Align = alTop
     BevelEdges = [beBottom]
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1152
     object Panel22: TPanel
       Left = 16
       Top = 6
-      Width = 221
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label9: TLabel
         Left = 0
         Top = 0
-        Width = 221
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -192,24 +194,25 @@ object ListaEmprestimo: TListaEmprestimo
       object Edit1: TEdit
         Left = 0
         Top = 20
-        Width = 221
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
+        ExplicitWidth = 221
       end
     end
     object Panel23: TPanel
       Left = 16
-      Top = 88
-      Width = 221
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 221
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -224,24 +227,25 @@ object ListaEmprestimo: TListaEmprestimo
       object Edit2: TEdit
         Left = 0
         Top = 20
-        Width = 221
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
+        ExplicitTop = 12
       end
     end
     object Panel26: TPanel
-      Left = 280
+      Left = 520
       Top = 6
-      Width = 221
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label7: TLabel
         Left = 0
         Top = 0
-        Width = 221
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Operador'
@@ -256,11 +260,12 @@ object ListaEmprestimo: TListaEmprestimo
       object Edit5: TEdit
         Left = 0
         Top = 20
-        Width = 221
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
+        ExplicitWidth = 221
       end
     end
   end
@@ -2624,7 +2629,7 @@ object ListaEmprestimo: TListaEmprestimo
   end
   object Panel4: TPanel
     Left = 0
-    Top = 273
+    Top = 267
     Width = 1154
     Height = 37
     Align = alTop
@@ -2632,6 +2637,7 @@ object ListaEmprestimo: TListaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitTop = 273
     ExplicitWidth = 1152
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
@@ -2646,19 +2652,20 @@ object ListaEmprestimo: TListaEmprestimo
   end
   object Panel3: TPanel
     Left = 0
-    Top = 310
+    Top = 304
     Width = 1154
-    Height = 219
+    Height = 225
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitTop = 310
     ExplicitWidth = 1152
     ExplicitHeight = 211
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1154
-      Height = 219
+      Height = 225
       Hint = 'Pesquisar Emprestimo'
       Align = alClient
       DataSource = DM.dsFDTabEmprestimoProd

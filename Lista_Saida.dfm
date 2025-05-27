@@ -27,15 +27,15 @@ object ListaSaida: TListaSaida
     ExplicitWidth = 1046
     object Panel13: TPanel
       Left = 16
-      Top = 17
-      Width = 249
+      Top = 6
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label9: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -50,24 +50,25 @@ object ListaSaida: TListaSaida
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 50
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel14: TPanel
       Left = 16
-      Top = 82
-      Width = 249
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label12: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -82,24 +83,25 @@ object ListaSaida: TListaSaida
       object DBEdit2: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel17: TPanel
-      Left = 16
-      Top = 147
-      Width = 249
+      Left = 520
+      Top = 6
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label16: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Quantidade'
@@ -114,24 +116,25 @@ object ListaSaida: TListaSaida
       object DBEdit5: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel18: TPanel
-      Left = 288
-      Top = 19
-      Width = 249
+      Left = 16
+      Top = 136
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label17: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Operador'
@@ -146,11 +149,12 @@ object ListaSaida: TListaSaida
       object DBEdit6: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
   end
@@ -158,24 +162,23 @@ object ListaSaida: TListaSaida
     Left = 0
     Top = 114
     Width = 1048
-    Height = 153
+    Height = 147
     Align = alTop
     BevelEdges = [beBottom]
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1046
     object Panel22: TPanel
       Left = 16
-      Top = 4
-      Width = 249
+      Top = 6
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -190,56 +193,25 @@ object ListaSaida: TListaSaida
       object Edit1: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
-      end
-    end
-    object Panel23: TPanel
-      Left = 16
-      Top = 88
-      Width = 249
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 1
-      object Label7: TLabel
-        Left = 0
-        Top = 0
-        Width = 249
-        Height = 20
-        Align = alTop
-        Caption = 'Descri'#231#227'o'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 65
-      end
-      object Edit2: TEdit
-        Left = 0
-        Top = 20
-        Width = 249
-        Height = 23
-        Align = alTop
-        CharCase = ecUpperCase
-        TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel26: TPanel
-      Left = 288
-      Top = 6
-      Width = 249
+      Left = 16
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 2
+      TabOrder = 1
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Operador'
@@ -254,11 +226,12 @@ object ListaSaida: TListaSaida
       object Edit5: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
   end
@@ -2622,7 +2595,7 @@ object ListaSaida: TListaSaida
   end
   object Panel4: TPanel
     Left = 0
-    Top = 267
+    Top = 261
     Width = 1048
     Height = 37
     Align = alTop
@@ -2630,6 +2603,7 @@ object ListaSaida: TListaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitTop = 267
     ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
@@ -2644,19 +2618,20 @@ object ListaSaida: TListaSaida
   end
   object Panel3: TPanel
     Left = 0
-    Top = 304
+    Top = 298
     Width = 1048
-    Height = 225
+    Height = 231
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitTop = 304
     ExplicitWidth = 1046
     ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1048
-      Height = 225
+      Height = 231
       Hint = 'Pesquisar Saida'
       Align = alClient
       DataSource = DM.dsFDTabSaida

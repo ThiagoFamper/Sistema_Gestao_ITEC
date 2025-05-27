@@ -45,10 +45,7 @@ type
     DBEdit6: TDBEdit;
     Panel22: TPanel;
     Label5: TLabel;
-    Panel23: TPanel;
-    Label7: TLabel;
     Edit1: TEdit;
-    Edit2: TEdit;
     Panel26: TPanel;
     Label2: TLabel;
     Edit5: TEdit;
@@ -178,14 +175,12 @@ end;
 procedure TListaSaida.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
     Edit1.Enabled            := False;
-    Edit2.Enabled            := False;
     Edit5.Enabled            := False;
 end;
 
 procedure TListaSaida.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
     Edit1.Enabled            := True;
-    Edit2.Enabled            := True;
     Edit5.Enabled            := True;
 end;
 

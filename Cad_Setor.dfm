@@ -17,23 +17,24 @@ object CadSetor: TCadSetor
     Left = 0
     Top = 114
     Width = 1118
-    Height = 203
+    Height = 151
     Align = alTop
     BevelEdges = [beBottom]
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1116
     object Panel10: TPanel
       Left = 16
-      Top = 4
-      Width = 105
+      Top = 6
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 105
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -48,7 +49,7 @@ object CadSetor: TCadSetor
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 105
+        Width = 50
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -56,19 +57,20 @@ object CadSetor: TCadSetor
         DataSource = DM.dsFDTabSetor
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 105
       end
     end
     object Panel12: TPanel
       Left = 16
-      Top = 134
-      Width = 681
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label3: TLabel
         Left = 0
         Top = 0
-        Width = 681
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -83,7 +85,7 @@ object CadSetor: TCadSetor
       object DBEdit3: TDBEdit
         Left = 0
         Top = 20
-        Width = 681
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -91,6 +93,7 @@ object CadSetor: TCadSetor
         DataSource = DM.dsFDTabSetor
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 681
       end
     end
   end
@@ -106,6 +109,7 @@ object CadSetor: TCadSetor
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1116
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1842,22 +1846,11 @@ object CadSetor: TCadSetor
       TabOrder = 5
     end
   end
-  object Panel9: TPanel
-    Left = 0
-    Top = 317
-    Width = 1118
-    Height = 37
-    Align = alTop
-    BevelEdges = [beBottom]
-    Color = clWhitesmoke
-    ParentBackground = False
-    TabOrder = 2
-  end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 354
+    Top = 265
     Width = 1118
-    Height = 417
+    Height = 506
     Align = alClient
     DataSource = DM.dsFDTabSetor
     Enabled = False
@@ -1868,7 +1861,7 @@ object CadSetor: TCadSetor
     Font.Style = []
     ParentFont = False
     ReadOnly = True
-    TabOrder = 3
+    TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12

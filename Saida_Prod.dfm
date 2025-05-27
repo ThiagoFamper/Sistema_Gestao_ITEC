@@ -17,7 +17,7 @@ object SaidaProd: TSaidaProd
     Left = 0
     Top = 114
     Width = 1123
-    Height = 329
+    Height = 279
     Align = alTop
     BevelEdges = [beBottom]
     BiDiMode = bdLeftToRight
@@ -25,18 +25,17 @@ object SaidaProd: TSaidaProd
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1121
     object Panel13: TPanel
       Left = 13
       Top = 6
-      Width = 105
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label9: TLabel
         Left = 0
         Top = 0
-        Width = 105
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -51,7 +50,7 @@ object SaidaProd: TSaidaProd
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 105
+        Width = 50
         Height = 23
         Align = alTop
         Color = clBtnHighlight
@@ -59,19 +58,20 @@ object SaidaProd: TSaidaProd
         DataSource = DM.dsFDTabSaida
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 105
       end
     end
     object Panel14: TPanel
       Left = 13
       Top = 136
-      Width = 508
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label7: TLabel
         Left = 0
         Top = 0
-        Width = 508
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -85,25 +85,28 @@ object SaidaProd: TSaidaProd
       end
       object Edit1: TEdit
         Left = 0
-        Top = 26
-        Width = 505
+        Top = 20
+        Width = 400
         Height = 23
+        Align = alTop
         Enabled = False
         TabOrder = 0
         Text = 'Edit1'
+        ExplicitTop = 26
+        ExplicitWidth = 505
       end
     end
     object Panel15: TPanel
       Left = 13
       Top = 201
-      Width = 506
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label12: TLabel
         Left = 0
         Top = 0
-        Width = 506
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Operador'
@@ -117,28 +120,31 @@ object SaidaProd: TSaidaProd
       end
       object DBLookupComboBox1: TDBLookupComboBox
         Left = 0
-        Top = 26
-        Width = 505
+        Top = 20
+        Width = 400
         Height = 23
+        Align = alTop
         DataField = 'operador'
         DataSource = DM.dsFDTabSaida
         KeyField = 'id'
         ListField = 'descricao'
         ListSource = DM.dsFDTabColaborador
         TabOrder = 0
+        ExplicitTop = 26
+        ExplicitWidth = 505
       end
     end
     object Panel18: TPanel
-      Left = 13
-      Top = 266
-      Width = 84
+      Left = 517
+      Top = 6
+      Width = 81
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label13: TLabel
         Left = 0
         Top = 0
-        Width = 84
+        Width = 81
         Height = 20
         Align = alTop
         Caption = 'Quantidade'
@@ -153,26 +159,27 @@ object SaidaProd: TSaidaProd
       object DBedit4: TDBEdit
         Left = 0
         Top = 20
-        Width = 84
+        Width = 81
         Height = 23
         Align = alTop
         DataField = 'quantidade'
         DataSource = DM.dsFDTabSaida
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 84
       end
     end
     object Panel20: TPanel
       Left = 13
       Top = 71
-      Width = 228
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 4
       object Label10: TLabel
         Left = 0
         Top = 0
-        Width = 228
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -187,7 +194,7 @@ object SaidaProd: TSaidaProd
       object DBEdit2: TDBEdit
         Left = 0
         Top = 20
-        Width = 228
+        Width = 400
         Height = 23
         Align = alTop
         Color = clBtnHighlight
@@ -195,38 +202,42 @@ object SaidaProd: TSaidaProd
         DataSource = DM.dsFDTabSaida
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 228
       end
     end
     object Panel21: TPanel
-      Left = 573
-      Top = 26
-      Width = 172
+      Left = 517
+      Top = 71
+      Width = 81
       Height = 59
       BevelOuter = bvNone
       TabOrder = 5
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 172
+        Width = 81
         Height = 20
         Align = alTop
-        Caption = 'Quantidade em Estoque'
+        Caption = 'Estoque'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 160
+        ExplicitWidth = 53
       end
       object Edit2: TEdit
         Left = 0
-        Top = 26
-        Width = 169
+        Top = 20
+        Width = 81
         Height = 23
+        Align = alTop
         Enabled = False
         TabOrder = 0
         Text = 'Edit2'
+        ExplicitTop = 26
+        ExplicitWidth = 169
       end
     end
   end
@@ -1979,43 +1990,22 @@ object SaidaProd: TSaidaProd
       TabOrder = 5
     end
   end
-  object Panel11: TPanel
-    Left = 0
-    Top = 443
-    Width = 1123
-    Height = 37
-    Align = alTop
-    BevelEdges = [beBottom]
-    Color = clWhitesmoke
-    ParentBackground = False
-    TabOrder = 2
-    ExplicitWidth = 1121
-    object DBNavigator1: TDBNavigator
-      AlignWithMargins = True
-      Left = 0
-      Top = 6
-      Width = 224
-      Height = 25
-      DataSource = DM.dsFDTabSaida
-      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
-      TabOrder = 0
-    end
-  end
   object Panel12: TPanel
     Left = 0
-    Top = 480
+    Top = 393
     Width = 1123
-    Height = 335
+    Height = 422
     Align = alClient
     BevelOuter = bvNone
-    TabOrder = 3
+    TabOrder = 2
+    ExplicitTop = 480
     ExplicitWidth = 1121
     ExplicitHeight = 327
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1123
-      Height = 335
+      Height = 422
       Align = alClient
       DataSource = DM.dsFDTabSaida
       TabOrder = 0
@@ -2066,8 +2056,8 @@ object SaidaProd: TSaidaProd
       'FROM estoqueitec.estoque'
       'WHERE produto_id = :produto_id;'
       '')
-    Left = 432
-    Top = 418
+    Left = 824
+    Top = 330
     ParamData = <
       item
         Name = 'PRODUTO_ID'
@@ -2081,8 +2071,8 @@ object SaidaProd: TSaidaProd
       'SET saldo = saldo - :quantidade'
       'WHERE produto_id = :produto_id;'
       '')
-    Left = 520
-    Top = 416
+    Left = 928
+    Top = 328
     ParamData = <
       item
         Name = 'QUANTIDADE'

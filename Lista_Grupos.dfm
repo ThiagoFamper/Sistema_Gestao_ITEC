@@ -24,17 +24,19 @@ object ListaGrupos: TListaGrupos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 508
+    ExplicitWidth = 1045
     object Panel13: TPanel
       Left = 16
-      Top = 17
-      Width = 249
+      Top = 6
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -49,26 +51,27 @@ object ListaGrupos: TListaGrupos
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 50
         Height = 23
         Align = alTop
         DataField = 'id'
         DataSource = DM.dsFDTabGrupo
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel14: TPanel
       Left = 16
-      Top = 82
-      Width = 249
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -83,13 +86,14 @@ object ListaGrupos: TListaGrupos
       object DBEdit2: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         DataField = 'descricao'
         DataSource = DM.dsFDTabGrupo
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
   end
@@ -97,7 +101,7 @@ object ListaGrupos: TListaGrupos
     Left = 0
     Top = 114
     Width = 1047
-    Height = 140
+    Height = 87
     Align = alTop
     BevelEdges = [beBottom]
     Color = clWhitesmoke
@@ -106,14 +110,14 @@ object ListaGrupos: TListaGrupos
     object Panel11: TPanel
       Left = 16
       Top = 6
-      Width = 249
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label3: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -128,12 +132,14 @@ object ListaGrupos: TListaGrupos
       object Edit1: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit1Change
+        ExplicitTop = 26
+        ExplicitWidth = 249
       end
     end
   end
@@ -149,6 +155,7 @@ object ListaGrupos: TListaGrupos
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1045
     object SBsair: TSpeedButton
       Left = 640
       Top = 8
@@ -2159,7 +2166,7 @@ object ListaGrupos: TListaGrupos
   end
   object Panel4: TPanel
     Left = 0
-    Top = 254
+    Top = 201
     Width = 1047
     Height = 37
     Align = alTop
@@ -2167,6 +2174,7 @@ object ListaGrupos: TListaGrupos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitTop = 254
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2180,17 +2188,20 @@ object ListaGrupos: TListaGrupos
   end
   object Panel3: TPanel
     Left = 0
-    Top = 291
+    Top = 238
     Width = 1047
-    Height = 225
+    Height = 278
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitTop = 291
+    ExplicitWidth = 1045
+    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1047
-      Height = 225
+      Height = 278
       Hint = 'Pesquisar Grupos'
       Align = alClient
       DataSource = DataSource1
@@ -2214,8 +2225,8 @@ object ListaGrupos: TListaGrupos
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
-    Left = 504
-    Top = 242
+    Left = 976
+    Top = 138
   end
   object FDQuery1: TFDQuery
     Connection = DM.FDEstoqueItec
@@ -2225,8 +2236,8 @@ object ListaGrupos: TListaGrupos
       'WHERE'
       '    (UPPER(descricao) LIKE UPPER(:descricao));'
       '')
-    Left = 424
-    Top = 242
+    Left = 896
+    Top = 138
     ParamData = <
       item
         Name = 'DESCRICAO'

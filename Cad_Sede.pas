@@ -28,7 +28,6 @@ type
     Panel10: TPanel;
     Label1: TLabel;
     DBEdit1: TDBEdit;
-    Panel1: TPanel;
     DBGrid1: TDBGrid;
     procedure HabilitaCampos;
     procedure DesabilitaCampos;

@@ -18,7 +18,7 @@ object ListaColaborador: TListaColaborador
     Left = 0
     Top = 114
     Width = 1457
-    Height = 154
+    Height = 148
     Align = alTop
     BevelEdges = [beBottom]
     Color = clWhitesmoke
@@ -27,14 +27,14 @@ object ListaColaborador: TListaColaborador
     object Panel19: TPanel
       Left = 16
       Top = 6
-      Width = 347
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label11: TLabel
         Left = 0
         Top = 0
-        Width = 347
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -49,25 +49,26 @@ object ListaColaborador: TListaColaborador
       object Edit1: TEdit
         Left = 0
         Top = 20
-        Width = 347
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit1Change
+        ExplicitWidth = 347
       end
     end
     object Panel20: TPanel
-      Left = 400
+      Left = 520
       Top = 6
-      Width = 347
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label8: TLabel
         Left = 0
         Top = 0
-        Width = 347
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Setor'
@@ -82,25 +83,26 @@ object ListaColaborador: TListaColaborador
       object Edit3: TEdit
         Left = 0
         Top = 20
-        Width = 347
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit3Change
+        ExplicitWidth = 347
       end
     end
     object Panel21: TPanel
       Left = 16
       Top = 71
-      Width = 347
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label9: TLabel
         Left = 0
         Top = 0
-        Width = 347
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Cargo'
@@ -115,25 +117,26 @@ object ListaColaborador: TListaColaborador
       object Edit2: TEdit
         Left = 0
         Top = 20
-        Width = 347
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit2Change
+        ExplicitWidth = 347
       end
     end
     object Panel22: TPanel
-      Left = 400
+      Left = 520
       Top = 71
-      Width = 347
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label7: TLabel
         Left = 0
         Top = 0
-        Width = 347
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Sede'
@@ -148,12 +151,13 @@ object ListaColaborador: TListaColaborador
       object Edit4: TEdit
         Left = 0
         Top = 20
-        Width = 347
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit4Change
+        ExplicitWidth = 347
       end
     end
   end
@@ -169,6 +173,7 @@ object ListaColaborador: TListaColaborador
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1455
     object SBsair: TSpeedButton
       Left = 640
       Top = 7
@@ -2179,7 +2184,7 @@ object ListaColaborador: TListaColaborador
   end
   object Panel4: TPanel
     Left = 0
-    Top = 268
+    Top = 262
     Width = 1457
     Height = 37
     Align = alTop
@@ -2187,6 +2192,7 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitTop = 268
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2208,17 +2214,18 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 536
     object Panel13: TPanel
       Left = 16
-      Top = 17
-      Width = 347
+      Top = 6
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 347
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -2233,26 +2240,27 @@ object ListaColaborador: TListaColaborador
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 347
+        Width = 50
         Height = 23
         Align = alTop
         DataField = 'id'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 347
       end
     end
     object Panel15: TPanel
       Left = 16
-      Top = 82
-      Width = 347
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 347
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -2267,26 +2275,27 @@ object ListaColaborador: TListaColaborador
       object DBEdit3: TDBEdit
         Left = 0
         Top = 20
-        Width = 347
+        Width = 400
         Height = 23
         Align = alTop
         DataField = 'descricao'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 347
       end
     end
     object Panel16: TPanel
       Left = 16
-      Top = 147
-      Width = 347
+      Top = 136
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label4: TLabel
         Left = 0
         Top = 0
-        Width = 347
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Cargo'
@@ -2301,26 +2310,27 @@ object ListaColaborador: TListaColaborador
       object DBEdit4: TDBEdit
         Left = 0
         Top = 20
-        Width = 347
+        Width = 400
         Height = 23
         Align = alTop
         DataField = 'cargo'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 347
       end
     end
     object Panel17: TPanel
-      Left = 416
-      Top = 18
-      Width = 347
+      Left = 520
+      Top = 6
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label3: TLabel
         Left = 0
         Top = 0
-        Width = 347
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Setor'
@@ -2330,32 +2340,35 @@ object ListaColaborador: TListaColaborador
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 35
+        ExplicitTop = -6
       end
       object DBLookupComboBox1: TDBLookupComboBox
         Left = 0
-        Top = 18
-        Width = 345
+        Top = 20
+        Width = 400
         Height = 23
+        Align = alTop
         DataField = 'setor_id'
         DataSource = DM.dsFDTabColaborador
         KeyField = 'id'
         ListField = 'descricao'
         ListSource = DM.dsFDTabSetor
         TabOrder = 0
+        ExplicitTop = 18
+        ExplicitWidth = 345
       end
     end
     object Panel18: TPanel
-      Left = 416
-      Top = 83
-      Width = 347
+      Left = 520
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 4
       object Label6: TLabel
         Left = 0
         Top = 0
-        Width = 347
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Sede'
@@ -2369,32 +2382,38 @@ object ListaColaborador: TListaColaborador
       end
       object DBLookupComboBox2: TDBLookupComboBox
         Left = 0
-        Top = 18
-        Width = 345
+        Top = 20
+        Width = 400
         Height = 23
+        Align = alTop
         DataField = 'sede_id'
         DataSource = DM.dsFDTabColaborador
         KeyField = 'id'
         ListField = 'descricao'
         ListSource = DM.dsFDTabSede
         TabOrder = 0
+        ExplicitTop = 18
+        ExplicitWidth = 345
       end
     end
   end
   object Panel3: TPanel
     Left = 0
-    Top = 305
+    Top = 299
     Width = 1457
-    Height = 225
+    Height = 231
     Align = alClient
     BevelEdges = []
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitTop = 305
+    ExplicitWidth = 1455
+    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1457
-      Height = 225
+      Height = 231
       Hint = 'Pesquisar Colaborador'
       Align = alClient
       DataSource = DataSource1
@@ -2439,8 +2458,8 @@ object ListaColaborador: TListaColaborador
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
-    Left = 504
-    Top = 258
+    Left = 1056
+    Top = 218
   end
   object FDQuery1: TFDQuery
     Connection = DM.FDEstoqueItec
@@ -2455,8 +2474,8 @@ object ListaColaborador: TListaColaborador
       '    (UPPER(sd.descricao) LIKE UPPER(:sede)) AND'
       '    (UPPER(cargo) LIKE UPPER(:cargo));'
       '')
-    Left = 424
-    Top = 258
+    Left = 992
+    Top = 218
     ParamData = <
       item
         Name = 'DESCRICAO'

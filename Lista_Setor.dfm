@@ -24,17 +24,19 @@ object ListaSetor: TListaSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitTop = 517
+    ExplicitWidth = 1046
     object Panel13: TPanel
       Left = 16
-      Top = 17
-      Width = 249
+      Top = 6
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -49,26 +51,27 @@ object ListaSetor: TListaSetor
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 50
         Height = 23
         Align = alTop
         DataField = 'id'
         DataSource = DM.dsFDTabSetor
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
     object Panel15: TPanel
       Left = 16
-      Top = 91
-      Width = 249
+      Top = 71
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -83,13 +86,14 @@ object ListaSetor: TListaSetor
       object DBEdit2: TDBEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         DataField = 'descricao'
         DataSource = DM.dsFDTabSetor
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 249
       end
     end
   end
@@ -97,7 +101,7 @@ object ListaSetor: TListaSetor
     Left = 0
     Top = 114
     Width = 1048
-    Height = 149
+    Height = 81
     Align = alTop
     BevelEdges = [beBottom]
     Color = clWhitesmoke
@@ -105,15 +109,15 @@ object ListaSetor: TListaSetor
     TabOrder = 1
     object Panel16: TPanel
       Left = 16
-      Top = 20
-      Width = 249
+      Top = 6
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label7: TLabel
         Left = 0
         Top = 0
-        Width = 249
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -128,12 +132,13 @@ object ListaSetor: TListaSetor
       object Edit1: TEdit
         Left = 0
         Top = 20
-        Width = 249
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
         TabOrder = 0
         OnChange = Edit1Change
+        ExplicitWidth = 249
       end
     end
   end
@@ -149,6 +154,7 @@ object ListaSetor: TListaSetor
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1046
     object SBsair: TSpeedButton
       Left = 640
       Top = 7
@@ -2159,7 +2165,7 @@ object ListaSetor: TListaSetor
   end
   object Panel4: TPanel
     Left = 0
-    Top = 263
+    Top = 195
     Width = 1048
     Height = 37
     Align = alTop
@@ -2167,6 +2173,8 @@ object ListaSetor: TListaSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitTop = 263
+    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2180,17 +2188,20 @@ object ListaSetor: TListaSetor
   end
   object Panel3: TPanel
     Left = 0
-    Top = 300
+    Top = 232
     Width = 1048
-    Height = 225
+    Height = 293
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
+    ExplicitTop = 300
+    ExplicitWidth = 1046
+    ExplicitHeight = 217
     object DBGrid1: TDBGrid
       Left = 0
       Top = 0
       Width = 1048
-      Height = 225
+      Height = 293
       Hint = 'Pesquisar Setor'
       Align = alClient
       DataSource = DataSource1
@@ -2220,8 +2231,8 @@ object ListaSetor: TListaSetor
       'WHERE'
       '    (UPPER(descricao) LIKE UPPER(:descricao));'
       '')
-    Left = 424
-    Top = 250
+    Left = 888
+    Top = 122
     ParamData = <
       item
         Name = 'DESCRICAO'
@@ -2230,7 +2241,7 @@ object ListaSetor: TListaSetor
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
-    Left = 504
-    Top = 250
+    Left = 976
+    Top = 122
   end
 end

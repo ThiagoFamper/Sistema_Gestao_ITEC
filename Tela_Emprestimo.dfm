@@ -17,7 +17,7 @@ object TelaEmprestimo: TTelaEmprestimo
     Left = 0
     Top = 114
     Width = 1124
-    Height = 329
+    Height = 279
     Align = alTop
     BevelEdges = [beBottom]
     BiDiMode = bdLeftToRight
@@ -25,18 +25,17 @@ object TelaEmprestimo: TTelaEmprestimo
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1122
     object Panel13: TPanel
       Left = 17
       Top = 6
-      Width = 105
+      Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label9: TLabel
         Left = 0
         Top = 0
-        Width = 105
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -51,7 +50,7 @@ object TelaEmprestimo: TTelaEmprestimo
       object DBEdit1: TDBEdit
         Left = 0
         Top = 20
-        Width = 105
+        Width = 50
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -60,19 +59,20 @@ object TelaEmprestimo: TTelaEmprestimo
         DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 105
       end
     end
     object Panel12: TPanel
       Left = 17
       Top = 71
-      Width = 224
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label10: TLabel
         Left = 0
         Top = 0
-        Width = 224
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -87,7 +87,7 @@ object TelaEmprestimo: TTelaEmprestimo
       object DBEdit2: TDBEdit
         Left = 0
         Top = 20
-        Width = 224
+        Width = 400
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -96,19 +96,20 @@ object TelaEmprestimo: TTelaEmprestimo
         DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 224
       end
     end
     object Panel14: TPanel
       Left = 17
       Top = 136
-      Width = 512
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 512
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -122,24 +123,27 @@ object TelaEmprestimo: TTelaEmprestimo
       end
       object Edit2: TEdit
         Left = 0
-        Top = 26
-        Width = 513
+        Top = 20
+        Width = 400
         Height = 23
+        Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitTop = 26
+        ExplicitWidth = 513
       end
     end
     object Panel15: TPanel
       Left = 17
       Top = 201
-      Width = 512
+      Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 3
       object Label12: TLabel
         Left = 0
         Top = 0
-        Width = 512
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Operador'
@@ -153,28 +157,31 @@ object TelaEmprestimo: TTelaEmprestimo
       end
       object DBLookupComboBox1: TDBLookupComboBox
         Left = 0
-        Top = 26
-        Width = 513
+        Top = 20
+        Width = 400
         Height = 23
+        Align = alTop
         DataField = 'operador'
         DataSource = DM.dsFDTabEmprestimoProd
         KeyField = 'id'
         ListField = 'descricao'
         ListSource = DM.dsFDTabColaborador
         TabOrder = 0
+        ExplicitTop = 26
+        ExplicitWidth = 513
       end
     end
     object Panel16: TPanel
-      Left = 17
-      Top = 266
-      Width = 88
+      Left = 521
+      Top = 13
+      Width = 81
       Height = 59
       BevelOuter = bvNone
       TabOrder = 4
       object Label13: TLabel
         Left = 0
         Top = 0
-        Width = 88
+        Width = 81
         Height = 20
         Align = alTop
         Caption = 'Quantidade'
@@ -189,7 +196,7 @@ object TelaEmprestimo: TTelaEmprestimo
       object DBedit4: TDBEdit
         Left = 0
         Top = 20
-        Width = 88
+        Width = 81
         Height = 23
         Align = alTop
         CharCase = ecUpperCase
@@ -197,37 +204,41 @@ object TelaEmprestimo: TTelaEmprestimo
         DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
+        ExplicitWidth = 88
       end
     end
     object Panel20: TPanel
-      Left = 566
-      Top = 6
-      Width = 374
+      Left = 521
+      Top = 78
+      Width = 81
       Height = 59
       BevelOuter = bvNone
       TabOrder = 5
       object Label15: TLabel
         Left = 0
         Top = 0
-        Width = 374
+        Width = 81
         Height = 20
         Align = alTop
-        Caption = 'Quantidade em Estoque'
+        Caption = 'Estoque'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 160
+        ExplicitWidth = 53
       end
       object Edit1: TEdit
         Left = 0
-        Top = 26
-        Width = 369
+        Top = 20
+        Width = 81
         Height = 23
+        Align = alTop
         Enabled = False
         TabOrder = 0
+        ExplicitTop = 26
+        ExplicitWidth = 369
       end
     end
   end
@@ -1982,7 +1993,7 @@ object TelaEmprestimo: TTelaEmprestimo
   end
   object Panel11: TPanel
     Left = 0
-    Top = 443
+    Top = 393
     Width = 1124
     Height = 37
     Align = alTop
@@ -1990,6 +2001,7 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitTop = 443
     ExplicitWidth = 1122
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
@@ -2004,9 +2016,9 @@ object TelaEmprestimo: TTelaEmprestimo
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 480
+    Top = 430
     Width = 1124
-    Height = 401
+    Height = 451
     Align = alClient
     DataSource = DM.dsFDTabEmprestimoProd
     TabOrder = 3
@@ -2063,8 +2075,8 @@ object TelaEmprestimo: TTelaEmprestimo
       'FROM estoqueitec.estoque'
       'WHERE produto_id = :produto_id;'
       '')
-    Left = 360
-    Top = 410
+    Left = 952
+    Top = 322
     ParamData = <
       item
         Name = 'PRODUTO_ID'
@@ -2078,8 +2090,8 @@ object TelaEmprestimo: TTelaEmprestimo
       'SET saldo = saldo - :quantidade'
       'WHERE produto_id = :produto_id;'
       '')
-    Left = 448
-    Top = 410
+    Left = 1000
+    Top = 306
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2095,8 +2107,8 @@ object TelaEmprestimo: TTelaEmprestimo
     SQL.Strings = (
       'INSERT INTO estoqueitec.item_emprestimo (emprestimo_id)'
       'VALUES (:emprestimo_id);')
-    Left = 536
-    Top = 410
+    Left = 1064
+    Top = 306
     ParamData = <
       item
         Name = 'EMPRESTIMO_ID'
