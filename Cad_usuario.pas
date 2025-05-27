@@ -91,7 +91,7 @@ end;
 procedure TCadUsuario.SBpesquisarClick(Sender: TObject);
 begin
   dm.FDTabUsuario.Open;
-  TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaUsuario); // botão de pesquisar
+  TelaPrincipal.AbrirFormulario(TListaUsuario); // botão de pesquisar
 end;
 
 procedure TCadUsuario.SBsairClick(Sender: TObject);

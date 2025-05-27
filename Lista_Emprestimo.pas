@@ -53,6 +53,9 @@ type
     Panel26: TPanel;
     Label7: TLabel;
     Edit5: TEdit;
+    Panel15: TPanel;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -167,6 +170,7 @@ begin
     DBEdit2.Enabled            := True;
     DBEdit5.Enabled            := True;
     DBEdit6.Enabled            := True;
+    DBEdit3.Enabled            := True;
 end;
 
 procedure TListaEmprestimo.DesabilitaCampos; // desabilitar campos
@@ -175,6 +179,7 @@ begin
     DBEdit2.Enabled            := False;
     DBEdit5.Enabled            := False;
     DBEdit6.Enabled            := False;
+    DBEdit3.Enabled            := False;
 end;
 
 procedure TListaEmprestimo.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa

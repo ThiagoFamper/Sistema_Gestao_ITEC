@@ -102,7 +102,7 @@ end;
 
 procedure TTelaEmprestimo.SBpesquisarClick(Sender: TObject);
 begin
-  TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaEmprestimo); // botão de pesquisar
+  TelaPrincipal.AbrirFormulario(TListaEmprestimo); // botão de pesquisar
 end;
 
 procedure TTelaEmprestimo.SBsairClick(Sender: TObject);

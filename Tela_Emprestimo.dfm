@@ -166,7 +166,6 @@ object TelaEmprestimo: TTelaEmprestimo
         ListSource = DM.dsFDTabColaborador
         TabOrder = 0
         OnKeyPress = DBLookupComboBox1KeyPress
-        ExplicitTop = 26
       end
     end
     object Panel16: TPanel

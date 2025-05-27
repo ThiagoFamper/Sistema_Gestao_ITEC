@@ -2,6 +2,7 @@ program Project1;
 
 uses
   Vcl.Forms,
+  Tela_Login in 'Tela_Login.pas' {TelaLogin},
   Tela_Principal in 'Tela_Principal.pas' {TelaPrincipal},
   Cad_Produto in 'Cad_Produto.pas' {CadProduto},
   Cad_Colaborador in 'Cad_Colaborador.pas' {CadColaborador},
@@ -20,7 +21,6 @@ uses
   Lista_Emprestimo in 'Lista_Emprestimo.pas' {ListaEmprestimo},
   Cad_usuario in 'Cad_usuario.pas' {CadUsuario},
   Lista_Usuario in 'Lista_Usuario.pas' {ListaUsuario},
-  Tela_Login in 'Tela_Login.pas' {TelaLogin},
   Data_Module in 'Data_Module.pas' {DM: TDataModule},
   Cad_Sede in 'Cad_Sede.pas' {CadSede},
   Lista_Sede in 'Lista_Sede.pas' {ListaSede},
@@ -35,7 +35,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-    Application.CreateForm(TTelaLogin, TelaLogin);
+  Application.CreateForm(TTelaLogin, TelaLogin);
   Application.CreateForm(TTelaPrincipal, TelaPrincipal);
   Application.CreateForm(TCadProduto, CadProduto);
   Application.CreateForm(TCadColaborador, CadColaborador);

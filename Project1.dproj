@@ -123,6 +123,9 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="Tela_Login.pas">
+            <Form>TelaLogin</Form>
+        </DCCReference>
         <DCCReference Include="Tela_Principal.pas">
             <Form>TelaPrincipal</Form>
             <FormType>dfm</FormType>
@@ -193,10 +196,6 @@
         </DCCReference>
         <DCCReference Include="Lista_Usuario.pas">
             <Form>ListaUsuario</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="Tela_Login.pas">
-            <Form>TelaLogin</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Data_Module.pas">

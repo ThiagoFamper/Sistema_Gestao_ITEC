@@ -55,6 +55,8 @@ object ListaEmprestimo: TListaEmprestimo
         Width = 50
         Height = 23
         Align = alTop
+        DataField = 'id'
+        DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
       end
@@ -87,6 +89,8 @@ object ListaEmprestimo: TListaEmprestimo
         Width = 400
         Height = 23
         Align = alTop
+        DataField = 'produto_id'
+        DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
       end
@@ -119,6 +123,8 @@ object ListaEmprestimo: TListaEmprestimo
         Width = 400
         Height = 23
         Align = alTop
+        DataField = 'quantidade'
+        DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
       end
@@ -151,6 +157,42 @@ object ListaEmprestimo: TListaEmprestimo
         Width = 400
         Height = 23
         Align = alTop
+        DataField = 'operador'
+        DataSource = DM.dsFDTabEmprestimoProd
+        Enabled = False
+        TabOrder = 0
+      end
+    end
+    object Panel15: TPanel
+      Left = 520
+      Top = 71
+      Width = 400
+      Height = 59
+      BevelOuter = bvNone
+      TabOrder = 4
+      object Label3: TLabel
+        Left = 0
+        Top = 0
+        Width = 400
+        Height = 20
+        Align = alTop
+        Caption = 'Saldo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 38
+      end
+      object DBEdit3: TDBEdit
+        Left = 0
+        Top = 20
+        Width = 400
+        Height = 23
+        Align = alTop
+        DataField = 'saldo'
+        DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
       end

@@ -54,6 +54,8 @@ object ListaEntrada: TListaEntrada
         Width = 50
         Height = 23
         Align = alTop
+        DataField = 'id'
+        DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
       end
@@ -86,6 +88,8 @@ object ListaEntrada: TListaEntrada
         Width = 400
         Height = 23
         Align = alTop
+        DataField = 'produto_id'
+        DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
       end
@@ -118,6 +122,8 @@ object ListaEntrada: TListaEntrada
         Width = 400
         Height = 23
         Align = alTop
+        DataField = 'quantidade'
+        DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
       end
@@ -150,6 +156,8 @@ object ListaEntrada: TListaEntrada
         Width = 400
         Height = 23
         Align = alTop
+        DataField = 'operador'
+        DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
       end
@@ -182,6 +190,8 @@ object ListaEntrada: TListaEntrada
         Width = 400
         Height = 23
         Align = alTop
+        DataField = 'nota_fiscal'
+        DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
       end
@@ -214,6 +224,8 @@ object ListaEntrada: TListaEntrada
         Width = 400
         Height = 23
         Align = alTop
+        DataField = 'valor_unitario'
+        DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
       end

@@ -81,7 +81,7 @@ end;
 procedure TCadSetor.SBpesquisarClick(Sender: TObject);
 begin
   dm.FDTabSetor.Open;
-  TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaSetor); // botão de pesquisar
+  TelaPrincipal.AbrirFormulario(TListaSetor); // botão de pesquisar
 end;
 
 procedure TCadSetor.SBsairClick(Sender: TObject);

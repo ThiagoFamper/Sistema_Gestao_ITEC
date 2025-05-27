@@ -100,7 +100,7 @@ end;
 
 procedure TSaidaProd.SBpesquisarClick(Sender: TObject);
 begin
-  TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaSaida); // botão de pesquisar
+  TelaPrincipal.AbrirFormulario(TListaSaida); // botão de pesquisar
 end;
 
 procedure TSaidaProd.SBsairClick(Sender: TObject);

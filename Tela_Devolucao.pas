@@ -22,14 +22,12 @@ type
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBrelatorio: TSpeedButton;
-    SBsalvar: TSpeedButton;
     SBcancelar: TSpeedButton;
     SpeedButton1: TSpeedButton;
     SBeditar: TSpeedButton;
     Panel6: TPanel;
     Panel7: TPanel;
     Panel3: TPanel;
-    Panel9: TPanel;
     Panel11: TPanel;
     Panel12: TPanel;
     Panel13: TPanel;
@@ -109,7 +107,6 @@ begin
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
     SBcancelar.Enabled   := False;
-    SBsalvar.Enabled     := False;
 end;
 
 procedure TTelaDevolucao.SBeditarClick(Sender: TObject); // botão de editar
@@ -119,7 +116,6 @@ begin
     dm.FDTabEmprestimoProd.Edit;
     DBGrid1.Enabled      := False;
     SBcancelar.Enabled   := True;
-    SBsalvar.Enabled     := True;
     SBrelatorio.Enabled  := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
@@ -190,8 +186,7 @@ begin
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
     SBcancelar.Enabled   := False;
-    SBsalvar.Enabled     := False;
-    
+
 end;
 
 procedure TTelaDevolucao.DesabilitaCampos; // desabilitar campos

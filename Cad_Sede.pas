@@ -56,7 +56,7 @@ uses Lista_Sede, Data_Module, Tela_Principal;
 procedure TCadSede.SBpesquisarClick(Sender: TObject);
 begin
   dm.FDTabSede.Open;
-  TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaSede); // botão de pesquisar
+  TelaPrincipal.AbrirFormulario(TListaSede); // botão de pesquisar
 end;
 
 procedure TCadSede.SBcancelarClick(Sender: TObject); // botão de cancelar

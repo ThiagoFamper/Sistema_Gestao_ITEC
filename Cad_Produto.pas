@@ -102,7 +102,7 @@ end;
 procedure TCadProduto.SBpesquisarClick(Sender: TObject);
 begin
   dm.FDTabProduto.Open;
-  TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaProdutos); // botão de pesquisar
+  TelaPrincipal.AbrirFormulario(TListaProdutos); // botão de pesquisar
 end;
 
 procedure TCadProduto.SBsairClick(Sender: TObject);

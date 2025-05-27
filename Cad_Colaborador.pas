@@ -97,7 +97,7 @@ end;
 procedure TCadColaborador.SBpesquisarClick(Sender: TObject);
 begin
   dm.FDTabColaborador.Open;
-  TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaColaborador); // botão de pesquisar
+  TelaPrincipal.AbrirFormulario(TListaColaborador); // botão de pesquisar
 end;
 
 procedure TCadColaborador.SBsairClick(Sender: TObject);

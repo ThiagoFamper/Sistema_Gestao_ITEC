@@ -58,7 +58,7 @@ uses Lista_Grupos, Data_Module, Tela_Principal;
 
 procedure TCadGrupo.SBpesquisarClick(Sender: TObject);
 begin
-  TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaGrupos); // botão de pesquisar
+  TelaPrincipal.AbrirFormulario(TListaGrupos); // botão de pesquisar
 end;
 
 procedure TCadGrupo.SBcancelarClick(Sender: TObject); // botão de cancelar

@@ -110,7 +110,7 @@ end;
 
 procedure TEntradaProd.SBpesquisarClick(Sender: TObject);
 begin
-  TTelaPrincipal(Application.MainForm).AbrirFormulario(TListaEntrada); // botão de pesquisar
+  TelaPrincipal.AbrirFormulario(TListaEntrada); // botão de pesquisar
 end;
 
 procedure TEntradaProd.SBsairClick(Sender: TObject);

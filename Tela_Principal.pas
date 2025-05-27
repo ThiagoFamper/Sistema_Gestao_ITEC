@@ -129,8 +129,6 @@ type
     procedure pnpConEntClick(Sender: TObject);
     procedure pnpConSaiClick(Sender: TObject);
     procedure pnpConEmpClick(Sender: TObject);
-
-    procedure AbrirFormulario(ClasseForm: TFormClass);
     procedure pnpCadSedeClick(Sender: TObject);
     procedure pnpConSedeClick(Sender: TObject);
 
@@ -141,6 +139,7 @@ type
     { Public declarations }
     usuarioLogado: string;
     isAdmin: Boolean;
+    procedure AbrirFormulario(ClasseForm: TFormClass);
   end;
 
 var

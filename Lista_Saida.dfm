@@ -54,6 +54,8 @@ object ListaSaida: TListaSaida
         Width = 50
         Height = 23
         Align = alTop
+        DataField = 'id'
+        DataSource = DM.dsFDTabSaida
         Enabled = False
         TabOrder = 0
       end
@@ -86,6 +88,8 @@ object ListaSaida: TListaSaida
         Width = 400
         Height = 23
         Align = alTop
+        DataField = 'produto_id'
+        DataSource = DM.dsFDTabSaida
         Enabled = False
         TabOrder = 0
       end
@@ -118,6 +122,8 @@ object ListaSaida: TListaSaida
         Width = 400
         Height = 23
         Align = alTop
+        DataField = 'quantidade'
+        DataSource = DM.dsFDTabSaida
         Enabled = False
         TabOrder = 0
       end
@@ -150,6 +156,8 @@ object ListaSaida: TListaSaida
         Width = 400
         Height = 23
         Align = alTop
+        DataField = 'operador'
+        DataSource = DM.dsFDTabSaida
         Enabled = False
         TabOrder = 0
       end
