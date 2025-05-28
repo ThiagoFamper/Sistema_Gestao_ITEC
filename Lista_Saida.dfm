@@ -2529,7 +2529,7 @@ object ListaSaida: TListaSaida
       Height = 110
       Align = alLeft
       BevelOuter = bvNone
-      Caption = 'Consulta de Sa'#237'da '
+      Caption = 'Consulta de Sa'#237'da'
       Color = clCadetblue
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite

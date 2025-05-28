@@ -3,7 +3,7 @@ object ListaEntrada: TListaEntrada
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Consulta de Entrada '
+  Caption = 'Consulta de Entrada'
   ClientHeight = 797
   ClientWidth = 1048
   Color = clBtnFace
@@ -2659,7 +2659,7 @@ object ListaEntrada: TListaEntrada
       Height = 110
       Align = alLeft
       BevelOuter = bvNone
-      Caption = 'Consulta de Entrada '
+      Caption = 'Consulta de Entrada'
       Color = clCadetblue
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -2669,6 +2669,7 @@ object ListaEntrada: TListaEntrada
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
+      ExplicitTop = 2
     end
     object Panel7: TPanel
       Left = 247
