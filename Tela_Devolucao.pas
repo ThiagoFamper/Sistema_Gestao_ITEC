@@ -17,8 +17,8 @@ type
     Panel1: TPanel;
     Panel8: TPanel;
     Label2: TLabel;
-    Edit6: TEdit;
-    Button2: TButton;
+    eDevQtd: TEdit;
+    bDevolver: TButton;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBrelatorio: TSpeedButton;
@@ -32,37 +32,37 @@ type
     Panel12: TPanel;
     Panel13: TPanel;
     Label9: TLabel;
-    DBEdit1: TDBEdit;
+    dbDevID: TDBEdit;
     Panel14: TPanel;
     Label11: TLabel;
-    DBEdit2: TDBEdit;
+    dbDevCod: TDBEdit;
     Panel16: TPanel;
     Label12: TLabel;
-    DBEdit3: TDBEdit;
+    dbDevData: TDBEdit;
     Panel17: TPanel;
     Label14: TLabel;
-    DBEdit4: TDBEdit;
+    dbDevQtd: TDBEdit;
     Panel18: TPanel;
     Label16: TLabel;
-    DBEdit5: TDBEdit;
+    dbDevOperador: TDBEdit;
     Panel19: TPanel;
     Label18: TLabel;
-    DBEdit6: TDBEdit;
+    dbDevSaldo: TDBEdit;
     Panel22: TPanel;
-    DBGrid1: TDBGrid;
+    gDev: TDBGrid;
     Panel23: TPanel;
     Label19: TLabel;
-    Edit1: TEdit;
+    eDevCod: TEdit;
     Panel24: TPanel;
     Label4: TLabel;
-    Edit2: TEdit;
+    eDevDescricao: TEdit;
     Panel25: TPanel;
     Label3: TLabel;
-    Edit5: TEdit;
-    FDQuery2: TFDQuery;
-    FDQuery3: TFDQuery;
-    RadioGroup1: TRadioGroup;
-    FDQuery4: TFDQuery;
+    eDevOperador: TEdit;
+    qryUpdateEstoque: TFDQuery;
+    qryUpdateEmp: TFDQuery;
+    rgDev: TRadioGroup;
+    qryUpdateItem: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -72,8 +72,8 @@ type
     procedure SBcancelarClick(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-    procedure RadioGroup1Click(Sender: TObject);
+    procedure bDevolverClick(Sender: TObject);
+    procedure rgDevClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -102,7 +102,7 @@ begin
     DesabilitaCampos();
     HabilitaCamposPesquisa();
     dm.FDTabEmprestimoProd.Cancel;
-    DBGrid1.Enabled      := True;
+    gDev.Enabled      := True;
     SBrelatorio.Enabled  := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -114,7 +114,7 @@ begin
     HabilitaCampos();
     DesabilitaCamposPesquisa();
     dm.FDTabEmprestimoProd.Edit;
-    DBGrid1.Enabled      := False;
+    gDev.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBrelatorio.Enabled  := False;
     SBsair.Enabled       := False;
@@ -128,26 +128,26 @@ end;
 
 procedure TTelaDevolucao.HabilitaCampos; // habilitar campos
 begin
-    DBEdit2.Enabled            := True;
-    DBEdit3.Enabled            := True;
-    DBEdit4.Enabled            := True;
-    DBEdit5.Enabled            := True;
-    DBEdit6.Enabled            := True;
-    RadioGroup1.Enabled        := True;
-    Edit6.Enabled              := True;
-    Button2.Enabled            := True;
+    dbDevCod.Enabled           := True;
+    dbDevOperador.Enabled      := True;
+    dbDevData.Enabled          := True;
+    dbDevQtd.Enabled           := True;
+    dbDevSaldo.Enabled         := True;
+    rgDev.Enabled              := True;
+    eDevQtd.Enabled            := True;
+    bDevolver.Enabled          := True;
 end;
 
-procedure TTelaDevolucao.Button2Click(Sender: TObject);
+procedure TTelaDevolucao.bDevolverClick(Sender: TObject);
 var
   produtoID, emprestimoID, quantidadeSaldo, quantidadeDevolvida: Integer;
 begin
-    produtoID := StrToInt(DBEdit2.Text);
-    emprestimoID := StrToInt(DBEdit1.Text);
+    produtoID := StrToInt(dbDevCod.Text);
+    emprestimoID := StrToInt(dbDevID.Text);
 
-    if RadioGroup1.ItemIndex = 0 then
+    if rgDev.ItemIndex = 0 then
     begin
-      quantidadeSaldo := StrToInt(DBEdit6.Text);
+      quantidadeSaldo := StrToInt(dbDevSaldo.Text);
       quantidadeDevolvida := quantidadeSaldo;
       if quantidadeDevolvida = 0 then
       begin
@@ -157,8 +157,8 @@ begin
     end
     else
     begin
-      quantidadeDevolvida := StrToInt(Edit6.Text);
-      quantidadeSaldo := StrToInt(DBEdit6.Text);
+      quantidadeDevolvida := StrToInt(eDevQtd.Text);
+      quantidadeSaldo := StrToInt(dbDevSaldo.Text);
       if quantidadeDevolvida > quantidadeSaldo then
       begin
         ShowMessage('Quantidade devolvida não deve ser maior que o saldo do empréstimo!');
@@ -166,22 +166,22 @@ begin
       end;
     end;
 
-    FDQuery3.Params.ParamByName('quantidade').AsInteger := quantidadeDevolvida;
-    FDQuery3.Params.ParamByName('produtoID').AsInteger := produtoID;
-    FDQuery3.ExecSQL;
+    qryUpdateEmp.Params.ParamByName('quantidade').AsInteger := quantidadeDevolvida;
+    qryUpdateEmp.Params.ParamByName('produtoID').AsInteger := produtoID;
+    qryUpdateEmp.ExecSQL;
 
-    FDQuery2.Params.ParamByName('quantidade').AsInteger := quantidadeDevolvida;
-    FDQuery2.Params.ParamByName('emprestimoID').AsInteger := emprestimoID;
-    FDQuery2.ExecSQL;
+    qryUpdateEstoque.Params.ParamByName('quantidade').AsInteger := quantidadeDevolvida;
+    qryUpdateEstoque.Params.ParamByName('emprestimoID').AsInteger := emprestimoID;
+    qryUpdateEstoque.ExecSQL;
 
-    FDQuery4.Params.ParamByName('quantidade').AsInteger := quantidadeDevolvida;
-    FDQuery4.Params.ParamByName('emprestimoID').AsInteger := emprestimoID;
-    FDQuery4.ExecSQL;
+    qryUpdateItem.Params.ParamByName('quantidade').AsInteger := quantidadeDevolvida;
+    qryUpdateItem.Params.ParamByName('emprestimoID').AsInteger := emprestimoID;
+    qryUpdateItem.ExecSQL;
 
     showMessage('Devolução realizada com sucesso!');
     DesabilitaCampos();
     HabilitaCamposPesquisa();
-    DBGrid1.Enabled      := True;
+    gDev.Enabled      := True;
     SBrelatorio.Enabled  := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -191,21 +191,21 @@ end;
 
 procedure TTelaDevolucao.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit2.Enabled            := False;
-    DBEdit3.Enabled            := False;
-    DBEdit4.Enabled            := False;
-    DBEdit5.Enabled            := False;
-    DBEdit6.Enabled            := False;
-    RadioGroup1.Enabled        := False;
-    Edit6.Enabled              := False;
-    Button2.Enabled            := False;
+    dbDevCod.Enabled           := False;
+    dbDevOperador.Enabled      := False;
+    dbDevData.Enabled          := False;
+    dbDevQtd.Enabled           := False;
+    dbDevSaldo.Enabled         := False;
+    rgDev.Enabled              := False;
+    eDevQtd.Enabled            := False;
+    bDevolver.Enabled          := False;
 end;
 
 procedure TTelaDevolucao.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
-    Edit1.Enabled            := False;
-    Edit2.Enabled            := False;
-    Edit5.Enabled            := False;
+    eDevCod.Enabled            := False;
+    eDevDescricao.Enabled      := False;
+    eDevOperador.Enabled       := False;
 end;
 
 procedure TTelaDevolucao.FormShow(Sender: TObject);
@@ -214,22 +214,22 @@ begin
     dm.FDTabEmprestimoItem.Open;
 end;
 
-procedure TTelaDevolucao.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
+procedure TTelaDevolucao.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
-    Edit1.Enabled            := True;
-    Edit2.Enabled            := True;
-    Edit5.Enabled            := True;
+    eDevCod.Enabled            := True;
+    eDevDescricao.Enabled      := True;
+    eDevOperador.Enabled       := True;
 end;
 
-procedure TTelaDevolucao.RadioGroup1Click(Sender: TObject);
+procedure TTelaDevolucao.rgDevClick(Sender: TObject);
 begin
-    if RadioGroup1.ItemIndex = 0 then
+    if rgDev.ItemIndex = 0 then
     begin
-      Edit6.Enabled := False;
+      eDevQtd.Enabled := False;
     end
     else
     begin
-      Edit6.Enabled := True;
+      eDevQtd.Enabled := True;
     end;
 end;
 

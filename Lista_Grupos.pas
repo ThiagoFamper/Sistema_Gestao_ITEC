@@ -31,18 +31,18 @@ type
     Panel4: TPanel;
     DBNavigator1: TDBNavigator;
     Panel3: TPanel;
-    DBGrid1: TDBGrid;
+    gpGrupo: TDBGrid;
     Panel13: TPanel;
     Label1: TLabel;
-    DBEdit1: TDBEdit;
+    dbpGrupoID: TDBEdit;
     Panel14: TPanel;
     Label5: TLabel;
-    DBEdit2: TDBEdit;
+    dbpGrupoDescricao: TDBEdit;
     Panel11: TPanel;
     Label3: TLabel;
-    Edit1: TEdit;
-    DataSource1: TDataSource;
-    FDQuery1: TFDQuery;
+    epGrupoDescricao: TEdit;
+    dsGrupo: TDataSource;
+    qryGrupo: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -52,7 +52,7 @@ type
     procedure SBeditarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
-    procedure Edit1Change(Sender: TObject);
+    procedure epGrupoDescricaoChange(Sender: TObject);
     procedure Filtro;
     procedure FormShow(Sender: TObject);
 
@@ -82,7 +82,7 @@ begin
     DesabilitaCampos();
     HabilitaCamposPesquisa();
     dm.FDTabGrupo.Cancel;
-    DBGrid1.Enabled      := True;
+    gpGrupo.Enabled      := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -95,13 +95,13 @@ begin
     HabilitaCampos();
     DesabilitaCamposPesquisa();
     dm.FDTabGrupo.Edit;
-    DBGrid1.Enabled      := False;
+    gpGrupo.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBexcluir.Enabled    := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
-    DBEdit2.SetFocus;
+    dbpGrupoDescricao.SetFocus;
 end;
 
 procedure TListaGrupos.SBsairClick(Sender: TObject);
@@ -111,10 +111,10 @@ end;
 
 procedure TListaGrupos.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
+    if dbpGrupoDescricao.Text = '' then
       begin
         ShowMessage('O campo "Descrição" deve ser preenchido!');
-        DBEdit2.SetFocus;
+        dbpGrupoDescricao.SetFocus;
       end
   else
     begin
@@ -123,7 +123,7 @@ begin
       ShowMessage('Grupo editado com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
-      DBGrid1.Enabled      := True;
+      gpGrupo.Enabled      := True;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
       SBeditar.Enabled     := True;
@@ -137,30 +137,30 @@ end;
 
 procedure TListaGrupos.HabilitaCampos; // habilitar campos
 begin
-    DBEdit2.Enabled            := True;
+    dbpGrupoDescricao.Enabled            := True;
 end;
 
 procedure TListaGrupos.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit2.Enabled            := False;
+    dbpGrupoDescricao.Enabled            := False;
 end;
 
 procedure TListaGrupos.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
-    Edit1.Enabled            := False;
+    epGrupoDescricao.Enabled            := False;
 end;
 
 procedure TListaGrupos.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
-    Edit1.Enabled            := True;
+    epGrupoDescricao.Enabled            := True;
 end;
 
 procedure TListaGrupos.Filtro; // pesquisa com sql query
 begin
-  FDQuery1.ParamByName('descricao').AsString := '%' + Edit1.Text + '%';
+  qryGrupo.ParamByName('descricao').AsString := '%' + epGrupoDescricao.Text + '%';
 
-  FDQuery1.Close;
-  FDQuery1.Open;
+  qryGrupo.Close;
+  qryGrupo.Open;
 end;
 
 procedure TListaGrupos.FormShow(Sender: TObject);
@@ -176,7 +176,7 @@ begin
 
 end;
 
-procedure TListaGrupos.Edit1Change(Sender: TObject);
+procedure TListaGrupos.epGrupoDescricaoChange(Sender: TObject);
 begin
   Filtro;
 end;

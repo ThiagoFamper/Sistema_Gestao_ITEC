@@ -33,23 +33,23 @@ type
     DBNavigator1: TDBNavigator;
     Panel5: TPanel;
     Panel3: TPanel;
-    DBGrid1: TDBGrid;
+    gpProd: TDBGrid;
     Panel13: TPanel;
     Label1: TLabel;
-    DBEdit1: TDBEdit;
+    dbpProdID: TDBEdit;
     Panel14: TPanel;
     Label2: TLabel;
-    DBEdit2: TDBEdit;
+    dbpProdCod: TDBEdit;
     Panel15: TPanel;
     Label3: TLabel;
-    DBEdit3: TDBEdit;
+    dbpProdDescricao: TDBEdit;
     Panel16: TPanel;
     Panel17: TPanel;
     Panel18: TPanel;
     Label4: TLabel;
-    DBEdit4: TDBEdit;
+    dbpProdMarca: TDBEdit;
     Label5: TLabel;
-    DBEdit5: TDBEdit;
+    dbpProdModelo: TDBEdit;
     Label6: TLabel;
     Panel19: TPanel;
     Label7: TLabel;
@@ -61,14 +61,14 @@ type
     Label10: TLabel;
     Panel23: TPanel;
     Label11: TLabel;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    Edit4: TEdit;
-    Edit5: TEdit;
-    DBLookupComboBox1: TDBLookupComboBox;
-    FDQuery1: TFDQuery;
-    DataSource1: TDataSource;
+    epProdCod: TEdit;
+    epProdDescricao: TEdit;
+    epProdMarca: TEdit;
+    epProdModelo: TEdit;
+    epProdGrupo: TEdit;
+    cbpProdGrupo: TDBLookupComboBox;
+    qryProduto: TFDQuery;
+    dsProduto: TDataSource;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -80,11 +80,11 @@ type
     procedure SBsalvarClick(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
     procedure Filtro;
-    procedure Edit1Change(Sender: TObject);
-    procedure Edit2Change(Sender: TObject);
-    procedure Edit3Change(Sender: TObject);
-    procedure Edit4Change(Sender: TObject);
-    procedure Edit5Change(Sender: TObject);
+    procedure epProdCodChange(Sender: TObject);
+    procedure epProdDescricaoChange(Sender: TObject);
+    procedure epProdMarcaChange(Sender: TObject);
+    procedure epProdModeloChange(Sender: TObject);
+    procedure epProdGrupoChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
 
   private
@@ -120,7 +120,7 @@ begin
     DesabilitaCampos();
     HabilitaCamposPesquisa();
     dm.FDTabProduto.Cancel;
-    DBGrid1.Enabled      := True;
+    gpProd.Enabled      := True;
     SBrelatorio.Enabled  := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
@@ -134,7 +134,7 @@ begin
     HabilitaCampos();
     DesabilitaCamposPesquisa();
     dm.FDTabProduto.Edit;
-    DBGrid1.Enabled      := False;
+    gpProd.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBrelatorio.Enabled  := False;
@@ -150,34 +150,34 @@ end;
 
 procedure TListaProdutos.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
+    if dbpProdCod.Text = '' then
       begin
         ShowMessage('O campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
+        dbpProdCod.SetFocus;
       end
   else
-    if DBEdit3.Text = '' then
+    if dbpProdDescricao.Text = '' then
       begin
         ShowMessage('O campo "Descrição" deve ser preenchido!');
-        DBEdit3.SetFocus;
+        dbpProdDescricao.SetFocus;
       end
   else
-    if DBEdit4.Text = '' then
+    if dbpProdMarca.Text = '' then
       begin
         ShowMessage('O campo "Marca" deve ser preenchido!');
-        DBEdit4.SetFocus;
+        dbpProdMarca.SetFocus;
       end
   else
-    if DBEdit5.Text = '' then
+    if dbpProdModelo.Text = '' then
       begin
         ShowMessage('O campo "Modelo" deve ser preenchido!');
-        DBEdit5.SetFocus;
+        dbpProdModelo.SetFocus;
       end
   else
-    if DBLookupComboBox1.Text = '' then
+    if cbpProdGrupo.Text = '' then
       begin
         ShowMessage('O campo "Grupo" deve ser preenchido!');
-        DBLookupComboBox1.SetFocus;
+        cbpProdGrupo.SetFocus;
       end
   else
     begin
@@ -185,7 +185,7 @@ begin
       ShowMessage('Produto editado com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
-      DBGrid1.Enabled      := True;
+      gpProd.Enabled      := True;
       SBrelatorio.Enabled  := True;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
@@ -197,50 +197,50 @@ end;
 
 procedure TListaProdutos.HabilitaCampos; // habilitar campos
 begin
-    DBEdit2.Enabled            := True;
-    DBEdit3.Enabled            := True;
-    DBEdit4.Enabled            := True;
-    DBEdit5.Enabled            := True;
-    DBLookupComboBox1.Enabled  := True;
+    dbpProdCod.Enabled          := True;
+    dbpProdDescricao.Enabled    := True;
+    dbpProdModelo.Enabled       := True;
+    dbpProdMarca.Enabled        := True;
+    cbpProdGrupo.Enabled        := True;
 end;
 
 procedure TListaProdutos.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit2.Enabled            := False;
-    DBEdit3.Enabled            := False;
-    DBEdit4.Enabled            := False;
-    DBEdit5.Enabled            := False;
-    DBLookupComboBox1.Enabled  := False;
+    dbpProdCod.Enabled          := False;
+    dbpProdDescricao.Enabled    := False;
+    dbpProdModelo.Enabled       := False;
+    dbpProdMarca.Enabled        := False;
+    cbpProdGrupo.Enabled        := False;
 end;
 
 procedure TListaProdutos.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
-    Edit1.Enabled            := False;
-    Edit2.Enabled            := False;
-    Edit3.Enabled            := False;
-    Edit4.Enabled            := False;
-    Edit5.Enabled            := False;
+    epProdCod.Enabled            := False;
+    epProdDescricao.Enabled      := False;
+    epProdModelo.Enabled         := False;
+    epProdMarca.Enabled          := False;
+    epProdGrupo.Enabled          := False;
 end;
 
 procedure TListaProdutos.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
-    Edit1.Enabled            := True;
-    Edit2.Enabled            := True;
-    Edit3.Enabled            := True;
-    Edit4.Enabled            := True;
-    Edit5.Enabled            := True;
+    epProdCod.Enabled            := True;
+    epProdDescricao.Enabled      := True;
+    epProdModelo.Enabled         := True;
+    epProdMarca.Enabled          := True;
+    epProdGrupo.Enabled          := True;
 end;
 
 procedure TListaProdutos.Filtro; // pesquisa com sql query
 begin
-  FDQuery1.ParamByName('codigo').AsString := '%' + Edit1.Text + '%';
-  FDQuery1.ParamByName('descricao').AsString := '%' + Edit2.Text + '%';
-  FDQuery1.ParamByName('marca').AsString := '%' + Edit3.Text + '%';
-  FDQuery1.ParamByName('modelo').AsString := '%' + Edit4.Text + '%';
-  FDQuery1.ParamByName('grupo').AsString := '%' + Edit5.Text + '%';
+  qryProduto.ParamByName('codigo').AsString := '%' + epProdCod.Text + '%';
+  qryProduto.ParamByName('descricao').AsString := '%' + epProdDescricao.Text + '%';
+  qryProduto.ParamByName('marca').AsString := '%' + epProdModelo.Text + '%';
+  qryProduto.ParamByName('modelo').AsString := '%' + epProdMarca.Text + '%';
+  qryProduto.ParamByName('grupo').AsString := '%' + epProdGrupo.Text + '%';
 
-  FDQuery1.Close;
-  FDQuery1.Open;
+  qryProduto.Close;
+  qryProduto.Open;
 end;
 
 procedure TListaProdutos.FormShow(Sender: TObject);
@@ -257,27 +257,27 @@ begin
 
 end;
 
-procedure TListaProdutos.Edit1Change(Sender: TObject);
+procedure TListaProdutos.epProdCodChange(Sender: TObject);
 begin
   Filtro;
 end;
 
-procedure TListaProdutos.Edit2Change(Sender: TObject);
+procedure TListaProdutos.epProdDescricaoChange(Sender: TObject);
 begin
   Filtro;
 end;
 
-procedure TListaProdutos.Edit3Change(Sender: TObject);
+procedure TListaProdutos.epProdMarcaChange(Sender: TObject);
 begin
   Filtro;
 end;
 
-procedure TListaProdutos.Edit4Change(Sender: TObject);
+procedure TListaProdutos.epProdModeloChange(Sender: TObject);
 begin
   Filtro;
 end;
 
-procedure TListaProdutos.Edit5Change(Sender: TObject);
+procedure TListaProdutos.epProdGrupoChange(Sender: TObject);
 begin
   Filtro;
 end;

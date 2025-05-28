@@ -47,15 +47,14 @@ object ListaColaborador: TListaColaborador
         ParentFont = False
         ExplicitWidth = 65
       end
-      object Edit1: TEdit
+      object epColabDescricao: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit1Change
+        OnChange = epColabDescricaoChange
       end
     end
     object Panel20: TPanel
@@ -80,15 +79,14 @@ object ListaColaborador: TListaColaborador
         ParentFont = False
         ExplicitWidth = 35
       end
-      object Edit3: TEdit
+      object epColabSetor: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit3Change
+        OnChange = epColabSetorChange
       end
     end
     object Panel21: TPanel
@@ -113,15 +111,14 @@ object ListaColaborador: TListaColaborador
         ParentFont = False
         ExplicitWidth = 40
       end
-      object Edit2: TEdit
+      object epColabCargo: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit2Change
+        OnChange = epColabCargoChange
       end
     end
     object Panel22: TPanel
@@ -146,15 +143,14 @@ object ListaColaborador: TListaColaborador
         ParentFont = False
         ExplicitWidth = 33
       end
-      object Edit4: TEdit
+      object epColabSede: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit4Change
+        OnChange = epColabSedeChange
       end
     end
   end
@@ -2235,7 +2231,7 @@ object ListaColaborador: TListaColaborador
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbpColabID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -2269,7 +2265,7 @@ object ListaColaborador: TListaColaborador
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit3: TDBEdit
+      object dbpColabDescricao: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -2303,7 +2299,7 @@ object ListaColaborador: TListaColaborador
         ParentFont = False
         ExplicitWidth = 40
       end
-      object DBEdit4: TDBEdit
+      object dbpColabCargo: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -2337,7 +2333,7 @@ object ListaColaborador: TListaColaborador
         ParentFont = False
         ExplicitWidth = 35
       end
-      object DBLookupComboBox1: TDBLookupComboBox
+      object cbpColabSetor: TDBLookupComboBox
         Left = 0
         Top = 20
         Width = 400
@@ -2373,7 +2369,7 @@ object ListaColaborador: TListaColaborador
         ParentFont = False
         ExplicitWidth = 33
       end
-      object DBLookupComboBox2: TDBLookupComboBox
+      object cbpColabSede: TDBLookupComboBox
         Left = 0
         Top = 20
         Width = 400
@@ -2399,14 +2395,14 @@ object ListaColaborador: TListaColaborador
     TabOrder = 4
     ExplicitWidth = 1455
     ExplicitHeight = 223
-    object DBGrid1: TDBGrid
+    object gpColab: TDBGrid
       Left = 0
       Top = 0
       Width = 1457
       Height = 231
       Hint = 'Pesquisar Colaborador'
       Align = alClient
-      DataSource = DataSource1
+      DataSource = dsColab
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -2446,12 +2442,12 @@ object ListaColaborador: TListaColaborador
         end>
     end
   end
-  object DataSource1: TDataSource
-    DataSet = FDQuery1
-    Left = 1056
-    Top = 218
+  object dsColab: TDataSource
+    DataSet = qryColab
+    Left = 752
+    Top = 250
   end
-  object FDQuery1: TFDQuery
+  object qryColab: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'SELECT c.*, st.descricao AS Setor, sd.descricao AS Sede '
@@ -2464,8 +2460,8 @@ object ListaColaborador: TListaColaborador
       '    (UPPER(sd.descricao) LIKE UPPER(:sede)) AND'
       '    (UPPER(cargo) LIKE UPPER(:cargo));'
       '')
-    Left = 992
-    Top = 218
+    Left = 680
+    Top = 250
     ParamData = <
       item
         Name = 'DESCRICAO'

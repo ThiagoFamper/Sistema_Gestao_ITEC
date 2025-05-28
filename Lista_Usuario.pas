@@ -30,31 +30,31 @@ type
     Panel4: TPanel;
     DBNavigator1: TDBNavigator;
     Panel3: TPanel;
-    DBGrid1: TDBGrid;
+    gpUsuario: TDBGrid;
     Panel13: TPanel;
     Label1: TLabel;
-    DBEdit1: TDBEdit;
+    dbpUsuarioID: TDBEdit;
     Panel14: TPanel;
-    DBEdit2: TDBEdit;
+    dbpUsuarioNome: TDBEdit;
     Label5: TLabel;
     Panel15: TPanel;
     Label2: TLabel;
-    DBEdit3: TDBEdit;
+    dbpUsuarioLogin: TDBEdit;
     Panel16: TPanel;
     Label4: TLabel;
-    DBEdit4: TDBEdit;
+    dbpUsuarioSenha: TDBEdit;
     Panel17: TPanel;
     Panel11: TPanel;
     Label8: TLabel;
-    Edit1: TEdit;
+    epUsuarioNome: TEdit;
     Panel18: TPanel;
     Label6: TLabel;
-    Edit2: TEdit;
+    epUsuarioLogin: TEdit;
     Panel19: TPanel;
-    CheckBox1: TCheckBox;
-    CheckBox2: TCheckBox;
-    FDQuery1: TFDQuery;
-    DataSource1: TDataSource;
+    dbpUsuarioAdmin: TCheckBox;
+    cbpUsuarioAdmin: TCheckBox;
+    qryUsuario: TFDQuery;
+    dsUsuario: TDataSource;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -66,9 +66,9 @@ type
     procedure SBsalvarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Filtro;
-    procedure Edit1Change(Sender: TObject);
-    procedure Edit2Change(Sender: TObject);
-    procedure CheckBox2Click(Sender: TObject);
+    procedure epUsuarioNomeChange(Sender: TObject);
+    procedure epUsuarioLoginChange(Sender: TObject);
+    procedure cbpUsuarioAdminClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -96,7 +96,7 @@ begin
     DesabilitaCampos();
     HabilitaCamposPesquisa();
     dm.FDTabUsuario.Cancel;
-    DBGrid1.Enabled      := True;
+    gpUsuario.Enabled    := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -109,7 +109,7 @@ begin
     HabilitaCampos();
     DesabilitaCamposPesquisa();
     dm.FDTabUsuario.Edit;
-    DBGrid1.Enabled      := False;
+    gpUsuario.Enabled    := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBexcluir.Enabled    := False;
@@ -124,31 +124,31 @@ end;
 
 procedure TListaUsuario.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
+    if dbpUsuarioNome.Text = '' then
       begin
         ShowMessage('O Campo "Nome" deve ser preenchido!');
-        DBEdit2.SetFocus;
+        dbpUsuarioNome.SetFocus;
       end
   else
-    if DBEdit3.Text = '' then
+    if dbpUsuarioLogin.Text = '' then
       begin
         ShowMessage('O Campo "Login" deve ser preenchido!');
-        DBEdit3.SetFocus;
+        dbpUsuarioLogin.SetFocus;
       end
   else
-    if DBEdit4.Text = '' then
+    if dbpUsuarioSenha.Text = '' then
       begin
         ShowMessage('O Campo "Senha" deve ser preenchido!');
-        DBEdit4.SetFocus;
+        dbpUsuarioSenha.SetFocus;
       end
   else
     begin
-      dm.FDTabUsuario.FieldByName('Admin').AsBoolean := Checkbox1.Checked;
+      dm.FDTabUsuario.FieldByName('Admin').AsBoolean := dbpUsuarioAdmin.Checked;
       dm.FDTabUsuario.Post;
       ShowMessage('Usuário editado com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
-      DBGrid1.Enabled      := True;
+      gpUsuario.Enabled    := True;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
       SBeditar.Enabled     := True;
@@ -159,52 +159,50 @@ end;
 
 procedure TListaUsuario.HabilitaCampos; // habilitar campos
 begin
-    DBEdit1.Enabled            := True;
-    DBEdit2.Enabled            := True;
-    DBEdit3.Enabled            := True;
-    DBEdit4.Enabled            := True;
-    CheckBox1.Enabled          := True;
+    dbpUsuarioNome.Enabled            := True;
+    dbpUsuarioLogin.Enabled           := True;
+    dbpUsuarioSenha.Enabled           := True;
+    dbpUsuarioAdmin.Enabled           := True;
 end;
 
-procedure TListaUsuario.CheckBox2Click(Sender: TObject);
+procedure TListaUsuario.cbpUsuarioAdminClick(Sender: TObject);
 begin
   Filtro;
 end;
 
 procedure TListaUsuario.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit1.Enabled            := False;
-    DBEdit2.Enabled            := False;
-    DBEdit3.Enabled            := False;
-    DBEdit4.Enabled            := False;
-    CheckBox1.Enabled          := False;
+    dbpUsuarioNome.Enabled            := False;
+    dbpUsuarioLogin.Enabled           := False;
+    dbpUsuarioSenha.Enabled           := False;
+    dbpUsuarioAdmin.Enabled           := False;
 end;
 
 procedure TListaUsuario.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
-    Edit1.Enabled            := False;
-    Edit2.Enabled            := False;
-    CheckBox2.Enabled        := False;
+    epUsuarioNome.Enabled          := False;
+    epUsuarioLogin.Enabled         := False;
+    cbpUsuarioAdmin.Enabled        := False;
 end;
 
-procedure TListaUsuario.Edit1Change(Sender: TObject);
+procedure TListaUsuario.epUsuarioNomeChange(Sender: TObject);
 begin
   Filtro;
 end;
 
-procedure TListaUsuario.Edit2Change(Sender: TObject);
+procedure TListaUsuario.epUsuarioLoginChange(Sender: TObject);
 begin
   Filtro;
 end;
 
 procedure TListaUsuario.Filtro; // pesquisa com sql query
 begin
-  FDQuery1.ParamByName('nome').AsString := '%' + Edit1.Text + '%';
-  FDQuery1.ParamByName('login').AsString := '%' + Edit2.Text + '%';
-  FDQuery1.ParamByName('admin').AsBoolean := CheckBox2.Checked;
+  qryUsuario.ParamByName('nome').AsString := '%' + epUsuarioNome.Text + '%';
+  qryUsuario.ParamByName('login').AsString := '%' + epUsuarioLogin.Text + '%';
+  qryUsuario.ParamByName('admin').AsBoolean := cbpUsuarioAdmin.Checked;
 
-  FDQuery1.Close;
-  FDQuery1.Open;
+  qryUsuario.Close;
+  qryUsuario.Open;
 end;
 
 procedure TListaUsuario.FormShow(Sender: TObject);
@@ -222,9 +220,9 @@ end;
 
 procedure TListaUsuario.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
-    Edit1.Enabled            := True;
-    Edit2.Enabled            := True;
-    CheckBox2.Enabled        := True;
+    epUsuarioNome.Enabled          := True;
+    epUsuarioLogin.Enabled         := True;
+    cbpUsuarioAdmin.Enabled        := True;
 end;
 
 end.

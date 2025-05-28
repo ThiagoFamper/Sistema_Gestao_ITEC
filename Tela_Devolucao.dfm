@@ -51,7 +51,7 @@ object TelaDevolucao: TTelaDevolucao
         Font.Style = []
         ParentFont = False
       end
-      object Edit6: TEdit
+      object eDevQtd: TEdit
         Left = 16
         Top = 114
         Width = 81
@@ -59,7 +59,7 @@ object TelaDevolucao: TTelaDevolucao
         Enabled = False
         TabOrder = 0
       end
-      object Button2: TButton
+      object bDevolver: TButton
         Left = 16
         Top = 156
         Width = 81
@@ -67,9 +67,9 @@ object TelaDevolucao: TTelaDevolucao
         Caption = 'Devolver'
         Enabled = False
         TabOrder = 1
-        OnClick = Button2Click
+        OnClick = bDevolverClick
       end
-      object RadioGroup1: TRadioGroup
+      object rgDev: TRadioGroup
         Left = 16
         Top = 1
         Width = 169
@@ -81,7 +81,7 @@ object TelaDevolucao: TTelaDevolucao
           'Sim'
           'N'#227'o')
         TabOrder = 2
-        OnClick = RadioGroup1Click
+        OnClick = rgDevClick
       end
     end
     object Panel13: TPanel
@@ -94,7 +94,7 @@ object TelaDevolucao: TTelaDevolucao
       object Label9: TLabel
         Left = 0
         Top = 0
-        Width = 15
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -104,8 +104,9 @@ object TelaDevolucao: TTelaDevolucao
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbDevID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -114,6 +115,7 @@ object TelaDevolucao: TTelaDevolucao
         DataField = 'id'
         DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
+        ReadOnly = True
         TabOrder = 0
       end
     end
@@ -127,7 +129,7 @@ object TelaDevolucao: TTelaDevolucao
       object Label11: TLabel
         Left = 0
         Top = 0
-        Width = 49
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -137,8 +139,9 @@ object TelaDevolucao: TTelaDevolucao
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 49
       end
-      object DBEdit2: TDBEdit
+      object dbDevCod: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -161,7 +164,7 @@ object TelaDevolucao: TTelaDevolucao
       object Label12: TLabel
         Left = 0
         Top = 0
-        Width = 116
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Data Empr'#233'stimo'
@@ -171,8 +174,9 @@ object TelaDevolucao: TTelaDevolucao
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 116
       end
-      object DBEdit3: TDBEdit
+      object dbDevData: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -195,7 +199,7 @@ object TelaDevolucao: TTelaDevolucao
       object Label14: TLabel
         Left = 0
         Top = 0
-        Width = 78
+        Width = 81
         Height = 20
         Align = alTop
         Caption = 'Quantidade'
@@ -205,8 +209,9 @@ object TelaDevolucao: TTelaDevolucao
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 78
       end
-      object DBEdit4: TDBEdit
+      object dbDevQtd: TDBEdit
         Left = 0
         Top = 20
         Width = 81
@@ -229,7 +234,7 @@ object TelaDevolucao: TTelaDevolucao
       object Label16: TLabel
         Left = 0
         Top = 0
-        Width = 64
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Operador'
@@ -239,8 +244,9 @@ object TelaDevolucao: TTelaDevolucao
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 64
       end
-      object DBEdit5: TDBEdit
+      object dbDevOperador: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -263,7 +269,7 @@ object TelaDevolucao: TTelaDevolucao
       object Label18: TLabel
         Left = 0
         Top = 0
-        Width = 38
+        Width = 81
         Height = 20
         Align = alTop
         Caption = 'Saldo'
@@ -273,8 +279,9 @@ object TelaDevolucao: TTelaDevolucao
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 38
       end
-      object DBEdit6: TDBEdit
+      object dbDevSaldo: TDBEdit
         Left = 0
         Top = 20
         Width = 81
@@ -309,7 +316,7 @@ object TelaDevolucao: TTelaDevolucao
       object Label19: TLabel
         Left = 0
         Top = 0
-        Width = 49
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -319,14 +326,14 @@ object TelaDevolucao: TTelaDevolucao
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 49
       end
-      object Edit1: TEdit
+      object eDevCod: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -340,7 +347,7 @@ object TelaDevolucao: TTelaDevolucao
       object Label4: TLabel
         Left = 0
         Top = 0
-        Width = 65
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Descri'#231#227'o'
@@ -350,14 +357,14 @@ object TelaDevolucao: TTelaDevolucao
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 65
       end
-      object Edit2: TEdit
+      object eDevDescricao: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -371,7 +378,7 @@ object TelaDevolucao: TTelaDevolucao
       object Label3: TLabel
         Left = 0
         Top = 0
-        Width = 64
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Operador'
@@ -381,14 +388,14 @@ object TelaDevolucao: TTelaDevolucao
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 64
       end
-      object Edit5: TEdit
+      object eDevOperador: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -2086,7 +2093,7 @@ object TelaDevolucao: TTelaDevolucao
     TabOrder = 3
     ExplicitWidth = 1382
     ExplicitHeight = 489
-    object DBGrid1: TDBGrid
+    object gDev: TDBGrid
       Left = 0
       Top = 0
       Width = 1384
@@ -2143,14 +2150,14 @@ object TelaDevolucao: TTelaDevolucao
         end>
     end
   end
-  object FDQuery2: TFDQuery
+  object qryUpdateEstoque: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'UPDATE estoqueitec.emprestimo_produto'
       'SET saldo = saldo - :quantidade'
       'WHERE id = :emprestimoID;')
-    Left = 984
-    Top = 138
+    Left = 560
+    Top = 202
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2161,14 +2168,14 @@ object TelaDevolucao: TTelaDevolucao
         ParamType = ptInput
       end>
   end
-  object FDQuery3: TFDQuery
+  object qryUpdateEmp: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'UPDATE estoqueitec.estoque'
       'SET saldo = saldo + :quantidade'
       'WHERE produto_id = :produtoID;')
-    Left = 1064
-    Top = 138
+    Left = 688
+    Top = 202
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2179,14 +2186,14 @@ object TelaDevolucao: TTelaDevolucao
         ParamType = ptInput
       end>
   end
-  object FDQuery4: TFDQuery
+  object qryUpdateItem: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'UPDATE estoqueitec.item_emprestimo'
       'SET qtd_devolvida = qtd_devolvida + :quantidade'
       'WHERE emprestimo_id = :emprestimoID;')
-    Left = 1152
-    Top = 138
+    Left = 800
+    Top = 202
     ParamData = <
       item
         Name = 'QUANTIDADE'

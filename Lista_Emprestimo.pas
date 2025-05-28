@@ -31,31 +31,31 @@ type
     Panel4: TPanel;
     DBNavigator1: TDBNavigator;
     Panel3: TPanel;
-    DBGrid1: TDBGrid;
+    gpEmp: TDBGrid;
     Panel13: TPanel;
     Label10: TLabel;
-    DBEdit1: TDBEdit;
+    dbpEmpID: TDBEdit;
     Panel14: TPanel;
     Label11: TLabel;
-    DBEdit2: TDBEdit;
+    dbpEmpCod: TDBEdit;
     Panel18: TPanel;
     Label5: TLabel;
-    DBEdit5: TDBEdit;
+    dbpEmpQtd: TDBEdit;
     Panel19: TPanel;
     Label1: TLabel;
-    DBEdit6: TDBEdit;
+    dbpEmpOperador: TDBEdit;
     Panel22: TPanel;
     Label9: TLabel;
-    Edit1: TEdit;
+    epEmpCod: TEdit;
     Panel23: TPanel;
     Label2: TLabel;
-    Edit2: TEdit;
+    epEmpDescricao: TEdit;
     Panel26: TPanel;
     Label7: TLabel;
-    Edit5: TEdit;
+    epEmpOperador: TEdit;
     Panel15: TPanel;
     Label3: TLabel;
-    DBEdit3: TDBEdit;
+    dbpEmpSaldo: TDBEdit;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -101,7 +101,7 @@ begin
     DesabilitaCampos();
     HabilitaCamposPesquisa();
     dm.FDTabProduto.Cancel;
-    DBGrid1.Enabled      := True;
+    gpEmp.Enabled      := True;
     SBrelatorio.Enabled  := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
@@ -115,7 +115,7 @@ begin
     HabilitaCampos();
     DesabilitaCamposPesquisa();
     dm.FDTabProduto.Edit;
-    DBGrid1.Enabled      := False;
+    gpEmp.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBrelatorio.Enabled  := False;
@@ -131,22 +131,22 @@ end;
 
 procedure TListaEmprestimo.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
+    if dbpEmpCod.Text = '' then
       begin
         ShowMessage('O Campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
+        dbpEmpCod.SetFocus;
       end
   else
-    if DBEdit5.Text = '' then
+    if dbpEmpQtd.Text = '' then
       begin
         ShowMessage('O Campo "Quantidade" deve ser preenchido!');
-        DBEdit5.SetFocus;
+        dbpEmpQtd.SetFocus;
       end
   else
-    if DBEdit6.Text = '' then
+    if dbpEmpOperador.Text = '' then
       begin
         ShowMessage('O Campo "Operador" deve ser preenchido!');
-        DBEdit6.SetFocus;
+        dbpEmpOperador.SetFocus;
       end
   else
     begin
@@ -154,7 +154,7 @@ begin
       ShowMessage('Editado com Sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
-      DBGrid1.Enabled      := True;
+      gpEmp.Enabled      := True;
       SBrelatorio.Enabled  := True;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
@@ -166,27 +166,25 @@ end;
 
 procedure TListaEmprestimo.HabilitaCampos; // habilitar campos
 begin
-    DBEdit1.Enabled            := True;
-    DBEdit2.Enabled            := True;
-    DBEdit5.Enabled            := True;
-    DBEdit6.Enabled            := True;
-    DBEdit3.Enabled            := True;
+    dbpEmpCod.Enabled            := True;
+    dbpEmpOperador.Enabled       := True;
+    dbpEmpQtd.Enabled            := True;
+    dbpEmpSaldo.Enabled          := True;
 end;
 
 procedure TListaEmprestimo.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit1.Enabled            := False;
-    DBEdit2.Enabled            := False;
-    DBEdit5.Enabled            := False;
-    DBEdit6.Enabled            := False;
-    DBEdit3.Enabled            := False;
+    dbpEmpCod.Enabled            := False;
+    dbpEmpOperador.Enabled       := False;
+    dbpEmpQtd.Enabled            := False;
+    dbpEmpSaldo.Enabled          := False;
 end;
 
 procedure TListaEmprestimo.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
-    Edit1.Enabled            := False;
-    Edit2.Enabled            := False;
-    Edit5.Enabled            := False;
+    epEmpCod.Enabled            := False;
+    epEmpDescricao.Enabled      := False;
+    epEmpOperador.Enabled       := False;
 end;
 
 procedure TListaEmprestimo.FormShow(Sender: TObject);
@@ -198,11 +196,11 @@ begin
   end;
 end;
 
-procedure TListaEmprestimo.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
+procedure TListaEmprestimo.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
-    Edit1.Enabled            := True;
-    Edit2.Enabled            := True;
-    Edit5.Enabled            := True;;
+    epEmpCod.Enabled            := True;
+    epEmpDescricao.Enabled      := True;
+    epEmpOperador.Enabled       := True;
 end;
 
 end.

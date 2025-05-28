@@ -1873,7 +1873,6 @@ object EntradaProd: TEntradaProd
         Width = 50
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         Color = clBtnHighlight
         DataField = 'id'
         DataSource = DM.dsFDTabEntrada
@@ -1909,7 +1908,6 @@ object EntradaProd: TEntradaProd
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'produto_id'
         DataSource = DM.dsFDTabEntrada
         Enabled = False
@@ -2017,7 +2015,6 @@ object EntradaProd: TEntradaProd
         Width = 81
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'quantidade'
         DataSource = DM.dsFDTabEntrada
         Enabled = False
@@ -2052,7 +2049,6 @@ object EntradaProd: TEntradaProd
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'nota_fiscal'
         DataSource = DM.dsFDTabEntrada
         Enabled = False
@@ -2087,7 +2083,6 @@ object EntradaProd: TEntradaProd
         Width = 110
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'valor_unitario'
         DataSource = DM.dsFDTabEntrada
         Enabled = False

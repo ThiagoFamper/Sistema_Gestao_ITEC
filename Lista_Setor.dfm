@@ -48,7 +48,7 @@ object ListaSetor: TListaSetor
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbpSetorID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -82,7 +82,7 @@ object ListaSetor: TListaSetor
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit2: TDBEdit
+      object dbpSetorDescricao: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -128,15 +128,14 @@ object ListaSetor: TListaSetor
         ParentFont = False
         ExplicitWidth = 65
       end
-      object Edit1: TEdit
+      object epSetorDescricao: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit1Change
+        OnChange = epSetorDescricaoChange
       end
     end
   end
@@ -2193,14 +2192,14 @@ object ListaSetor: TListaSetor
     TabOrder = 4
     ExplicitWidth = 1046
     ExplicitHeight = 285
-    object DBGrid1: TDBGrid
+    object gpSetor: TDBGrid
       Left = 0
       Top = 0
       Width = 1048
       Height = 293
       Hint = 'Pesquisar Setor'
       Align = alClient
-      DataSource = DataSource1
+      DataSource = dsSetor
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -2219,7 +2218,7 @@ object ListaSetor: TListaSetor
         end>
     end
   end
-  object FDQuery1: TFDQuery
+  object qrySetor: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'SELECT *'
@@ -2227,17 +2226,17 @@ object ListaSetor: TListaSetor
       'WHERE'
       '    (UPPER(descricao) LIKE UPPER(:descricao));'
       '')
-    Left = 888
-    Top = 122
+    Left = 736
+    Top = 138
     ParamData = <
       item
         Name = 'DESCRICAO'
         ParamType = ptInput
       end>
   end
-  object DataSource1: TDataSource
-    DataSet = FDQuery1
-    Left = 976
-    Top = 122
+  object dsSetor: TDataSource
+    DataSet = qrySetor
+    Left = 808
+    Top = 138
   end
 end

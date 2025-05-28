@@ -1800,7 +1800,6 @@ object CadSede: TCadSede
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'descricao'
         DataSource = DM.dsFDTabSede
         Enabled = False
@@ -1841,7 +1840,6 @@ object CadSede: TCadSede
         Width = 50
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'id'
         DataSource = DM.dsFDTabSede
         Enabled = False

@@ -48,7 +48,7 @@ object ListaGrupos: TListaGrupos
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbpGrupoID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -82,7 +82,7 @@ object ListaGrupos: TListaGrupos
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit2: TDBEdit
+      object dbpGrupoDescricao: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -128,15 +128,14 @@ object ListaGrupos: TListaGrupos
         ParentFont = False
         ExplicitWidth = 65
       end
-      object Edit1: TEdit
+      object epGrupoDescricao: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit1Change
+        OnChange = epGrupoDescricaoChange
       end
     end
   end
@@ -2193,14 +2192,14 @@ object ListaGrupos: TListaGrupos
     TabOrder = 4
     ExplicitWidth = 1045
     ExplicitHeight = 270
-    object DBGrid1: TDBGrid
+    object gpGrupo: TDBGrid
       Left = 0
       Top = 0
       Width = 1047
       Height = 278
       Hint = 'Pesquisar Grupos'
       Align = alClient
-      DataSource = DataSource1
+      DataSource = dsGrupo
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -2219,12 +2218,12 @@ object ListaGrupos: TListaGrupos
         end>
     end
   end
-  object DataSource1: TDataSource
-    DataSet = FDQuery1
+  object dsGrupo: TDataSource
+    DataSet = qryGrupo
     Left = 976
     Top = 138
   end
-  object FDQuery1: TFDQuery
+  object qryGrupo: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'SELECT *'

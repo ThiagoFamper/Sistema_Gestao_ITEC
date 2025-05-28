@@ -25,6 +25,7 @@ object TelaEmprestimo: TTelaEmprestimo
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1122
     object Panel13: TPanel
       Left = 17
       Top = 6
@@ -53,7 +54,6 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 50
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         Color = clBtnHighlight
         DataField = 'id'
         DataSource = DM.dsFDTabEmprestimoProd
@@ -89,7 +89,6 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         Color = clBtnHighlight
         DataField = 'produto_id'
         DataSource = DM.dsFDTabEmprestimoProd
@@ -193,7 +192,6 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 81
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'quantidade'
         DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
@@ -245,6 +243,7 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1122
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1991,6 +1990,7 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1122
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0

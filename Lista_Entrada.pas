@@ -30,37 +30,37 @@ type
     Panel4: TPanel;
     DBNavigator1: TDBNavigator;
     Panel3: TPanel;
-    DBGrid1: TDBGrid;
+    gpEntrada: TDBGrid;
     Panel13: TPanel;
     Label11: TLabel;
-    DBEdit1: TDBEdit;
+    dbpEntradaID: TDBEdit;
     Panel14: TPanel;
     Label12: TLabel;
-    DBEdit2: TDBEdit;
+    dbpEntradaCod: TDBEdit;
     Panel17: TPanel;
     Label16: TLabel;
-    DBEdit5: TDBEdit;
+    dbpEntradaQtd: TDBEdit;
     Panel18: TPanel;
     Label17: TLabel;
-    DBEdit6: TDBEdit;
+    dbpEntradaOperador: TDBEdit;
     Panel19: TPanel;
     Label18: TLabel;
-    DBEdit7: TDBEdit;
+    dbpEntradaNF: TDBEdit;
     Panel21: TPanel;
     Label19: TLabel;
-    DBEdit9: TDBEdit;
+    dbpEntradaValor: TDBEdit;
     Panel23: TPanel;
     Label7: TLabel;
-    Edit1: TEdit;
+    epEntradaCod: TEdit;
     Panel24: TPanel;
     Label1: TLabel;
-    Edit2: TEdit;
+    epEntradaDescricao: TEdit;
     Panel25: TPanel;
     Label2: TLabel;
-    Edit3: TEdit;
+    epEntradaOperador: TEdit;
     Panel26: TPanel;
     Label3: TLabel;
-    Edit4: TEdit;
+    epEntradaNF: TEdit;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -107,7 +107,7 @@ begin
     DesabilitaCampos();
     HabilitaCamposPesquisa();
     dm.FDTabProduto.Cancel;
-    DBGrid1.Enabled      := True;
+    gpEntrada.Enabled      := True;
     SBrelatorio.Enabled  := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
@@ -121,7 +121,7 @@ begin
     HabilitaCampos();
     DesabilitaCamposPesquisa();
     dm.FDTabProduto.Edit;
-    DBGrid1.Enabled      := False;
+    gpEntrada.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBrelatorio.Enabled  := False;
@@ -137,34 +137,34 @@ end;
 
 procedure TListaEntrada.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
+    if dbpEntradaCod.Text = '' then
       begin
         ShowMessage('O Campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
+        dbpEntradaCod.SetFocus;
       end
   else
-    if DBEdit5.Text = '' then
+    if dbpEntradaQtd.Text = '' then
       begin
         ShowMessage('O Campo "Quantidade" deve ser preenchido!');
-        DBEdit5.SetFocus;
+        dbpEntradaQtd.SetFocus;
       end
   else
-    if DBEdit6.Text = '' then
+    if dbpEntradaOperador.Text = '' then
       begin
         ShowMessage('O Campo "Operador" deve ser preenchido!');
-        DBEdit6.SetFocus;
+        dbpEntradaOperador.SetFocus;
       end
   else
-    if DBEdit7.Text = '' then
+    if dbpEntradaNF.Text = '' then
       begin
         ShowMessage('O Campo "Nota Fiscal" deve ser preenchido!');
-        DBEdit7.SetFocus;
+        dbpEntradaNF.SetFocus;
       end
   else
-    if DBEdit9.Text = '' then
+    if dbpEntradaValor.Text = '' then
       begin
         ShowMessage('O Campo "Valor Unitário" deve ser preenchido!');
-        DBEdit9.SetFocus;
+        dbpEntradaValor.SetFocus;
       end
   else
     begin
@@ -172,7 +172,7 @@ begin
       ShowMessage('Editado com Sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
-      DBGrid1.Enabled      := True;
+      gpEntrada.Enabled      := True;
       SBrelatorio.Enabled  := True;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
@@ -184,30 +184,28 @@ end;
 
 procedure TListaEntrada.HabilitaCampos; // habilitar campos
 begin
-    DBEdit1.Enabled            := True;
-    DBEdit2.Enabled            := True;
-    DBEdit5.Enabled            := True;
-    DBEdit6.Enabled            := True;
-    DBEdit7.Enabled            := True;
-    DBEdit9.Enabled            := True;
+    dbpEntradaCod.Enabled           := True;
+    dbpEntradaQtd.Enabled           := True;
+    dbpEntradaOperador.Enabled      := True;
+    dbpEntradaNF.Enabled            := True;
+    dbpEntradaValor.Enabled         := True;
 end;
 
 procedure TListaEntrada.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit1.Enabled            := False;
-    DBEdit2.Enabled            := False;
-    DBEdit5.Enabled            := False;
-    DBEdit6.Enabled            := False;
-    DBEdit7.Enabled            := False;
-    DBEdit9.Enabled            := False;
+    dbpEntradaCod.Enabled           := False;
+    dbpEntradaQtd.Enabled           := False;
+    dbpEntradaOperador.Enabled      := False;
+    dbpEntradaNF.Enabled            := False;
+    dbpEntradaValor.Enabled         := False;
 end;
 
 procedure TListaEntrada.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
-    Edit1.Enabled            := False;
-    Edit2.Enabled            := False;
-    Edit3.Enabled            := False;
-    Edit4.Enabled            := False;
+    epEntradaCod.Enabled           := False;
+    epEntradaDescricao.Enabled     := False;
+    epEntradaNF.Enabled            := False;
+    epEntradaOperador.Enabled      := False;
 end;
 
 procedure TListaEntrada.FormShow(Sender: TObject);
@@ -219,12 +217,12 @@ begin
   end;
 end;
 
-procedure TListaEntrada.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
+procedure TListaEntrada.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
-    Edit1.Enabled            := True;
-    Edit2.Enabled            := True;
-    Edit3.Enabled            := True;
-    Edit4.Enabled            := True;
+    epEntradaCod.Enabled           := True;
+    epEntradaDescricao.Enabled     := True;
+    epEntradaNF.Enabled            := True;
+    epEntradaOperador.Enabled      := True;
 end;
 
 end.

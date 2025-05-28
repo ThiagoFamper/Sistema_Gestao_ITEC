@@ -31,18 +31,18 @@ type
     Panel4: TPanel;
     DBNavigator1: TDBNavigator;
     Panel3: TPanel;
-    DBGrid1: TDBGrid;
+    gpSetor: TDBGrid;
     Panel13: TPanel;
     Label1: TLabel;
-    DBEdit1: TDBEdit;
+    dbpSetorID: TDBEdit;
     Panel15: TPanel;
     Label2: TLabel;
-    DBEdit2: TDBEdit;
+    dbpSetorDescricao: TDBEdit;
     Panel16: TPanel;
     Label7: TLabel;
-    Edit1: TEdit;
-    FDQuery1: TFDQuery;
-    DataSource1: TDataSource;
+    epSetorDescricao: TEdit;
+    qrySetor: TFDQuery;
+    dsSetor: TDataSource;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -52,7 +52,7 @@ type
     procedure SBeditarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
-    procedure Edit1Change(Sender: TObject);
+    procedure epSetorDescricaoChange(Sender: TObject);
     procedure Filtro;
     procedure FormShow(Sender: TObject);
 
@@ -82,7 +82,7 @@ begin
     DesabilitaCampos();
     HabilitaCamposPesquisa();
     dm.FDTabSetor.Cancel;
-    DBGrid1.Enabled      := True;
+    gpSetor.Enabled      := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -95,7 +95,7 @@ begin
     HabilitaCampos();
     DesabilitaCamposPesquisa();
     dm.FDTabSetor.Edit;
-    DBGrid1.Enabled      := False;
+    gpSetor.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBexcluir.Enabled    := False;
@@ -110,10 +110,10 @@ end;
 
 procedure TListaSetor.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
+    if dbpSetorDescricao.Text = '' then
       begin
         ShowMessage('O Campo "Descrição" deve ser preenchido!');
-        DBEdit2.SetFocus;
+        dbpSetorDescricao.SetFocus;
       end
   else
     begin
@@ -121,7 +121,7 @@ begin
       ShowMessage('Setor editado com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
-      DBGrid1.Enabled      := True;
+      gpSetor.Enabled      := True;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
       SBeditar.Enabled     := True;
@@ -132,30 +132,30 @@ end;
 
 procedure TListaSetor.HabilitaCampos; // habilitar campos
 begin
-    DBEdit2.Enabled            := True;
+    dbpSetorDescricao.Enabled            := True;
 end;
 
 procedure TListaSetor.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit2.Enabled            := False;
+    dbpSetorDescricao.Enabled            := False;
 end;
 
 procedure TListaSetor.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
-    Edit1.Enabled            := False;
+    epSetorDescricao.Enabled            := False;
 end;
 
 procedure TListaSetor.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
-    Edit1.Enabled            := True;
+    epSetorDescricao.Enabled            := True;
 end;
 
 procedure TListaSetor.Filtro; // pesquisa com sql query
 begin
-  FDQuery1.ParamByName('descricao').AsString := '%' + Edit1.Text + '%';
+  qrySetor.ParamByName('descricao').AsString := '%' + epSetorDescricao.Text + '%';
 
-  FDQuery1.Close;
-  FDQuery1.Open;
+  qrySetor.Close;
+  qrySetor.Open;
 end;
 
 procedure TListaSetor.FormShow(Sender: TObject);
@@ -171,7 +171,7 @@ begin
 
 end;
 
-procedure TListaSetor.Edit1Change(Sender: TObject);
+procedure TListaSetor.epSetorDescricaoChange(Sender: TObject);
 begin
   Filtro;
 end;

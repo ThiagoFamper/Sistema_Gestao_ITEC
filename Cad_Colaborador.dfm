@@ -53,7 +53,6 @@ object CadColaborador: TCadColaborador
         Width = 50
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'id'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
@@ -88,7 +87,6 @@ object CadColaborador: TCadColaborador
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'descricao'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
@@ -123,7 +121,6 @@ object CadColaborador: TCadColaborador
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'cargo'
         DataSource = DM.dsFDTabColaborador
         Enabled = False

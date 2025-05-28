@@ -48,7 +48,7 @@ object ListaEntrada: TListaEntrada
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbpEntradaID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -82,7 +82,7 @@ object ListaEntrada: TListaEntrada
         ParentFont = False
         ExplicitWidth = 49
       end
-      object DBEdit2: TDBEdit
+      object dbpEntradaCod: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -116,7 +116,7 @@ object ListaEntrada: TListaEntrada
         ParentFont = False
         ExplicitWidth = 78
       end
-      object DBEdit5: TDBEdit
+      object dbpEntradaQtd: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -150,7 +150,7 @@ object ListaEntrada: TListaEntrada
         ParentFont = False
         ExplicitWidth = 64
       end
-      object DBEdit6: TDBEdit
+      object dbpEntradaOperador: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -184,7 +184,7 @@ object ListaEntrada: TListaEntrada
         ParentFont = False
         ExplicitWidth = 73
       end
-      object DBEdit7: TDBEdit
+      object dbpEntradaNF: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -218,7 +218,7 @@ object ListaEntrada: TListaEntrada
         ParentFont = False
         ExplicitWidth = 91
       end
-      object DBEdit9: TDBEdit
+      object dbpEntradaValor: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -264,13 +264,12 @@ object ListaEntrada: TListaEntrada
         ParentFont = False
         ExplicitWidth = 49
       end
-      object Edit1: TEdit
+      object epEntradaCod: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -296,13 +295,12 @@ object ListaEntrada: TListaEntrada
         ParentFont = False
         ExplicitWidth = 65
       end
-      object Edit2: TEdit
+      object epEntradaDescricao: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -328,13 +326,12 @@ object ListaEntrada: TListaEntrada
         ParentFont = False
         ExplicitWidth = 64
       end
-      object Edit3: TEdit
+      object epEntradaOperador: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -360,13 +357,12 @@ object ListaEntrada: TListaEntrada
         ParentFont = False
         ExplicitWidth = 73
       end
-      object Edit4: TEdit
+      object epEntradaNF: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -2761,7 +2757,7 @@ object ListaEntrada: TListaEntrada
     TabOrder = 4
     ExplicitWidth = 1046
     ExplicitHeight = 217
-    object DBGrid1: TDBGrid
+    object gpEntrada: TDBGrid
       Left = 0
       Top = 0
       Width = 1048

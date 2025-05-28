@@ -48,7 +48,7 @@ object ListaSaida: TListaSaida
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbpSaidaID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -82,7 +82,7 @@ object ListaSaida: TListaSaida
         ParentFont = False
         ExplicitWidth = 49
       end
-      object DBEdit2: TDBEdit
+      object dbpSaidaCod: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -116,7 +116,7 @@ object ListaSaida: TListaSaida
         ParentFont = False
         ExplicitWidth = 78
       end
-      object DBEdit5: TDBEdit
+      object dbpSaidaQtd: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -150,7 +150,7 @@ object ListaSaida: TListaSaida
         ParentFont = False
         ExplicitWidth = 64
       end
-      object DBEdit6: TDBEdit
+      object dbpSaidaOperador: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -196,13 +196,12 @@ object ListaSaida: TListaSaida
         ParentFont = False
         ExplicitWidth = 49
       end
-      object Edit1: TEdit
+      object epSaidaCod: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -228,13 +227,12 @@ object ListaSaida: TListaSaida
         ParentFont = False
         ExplicitWidth = 64
       end
-      object Edit5: TEdit
+      object epSaidaOperador: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -2629,7 +2627,7 @@ object ListaSaida: TListaSaida
     TabOrder = 4
     ExplicitWidth = 1046
     ExplicitHeight = 223
-    object DBGrid1: TDBGrid
+    object gpSaida: TDBGrid
       Left = 0
       Top = 0
       Width = 1048

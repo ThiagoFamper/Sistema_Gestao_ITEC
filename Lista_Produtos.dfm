@@ -2410,7 +2410,7 @@ object ListaProdutos: TListaProdutos
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbpProdID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -2446,7 +2446,7 @@ object ListaProdutos: TListaProdutos
         ParentFont = False
         ExplicitWidth = 49
       end
-      object DBEdit2: TDBEdit
+      object dbpProdCod: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -2480,7 +2480,7 @@ object ListaProdutos: TListaProdutos
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit3: TDBEdit
+      object dbpProdDescricao: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -2514,7 +2514,7 @@ object ListaProdutos: TListaProdutos
         ParentFont = False
         ExplicitWidth = 41
       end
-      object DBEdit4: TDBEdit
+      object dbpProdMarca: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -2548,7 +2548,7 @@ object ListaProdutos: TListaProdutos
         ParentFont = False
         ExplicitWidth = 41
       end
-      object DBLookupComboBox1: TDBLookupComboBox
+      object cbpProdGrupo: TDBLookupComboBox
         Left = 0
         Top = 20
         Width = 400
@@ -2585,7 +2585,7 @@ object ListaProdutos: TListaProdutos
         ParentFont = False
         ExplicitWidth = 52
       end
-      object DBEdit5: TDBEdit
+      object dbpProdModelo: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -2653,15 +2653,14 @@ object ListaProdutos: TListaProdutos
         ParentFont = False
         ExplicitWidth = 49
       end
-      object Edit1: TEdit
+      object epProdCod: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit1Change
+        OnChange = epProdCodChange
       end
     end
     object Panel20: TPanel
@@ -2686,15 +2685,14 @@ object ListaProdutos: TListaProdutos
         ParentFont = False
         ExplicitWidth = 65
       end
-      object Edit2: TEdit
+      object epProdDescricao: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit2Change
+        OnChange = epProdDescricaoChange
       end
     end
     object Panel21: TPanel
@@ -2719,15 +2717,14 @@ object ListaProdutos: TListaProdutos
         ParentFont = False
         ExplicitWidth = 41
       end
-      object Edit3: TEdit
+      object epProdMarca: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit3Change
+        OnChange = epProdMarcaChange
       end
     end
     object Panel22: TPanel
@@ -2752,15 +2749,14 @@ object ListaProdutos: TListaProdutos
         ParentFont = False
         ExplicitWidth = 52
       end
-      object Edit4: TEdit
+      object epProdModelo: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit4Change
+        OnChange = epProdModeloChange
       end
     end
     object Panel23: TPanel
@@ -2785,15 +2781,14 @@ object ListaProdutos: TListaProdutos
         ParentFont = False
         ExplicitWidth = 41
       end
-      object Edit5: TEdit
+      object epProdGrupo: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit5Change
+        OnChange = epProdGrupoChange
       end
     end
   end
@@ -2807,14 +2802,14 @@ object ListaProdutos: TListaProdutos
     TabOrder = 4
     ExplicitWidth = 2712
     ExplicitHeight = 195
-    object DBGrid1: TDBGrid
+    object gpProd: TDBGrid
       Left = 0
       Top = 0
       Width = 2714
       Height = 203
       Hint = 'Pesquisar Produtos'
       Align = alClient
-      DataSource = DataSource1
+      DataSource = dsProduto
       FixedColor = clWhitesmoke
       ParentColor = True
       ReadOnly = True
@@ -2869,7 +2864,7 @@ object ListaProdutos: TListaProdutos
         end>
     end
   end
-  object FDQuery1: TFDQuery
+  object qryProduto: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'SELECT p.*, g.descricao AS Grupo '
@@ -2882,8 +2877,8 @@ object ListaProdutos: TListaProdutos
       '    (UPPER(modelo) LIKE UPPER(:modelo)) AND'
       '    (UPPER(g.descricao) LIKE UPPER(:grupo));'
       '')
-    Left = 960
-    Top = 258
+    Left = 656
+    Top = 266
     ParamData = <
       item
         Name = 'CODIGO'
@@ -2906,9 +2901,9 @@ object ListaProdutos: TListaProdutos
         ParamType = ptInput
       end>
   end
-  object DataSource1: TDataSource
-    DataSet = FDQuery1
-    Left = 1040
-    Top = 258
+  object dsProduto: TDataSource
+    DataSet = qryProduto
+    Left = 744
+    Top = 266
   end
 end

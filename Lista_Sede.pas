@@ -15,10 +15,10 @@ type
     Panel5: TPanel;
     Panel13: TPanel;
     Label1: TLabel;
-    DBEdit1: TDBEdit;
+    dbpSedeID: TDBEdit;
     Panel14: TPanel;
     Label5: TLabel;
-    DBEdit2: TDBEdit;
+    dbpSedeDescricao: TDBEdit;
     Panel1: TPanel;
     Panel2: TPanel;
     SBsair: TSpeedButton;
@@ -36,12 +36,12 @@ type
     Panel4: TPanel;
     DBNavigator1: TDBNavigator;
     Panel3: TPanel;
-    DBGrid1: TDBGrid;
+    gpSede: TDBGrid;
     Panel11: TPanel;
     Label3: TLabel;
-    Edit1: TEdit;
-    FDQuery1: TFDQuery;
-    DataSource1: TDataSource;
+    epSedeDescricao: TEdit;
+    qrySede: TFDQuery;
+    dsSede: TDataSource;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -51,7 +51,7 @@ type
     procedure SBeditarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
-    procedure Edit1Change(Sender: TObject);
+    procedure epSedeDescricaoChange(Sender: TObject);
     procedure Filtro;
     procedure FormShow(Sender: TObject);
 
@@ -81,7 +81,7 @@ begin
     DesabilitaCampos();
     HabilitaCamposPesquisa();
     dm.FDTabSede.Cancel;
-    DBGrid1.Enabled      := True;
+    gpSede.Enabled      := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -94,7 +94,7 @@ begin
     HabilitaCampos();
     DesabilitaCamposPesquisa();
     dm.FDTabSede.Edit;
-    DBGrid1.Enabled      := False;
+    gpSede.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBexcluir.Enabled    := False;
@@ -109,10 +109,10 @@ end;
 
 procedure TListaSede.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
+    if dbpSedeDescricao.Text = '' then
       begin
         ShowMessage('O campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
+        dbpSedeDescricao.SetFocus;
       end
   else
     begin
@@ -120,7 +120,7 @@ begin
       ShowMessage('Sede editada com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
-      DBGrid1.Enabled      := True;
+      gpSede.Enabled       := True;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
       SBeditar.Enabled     := True;
@@ -131,30 +131,30 @@ end;
 
 procedure TListaSede.HabilitaCampos; // habilitar campos
 begin
-    DBEdit2.Enabled            := True;
+    dbpSedeDescricao.Enabled            := True;
 end;
 
 procedure TListaSede.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit2.Enabled            := False;
+    dbpSedeDescricao.Enabled            := False;
 end;
 
 procedure TListaSede.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
-    Edit1.Enabled            := False;
+    epSedeDescricao.Enabled            := False;
 end;
 
 procedure TListaSede.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
-    Edit1.Enabled            := True;
+    epSedeDescricao.Enabled            := True;
 end;
 
 procedure TListaSede.Filtro; // pesquisa com sql query
 begin
-  FDQuery1.ParamByName('descricao').AsString := '%' + Edit1.Text + '%';
+  qrySede.ParamByName('descricao').AsString := '%' + epSedeDescricao.Text + '%';
 
-  FDQuery1.Close;
-  FDQuery1.Open;
+  qrySede.Close;
+  qrySede.Open;
 end;
 
 procedure TListaSede.FormShow(Sender: TObject);
@@ -170,7 +170,7 @@ begin
 
 end;
 
-procedure TListaSede.Edit1Change(Sender: TObject);
+procedure TListaSede.epSedeDescricaoChange(Sender: TObject);
 begin
   Filtro;
 end;

@@ -30,25 +30,25 @@ type
     Panel4: TPanel;
     DBNavigator1: TDBNavigator;
     Panel3: TPanel;
-    DBGrid1: TDBGrid;
+    gpSaida: TDBGrid;
     Panel13: TPanel;
     Label9: TLabel;
-    DBEdit1: TDBEdit;
+    dbpSaidaID: TDBEdit;
     Panel14: TPanel;
     Label12: TLabel;
-    DBEdit2: TDBEdit;
+    dbpSaidaCod: TDBEdit;
     Panel17: TPanel;
     Label16: TLabel;
-    DBEdit5: TDBEdit;
+    dbpSaidaQtd: TDBEdit;
     Panel18: TPanel;
     Label17: TLabel;
-    DBEdit6: TDBEdit;
+    dbpSaidaOperador: TDBEdit;
     Panel22: TPanel;
     Label5: TLabel;
-    Edit1: TEdit;
+    epSaidaCod: TEdit;
     Panel26: TPanel;
     Label2: TLabel;
-    Edit5: TEdit;
+    epSaidaOperador: TEdit;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -94,7 +94,7 @@ begin
     DesabilitaCampos();
     HabilitaCamposPesquisa();
     dm.FDTabProduto.Cancel;
-    DBGrid1.Enabled      := True;
+    gpSaida.Enabled      := True;
     SBrelatorio.Enabled  := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
@@ -108,7 +108,7 @@ begin
     HabilitaCampos();
     DesabilitaCamposPesquisa();
     dm.FDTabProduto.Edit;
-    DBGrid1.Enabled      := False;
+    gpSaida.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBrelatorio.Enabled  := False;
@@ -124,22 +124,22 @@ end;
 
 procedure TListaSaida.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
+    if dbpSaidaCod.Text = '' then
       begin
         ShowMessage('O Campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
+        dbpSaidaCod.SetFocus;
       end
   else
-    if DBEdit5.Text = '' then
+    if dbpSaidaQtd.Text = '' then
       begin
         ShowMessage('O Campo "Quantidade" deve ser preenchido!');
-        DBEdit5.SetFocus;
+        dbpSaidaQtd.SetFocus;
       end
   else
-    if DBEdit6.Text = '' then
+    if dbpSaidaOperador.Text = '' then
       begin
         ShowMessage('O Campo "Operador" deve ser preenchido!');
-        DBEdit6.SetFocus;
+        dbpSaidaOperador.SetFocus;
       end
   else
     begin
@@ -147,7 +147,7 @@ begin
       ShowMessage('Editado com Sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
-      DBGrid1.Enabled      := True;
+      gpSaida.Enabled      := True;
       SBrelatorio.Enabled  := True;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
@@ -159,24 +159,22 @@ end;
 
 procedure TListaSaida.HabilitaCampos; // habilitar campos
 begin
-    DBEdit1.Enabled            := True;
-    DBEdit2.Enabled            := True;
-    DBEdit5.Enabled            := True;
-    DBEdit6.Enabled            := True;
+    dbpSaidaCod.Enabled            := True;
+    dbpSaidaOperador.Enabled       := True;
+    dbpSaidaQtd.Enabled            := True;
 end;
 
 procedure TListaSaida.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit1.Enabled            := False;
-    DBEdit2.Enabled            := False;
-    DBEdit5.Enabled            := False;
-    DBEdit6.Enabled            := False;
+    dbpSaidaCod.Enabled            := False;
+    dbpSaidaOperador.Enabled       := False;
+    dbpSaidaQtd.Enabled            := False;
 end;
 
 procedure TListaSaida.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
-    Edit1.Enabled            := False;
-    Edit5.Enabled            := False;
+    epSaidaCod.Enabled            := False;
+    epSaidaOperador.Enabled       := False;
 end;
 
 procedure TListaSaida.FormShow(Sender: TObject);
@@ -188,10 +186,10 @@ begin
   end;
 end;
 
-procedure TListaSaida.HabilitaCamposPesquisa; // desabilitar campos de pesquisa
+procedure TListaSaida.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
-    Edit1.Enabled            := True;
-    Edit5.Enabled            := True;
+    epSaidaCod.Enabled            := True;
+    epSaidaOperador.Enabled       := True;
 end;
 
 end.

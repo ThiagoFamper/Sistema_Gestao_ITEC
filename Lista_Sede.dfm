@@ -48,7 +48,7 @@ object ListaSede: TListaSede
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbpSedeID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -82,7 +82,7 @@ object ListaSede: TListaSede
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit2: TDBEdit
+      object dbpSedeDescricao: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -128,15 +128,14 @@ object ListaSede: TListaSede
         ParentFont = False
         ExplicitWidth = 65
       end
-      object Edit1: TEdit
+      object epSedeDescricao: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit1Change
+        OnChange = epSedeDescricaoChange
       end
     end
   end
@@ -2193,14 +2192,14 @@ object ListaSede: TListaSede
     TabOrder = 4
     ExplicitWidth = 1045
     ExplicitHeight = 276
-    object DBGrid1: TDBGrid
+    object gpSede: TDBGrid
       Left = 0
       Top = 0
       Width = 1047
       Height = 284
       Hint = 'Pesquisar Grupos'
       Align = alClient
-      DataSource = DataSource1
+      DataSource = dsSede
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -2219,7 +2218,7 @@ object ListaSede: TListaSede
         end>
     end
   end
-  object FDQuery1: TFDQuery
+  object qrySede: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'SELECT *'
@@ -2227,17 +2226,17 @@ object ListaSede: TListaSede
       'WHERE'
       '    (UPPER(descricao) LIKE UPPER(:descricao));'
       '')
-    Left = 872
-    Top = 154
+    Left = 800
+    Top = 138
     ParamData = <
       item
         Name = 'DESCRICAO'
         ParamType = ptInput
       end>
   end
-  object DataSource1: TDataSource
-    DataSet = FDQuery1
-    Left = 968
-    Top = 146
+  object dsSede: TDataSource
+    DataSet = qrySede
+    Left = 880
+    Top = 138
   end
 end

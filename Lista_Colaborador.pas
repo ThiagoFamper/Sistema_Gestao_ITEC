@@ -31,13 +31,13 @@ type
     Panel4: TPanel;
     DBNavigator1: TDBNavigator;
     Panel3: TPanel;
-    DBGrid1: TDBGrid;
+    gpColab: TDBGrid;
     Panel13: TPanel;
     Label1: TLabel;
-    DBEdit1: TDBEdit;
+    dbpColabID: TDBEdit;
     Panel15: TPanel;
     Label2: TLabel;
-    DBEdit3: TDBEdit;
+    dbpColabDescricao: TDBEdit;
     Panel16: TPanel;
     Label4: TLabel;
     Panel17: TPanel;
@@ -46,21 +46,21 @@ type
     Label6: TLabel;
     Panel19: TPanel;
     Label11: TLabel;
-    Edit1: TEdit;
+    epColabDescricao: TEdit;
     Panel20: TPanel;
     Label8: TLabel;
-    Edit3: TEdit;
+    epColabSetor: TEdit;
     Panel21: TPanel;
     Label9: TLabel;
-    Edit2: TEdit;
+    epColabCargo: TEdit;
     Panel22: TPanel;
     Label7: TLabel;
-    Edit4: TEdit;
-    DBEdit4: TDBEdit;
-    DBLookupComboBox1: TDBLookupComboBox;
-    DBLookupComboBox2: TDBLookupComboBox;
-    DataSource1: TDataSource;
-    FDQuery1: TFDQuery;
+    epColabSede: TEdit;
+    dbpColabCargo: TDBEdit;
+    cbpColabSetor: TDBLookupComboBox;
+    cbpColabSede: TDBLookupComboBox;
+    dsColab: TDataSource;
+    qryColab: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -72,10 +72,10 @@ type
     procedure SBsalvarClick(Sender: TObject);
     procedure Filtro;
     procedure FormShow(Sender: TObject);
-    procedure Edit1Change(Sender: TObject);
-    procedure Edit2Change(Sender: TObject);
-    procedure Edit3Change(Sender: TObject);
-    procedure Edit4Change(Sender: TObject);
+    procedure epColabDescricaoChange(Sender: TObject);
+    procedure epColabCargoChange(Sender: TObject);
+    procedure epColabSetorChange(Sender: TObject);
+    procedure epColabSedeChange(Sender: TObject);
 
   private
     { Private declarations }
@@ -103,7 +103,7 @@ begin
     DesabilitaCampos();
     HabilitaCamposPesquisa();
     dm.FDTabColaborador.Cancel;
-    DBGrid1.Enabled      := True;
+    gpColab.Enabled      := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -116,7 +116,7 @@ begin
     HabilitaCampos();
     DesabilitaCamposPesquisa();
     dm.FDTabColaborador.Edit;
-    DBGrid1.Enabled      := False;
+    gpColab.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBexcluir.Enabled    := False;
@@ -131,28 +131,28 @@ end;
 
 procedure TListaColaborador.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit3.Text = '' then
+    if dbpColabDescricao.Text = '' then
       begin
         ShowMessage('O Campo "Descrição" deve ser preenchido!');
-        DBEdit3.SetFocus;
+        dbpColabDescricao.SetFocus;
       end
   else
-    if DBEdit4.Text = '' then
+    if dbpColabCargo.Text = '' then
       begin
         ShowMessage('O Campo "Cargo" deve ser preenchido!');
-        DBEdit4.SetFocus;
+        dbpColabCargo.SetFocus;
       end
   else
-    if DBLookupComboBox1.Text = '' then
+    if cbpColabSetor.Text = '' then
       begin
         ShowMessage('O Campo "Setor" deve ser preenchido!');
-        DBLookupComboBox1.SetFocus;
+        cbpColabSetor.SetFocus;
       end
   else
-    if DBLookupComboBox2.Text = '' then
+    if cbpColabSede.Text = '' then
       begin
         ShowMessage('O Campo "Sede" deve ser preenchido!');
-        DBLookupComboBox2.SetFocus;
+        cbpColabSede.SetFocus;
       end
   else
     begin
@@ -160,7 +160,7 @@ begin
       ShowMessage('Colaborador editado com sucesso!');
       DesabilitaCampos();
       HabilitaCamposPesquisa();
-      DBGrid1.Enabled      := True;
+      gpColab.Enabled      := True;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
       SBeditar.Enabled     := True;
@@ -171,65 +171,65 @@ end;
 
 procedure TListaColaborador.HabilitaCampos; // habilitar campos
 begin
-    DBEdit3.Enabled            := True;
-    DBEdit4.Enabled            := True;
-    DBLookupComboBox1.Enabled  := True;
-    DBLookupComboBox2.Enabled  := True;
+    dbpColabDescricao.Enabled     := True;
+    dbpColabCargo.Enabled         := True;
+    cbpColabSetor.Enabled         := True;
+    cbpColabSede.Enabled          := True;
 end;
 
 procedure TListaColaborador.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit3.Enabled            := False;
-    DBEdit4.Enabled            := False;
-    DBLookupComboBox1.Enabled  := False;
-    DBLookupComboBox2.Enabled  := False;
+    dbpColabDescricao.Enabled     := False;
+    dbpColabCargo.Enabled         := False;
+    cbpColabSetor.Enabled         := False;
+    cbpColabSede.Enabled          := False;
 end;
 
 procedure TListaColaborador.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
-    Edit1.Enabled            := False;
-    Edit2.Enabled            := False;
-    Edit3.Enabled            := False;
-    Edit4.Enabled            := False;
+    epColabDescricao.Enabled        := False;
+    epColabCargo.Enabled            := False;
+    epColabSetor.Enabled            := False;
+    epColabSede.Enabled             := False;
 end;
 
-procedure TListaColaborador.Edit1Change(Sender: TObject);
+procedure TListaColaborador.epColabDescricaoChange(Sender: TObject);
 begin
   Filtro;
 end;
 
-procedure TListaColaborador.Edit2Change(Sender: TObject);
+procedure TListaColaborador.epColabCargoChange(Sender: TObject);
 begin
   Filtro;
 end;
 
-procedure TListaColaborador.Edit3Change(Sender: TObject);
+procedure TListaColaborador.epColabSetorChange(Sender: TObject);
 begin
   Filtro;
 end;
 
-procedure TListaColaborador.Edit4Change(Sender: TObject);
+procedure TListaColaborador.epColabSedeChange(Sender: TObject);
 begin
   Filtro;
 end;
 
 procedure TListaColaborador.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
-    Edit1.Enabled            := True;
-    Edit2.Enabled            := True;
-    Edit3.Enabled            := True;
-    Edit4.Enabled            := True;
+    epColabDescricao.Enabled        := True;
+    epColabCargo.Enabled            := True;
+    epColabSetor.Enabled            := True;
+    epColabSede.Enabled             := True;
 end;
 
 procedure TListaColaborador.Filtro; // pesquisa com sql query
 begin
-  FDQuery1.ParamByName('descricao').AsString := '%' + Edit1.Text + '%';
-  FDQuery1.ParamByName('cargo').AsString := '%' + Edit2.Text + '%';
-  FDQuery1.ParamByName('setor').AsString := '%' + Edit3.Text + '%';
-  FDQuery1.ParamByName('sede').AsString := '%' + Edit4.Text + '%';
+  qryColab.ParamByName('descricao').AsString := '%' + epColabDescricao.Text + '%';
+  qryColab.ParamByName('cargo').AsString := '%' + epColabCargo.Text + '%';
+  qryColab.ParamByName('setor').AsString := '%' + epColabSetor.Text + '%';
+  qryColab.ParamByName('sede').AsString := '%' + epColabSede.Text + '%';
 
-  FDQuery1.Close;
-  FDQuery1.Open;
+  qryColab.Close;
+  qryColab.Open;
 end;
 
 procedure TListaColaborador.FormShow(Sender: TObject);

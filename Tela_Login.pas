@@ -20,7 +20,7 @@ type
     bCancelar: TButton;
     Edit1: TEdit;
     Edit2: TEdit;
-    FDQuery1: TFDQuery;
+    qryUsuario: TFDQuery;
     procedure bEntrarClick(Sender: TObject);
     procedure bCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -43,11 +43,11 @@ uses Data_Module, Tela_Principal;
 
 procedure TTelaLogin.bEntrarClick(Sender: TObject);
 begin
-    with FDQuery1 do
+    with qryUsuario do
     begin
       Close;
-      FDQuery1.Params.ParamByName('login').AsString := Edit1.Text;
-      FDQuery1.Params.ParamByName('senha').AsString := Edit2.Text;
+      qryUsuario.Params.ParamByName('login').AsString := Edit1.Text;
+      qryUsuario.Params.ParamByName('senha').AsString := Edit2.Text;
       Open;
 
     if IsEmpty then

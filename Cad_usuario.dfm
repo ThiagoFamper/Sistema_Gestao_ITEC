@@ -52,7 +52,6 @@ object CadUsuario: TCadUsuario
         Width = 50
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'id'
         DataSource = DM.dsFDTabUsuario
         Enabled = False
@@ -87,7 +86,6 @@ object CadUsuario: TCadUsuario
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         Color = clBtnHighlight
         DataField = 'nome'
         DataSource = DM.dsFDTabUsuario
@@ -123,7 +121,6 @@ object CadUsuario: TCadUsuario
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'login'
         DataSource = DM.dsFDTabUsuario
         Enabled = False
@@ -158,7 +155,6 @@ object CadUsuario: TCadUsuario
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'senha'
         DataSource = DM.dsFDTabUsuario
         Enabled = False

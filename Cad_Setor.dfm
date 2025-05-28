@@ -52,7 +52,6 @@ object CadSetor: TCadSetor
         Width = 50
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'id'
         DataSource = DM.dsFDTabSetor
         Enabled = False
@@ -87,7 +86,6 @@ object CadSetor: TCadSetor
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'descricao'
         DataSource = DM.dsFDTabSetor
         Enabled = False

@@ -49,7 +49,7 @@ object ListaEmprestimo: TListaEmprestimo
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbpEmpID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -83,7 +83,7 @@ object ListaEmprestimo: TListaEmprestimo
         ParentFont = False
         ExplicitWidth = 49
       end
-      object DBEdit2: TDBEdit
+      object dbpEmpCod: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -117,7 +117,7 @@ object ListaEmprestimo: TListaEmprestimo
         ParentFont = False
         ExplicitWidth = 78
       end
-      object DBEdit5: TDBEdit
+      object dbpEmpQtd: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -151,7 +151,7 @@ object ListaEmprestimo: TListaEmprestimo
         ParentFont = False
         ExplicitWidth = 64
       end
-      object DBEdit6: TDBEdit
+      object dbpEmpOperador: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -185,7 +185,7 @@ object ListaEmprestimo: TListaEmprestimo
         ParentFont = False
         ExplicitWidth = 38
       end
-      object DBEdit3: TDBEdit
+      object dbpEmpSaldo: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -231,13 +231,12 @@ object ListaEmprestimo: TListaEmprestimo
         ParentFont = False
         ExplicitWidth = 49
       end
-      object Edit1: TEdit
+      object epEmpCod: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -263,13 +262,12 @@ object ListaEmprestimo: TListaEmprestimo
         ParentFont = False
         ExplicitWidth = 65
       end
-      object Edit2: TEdit
+      object epEmpDescricao: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -295,13 +293,12 @@ object ListaEmprestimo: TListaEmprestimo
         ParentFont = False
         ExplicitWidth = 64
       end
-      object Edit5: TEdit
+      object epEmpOperador: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
       end
     end
@@ -2696,7 +2693,7 @@ object ListaEmprestimo: TListaEmprestimo
     TabOrder = 4
     ExplicitWidth = 1152
     ExplicitHeight = 217
-    object DBGrid1: TDBGrid
+    object gpEmp: TDBGrid
       Left = 0
       Top = 0
       Width = 1154

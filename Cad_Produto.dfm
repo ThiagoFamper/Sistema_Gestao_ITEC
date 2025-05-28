@@ -1807,7 +1807,6 @@ object CadProduto: TCadProduto
         Width = 50
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'id'
         DataSource = DM.dsFDTabProduto
         Enabled = False
@@ -1842,7 +1841,6 @@ object CadProduto: TCadProduto
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'cod_produto'
         DataSource = DM.dsFDTabProduto
         Enabled = False
@@ -1877,7 +1875,6 @@ object CadProduto: TCadProduto
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'descricao'
         DataSource = DM.dsFDTabProduto
         Enabled = False
@@ -1912,7 +1909,6 @@ object CadProduto: TCadProduto
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'marca'
         DataSource = DM.dsFDTabProduto
         Enabled = False
@@ -1985,7 +1981,6 @@ object CadProduto: TCadProduto
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         DataField = 'modelo'
         DataSource = DM.dsFDTabProduto
         Enabled = False

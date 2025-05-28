@@ -47,15 +47,14 @@ object ListaUsuario: TListaUsuario
         ParentFont = False
         ExplicitWidth = 41
       end
-      object Edit1: TEdit
+      object epUsuarioNome: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit1Change
+        OnChange = epUsuarioNomeChange
       end
     end
     object Panel18: TPanel
@@ -80,15 +79,14 @@ object ListaUsuario: TListaUsuario
         ParentFont = False
         ExplicitWidth = 37
       end
-      object Edit2: TEdit
+      object epUsuarioLogin: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        CharCase = ecUpperCase
         TabOrder = 0
-        OnChange = Edit2Change
+        OnChange = epUsuarioLoginChange
       end
     end
     object Panel19: TPanel
@@ -99,7 +97,7 @@ object ListaUsuario: TListaUsuario
       BevelKind = bkFlat
       BevelOuter = bvNone
       TabOrder = 2
-      object CheckBox2: TCheckBox
+      object cbpUsuarioAdmin: TCheckBox
         AlignWithMargins = True
         Left = 3
         Top = 3
@@ -114,7 +112,7 @@ object ListaUsuario: TListaUsuario
         Font.Style = []
         ParentFont = False
         TabOrder = 0
-        OnClick = CheckBox2Click
+        OnClick = cbpUsuarioAdminClick
       end
     end
   end
@@ -152,7 +150,7 @@ object ListaUsuario: TListaUsuario
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbpUsuarioID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -186,7 +184,7 @@ object ListaUsuario: TListaUsuario
         ParentFont = False
         ExplicitWidth = 41
       end
-      object DBEdit2: TDBEdit
+      object dbpUsuarioNome: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -220,7 +218,7 @@ object ListaUsuario: TListaUsuario
         ParentFont = False
         ExplicitWidth = 37
       end
-      object DBEdit3: TDBEdit
+      object dbpUsuarioLogin: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -254,7 +252,7 @@ object ListaUsuario: TListaUsuario
         ParentFont = False
         ExplicitWidth = 40
       end
-      object DBEdit4: TDBEdit
+      object dbpUsuarioSenha: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -273,7 +271,7 @@ object ListaUsuario: TListaUsuario
       Height = 59
       BevelOuter = bvNone
       TabOrder = 4
-      object CheckBox1: TCheckBox
+      object dbpUsuarioAdmin: TCheckBox
         AlignWithMargins = True
         Left = 3
         Top = 3
@@ -2345,14 +2343,14 @@ object ListaUsuario: TListaUsuario
     TabOrder = 4
     ExplicitWidth = 1046
     ExplicitHeight = 230
-    object DBGrid1: TDBGrid
+    object gpUsuario: TDBGrid
       Left = 0
       Top = 0
       Width = 1048
       Height = 238
       Hint = 'Pesquisar Usuario'
       Align = alClient
-      DataSource = DataSource1
+      DataSource = dsUsuario
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -2392,7 +2390,7 @@ object ListaUsuario: TListaUsuario
         end>
     end
   end
-  object FDQuery1: TFDQuery
+  object qryUsuario: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'SELECT *'
@@ -2402,8 +2400,8 @@ object ListaUsuario: TListaUsuario
       '    (UPPER(login) LIKE UPPER(:login)) AND'
       '    (admin = :admin);'
       '')
-    Left = 912
-    Top = 178
+    Left = 760
+    Top = 186
     ParamData = <
       item
         Name = 'NOME'
@@ -2418,9 +2416,9 @@ object ListaUsuario: TListaUsuario
         ParamType = ptInput
       end>
   end
-  object DataSource1: TDataSource
-    DataSet = FDQuery1
-    Left = 832
-    Top = 210
+  object dsUsuario: TDataSource
+    DataSet = qryUsuario
+    Left = 848
+    Top = 186
   end
 end

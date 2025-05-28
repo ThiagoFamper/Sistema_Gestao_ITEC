@@ -141,7 +141,7 @@ object TelaLogin: TTelaLogin
     TabOrder = 4
     OnKeyPress = Edit2KeyPress
   end
-  object FDQuery1: TFDQuery
+  object qryUsuario: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'SELECT login, senha, admin'
