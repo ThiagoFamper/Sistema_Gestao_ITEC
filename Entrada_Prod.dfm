@@ -12,6 +12,7 @@ object EntradaProd: TEntradaProd
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Panel2: TPanel
     Left = 0
@@ -1762,7 +1763,7 @@ object EntradaProd: TEntradaProd
       TabOrder = 5
     end
   end
-  object DBGrid1: TDBGrid
+  object gEntrada: TDBGrid
     Left = 0
     Top = 393
     Width = 1117
@@ -1866,7 +1867,7 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbEntradaID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -1902,7 +1903,7 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 49
       end
-      object DBEdit2: TDBEdit
+      object dbEntradaCod: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -1937,13 +1938,17 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 65
       end
-      object Edit1: TEdit
+      object cbEntradaDescricao: TDBLookupComboBox
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        Enabled = False
+        DataField = 'produto_id'
+        DataSource = DM.dsFDTabEntrada
+        KeyField = 'id'
+        ListField = 'descricao'
+        ListSource = DsProduto
         TabOrder = 0
       end
     end
@@ -1969,7 +1974,7 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 64
       end
-      object DBLookupComboBox1: TDBLookupComboBox
+      object cbEntradaOperador: TDBLookupComboBox
         Left = 0
         Top = 20
         Width = 400
@@ -1982,7 +1987,6 @@ object EntradaProd: TEntradaProd
         ListField = 'descricao'
         ListSource = DM.dsFDTabColaborador
         TabOrder = 0
-        OnKeyPress = DBLookupComboBox1KeyPress
       end
     end
     object Panel16: TPanel
@@ -2007,7 +2011,7 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 78
       end
-      object DBedit4: TDBEdit
+      object dbEntradaQtd: TDBEdit
         Left = 0
         Top = 20
         Width = 81
@@ -2042,7 +2046,7 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 73
       end
-      object DBedit5: TDBEdit
+      object dbEntradaNF: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -2053,7 +2057,6 @@ object EntradaProd: TEntradaProd
         DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
-        OnKeyPress = DBedit5KeyPress
       end
     end
     object Panel19: TPanel
@@ -2078,7 +2081,7 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 91
       end
-      object DBedit7: TDBEdit
+      object dbEntradaValor: TDBEdit
         Left = 0
         Top = 20
         Width = 110
@@ -2089,7 +2092,6 @@ object EntradaProd: TEntradaProd
         DataSource = DM.dsFDTabEntrada
         Enabled = False
         TabOrder = 0
-        OnKeyPress = DBedit7KeyPress
       end
     end
     object Panel21: TPanel
@@ -2114,7 +2116,7 @@ object EntradaProd: TEntradaProd
         ParentFont = False
         ExplicitWidth = 53
       end
-      object Edit2: TEdit
+      object eEntradaEstoque: TEdit
         Left = 0
         Top = 20
         Width = 81
@@ -2125,28 +2127,28 @@ object EntradaProd: TEntradaProd
       end
     end
   end
-  object FDQuery1: TFDQuery
+  object qryVerifica: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'SELECT COUNT(*) AS qtd'
       'FROM estoqueitec.estoque'
       'WHERE produto_id = :produto_id;')
-    Left = 760
-    Top = 314
+    Left = 640
+    Top = 330
     ParamData = <
       item
         Name = 'PRODUTO_ID'
         ParamType = ptInput
       end>
   end
-  object FDQuery2: TFDQuery
+  object qryUpdateEstoque: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'UPDATE estoqueitec.estoque'
       'SET saldo = saldo + :quantidade'
       'WHERE produto_id = :produto_id;')
-    Left = 832
-    Top = 314
+    Left = 744
+    Top = 330
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2157,13 +2159,13 @@ object EntradaProd: TEntradaProd
         ParamType = ptInput
       end>
   end
-  object FDQuery3: TFDQuery
+  object qryInsertEstoque: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'INSERT INTO estoqueitec.estoque (produto_id, saldo)'
       'VALUES (:produto_id, :quantidade);')
-    Left = 904
-    Top = 314
+    Left = 856
+    Top = 330
     ParamData = <
       item
         Name = 'PRODUTO_ID'
@@ -2173,5 +2175,20 @@ object EntradaProd: TEntradaProd
         Name = 'QUANTIDADE'
         ParamType = ptInput
       end>
+  end
+  object QryProduto: TFDQuery
+    Connection = DM.FDEstoqueItec
+    Transaction = DM.FDTransaction1
+    UpdateTransaction = DM.FDTransaction1
+    SQL.Strings = (
+      'select id, descricao '
+      'from estoqueitec.produto')
+    Left = 712
+    Top = 176
+  end
+  object DsProduto: TDataSource
+    DataSet = QryProduto
+    Left = 712
+    Top = 248
   end
 end

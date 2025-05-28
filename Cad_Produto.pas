@@ -25,33 +25,29 @@ type
     Panel5: TPanel;
     Panel6: TPanel;
     Panel8: TPanel;
-    DBGrid1: TDBGrid;
+    gProd: TDBGrid;
     Panel10: TPanel;
     Label1: TLabel;
-    DBEdit1: TDBEdit;
+    dbProdID: TDBEdit;
     Panel11: TPanel;
     Label2: TLabel;
-    DBEdit2: TDBEdit;
+    dbProdCod: TDBEdit;
     Panel12: TPanel;
     Label3: TLabel;
-    DBEdit3: TDBEdit;
+    dbProdDescricao: TDBEdit;
     Panel13: TPanel;
     Label4: TLabel;
-    DBEdit4: TDBEdit;
+    dbProdMarca: TDBEdit;
     Panel14: TPanel;
     Label5: TLabel;
-    DBLookupComboBox1: TDBLookupComboBox;
+    cbProdGrupo: TDBLookupComboBox;
     Panel15: TPanel;
     Label6: TLabel;
-    DBEdit5: TDBEdit;
+    dbProdModelo: TDBEdit;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
     procedure LimpaCampos;
-    procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);
-    procedure DBEdit3KeyPress(Sender: TObject; var Key: Char);
-    procedure DBEdit4KeyPress(Sender: TObject; var Key: Char);
-    procedure DBEdit5KeyPress(Sender: TObject; var Key: Char);
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
@@ -96,7 +92,7 @@ begin
   SBnovo.Enabled       := False;
   dm.FDTabProduto.Open;
   dm.FDTabProduto.Append;
-  DBEdit2.SetFocus;
+  dbProdCod.SetFocus;
 end;
 
 procedure TCadProduto.SBpesquisarClick(Sender: TObject);
@@ -114,34 +110,34 @@ procedure TCadProduto.SBsalvarClick(Sender: TObject); // botão de salvar
 var
   NewID: Integer;
 begin
-    if DBEdit2.Text = '' then
+    if dbProdCod.Text = '' then
       begin
         ShowMessage('O campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
+        dbProdCod.SetFocus;
       end
   else
-    if DBEdit3.Text = '' then
+    if dbProdDescricao.Text = '' then
       begin
         ShowMessage('O campo "Descrição" deve ser preenchido!');
-        DBEdit3.SetFocus;
+        dbProdDescricao.SetFocus;
       end
   else
-    if DBEdit4.Text = '' then
+    if dbProdMarca.Text = '' then
       begin
         ShowMessage('O campo "Marca" deve ser preenchido!');
-        DBEdit4.SetFocus;
+        dbProdMarca.SetFocus;
       end
   else
-    if DBEdit5.Text = '' then
+    if dbProdModelo.Text = '' then
       begin
         ShowMessage('O campo "Modelo" deve ser preenchido!');
-        DBEdit5.SetFocus;
+        dbProdModelo.SetFocus;
       end
   else
-    if DBLookupComboBox1.Text = '' then
+    if cbProdGrupo.Text = '' then
       begin
         ShowMessage('O campo "Grupo" deve ser preenchido!');
-        DBLookupComboBox1.SetFocus;
+        cbProdGrupo.SetFocus;
       end
   else
     begin
@@ -163,56 +159,31 @@ begin
 
 end;
 
-// foco com enter
-procedure TCadProduto.DBEdit2KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit3.SetFocus;
-end;
-
-procedure TCadProduto.DBEdit3KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit4.SetFocus;
-end;
-
-procedure TCadProduto.DBEdit4KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit5.SetFocus;
-end;
-
-procedure TCadProduto.DBEdit5KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBLookupComboBox1.SetFocus;
-end;
-
 procedure TCadProduto.HabilitaCampos; // habilitar campos
 begin
-    DBEdit2.Enabled            := True;
-    DBEdit3.Enabled            := True;
-    DBEdit4.Enabled            := True;
-    DBEdit5.Enabled            := True;
-    DBLookupComboBox1.Enabled  := True;
+    dbProdCod.Enabled        := True;
+    dbProdDescricao.Enabled  := True;
+    dbProdModelo.Enabled     := True;
+    dbProdMarca.Enabled      := True;
+    cbProdGrupo.Enabled      := True;
 end;
 
 procedure TCadProduto.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit2.Enabled            := False;
-    DBEdit3.Enabled            := False;
-    DBEdit4.Enabled            := False;
-    DBEdit5.Enabled            := False;
-    DBLookupComboBox1.Enabled  := False;
+    dbProdCod.Enabled        := False;
+    dbProdDescricao.Enabled  := False;
+    dbProdModelo.Enabled     := False;
+    dbProdMarca.Enabled      := False;
+    cbProdGrupo.Enabled      := False;
 end;
 
 procedure TCadProduto.LimpaCampos; // limpar campos
 begin
-    DBEdit2.Clear;
-    DBEdit3.Clear;
-    DBEdit4.Clear;
-    DBEdit5.Clear;
-    DBLookupComboBox1.KeyValue := 0;
+    dbProdCod.Clear;
+    dbProdDescricao.Clear;
+    dbProdModelo.Clear;
+    dbProdMarca.Clear;
+    cbProdGrupo.KeyValue := 0;
 end;
 
 end.

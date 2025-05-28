@@ -1801,7 +1801,7 @@ object CadProduto: TCadProduto
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbProdID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -1836,7 +1836,7 @@ object CadProduto: TCadProduto
         ParentFont = False
         ExplicitWidth = 49
       end
-      object DBEdit2: TDBEdit
+      object dbProdCod: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -1847,7 +1847,6 @@ object CadProduto: TCadProduto
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
-        OnKeyPress = DBEdit2KeyPress
       end
     end
     object Panel12: TPanel
@@ -1872,7 +1871,7 @@ object CadProduto: TCadProduto
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit3: TDBEdit
+      object dbProdDescricao: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -1883,7 +1882,6 @@ object CadProduto: TCadProduto
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
-        OnKeyPress = DBEdit3KeyPress
       end
     end
     object Panel13: TPanel
@@ -1908,7 +1906,7 @@ object CadProduto: TCadProduto
         ParentFont = False
         ExplicitWidth = 41
       end
-      object DBEdit4: TDBEdit
+      object dbProdMarca: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -1919,7 +1917,6 @@ object CadProduto: TCadProduto
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
-        OnKeyPress = DBEdit4KeyPress
       end
     end
     object Panel14: TPanel
@@ -1944,7 +1941,7 @@ object CadProduto: TCadProduto
         ParentFont = False
         ExplicitWidth = 41
       end
-      object DBLookupComboBox1: TDBLookupComboBox
+      object cbProdGrupo: TDBLookupComboBox
         Left = 0
         Top = 20
         Width = 400
@@ -1982,7 +1979,7 @@ object CadProduto: TCadProduto
         ParentFont = False
         ExplicitWidth = 52
       end
-      object DBEdit5: TDBEdit
+      object dbProdModelo: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -1993,11 +1990,10 @@ object CadProduto: TCadProduto
         DataSource = DM.dsFDTabProduto
         Enabled = False
         TabOrder = 0
-        OnKeyPress = DBEdit5KeyPress
       end
     end
   end
-  object DBGrid1: TDBGrid
+  object gProd: TDBGrid
     Left = 0
     Top = 321
     Width = 1108

@@ -26,29 +26,29 @@ type
     Panel10: TPanel;
     Panel11: TPanel;
     DBNavigator1: TDBNavigator;
-    DBGrid1: TDBGrid;
+    gEmp: TDBGrid;
     Panel13: TPanel;
     Label9: TLabel;
-    DBEdit1: TDBEdit;
+    dbEmpID: TDBEdit;
     Panel12: TPanel;
     Label10: TLabel;
-    DBEdit2: TDBEdit;
+    dbEmpCod: TDBEdit;
     Panel14: TPanel;
     Label1: TLabel;
     Panel15: TPanel;
     Label12: TLabel;
     Panel16: TPanel;
     Label13: TLabel;
-    DBedit4: TDBEdit;
+    dbEmpQtd: TDBEdit;
     Panel20: TPanel;
     Label15: TLabel;
     SBnovo: TSpeedButton;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    DBLookupComboBox1: TDBLookupComboBox;
-    FDQuery1: TFDQuery;
-    FDQuery2: TFDQuery;
-    FDQuery3: TFDQuery;
+    eEmpEstoque: TEdit;
+    cbEmpDescricao: TEdit;
+    cbEmpOperador: TDBLookupComboBox;
+    qryVerifica: TFDQuery;
+    qryUpdateEstoque: TFDQuery;
+    qryInsertEstoque: TFDQuery;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
@@ -57,8 +57,6 @@ type
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
-    procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);
-    procedure DBLookupComboBox1KeyPress(Sender: TObject; var Key: Char);
 
   private
     { Private declarations }
@@ -97,7 +95,7 @@ begin
   SBnovo.Enabled       := False;
   dm.FDTabEmprestimoProd.Open;
   dm.FDTabEmprestimoProd.Append;
-  DBEdit2.SetFocus;
+  dbEmpCod.SetFocus;
 end;
 
 procedure TTelaEmprestimo.SBpesquisarClick(Sender: TObject);
@@ -114,39 +112,39 @@ procedure TTelaEmprestimo.SBsalvarClick(Sender: TObject); // botão de salvar
 var
   produtoID, quantidade, saldoAtual, emprestimoID: Integer;
 begin
-    if DBEdit2.Text = '' then
+    if dbEmpCod.Text = '' then
       begin
         ShowMessage('O campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
+        dbEmpCod.SetFocus;
       end
   else
-    if DBLookupComboBox1.Text = '' then
+    if cbEmpOperador.Text = '' then
       begin
         ShowMessage('O campo "Operador" deve ser preenchido!');
-        DBLookupComboBox1.SetFocus;
+        cbEmpOperador.SetFocus;
       end
   else
-    if DBEdit4.Text = '' then
+    if dbEmpQtd.Text = '' then
       begin
         ShowMessage('O campo "Quantidade" deve ser preenchido!');
-        DBEdit4.SetFocus;
+        dbEmpQtd.SetFocus;
       end
   else
     begin
-      produtoID := StrToInt(DBEdit2.Text);
-      quantidade := StrToInt(DBEdit4.Text);
+      produtoID := StrToInt(dbEmpCod.Text);
+      quantidade := StrToInt(dbEmpQtd.Text);
 
-      FDQuery1.Close;
-      FDQuery1.ParamByName('produto_id').AsInteger := produtoID;
-      FDQuery1.Open;
+      qryVerifica.Close;
+      qryVerifica.ParamByName('produto_id').AsInteger := produtoID;
+      qryVerifica.Open;
 
-    if FDQuery1.IsEmpty then
+    if qryVerifica.IsEmpty then
     begin
       ShowMessage('Produto não encontrado no estoque!');
       Exit;
     end;
 
-      saldoAtual := FDQuery1.FieldByName('saldo').AsInteger;
+      saldoAtual := qryVerifica.FieldByName('saldo').AsInteger;
 
     if saldoAtual < quantidade then
     begin
@@ -161,12 +159,12 @@ begin
 
       emprestimoID := dm.FDTabEmprestimoProd.FieldByName('id').AsInteger;
 
-      FDQuery2.ParamByName('produto_id').AsInteger := produtoID;
-      FDQuery2.ParamByName('quantidade').AsInteger := quantidade;
-      FDQuery2.ExecSQL;
+      qryUpdateEstoque.ParamByName('produto_id').AsInteger := produtoID;
+      qryUpdateEstoque.ParamByName('quantidade').AsInteger := quantidade;
+      qryUpdateEstoque.ExecSQL;
 
-      FDQuery3.ParamByName('emprestimo_id').AsInteger := emprestimoID;
-      FDQuery3.ExecSQL;
+      qryInsertEstoque.ParamByName('emprestimo_id').AsInteger := emprestimoID;
+      qryInsertEstoque.ExecSQL;
 
       dm.FDTabEmprestimoProd.Close;
       ShowMessage('Empréstimo cadastrado com sucesso!');
@@ -184,36 +182,22 @@ begin
 
 end;
 
-// foco com enter
-procedure TTelaEmprestimo.DBEdit2KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBLookupComboBox1.SetFocus;
-end;
-
-procedure TTelaEmprestimo.DBLookupComboBox1KeyPress(Sender: TObject;
-  var Key: Char);
-begin
-  if key = #13 then
-    DBEdit4.SetFocus;
-end;
-
 procedure TTelaEmprestimo.HabilitaCampos; // habilitar campos
 begin
-    DBEdit2.Enabled            := True;
-    DBEdit4.Enabled            := True;
+    dbEmpCod.Enabled            := True;
+    dbEmpQtd.Enabled            := True;
 end;
 
 procedure TTelaEmprestimo.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit2.Enabled            := False;
-    DBEdit4.Enabled            := False;
+    dbEmpCod.Enabled            := False;
+    dbEmpQtd.Enabled            := False;
 end;
 
 procedure TTelaEmprestimo.LimpaCampos; // limpar campos
 begin
-    DBEdit2.Clear;
-    DBEdit4.Clear;
+    dbEmpCod.Clear;
+    dbEmpQtd.Clear;
 end;
 
 end.

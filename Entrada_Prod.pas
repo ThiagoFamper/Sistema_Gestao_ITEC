@@ -24,48 +24,46 @@ type
     Panel8: TPanel;
     Panel9: TPanel;
     Panel10: TPanel;
-    DBGrid1: TDBGrid;
+    gEntrada: TDBGrid;
     Panel4: TPanel;
     Panel12: TPanel;
     Label9: TLabel;
-    DBEdit1: TDBEdit;
+    dbEntradaID: TDBEdit;
     Panel13: TPanel;
     Label6: TLabel;
     Panel14: TPanel;
     Label1: TLabel;
     Panel15: TPanel;
     Label12: TLabel;
-    DBLookupComboBox1: TDBLookupComboBox;
+    cbEntradaOperador: TDBLookupComboBox;
     Panel16: TPanel;
     Label13: TLabel;
-    DBedit4: TDBEdit;
+    dbEntradaQtd: TDBEdit;
     Panel18: TPanel;
     Label2: TLabel;
-    DBedit5: TDBEdit;
+    dbEntradaNF: TDBEdit;
     Panel19: TPanel;
     Label4: TLabel;
-    DBedit7: TDBEdit;
+    dbEntradaValor: TDBEdit;
     Panel21: TPanel;
     Label5: TLabel;
-    DBEdit2: TDBEdit;
-    FDQuery1: TFDQuery;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    FDQuery2: TFDQuery;
-    FDQuery3: TFDQuery;
+    dbEntradaCod: TDBEdit;
+    qryVerifica: TFDQuery;
+    cbEntradaDescricao: TDBLookupComboBox;
+    eEntradaEstoque: TEdit;
+    qryUpdateEstoque: TFDQuery;
+    qryInsertEstoque: TFDQuery;
+    QryProduto: TFDQuery;
+    DsProduto: TDataSource;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
     procedure LimpaCampos;
-    procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);
-    procedure DBEdit4KeyPress(Sender: TObject; var Key: Char);
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
-    procedure DBLookupComboBox1KeyPress(Sender: TObject; var Key: Char);
-    procedure DBedit5KeyPress(Sender: TObject; var Key: Char);
-    procedure DBedit7KeyPress(Sender: TObject; var Key: Char);
+    procedure FormShow(Sender: TObject);
 
   private
     produto_id: Int64;
@@ -105,7 +103,7 @@ begin
   SBnovo.Enabled       := False;
   dm.FDTabEntrada.Open;
   dm.FDTabEntrada.Append;
-  DBEdit2.SetFocus;
+  dbEntradaCod.SetFocus;
 end;
 
 procedure TEntradaProd.SBpesquisarClick(Sender: TObject);
@@ -122,57 +120,57 @@ procedure TEntradaProd.SBsalvarClick(Sender: TObject); // botão de salvar
 var
   produtoID, quantidade: Integer;
 begin
-    if DBEdit2.Text = '' then
+    if dbEntradaCod.Text = '' then
       begin
         ShowMessage('O campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
+        dbEntradaCod.SetFocus;
       end
   else
-    if DBLookupComboBox1.Text = '' then
+    if cbEntradaOperador.Text = '' then
       begin
         ShowMessage('O campo "Operador" deve ser preenchido!');
-        DBLookupComboBox1.SetFocus;
+        cbEntradaOperador.SetFocus;
       end
     else
-    if DBEdit5.Text = '' then
+    if dbEntradaNF.Text = '' then
       begin
         ShowMessage('O campo "Nota Fiscal" deve ser preenchido!');
-        DBEdit5.SetFocus;
+        dbEntradaNF.SetFocus;
       end
   else
-    if DBedit7.Text = '' then
+    if dbEntradaValor.Text = '' then
       begin
         ShowMessage('O campo "Valor Unitário" deve ser preenchido!');
-        DBedit7.SetFocus;
+        dbEntradaValor.SetFocus;
       end
   else
-    if DBedit4.Text = '' then
+    if dbEntradaQtd.Text = '' then
       begin
         ShowMessage('O campo "Quantidade" deve ser preenchido!');
-        DBedit4.SetFocus;
+        dbEntradaQtd.SetFocus;
       end
   else
     begin
       dm.FDTabEntrada.Post;
 
-      produtoID := StrToInt(DBEdit2.Text);
-      quantidade := StrToInt(DBEdit4.Text);
+      produtoID := StrToInt(dbEntradaCod.Text);
+      quantidade := StrToInt(dbEntradaQtd.Text);
 
-      FDQuery1.Close;
-      FDQuery1.ParamByName('produto_id').AsInteger := produtoID;
-      FDQuery1.Open;
+      qryVerifica.Close;
+      qryVerifica.ParamByName('produto_id').AsInteger := produtoID;
+      qryVerifica.Open;
 
-      if FDQuery1.FieldByName('qtd').AsInteger > 0 then
+      if qryVerifica.FieldByName('qtd').AsInteger > 0 then
       begin
-        FDQuery2.ParamByName('produto_id').AsInteger := produtoID;
-        FDQuery2.ParamByName('quantidade').AsInteger := quantidade;
-        FDQuery2.ExecSQL;
+        qryUpdateEstoque.ParamByName('produto_id').AsInteger := produtoID;
+        qryUpdateEstoque.ParamByName('quantidade').AsInteger := quantidade;
+        qryUpdateEstoque.ExecSQL;
       end
       else
       begin
-        FDQuery3.ParamByName('produto_id').AsInteger := produtoID;
-        FDQuery3.ParamByName('quantidade').AsInteger := quantidade;
-        FDQuery3.ExecSQL;
+        qryInsertEstoque.ParamByName('produto_id').AsInteger := produtoID;
+        qryInsertEstoque.ParamByName('quantidade').AsInteger := quantidade;
+        qryInsertEstoque.ExecSQL;
       end;
 
       dm.FDTabEntrada.Close;
@@ -192,65 +190,36 @@ begin
 
 end;
 
-//foco com enter
-procedure TEntradaProd.DBEdit2KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBLookupComboBox1.SetFocus;
-end;
-
-procedure TEntradaProd.DBEdit4KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit5.SetFocus;
-end;
-
-procedure TEntradaProd.DBedit5KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit7.SetFocus;
-end;
-
-procedure TEntradaProd.DBedit7KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit4.SetFocus;
-end;
-
-procedure TEntradaProd.DBLookupComboBox1KeyPress(Sender: TObject;
-  var Key: Char);
-begin
-  if key = #13 then
-    DBEdit5.SetFocus;
-end;
-
 procedure TEntradaProd.HabilitaCampos; // habilitar campos
 begin
-    DBEdit2.Enabled            := True;
-    DBEdit4.Enabled            := True;
-    DBEdit5.Enabled            := True;
-    DBEdit7.Enabled            := True;
-    DBLookupComboBox1.Enabled  := True;
+    dbEntradaCod.Enabled       := True;
+    dbEntradaNF.Enabled        := True;
+    dbEntradaValor.Enabled     := True;
+    dbEntradaQtd.Enabled       := True;
+    cbEntradaOperador.Enabled  := True;
 end;
 
 procedure TEntradaProd.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit2.Enabled            := False;
-    DBEdit4.Enabled            := False;
-    DBEdit5.Enabled            := False;
-    DBEdit7.Enabled            := False;
-    DBLookupComboBox1.Enabled  := False;
+    dbEntradaCod.Enabled       := False;
+    dbEntradaNF.Enabled        := False;
+    dbEntradaValor.Enabled     := False;
+    dbEntradaQtd.Enabled       := False;
+    cbEntradaOperador.Enabled  := False;
+end;
+
+procedure TEntradaProd.FormShow(Sender: TObject);
+begin
+  QryProduto.Open;
 end;
 
 procedure TEntradaProd.LimpaCampos; // limpar campos
 begin
-    DBEdit2.Clear;
-    Edit1.Clear;
-    DBEdit4.Clear;
-    DBEdit5.Clear;
-    DBEdit7.Clear;
-    Edit2.Clear;
-    DBLookupComboBox1.KeyValue := 0;
+    dbEntradaCod.Clear;
+    dbEntradaNF.Clear;
+    dbEntradaValor.Clear;
+    dbEntradaQtd.Clear;
+    cbEntradaOperador.KeyValue := 0;
 end;
 
 end.

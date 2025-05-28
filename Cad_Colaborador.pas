@@ -23,29 +23,26 @@ type
     Panel5: TPanel;
     Panel6: TPanel;
     Panel8: TPanel;
-    DBGrid1: TDBGrid;
+    gColab: TDBGrid;
     Panel10: TPanel;
     Label1: TLabel;
-    DBEdit1: TDBEdit;
+    dbColabID: TDBEdit;
     Panel12: TPanel;
     Label2: TLabel;
-    DBEdit3: TDBEdit;
+    dbColabDescricao: TDBEdit;
     Panel13: TPanel;
     Label3: TLabel;
-    DBEdit4: TDBEdit;
+    dbColabCargo: TDBEdit;
     Panel14: TPanel;
     Label4: TLabel;
-    DBLookupComboBox1: TDBLookupComboBox;
+    cbColabSetor: TDBLookupComboBox;
     Panel15: TPanel;
     Label6: TLabel;
-    DBLookupComboBox2: TDBLookupComboBox;
+    cbColabSede: TDBLookupComboBox;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
     procedure LimpaCampos;
-    procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);
-    procedure DBEdit3KeyPress(Sender: TObject; var Key: Char);
-    procedure DBEdit5KeyPress(Sender: TObject; var Key: Char);
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
@@ -91,7 +88,7 @@ begin
   SBnovo.Enabled       := False;
   dm.FDTabColaborador.Open;
   dm.FDTabColaborador.Append;
-  DBEdit3.SetFocus;
+  dbColabDescricao.SetFocus;
 end;
 
 procedure TCadColaborador.SBpesquisarClick(Sender: TObject);
@@ -107,28 +104,28 @@ end;
 
 procedure TCadColaborador.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit3.Text = '' then
+    if dbColabDescricao.Text = '' then
       begin
         ShowMessage('O campo "Descrição" deve ser preenchido!');
-        DBEdit3.SetFocus;
+        dbColabDescricao.SetFocus;
       end
   else
-    if DBEdit4.Text = '' then
+    if dbColabCargo.Text = '' then
       begin
         ShowMessage('O campo "Cargo" deve ser preenchido!');
-        DBEdit4.SetFocus;
+        dbColabCargo.SetFocus;
       end
   else
-    if DBLookupComboBox1.Text = '' then
+    if cbColabSetor.Text = '' then
       begin
         ShowMessage('O campo "Setor" deve ser preenchido!');
-        DBLookupComboBox1.SetFocus;
+        cbColabSetor.SetFocus;
       end
   else
-    if DBLookupComboBox2.Text = '' then
+    if cbColabSede.Text = '' then
       begin
         ShowMessage('O campo "Sede" deve ser preenchido!');
-        DBLookupComboBox2.SetFocus;
+        cbColabSede.SetFocus;
       end
   else
     begin
@@ -149,47 +146,28 @@ begin
     end;
 end;
 
-// foco com enter
-procedure TCadColaborador.DBEdit2KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit3.SetFocus;
-end;
-
-procedure TCadColaborador.DBEdit3KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit4.SetFocus;
-end;
-
-procedure TCadColaborador.DBEdit5KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBLookupComboBox1.SetFocus;
-end;
-
 procedure TCadColaborador.HabilitaCampos; // habilitar campos
 begin
-    DBEdit3.Enabled            := True;
-    DBEdit4.Enabled            := True;
-    DBLookupComboBox1.Enabled  := True;
-    DBLookupComboBox2.Enabled  := True;
+    dbColabDescricao.Enabled    := True;
+    dbColabCargo.Enabled        := True;
+    cbColabSetor.Enabled        := True;
+    cbColabSede.Enabled         := True;
 end;
 
 procedure TCadColaborador.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit3.Enabled            := False;
-    DBEdit4.Enabled            := False;
-    DBLookupComboBox1.Enabled  := False;
-    DBLookupComboBox2.Enabled  := False;
+    dbColabDescricao.Enabled    := False;
+    dbColabCargo.Enabled        := False;
+    cbColabSetor.Enabled        := False;
+    cbColabSede.Enabled         := False;
 end;
 
 procedure TCadColaborador.LimpaCampos; // limpar campos
 begin
-    DBEdit3.Clear;
-    DBEdit4.Clear;
-    DBLookupComboBox1.KeyValue := 0;
-    DBLookupComboBox2.KeyValue := 0;
+    dbColabDescricao.Clear;
+    dbColabCargo.Clear;
+    cbColabSetor.KeyValue := 0;
+    cbColabSede.KeyValue := 0;
 end;
 
 end.

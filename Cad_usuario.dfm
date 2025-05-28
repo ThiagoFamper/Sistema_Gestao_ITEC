@@ -46,7 +46,7 @@ object CadUsuario: TCadUsuario
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbUsuarioID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -81,7 +81,7 @@ object CadUsuario: TCadUsuario
         ParentFont = False
         ExplicitWidth = 41
       end
-      object DBEdit2: TDBEdit
+      object dbUsuarioNome: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -117,7 +117,7 @@ object CadUsuario: TCadUsuario
         ParentFont = False
         ExplicitWidth = 37
       end
-      object DBEdit3: TDBEdit
+      object dbUsuarioLogin: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -152,7 +152,7 @@ object CadUsuario: TCadUsuario
         ParentFont = False
         ExplicitWidth = 40
       end
-      object DBEdit4: TDBEdit
+      object dbUsuarioSenha: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -173,7 +173,7 @@ object CadUsuario: TCadUsuario
       BevelKind = bkSoft
       BevelOuter = bvNone
       TabOrder = 4
-      object CheckBox1: TCheckBox
+      object cbUsuarioAdmin: TCheckBox
         AlignWithMargins = True
         Left = 3
         Top = 3
@@ -1941,7 +1941,7 @@ object CadUsuario: TCadUsuario
       TabOrder = 5
     end
   end
-  object DBGrid1: TDBGrid
+  object gUsuario: TDBGrid
     Left = 0
     Top = 331
     Width = 1118

@@ -1794,7 +1794,7 @@ object CadSede: TCadSede
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit2: TDBEdit
+      object dbSedeDescricao: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -1835,7 +1835,7 @@ object CadSede: TCadSede
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbSedeID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -1855,7 +1855,7 @@ object CadSede: TCadSede
       end
     end
   end
-  object DBGrid1: TDBGrid
+  object gSede: TDBGrid
     Left = 0
     Top = 257
     Width = 1114

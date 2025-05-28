@@ -58,7 +58,7 @@ type
     pnpConSede: TPanel;
     Image1: TImage;
     Image2: TImage;
-    FlowPanel1: TFlowPanel;
+    fpPrincipal: TFlowPanel;
     pnpSair: TPanel;
     Image10: TImage;
     pnpCons: TPanel;
@@ -67,7 +67,7 @@ type
     Image7: TImage;
     pnpCad: TPanel;
     Image6: TImage;
-    FlowPanel2: TFlowPanel;
+    fpMovimentacao: TFlowPanel;
     pnpMovVoltar: TPanel;
     Image21: TImage;
     pnpMovDev: TPanel;

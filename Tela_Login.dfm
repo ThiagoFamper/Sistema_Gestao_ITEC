@@ -15,7 +15,7 @@ object TelaLogin: TTelaLogin
   Position = poScreenCenter
   OnShow = FormShow
   TextHeight = 15
-  object Label2: TLabel
+  object lLogin: TLabel
     Left = 104
     Top = 129
     Width = 37
@@ -28,7 +28,7 @@ object TelaLogin: TTelaLogin
     Font.Style = []
     ParentFont = False
   end
-  object Label3: TLabel
+  object lSenha: TLabel
     Left = 104
     Top = 194
     Width = 40
@@ -106,23 +106,23 @@ object TelaLogin: TTelaLogin
         0049454E44AE426082}
     end
   end
-  object Button1: TButton
+  object bEntrar: TButton
     Left = 160
     Top = 266
     Width = 75
     Height = 25
     Caption = 'Entrar'
     TabOrder = 1
-    OnClick = Button1Click
+    OnClick = bEntrarClick
   end
-  object Button2: TButton
+  object bCancelar: TButton
     Left = 256
     Top = 266
     Width = 75
     Height = 25
     Caption = 'Cancelar'
     TabOrder = 2
-    OnClick = Button2Click
+    OnClick = bCancelarClick
   end
   object Edit1: TEdit
     Left = 104

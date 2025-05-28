@@ -24,11 +24,11 @@ type
     Panel5: TPanel;
     Panel11: TPanel;
     Label2: TLabel;
-    DBEdit2: TDBEdit;
+    dbSedeDescricao: TDBEdit;
     Panel10: TPanel;
     Label1: TLabel;
-    DBEdit1: TDBEdit;
-    DBGrid1: TDBGrid;
+    dbSedeID: TDBEdit;
+    gSede: TDBGrid;
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
     procedure LimpaCampos;
@@ -81,15 +81,15 @@ begin
   SBnovo.Enabled       := False;
   dm.FDTabSede.Open;
   dm.FDTabSede.Append;
-  DBEdit2.SetFocus;
+  dbSedeDescricao.SetFocus;
 end;
 
 procedure TCadSede.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if DBEdit2.Text = '' then
+    if dbSedeDescricao.Text = '' then
       begin
         ShowMessage('O campo "Descrição" deve ser preenchido!');
-        DBEdit2.SetFocus;
+        dbSedeDescricao.SetFocus;
       end
   else
     begin
@@ -116,17 +116,17 @@ end;
 
 procedure TCadSede.HabilitaCampos; // habilitar campos
 begin
-    DBEdit2.Enabled            := True;
+    dbSedeDescricao.Enabled            := True;
 end;
 
 procedure TCadSede.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit2.Enabled            := False;
+    dbSedeDescricao.Enabled            := False;
 end;
 
 procedure TCadSede.LimpaCampos; // limpar campos
 begin
-    DBEdit2.Clear;
+    dbSedeDescricao.Clear;
 end;
 
 end.

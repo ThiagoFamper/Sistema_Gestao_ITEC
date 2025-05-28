@@ -47,7 +47,7 @@ object CadColaborador: TCadColaborador
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbColabID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -82,7 +82,7 @@ object CadColaborador: TCadColaborador
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit3: TDBEdit
+      object dbColabDescricao: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -117,7 +117,7 @@ object CadColaborador: TCadColaborador
         ParentFont = False
         ExplicitWidth = 40
       end
-      object DBEdit4: TDBEdit
+      object dbColabCargo: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -152,7 +152,7 @@ object CadColaborador: TCadColaborador
         ParentFont = False
         ExplicitWidth = 35
       end
-      object DBLookupComboBox1: TDBLookupComboBox
+      object cbColabSetor: TDBLookupComboBox
         Left = 0
         Top = 20
         Width = 400
@@ -189,7 +189,7 @@ object CadColaborador: TCadColaborador
         ParentFont = False
         ExplicitWidth = 33
       end
-      object DBLookupComboBox2: TDBLookupComboBox
+      object cbColabSede: TDBLookupComboBox
         Left = 0
         Top = 20
         Width = 400
@@ -1954,7 +1954,7 @@ object CadColaborador: TCadColaborador
       TabOrder = 5
     end
   end
-  object DBGrid1: TDBGrid
+  object gColab: TDBGrid
     Left = 0
     Top = 321
     Width = 1126

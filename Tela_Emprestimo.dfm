@@ -25,7 +25,6 @@ object TelaEmprestimo: TTelaEmprestimo
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1122
     object Panel13: TPanel
       Left = 17
       Top = 6
@@ -48,7 +47,7 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbEmpID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -84,7 +83,7 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 49
       end
-      object DBEdit2: TDBEdit
+      object dbEmpCod: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -96,7 +95,6 @@ object TelaEmprestimo: TTelaEmprestimo
         DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
-        OnKeyPress = DBEdit2KeyPress
       end
     end
     object Panel14: TPanel
@@ -121,7 +119,7 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 65
       end
-      object Edit2: TEdit
+      object cbEmpDescricao: TEdit
         Left = 0
         Top = 20
         Width = 400
@@ -153,7 +151,7 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 64
       end
-      object DBLookupComboBox1: TDBLookupComboBox
+      object cbEmpOperador: TDBLookupComboBox
         Left = 0
         Top = 20
         Width = 400
@@ -165,7 +163,6 @@ object TelaEmprestimo: TTelaEmprestimo
         ListField = 'descricao'
         ListSource = DM.dsFDTabColaborador
         TabOrder = 0
-        OnKeyPress = DBLookupComboBox1KeyPress
       end
     end
     object Panel16: TPanel
@@ -190,7 +187,7 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 78
       end
-      object DBedit4: TDBEdit
+      object dbEmpQtd: TDBEdit
         Left = 0
         Top = 20
         Width = 81
@@ -225,7 +222,7 @@ object TelaEmprestimo: TTelaEmprestimo
         ParentFont = False
         ExplicitWidth = 53
       end
-      object Edit1: TEdit
+      object eEmpEstoque: TEdit
         Left = 0
         Top = 20
         Width = 81
@@ -248,7 +245,6 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1122
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1995,7 +1991,6 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1122
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2007,7 +2002,7 @@ object TelaEmprestimo: TTelaEmprestimo
       TabOrder = 0
     end
   end
-  object DBGrid1: TDBGrid
+  object gEmp: TDBGrid
     Left = 0
     Top = 430
     Width = 1124
@@ -2063,30 +2058,30 @@ object TelaEmprestimo: TTelaEmprestimo
         Visible = True
       end>
   end
-  object FDQuery1: TFDQuery
+  object qryVerifica: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'SELECT saldo'
       'FROM estoqueitec.estoque'
       'WHERE produto_id = :produto_id;'
       '')
-    Left = 912
-    Top = 322
+    Left = 728
+    Top = 314
     ParamData = <
       item
         Name = 'PRODUTO_ID'
         ParamType = ptInput
       end>
   end
-  object FDQuery2: TFDQuery
+  object qryUpdateEstoque: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'UPDATE estoqueitec.estoque'
       'SET saldo = saldo - :quantidade'
       'WHERE produto_id = :produto_id;'
       '')
-    Left = 976
-    Top = 322
+    Left = 840
+    Top = 314
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2097,13 +2092,13 @@ object TelaEmprestimo: TTelaEmprestimo
         ParamType = ptInput
       end>
   end
-  object FDQuery3: TFDQuery
+  object qryInsertEstoque: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'INSERT INTO estoqueitec.item_emprestimo (emprestimo_id)'
       'VALUES (:emprestimo_id);')
-    Left = 1064
-    Top = 306
+    Left = 952
+    Top = 314
     ParamData = <
       item
         Name = 'EMPRESTIMO_ID'

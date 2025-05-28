@@ -1794,7 +1794,7 @@ object CadGrupo: TCadGrupo
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit2: TDBEdit
+      object dbGrupoDescricao: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -1835,7 +1835,7 @@ object CadGrupo: TCadGrupo
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbGrupoID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -1855,7 +1855,7 @@ object CadGrupo: TCadGrupo
       end
     end
   end
-  object DBGrid1: TDBGrid
+  object gGrupo: TDBGrid
     Left = 0
     Top = 257
     Width = 1114

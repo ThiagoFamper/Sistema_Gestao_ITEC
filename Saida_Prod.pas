@@ -28,7 +28,7 @@ type
     DBGrid1: TDBGrid;
     Panel13: TPanel;
     Label9: TLabel;
-    DBEdit1: TDBEdit;
+    dbSaidaID: TDBEdit;
     Panel14: TPanel;
     Label7: TLabel;
     Panel15: TPanel;
@@ -36,17 +36,17 @@ type
     Label12: TLabel;
     Panel18: TPanel;
     Label13: TLabel;
-    DBedit4: TDBEdit;
+    dbSaidaQtd: TDBEdit;
     Panel20: TPanel;
     Label10: TLabel;
-    DBEdit2: TDBEdit;
+    dbSaidaCod: TDBEdit;
     Panel21: TPanel;
     Label5: TLabel;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    DBLookupComboBox1: TDBLookupComboBox;
-    FDQuery1: TFDQuery;
-    FDQuery2: TFDQuery;
+    cbSaidaDescricao: TEdit;
+    eSaidaEstoque: TEdit;
+    cbSaidaOperador: TDBLookupComboBox;
+    qryVerifica: TFDQuery;
+    qryUpdateEstoque: TFDQuery;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
@@ -55,8 +55,6 @@ type
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
-    procedure DBEdit2KeyPress(Sender: TObject; var Key: Char);
-    procedure DBLookupComboBox1KeyPress(Sender: TObject; var Key: Char);
 
   private
     { Private declarations }
@@ -95,7 +93,7 @@ begin
   SBnovo.Enabled       := False;
   dm.FDTabSaida.Open;
   dm.FDTabSaida.Append;
-  DBEdit2.SetFocus;
+  dbSaidaCod.SetFocus;
 end;
 
 procedure TSaidaProd.SBpesquisarClick(Sender: TObject);
@@ -112,39 +110,39 @@ procedure TSaidaProd.SBsalvarClick(Sender: TObject); // botão de salvar
 var
   produtoID, quantidade, saldoAtual: Integer;
 begin
-    if DBEdit2.Text = '' then
+    if dbSaidaCod.Text = '' then
       begin
         ShowMessage('O campo "Código" deve ser preenchido!');
-        DBEdit2.SetFocus;
+        dbSaidaCod.SetFocus;
       end
   else
-    if DBLookupComboBox1.Text = '' then
+    if cbSaidaOperador.Text = '' then
       begin
         ShowMessage('O campo "Operador" deve ser preenchido!');
-        DBLookupComboBox1.SetFocus;
+        cbSaidaOperador.SetFocus;
       end
   else
-    if DBEdit4.Text = '' then
+    if dbSaidaQtd.Text = '' then
       begin
         ShowMessage('O campo "Quantidade" deve ser preenchido!');
-        DBEdit4.SetFocus;
+        dbSaidaQtd.SetFocus;
       end
   else
     begin
-      produtoID := StrToInt(DBEdit2.Text);
-      quantidade := StrToInt(DBEdit4.Text);
+      produtoID := StrToInt(dbSaidaCod.Text);
+      quantidade := StrToInt(dbSaidaQtd.Text);
 
-      FDQuery1.Close;
-      FDQuery1.ParamByName('produto_id').AsInteger := produtoID;
-      FDQuery1.Open;
+      qryVerifica.Close;
+      qryVerifica.ParamByName('produto_id').AsInteger := produtoID;
+      qryVerifica.Open;
 
-    if FDQuery1.IsEmpty then
+    if qryVerifica.IsEmpty then
     begin
       ShowMessage('Produto não encontrado no estoque!');
       Exit;
     end;
 
-      saldoAtual := FDQuery1.FieldByName('saldo').AsInteger;
+      saldoAtual := qryVerifica.FieldByName('saldo').AsInteger;
 
     if saldoAtual < quantidade then
     begin
@@ -154,9 +152,9 @@ begin
 
       dm.FDTabSaida.Post;
 
-      FDQuery2.ParamByName('produto_id').AsInteger := produtoID;
-      FDQuery2.ParamByName('quantidade').AsInteger := quantidade;
-      FDQuery2.ExecSQL;
+      qryUpdateEstoque.ParamByName('produto_id').AsInteger := produtoID;
+      qryUpdateEstoque.ParamByName('quantidade').AsInteger := quantidade;
+      qryUpdateEstoque.ExecSQL;
 
       dm.FDTabSaida.Close;
       ShowMessage('Saida cadastrada com sucesso!');
@@ -174,38 +172,25 @@ begin
 
 end;
 
-// foco com enter
-procedure TSaidaProd.DBEdit2KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBLookupComboBox1.SetFocus;
-end;
-
-procedure TSaidaProd.DBLookupComboBox1KeyPress(Sender: TObject; var Key: Char);
-begin
-  if key = #13 then
-    DBEdit4.SetFocus;
-end;
-
 procedure TSaidaProd.HabilitaCampos; // habilitar campos
 begin
-    DBEdit2.Enabled            := True;
-    DBEdit4.Enabled            := True;
-    DBLookupComboBox1.Enabled  := True;
+    dbSaidaCod.Enabled       := True;
+    dbSaidaQtd.Enabled       := True;
+    cbSaidaOperador.Enabled  := True;
 end;
 
 procedure TSaidaProd.DesabilitaCampos; // desabilitar campos
 begin
-    DBEdit2.Enabled            := False;
-    DBEdit4.Enabled            := False;
-    DBLookupComboBox1.Enabled  := False;
+    dbSaidaCod.Enabled       := False;
+    dbSaidaQtd.Enabled       := False;
+    cbSaidaOperador.Enabled  := False;
 end;
 
 procedure TSaidaProd.LimpaCampos; // limpar campos
 begin
-    DBEdit2.Clear;
-    DBEdit4.Clear;
-    DBLookupComboBox1.KeyValue := 0;
+    dbSaidaCod.Clear;
+    dbSaidaQtd.Clear;
+    cbSaidaOperador.KeyValue := 0;
 end;
 
 end.

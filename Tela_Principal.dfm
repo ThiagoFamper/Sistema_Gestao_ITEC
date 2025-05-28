@@ -432,13 +432,13 @@ object TelaPrincipal: TTelaPrincipal
       ParentFont = False
       TabOrder = 0
     end
-    object FlowPanel2: TFlowPanel
+    object fpMovimentacao: TFlowPanel
       Left = 1
       Top = 114
       Width = 241
       Height = 322
       AutoSize = True
-      Caption = 'FlowPanel2'
+      Caption = 'fpMovimentacao'
       FlowStyle = fsLeftRightBottomTop
       TabOrder = 1
       object pnpMovVoltar: TPanel
@@ -1247,13 +1247,13 @@ object TelaPrincipal: TTelaPrincipal
       ParentFont = False
       TabOrder = 0
     end
-    object FlowPanel1: TFlowPanel
+    object fpPrincipal: TFlowPanel
       Left = 1
       Top = 114
       Width = 241
       Height = 258
       AutoSize = True
-      Caption = 'FlowPanel1'
+      Caption = 'fpPrincipal'
       FlowStyle = fsLeftRightBottomTop
       TabOrder = 1
       object pnpSair: TPanel

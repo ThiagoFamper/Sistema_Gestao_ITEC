@@ -48,7 +48,7 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbSaidaID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -83,7 +83,7 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 65
       end
-      object Edit1: TEdit
+      object cbSaidaDescricao: TEdit
         Left = 0
         Top = 20
         Width = 400
@@ -116,7 +116,7 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 64
       end
-      object DBLookupComboBox1: TDBLookupComboBox
+      object cbSaidaOperador: TDBLookupComboBox
         Left = 0
         Top = 20
         Width = 400
@@ -128,7 +128,6 @@ object SaidaProd: TSaidaProd
         ListField = 'descricao'
         ListSource = DM.dsFDTabColaborador
         TabOrder = 0
-        OnKeyPress = DBLookupComboBox1KeyPress
       end
     end
     object Panel18: TPanel
@@ -153,7 +152,7 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 78
       end
-      object DBedit4: TDBEdit
+      object dbSaidaQtd: TDBEdit
         Left = 0
         Top = 20
         Width = 81
@@ -187,7 +186,7 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 49
       end
-      object DBEdit2: TDBEdit
+      object dbSaidaCod: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -198,7 +197,6 @@ object SaidaProd: TSaidaProd
         DataSource = DM.dsFDTabSaida
         Enabled = False
         TabOrder = 0
-        OnKeyPress = DBEdit2KeyPress
       end
     end
     object Panel21: TPanel
@@ -223,7 +221,7 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 53
       end
-      object Edit2: TEdit
+      object eSaidaEstoque: TEdit
         Left = 0
         Top = 20
         Width = 81
@@ -2044,30 +2042,30 @@ object SaidaProd: TSaidaProd
         end>
     end
   end
-  object FDQuery1: TFDQuery
+  object qryVerifica: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'SELECT saldo'
       'FROM estoqueitec.estoque'
       'WHERE produto_id = :produto_id;'
       '')
-    Left = 848
-    Top = 330
+    Left = 640
+    Top = 298
     ParamData = <
       item
         Name = 'PRODUTO_ID'
         ParamType = ptInput
       end>
   end
-  object FDQuery2: TFDQuery
+  object qryUpdateEstoque: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'UPDATE estoqueitec.estoque'
       'SET saldo = saldo - :quantidade'
       'WHERE produto_id = :produto_id;'
       '')
-    Left = 928
-    Top = 328
+    Left = 744
+    Top = 296
     ParamData = <
       item
         Name = 'QUANTIDADE'

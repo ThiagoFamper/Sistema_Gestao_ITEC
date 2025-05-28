@@ -12,17 +12,17 @@ uses
 
 type
   TTelaLogin = class(TForm)
-    Label2: TLabel;
-    Label3: TLabel;
+    lLogin: TLabel;
+    lSenha: TLabel;
     Panel3: TPanel;
     Image1: TImage;
-    Button1: TButton;
-    Button2: TButton;
+    bEntrar: TButton;
+    bCancelar: TButton;
     Edit1: TEdit;
     Edit2: TEdit;
     FDQuery1: TFDQuery;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    procedure bEntrarClick(Sender: TObject);
+    procedure bCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Edit1KeyPress(Sender: TObject; var Key: Char);
     procedure Edit2KeyPress(Sender: TObject; var Key: Char);
@@ -41,7 +41,7 @@ implementation
 
 uses Data_Module, Tela_Principal;
 
-procedure TTelaLogin.Button1Click(Sender: TObject);
+procedure TTelaLogin.bEntrarClick(Sender: TObject);
 begin
     with FDQuery1 do
     begin
@@ -69,7 +69,7 @@ begin
     end;
 end;
 
-procedure TTelaLogin.Button2Click(Sender: TObject);
+procedure TTelaLogin.bCancelarClick(Sender: TObject);
 begin
   Application.Terminate;
 end;
@@ -86,7 +86,7 @@ procedure TTelaLogin.Edit2KeyPress(Sender: TObject; var Key: Char);
 begin
   if key = #13 then
   begin
-    Button1.Click;
+    bEntrar.Click;
   end;
 end;
 

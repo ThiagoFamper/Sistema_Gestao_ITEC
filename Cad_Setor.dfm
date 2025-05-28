@@ -46,7 +46,7 @@ object CadSetor: TCadSetor
         ParentFont = False
         ExplicitWidth = 15
       end
-      object DBEdit1: TDBEdit
+      object dbSetorID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
@@ -81,7 +81,7 @@ object CadSetor: TCadSetor
         ParentFont = False
         ExplicitWidth = 65
       end
-      object DBEdit3: TDBEdit
+      object dbSetorDescricao: TDBEdit
         Left = 0
         Top = 20
         Width = 400
@@ -1844,7 +1844,7 @@ object CadSetor: TCadSetor
       TabOrder = 5
     end
   end
-  object DBGrid1: TDBGrid
+  object gSetor: TDBGrid
     Left = 0
     Top = 265
     Width = 1118
