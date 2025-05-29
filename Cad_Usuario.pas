@@ -60,7 +60,7 @@ implementation
 
 uses Lista_Usuario, Data_Module, Tela_Principal;
 
-procedure TCadUsuario.SBcancelarClick(Sender: TObject); // bot„o de cancelar
+procedure TCadUsuario.SBcancelarClick(Sender: TObject); // bot√£o de cancelar
 begin
   SBpesquisar.Enabled  := True;
   SBsair.Enabled       := True;
@@ -72,7 +72,7 @@ begin
   dm.FDTabUsuario.Cancel;
 end;
 
-procedure TCadUsuario.SBnovoClick(Sender: TObject); // bot„o de novo
+procedure TCadUsuario.SBnovoClick(Sender: TObject); // bot√£o de novo
 begin
   HabilitaCampos();
   TelaPrincipal.desabilitaMenu;
@@ -88,15 +88,20 @@ end;
 
 procedure TCadUsuario.SBpesquisarClick(Sender: TObject);
 begin
+<<<<<<< HEAD:Cad_usuario.pas
   TelaPrincipal.AbrirFormulario(TListaUsuario); // bot„o de pesquisar
+=======
+  dm.FDTabUsuario.Open;
+  TelaPrincipal.AbrirFormulario(TListaUsuario); // bot√£o de pesquisar
+>>>>>>> bd1bcd6a8ee869c934f9d15263d413e9642c2c4d:Cad_Usuario.pas
 end;
 
 procedure TCadUsuario.SBsairClick(Sender: TObject);
 begin
-  close(); // bot„o de sair
+  close(); // bot√£o de sair
 end;
 
-procedure TCadUsuario.SBsalvarClick(Sender: TObject); // bot„o de salvar
+procedure TCadUsuario.SBsalvarClick(Sender: TObject); // bot√£o de salvar
 begin
     if dbUsuarioNome.Text = '' then
       begin
@@ -120,7 +125,12 @@ begin
       dm.FDTabUsuario.FieldByName('Admin').AsBoolean := cbUsuarioAdmin.Checked;
       dm.FDTabUsuario.Post;
       dm.FDTabUsuario.Close;
+<<<<<<< HEAD:Cad_usuario.pas
       ShowMessage('Usu·rio cadastrado com sucesso!');
+=======
+      ShowMessage('Usu√°rio cadastrado com sucesso!');
+      LimpaCampos();
+>>>>>>> bd1bcd6a8ee869c934f9d15263d413e9642c2c4d:Cad_Usuario.pas
       TelaPrincipal.habilitaMenu;
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;
