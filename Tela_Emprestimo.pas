@@ -52,7 +52,6 @@ type
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
-    procedure LimpaCampos;
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
@@ -83,7 +82,6 @@ begin
   DesabilitaCampos();
   TelaPrincipal.habilitaMenu;
   dm.FDTabEmprestimoProd.Cancel;
-  LimpaCampos();
 end;
 
 procedure TTelaEmprestimo.SBnovoClick(Sender: TObject); // botão de novo
@@ -170,7 +168,6 @@ begin
 
       dm.FDTabEmprestimoProd.Close;
       ShowMessage('Empréstimo cadastrado com sucesso!');
-      LimpaCampos();
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
@@ -195,12 +192,6 @@ procedure TTelaEmprestimo.DesabilitaCampos; // desabilitar campos
 begin
     dbEmpCod.Enabled            := False;
     dbEmpQtd.Enabled            := False;
-end;
-
-procedure TTelaEmprestimo.LimpaCampos; // limpar campos
-begin
-    dbEmpCod.Clear;
-    dbEmpQtd.Clear;
 end;
 
 end.

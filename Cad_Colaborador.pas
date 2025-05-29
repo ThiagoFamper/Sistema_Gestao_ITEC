@@ -42,7 +42,6 @@ type
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
-    procedure LimpaCampos;
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
@@ -71,16 +70,11 @@ begin
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
   TelaPrincipal.habilitaMenu;
-  dm.FDTabSetor.Cancel;
-  dm.FDTabSede.Cancel;
   dm.FDTabColaborador.Cancel;
-  LimpaCampos();
 end;
 
 procedure TCadColaborador.SBnovoClick(Sender: TObject); // botão de novo
 begin
-  dm.FDTabSetor.Open;
-  dm.FDTabSede.Open;
   HabilitaCampos();
   TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
@@ -95,7 +89,6 @@ end;
 
 procedure TCadColaborador.SBpesquisarClick(Sender: TObject);
 begin
-  dm.FDTabColaborador.Open;
   TelaPrincipal.AbrirFormulario(TListaColaborador); // botão de pesquisar
 end;
 
@@ -132,11 +125,8 @@ begin
   else
     begin
       dm.FDTabColaborador.Post;
-      dm.FDTabSetor.Close;
-      dm.FDTabSede.Close;
       dm.FDTabColaborador.Close;
       ShowMessage('Colaborador cadastrado com sucesso!');
-      LimpaCampos();
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
@@ -145,6 +135,7 @@ begin
       SBsalvar.Enabled     := False;
       SBcancelar.Enabled   := False;
       dm.FDTabColaborador.Open;
+      dm.FDTabColaborador.Refresh;
       dm.FDTabColaborador.Last;
     end;
 end;
@@ -163,14 +154,6 @@ begin
     dbColabCargo.Enabled        := False;
     cbColabSetor.Enabled        := False;
     cbColabSede.Enabled         := False;
-end;
-
-procedure TCadColaborador.LimpaCampos; // limpar campos
-begin
-    dbColabDescricao.Clear;
-    dbColabCargo.Clear;
-    cbColabSetor.KeyValue := 0;
-    cbColabSede.KeyValue := 0;
 end;
 
 end.

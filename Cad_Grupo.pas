@@ -34,7 +34,6 @@ type
     dbGrupoID: TDBEdit;
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
-    procedure LimpaCampos;
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBsairClick(Sender: TObject);
@@ -72,7 +71,6 @@ begin
   TelaPrincipal.habilitaMenu;
   TelaPrincipal.habilitaMenu;
   dm.FDTabGrupo.Cancel;
-  LimpaCampos();
 end;
 
 procedure TCadGrupo.SBnovoClick(Sender: TObject); // botão de novo
@@ -102,7 +100,6 @@ begin
       dm.FDTabGrupo.Post;
       dm.FDTabGrupo.Close;
       ShowMessage('Grupo cadastrado com sucesso!');
-      LimpaCampos();
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       TelaPrincipal.habilitaMenu;
@@ -130,11 +127,6 @@ end;
 procedure TCadGrupo.DesabilitaCampos; // desabilitar campos
 begin
     dbGrupoDescricao.Enabled            := False;
-end;
-
-procedure TCadGrupo.LimpaCampos; // limpar campos
-begin
-    dbGrupoDescricao.Clear;
 end;
 
 end.

@@ -33,7 +33,6 @@ type
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
-    procedure LimpaCampos;
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
@@ -63,7 +62,6 @@ begin
   DesabilitaCampos();
   TelaPrincipal.habilitaMenu;
   dm.FDTabSetor.Cancel;
-  LimpaCampos();
 end;
 
 procedure TCadSetor.SBnovoClick(Sender: TObject); // botão de novo
@@ -82,7 +80,6 @@ end;
 
 procedure TCadSetor.SBpesquisarClick(Sender: TObject);
 begin
-  dm.FDTabSetor.Open;
   TelaPrincipal.AbrirFormulario(TListaSetor); // botão de pesquisar
 end;
 
@@ -103,7 +100,6 @@ begin
       dm.FDTabSetor.Post;
       dm.FDTabSetor.Close;
       ShowMessage('Setor cadastrado com sucesso!');
-      LimpaCampos();
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
@@ -126,11 +122,6 @@ end;
 procedure TCadSetor.DesabilitaCampos; // desabilitar campos
 begin
     dbSetorDescricao.Enabled            := False;
-end;
-
-procedure TCadSetor.LimpaCampos; // limpar campos
-begin
-    dbSetorDescricao.Clear;
 end;
 
 end.

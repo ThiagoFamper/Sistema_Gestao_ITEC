@@ -50,7 +50,6 @@ type
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
-    procedure LimpaCampos;
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
@@ -81,7 +80,6 @@ begin
   DesabilitaCampos();
   TelaPrincipal.habilitaMenu;
   dm.FDTabSaida.Cancel;
-  LimpaCampos();
 end;
 
 procedure TSaidaProd.SBnovoClick(Sender: TObject); // botão de novo
@@ -160,7 +158,6 @@ begin
 
       dm.FDTabSaida.Close;
       ShowMessage('Saida cadastrada com sucesso!');
-      LimpaCampos();
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
@@ -187,13 +184,6 @@ begin
     dbSaidaCod.Enabled       := False;
     dbSaidaQtd.Enabled       := False;
     cbSaidaOperador.Enabled  := False;
-end;
-
-procedure TSaidaProd.LimpaCampos; // limpar campos
-begin
-    dbSaidaCod.Clear;
-    dbSaidaQtd.Clear;
-    cbSaidaOperador.KeyValue := 0;
 end;
 
 end.

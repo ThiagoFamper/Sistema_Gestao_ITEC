@@ -34,7 +34,7 @@ object CadUsuario: TCadUsuario
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 15
+        Width = 50
         Height = 20
         Align = alTop
         Caption = 'ID'
@@ -44,6 +44,7 @@ object CadUsuario: TCadUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 15
       end
       object dbUsuarioID: TDBEdit
         Left = 0
@@ -67,7 +68,7 @@ object CadUsuario: TCadUsuario
       object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 41
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Nome'
@@ -77,6 +78,7 @@ object CadUsuario: TCadUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 41
       end
       object dbUsuarioNome: TDBEdit
         Left = 0
@@ -101,7 +103,7 @@ object CadUsuario: TCadUsuario
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 37
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Login'
@@ -111,6 +113,7 @@ object CadUsuario: TCadUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 37
       end
       object dbUsuarioLogin: TDBEdit
         Left = 0
@@ -134,7 +137,7 @@ object CadUsuario: TCadUsuario
       object Label3: TLabel
         Left = 0
         Top = 0
-        Width = 40
+        Width = 400
         Height = 20
         Align = alTop
         Caption = 'Senha'
@@ -144,6 +147,7 @@ object CadUsuario: TCadUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ExplicitWidth = 40
       end
       object dbUsuarioSenha: TDBEdit
         Left = 0

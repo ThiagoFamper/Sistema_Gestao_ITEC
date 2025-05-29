@@ -159,6 +159,7 @@ begin
   else
     begin
       dm.FDTabColaborador.Post;
+      dm.FDTabColaborador.Close;
       ShowMessage('Colaborador editado com sucesso!');
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
@@ -169,6 +170,9 @@ begin
       SBeditar.Enabled     := True;
       SBcancelar.Enabled   := False;
       SBsalvar.Enabled     := False;
+      dm.FDTabColaborador.Open;
+      dm.FDTabColaborador.Refresh;
+      dm.FDTabColaborador.Last;
     end;
 end;
 
@@ -238,8 +242,6 @@ end;
 procedure TListaColaborador.FormShow(Sender: TObject);
 begin
   dm.FDTabColaborador.Open;
-  dm.FDTabSetor.Open;
-  dm.FDTabSede.Open;
   Filtro;
 
   if not TelaPrincipal.isAdmin then

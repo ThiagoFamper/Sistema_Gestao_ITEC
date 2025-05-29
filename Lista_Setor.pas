@@ -120,6 +120,7 @@ begin
   else
     begin
       dm.FDTabSetor.Post;
+      dm.FDTabSetor.Close;
       ShowMessage('Setor editado com sucesso!');
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
@@ -130,6 +131,9 @@ begin
       SBeditar.Enabled     := True;
       SBcancelar.Enabled   := False;
       SBsalvar.Enabled     := False;
+      dm.FDTabSetor.Open;
+      dm.FDTabSetor.Refresh;
+      dm.FDTabSetor.Last;
     end;
 end;
 

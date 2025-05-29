@@ -40,7 +40,6 @@ type
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
-    procedure LimpaCampos;
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
@@ -71,7 +70,6 @@ begin
   DesabilitaCampos();
   TelaPrincipal.habilitaMenu;
   dm.FDTabUsuario.Cancel;
-  LimpaCampos();
 end;
 
 procedure TCadUsuario.SBnovoClick(Sender: TObject); // botão de novo
@@ -90,7 +88,6 @@ end;
 
 procedure TCadUsuario.SBpesquisarClick(Sender: TObject);
 begin
-  dm.FDTabUsuario.Open;
   TelaPrincipal.AbrirFormulario(TListaUsuario); // botão de pesquisar
 end;
 
@@ -124,7 +121,6 @@ begin
       dm.FDTabUsuario.Post;
       dm.FDTabUsuario.Close;
       ShowMessage('Usuário cadastrado com sucesso!');
-      LimpaCampos();
       TelaPrincipal.habilitaMenu;
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;
@@ -153,14 +149,6 @@ begin
     dbUsuarioLogin.Enabled          := False;
     dbUsuarioSenha.Enabled          := False;
     cbUsuarioAdmin.Enabled          := False;
-end;
-
-procedure TCadUsuario.LimpaCampos; // limpar campos
-begin
-    dbUsuarioNome.Clear;
-    dbUsuarioLogin.Clear;
-    dbUsuarioSenha.Clear;
-    cbUsuarioAdmin.Checked := False;
 end;
 
 end.

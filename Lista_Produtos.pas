@@ -184,6 +184,7 @@ begin
   else
     begin
       dm.FDTabProduto.Post;
+      dm.FDTabProduto.Close;
       ShowMessage('Produto editado com sucesso!');
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
@@ -195,6 +196,9 @@ begin
       SBeditar.Enabled     := True;
       SBcancelar.Enabled   := False;
       SBsalvar.Enabled     := False;
+      dm.FDTabProduto.Open;
+      dm.FDTabProduto.Refresh;
+      dm.FDTabProduto.Last;
     end;
 end;
 
@@ -249,7 +253,6 @@ end;
 procedure TListaProdutos.FormShow(Sender: TObject);
 begin
   dm.FDTabProduto.Open;
-  dm.FDTabGrupo.Open;
   Filtro;
 
   if not TelaPrincipal.isAdmin then

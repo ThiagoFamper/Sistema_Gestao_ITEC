@@ -31,7 +31,6 @@ type
     gSede: TDBGrid;
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
-    procedure LimpaCampos;
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBsairClick(Sender: TObject);
@@ -55,7 +54,6 @@ uses Lista_Sede, Data_Module, Tela_Principal;
 
 procedure TCadSede.SBpesquisarClick(Sender: TObject);
 begin
-  dm.FDTabSede.Open;
   TelaPrincipal.AbrirFormulario(TListaSede); // botão de pesquisar
 end;
 
@@ -69,7 +67,6 @@ begin
   DesabilitaCampos();
   TelaPrincipal.habilitaMenu;
   dm.FDTabSede.Cancel;
-  LimpaCampos();
 end;
 
 procedure TCadSede.SBnovoClick(Sender: TObject); // botão de novo
@@ -98,7 +95,6 @@ begin
       dm.FDTabSede.Post;
       dm.FDTabSede.Close;
       ShowMessage('Sede cadastrada com sucesso!');
-      LimpaCampos();
       TelaPrincipal.habilitaMenu;
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;
@@ -125,11 +121,6 @@ end;
 procedure TCadSede.DesabilitaCampos; // desabilitar campos
 begin
     dbSedeDescricao.Enabled            := False;
-end;
-
-procedure TCadSede.LimpaCampos; // limpar campos
-begin
-    dbSedeDescricao.Clear;
 end;
 
 end.

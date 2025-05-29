@@ -147,6 +147,7 @@ begin
     begin
       dm.FDTabUsuario.FieldByName('Admin').AsBoolean := dbpUsuarioAdmin.Checked;
       dm.FDTabUsuario.Post;
+      dm.FDTabUsuario.Close;
       ShowMessage('Usuário editado com sucesso!');
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
@@ -157,6 +158,9 @@ begin
       SBeditar.Enabled     := True;
       SBcancelar.Enabled   := False;
       SBsalvar.Enabled     := False;
+      dm.FDTabUsuario.Open;
+      dm.FDTabUsuario.Refresh;
+      dm.FDTabUsuario.Close;
     end;
 end;
 

@@ -47,7 +47,6 @@ type
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
-    procedure LimpaCampos;
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
@@ -77,16 +76,13 @@ begin
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
   TelaPrincipal.habilitaMenu;
-  dm.FDTabGrupo.Cancel;
   dm.FDTabProduto.Cancel;
-  LimpaCampos();
 end;
 
 procedure TCadProduto.SBnovoClick(Sender: TObject); // botão de novo
 begin
-  dm.FDTabGrupo.Open;
   HabilitaCampos();
-    TelaPrincipal.desabilitaMenu;
+  TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
   SBpesquisar.Enabled  := False;
@@ -99,7 +95,6 @@ end;
 
 procedure TCadProduto.SBpesquisarClick(Sender: TObject);
 begin
-  dm.FDTabProduto.Open;
   TelaPrincipal.AbrirFormulario(TListaProdutos); // botão de pesquisar
 end;
 
@@ -144,10 +139,8 @@ begin
   else
     begin
       dm.FDTabProduto.Post;
-      dm.FDTabGrupo.Close;
       dm.FDTabProduto.Close;
       ShowMessage('Produto cadastrado com sucesso!');
-      LimpaCampos();
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
@@ -178,15 +171,6 @@ begin
     dbProdModelo.Enabled     := False;
     dbProdMarca.Enabled      := False;
     cbProdGrupo.Enabled      := False;
-end;
-
-procedure TCadProduto.LimpaCampos; // limpar campos
-begin
-    dbProdCod.Clear;
-    dbProdDescricao.Clear;
-    dbProdModelo.Clear;
-    dbProdMarca.Clear;
-    cbProdGrupo.KeyValue := 0;
 end;
 
 end.

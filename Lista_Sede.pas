@@ -119,6 +119,7 @@ begin
   else
     begin
       dm.FDTabSede.Post;
+      dm.FDTabSede.Close;
       ShowMessage('Sede editada com sucesso!');
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
@@ -129,6 +130,9 @@ begin
       SBeditar.Enabled     := True;
       SBcancelar.Enabled   := False;
       SBsalvar.Enabled     := False;
+      dm.FDTabSede.Open;
+      dm.FDTabSede.Refresh;
+      dm.FDTabSede.Last;
     end;
 end;
 

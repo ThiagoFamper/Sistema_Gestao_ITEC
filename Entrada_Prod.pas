@@ -58,7 +58,6 @@ type
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
-    procedure LimpaCampos;
     procedure SBnovoClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
@@ -91,7 +90,6 @@ begin
   DesabilitaCampos();
   TelaPrincipal.habilitaMenu;
   dm.FDTabEntrada.Cancel;
-  LimpaCampos();
 end;
 
 procedure TEntradaProd.SBnovoClick(Sender: TObject); // botão de novo
@@ -178,7 +176,6 @@ begin
       dm.FDTabEntrada.Close;
       dm.FDTabEstoque.Close;
       ShowMessage('Entrada cadastrada com sucesso!');
-      LimpaCampos();
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
@@ -214,15 +211,6 @@ end;
 procedure TEntradaProd.FormShow(Sender: TObject);
 begin
   QryProduto.Open;
-end;
-
-procedure TEntradaProd.LimpaCampos; // limpar campos
-begin
-    dbEntradaCod.Clear;
-    dbEntradaNF.Clear;
-    dbEntradaValor.Clear;
-    dbEntradaQtd.Clear;
-    cbEntradaOperador.KeyValue := 0;
 end;
 
 end.
