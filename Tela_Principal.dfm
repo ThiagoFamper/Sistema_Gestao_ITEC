@@ -12,6 +12,7 @@ object TelaPrincipal: TTelaPrincipal
   Font.Style = []
   Position = poDesigned
   WindowState = wsMaximized
+  OnKeyDown = FormKeyDown
   OnShow = FormShow
   TextHeight = 15
   object Panel2: TPanel
@@ -87,8 +88,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 0
         OnClick = pnpCadVoltarClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image15: TImage
           Left = 16
           Top = 6
@@ -124,8 +125,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 1
         OnClick = pnpCadUserClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image16: TImage
           Left = 16
           Top = 8
@@ -189,8 +190,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 2
         OnClick = pnpCadGruClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image14: TImage
           Left = 16
           Top = 8
@@ -235,8 +236,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 3
         OnClick = pnpCadSedeClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image2: TImage
           Left = 16
           Top = 6
@@ -270,8 +271,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 4
         OnClick = pnpCadSetClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image13: TImage
           Left = 16
           Top = 8
@@ -321,8 +322,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 5
         OnClick = pnpCadColabClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image12: TImage
           Left = 16
           Top = 8
@@ -365,8 +366,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 6
         OnClick = pnpCadProdClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image11: TImage
           Left = 16
           Top = 8
@@ -464,8 +465,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 0
         OnClick = pnpMovVoltarClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image21: TImage
           Left = 0
           Top = 8
@@ -496,13 +497,13 @@ object TelaPrincipal: TTelaPrincipal
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
-        Caption = 'Devolu'#231#227'o de Produto'
+        Caption = '     Devolu'#231#227'o de Produto (2)'
         Color = clWhite
         ParentBackground = False
         TabOrder = 1
         OnClick = pnpMovDevClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image20: TImage
           Left = -2
           Top = 8
@@ -562,13 +563,13 @@ object TelaPrincipal: TTelaPrincipal
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
-        Caption = 'Empr'#233'stimo de Produto'
+        Caption = '     Empr'#233'stimo de Produto (1)'
         Color = clWhite
         ParentBackground = False
         TabOrder = 2
         OnClick = pnpMovEmpClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image19: TImage
           Left = -2
           Top = 8
@@ -633,8 +634,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 3
         OnClick = pnpMovSaiClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image18: TImage
           Left = -2
           Top = 6
@@ -676,8 +677,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 4
         OnClick = pnpMovEntClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image17: TImage
           Left = -2
           Top = 8
@@ -761,8 +762,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 0
         OnClick = pnpConVoltarClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image26: TImage
           Left = 6
           Top = 6
@@ -798,8 +799,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 1
         OnClick = pnpConEmpClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image30: TImage
           Left = 6
           Top = 7
@@ -864,8 +865,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 2
         OnClick = pnpConSaiClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image29: TImage
           Left = 6
           Top = 8
@@ -907,8 +908,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 3
         OnClick = pnpConEntClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image28: TImage
           Left = 12
           Top = 8
@@ -950,8 +951,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 4
         OnClick = pnpConUserClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image27: TImage
           Left = 6
           Top = 10
@@ -1015,8 +1016,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 5
         OnClick = pnpConGruClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image25: TImage
           Left = 6
           Top = 8
@@ -1061,8 +1062,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 6
         OnClick = pnpConSedeClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image1: TImage
           Left = 6
           Top = 8
@@ -1096,8 +1097,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 7
         OnClick = pnpConSetClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image24: TImage
           Left = 6
           Top = 8
@@ -1147,8 +1148,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 8
         OnClick = pnpConColabClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image23: TImage
           Left = 12
           Top = 8
@@ -1191,8 +1192,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 9
         OnClick = pnpConProdClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image22: TImage
           Left = 12
           Top = 8
@@ -1289,8 +1290,8 @@ object TelaPrincipal: TTelaPrincipal
         ParentBackground = False
         TabOrder = 0
         OnClick = pnpSairClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image10: TImage
           Left = 24
           Top = 6
@@ -1322,13 +1323,13 @@ object TelaPrincipal: TTelaPrincipal
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
-        Caption = 'Consulta'
+        Caption = '     Consulta (F2)'
         Color = clWhite
         ParentBackground = False
         TabOrder = 1
         OnClick = pnpConsClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image8: TImage
           Left = 24
           Top = 10
@@ -1377,13 +1378,13 @@ object TelaPrincipal: TTelaPrincipal
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
-        Caption = 'Movimenta'#231#227'o'
+        Caption = '          Movimenta'#231#227'o (F1)'
         Color = clWhite
         ParentBackground = False
         TabOrder = 2
         OnClick = pnpMovClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image7: TImage
           Left = 24
           Top = 6
@@ -1417,13 +1418,13 @@ object TelaPrincipal: TTelaPrincipal
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
-        Caption = 'Cadastro'
+        Caption = '     Cadastro (F3)'
         Color = clWhite
         ParentBackground = False
         TabOrder = 3
         OnClick = pnpCadClick
-        OnMouseEnter = pnpConSedeMouseEnter
-        OnMouseLeave = pnpConSedeMouseLeave
+        OnMouseEnter = pnpMouseEnter
+        OnMouseLeave = pnpMouseLeave
         object Image6: TImage
           Left = 24
           Top = 6

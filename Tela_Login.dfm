@@ -124,22 +124,22 @@ object TelaLogin: TTelaLogin
     TabOrder = 2
     OnClick = bCancelarClick
   end
-  object Edit1: TEdit
+  object eLogin: TEdit
     Left = 104
     Top = 155
     Width = 306
     Height = 23
     TabOrder = 3
-    OnKeyPress = Edit1KeyPress
+    OnKeyPress = eLoginKeyPress
   end
-  object Edit2: TEdit
+  object eSenha: TEdit
     Left = 104
     Top = 220
     Width = 306
     Height = 23
     PasswordChar = '*'
     TabOrder = 4
-    OnKeyPress = Edit2KeyPress
+    OnKeyPress = eSenhaKeyPress
   end
   object qryUsuario: TFDQuery
     Connection = DM.FDEstoqueItec

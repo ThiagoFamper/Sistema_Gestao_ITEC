@@ -80,32 +80,8 @@ type
     Image12: TImage;
     pnpCadProd: TPanel;
     Image11: TImage;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
-    procedure Button4Click(Sender: TObject);
-    procedure Button5Click(Sender: TObject);
-    procedure Button6Click(Sender: TObject);
-    procedure Produto1Click(Sender: TObject);
-    procedure Colaborador1Click(Sender: TObject);
-    procedure Setor1Click(Sender: TObject);
-    procedure Entrada1Click(Sender: TObject);
-    procedure Sada1Click(Sender: TObject);
-    procedure Emprstimo1Click(Sender: TObject);
-    procedure Grupo1Click(Sender: TObject);
-    procedure ListaSetor1Click(Sender: TObject);
-    procedure ListaCoalborador1Click(Sender: TObject);
-    procedure ListaProdutos1Click(Sender: TObject);
-    procedure ListaGrupos1Click(Sender: TObject);
-    procedure Entrada2Click(Sender: TObject);
-    procedure Entrada3Click(Sender: TObject);
-    procedure Emprstimo2Click(Sender: TObject);
-    procedure Devoluo1Click(Sender: TObject);
-    procedure Usuario1Click(Sender: TObject);
-    procedure ListaUsurios1Click(Sender: TObject);
-    procedure Login1Click(Sender: TObject);
-    procedure pnpConSedeMouseEnter(Sender: TObject);
-    procedure pnpConSedeMouseLeave(Sender: TObject);
+    procedure pnpMouseEnter(Sender: TObject);
+    procedure pnpMouseLeave(Sender: TObject);
     procedure pnpCadClick(Sender: TObject);
     procedure pnpMovClick(Sender: TObject);
     procedure pnpConsClick(Sender: TObject);
@@ -133,15 +109,19 @@ type
     procedure pnpConEmpClick(Sender: TObject);
     procedure pnpCadSedeClick(Sender: TObject);
     procedure pnpConSedeClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 
   private
-     procedure selecionaMenu(nMENU: integer);
     { Private declarations }
   public
     { Public declarations }
     usuarioLogado: string;
     isAdmin: Boolean;
     procedure AbrirFormulario(ClasseForm: TFormClass);
+    procedure selecionaMenu(nMENU: integer);
+    procedure desabilitaMenu;
+    procedure habilitaMenu;
+
   end;
 
 var
@@ -157,69 +137,49 @@ uses Cad_Produto, Cad_Colaborador, Cad_Setor, Entrada_Prod, Saida_Prod,
   Tela_Devolucao, Cad_usuario, Lista_Usuario, Tela_Login, Lista_Sede, Cad_Sede,
   Data_Module;
 
-procedure TTelaPrincipal.Button1Click(Sender: TObject);
+procedure TTelaPrincipal.desabilitaMenu;
 begin
-    CadProduto.Show;
+
 end;
 
-procedure TTelaPrincipal.Button2Click(Sender: TObject);
+procedure TTelaPrincipal.habilitaMenu;
 begin
-   CadColaborador.Show;
+
 end;
 
-procedure TTelaPrincipal.Button3Click(Sender: TObject);
+procedure TTelaPrincipal.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 begin
-    CadSetor.Show;
-end;
+  if Key = VK_F1 then
+  begin
+    selecionaMenu(2);
+  end;
 
-procedure TTelaPrincipal.Button4Click(Sender: TObject);
-begin
-    EntradaProd.Show;
-end;
+  if Key = VK_F2 then
+  begin
+    selecionaMenu(3);
+  end;
 
-procedure TTelaPrincipal.Button5Click(Sender: TObject);
-begin
-    SaidaProd.ShowModal;
-end;
+  if Key = VK_F3 then
+  begin
+    selecionaMenu(1);
+  end;
 
-procedure TTelaPrincipal.Button6Click(Sender: TObject);
-begin
-    TelaEmprestimo.Show;
-end;
+  if Key = VK_BACK then
+  begin
+    selecionaMenu(0);
+  end;
 
-procedure TTelaPrincipal.Colaborador1Click(Sender: TObject);
-begin
-    CadColaborador.Show;
-end;
+  if Key = Ord('1') then
+  begin
+    AbrirFormulario(TTelaEmprestimo);
+  end;
 
-procedure TTelaPrincipal.Devoluo1Click(Sender: TObject);
-begin
-    teladevolucao.Show;
-end;
+  if Key = Ord('2') then
+  begin
+    AbrirFormulario(TTelaDevolucao);
+  end;
 
-procedure TTelaPrincipal.Emprstimo1Click(Sender: TObject);
-begin
-    TelaEmprestimo.Show;
-end;
-
-procedure TTelaPrincipal.Emprstimo2Click(Sender: TObject);
-begin
-    ListaEmprestimo.Show;
-end;
-
-procedure TTelaPrincipal.Entrada1Click(Sender: TObject);
-begin
-    EntradaProd.Show;
-end;
-
-procedure TTelaPrincipal.Entrada2Click(Sender: TObject);
-begin
-    ListaEntrada.Show;
-end;
-
-procedure TTelaPrincipal.Entrada3Click(Sender: TObject);
-begin
-    ListaSaida.Show;
 end;
 
 procedure TTelaPrincipal.FormShow(Sender: TObject);
@@ -236,41 +196,6 @@ begin
 
 end;
 
-procedure TTelaPrincipal.Grupo1Click(Sender: TObject);
-begin
-    CadGrupo.Show;
-end;
-
-procedure TTelaPrincipal.ListaCoalborador1Click(Sender: TObject);
-begin
-    ListaColaborador.Show;
-end;
-
-procedure TTelaPrincipal.ListaGrupos1Click(Sender: TObject);
-begin
-    ListaGrupos.Show;
-end;
-
-procedure TTelaPrincipal.ListaProdutos1Click(Sender: TObject);
-begin
-    ListaProdutos.Show;
-end;
-
-procedure TTelaPrincipal.ListaSetor1Click(Sender: TObject);
-begin
-    ListaSetor.Show;
-end;
-
-procedure TTelaPrincipal.ListaUsurios1Click(Sender: TObject);
-begin
-    ListaUsuario.Show;
-end;
-
-procedure TTelaPrincipal.Login1Click(Sender: TObject);
-begin
-    TelaLogin.Show;
-end;
-
 procedure TTelaPrincipal.pnpCadSedeClick(Sender: TObject);
 begin
   AbrirFormulario(TCadSede); // abre a tela de cadastro de sede
@@ -281,14 +206,14 @@ begin
   AbrirFormulario(TListaSede);  // abre a tela de consulta de sede
 end;
 
-procedure TTelaPrincipal.pnpConSedeMouseEnter(Sender: TObject);
+procedure TTelaPrincipal.pnpMouseEnter(Sender: TObject);
 begin
     if not (sender is TPanel) then
         exit;
     (sender as TPanel).Color:=RGB(192,192,192);
 end;
 
-procedure TTelaPrincipal.pnpConSedeMouseLeave(Sender: TObject);
+procedure TTelaPrincipal.pnpMouseLeave(Sender: TObject);
 begin
     if not (sender is TPanel) then
         exit;
@@ -413,26 +338,6 @@ end;
 procedure TTelaPrincipal.pnpSairClick(Sender: TObject);
 begin
   Application.Terminate;
-end;
-
-procedure TTelaPrincipal.Produto1Click(Sender: TObject);
-begin
-    CadProduto.Show;
-end;
-
-procedure TTelaPrincipal.Sada1Click(Sender: TObject);
-begin
-    SaidaProd.Show;
-end;
-
-procedure TTelaPrincipal.Setor1Click(Sender: TObject);
-begin
-    CadSetor.Show;
-end;
-
-procedure TTelaPrincipal.Usuario1Click(Sender: TObject);
-begin
-  CadUsuario.Show;
 end;
 
 procedure TTelaPrincipal.selecionaMenu(nMENU: Integer);

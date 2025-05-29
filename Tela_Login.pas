@@ -18,14 +18,14 @@ type
     Image1: TImage;
     bEntrar: TButton;
     bCancelar: TButton;
-    Edit1: TEdit;
-    Edit2: TEdit;
+    eLogin: TEdit;
+    eSenha: TEdit;
     qryUsuario: TFDQuery;
     procedure bEntrarClick(Sender: TObject);
     procedure bCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure Edit1KeyPress(Sender: TObject; var Key: Char);
-    procedure Edit2KeyPress(Sender: TObject; var Key: Char);
+    procedure eLoginKeyPress(Sender: TObject; var Key: Char);
+    procedure eSenhaKeyPress(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -46,8 +46,8 @@ begin
     with qryUsuario do
     begin
       Close;
-      qryUsuario.Params.ParamByName('login').AsString := Edit1.Text;
-      qryUsuario.Params.ParamByName('senha').AsString := Edit2.Text;
+      qryUsuario.Params.ParamByName('login').AsString := eLogin.Text;
+      qryUsuario.Params.ParamByName('senha').AsString := eSenha.Text;
       Open;
 
     if IsEmpty then
@@ -74,15 +74,15 @@ begin
   Application.Terminate;
 end;
 
-procedure TTelaLogin.Edit1KeyPress(Sender: TObject; var Key: Char);
+procedure TTelaLogin.eLoginKeyPress(Sender: TObject; var Key: Char);
 begin
   if key = #13 then
   begin
-    edit2.SetFocus;
+    eSenha.SetFocus;
   end;
 end;
 
-procedure TTelaLogin.Edit2KeyPress(Sender: TObject; var Key: Char);
+procedure TTelaLogin.eSenhaKeyPress(Sender: TObject; var Key: Char);
 begin
   if key = #13 then
   begin
@@ -93,7 +93,7 @@ end;
 procedure TTelaLogin.FormShow(Sender: TObject);
 begin
   dm.FDTabUsuario.Open;
-  edit1.SetFocus;
+  eLogin.SetFocus;
 end;
 
 end.
