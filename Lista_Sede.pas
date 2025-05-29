@@ -79,6 +79,7 @@ end;
 procedure TListaSede.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos();
+    TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa();
     dm.FDTabSede.Cancel;
     gpSede.Enabled      := True;
@@ -92,6 +93,7 @@ end;
 procedure TListaSede.SBeditarClick(Sender: TObject); // botão de editar
 begin
     HabilitaCampos();
+    TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa();
     dm.FDTabSede.Edit;
     gpSede.Enabled      := False;
@@ -119,6 +121,7 @@ begin
       dm.FDTabSede.Post;
       ShowMessage('Sede editada com sucesso!');
       DesabilitaCampos();
+      TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa();
       gpSede.Enabled       := True;
       SBexcluir.Enabled    := True;

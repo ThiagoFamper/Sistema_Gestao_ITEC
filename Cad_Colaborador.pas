@@ -70,6 +70,7 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
+  TelaPrincipal.habilitaMenu;
   dm.FDTabSetor.Cancel;
   dm.FDTabSede.Cancel;
   dm.FDTabColaborador.Cancel;
@@ -81,6 +82,7 @@ begin
   dm.FDTabSetor.Open;
   dm.FDTabSede.Open;
   HabilitaCampos();
+  TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
   SBpesquisar.Enabled  := False;
@@ -136,6 +138,7 @@ begin
       ShowMessage('Colaborador cadastrado com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
+      TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
       SBsair.Enabled       := True;
       SBnovo.Enabled       := True;

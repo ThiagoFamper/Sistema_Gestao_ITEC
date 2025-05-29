@@ -1,4 +1,4 @@
-unit Cad_usuario;
+unit Cad_Usuario;
 
 interface
 
@@ -69,6 +69,7 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
+  TelaPrincipal.habilitaMenu;
   dm.FDTabUsuario.Cancel;
   LimpaCampos();
 end;
@@ -76,6 +77,7 @@ end;
 procedure TCadUsuario.SBnovoClick(Sender: TObject); // botão de novo
 begin
   HabilitaCampos();
+  TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
   SBpesquisar.Enabled  := False;
@@ -123,6 +125,7 @@ begin
       dm.FDTabUsuario.Close;
       ShowMessage('Usuário cadastrado com sucesso!');
       LimpaCampos();
+      TelaPrincipal.habilitaMenu;
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;
       SBsair.Enabled       := True;

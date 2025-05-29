@@ -79,6 +79,7 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
+  TelaPrincipal.habilitaMenu;
   dm.FDTabSaida.Cancel;
   LimpaCampos();
 end;
@@ -86,6 +87,7 @@ end;
 procedure TSaidaProd.SBnovoClick(Sender: TObject); // botão de novo
 begin
   HabilitaCampos();
+  TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
   SBpesquisar.Enabled  := False;
@@ -160,6 +162,7 @@ begin
       ShowMessage('Saida cadastrada com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
+      TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
       SBsair.Enabled       := True;
       SBnovo.Enabled       := True;

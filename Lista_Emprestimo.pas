@@ -99,6 +99,7 @@ end;
 procedure TListaEmprestimo.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos();
+    TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa();
     dm.FDTabProduto.Cancel;
     gpEmp.Enabled      := True;
@@ -113,6 +114,7 @@ end;
 procedure TListaEmprestimo.SBeditarClick(Sender: TObject); // botão de editar
 begin
     HabilitaCampos();
+    TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa();
     dm.FDTabProduto.Edit;
     gpEmp.Enabled      := False;
@@ -153,6 +155,7 @@ begin
       dm.FDTabProduto.Post;
       ShowMessage('Editado com Sucesso!');
       DesabilitaCampos();
+      TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa();
       gpEmp.Enabled      := True;
       SBrelatorio.Enabled  := True;

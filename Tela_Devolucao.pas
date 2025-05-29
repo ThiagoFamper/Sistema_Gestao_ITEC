@@ -88,7 +88,7 @@ implementation
 
 {$R *.dfm}
 
-uses Data_Module, Relatorio_Devolucao;
+uses Data_Module, Relatorio_Devolucao, Tela_Principal;
 
 procedure TTelaDevolucao.SBrelatorioClick(Sender: TObject);
 begin
@@ -100,6 +100,7 @@ end;
 procedure TTelaDevolucao.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos();
+    TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa();
     dm.FDTabEmprestimoProd.Cancel;
     gDev.Enabled      := True;
@@ -112,6 +113,7 @@ end;
 procedure TTelaDevolucao.SBeditarClick(Sender: TObject); // botão de editar
 begin
     HabilitaCampos();
+    TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa();
     dm.FDTabEmprestimoProd.Edit;
     gDev.Enabled      := False;
@@ -180,6 +182,7 @@ begin
 
     showMessage('Devolução realizada com sucesso!');
     DesabilitaCampos();
+    TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa();
     gDev.Enabled      := True;
     SBrelatorio.Enabled  := True;

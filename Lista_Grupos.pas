@@ -80,6 +80,7 @@ end;
 procedure TListaGrupos.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos();
+    TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa();
     dm.FDTabGrupo.Cancel;
     gpGrupo.Enabled      := True;
@@ -93,6 +94,7 @@ end;
 procedure TListaGrupos.SBeditarClick(Sender: TObject); // botão de editar
 begin
     HabilitaCampos();
+    TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa();
     dm.FDTabGrupo.Edit;
     gpGrupo.Enabled      := False;
@@ -122,6 +124,7 @@ begin
       dm.FDTabGrupo.Close;
       ShowMessage('Grupo editado com sucesso!');
       DesabilitaCampos();
+      TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa();
       gpGrupo.Enabled      := True;
       SBexcluir.Enabled    := True;

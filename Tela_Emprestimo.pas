@@ -81,6 +81,7 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
+  TelaPrincipal.habilitaMenu;
   dm.FDTabEmprestimoProd.Cancel;
   LimpaCampos();
 end;
@@ -88,6 +89,7 @@ end;
 procedure TTelaEmprestimo.SBnovoClick(Sender: TObject); // botão de novo
 begin
   HabilitaCampos();
+  TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
   SBpesquisar.Enabled  := False;
@@ -170,6 +172,7 @@ begin
       ShowMessage('Empréstimo cadastrado com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
+      TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
       SBsair.Enabled       := True;
       SBnovo.Enabled       := True;

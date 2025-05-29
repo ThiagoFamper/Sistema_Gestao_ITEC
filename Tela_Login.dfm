@@ -144,9 +144,9 @@ object TelaLogin: TTelaLogin
   object qryUsuario: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
-      'SELECT login, senha, admin'
+      'SELECT nome, login, senha, admin'
       'FROM estoqueitec.usuario'
-      'WHERE login = :login'
+      'WHERE UPPER(login) = UPPER(:login)'
       'AND senha = :senha;')
     Left = 456
     Top = 267
@@ -154,6 +154,7 @@ object TelaLogin: TTelaLogin
       item
         Name = 'LOGIN'
         ParamType = ptInput
+        Value = Null
       end
       item
         Name = 'SENHA'

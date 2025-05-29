@@ -80,6 +80,8 @@ type
     Image12: TImage;
     pnpCadProd: TPanel;
     Image11: TImage;
+    SBlogout: TSpeedButton;
+    lUsuarioNome: TLabel;
     procedure pnpMouseEnter(Sender: TObject);
     procedure pnpMouseLeave(Sender: TObject);
     procedure pnpCadClick(Sender: TObject);
@@ -110,6 +112,7 @@ type
     procedure pnpCadSedeClick(Sender: TObject);
     procedure pnpConSedeClick(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure SBlogoutClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -139,12 +142,18 @@ uses Cad_Produto, Cad_Colaborador, Cad_Setor, Entrada_Prod, Saida_Prod,
 
 procedure TTelaPrincipal.desabilitaMenu;
 begin
-
+  fpPrincipal.Enabled       := False;
+  fpMovimentacao.Enabled    := False;
+  fpCadastro.Enabled        := False;
+  fpConsulta.Enabled        := False;
 end;
 
 procedure TTelaPrincipal.habilitaMenu;
 begin
-
+  fpPrincipal.Enabled       := True;
+  fpMovimentacao.Enabled    := True;
+  fpCadastro.Enabled        := True;
+  fpConsulta.Enabled        := True;
 end;
 
 procedure TTelaPrincipal.FormKeyDown(Sender: TObject; var Key: Word;
@@ -179,12 +188,13 @@ begin
   begin
     AbrirFormulario(TTelaDevolucao);
   end;
-
 end;
 
 procedure TTelaPrincipal.FormShow(Sender: TObject);
 begin
   selecionaMenu(0);
+
+  lUsuarioNome.Caption := 'Usuário: ' + usuarioLogado;
 
   if not isAdmin then
   begin
@@ -338,6 +348,14 @@ end;
 procedure TTelaPrincipal.pnpSairClick(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TTelaPrincipal.SBlogoutClick(Sender: TObject);
+begin
+  Application.CreateForm(TTelaLogin, TelaLogin);
+
+  Self.Hide;
+  TelaLogin.Show;
 end;
 
 procedure TTelaPrincipal.selecionaMenu(nMENU: Integer);

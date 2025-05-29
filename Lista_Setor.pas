@@ -80,6 +80,7 @@ end;
 procedure TListaSetor.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos();
+    TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa();
     dm.FDTabSetor.Cancel;
     gpSetor.Enabled      := True;
@@ -93,6 +94,7 @@ end;
 procedure TListaSetor.SBeditarClick(Sender: TObject); // botão de editar
 begin
     HabilitaCampos();
+    TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa();
     dm.FDTabSetor.Edit;
     gpSetor.Enabled      := False;
@@ -120,6 +122,7 @@ begin
       dm.FDTabSetor.Post;
       ShowMessage('Setor editado com sucesso!');
       DesabilitaCampos();
+      TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa();
       gpSetor.Enabled      := True;
       SBexcluir.Enabled    := True;

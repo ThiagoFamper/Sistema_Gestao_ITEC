@@ -2669,7 +2669,6 @@ object ListaEntrada: TListaEntrada
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-      ExplicitTop = 2
     end
     object Panel7: TPanel
       Left = 247

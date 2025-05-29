@@ -1,4 +1,4 @@
-program Project1;
+program Controle_Estoque_ITEC;
 
 uses
   Vcl.Forms,
@@ -19,7 +19,7 @@ uses
   Lista_Entrada in 'Lista_Entrada.pas' {ListaEntrada},
   Lista_Saida in 'Lista_Saida.pas' {ListaSaida},
   Lista_Emprestimo in 'Lista_Emprestimo.pas' {ListaEmprestimo},
-  Cad_usuario in 'Cad_usuario.pas' {CadUsuario},
+  Cad_Usuario in 'Cad_Usuario.pas' {CadUsuario},
   Lista_Usuario in 'Lista_Usuario.pas' {ListaUsuario},
   Data_Module in 'Data_Module.pas' {DM: TDataModule},
   Cad_Sede in 'Cad_Sede.pas' {CadSede},

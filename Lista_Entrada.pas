@@ -105,9 +105,10 @@ end;
 procedure TListaEntrada.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos();
+    TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa();
     dm.FDTabProduto.Cancel;
-    gpEntrada.Enabled      := True;
+    gpEntrada.Enabled    := True;
     SBrelatorio.Enabled  := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
@@ -119,6 +120,7 @@ end;
 procedure TListaEntrada.SBeditarClick(Sender: TObject); // botão de editar
 begin
     HabilitaCampos();
+    TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa();
     dm.FDTabProduto.Edit;
     gpEntrada.Enabled      := False;
@@ -171,6 +173,7 @@ begin
       dm.FDTabProduto.Post;
       ShowMessage('Editado com Sucesso!');
       DesabilitaCampos();
+      TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa();
       gpEntrada.Enabled      := True;
       SBrelatorio.Enabled  := True;

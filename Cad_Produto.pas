@@ -76,6 +76,7 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
+  TelaPrincipal.habilitaMenu;
   dm.FDTabGrupo.Cancel;
   dm.FDTabProduto.Cancel;
   LimpaCampos();
@@ -85,6 +86,7 @@ procedure TCadProduto.SBnovoClick(Sender: TObject); // botão de novo
 begin
   dm.FDTabGrupo.Open;
   HabilitaCampos();
+    TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
   SBpesquisar.Enabled  := False;
@@ -147,6 +149,7 @@ begin
       ShowMessage('Produto cadastrado com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
+      TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
       SBsair.Enabled       := True;
       SBnovo.Enabled       := True;

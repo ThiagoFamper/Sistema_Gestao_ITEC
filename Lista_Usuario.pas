@@ -94,6 +94,7 @@ end;
 procedure TListaUsuario.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos();
+    TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa();
     dm.FDTabUsuario.Cancel;
     gpUsuario.Enabled    := True;
@@ -107,6 +108,7 @@ end;
 procedure TListaUsuario.SBeditarClick(Sender: TObject); // botão de editar
 begin
     HabilitaCampos();
+    TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa();
     dm.FDTabUsuario.Edit;
     gpUsuario.Enabled    := False;
@@ -147,6 +149,7 @@ begin
       dm.FDTabUsuario.Post;
       ShowMessage('Usuário editado com sucesso!');
       DesabilitaCampos();
+      TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa();
       gpUsuario.Enabled    := True;
       SBexcluir.Enabled    := True;

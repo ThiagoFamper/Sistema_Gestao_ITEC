@@ -101,6 +101,7 @@ end;
 procedure TListaColaborador.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos();
+    TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa();
     dm.FDTabColaborador.Cancel;
     gpColab.Enabled      := True;
@@ -114,6 +115,7 @@ end;
 procedure TListaColaborador.SBeditarClick(Sender: TObject); // botão de editar
 begin
     HabilitaCampos();
+    TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa();
     dm.FDTabColaborador.Edit;
     gpColab.Enabled      := False;
@@ -159,6 +161,7 @@ begin
       dm.FDTabColaborador.Post;
       ShowMessage('Colaborador editado com sucesso!');
       DesabilitaCampos();
+      TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa();
       gpColab.Enabled      := True;
       SBexcluir.Enabled    := True;

@@ -69,6 +69,8 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
+  TelaPrincipal.habilitaMenu;
+  TelaPrincipal.habilitaMenu;
   dm.FDTabGrupo.Cancel;
   LimpaCampos();
 end;
@@ -76,6 +78,8 @@ end;
 procedure TCadGrupo.SBnovoClick(Sender: TObject); // botão de novo
 begin
   HabilitaCampos();
+  TelaPrincipal.desabilitaMenu;
+  TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
   SBpesquisar.Enabled  := False;
@@ -100,6 +104,8 @@ begin
       ShowMessage('Grupo cadastrado com sucesso!');
       LimpaCampos();
       DesabilitaCampos();
+      TelaPrincipal.habilitaMenu;
+      TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
       SBsair.Enabled       := True;
       SBnovo.Enabled       := True;

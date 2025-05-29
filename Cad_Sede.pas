@@ -67,6 +67,7 @@ begin
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
   DesabilitaCampos();
+  TelaPrincipal.habilitaMenu;
   dm.FDTabSede.Cancel;
   LimpaCampos();
 end;
@@ -74,6 +75,7 @@ end;
 procedure TCadSede.SBnovoClick(Sender: TObject); // botão de novo
 begin
   HabilitaCampos();
+  TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
   SBpesquisar.Enabled  := False;
@@ -97,6 +99,7 @@ begin
       dm.FDTabSede.Close;
       ShowMessage('Sede cadastrada com sucesso!');
       LimpaCampos();
+      TelaPrincipal.habilitaMenu;
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;
       SBsair.Enabled       := True;
