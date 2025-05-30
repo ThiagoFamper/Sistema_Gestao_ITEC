@@ -83,15 +83,17 @@ object SaidaProd: TSaidaProd
         ParentFont = False
         ExplicitWidth = 65
       end
-      object cbSaidaDescricao: TEdit
+      object cbSaidaDescricao: TDBLookupComboBox
         Left = 0
-        Top = 20
-        Width = 400
+        Top = 26
+        Width = 401
         Height = 23
-        Align = alTop
-        Enabled = False
+        DataField = 'produto_id'
+        DataSource = DM.dsFDTabSaida
+        KeyField = 'id'
+        ListField = 'descricao'
+        ListSource = DM.dsFDTabProduto
         TabOrder = 0
-        Text = 'Edit1'
       end
     end
     object Panel15: TPanel

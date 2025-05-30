@@ -12,7 +12,6 @@ object EntradaProd: TEntradaProd
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OnShow = FormShow
   TextHeight = 15
   object Panel2: TPanel
     Left = 0
@@ -1946,7 +1945,7 @@ object EntradaProd: TEntradaProd
         DataSource = DM.dsFDTabEntrada
         KeyField = 'id'
         ListField = 'descricao'
-        ListSource = DsProduto
+        ListSource = DM.dsFDTabProduto
         TabOrder = 0
       end
     end
@@ -2170,20 +2169,5 @@ object EntradaProd: TEntradaProd
         Name = 'QUANTIDADE'
         ParamType = ptInput
       end>
-  end
-  object QryProduto: TFDQuery
-    Connection = DM.FDEstoqueItec
-    Transaction = DM.FDTransaction1
-    UpdateTransaction = DM.FDTransaction1
-    SQL.Strings = (
-      'select id, descricao '
-      'from estoqueitec.produto')
-    Left = 712
-    Top = 176
-  end
-  object DsProduto: TDataSource
-    DataSet = QryProduto
-    Left = 712
-    Top = 248
   end
 end

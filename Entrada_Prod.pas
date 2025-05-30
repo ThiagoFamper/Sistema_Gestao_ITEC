@@ -25,14 +25,19 @@ type
     Panel9: TPanel;
     Panel10: TPanel;
     gEntrada: TDBGrid;
+    qryVerifica: TFDQuery;
+    qryUpdateEstoque: TFDQuery;
+    qryInsertEstoque: TFDQuery;
     Panel4: TPanel;
     Panel12: TPanel;
     Label9: TLabel;
     dbEntradaID: TDBEdit;
     Panel13: TPanel;
     Label6: TLabel;
+    dbEntradaCod: TDBEdit;
     Panel14: TPanel;
     Label1: TLabel;
+    cbEntradaDescricao: TDBLookupComboBox;
     Panel15: TPanel;
     Label12: TLabel;
     cbEntradaOperador: TDBLookupComboBox;
@@ -47,14 +52,7 @@ type
     dbEntradaValor: TDBEdit;
     Panel21: TPanel;
     Label5: TLabel;
-    dbEntradaCod: TDBEdit;
-    qryVerifica: TFDQuery;
-    cbEntradaDescricao: TDBLookupComboBox;
     eEntradaEstoque: TEdit;
-    qryUpdateEstoque: TFDQuery;
-    qryInsertEstoque: TFDQuery;
-    QryProduto: TFDQuery;
-    DsProduto: TDataSource;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
@@ -62,7 +60,6 @@ type
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
 
   private
     produto_id: Int64;
@@ -206,11 +203,6 @@ begin
     dbEntradaValor.Enabled     := False;
     dbEntradaQtd.Enabled       := False;
     cbEntradaOperador.Enabled  := False;
-end;
-
-procedure TEntradaProd.FormShow(Sender: TObject);
-begin
-  QryProduto.Open;
 end;
 
 end.

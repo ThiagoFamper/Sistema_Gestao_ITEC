@@ -42,11 +42,11 @@ type
     dbSaidaCod: TDBEdit;
     Panel21: TPanel;
     Label5: TLabel;
-    cbSaidaDescricao: TEdit;
     eSaidaEstoque: TEdit;
     cbSaidaOperador: TDBLookupComboBox;
     qryVerifica: TFDQuery;
     qryUpdateEstoque: TFDQuery;
+    cbSaidaDescricao: TDBLookupComboBox;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
