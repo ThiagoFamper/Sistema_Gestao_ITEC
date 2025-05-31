@@ -87,6 +87,8 @@ type
     FDTabSaidaquantidade: TIntegerField;
     FDTabSaidadata_saida: TDateField;
     FDTabSaidaoperador: TLargeintField;
+    FDTabEmprestimoProdcolaborador_id: TLargeintField;
+    FDTabSaidadescricao: TWideStringField;
   private
     { Private declarations }
   public

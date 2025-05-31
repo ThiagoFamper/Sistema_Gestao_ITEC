@@ -297,6 +297,10 @@ object DM: TDM
       FieldName = 'devolvido'
       Origin = 'devolvido'
     end
+    object FDTabEmprestimoProdcolaborador_id: TLargeintField
+      FieldName = 'colaborador_id'
+      Origin = 'colaborador_id'
+    end
   end
   object dsFDTabEmprestimoProd: TDataSource
     DataSet = FDTabEmprestimoProd
@@ -333,6 +337,11 @@ object DM: TDM
     object FDTabSaidaoperador: TLargeintField
       FieldName = 'operador'
       Origin = 'operador'
+    end
+    object FDTabSaidadescricao: TWideStringField
+      FieldName = 'descricao'
+      Origin = 'descricao'
+      Size = 75
     end
   end
   object dsFDTabSaida: TDataSource
