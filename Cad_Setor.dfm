@@ -1755,7 +1755,7 @@ object CadSetor: TCadSetor
       Height = 110
       Align = alLeft
       BevelOuter = bvNone
-      Caption = 'Setor'
+      Caption = 'Cadastro de Setor'
       Color = clCadetblue
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite

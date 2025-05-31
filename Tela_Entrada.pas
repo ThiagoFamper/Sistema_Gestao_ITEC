@@ -1,4 +1,4 @@
-unit Tela_Emprestimo;
+unit Tela_Entrada;
 
 interface
 
@@ -8,33 +8,39 @@ uses
   Vcl.Buttons, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls;
 
 type
-  TTelaEmprestimo = class(TForm)
+  TTelaEntrada = class(TForm)
     Panel5: TPanel;
     Panel13: TPanel;
-    Label10: TLabel;
-    dbpEmpID: TDBEdit;
-    Panel14: TPanel;
     Label11: TLabel;
-    dbpEmpCod: TDBEdit;
+    dbpEntradaID: TDBEdit;
+    Panel14: TPanel;
+    Label12: TLabel;
+    dbpEntradaCod: TDBEdit;
+    Panel17: TPanel;
+    Label16: TLabel;
+    dbpEntradaQtd: TDBEdit;
     Panel18: TPanel;
-    Label5: TLabel;
-    dbpEmpQtd: TDBEdit;
+    Label17: TLabel;
+    dbpEntradaOperador: TDBEdit;
     Panel19: TPanel;
-    Label1: TLabel;
-    dbpEmpOperador: TDBEdit;
-    Panel15: TPanel;
-    Label3: TLabel;
-    dbpEmpSaldo: TDBEdit;
+    Label18: TLabel;
+    dbpEntradaNF: TDBEdit;
+    Panel21: TPanel;
+    Label19: TLabel;
+    dbpEntradaValor: TDBEdit;
     Panel1: TPanel;
-    Panel22: TPanel;
-    Label9: TLabel;
-    epEmpCod: TEdit;
     Panel23: TPanel;
-    Label2: TLabel;
-    epEmpDescricao: TEdit;
-    Panel26: TPanel;
     Label7: TLabel;
-    epEmpOperador: TEdit;
+    epEntradaCod: TEdit;
+    Panel24: TPanel;
+    Label1: TLabel;
+    epEntradaDescricao: TEdit;
+    Panel25: TPanel;
+    Label2: TLabel;
+    epEntradaOperador: TEdit;
+    Panel26: TPanel;
+    Label3: TLabel;
+    epEntradaNF: TEdit;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBrelatorio: TSpeedButton;
@@ -49,7 +55,7 @@ type
     Panel4: TPanel;
     DBNavigator1: TDBNavigator;
     Panel3: TPanel;
-    gpEmp: TDBGrid;
+    gpEntrada: TDBGrid;
   private
     { Private declarations }
   public
@@ -57,7 +63,7 @@ type
   end;
 
 var
-  TelaEmprestimo: TTelaEmprestimo;
+  TelaEntrada: TTelaEntrada;
 
 implementation
 

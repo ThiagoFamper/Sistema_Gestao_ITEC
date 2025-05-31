@@ -1675,7 +1675,7 @@ object CadSede: TCadSede
       Height = 110
       Align = alLeft
       BevelOuter = bvNone
-      Caption = 'Sede'
+      Caption = 'Cadastro de Sede'
       Color = clCadetblue
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite

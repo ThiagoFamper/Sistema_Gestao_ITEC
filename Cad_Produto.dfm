@@ -1679,7 +1679,7 @@ object CadProduto: TCadProduto
       Height = 110
       Align = alLeft
       BevelOuter = bvNone
-      Caption = 'Produto'
+      Caption = 'Cadastro de Produto'
       Color = clCadetblue
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite

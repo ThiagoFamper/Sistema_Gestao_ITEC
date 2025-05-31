@@ -9,7 +9,7 @@ uses
   Cad_Setor in 'Cad_Setor.pas' {CadSetor},
   Entrada_Prod in 'Entrada_Prod.pas' {EntradaProd},
   Saida_Prod in 'Saida_Prod.pas' {SaidaProd},
-  Tela_Emprestimo in 'Tela_Emprestimo.pas' {TelaEmprestimo},
+  Cad_Emprestimo in 'Cad_Emprestimo.pas' {CadEmprestimo},
   Tela_Devolucao in 'Tela_Devolucao.pas' {TelaDevolucao},
   Cad_Grupo in 'Cad_Grupo.pas' {CadGrupo},
   Lista_Grupos in 'Lista_Grupos.pas' {ListaGrupos},
@@ -28,7 +28,10 @@ uses
   Relatorio_Saida in 'Relatorio_Saida.pas' {RelatorioSaida},
   Relatorio_Emprestimo in 'Relatorio_Emprestimo.pas' {RelatorioEmprestimo},
   Relatorio_Devolucao in 'Relatorio_Devolucao.pas' {RelatorioDevolucao},
-  Relatorio_Produto in 'Relatorio_Produto.pas' {RelatorioProduto};
+  Relatorio_Produto in 'Relatorio_Produto.pas' {RelatorioProduto},
+  Tela_Entrada in 'Tela_Entrada.pas' {TelaEntrada},
+  Tela_Saida in 'Tela_Saida.pas' {TelaSaida},
+  Tela_Emprestimo in 'Tela_Emprestimo.pas' {TelaEmprestimo};
 
 {$R *.res}
 
@@ -42,7 +45,7 @@ begin
   Application.CreateForm(TCadSetor, CadSetor);
   Application.CreateForm(TEntradaProd, EntradaProd);
   Application.CreateForm(TSaidaProd, SaidaProd);
-  Application.CreateForm(TTelaEmprestimo, TelaEmprestimo);
+  Application.CreateForm(TCadEmprestimo, CadEmprestimo);
   Application.CreateForm(TTelaDevolucao, TelaDevolucao);
   Application.CreateForm(TCadGrupo, CadGrupo);
   Application.CreateForm(TListaGrupos, ListaGrupos);
@@ -63,5 +66,8 @@ begin
   Application.CreateForm(TRelatorioEmprestimo, RelatorioEmprestimo);
   Application.CreateForm(TRelatorioDevolucao, RelatorioDevolucao);
   Application.CreateForm(TRelatorioProduto, RelatorioProduto);
+  Application.CreateForm(TTelaEntrada, TelaEntrada);
+  Application.CreateForm(TTelaSaida, TelaSaida);
+  Application.CreateForm(TTelaEmprestimo, TelaEmprestimo);
   Application.Run;
 end.

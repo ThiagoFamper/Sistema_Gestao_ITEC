@@ -1,4 +1,4 @@
-unit Tela_Emprestimo;
+unit Tela_Saida;
 
 interface
 
@@ -8,33 +8,27 @@ uses
   Vcl.Buttons, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls;
 
 type
-  TTelaEmprestimo = class(TForm)
+  TTelaSaida = class(TForm)
     Panel5: TPanel;
     Panel13: TPanel;
-    Label10: TLabel;
-    dbpEmpID: TDBEdit;
+    Label9: TLabel;
+    dbpSaidaID: TDBEdit;
     Panel14: TPanel;
-    Label11: TLabel;
-    dbpEmpCod: TDBEdit;
+    Label12: TLabel;
+    dbpSaidaCod: TDBEdit;
+    Panel17: TPanel;
+    Label16: TLabel;
+    dbpSaidaQtd: TDBEdit;
     Panel18: TPanel;
-    Label5: TLabel;
-    dbpEmpQtd: TDBEdit;
-    Panel19: TPanel;
-    Label1: TLabel;
-    dbpEmpOperador: TDBEdit;
-    Panel15: TPanel;
-    Label3: TLabel;
-    dbpEmpSaldo: TDBEdit;
+    Label17: TLabel;
+    dbpSaidaOperador: TDBEdit;
     Panel1: TPanel;
     Panel22: TPanel;
-    Label9: TLabel;
-    epEmpCod: TEdit;
-    Panel23: TPanel;
-    Label2: TLabel;
-    epEmpDescricao: TEdit;
+    Label5: TLabel;
+    epSaidaCod: TEdit;
     Panel26: TPanel;
-    Label7: TLabel;
-    epEmpOperador: TEdit;
+    Label2: TLabel;
+    epSaidaOperador: TEdit;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBrelatorio: TSpeedButton;
@@ -49,7 +43,7 @@ type
     Panel4: TPanel;
     DBNavigator1: TDBNavigator;
     Panel3: TPanel;
-    gpEmp: TDBGrid;
+    gpSaida: TDBGrid;
   private
     { Private declarations }
   public
@@ -57,7 +51,7 @@ type
   end;
 
 var
-  TelaEmprestimo: TTelaEmprestimo;
+  TelaSaida: TTelaSaida;
 
 implementation
 

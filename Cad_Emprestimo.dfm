@@ -1,38 +1,39 @@
-object CadColaborador: TCadColaborador
+object CadEmprestimo: TCadEmprestimo
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Cadastrar Colaborador'
-  ClientHeight = 794
-  ClientWidth = 1126
+  Caption = 'Empr'#233'stimo de Produto'
+  ClientHeight = 881
+  ClientWidth = 1124
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  Position = poDesigned
   TextHeight = 15
   object Panel4: TPanel
     Left = 0
     Top = 114
-    Width = 1126
-    Height = 207
+    Width = 1124
+    Height = 279
     Align = alTop
     BevelEdges = [beBottom]
+    BiDiMode = bdLeftToRight
     Color = clWhitesmoke
+    ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1124
-    object Panel10: TPanel
-      Left = 16
+    ExplicitWidth = 1122
+    object Panel13: TPanel
+      Left = 17
       Top = 6
       Width = 50
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
-      object Label1: TLabel
+      object Label9: TLabel
         Left = 0
         Top = 0
         Width = 50
@@ -47,26 +48,62 @@ object CadColaborador: TCadColaborador
         ParentFont = False
         ExplicitWidth = 15
       end
-      object dbColabID: TDBEdit
+      object dbEmpID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
         Height = 23
         Align = alTop
+        Color = clBtnHighlight
         DataField = 'id'
-        DataSource = DM.dsFDTabColaborador
+        DataSource = DM.dsFDTabEmprestimoProd
         Enabled = False
         TabOrder = 0
       end
     end
     object Panel12: TPanel
-      Left = 16
+      Left = 17
       Top = 71
       Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
-      object Label2: TLabel
+      object Label10: TLabel
+        Left = 0
+        Top = 0
+        Width = 400
+        Height = 20
+        Align = alTop
+        Caption = 'C'#243'digo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 49
+      end
+      object dbEmpCod: TDBEdit
+        Left = 0
+        Top = 20
+        Width = 400
+        Height = 23
+        Align = alTop
+        Color = clBtnHighlight
+        DataField = 'produto_id'
+        DataSource = DM.dsFDTabEmprestimoProd
+        Enabled = False
+        TabOrder = 0
+      end
+    end
+    object Panel14: TPanel
+      Left = 17
+      Top = 136
+      Width = 400
+      Height = 59
+      BevelOuter = bvNone
+      TabOrder = 2
+      object Label1: TLabel
         Left = 0
         Top = 0
         Width = 400
@@ -81,123 +118,115 @@ object CadColaborador: TCadColaborador
         ParentFont = False
         ExplicitWidth = 65
       end
-      object dbColabDescricao: TDBEdit
+      object cbEmpDescricao: TEdit
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        DataField = 'descricao'
-        DataSource = DM.dsFDTabColaborador
         Enabled = False
-        TabOrder = 0
-      end
-    end
-    object Panel13: TPanel
-      Left = 16
-      Top = 136
-      Width = 400
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 2
-      object Label3: TLabel
-        Left = 0
-        Top = 0
-        Width = 400
-        Height = 20
-        Align = alTop
-        Caption = 'Cargo'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 40
-      end
-      object dbColabCargo: TDBEdit
-        Left = 0
-        Top = 20
-        Width = 400
-        Height = 23
-        Align = alTop
-        DataField = 'cargo'
-        DataSource = DM.dsFDTabColaborador
-        Enabled = False
-        TabOrder = 0
-      end
-    end
-    object Panel14: TPanel
-      Left = 512
-      Top = 6
-      Width = 400
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 3
-      object Label4: TLabel
-        Left = 0
-        Top = 0
-        Width = 400
-        Height = 20
-        Align = alTop
-        Caption = 'Setor'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 35
-      end
-      object cbColabSetor: TDBLookupComboBox
-        Left = 0
-        Top = 20
-        Width = 400
-        Height = 23
-        Align = alTop
-        DataField = 'setor_id'
-        DataSource = DM.dsFDTabColaborador
-        Enabled = False
-        KeyField = 'id'
-        ListField = 'descricao'
-        ListSource = DM.dsFDTabSetor
         TabOrder = 0
       end
     end
     object Panel15: TPanel
-      Left = 512
-      Top = 71
+      Left = 17
+      Top = 201
       Width = 400
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 4
-      object Label6: TLabel
+      TabOrder = 3
+      object Label12: TLabel
         Left = 0
         Top = 0
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Sede'
+        Caption = 'Operador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 33
+        ExplicitWidth = 64
       end
-      object cbColabSede: TDBLookupComboBox
+      object cbEmpOperador: TDBLookupComboBox
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        DataField = 'sede_id'
-        DataSource = DM.dsFDTabColaborador
-        Enabled = False
+        DataField = 'operador'
+        DataSource = DM.dsFDTabEmprestimoProd
         KeyField = 'id'
         ListField = 'descricao'
-        ListSource = DM.dsFDTabSede
+        ListSource = DM.dsFDTabColaborador
+        TabOrder = 0
+      end
+    end
+    object Panel16: TPanel
+      Left = 521
+      Top = 13
+      Width = 81
+      Height = 59
+      BevelOuter = bvNone
+      TabOrder = 4
+      object Label13: TLabel
+        Left = 0
+        Top = 0
+        Width = 81
+        Height = 20
+        Align = alTop
+        Caption = 'Quantidade'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 78
+      end
+      object dbEmpQtd: TDBEdit
+        Left = 0
+        Top = 20
+        Width = 81
+        Height = 23
+        Align = alTop
+        DataField = 'quantidade'
+        DataSource = DM.dsFDTabEmprestimoProd
+        Enabled = False
+        TabOrder = 0
+      end
+    end
+    object Panel20: TPanel
+      Left = 521
+      Top = 78
+      Width = 81
+      Height = 59
+      BevelOuter = bvNone
+      TabOrder = 5
+      object Label15: TLabel
+        Left = 0
+        Top = 0
+        Width = 81
+        Height = 20
+        Align = alTop
+        Caption = 'Estoque'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 53
+      end
+      object eEmpEstoque: TEdit
+        Left = 0
+        Top = 20
+        Width = 81
+        Height = 23
+        Align = alTop
+        Enabled = False
         TabOrder = 0
       end
     end
@@ -205,7 +234,7 @@ object CadColaborador: TCadColaborador
   object Panel2: TPanel
     Left = 0
     Top = 0
-    Width = 1126
+    Width = 1124
     Height = 114
     Align = alTop
     BevelEdges = [beTop, beBottom]
@@ -214,7 +243,7 @@ object CadColaborador: TCadColaborador
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1124
+    ExplicitWidth = 1122
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1535,7 +1564,7 @@ object CadColaborador: TCadColaborador
       Width = 73
       Height = 73
       Cursor = crHandPoint
-      Hint = 'Novo'
+      Hint = 'Cancelar'
       Flat = True
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
@@ -1864,7 +1893,7 @@ object CadColaborador: TCadColaborador
       Height = 110
       Align = alLeft
       BevelOuter = bvNone
-      Caption = 'Cadastro de Colaborador'
+      Caption = 'Empr'#233'stimo de Produto'
       Color = clCadetblue
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -1875,7 +1904,7 @@ object CadColaborador: TCadColaborador
       ParentFont = False
       TabOrder = 0
     end
-    object Panel7: TPanel
+    object Panel1: TPanel
       Left = 443
       Top = 86
       Width = 73
@@ -1890,7 +1919,7 @@ object CadColaborador: TCadColaborador
       ParentFont = False
       TabOrder = 1
     end
-    object Panel1: TPanel
+    object Panel5: TPanel
       Left = 347
       Top = 86
       Width = 73
@@ -1905,7 +1934,7 @@ object CadColaborador: TCadColaborador
       ParentFont = False
       TabOrder = 2
     end
-    object Panel5: TPanel
+    object Panel8: TPanel
       Left = 247
       Top = 86
       Width = 73
@@ -1920,7 +1949,7 @@ object CadColaborador: TCadColaborador
       ParentFont = False
       TabOrder = 3
     end
-    object Panel6: TPanel
+    object Panel9: TPanel
       Left = 539
       Top = 86
       Width = 73
@@ -1935,7 +1964,7 @@ object CadColaborador: TCadColaborador
       ParentFont = False
       TabOrder = 4
     end
-    object Panel8: TPanel
+    object Panel10: TPanel
       Left = 631
       Top = 86
       Width = 73
@@ -1951,22 +1980,38 @@ object CadColaborador: TCadColaborador
       TabOrder = 5
     end
   end
-  object gColab: TDBGrid
+  object Panel11: TPanel
     Left = 0
-    Top = 321
-    Width = 1126
-    Height = 473
-    Align = alClient
-    DataSource = DM.dsFDTabColaborador
-    Enabled = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    ParentFont = False
-    ReadOnly = True
+    Top = 393
+    Width = 1124
+    Height = 37
+    Align = alTop
+    BevelEdges = [beBottom]
+    Color = clWhitesmoke
+    ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1122
+    object DBNavigator1: TDBNavigator
+      AlignWithMargins = True
+      Left = 0
+      Top = 6
+      Width = 224
+      Height = 25
+      DataSource = DM.dsFDTabEmprestimoProd
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      TabOrder = 0
+    end
+  end
+  object gEmp: TDBGrid
+    Left = 0
+    Top = 430
+    Width = 1124
+    Height = 451
+    Align = alClient
+    DataSource = DM.dsFDTabEmprestimoProd
+    Enabled = False
+    ReadOnly = True
+    TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -1981,27 +2026,83 @@ object CadColaborador: TCadColaborador
       end
       item
         Expanded = False
-        FieldName = 'descricao'
-        Title.Caption = 'Descri'#231#227'o'
-        Width = 500
-        Visible = True
+        FieldName = 'produto_id'
+        Visible = False
       end
       item
         Expanded = False
-        FieldName = 'cargo'
-        Title.Caption = 'Cargo'
+        FieldName = 'operador'
+        Title.Caption = 'Operador'
         Width = 200
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'setor_id'
-        Visible = False
+        FieldName = 'quantidade'
+        Title.Caption = 'Quantidade'
+        Width = 70
+        Visible = True
       end
       item
         Expanded = False
-        FieldName = 'sede_id'
-        Visible = False
+        FieldName = 'data_emprestimo'
+        Title.Caption = 'Data'
+        Width = 70
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'devolvido'
+        Title.Caption = 'Devolvido'
+        Width = 70
+        Visible = True
+      end>
+  end
+  object qryVerifica: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT saldo'
+      'FROM estoqueitec.estoque'
+      'WHERE produto_id = :produto_id;'
+      '')
+    Left = 728
+    Top = 314
+    ParamData = <
+      item
+        Name = 'PRODUTO_ID'
+        ParamType = ptInput
+      end>
+  end
+  object qryUpdateEstoque: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'UPDATE estoqueitec.estoque'
+      'SET saldo = saldo - :quantidade'
+      'WHERE produto_id = :produto_id;'
+      '')
+    Left = 840
+    Top = 314
+    ParamData = <
+      item
+        Name = 'QUANTIDADE'
+        ParamType = ptInput
+      end
+      item
+        Name = 'PRODUTO_ID'
+        ParamType = ptInput
+      end>
+  end
+  object qryInsertEstoque: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'INSERT INTO estoqueitec.item_emprestimo (emprestimo_id)'
+      'VALUES (:emprestimo_id);')
+    Left = 952
+    Top = 314
+    ParamData = <
+      item
+        Name = 'EMPRESTIMO_ID'
+        ParamType = ptInput
       end>
   end
 end

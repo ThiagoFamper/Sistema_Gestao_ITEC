@@ -135,7 +135,7 @@ implementation
 {$R *.dfm}
 
 uses Cad_Produto, Cad_Colaborador, Cad_Setor, Entrada_Prod, Saida_Prod,
-  Tela_Emprestimo, Cad_Grupo, Lista_Colaborador, Lista_Emprestimo,
+  Cad_Emprestimo, Cad_Grupo, Lista_Colaborador, Lista_Emprestimo,
   Lista_Entrada, Lista_Grupos, Lista_Produtos, Lista_Saida, Lista_Setor,
   Tela_Devolucao, Cad_usuario, Lista_Usuario, Tela_Login, Lista_Sede, Cad_Sede,
   Data_Module;
@@ -181,7 +181,7 @@ begin
 
   if Key = Ord('1') then
   begin
-    AbrirFormulario(TTelaEmprestimo);
+    AbrirFormulario(TCadEmprestimo);
   end;
 
   if Key = Ord('2') then
@@ -282,7 +282,7 @@ end;
 
 procedure TTelaPrincipal.pnpMovEmpClick(Sender: TObject);
 begin
-  AbrirFormulario(TTelaEmprestimo); // abre a tela de emprestimo
+  AbrirFormulario(TCadEmprestimo); // abre a tela de emprestimo
 end;
 
 procedure TTelaPrincipal.pnpMovEntClick(Sender: TObject);

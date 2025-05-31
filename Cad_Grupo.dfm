@@ -1675,7 +1675,7 @@ object CadGrupo: TCadGrupo
       Height = 110
       Align = alLeft
       BevelOuter = bvNone
-      Caption = 'Grupo'
+      Caption = 'Cadastro de Grupo'
       Color = clCadetblue
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
@@ -1685,6 +1685,7 @@ object CadGrupo: TCadGrupo
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
+      ExplicitTop = 2
     end
     object Panel7: TPanel
       Left = 443
