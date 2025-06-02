@@ -32,7 +32,6 @@ object RelatorioProduto: TRelatorioProduto
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -45,8 +44,6 @@ object RelatorioProduto: TRelatorioProduto
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 338
-    ExplicitHeight = 282
     DesignSize = (
       340
       290)
@@ -59,7 +56,6 @@ object RelatorioProduto: TRelatorioProduto
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -71,7 +67,6 @@ object RelatorioProduto: TRelatorioProduto
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 332
       object Label1: TLabel
         Left = 0
         Top = 0
@@ -100,7 +95,6 @@ object RelatorioProduto: TRelatorioProduto
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -111,7 +105,6 @@ object RelatorioProduto: TRelatorioProduto
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitWidth = 332
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -141,8 +134,6 @@ object RelatorioProduto: TRelatorioProduto
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
-      ExplicitLeft = 115
-      ExplicitTop = 194
     end
   end
   object frxDSRelatProd: TfrxDBDataset
@@ -223,10 +214,10 @@ object RelatorioProduto: TRelatorioProduto
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection, pbWatermarks]
     PreviewOptions.Zoom = 1.000000000000000000
-    PrintOptions.Printer = 'Default'
+    PrintOptions.Printer = 'Padr'#227'o'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 45802.625197569450000000
-    ReportOptions.LastChange = 45802.630192685190000000
+    ReportOptions.CreateDate = 45809.895788043980000000
+    ReportOptions.LastChange = 45809.974097962960000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -308,10 +299,10 @@ object RelatorioProduto: TRelatorioProduto
       PaperWidth = 210.000000000000000000
       PaperHeight = 297.000000000000000000
       PaperSize = 9
-      LeftMargin = 10.000000000000000000
-      RightMargin = 10.000000000000000000
-      TopMargin = 10.000000000000000000
-      BottomMargin = 10.000000000000000000
+      LeftMargin = 1.000000000000000000
+      RightMargin = 1.000000000000000000
+      TopMargin = 1.000000000000000000
+      BottomMargin = 1.000000000000000000
       Frame.Typ = []
       MirrorMode = []
       object ReportTitle1: TfrxReportTitle
@@ -321,13 +312,13 @@ object RelatorioProduto: TRelatorioProduto
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 37.795300000000000000
+        Height = 26.456710000000000000
         Top = 18.897650000000000000
-        Width = 718.110700000000000000
+        Width = 786.142240000000000000
         object Memo1: TfrxMemoView
           Align = baWidth
           AllowVectorExport = True
-          Width = 718.110717773437500000
+          Width = 786.142211914062500000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -340,10 +331,144 @@ object RelatorioProduto: TRelatorioProduto
           Fill.BackColor = clGray
           HAlign = haCenter
           Memo.UTF8W = (
-            'RELAT'#211'RIO DE PRODUTO')
+            'Relat'#243'rio de Produto')
           ParentFont = False
           Style = 'Title'
           VAlign = vaCenter
+        end
+      end
+      object PageHeader1: TfrxPageHeader
+        FillType = ftBrush
+        FillGap.Top = 0
+        FillGap.Left = 0
+        FillGap.Bottom = 0
+        FillGap.Right = 0
+        Frame.Typ = []
+        Height = 22.677180000000000000
+        Top = 68.031540000000000000
+        Width = 786.142240000000000000
+        object Memo2: TfrxMemoView
+          AllowVectorExport = True
+          Width = 786.141776220000000000
+          Height = 22.677180000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftBottom]
+          Frame.Width = 2.000000000000000000
+          ParentFont = False
+          Style = 'Header line'
+        end
+        object Memo3: TfrxMemoView
+          AllowVectorExport = True
+          Width = 76.687292560000000000
+          Height = 22.677180000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'C'#211'DIGO')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo4: TfrxMemoView
+          AllowVectorExport = True
+          Left = 76.687292560000000000
+          Width = 285.398584220000000000
+          Height = 22.677180000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'DESCRI'#199#195'O')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo5: TfrxMemoView
+          AllowVectorExport = True
+          Left = 362.085876780000000000
+          Width = 112.380796220000000000
+          Height = 22.677180000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'GRUPO')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo6: TfrxMemoView
+          AllowVectorExport = True
+          Left = 474.466673000000000000
+          Width = 115.261204350000000000
+          Height = 22.677180000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'MARCA')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo7: TfrxMemoView
+          AllowVectorExport = True
+          Left = 589.727877350000000000
+          Width = 114.033031630000000000
+          Height = 22.677180000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'MODELO')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo8: TfrxMemoView
+          AllowVectorExport = True
+          Left = 703.760908980000000000
+          Width = 82.380867240000000000
+          Height = 22.677180000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'DATA')
+          ParentFont = False
+          Style = 'Header'
         end
       end
       object MasterData1: TfrxMasterData
@@ -353,42 +478,18 @@ object RelatorioProduto: TRelatorioProduto
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 181.417440000000000000
-        Top = 117.165430000000000000
-        Width = 718.110700000000000000
+        Height = 37.795300000000000000
+        Top = 151.181200000000000000
+        Width = 786.142240000000000000
         DataSet = frxDSRelatProd
         DataSetName = 'frxDSRelatProd'
         RowCount = 0
-        object Memo2: TfrxMemoView
+        object Memo9: TfrxMemoView
           AllowVectorExport = True
-          Width = 111.000000000000000000
+          Width = 77.858267720000000000
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Highlight.Font.Charset = ANSI_CHARSET
-          Highlight.Font.Color = clMaroon
-          Highlight.Font.Height = -13
-          Highlight.Font.Name = 'Segoe UI'
-          Highlight.Font.Style = [fsBold]
-          Highlight.Condition = 'Value = 0'
-          Highlight.FillType = ftBrush
-          Highlight.Frame.Typ = []
-          Memo.UTF8W = (
-            'C'#211'DIGO')
-          ParentFont = False
-          Style = 'Header'
-        end
-        object Memo3: TfrxMemoView
-          AllowVectorExport = True
-          Left = 129.897650000000000000
-          Width = 335.000000000000000000
-          Height = 18.897650000000000000
           DataField = 'cod_produto'
           DataSet = frxDSRelatProd
           DataSetName = 'frxDSRelatProd'
@@ -403,38 +504,13 @@ object RelatorioProduto: TRelatorioProduto
           ParentFont = False
           Style = 'Data'
         end
-        object Memo4: TfrxMemoView
+        object Memo10: TfrxMemoView
           AllowVectorExport = True
-          Top = 18.897650000000000000
-          Width = 111.000000000000000000
+          Left = 76.687292560000000000
+          Width = 286.488215830000000000
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Highlight.Font.Charset = ANSI_CHARSET
-          Highlight.Font.Color = clMaroon
-          Highlight.Font.Height = -13
-          Highlight.Font.Name = 'Segoe UI'
-          Highlight.Font.Style = [fsBold]
-          Highlight.Condition = 'Value = 0'
-          Highlight.FillType = ftBrush
-          Highlight.Frame.Typ = []
-          Memo.UTF8W = (
-            'DESCRI'#199#195'O')
-          ParentFont = False
-          Style = 'Header'
-        end
-        object Memo5: TfrxMemoView
-          AllowVectorExport = True
-          Left = 129.897650000000000000
-          Top = 18.897650000000000000
-          Width = 556.000000000000000000
-          Height = 18.897650000000000000
           DataField = 'descricao'
           DataSet = frxDSRelatProd
           DataSetName = 'frxDSRelatProd'
@@ -449,38 +525,13 @@ object RelatorioProduto: TRelatorioProduto
           ParentFont = False
           Style = 'Data'
         end
-        object Memo6: TfrxMemoView
+        object Memo11: TfrxMemoView
           AllowVectorExport = True
-          Top = 37.795300000000000000
-          Width = 111.000000000000000000
+          Left = 362.085876780000000000
+          Width = 112.380796220000000000
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Highlight.Font.Charset = ANSI_CHARSET
-          Highlight.Font.Color = clMaroon
-          Highlight.Font.Height = -13
-          Highlight.Font.Name = 'Segoe UI'
-          Highlight.Font.Style = [fsBold]
-          Highlight.Condition = 'Value = 0'
-          Highlight.FillType = ftBrush
-          Highlight.Frame.Typ = []
-          Memo.UTF8W = (
-            'GRUPO')
-          ParentFont = False
-          Style = 'Header'
-        end
-        object Memo7: TfrxMemoView
-          AllowVectorExport = True
-          Left = 129.897650000000000000
-          Top = 37.795300000000000000
-          Width = 335.000000000000000000
-          Height = 18.897650000000000000
           DataField = 'grupo_descricao'
           DataSet = frxDSRelatProd
           DataSetName = 'frxDSRelatProd'
@@ -495,38 +546,13 @@ object RelatorioProduto: TRelatorioProduto
           ParentFont = False
           Style = 'Data'
         end
-        object Memo8: TfrxMemoView
+        object Memo12: TfrxMemoView
           AllowVectorExport = True
-          Top = 56.692950000000000000
-          Width = 111.000000000000000000
+          Left = 474.466673000000000000
+          Width = 115.261204350000000000
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Highlight.Font.Charset = ANSI_CHARSET
-          Highlight.Font.Color = clMaroon
-          Highlight.Font.Height = -13
-          Highlight.Font.Name = 'Segoe UI'
-          Highlight.Font.Style = [fsBold]
-          Highlight.Condition = 'Value = 0'
-          Highlight.FillType = ftBrush
-          Highlight.Frame.Typ = []
-          Memo.UTF8W = (
-            'MARCA')
-          ParentFont = False
-          Style = 'Header'
-        end
-        object Memo9: TfrxMemoView
-          AllowVectorExport = True
-          Left = 129.897650000000000000
-          Top = 56.692950000000000000
-          Width = 335.000000000000000000
-          Height = 18.897650000000000000
           DataField = 'marca'
           DataSet = frxDSRelatProd
           DataSetName = 'frxDSRelatProd'
@@ -541,38 +567,13 @@ object RelatorioProduto: TRelatorioProduto
           ParentFont = False
           Style = 'Data'
         end
-        object Memo10: TfrxMemoView
+        object Memo13: TfrxMemoView
           AllowVectorExport = True
-          Top = 75.590600000000000000
-          Width = 111.000000000000000000
+          Left = 589.727877350000000000
+          Width = 114.033031630000000000
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Highlight.Font.Charset = ANSI_CHARSET
-          Highlight.Font.Color = clMaroon
-          Highlight.Font.Height = -13
-          Highlight.Font.Name = 'Segoe UI'
-          Highlight.Font.Style = [fsBold]
-          Highlight.Condition = 'Value = 0'
-          Highlight.FillType = ftBrush
-          Highlight.Frame.Typ = []
-          Memo.UTF8W = (
-            'MODELO')
-          ParentFont = False
-          Style = 'Header'
-        end
-        object Memo11: TfrxMemoView
-          AllowVectorExport = True
-          Left = 129.897650000000000000
-          Top = 75.590600000000000000
-          Width = 335.000000000000000000
-          Height = 18.897650000000000000
           DataField = 'modelo'
           DataSet = frxDSRelatProd
           DataSetName = 'frxDSRelatProd'
@@ -587,38 +588,13 @@ object RelatorioProduto: TRelatorioProduto
           ParentFont = False
           Style = 'Data'
         end
-        object Memo12: TfrxMemoView
+        object Memo14: TfrxMemoView
           AllowVectorExport = True
-          Top = 94.488250000000000000
-          Width = 111.000000000000000000
+          Left = 703.760908980000000000
+          Width = 82.380867240000000000
           Height = 18.897650000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Highlight.Font.Charset = ANSI_CHARSET
-          Highlight.Font.Color = clMaroon
-          Highlight.Font.Height = -13
-          Highlight.Font.Name = 'Segoe UI'
-          Highlight.Font.Style = [fsBold]
-          Highlight.Condition = 'Value = 0'
-          Highlight.FillType = ftBrush
-          Highlight.Frame.Typ = []
-          Memo.UTF8W = (
-            'DATA')
-          ParentFont = False
-          Style = 'Header'
-        end
-        object Memo13: TfrxMemoView
-          AllowVectorExport = True
-          Left = 129.897650000000000000
-          Top = 94.488250000000000000
-          Width = 78.000000000000000000
-          Height = 18.897650000000000000
           DataField = 'data'
           DataSet = frxDSRelatProd
           DataSetName = 'frxDSRelatProd'
@@ -633,16 +609,6 @@ object RelatorioProduto: TRelatorioProduto
           ParentFont = False
           Style = 'Data'
         end
-        object Memo17: TfrxMemoView
-          Align = baWidth
-          AllowVectorExport = True
-          Top = 143.622140000000000000
-          Width = 718.110717773437500000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Frame.Typ = [ftTop]
-          Frame.Width = 2.000000000000000000
-        end
       end
       object PageFooter1: TfrxPageFooter
         FillType = ftBrush
@@ -652,18 +618,16 @@ object RelatorioProduto: TRelatorioProduto
         FillGap.Right = 0
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 359.055350000000000000
-        Width = 718.110700000000000000
-        object Memo14: TfrxMemoView
+        Top = 249.448980000000000000
+        Width = 786.142240000000000000
+        object Memo15: TfrxMemoView
           Align = baWidth
           AllowVectorExport = True
-          Width = 718.110717773437500000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Width = 786.142211914062500000
           Frame.Typ = [ftTop]
           Frame.Width = 2.000000000000000000
         end
-        object Memo15: TfrxMemoView
+        object Memo16: TfrxMemoView
           AllowVectorExport = True
           Top = 1.000000000000000000
           Height = 22.677180000000000000
@@ -672,10 +636,10 @@ object RelatorioProduto: TRelatorioProduto
           Memo.UTF8W = (
             '[Date] [Time]')
         end
-        object Memo16: TfrxMemoView
+        object Memo17: TfrxMemoView
           Align = baRight
           AllowVectorExport = True
-          Left = 642.520117773437500000
+          Left = 710.551611914062500000
           Top = 1.000000000000000000
           Width = 75.590600000000000000
           Height = 22.677180000000000000

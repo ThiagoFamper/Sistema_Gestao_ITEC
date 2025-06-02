@@ -82,6 +82,8 @@ type
     Image11: TImage;
     SBlogout: TSpeedButton;
     lUsuarioNome: TLabel;
+    pnpConEstoque: TPanel;
+    Image3: TImage;
     procedure pnpMouseEnter(Sender: TObject);
     procedure pnpMouseLeave(Sender: TObject);
     procedure pnpCadClick(Sender: TObject);
@@ -113,6 +115,7 @@ type
     procedure pnpConSedeClick(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure SBlogoutClick(Sender: TObject);
+    procedure Panel2Resize(Sender: TObject);
 
   private
     { Private declarations }
@@ -154,6 +157,17 @@ begin
   fpMovimentacao.Enabled    := True;
   fpCadastro.Enabled        := True;
   fpConsulta.Enabled        := True;
+end;
+
+procedure TTelaPrincipal.Panel2Resize(Sender: TObject);
+begin
+  // Coloca o botão na extrema direita do Panel
+  SBlogout.Left := Panel2.Width - SBlogout.Width - 10; // 10 é uma margem opcional
+  SBlogout.Top := (Panel2.Height - SBlogout.Height) div 2; // Centraliza verticalmente
+
+  // Se quiser que a Label fique ao lado do botão, faça algo assim:
+  lUsuarioNome.Left := SBlogout.Left - lUsuarioNome.Width - 5; // 5 é o espaço entre label e botão
+  lUsuarioNome.Top := (Panel2.Height - lUsuarioNome.Height) div 2;
 end;
 
 procedure TTelaPrincipal.FormKeyDown(Sender: TObject; var Key: Word;

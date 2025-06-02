@@ -70,6 +70,11 @@ type
     FDTabEntradaoperador: TLargeintField;
     FDTabGrupoid: TLargeintField;
     FDTabGrupodescricao: TWideStringField;
+    FDTabColaboradorid: TLargeintField;
+    FDTabColaboradordescricao: TWideStringField;
+    FDTabColaboradorcargo: TWideStringField;
+    FDTabColaboradorsetor_id: TLargeintField;
+    FDTabColaboradorsede_id: TLargeintField;
     FDTabEmprestimoProdid: TLargeintField;
     FDTabEmprestimoProdproduto_id: TLargeintField;
     FDTabEmprestimoProdquantidade: TIntegerField;
@@ -77,17 +82,12 @@ type
     FDTabEmprestimoProdsaldo: TIntegerField;
     FDTabEmprestimoProdoperador: TLargeintField;
     FDTabEmprestimoProddevolvido: TBooleanField;
-    FDTabColaboradorid: TLargeintField;
-    FDTabColaboradordescricao: TWideStringField;
-    FDTabColaboradorcargo: TWideStringField;
-    FDTabColaboradorsetor_id: TLargeintField;
-    FDTabColaboradorsede_id: TLargeintField;
+    FDTabEmprestimoProdcolaborador_id: TLargeintField;
     FDTabSaidaid: TLargeintField;
     FDTabSaidaproduto_id: TLargeintField;
     FDTabSaidaquantidade: TIntegerField;
     FDTabSaidadata_saida: TDateField;
     FDTabSaidaoperador: TLargeintField;
-    FDTabEmprestimoProdcolaborador_id: TLargeintField;
     FDTabSaidadescricao: TWideStringField;
   private
     { Private declarations }

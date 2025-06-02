@@ -32,7 +32,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 1153
+    OnResize = Panel2Resize
     object SBlogout: TSpeedButton
       Left = 32
       Top = 16
@@ -386,7 +386,6 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 1
     Visible = False
-    ExplicitHeight = 972
     object Panel21: TPanel
       Left = 0
       Top = 0
@@ -409,7 +408,7 @@ object TelaPrincipal: TTelaPrincipal
     object fpCadastro: TFlowPanel
       Left = 0
       Top = 114
-      Width = 243
+      Width = 242
       Height = 450
       AutoSize = True
       Caption = 'fpCadastro'
@@ -418,7 +417,7 @@ object TelaPrincipal: TTelaPrincipal
       object pnpCadVoltar: TPanel
         Left = 1
         Top = 385
-        Width = 241
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -455,7 +454,7 @@ object TelaPrincipal: TTelaPrincipal
       object pnpCadUser: TPanel
         Left = 1
         Top = 321
-        Width = 241
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -520,7 +519,7 @@ object TelaPrincipal: TTelaPrincipal
       object pnpCadGru: TPanel
         Left = 1
         Top = 257
-        Width = 241
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -566,7 +565,7 @@ object TelaPrincipal: TTelaPrincipal
       object pnpCadSede: TPanel
         Left = 1
         Top = 193
-        Width = 241
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -601,7 +600,7 @@ object TelaPrincipal: TTelaPrincipal
       object pnpCadSet: TPanel
         Left = 1
         Top = 129
-        Width = 241
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -652,7 +651,7 @@ object TelaPrincipal: TTelaPrincipal
       object pnpCadColab: TPanel
         Left = 1
         Top = 65
-        Width = 241
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -696,7 +695,7 @@ object TelaPrincipal: TTelaPrincipal
       object pnpCadProd: TPanel
         Left = 1
         Top = 1
-        Width = 241
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -763,7 +762,6 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 2
     Visible = False
-    ExplicitHeight = 972
     object Panel29: TPanel
       Left = 0
       Top = 0
@@ -1060,7 +1058,6 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 3
     Visible = False
-    ExplicitHeight = 972
     object Panel36: TPanel
       Left = 0
       Top = 0
@@ -1083,16 +1080,16 @@ object TelaPrincipal: TTelaPrincipal
     object fpConsulta: TFlowPanel
       Left = 0
       Top = 114
-      Width = 249
-      Height = 642
+      Width = 242
+      Height = 706
       AutoSize = True
       Caption = 'fpConsulta'
       FlowStyle = fsLeftRightBottomTop
       TabOrder = 1
       object pnpConVoltar: TPanel
         Left = 1
-        Top = 577
-        Width = 241
+        Top = 641
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -1128,8 +1125,8 @@ object TelaPrincipal: TTelaPrincipal
       end
       object pnpConEmp: TPanel
         Left = 1
-        Top = 513
-        Width = 241
+        Top = 577
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -1194,8 +1191,8 @@ object TelaPrincipal: TTelaPrincipal
       end
       object pnpConSai: TPanel
         Left = 1
-        Top = 449
-        Width = 241
+        Top = 513
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -1237,8 +1234,8 @@ object TelaPrincipal: TTelaPrincipal
       end
       object pnpConEnt: TPanel
         Left = 1
-        Top = 385
-        Width = 247
+        Top = 449
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -1251,7 +1248,7 @@ object TelaPrincipal: TTelaPrincipal
         OnMouseEnter = pnpMouseEnter
         OnMouseLeave = pnpMouseLeave
         object Image28: TImage
-          Left = 12
+          Left = 5
           Top = 8
           Width = 50
           Height = 50
@@ -1280,8 +1277,8 @@ object TelaPrincipal: TTelaPrincipal
       end
       object pnpConUser: TPanel
         Left = 1
-        Top = 321
-        Width = 241
+        Top = 385
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -1345,8 +1342,8 @@ object TelaPrincipal: TTelaPrincipal
       end
       object pnpConGru: TPanel
         Left = 1
-        Top = 257
-        Width = 241
+        Top = 321
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -1391,8 +1388,8 @@ object TelaPrincipal: TTelaPrincipal
       end
       object pnpConSede: TPanel
         Left = 1
-        Top = 193
-        Width = 241
+        Top = 257
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -1426,8 +1423,8 @@ object TelaPrincipal: TTelaPrincipal
       end
       object pnpConSet: TPanel
         Left = 1
-        Top = 129
-        Width = 241
+        Top = 193
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -1477,8 +1474,8 @@ object TelaPrincipal: TTelaPrincipal
       end
       object pnpConColab: TPanel
         Left = 1
-        Top = 65
-        Width = 247
+        Top = 129
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -1491,7 +1488,7 @@ object TelaPrincipal: TTelaPrincipal
         OnMouseEnter = pnpMouseEnter
         OnMouseLeave = pnpMouseLeave
         object Image23: TImage
-          Left = 12
+          Left = 6
           Top = 8
           Width = 50
           Height = 50
@@ -1521,8 +1518,8 @@ object TelaPrincipal: TTelaPrincipal
       end
       object pnpConProd: TPanel
         Left = 1
-        Top = 1
-        Width = 247
+        Top = 65
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -1535,7 +1532,61 @@ object TelaPrincipal: TTelaPrincipal
         OnMouseEnter = pnpMouseEnter
         OnMouseLeave = pnpMouseLeave
         object Image22: TImage
-          Left = 12
+          Left = 6
+          Top = 8
+          Width = 50
+          Height = 50
+          Picture.Data = {
+            0954506E67496D61676589504E470D0A1A0A0000000D49484452000000320000
+            003208060000001E3F88B1000003DB4944415478DAED9A4B4C134118C7BB85A6
+            A0C40351AC2D7D987AE02108121FF160E245BD881113DFC677BCA017A326DE3D
+            688C070989517C472307C5C745E3C5E841130842048D4885D2426A3590409462
+            D9E27FB435CD64CAEE74A76531FB25E49BCECE7CDFF7FBE6D1D92992E93F1169
+            A60330400C9034C4ED76DF81DA43CA535353CD0303033B66150800EAA11A58CF
+            00741C400D9C26B30BE272B9CAA0DE4B92649EAE1D6062509500EAD61D0846E1
+            0BD4629E3E000A00C683624C37204430229B301A4F78FB89583F69836004B64E
+            4C4CBC0A8542DF1840970174943B1849DAD9DFDF7F3F2B2076BBDD65B1587A50
+            B492CFC86637B259418AB46D007522B80A4E17BFF057E2F7FBFB320682C0C842
+            5E9AE271239CD7D39518B94580FD8C7E7339817A608F6C1EB23010009C4320A7
+            D4B445D0B518A1A774BDD3E9DC6C369B1F71C2107B57604F719A2A8220A39D50
+            959CFEA3E3E3E3CE7038FC9561EF3AD4014E98D78059AB098408B26947367B51
+            CCE704EAC0F4A866F98D4FD37285FE2380F0026244C911EF1AD906E7CD9C3044
+            2E02E8045D595C5CEC40827A60730EFD4C96E575C160F0A55A0729413005C82E
+            B40601BC6100DD86F3BDBC34C8EE7A64F705C3571DD483F8C70BF079926E8359
+            510BE8C778C68C590984C8E8D8D89873787878946A628E7F9BBB397922D168D4
+            393434F45D4D639BCDB6C06AB5FA4DF169AD052491CDE7C8E64646BB523CEB52
+            3A5FD1823EADB0B772BA36B0FD166A55729D669024A987B146BA12D3ED18602E
+            F1C0601DD4611DB4307C9F813ACBEA23128464539E9C9C2CC7F4F8C4007A06A0
+            0D0A0CF710D06EBAD2E1702CCBCDCDED98AEA3509024E983E112D3DF63C53F29
+            2C2C9C575050E003D07CAA7D08EBC38B04FC4CAEC4EE954FB677B4B72B39CC14
+            48426EC0C141BA12195E8D0CFFD9F562B1D88A4020D0C6F073176A975A479906
+            49481D1CB5A86988ED743B4681FBA49B2D10B27E7E4422112FEB7842C4E3F1D8
+            303A3ED697A0AE4092A41D4E6B289BED50D569DA9B3110323AFBF15D718B94B1
+            9BEDC328DCD46AD30031400C1003C400991D2070DC06C735260D221A247E87C6
+            BC8E4A09127F330BEB09042767174ECE012E1022385E57E6E4E474EA0104EF3F
+            558383832963117E41271A0436CEC3C669A5765CD741D800DE4155650924D59D
+            987610224545450BF3F2F27C6AEE72D301517A0D100692108CCE16A887824154
+            BF98090349026A823AA411E41A000E6B8943D42F561604FA11817A7940F0DC87
+            E7A52846B50620F4A7376CD74BB05D7F20600A20515996CB82C160AF28DF99FA
+            799A4C93AB29408E601A3589F699E97F18588EA0C97B3AB93521D741AD99F265
+            FC0B87DEC400D19BFC062B1C5451AC243E890000000049454E44AE426082}
+          Transparent = True
+        end
+      end
+      object pnpConEstoque: TPanel
+        Left = 1
+        Top = 1
+        Width = 240
+        Height = 64
+        BevelEdges = [beRight]
+        BevelKind = bkFlat
+        BevelOuter = bvNone
+        Caption = 'Estoque'
+        Color = clWhite
+        ParentBackground = False
+        TabOrder = 10
+        object Image3: TImage
+          Left = 6
           Top = 8
           Width = 50
           Height = 50
@@ -1588,7 +1639,6 @@ object TelaPrincipal: TTelaPrincipal
     Color = clTeal
     ParentBackground = False
     TabOrder = 4
-    ExplicitHeight = 972
     object Panel3: TPanel
       Left = 0
       Top = 0
@@ -1802,7 +1852,5 @@ object TelaPrincipal: TTelaPrincipal
     Color = clWhite
     ParentBackground = False
     TabOrder = 5
-    ExplicitWidth = 189
-    ExplicitHeight = 972
   end
 end
