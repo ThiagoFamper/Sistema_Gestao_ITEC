@@ -208,7 +208,7 @@ procedure TTelaPrincipal.FormShow(Sender: TObject);
 begin
   selecionaMenu(0);
 
-  lUsuarioNome.Caption := 'Usuário: ' + usuarioLogado;
+  lUsuarioNome.Caption := usuarioLogado;
 
   if not isAdmin then
   begin
