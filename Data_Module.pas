@@ -84,11 +84,11 @@ type
     FDTabEmprestimoProddevolvido: TBooleanField;
     FDTabEmprestimoProdcolaborador_id: TLargeintField;
     FDTabSaidaid: TLargeintField;
-    FDTabSaidaproduto_id: TLargeintField;
     FDTabSaidaquantidade: TIntegerField;
     FDTabSaidadata_saida: TDateField;
     FDTabSaidaoperador: TLargeintField;
     FDTabSaidadescricao: TWideStringField;
+    FDTabSaidaproduto_id: TLargeintField;
   private
     { Private declarations }
   public

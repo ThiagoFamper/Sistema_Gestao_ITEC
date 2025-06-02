@@ -1600,7 +1600,7 @@ object TelaEmprestimo: TTelaEmprestimo
       ShowHint = True
     end
     object SBeditar: TSpeedButton
-      Left = 247
+      Left = 248
       Top = 7
       Width = 73
       Height = 73
@@ -1943,7 +1943,6 @@ object TelaEmprestimo: TTelaEmprestimo
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-      ExplicitTop = 2
     end
     object Panel7: TPanel
       Left = 247

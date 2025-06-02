@@ -47,12 +47,6 @@ type
     fpConsulta: TFlowPanel;
     pnpConVoltar: TPanel;
     Image26: TImage;
-    pnpConEmp: TPanel;
-    Image30: TImage;
-    pnpConSai: TPanel;
-    Image29: TImage;
-    pnpConEnt: TPanel;
-    Image28: TImage;
     pnpConUser: TPanel;
     Image27: TImage;
     pnpConGru: TPanel;
@@ -116,6 +110,7 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure SBlogoutClick(Sender: TObject);
     procedure Panel2Resize(Sender: TObject);
+    procedure pnpConEstoqueClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -141,7 +136,7 @@ uses Cad_Produto, Cad_Colaborador, Cad_Setor, Entrada_Prod, Saida_Prod,
   Cad_Emprestimo, Cad_Grupo, Lista_Colaborador, Lista_Emprestimo,
   Lista_Entrada, Lista_Grupos, Lista_Produtos, Lista_Saida, Lista_Setor,
   Tela_Devolucao, Cad_usuario, Lista_Usuario, Tela_Login, Lista_Sede, Cad_Sede,
-  Data_Module;
+  Data_Module, Tela_Entrada, Tela_Saida, Tela_Emprestimo, Lista_Estoque;
 
 procedure TTelaPrincipal.desabilitaMenu;
 begin
@@ -301,12 +296,12 @@ end;
 
 procedure TTelaPrincipal.pnpMovEntClick(Sender: TObject);
 begin
-  AbrirFormulario(TEntradaProd); // abre a tela de entrada de produto
+  AbrirFormulario(TTelaEntrada); // abre a tela de entrada de produto
 end;
 
 procedure TTelaPrincipal.pnpMovSaiClick(Sender: TObject);
 begin
-  AbrirFormulario(TSaidaProd); // abre a tela de saida de produto
+  AbrirFormulario(TTelaSaida); // abre a tela de saida de produto
 end;
 
 procedure TTelaPrincipal.pnpMovVoltarClick(Sender: TObject);
@@ -327,6 +322,11 @@ end;
 procedure TTelaPrincipal.pnpConEntClick(Sender: TObject);
 begin
   AbrirFormulario(TListaEntrada); // abre a tela de consulta entrada de produto
+end;
+
+procedure TTelaPrincipal.pnpConEstoqueClick(Sender: TObject);
+begin
+  AbrirFormulario(TListaEstoque);  // abre a tela de consulta estoque
 end;
 
 procedure TTelaPrincipal.pnpConGruClick(Sender: TObject);

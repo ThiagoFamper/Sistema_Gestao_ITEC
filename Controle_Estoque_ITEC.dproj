@@ -242,6 +242,10 @@
             <Form>TelaEmprestimo</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Lista_Estoque.pas">
+            <Form>ListaEstoque</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -31,7 +31,8 @@ uses
   Relatorio_Produto in 'Relatorio_Produto.pas' {RelatorioProduto},
   Tela_Entrada in 'Tela_Entrada.pas' {TelaEntrada},
   Tela_Saida in 'Tela_Saida.pas' {TelaSaida},
-  Tela_Emprestimo in 'Tela_Emprestimo.pas' {TelaEmprestimo};
+  Tela_Emprestimo in 'Tela_Emprestimo.pas' {TelaEmprestimo},
+  Lista_Estoque in 'Lista_Estoque.pas' {ListaEstoque};
 
 {$R *.res}
 
@@ -69,5 +70,6 @@ begin
   Application.CreateForm(TTelaEntrada, TelaEntrada);
   Application.CreateForm(TTelaSaida, TelaSaida);
   Application.CreateForm(TTelaEmprestimo, TelaEmprestimo);
+  Application.CreateForm(TListaEstoque, ListaEstoque);
   Application.Run;
 end.
