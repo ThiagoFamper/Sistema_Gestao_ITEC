@@ -1675,6 +1675,9 @@ object TelaPrincipal: TTelaPrincipal
             9732107990475E04E689FB9279E2DF8CFDF7D9891B5277891E09259076BBBDD2
             6AB546465C044239441442294424423AA4CED2106AA521D4AA31901FA00D6C42
             70EE4AA10000000049454E44AE426082}
+          OnClick = Image6Click
+          OnMouseEnter = pnpMouseEnter
+          OnMouseLeave = pnpMouseLeave
         end
       end
     end

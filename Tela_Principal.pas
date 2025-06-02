@@ -111,6 +111,7 @@ type
     procedure SBlogoutClick(Sender: TObject);
     procedure Panel2Resize(Sender: TObject);
     procedure pnpConEstoqueClick(Sender: TObject);
+    procedure Image6Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -152,6 +153,11 @@ begin
   fpMovimentacao.Enabled    := True;
   fpCadastro.Enabled        := True;
   fpConsulta.Enabled        := True;
+end;
+
+procedure TTelaPrincipal.Image6Click(Sender: TObject);
+begin
+  pnpCadClick(pnpCad);
 end;
 
 procedure TTelaPrincipal.Panel2Resize(Sender: TObject);
