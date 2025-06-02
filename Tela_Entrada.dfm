@@ -55,7 +55,7 @@ object TelaEntrada: TTelaEntrada
         Height = 23
         Align = alTop
         DataField = 'id'
-        DataSource = DM.dsFDTabProduto
+        DataSource = dsProduto
         Enabled = False
         TabOrder = 0
       end
@@ -89,7 +89,7 @@ object TelaEntrada: TTelaEntrada
         Height = 23
         Align = alTop
         DataField = 'cod_produto'
-        DataSource = DM.dsFDTabProduto
+        DataSource = dsProduto
         Enabled = False
         TabOrder = 0
       end
@@ -145,6 +145,7 @@ object TelaEntrada: TTelaEntrada
           Align = alTop
           DataField = 'valor_unitario'
           DataSource = DM.dsFDTabEntrada
+          Enabled = False
           TabOrder = 0
         end
       end
@@ -178,6 +179,7 @@ object TelaEntrada: TTelaEntrada
           Align = alTop
           DataField = 'nota_fiscal'
           DataSource = DM.dsFDTabEntrada
+          Enabled = False
           TabOrder = 0
         end
       end
@@ -211,6 +213,7 @@ object TelaEntrada: TTelaEntrada
           Align = alTop
           DataField = 'quantidade'
           DataSource = DM.dsFDTabEntrada
+          Enabled = False
           TabOrder = 0
         end
       end
@@ -281,7 +284,7 @@ object TelaEntrada: TTelaEntrada
         Height = 23
         Align = alTop
         DataField = 'descricao'
-        DataSource = DM.dsFDTabProduto
+        DataSource = dsProduto
         Enabled = False
         TabOrder = 0
       end
@@ -2326,7 +2329,7 @@ object TelaEntrada: TTelaEntrada
       Top = 6
       Width = 224
       Height = 25
-      DataSource = DM.dsFDTabProduto
+      DataSource = dsProduto
       VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
       TabOrder = 0
     end

@@ -55,7 +55,7 @@ object TelaSaida: TTelaSaida
         Height = 23
         Align = alTop
         DataField = 'id'
-        DataSource = DM.dsFDTabProduto
+        DataSource = dsProduto
         Enabled = False
         TabOrder = 0
       end
@@ -89,7 +89,7 @@ object TelaSaida: TTelaSaida
         Height = 23
         Align = alTop
         DataField = 'cod_produto'
-        DataSource = DM.dsFDTabProduto
+        DataSource = dsProduto
         Enabled = False
         TabOrder = 0
       end
@@ -143,8 +143,8 @@ object TelaSaida: TTelaSaida
           Width = 200
           Height = 23
           Align = alTop
+          Enabled = False
           TabOrder = 0
-          ExplicitTop = 28
         end
       end
       object Panel15: TPanel
@@ -210,9 +210,8 @@ object TelaSaida: TTelaSaida
           Width = 200
           Height = 23
           Align = alTop
+          Enabled = False
           TabOrder = 0
-          ExplicitTop = 26
-          ExplicitWidth = 121
         end
       end
     end
@@ -245,7 +244,7 @@ object TelaSaida: TTelaSaida
         Height = 23
         Align = alTop
         DataField = 'descricao'
-        DataSource = DM.dsFDTabProduto
+        DataSource = dsProduto
         Enabled = False
         TabOrder = 0
       end
@@ -2290,7 +2289,7 @@ object TelaSaida: TTelaSaida
       Top = 6
       Width = 224
       Height = 25
-      DataSource = DM.dsFDTabProduto
+      DataSource = dsProduto
       VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
       TabOrder = 0
     end
