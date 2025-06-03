@@ -36,7 +36,7 @@ type
     dbProdCod: TDBEdit;
     Panel18: TPanel;
     Label16: TLabel;
-    dbDevOperador: TDBEdit;
+    dbDevDescricao: TDBEdit;
     Panel22: TPanel;
     gDev: TDBGrid;
     Panel23: TPanel;
@@ -64,6 +64,7 @@ type
     dbDevSaldo: TDBEdit;
     eDevQtd: TEdit;
     dbDevCod: TDBEdit;
+    qryUpdateStatus: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -135,7 +136,7 @@ end;
 procedure TTelaDevolucao.HabilitaCampos; // habilitar campos
 begin
     dbDevCod.Enabled           := True;
-    dbDevOperador.Enabled      := True;
+    dbDevDescricao.Enabled     := True;
     rgDev.Enabled              := True;
     eDevQtd.Enabled            := True;
     bDevolver.Enabled          := True;
@@ -183,9 +184,8 @@ begin
 
     if (quantidadeSaldo - quantidadeDevolvida = 0) then
     begin
-      dm.FDTabEmprestimoProd.Edit;
-      dm.FDTabEmprestimoProd.FieldByName('devolvido').AsBoolean := True;
-      dm.FDTabEmprestimoProd.Post;
+      qryUpdateStatus.Params.ParamByName('emprestimoID').AsInteger := emprestimoID;
+      qryUpdateStatus.ExecSQL;
     end;
 
     showMessage('Devolução realizada com sucesso!');
@@ -202,7 +202,7 @@ end;
 procedure TTelaDevolucao.DesabilitaCampos; // desabilitar campos
 begin
     dbDevCod.Enabled           := False;
-    dbDevOperador.Enabled      := False;
+    dbDevDescricao.Enabled     := False;
     dbDevSaldo.Enabled         := False;
     rgDev.Enabled              := False;
     eDevQtd.Enabled            := False;

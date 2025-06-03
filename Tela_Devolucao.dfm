@@ -91,9 +91,6 @@ object TelaDevolucao: TTelaDevolucao
           Height = 23
           Align = alTop
           TabOrder = 0
-          ExplicitLeft = 24
-          ExplicitTop = 26
-          ExplicitWidth = 121
         end
       end
     end
@@ -189,7 +186,7 @@ object TelaDevolucao: TTelaDevolucao
         ParentFont = False
         ExplicitWidth = 65
       end
-      object dbDevOperador: TDBEdit
+      object dbDevDescricao: TDBEdit
         Left = 0
         Top = 20
         Width = 200
@@ -259,6 +256,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1382
     object Panel23: TPanel
       Left = 16
       Top = 6
@@ -321,7 +319,6 @@ object TelaDevolucao: TTelaDevolucao
         Align = alTop
         TabOrder = 0
         OnChange = eDevDescricaoChange
-        ExplicitTop = 26
       end
     end
     object Panel25: TPanel
@@ -2080,9 +2077,8 @@ object TelaDevolucao: TTelaDevolucao
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitTop = 273
     ExplicitWidth = 1382
-    ExplicitHeight = 489
+    ExplicitHeight = 497
     object gDev: TDBGrid
       Left = 0
       Top = 0
@@ -2198,7 +2194,8 @@ object TelaDevolucao: TTelaDevolucao
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'UPDATE estoqueitec.item_emprestimo'
-      'SET qtd_devolvida = qtd_devolvida + :quantidade'
+      'SET qtd_devolvida = qtd_devolvida + :quantidade,'
+      'data_devolucao = CURRENT_DATE'
       'WHERE emprestimo_id = :emprestimoID;')
     Left = 880
     Top = 226
@@ -2269,5 +2266,19 @@ object TelaDevolucao: TTelaDevolucao
     DataSet = qryEmprestimo
     Left = 1096
     Top = 226
+  end
+  object qryUpdateStatus: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'UPDATE estoqueitec.emprestimo_produto'
+      'SET devolvido = True'
+      'WHERE id = :emprestimoID')
+    Left = 519
+    Top = 225
+    ParamData = <
+      item
+        Name = 'EMPRESTIMOID'
+        ParamType = ptInput
+      end>
   end
 end
