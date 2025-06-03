@@ -196,7 +196,7 @@ begin
 
   if Key = Ord('1') then
   begin
-    AbrirFormulario(TCadEmprestimo);
+    AbrirFormulario(TTelaEmprestimo);
   end;
 
   if Key = Ord('2') then
@@ -297,7 +297,7 @@ end;
 
 procedure TTelaPrincipal.pnpMovEmpClick(Sender: TObject);
 begin
-  AbrirFormulario(TCadEmprestimo); // abre a tela de emprestimo
+  AbrirFormulario(TTelaEmprestimo); // abre a tela de emprestimo
 end;
 
 procedure TTelaPrincipal.pnpMovEntClick(Sender: TObject);

@@ -43,8 +43,6 @@ type
     Panel8: TPanel;
     Panel11: TPanel;
     Panel12: TPanel;
-    Panel4: TPanel;
-    DBNavigator1: TDBNavigator;
     Panel3: TPanel;
     gEntrada: TDBGrid;
     Panel9: TPanel;
@@ -257,6 +255,7 @@ begin
     epProdModelo.Enabled         := False;
     epProdMarca.Enabled          := False;
     epProdGrupo.Enabled          := False;
+    gEntrada.Enabled             := False;
 end;
 
 procedure TTelaEntrada.epProdCodChange(Sender: TObject);
@@ -291,6 +290,7 @@ begin
     epProdModelo.Enabled         := True;
     epProdMarca.Enabled          := True;
     epProdGrupo.Enabled          := True;
+    gEntrada.Enabled             := True;
 end;
 
 procedure TTelaEntrada.Filtro; // pesquisa com sql query

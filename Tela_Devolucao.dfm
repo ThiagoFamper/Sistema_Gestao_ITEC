@@ -28,9 +28,9 @@ object TelaDevolucao: TTelaDevolucao
     ExplicitTop = 762
     ExplicitWidth = 1382
     object Panel8: TPanel
-      Left = 1032
-      Top = 5
-      Width = 321
+      Left = 544
+      Top = 6
+      Width = 809
       Height = 223
       BevelEdges = [beLeft]
       BevelKind = bkFlat
@@ -38,41 +38,20 @@ object TelaDevolucao: TTelaDevolucao
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
-      object Label2: TLabel
-        Left = 16
-        Top = 88
-        Width = 78
-        Height = 20
-        Caption = 'Quantidade'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-      end
-      object eDevQtd: TEdit
-        Left = 16
-        Top = 114
-        Width = 81
-        Height = 23
-        Enabled = False
-        TabOrder = 0
-      end
       object bDevolver: TButton
-        Left = 16
-        Top = 156
+        Left = 72
+        Top = 153
         Width = 81
         Height = 25
         Caption = 'Devolver'
         Enabled = False
-        TabOrder = 1
+        TabOrder = 0
         OnClick = bDevolverClick
       end
       object rgDev: TRadioGroup
         Left = 16
-        Top = 1
-        Width = 169
+        Top = 0
+        Width = 201
         Height = 81
         Caption = 'Devolver todos os produtos?'
         Enabled = False
@@ -80,8 +59,42 @@ object TelaDevolucao: TTelaDevolucao
         Items.Strings = (
           'Sim'
           'N'#227'o')
-        TabOrder = 2
+        TabOrder = 1
         OnClick = rgDevClick
+      end
+      object Panel10: TPanel
+        Left = 15
+        Top = 88
+        Width = 200
+        Height = 59
+        BevelOuter = bvNone
+        TabOrder = 2
+        object Label1: TLabel
+          Left = 0
+          Top = 0
+          Width = 200
+          Height = 20
+          Align = alTop
+          Caption = 'Quantidade'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          ExplicitWidth = 78
+        end
+        object eDevQtd: TEdit
+          Left = 0
+          Top = 20
+          Width = 200
+          Height = 23
+          Align = alTop
+          TabOrder = 0
+          ExplicitLeft = 24
+          ExplicitTop = 26
+          ExplicitWidth = 121
+        end
       end
     end
     object Panel13: TPanel
@@ -112,8 +125,8 @@ object TelaDevolucao: TTelaDevolucao
         Width = 50
         Height = 23
         Align = alTop
-        DataField = 'id'
-        DataSource = DM.dsFDTabEmprestimoProd
+        DataField = 'emprestimo_id'
+        DataSource = dsEmprestimo
         Enabled = False
         ReadOnly = True
         TabOrder = 0
@@ -122,14 +135,14 @@ object TelaDevolucao: TTelaDevolucao
     object Panel14: TPanel
       Left = 16
       Top = 71
-      Width = 400
+      Width = 200
       Height = 59
       BevelOuter = bvNone
       TabOrder = 2
       object Label11: TLabel
         Left = 0
         Top = 0
-        Width = 400
+        Width = 200
         Height = 20
         Align = alTop
         Caption = 'C'#243'digo'
@@ -141,84 +154,14 @@ object TelaDevolucao: TTelaDevolucao
         ParentFont = False
         ExplicitWidth = 49
       end
-      object dbDevCod: TDBEdit
+      object dbProdCod: TDBEdit
         Left = 0
         Top = 20
-        Width = 400
+        Width = 200
         Height = 23
         Align = alTop
-        DataField = 'produto_id'
-        DataSource = DM.dsFDTabEmprestimoProd
-        Enabled = False
-        ReadOnly = True
-        TabOrder = 0
-      end
-    end
-    object Panel16: TPanel
-      Left = 549
-      Top = 6
-      Width = 400
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 3
-      object Label12: TLabel
-        Left = 0
-        Top = 0
-        Width = 400
-        Height = 20
-        Align = alTop
-        Caption = 'Data Empr'#233'stimo'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 116
-      end
-      object dbDevData: TDBEdit
-        Left = 0
-        Top = 20
-        Width = 400
-        Height = 23
-        Align = alTop
-        DataField = 'data_emprestimo'
-        DataSource = DM.dsFDTabEmprestimoProd
-        Enabled = False
-        ReadOnly = True
-        TabOrder = 0
-      end
-    end
-    object Panel17: TPanel
-      Left = 549
-      Top = 71
-      Width = 81
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 4
-      object Label14: TLabel
-        Left = 0
-        Top = 0
-        Width = 81
-        Height = 20
-        Align = alTop
-        Caption = 'Quantidade'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 78
-      end
-      object dbDevQtd: TDBEdit
-        Left = 0
-        Top = 20
-        Width = 81
-        Height = 23
-        Align = alTop
-        DataField = 'quantidade'
-        DataSource = DM.dsFDTabEmprestimoProd
+        DataField = 'cod_produto'
+        DataSource = dsEmprestimo
         Enabled = False
         ReadOnly = True
         TabOrder = 0
@@ -227,49 +170,49 @@ object TelaDevolucao: TTelaDevolucao
     object Panel18: TPanel
       Left = 16
       Top = 136
-      Width = 400
+      Width = 200
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 5
+      TabOrder = 3
       object Label16: TLabel
         Left = 0
         Top = 0
-        Width = 400
+        Width = 200
         Height = 20
         Align = alTop
-        Caption = 'Operador'
+        Caption = 'Descri'#231#227'o'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 64
+        ExplicitWidth = 65
       end
       object dbDevOperador: TDBEdit
         Left = 0
         Top = 20
-        Width = 400
+        Width = 200
         Height = 23
         Align = alTop
-        DataField = 'operador'
-        DataSource = DM.dsFDTabEmprestimoProd
+        DataField = 'descricao_produto'
+        DataSource = dsEmprestimo
         Enabled = False
         ReadOnly = True
         TabOrder = 0
       end
     end
-    object Panel19: TPanel
-      Left = 549
-      Top = 136
-      Width = 81
+    object Panel9: TPanel
+      Left = 247
+      Top = 6
+      Width = 200
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 6
-      object Label18: TLabel
+      TabOrder = 4
+      object Label5: TLabel
         Left = 0
         Top = 0
-        Width = 81
+        Width = 200
         Height = 20
         Align = alTop
         Caption = 'Saldo'
@@ -284,28 +227,38 @@ object TelaDevolucao: TTelaDevolucao
       object dbDevSaldo: TDBEdit
         Left = 0
         Top = 20
-        Width = 81
+        Width = 200
         Height = 23
         Align = alTop
         DataField = 'saldo'
-        DataSource = DM.dsFDTabEmprestimoProd
+        DataSource = dsEmprestimo
         Enabled = False
         ReadOnly = True
         TabOrder = 0
       end
+    end
+    object dbDevCod: TDBEdit
+      Left = 127
+      Top = 24
+      Width = 50
+      Height = 23
+      DataField = 'produto_id'
+      DataSource = dsEmprestimo
+      Enabled = False
+      TabOrder = 5
+      Visible = False
     end
   end
   object Panel1: TPanel
     Left = 0
     Top = 114
     Width = 1384
-    Height = 159
+    Height = 151
     Align = alTop
     BevelEdges = [beBottom]
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1382
     object Panel23: TPanel
       Left = 16
       Top = 6
@@ -335,6 +288,7 @@ object TelaDevolucao: TTelaDevolucao
         Height = 23
         Align = alTop
         TabOrder = 0
+        OnChange = eDevCodChange
       end
     end
     object Panel24: TPanel
@@ -366,6 +320,8 @@ object TelaDevolucao: TTelaDevolucao
         Height = 23
         Align = alTop
         TabOrder = 0
+        OnChange = eDevDescricaoChange
+        ExplicitTop = 26
       end
     end
     object Panel25: TPanel
@@ -397,6 +353,39 @@ object TelaDevolucao: TTelaDevolucao
         Height = 23
         Align = alTop
         TabOrder = 0
+        OnChange = eDevOperadorChange
+      end
+    end
+    object Panel4: TPanel
+      Left = 519
+      Top = 71
+      Width = 400
+      Height = 59
+      BevelOuter = bvNone
+      TabOrder = 3
+      object Label2: TLabel
+        Left = 0
+        Top = 0
+        Width = 400
+        Height = 20
+        Align = alTop
+        Caption = 'Colaborador'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        ExplicitWidth = 84
+      end
+      object eDevColaborador: TEdit
+        Left = 0
+        Top = 20
+        Width = 400
+        Height = 23
+        Align = alTop
+        TabOrder = 0
+        OnChange = eDevColaboradorChange
       end
     end
   end
@@ -2085,22 +2074,23 @@ object TelaDevolucao: TTelaDevolucao
   end
   object Panel22: TPanel
     Left = 0
-    Top = 273
+    Top = 265
     Width = 1384
-    Height = 497
+    Height = 505
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
+    ExplicitTop = 273
     ExplicitWidth = 1382
     ExplicitHeight = 489
     object gDev: TDBGrid
       Left = 0
       Top = 0
       Width = 1384
-      Height = 497
+      Height = 505
       Hint = 'Pesquisar Devolucao'
       Align = alClient
-      DataSource = DM.dsFDTabEmprestimoProd
+      DataSource = dsEmprestimo
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -2112,19 +2102,44 @@ object TelaDevolucao: TTelaDevolucao
       Columns = <
         item
           Expanded = False
-          FieldName = 'id'
-          Visible = False
+          FieldName = 'cod_produto'
+          Title.Caption = 'C'#243'digo Produto'
+          Width = 90
+          Visible = True
         end
         item
           Expanded = False
-          FieldName = 'produto_id'
-          Visible = False
-        end
-        item
-          Expanded = False
-          FieldName = 'operador'
-          Title.Caption = 'Operador'
+          FieldName = 'descricao_produto'
+          Title.Caption = 'Descri'#231#227'o Produto'
           Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'nome_operador'
+          Title.Caption = 'Emprestador'
+          Width = 100
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'nome_colaborador'
+          Title.Caption = 'Tomador'
+          Width = 100
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'data_emprestimo'
+          Title.Caption = 'Data Empr'#233'stimo'
+          Width = 100
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'data_devolucao'
+          Title.Caption = 'Data Devolu'#231#227'o'
+          Width = 100
           Visible = True
         end
         item
@@ -2136,15 +2151,8 @@ object TelaDevolucao: TTelaDevolucao
         end
         item
           Expanded = False
-          FieldName = 'data_emprestimo'
-          Title.Caption = 'Data'
-          Width = 70
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'devolvido'
-          Title.Caption = 'Devolvido'
+          FieldName = 'saldo'
+          Title.Caption = 'Saldo'
           Width = 70
           Visible = True
         end>
@@ -2156,8 +2164,8 @@ object TelaDevolucao: TTelaDevolucao
       'UPDATE estoqueitec.emprestimo_produto'
       'SET saldo = saldo - :quantidade'
       'WHERE id = :emprestimoID;')
-    Left = 560
-    Top = 202
+    Left = 640
+    Top = 226
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2174,8 +2182,8 @@ object TelaDevolucao: TTelaDevolucao
       'UPDATE estoqueitec.estoque'
       'SET saldo = saldo + :quantidade'
       'WHERE produto_id = :produtoID;')
-    Left = 688
-    Top = 202
+    Left = 768
+    Top = 226
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2192,8 +2200,8 @@ object TelaDevolucao: TTelaDevolucao
       'UPDATE estoqueitec.item_emprestimo'
       'SET qtd_devolvida = qtd_devolvida + :quantidade'
       'WHERE emprestimo_id = :emprestimoID;')
-    Left = 800
-    Top = 202
+    Left = 880
+    Top = 226
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2204,5 +2212,62 @@ object TelaDevolucao: TTelaDevolucao
         Name = 'EMPRESTIMOID'
         ParamType = ptInput
       end>
+  end
+  object qryEmprestimo: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT'
+      '    p.cod_produto,'
+      '    p.id AS produto_id,'
+      '    p.descricao AS descricao_produto,'
+      '    c_operador.descricao AS nome_operador,'
+      '    c_colaborador.descricao AS nome_colaborador,'
+      '    ep.data_emprestimo,'
+      '    ep.id AS emprestimo_id,'
+      '    ie.data_devolucao,'
+      '    ep.quantidade,'
+      '    ep.saldo,'
+      '    ep.devolvido'
+      'FROM estoqueitec.emprestimo_produto ep'
+      'JOIN estoqueitec.produto p ON p.id = ep.produto_id'
+      
+        'LEFT JOIN estoqueitec.item_emprestimo ie ON ie.emprestimo_id = e' +
+        'p.id'
+      
+        'LEFT JOIN estoqueitec.colaborador c_operador ON c_operador.id = ' +
+        'ep.operador'
+      
+        'LEFT JOIN estoqueitec.colaborador c_colaborador ON c_colaborador' +
+        '.id = ep.colaborador_id'
+      'WHERE ep.devolvido = false'
+      '  AND UPPER(p.cod_produto) LIKE UPPER(:codigo)'
+      '  AND UPPER(p.descricao) LIKE UPPER(:descricao)'
+      '  AND UPPER(c_operador.descricao) LIKE UPPER(:operador)'
+      '  AND UPPER(c_colaborador.descricao) LIKE UPPER(:colaborador);'
+      '')
+    Left = 992
+    Top = 226
+    ParamData = <
+      item
+        Name = 'CODIGO'
+        ParamType = ptInput
+      end
+      item
+        Name = 'DESCRICAO'
+        ParamType = ptInput
+      end
+      item
+        Name = 'OPERADOR'
+        ParamType = ptInput
+      end
+      item
+        Name = 'COLABORADOR'
+        ParamType = ptInput
+      end>
+  end
+  object dsEmprestimo: TDataSource
+    DataSet = qryEmprestimo
+    Left = 1096
+    Top = 226
   end
 end

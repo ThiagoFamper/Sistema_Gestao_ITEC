@@ -16,8 +16,6 @@ type
     Panel5: TPanel;
     Panel1: TPanel;
     Panel8: TPanel;
-    Label2: TLabel;
-    eDevQtd: TEdit;
     bDevolver: TButton;
     Panel2: TPanel;
     SBsair: TSpeedButton;
@@ -35,19 +33,10 @@ type
     dbDevID: TDBEdit;
     Panel14: TPanel;
     Label11: TLabel;
-    dbDevCod: TDBEdit;
-    Panel16: TPanel;
-    Label12: TLabel;
-    dbDevData: TDBEdit;
-    Panel17: TPanel;
-    Label14: TLabel;
-    dbDevQtd: TDBEdit;
+    dbProdCod: TDBEdit;
     Panel18: TPanel;
     Label16: TLabel;
     dbDevOperador: TDBEdit;
-    Panel19: TPanel;
-    Label18: TLabel;
-    dbDevSaldo: TDBEdit;
     Panel22: TPanel;
     gDev: TDBGrid;
     Panel23: TPanel;
@@ -63,6 +52,18 @@ type
     qryUpdateEmp: TFDQuery;
     rgDev: TRadioGroup;
     qryUpdateItem: TFDQuery;
+    Panel10: TPanel;
+    Label1: TLabel;
+    qryEmprestimo: TFDQuery;
+    dsEmprestimo: TDataSource;
+    Panel4: TPanel;
+    Label2: TLabel;
+    eDevColaborador: TEdit;
+    Panel9: TPanel;
+    Label5: TLabel;
+    dbDevSaldo: TDBEdit;
+    eDevQtd: TEdit;
+    dbDevCod: TDBEdit;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -74,6 +75,11 @@ type
     procedure FormShow(Sender: TObject);
     procedure bDevolverClick(Sender: TObject);
     procedure rgDevClick(Sender: TObject);
+    procedure Filtro;
+    procedure eDevCodChange(Sender: TObject);
+    procedure eDevDescricaoChange(Sender: TObject);
+    procedure eDevOperadorChange(Sender: TObject);
+    procedure eDevColaboradorChange(Sender: TObject);
 
   private
     { Private declarations }
@@ -103,7 +109,6 @@ begin
     TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa();
     dm.FDTabEmprestimoProd.Cancel;
-    gDev.Enabled      := True;
     SBrelatorio.Enabled  := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -116,7 +121,6 @@ begin
     TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa();
     dm.FDTabEmprestimoProd.Edit;
-    gDev.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBrelatorio.Enabled  := False;
     SBsair.Enabled       := False;
@@ -132,9 +136,6 @@ procedure TTelaDevolucao.HabilitaCampos; // habilitar campos
 begin
     dbDevCod.Enabled           := True;
     dbDevOperador.Enabled      := True;
-    dbDevData.Enabled          := True;
-    dbDevQtd.Enabled           := True;
-    dbDevSaldo.Enabled         := True;
     rgDev.Enabled              := True;
     eDevQtd.Enabled            := True;
     bDevolver.Enabled          := True;
@@ -180,24 +181,28 @@ begin
     qryUpdateItem.Params.ParamByName('emprestimoID').AsInteger := emprestimoID;
     qryUpdateItem.ExecSQL;
 
+    if (quantidadeSaldo - quantidadeDevolvida = 0) then
+    begin
+      dm.FDTabEmprestimoProd.Edit;
+      dm.FDTabEmprestimoProd.FieldByName('devolvido').AsBoolean := True;
+      dm.FDTabEmprestimoProd.Post;
+    end;
+
     showMessage('Devolução realizada com sucesso!');
     DesabilitaCampos();
     TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa();
-    gDev.Enabled      := True;
     SBrelatorio.Enabled  := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
     SBcancelar.Enabled   := False;
-
+    Filtro;
 end;
 
 procedure TTelaDevolucao.DesabilitaCampos; // desabilitar campos
 begin
     dbDevCod.Enabled           := False;
     dbDevOperador.Enabled      := False;
-    dbDevData.Enabled          := False;
-    dbDevQtd.Enabled           := False;
     dbDevSaldo.Enabled         := False;
     rgDev.Enabled              := False;
     eDevQtd.Enabled            := False;
@@ -209,12 +214,33 @@ begin
     eDevCod.Enabled            := False;
     eDevDescricao.Enabled      := False;
     eDevOperador.Enabled       := False;
+    gDev.Enabled               := False;
+end;
+
+procedure TTelaDevolucao.eDevCodChange(Sender: TObject);
+begin
+  Filtro;
+end;
+
+procedure TTelaDevolucao.eDevColaboradorChange(Sender: TObject);
+begin
+  Filtro;
+end;
+
+procedure TTelaDevolucao.eDevDescricaoChange(Sender: TObject);
+begin
+  Filtro;
+end;
+
+procedure TTelaDevolucao.eDevOperadorChange(Sender: TObject);
+begin
+  Filtro;
 end;
 
 procedure TTelaDevolucao.FormShow(Sender: TObject);
 begin
     dm.FDTabEmprestimoProd.Open;
-    dm.FDTabEmprestimoItem.Open;
+    Filtro;
 end;
 
 procedure TTelaDevolucao.HabilitaCamposPesquisa; // habilitar campos de pesquisa
@@ -222,6 +248,7 @@ begin
     eDevCod.Enabled            := True;
     eDevDescricao.Enabled      := True;
     eDevOperador.Enabled       := True;
+    gDev.Enabled               := True;
 end;
 
 procedure TTelaDevolucao.rgDevClick(Sender: TObject);
@@ -234,6 +261,17 @@ begin
     begin
       eDevQtd.Enabled := True;
     end;
+end;
+
+procedure TTelaDevolucao.Filtro; // pesquisa com sql query
+begin
+  qryEmprestimo.ParamByName('codigo').AsString := '%' + eDevCod.Text + '%';
+  qryEmprestimo.ParamByName('descricao').AsString := '%' + eDevDescricao.Text + '%';
+  qryEmprestimo.ParamByName('operador').AsString := '%' + eDevOperador.Text + '%';
+  qryEmprestimo.ParamByName('colaborador').AsString := '%' + eDevColaborador.Text + '%';
+
+  qryEmprestimo.Close;
+  qryEmprestimo.Open;
 end;
 
 end.

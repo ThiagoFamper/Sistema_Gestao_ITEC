@@ -2272,43 +2272,21 @@ object TelaSaida: TTelaSaida
       TabOrder = 4
     end
   end
-  object Panel4: TPanel
+  object Panel3: TPanel
     Left = 0
     Top = 321
     Width = 1048
-    Height = 37
-    Align = alTop
-    BevelEdges = [beBottom]
-    Color = clWhitesmoke
-    ParentBackground = False
-    TabOrder = 3
-    ExplicitWidth = 1046
-    object DBNavigator1: TDBNavigator
-      AlignWithMargins = True
-      Left = 0
-      Top = 6
-      Width = 224
-      Height = 25
-      DataSource = dsProduto
-      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
-      TabOrder = 0
-    end
-  end
-  object Panel3: TPanel
-    Left = 0
-    Top = 358
-    Width = 1048
-    Height = 226
+    Height = 263
     Align = alClient
     BevelOuter = bvNone
-    TabOrder = 4
+    TabOrder = 3
     ExplicitWidth = 1046
-    ExplicitHeight = 218
+    ExplicitHeight = 255
     object gSaida: TDBGrid
       Left = 0
       Top = 0
       Width = 1048
-      Height = 226
+      Height = 263
       Hint = 'Pesquisar Entrada'
       Align = alClient
       DataSource = dsProduto
@@ -2366,8 +2344,8 @@ object TelaSaida: TTelaSaida
   end
   object dsProduto: TDataSource
     DataSet = qryProduto
-    Left = 936
-    Top = 274
+    Left = 888
+    Top = 266
   end
   object qryProduto: TFDQuery
     Connection = DM.FDEstoqueItec
@@ -2384,8 +2362,8 @@ object TelaSaida: TTelaSaida
       '    (UPPER(modelo) LIKE UPPER(:modelo)) AND'
       '    (UPPER(g.descricao) LIKE UPPER(:grupo));'
       '')
-    Left = 848
-    Top = 274
+    Left = 808
+    Top = 266
     ParamData = <
       item
         Name = 'CODIGO'
@@ -2415,8 +2393,8 @@ object TelaSaida: TTelaSaida
       'FROM estoqueitec.estoque'
       'WHERE produto_id = :produto_id;'
       '')
-    Left = 640
-    Top = 274
+    Left = 608
+    Top = 266
     ParamData = <
       item
         Name = 'PRODUTO_ID'
@@ -2430,8 +2408,8 @@ object TelaSaida: TTelaSaida
       'SET saldo = saldo - :quantidade'
       'WHERE produto_id = :produto_id;'
       '')
-    Left = 744
-    Top = 272
+    Left = 704
+    Top = 264
     ParamData = <
       item
         Name = 'QUANTIDADE'

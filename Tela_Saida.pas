@@ -72,8 +72,6 @@ type
     Panel8: TPanel;
     Panel11: TPanel;
     Panel12: TPanel;
-    Panel4: TPanel;
-    DBNavigator1: TDBNavigator;
     Panel3: TPanel;
     gSaida: TDBGrid;
     dsProduto: TDataSource;
@@ -135,7 +133,7 @@ begin
     HabilitaCampos;
     TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa;
-    gSaida.Enabled     := False;
+    gSaida.Enabled       := False;
     SBcancelar.Enabled   := True;
     SBrelatorio.Enabled  := False;
     SBsair.Enabled       := False;

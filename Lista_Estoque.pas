@@ -15,39 +15,10 @@ type
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBrelatorio: TSpeedButton;
-    SBexcluir: TSpeedButton;
-    SBsalvar: TSpeedButton;
-    SBcancelar: TSpeedButton;
     SpeedButton1: TSpeedButton;
-    SBeditar: TSpeedButton;
     Panel6: TPanel;
-    Panel7: TPanel;
-    Panel8: TPanel;
-    Panel9: TPanel;
-    Panel10: TPanel;
     Panel11: TPanel;
     Panel12: TPanel;
-    Panel1: TPanel;
-    Panel13: TPanel;
-    Label1: TLabel;
-    dbpProdID: TDBEdit;
-    Panel14: TPanel;
-    Label2: TLabel;
-    dbpProdCod: TDBEdit;
-    Panel15: TPanel;
-    Label3: TLabel;
-    dbpProdDescricao: TDBEdit;
-    Panel16: TPanel;
-    Label4: TLabel;
-    dbpProdMarca: TDBEdit;
-    Panel17: TPanel;
-    Label6: TLabel;
-    cbpProdGrupo: TDBLookupComboBox;
-    Panel18: TPanel;
-    Label5: TLabel;
-    dbpProdModelo: TDBEdit;
-    Panel4: TPanel;
-    DBNavigator1: TDBNavigator;
     Panel5: TPanel;
     Panel19: TPanel;
     Label7: TLabel;
@@ -65,9 +36,18 @@ type
     Label11: TLabel;
     epProdGrupo: TEdit;
     Panel3: TPanel;
-    gpProd: TDBGrid;
+    gEstoque: TDBGrid;
     qryProduto: TFDQuery;
     dsProduto: TDataSource;
+    procedure SBsairClick(Sender: TObject);
+    procedure Filtro;
+    procedure epProdCodChange(Sender: TObject);
+    procedure epProdDescricaoChange(Sender: TObject);
+    procedure epProdModeloChange(Sender: TObject);
+    procedure epProdMarcaChange(Sender: TObject);
+    procedure epProdGrupoChange(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -80,5 +60,55 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Tela_Principal, Data_Module;
+
+procedure TListaEstoque.SBsairClick(Sender: TObject);
+begin
+  Close(); // botão de sair
+end;
+
+procedure TListaEstoque.epProdCodChange(Sender: TObject);
+begin
+  Filtro;
+end;
+
+procedure TListaEstoque.epProdDescricaoChange(Sender: TObject);
+begin
+  Filtro;
+end;
+
+procedure TListaEstoque.epProdGrupoChange(Sender: TObject);
+begin
+  Filtro;
+end;
+
+procedure TListaEstoque.epProdMarcaChange(Sender: TObject);
+begin
+  Filtro;
+end;
+
+procedure TListaEstoque.epProdModeloChange(Sender: TObject);
+begin
+  Filtro;
+end;
+
+procedure TListaEstoque.Filtro; // pesquisa com sql query
+begin
+  qryProduto.ParamByName('codigo').AsString := '%' + epProdCod.Text + '%';
+  qryProduto.ParamByName('descricao').AsString := '%' + epProdDescricao.Text + '%';
+  qryProduto.ParamByName('marca').AsString := '%' + epProdModelo.Text + '%';
+  qryProduto.ParamByName('modelo').AsString := '%' + epProdMarca.Text + '%';
+  qryProduto.ParamByName('grupo').AsString := '%' + epProdGrupo.Text + '%';
+
+  qryProduto.Close;
+  qryProduto.Open;
+end;
+
+procedure TListaEstoque.FormShow(Sender: TObject);
+begin
+  dm.FDTabProduto.Open;
+  Filtro;
+end;
 
 end.
