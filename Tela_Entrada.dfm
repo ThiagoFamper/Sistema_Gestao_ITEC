@@ -24,7 +24,6 @@ object TelaEntrada: TTelaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 247
     ExplicitTop = 576
     ExplicitWidth = 1046
     object Panel13: TPanel
@@ -111,7 +110,7 @@ object TelaEntrada: TTelaEntrada
         Top = 148
         Width = 81
         Height = 25
-        Caption = 'Entrada'
+        Caption = 'Salvar'
         Enabled = False
         TabOrder = 0
         OnClick = bEntradaClick
@@ -216,6 +215,7 @@ object TelaEntrada: TTelaEntrada
           DataSource = DM.dsFDTabEntrada
           Enabled = False
           TabOrder = 0
+          OnKeyPress = dbEntradaQtdKeyPress
         end
       end
       object Panel15: TPanel
@@ -1592,7 +1592,7 @@ object TelaEntrada: TTelaEntrada
       ShowHint = True
     end
     object SBeditar: TSpeedButton
-      Left = 247
+      Left = 249
       Top = 7
       Width = 73
       Height = 73
@@ -1986,6 +1986,7 @@ object TelaEntrada: TTelaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2063,8 +2064,6 @@ object TelaEntrada: TTelaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 4
-    ExplicitLeft = 26
-    ExplicitTop = 156
     ExplicitWidth = 1046
     object Panel18: TPanel
       Left = 16
@@ -2234,7 +2233,7 @@ object TelaEntrada: TTelaEntrada
       'FROM estoqueitec.estoque'
       'WHERE produto_id = :produto_id;')
     Left = 544
-    Top = 242
+    Top = 250
     ParamData = <
       item
         Name = 'PRODUTO_ID'
@@ -2248,7 +2247,7 @@ object TelaEntrada: TTelaEntrada
       'SET saldo = saldo + :quantidade'
       'WHERE produto_id = :produto_id;')
     Left = 640
-    Top = 258
+    Top = 250
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2279,7 +2278,7 @@ object TelaEntrada: TTelaEntrada
   object dsProduto: TDataSource
     DataSet = qryProduto
     Left = 928
-    Top = 258
+    Top = 250
   end
   object qryProduto: TFDQuery
     Connection = DM.FDEstoqueItec

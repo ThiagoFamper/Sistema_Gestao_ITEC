@@ -24,7 +24,8 @@ object TelaSaida: TTelaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 590
+    ExplicitTop = 576
+    ExplicitWidth = 1046
     object Panel13: TPanel
       Left = 16
       Top = 6
@@ -109,7 +110,7 @@ object TelaSaida: TTelaSaida
         Top = 146
         Width = 81
         Height = 25
-        Caption = 'Sa'#237'da'
+        Caption = 'Salvar'
         Enabled = False
         TabOrder = 0
         OnClick = bSaidaClick
@@ -1550,7 +1551,7 @@ object TelaSaida: TTelaSaida
       ShowHint = True
     end
     object SBeditar: TSpeedButton
-      Left = 247
+      Left = 249
       Top = 7
       Width = 73
       Height = 73
@@ -1944,6 +1945,7 @@ object TelaSaida: TTelaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1046
     object Panel18: TPanel
       Left = 16
       Top = 6
@@ -2117,8 +2119,7 @@ object TelaSaida: TTelaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitLeft = -106
-    ExplicitWidth = 1154
+    ExplicitWidth = 1046
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0

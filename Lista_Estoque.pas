@@ -96,11 +96,11 @@ end;
 
 procedure TListaEstoque.Filtro; // pesquisa com sql query
 begin
-  qryProduto.ParamByName('codigo').AsString := '%' + epProdCod.Text + '%';
-  qryProduto.ParamByName('descricao').AsString := '%' + epProdDescricao.Text + '%';
-  qryProduto.ParamByName('marca').AsString := '%' + epProdModelo.Text + '%';
-  qryProduto.ParamByName('modelo').AsString := '%' + epProdMarca.Text + '%';
-  qryProduto.ParamByName('grupo').AsString := '%' + epProdGrupo.Text + '%';
+  qryProduto.ParamByName('codigo').AsString := '%' + Trim(epProdCod.Text) + '%';
+  qryProduto.ParamByName('descricao').AsString := '%' + Trim(epProdDescricao.Text) + '%';
+  qryProduto.ParamByName('marca').AsString := '%' + Trim(epProdMarca.Text) + '%';
+  qryProduto.ParamByName('modelo').AsString := '%' + Trim(epProdModelo.Text) + '%';
+  qryProduto.ParamByName('grupo').AsString := '%' + Trim(epProdGrupo.Text) + '%';
 
   qryProduto.Close;
   qryProduto.Open;
@@ -108,7 +108,6 @@ end;
 
 procedure TListaEstoque.FormShow(Sender: TObject);
 begin
-  dm.FDTabProduto.Open;
   Filtro;
 end;
 

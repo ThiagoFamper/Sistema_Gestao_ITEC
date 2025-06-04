@@ -30,7 +30,7 @@ type
     Panel12: TPanel;
     Panel1: TPanel;
     Panel4: TPanel;
-    DBNavigator1: TDBNavigator;
+    dbNavProd: TDBNavigator;
     Panel5: TPanel;
     Panel3: TPanel;
     gpProd: TDBGrid;
@@ -103,9 +103,17 @@ implementation
 uses Cad_Produto, Data_Module, Relatorio_Produto, Tela_Principal;
 
 procedure TListaProdutos.SBexcluirClick(Sender: TObject); // botão de excluir
+var
+  resposta: Integer;
 begin
-  if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
-  dm.FDTabProduto.Delete;
+  resposta := MessageBox(0, 'Você tem certeza que deseja excluir este registro?',
+  'Confirmação de Exclusão', MB_YESNO or MB_ICONWARNING);
+
+  if resposta = IDYES then
+  begin
+    dm.FDTabGrupo.Delete;
+    Filtro;
+  end;
 end;
 
 procedure TListaProdutos.SBrelatorioClick(Sender: TObject);
@@ -154,38 +162,38 @@ procedure TListaProdutos.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
     if dbpProdCod.Text = '' then
       begin
-        ShowMessage('O campo "Código" deve ser preenchido!');
+        MessageBox(0, 'O campo "Código" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpProdCod.SetFocus;
       end
   else
     if dbpProdDescricao.Text = '' then
       begin
-        ShowMessage('O campo "Descrição" deve ser preenchido!');
+        MessageBox(0, 'O campo "Descrição" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpProdDescricao.SetFocus;
       end
   else
     if dbpProdMarca.Text = '' then
       begin
-        ShowMessage('O campo "Marca" deve ser preenchido!');
+        MessageBox(0, 'O campo "Marca" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpProdMarca.SetFocus;
       end
   else
     if dbpProdModelo.Text = '' then
       begin
-        ShowMessage('O campo "Modelo" deve ser preenchido!');
+        MessageBox(0, 'O campo "Modelo" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpProdModelo.SetFocus;
       end
   else
     if cbpProdGrupo.Text = '' then
       begin
-        ShowMessage('O campo "Grupo" deve ser preenchido!');
+        MessageBox(0, 'O campo "Grupo" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbpProdGrupo.SetFocus;
       end
   else
     begin
       dm.FDTabProduto.Post;
       dm.FDTabProduto.Close;
-      ShowMessage('Produto editado com sucesso!');
+      MessageBox(0, 'Produto editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa();
@@ -242,8 +250,8 @@ procedure TListaProdutos.Filtro; // pesquisa com sql query
 begin
   qryProduto.ParamByName('codigo').AsString := '%' + epProdCod.Text + '%';
   qryProduto.ParamByName('descricao').AsString := '%' + epProdDescricao.Text + '%';
-  qryProduto.ParamByName('marca').AsString := '%' + epProdModelo.Text + '%';
-  qryProduto.ParamByName('modelo').AsString := '%' + epProdMarca.Text + '%';
+  qryProduto.ParamByName('marca').AsString := '%' + epProdMarca.Text + '%';
+  qryProduto.ParamByName('modelo').AsString := '%' + epProdModelo.Text + '%';
   qryProduto.ParamByName('grupo').AsString := '%' + epProdGrupo.Text + '%';
 
   qryProduto.Close;

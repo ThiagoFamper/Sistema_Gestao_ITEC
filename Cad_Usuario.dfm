@@ -12,6 +12,7 @@ object CadUsuario: TCadUsuario
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Panel4: TPanel
     Left = 0
@@ -27,29 +28,29 @@ object CadUsuario: TCadUsuario
     object Panel10: TPanel
       Left = 14
       Top = 6
-      Width = 50
+      Width = 100
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 50
+        Width = 100
         Height = 20
         Align = alTop
-        Caption = 'ID'
+        Caption = 'ID do Usu'#225'rio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 15
+        ExplicitWidth = 91
       end
       object dbUsuarioID: TDBEdit
         Left = 0
         Top = 20
-        Width = 50
+        Width = 100
         Height = 23
         Align = alTop
         DataField = 'id'
@@ -71,14 +72,14 @@ object CadUsuario: TCadUsuario
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Nome'
+        Caption = 'Nome do Usu'#225'rio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 41
+        ExplicitWidth = 117
       end
       object dbUsuarioNome: TDBEdit
         Left = 0
@@ -106,14 +107,14 @@ object CadUsuario: TCadUsuario
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Login'
+        Caption = 'Login do Usu'#225'rio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 37
+        ExplicitWidth = 113
       end
       object dbUsuarioLogin: TDBEdit
         Left = 0
@@ -140,14 +141,14 @@ object CadUsuario: TCadUsuario
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Senha'
+        Caption = 'Senha do Usu'#225'rio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 40
+        ExplicitWidth = 116
       end
       object dbUsuarioSenha: TDBEdit
         Left = 0
@@ -175,6 +176,7 @@ object CadUsuario: TCadUsuario
         Top = 3
         Width = 121
         Height = 49
+        Hint = 'Marcar esta caixa dar'#225' permiss'#227'o total do sistema ao Usu'#225'rio'
         Align = alClient
         Caption = 'Administrador'
         Enabled = False
@@ -184,6 +186,8 @@ object CadUsuario: TCadUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
         TabOrder = 0
       end
     end
@@ -1943,13 +1947,14 @@ object CadUsuario: TCadUsuario
     Width = 1118
     Height = 530
     Align = alClient
-    DataSource = DM.dsFDTabUsuario
+    DataSource = dsUsuario
     Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ParentFont = False
     ReadOnly = True
     TabOrder = 2
@@ -1959,6 +1964,7 @@ object CadUsuario: TCadUsuario
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     StyleElements = []
+    OnDrawColumnCell = gUsuarioDrawColumnCell
     Columns = <
       item
         Expanded = False
@@ -1968,30 +1974,44 @@ object CadUsuario: TCadUsuario
       item
         Expanded = False
         FieldName = 'nome'
-        Title.Caption = 'Nome'
+        Title.Caption = 'Nome do Usu'#225'rio'
         Width = 200
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'login'
-        Title.Caption = 'Login'
+        Title.Caption = 'Login do Usu'#225'rio'
         Width = 200
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'senha'
-        Title.Caption = 'Senha'
+        Title.Caption = 'Senha do Usu'#225'rio'
         Width = 200
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'admin'
-        Title.Caption = 'Admin'
-        Width = 70
+        FieldName = 'admin_text'
+        Title.Caption = 'Usu'#225'rio '#233' Admin?'
+        Width = 100
         Visible = True
       end>
+  end
+  object qryUsuario: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT *'
+      'FROM estoqueitec.usuario'
+      'ORDER BY id DESC')
+    Left = 544
+    Top = 274
+  end
+  object dsUsuario: TDataSource
+    DataSet = qryUsuario
+    Left = 632
+    Top = 274
   end
 end

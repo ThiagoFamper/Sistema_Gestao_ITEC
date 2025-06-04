@@ -13,6 +13,7 @@ object CadColaborador: TCadColaborador
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poDesigned
+  OnShow = FormShow
   TextHeight = 15
   object Panel4: TPanel
     Left = 0
@@ -28,29 +29,29 @@ object CadColaborador: TCadColaborador
     object Panel10: TPanel
       Left = 16
       Top = 6
-      Width = 50
+      Width = 130
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 50
+        Width = 130
         Height = 20
         Align = alTop
-        Caption = 'ID'
+        Caption = 'ID do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 15
+        ExplicitWidth = 125
       end
       object dbColabID: TDBEdit
         Left = 0
         Top = 20
-        Width = 50
+        Width = 130
         Height = 23
         Align = alTop
         DataField = 'id'
@@ -72,14 +73,14 @@ object CadColaborador: TCadColaborador
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o'
+        Caption = 'Nome do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 65
+        ExplicitWidth = 151
       end
       object dbColabDescricao: TDBEdit
         Left = 0
@@ -106,14 +107,14 @@ object CadColaborador: TCadColaborador
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Cargo'
+        Caption = 'Cargo do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 40
+        ExplicitWidth = 150
       end
       object dbColabCargo: TDBEdit
         Left = 0
@@ -140,14 +141,14 @@ object CadColaborador: TCadColaborador
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Setor'
+        Caption = 'Setor do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 35
+        ExplicitWidth = 145
       end
       object cbColabSetor: TDBLookupComboBox
         Left = 0
@@ -177,14 +178,14 @@ object CadColaborador: TCadColaborador
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Sede'
+        Caption = 'Sede do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 33
+        ExplicitWidth = 143
       end
       object cbColabSede: TDBLookupComboBox
         Left = 0
@@ -1957,13 +1958,14 @@ object CadColaborador: TCadColaborador
     Width = 1126
     Height = 473
     Align = alClient
-    DataSource = DM.dsFDTabColaborador
+    DataSource = dsColaborador
     Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ParentFont = False
     ReadOnly = True
     TabOrder = 2
@@ -1982,26 +1984,46 @@ object CadColaborador: TCadColaborador
       item
         Expanded = False
         FieldName = 'descricao'
-        Title.Caption = 'Descri'#231#227'o'
+        Title.Caption = 'Nome do Colaborador'
         Width = 500
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'cargo'
-        Title.Caption = 'Cargo'
+        Title.Caption = 'Cargo do Colaborador'
         Width = 200
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'setor_id'
-        Visible = False
+        FieldName = 'setor'
+        Title.Caption = 'Setor do Colaborador'
+        Width = 200
+        Visible = True
       end
       item
         Expanded = False
-        FieldName = 'sede_id'
-        Visible = False
+        FieldName = 'sede'
+        Title.Caption = 'Sede do Colaborador'
+        Width = 200
+        Visible = True
       end>
+  end
+  object qryColaborador: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT c.*, sd.descricao AS sede, st.descricao AS setor '
+      'FROM estoqueitec.colaborador c'
+      'JOIN estoqueitec.sede sd ON c.sede_id = sd.id'
+      'JOIN estoqueitec.setor st ON c.setor_id = st.id'
+      'ORDER BY c.id DESC')
+    Left = 552
+    Top = 258
+  end
+  object dsColaborador: TDataSource
+    DataSet = qryColaborador
+    Left = 648
+    Top = 258
   end
 end

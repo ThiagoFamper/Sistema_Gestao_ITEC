@@ -71,9 +71,17 @@ implementation
 uses Cad_Sede, Data_Module, Tela_Principal;
 
 procedure TListaSede.SBexcluirClick(Sender: TObject); // botão de excluir
+var
+  resposta: Integer;
 begin
-  if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
-  dm.FDTabSede.Delete;
+  resposta := MessageBox(0, 'Você tem certeza que deseja excluir este registro?',
+  'Confirmação de Exclusão', MB_YESNO or MB_ICONWARNING);
+
+  if resposta = IDYES then
+  begin
+    dm.FDTabGrupo.Delete;
+    Filtro;
+  end;
 end;
 
 procedure TListaSede.SBcancelarClick(Sender: TObject); // botão de cancelar
@@ -113,14 +121,14 @@ procedure TListaSede.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
     if dbpSedeDescricao.Text = '' then
       begin
-        ShowMessage('O campo "Código" deve ser preenchido!');
+        MessageBox(0, 'O campo "Descrição" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpSedeDescricao.SetFocus;
       end
   else
     begin
       dm.FDTabSede.Post;
       dm.FDTabSede.Close;
-      ShowMessage('Sede editada com sucesso!');
+      MessageBox(0, 'Sede editada com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa();

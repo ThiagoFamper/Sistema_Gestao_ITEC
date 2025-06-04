@@ -165,19 +165,19 @@ var
 begin
     if cbSaidaOperador.Text = '' then
       begin
-        ShowMessage('O campo "Operador" deve ser preenchido!');
+        MessageBox(0, 'O campo "Operador" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbSaidaOperador.SetFocus;
       end
   else
     if dbSaidaQtd.Text = '' then
       begin
-        ShowMessage('O campo "Quantidade" deve ser preenchido!');
+        MessageBox(0, 'O campo "Quantidade" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbSaidaQtd.SetFocus;
       end
   else
     if dbSaidaDescricao.Text = '' then
       begin
-        ShowMessage('O campo "Descrição" deve ser preenchido!');
+        MessageBox(0, 'O campo "Descrição" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbSaidaQtd.SetFocus;
       end
   else
@@ -191,7 +191,7 @@ begin
 
     if qryVerifica.IsEmpty then
     begin
-      ShowMessage('Produto não encontrado no estoque!');
+      MessageBox(0, 'Produto não encontrado no estoque!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
       Exit;
     end;
 
@@ -199,7 +199,7 @@ begin
 
     if saldoAtual < quantidade then
     begin
-      ShowMessage('Saldo insuficiente para esta saída!');
+      MessageBox(0, 'Estoque insuficiente para esta saída!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
       Exit;
     end;
 
@@ -214,7 +214,7 @@ begin
       qryUpdateEstoque.ExecSQL;
 
       dm.FDTabSaida.Close;
-      ShowMessage('Saida cadastrada com sucesso!');
+      MessageBox(0, 'Saída realizada com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos;
       HabilitaCamposPesquisa;
       TelaPrincipal.habilitaMenu;

@@ -182,19 +182,19 @@ var
 begin
     if cbEmpOperador.Text = '' then
       begin
-        ShowMessage('O campo "Operador" deve ser preenchido!');
+        MessageBox(0, 'O campo "Operador" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbEmpOperador.SetFocus;
       end
   else
     if cbEmpColaborador.Text = '' then
       begin
-        ShowMessage('O campo "Colaborador" deve ser preenchido!');
+        MessageBox(0, 'O campo "Colaborador" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbEmpColaborador.SetFocus;
       end
   else
     if dbEmpQtd.Text = '' then
       begin
-        ShowMessage('O campo "Quantidade" deve ser preenchido!');
+        MessageBox(0, 'O campo "Quantidade" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbEmpQtd.SetFocus;
       end
   else
@@ -208,7 +208,7 @@ begin
 
     if qryVerifica.IsEmpty then
     begin
-      ShowMessage('Produto não encontrado no estoque!');
+      MessageBox(0, 'Produto não encontrado no estoque!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
       Exit;
     end;
 
@@ -216,7 +216,7 @@ begin
 
     if saldoAtual < quantidade then
     begin
-      ShowMessage('Saldo insuficiente para este empréstimo!');
+      MessageBox(0, 'Estoque insuficiente para este empréstimo!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
       Exit;
     end;
 
@@ -239,7 +239,7 @@ begin
       qryInsertEstoque.ExecSQL;
 
       dm.FDTabEmprestimoProd.Close;
-      ShowMessage('Empréstimo cadastrado com sucesso!');
+      MessageBox(0, 'Empréstimo realizado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       SBsair.Enabled       := True;

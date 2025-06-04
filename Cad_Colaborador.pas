@@ -6,7 +6,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask,
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.Imaging.pngimage, Vcl.ToolWin, Vcl.ActnMan,
-  Vcl.ActnCtrls, Vcl.ActnMenus, Data.DB, Vcl.Grids, Vcl.DBGrids;
+  Vcl.ActnCtrls, Vcl.ActnMenus, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TCadColaborador = class(TForm)
@@ -39,6 +42,8 @@ type
     Panel15: TPanel;
     Label6: TLabel;
     cbColabSede: TDBLookupComboBox;
+    qryColaborador: TFDQuery;
+    dsColaborador: TDataSource;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
@@ -46,6 +51,7 @@ type
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -99,34 +105,34 @@ end;
 
 procedure TCadColaborador.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if dbColabDescricao.Text = '' then
+    if Trim(dbColabDescricao.Text) = '' then
       begin
-        ShowMessage('O campo "Descrição" deve ser preenchido!');
+        MessageBox(0, 'O campo "Nome" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbColabDescricao.SetFocus;
       end
   else
-    if dbColabCargo.Text = '' then
+    if Trim(dbColabCargo.Text) = '' then
       begin
-        ShowMessage('O campo "Cargo" deve ser preenchido!');
+        MessageBox(0, 'O campo "Cargo" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbColabCargo.SetFocus;
       end
   else
-    if cbColabSetor.Text = '' then
+    if Trim(cbColabSetor.Text) = '' then
       begin
-        ShowMessage('O campo "Setor" deve ser preenchido!');
+        MessageBox(0, 'O campo "Setor" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbColabSetor.SetFocus;
       end
   else
-    if cbColabSede.Text = '' then
+    if Trim(cbColabSede.Text) = '' then
       begin
-        ShowMessage('O campo "Sede" deve ser preenchido!');
+        MessageBox(0, 'O campo "Sede" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbColabSede.SetFocus;
       end
   else
     begin
       dm.FDTabColaborador.Post;
       dm.FDTabColaborador.Close;
-      ShowMessage('Colaborador cadastrado com sucesso!');
+      MessageBox(0, 'Colaborador cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
@@ -137,7 +143,15 @@ begin
       dm.FDTabColaborador.Open;
       dm.FDTabColaborador.Refresh;
       dm.FDTabColaborador.Last;
+      qryColaborador.Close;
+      qryColaborador.Open;
     end;
+end;
+
+procedure TCadColaborador.FormShow(Sender: TObject);
+begin
+  qryColaborador.Close;
+  qryColaborador.Open;
 end;
 
 procedure TCadColaborador.HabilitaCampos; // habilitar campos

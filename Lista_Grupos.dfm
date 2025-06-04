@@ -29,29 +29,29 @@ object ListaGrupos: TListaGrupos
     object Panel13: TPanel
       Left = 16
       Top = 6
-      Width = 50
+      Width = 100
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 50
+        Width = 100
         Height = 20
         Align = alTop
-        Caption = 'ID'
+        Caption = 'ID do Grupo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 15
+        ExplicitWidth = 82
       end
       object dbpGrupoID: TDBEdit
         Left = 0
         Top = 20
-        Width = 50
+        Width = 100
         Height = 23
         Align = alTop
         DataField = 'id'
@@ -73,14 +73,14 @@ object ListaGrupos: TListaGrupos
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o'
+        Caption = 'Descri'#231#227'o do Grupo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 65
+        ExplicitWidth = 132
       end
       object dbpGrupoDescricao: TDBEdit
         Left = 0
@@ -119,14 +119,14 @@ object ListaGrupos: TListaGrupos
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o'
+        Caption = 'Descri'#231#227'o do Grupo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 65
+        ExplicitWidth = 132
       end
       object epGrupoDescricao: TEdit
         Left = 0
@@ -2171,7 +2171,7 @@ object ListaGrupos: TListaGrupos
     ParentBackground = False
     TabOrder = 3
     ExplicitWidth = 1045
-    object DBNavigator1: TDBNavigator
+    object dbNavGrupo: TDBNavigator
       AlignWithMargins = True
       Left = 0
       Top = 6
@@ -2213,7 +2213,7 @@ object ListaGrupos: TListaGrupos
         item
           Expanded = False
           FieldName = 'descricao'
-          Title.Caption = 'Descri'#231#227'o'
+          Title.Caption = 'Descri'#231#227'o do Grupo'
           Width = 500
           Visible = True
         end>

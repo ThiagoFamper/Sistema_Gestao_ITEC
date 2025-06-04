@@ -32,6 +32,8 @@ type
     Panel10: TPanel;
     Label1: TLabel;
     dbGrupoID: TDBEdit;
+    qryGrupo: TFDQuery;
+    dsGrupo: TDataSource;
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
     procedure SBnovoClick(Sender: TObject);
@@ -39,6 +41,7 @@ type
     procedure SBsairClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -90,16 +93,16 @@ end;
 
 procedure TCadGrupo.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if dbGrupoDescricao.Text = '' then
+    if Trim(dbGrupoDescricao.Text) = '' then
       begin
-        ShowMessage('O campo "Descrição" deve ser preenchido!');
+        MessageBox(0, 'O campo "Descrição" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbGrupoDescricao.SetFocus;
       end
   else
     begin
       dm.FDTabGrupo.Post;
       dm.FDTabGrupo.Close;
-      ShowMessage('Grupo cadastrado com sucesso!');
+      MessageBox(0, 'Grupo cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       TelaPrincipal.habilitaMenu;
@@ -111,12 +114,20 @@ begin
       dm.FDTabGrupo.Open;
       dm.FDTabGrupo.Refresh;
       dm.FDTabGrupo.Last;
+      qryGrupo.Close;
+      qryGrupo.Open;
     end;
 end;
 
 procedure TCadGrupo.SBsairClick(Sender: TObject);
 begin
   close(); // botão de sair
+end;
+
+procedure TCadGrupo.FormShow(Sender: TObject);
+begin
+  qryGrupo.Close;
+  qryGrupo.Open;
 end;
 
 procedure TCadGrupo.HabilitaCampos; // habilitar campos

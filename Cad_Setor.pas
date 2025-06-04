@@ -6,7 +6,9 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
   Vcl.DBCtrls, Vcl.Buttons, Vcl.Imaging.pngimage, Data.DB, Vcl.Grids,
-  Vcl.DBGrids;
+  Vcl.DBGrids, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TCadSetor = class(TForm)
@@ -30,6 +32,8 @@ type
     Panel12: TPanel;
     Label3: TLabel;
     dbSetorDescricao: TDBEdit;
+    qrySetor: TFDQuery;
+    dsSetor: TDataSource;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
@@ -37,6 +41,7 @@ type
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -90,16 +95,16 @@ end;
 
 procedure TCadSetor.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if dbSetorDescricao.Text = '' then
+    if Trim(dbSetorDescricao.Text) = '' then
       begin
-        ShowMessage('O campo "Descrição" deve ser preenchido!');
+        MessageBox(0, 'O campo "Descrição" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbSetorDescricao.SetFocus;
       end
   else
     begin
       dm.FDTabSetor.Post;
       dm.FDTabSetor.Close;
-      ShowMessage('Setor cadastrado com sucesso!');
+      MessageBox(0, 'Setor cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
@@ -110,8 +115,16 @@ begin
       dm.FDTabSetor.Open;
       dm.FDTabSetor.Refresh;
       dm.FDTabSetor.Last;
+      qrySetor.Close;
+      qrySetor.Open;
     end;
 
+end;
+
+procedure TCadSetor.FormShow(Sender: TObject);
+begin
+  qrySetor.Close;
+  qrySetor.Open;
 end;
 
 procedure TCadSetor.HabilitaCampos; // habilitar campos

@@ -5,7 +5,10 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.DBCtrls,
-  Vcl.Mask, Vcl.Buttons, Vcl.Imaging.pngimage, Data.DB, Vcl.Grids, Vcl.DBGrids;
+  Vcl.Mask, Vcl.Buttons, Vcl.Imaging.pngimage, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TCadUsuario = class(TForm)
@@ -37,6 +40,8 @@ type
     dbUsuarioSenha: TDBEdit;
     Panel14: TPanel;
     cbUsuarioAdmin: TCheckBox;
+    qryUsuario: TFDQuery;
+    dsUsuario: TDataSource;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
@@ -44,6 +49,9 @@ type
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure gUsuarioDrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
 
   private
     { Private declarations }
@@ -89,8 +97,6 @@ end;
 procedure TCadUsuario.SBpesquisarClick(Sender: TObject);
 begin
   TelaPrincipal.AbrirFormulario(TListaUsuario); // bot„o de pesquisar
-  dm.FDTabUsuario.Open;
-  TelaPrincipal.AbrirFormulario(TListaUsuario); // bot„o de pesquisar
 end;
 
 procedure TCadUsuario.SBsairClick(Sender: TObject);
@@ -100,21 +106,21 @@ end;
 
 procedure TCadUsuario.SBsalvarClick(Sender: TObject); // bot„o de salvar
 begin
-    if dbUsuarioNome.Text = '' then
+    if Trim(dbUsuarioNome.Text) = '' then
       begin
-        ShowMessage('O campo "Nome" deve ser preenchido!');
+        MessageBox(0, 'O campo "Nome" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbUsuarioNome.SetFocus;
       end
   else
-    if dbUsuarioLogin.Text = '' then
+    if Trim(dbUsuarioLogin.Text) = '' then
       begin
-        ShowMessage('O campo "Login" deve ser preenchido!');
+        MessageBox(0, 'O campo "Login" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbUsuarioLogin.SetFocus;
       end
   else
-    if dbUsuarioSenha.Text = '' then
+    if Trim(dbUsuarioSenha.Text) = '' then
       begin
-        ShowMessage('O campo "Senha" deve ser preenchido!');
+        MessageBox(0, 'O campo "Senha" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbUsuarioSenha.SetFocus;
       end
   else
@@ -122,8 +128,7 @@ begin
       dm.FDTabUsuario.FieldByName('Admin').AsBoolean := cbUsuarioAdmin.Checked;
       dm.FDTabUsuario.Post;
       dm.FDTabUsuario.Close;
-      ShowMessage('Usu·rio cadastrado com sucesso!');
-      ShowMessage('Usu√°rio cadastrado com sucesso!');
+      MessageBox(0, 'Usu·rio cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       TelaPrincipal.habilitaMenu;
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;
@@ -134,8 +139,37 @@ begin
       dm.FDTabUsuario.Open;
       dm.FDTabUsuario.Refresh;
       dm.FDTabUsuario.Last;
+      qryUsuario.Close;
+      qryUsuario.Open;
     end;
 
+end;
+
+procedure TCadUsuario.FormShow(Sender: TObject);
+begin
+  qryUsuario.Close;
+  qryUsuario.Open;
+end;
+
+procedure TCadUsuario.gUsuarioDrawColumnCell(Sender: TObject; const Rect: TRect;
+  DataCol: Integer; Column: TColumn; State: TGridDrawState);
+var
+  TextToDraw: string;
+begin
+  if Column.Title.Caption = 'Usu·rio È Admin?' then
+  begin
+    if qryUsuario.FieldByName('admin').AsBoolean then
+      TextToDraw := 'Sim'
+    else
+      TextToDraw := 'N„o';
+
+    gUsuario.Canvas.FillRect(Rect);
+    gUsuario.Canvas.TextRect(Rect, Rect.Left + 2, Rect.Top + 2, TextToDraw);
+  end
+  else
+  begin
+    gUsuario.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+  end;
 end;
 
 procedure TCadUsuario.HabilitaCampos; // habilitar campos

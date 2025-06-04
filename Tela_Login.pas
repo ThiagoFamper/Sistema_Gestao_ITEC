@@ -54,7 +54,7 @@ begin
 
     if IsEmpty then
     begin
-      ShowMessage('Login ou Senha inválidos!');
+      MessageBox(0, 'Login ou Senha inválidos!', 'Controle de Estoque ITEC', MB_OK or MB_ICONWARNING);
       Exit;
     end
     else

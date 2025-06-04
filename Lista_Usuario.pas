@@ -86,9 +86,17 @@ implementation
 uses Cad_Usuario, Data_Module, Tela_Principal;
 
 procedure TListaUsuario.SBexcluirClick(Sender: TObject); // botão de excluir
+var
+  resposta: Integer;
 begin
-  if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
-  dm.FDTabUsuario.Delete;
+  resposta := MessageBox(0, 'Você tem certeza que deseja excluir este registro?',
+  'Confirmação de Exclusão', MB_YESNO or MB_ICONWARNING);
+
+  if resposta = IDYES then
+  begin
+    dm.FDTabGrupo.Delete;
+    Filtro;
+  end;
 end;
 
 procedure TListaUsuario.SBcancelarClick(Sender: TObject); // botão de cancelar
@@ -128,19 +136,19 @@ procedure TListaUsuario.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
     if dbpUsuarioNome.Text = '' then
       begin
-        ShowMessage('O Campo "Nome" deve ser preenchido!');
+        MessageBox(0, 'O campo "Nome" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpUsuarioNome.SetFocus;
       end
   else
     if dbpUsuarioLogin.Text = '' then
       begin
-        ShowMessage('O Campo "Login" deve ser preenchido!');
+        MessageBox(0, 'O campo "Login" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpUsuarioLogin.SetFocus;
       end
   else
     if dbpUsuarioSenha.Text = '' then
       begin
-        ShowMessage('O Campo "Senha" deve ser preenchido!');
+        MessageBox(0, 'O campo "Senha" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpUsuarioSenha.SetFocus;
       end
   else
@@ -148,7 +156,7 @@ begin
       dm.FDTabUsuario.FieldByName('Admin').AsBoolean := dbpUsuarioAdmin.Checked;
       dm.FDTabUsuario.Post;
       dm.FDTabUsuario.Close;
-      ShowMessage('Usuário editado com sucesso!');
+      MessageBox(0, 'Usuário editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa();

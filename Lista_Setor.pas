@@ -72,9 +72,17 @@ implementation
 uses Cad_Setor, Data_Module, Tela_Principal;
 
 procedure TListaSetor.SBexcluirClick(Sender: TObject); // botão de excluir
+var
+  resposta: Integer;
 begin
-  if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
-  dm.FDTabSetor.Delete;
+  resposta := MessageBox(0, 'Você tem certeza que deseja excluir este registro?',
+  'Confirmação de Exclusão', MB_YESNO or MB_ICONWARNING);
+
+  if resposta = IDYES then
+  begin
+    dm.FDTabGrupo.Delete;
+    Filtro;
+  end;
 end;
 
 procedure TListaSetor.SBcancelarClick(Sender: TObject); // botão de cancelar
@@ -114,14 +122,14 @@ procedure TListaSetor.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
     if dbpSetorDescricao.Text = '' then
       begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
+        MessageBox(0, 'O campo "Descrição" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpSetorDescricao.SetFocus;
       end
   else
     begin
       dm.FDTabSetor.Post;
       dm.FDTabSetor.Close;
-      ShowMessage('Setor editado com sucesso!');
+      MessageBox(0, 'Setor editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa();

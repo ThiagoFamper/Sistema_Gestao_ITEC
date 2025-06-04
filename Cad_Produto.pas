@@ -44,6 +44,8 @@ type
     Panel15: TPanel;
     Label6: TLabel;
     dbProdModelo: TDBEdit;
+    qryProduto: TFDQuery;
+    dsProduto: TDataSource;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
@@ -51,6 +53,7 @@ type
     procedure SBsalvarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -107,40 +110,40 @@ procedure TCadProduto.SBsalvarClick(Sender: TObject); // botão de salvar
 var
   NewID: Integer;
 begin
-    if dbProdCod.Text = '' then
+    if Trim(dbProdCod.Text) = '' then
       begin
-        ShowMessage('O campo "Código" deve ser preenchido!');
+        MessageBox(0, 'O campo "Código" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbProdCod.SetFocus;
       end
   else
-    if dbProdDescricao.Text = '' then
+    if Trim(dbProdDescricao.Text) = '' then
       begin
-        ShowMessage('O campo "Descrição" deve ser preenchido!');
+        MessageBox(0, 'O campo "Descrição" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);;
         dbProdDescricao.SetFocus;
       end
   else
-    if dbProdMarca.Text = '' then
+    if Trim(dbProdMarca.Text) = '' then
       begin
-        ShowMessage('O campo "Marca" deve ser preenchido!');
+        MessageBox(0, 'O campo "Marca" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbProdMarca.SetFocus;
       end
   else
-    if dbProdModelo.Text = '' then
+    if Trim(dbProdModelo.Text) = '' then
       begin
-        ShowMessage('O campo "Modelo" deve ser preenchido!');
+        MessageBox(0, 'O campo "Modelo" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbProdModelo.SetFocus;
       end
   else
-    if cbProdGrupo.Text = '' then
+    if Trim(cbProdGrupo.Text) = '' then
       begin
-        ShowMessage('O campo "Grupo" deve ser preenchido!');
+        MessageBox(0, 'O campo "Grupo" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbProdGrupo.SetFocus;
       end
   else
     begin
       dm.FDTabProduto.Post;
       dm.FDTabProduto.Close;
-      ShowMessage('Produto cadastrado com sucesso!');
+      MessageBox(0, 'Produto cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
@@ -151,8 +154,16 @@ begin
       dm.FDTabProduto.Open;
       dm.FDTabProduto.Refresh;
       dm.FDTabProduto.Last;
+      qryProduto.Close;
+      qryProduto.Open;
     end;
 
+end;
+
+procedure TCadProduto.FormShow(Sender: TObject);
+begin
+  qryProduto.Close;
+  qryProduto.Open;
 end;
 
 procedure TCadProduto.HabilitaCampos; // habilitar campos

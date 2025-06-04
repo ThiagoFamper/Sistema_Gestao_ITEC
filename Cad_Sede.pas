@@ -5,7 +5,10 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Buttons;
+  Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Buttons,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TCadSede = class(TForm)
@@ -29,6 +32,8 @@ type
     Label1: TLabel;
     dbSedeID: TDBEdit;
     gSede: TDBGrid;
+    qrySede: TFDQuery;
+    dsSede: TDataSource;
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
     procedure SBnovoClick(Sender: TObject);
@@ -36,6 +41,7 @@ type
     procedure SBsairClick(Sender: TObject);
     procedure SBpesquisarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -85,16 +91,16 @@ end;
 
 procedure TCadSede.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if dbSedeDescricao.Text = '' then
+    if Trim(dbSedeDescricao.Text) = '' then
       begin
-        ShowMessage('O campo "Descrição" deve ser preenchido!');
+        MessageBox(0, 'O campo "Descrição" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbSedeDescricao.SetFocus;
       end
   else
     begin
       dm.FDTabSede.Post;
       dm.FDTabSede.Close;
-      ShowMessage('Sede cadastrada com sucesso!');
+      MessageBox(0, 'Sede cadastrada com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       TelaPrincipal.habilitaMenu;
       DesabilitaCampos();
       SBpesquisar.Enabled  := True;
@@ -105,12 +111,20 @@ begin
       dm.FDTabSede.Open;
       dm.FDTabSede.Refresh;
       dm.FDTabSede.Last;
+      qrySede.Close;
+      qrySede.Open;
     end;
 end;
 
 procedure TCadSede.SBsairClick(Sender: TObject);
 begin
   close(); // botão de sair
+end;
+
+procedure TCadSede.FormShow(Sender: TObject);
+begin
+  qrySede.Close;
+  qrySede.Open;
 end;
 
 procedure TCadSede.HabilitaCampos; // habilitar campos

@@ -16,6 +16,7 @@ object CadProduto: TCadProduto
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poDesigned
+  OnShow = FormShow
   TextHeight = 15
   object Panel2: TPanel
     Left = 0
@@ -1782,29 +1783,29 @@ object CadProduto: TCadProduto
     object Panel10: TPanel
       Left = 17
       Top = 4
-      Width = 50
+      Width = 100
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 50
+        Width = 100
         Height = 20
         Align = alTop
-        Caption = 'ID'
+        Caption = 'ID do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 15
+        ExplicitWidth = 94
       end
       object dbProdID: TDBEdit
         Left = 0
         Top = 20
-        Width = 50
+        Width = 100
         Height = 23
         Align = alTop
         DataField = 'id'
@@ -1826,14 +1827,14 @@ object CadProduto: TCadProduto
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'C'#243'digo'
+        Caption = 'C'#243'digo do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 49
+        ExplicitWidth = 128
       end
       object dbProdCod: TDBEdit
         Left = 0
@@ -1860,14 +1861,14 @@ object CadProduto: TCadProduto
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o'
+        Caption = 'Descri'#231#227'o do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 65
+        ExplicitWidth = 144
       end
       object dbProdDescricao: TDBEdit
         Left = 0
@@ -1894,14 +1895,14 @@ object CadProduto: TCadProduto
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Marca'
+        Caption = 'Marca do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 41
+        ExplicitWidth = 120
       end
       object dbProdMarca: TDBEdit
         Left = 0
@@ -1928,14 +1929,14 @@ object CadProduto: TCadProduto
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Grupo'
+        Caption = 'Grupo do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 41
+        ExplicitWidth = 120
       end
       object cbProdGrupo: TDBLookupComboBox
         Left = 0
@@ -1966,14 +1967,14 @@ object CadProduto: TCadProduto
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Modelo'
+        Caption = 'Modelo do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 52
+        ExplicitWidth = 131
       end
       object dbProdModelo: TDBEdit
         Left = 0
@@ -1994,13 +1995,14 @@ object CadProduto: TCadProduto
     Width = 1108
     Height = 549
     Align = alClient
-    DataSource = DM.dsFDTabProduto
+    DataSource = dsProduto
     Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ParentFont = False
     ReadOnly = True
     TabOrder = 2
@@ -2018,41 +2020,61 @@ object CadProduto: TCadProduto
       end
       item
         Expanded = False
+        FieldName = 'cod_produto'
+        Title.Caption = 'C'#243'digo do Produto'
+        Width = 110
+        Visible = True
+      end
+      item
+        Expanded = False
         FieldName = 'descricao'
-        Title.Caption = 'Descri'#231#227'o'
-        Width = 500
+        Title.Caption = 'Descri'#231#227'o do Produto'
+        Width = 300
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'marca'
-        Title.Caption = 'Marca'
+        Title.Caption = 'Marca do Produto'
         Width = 200
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'modelo'
-        Title.Caption = 'Modelo'
+        Title.Caption = 'Modelo do Produto'
         Width = 200
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'grupo_id'
-        Visible = False
-      end
-      item
-        Expanded = False
-        FieldName = 'cod_produto'
-        Visible = False
+        FieldName = 'grupo'
+        Title.Caption = 'Grupo do Produto'
+        Width = 200
+        Visible = True
       end
       item
         Expanded = False
         FieldName = 'data'
-        Title.Caption = 'Data'
-        Width = 70
+        Title.Caption = 'Data Cadastro'
+        Width = 100
         Visible = True
       end>
+  end
+  object qryProduto: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT p.*, g.descricao AS grupo'
+      'FROM estoqueitec.produto p'
+      'JOIN estoqueitec.grupo g'
+      'ON p.grupo_id = g.id'
+      'ORDER BY p.id DESC')
+    Left = 400
+    Top = 266
+  end
+  object dsProduto: TDataSource
+    DataSet = qryProduto
+    Left = 472
+    Top = 266
   end
 end

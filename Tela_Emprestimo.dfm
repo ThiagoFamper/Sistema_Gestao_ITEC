@@ -110,7 +110,7 @@ object TelaEmprestimo: TTelaEmprestimo
         Top = 146
         Width = 81
         Height = 25
-        Caption = 'Empr'#233'stimo'
+        Caption = 'Salvar'
         Enabled = False
         TabOrder = 0
         OnClick = bEmpClick
@@ -1948,9 +1948,7 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitLeft = 154
-    ExplicitTop = 433
-    ExplicitWidth = 1384
+    ExplicitWidth = 1152
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -1974,8 +1972,6 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitLeft = 8
-    ExplicitTop = 435
     ExplicitWidth = 1152
     object Panel18: TPanel
       Left = 16

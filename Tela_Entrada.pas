@@ -87,6 +87,7 @@ type
     procedure epProdGrupoChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
+    procedure dbEntradaQtdKeyPress(Sender: TObject; var Key: Char);
 
   private
     { Private declarations }
@@ -158,27 +159,33 @@ procedure TTelaEntrada.bEntradaClick(Sender: TObject);
 var
   produtoID, quantidade: Integer;
 begin
-    if cbEntradaOperador.Text = '' then
+    if Trim(cbEntradaOperador.Text) = '' then
       begin
-        ShowMessage('O campo "Operador" deve ser preenchido!');
+        MessageBox(0, 'O campo "Operador" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbEntradaOperador.SetFocus;
       end
   else
-    if dbEntradaNF.Text = '' then
+    if Trim(dbEntradaNF.Text) = '' then
       begin
-        ShowMessage('O campo "Nota Fiscal" deve ser preenchido!');
+        MessageBox(0, 'O campo "Nota Fiscal" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbEntradaNF.SetFocus;
       end
   else
-    if dbEntradaValor.Text = '' then
+    if Trim(dbEntradaValor.Text) = '' then
       begin
-        ShowMessage('O campo "Valor Unitário" deve ser preenchido!');
+        MessageBox(0, 'O campo "Valor Unitário" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbEntradaValor.SetFocus;
       end
   else
-    if dbEntradaQtd.Text = '' then
+    if Trim(dbEntradaQtd.Text) = '' then
       begin
-        ShowMessage('O campo "Quantidade" deve ser preenchido!');
+        MessageBox(0, 'O campo "Quantidade" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+        dbEntradaQtd.SetFocus;
+      end
+  else
+    if dbEntradaQtd.Text = '0' then
+      begin
+        MessageBox(0, 'O campo "Quantidade" não pode ser 0!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbEntradaQtd.SetFocus;
       end
   else
@@ -209,7 +216,7 @@ begin
 
       dm.FDTabEntrada.Close;
       dm.FDTabEstoque.Close;
-      ShowMessage('Entrada cadastrada com sucesso!');
+      MessageBox(0, 'Entrada realizada com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos;
       HabilitaCamposPesquisa;
       TelaPrincipal.habilitaMenu;
@@ -223,6 +230,14 @@ begin
       dm.FDTabEntrada.Last;
       Filtro;
     end;
+end;
+
+procedure TTelaEntrada.dbEntradaQtdKeyPress(Sender: TObject; var Key: Char);
+begin
+  if not CharInSet(Key, ['0'..'9', #8]) then
+  begin
+    Key := #0;
+  end;
 end;
 
 procedure TTelaEntrada.DesabilitaCampos; // desabilitar campos

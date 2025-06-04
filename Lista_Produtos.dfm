@@ -2391,29 +2391,29 @@ object ListaProdutos: TListaProdutos
     object Panel13: TPanel
       Left = 16
       Top = 6
-      Width = 50
+      Width = 100
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 50
+        Width = 100
         Height = 20
         Align = alTop
-        Caption = 'ID'
+        Caption = 'ID do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 15
+        ExplicitWidth = 94
       end
       object dbpProdID: TDBEdit
         Left = 0
         Top = 20
-        Width = 50
+        Width = 100
         Height = 23
         Align = alTop
         BevelInner = bvLowered
@@ -2437,14 +2437,14 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'C'#243'digo'
+        Caption = 'C'#243'digo do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 49
+        ExplicitWidth = 128
       end
       object dbpProdCod: TDBEdit
         Left = 0
@@ -2471,14 +2471,14 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o'
+        Caption = 'Descri'#231#227'o do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 65
+        ExplicitWidth = 144
       end
       object dbpProdDescricao: TDBEdit
         Left = 0
@@ -2494,7 +2494,7 @@ object ListaProdutos: TListaProdutos
     end
     object Panel16: TPanel
       Left = 520
-      Top = 71
+      Top = 6
       Width = 400
       Height = 59
       BevelOuter = bvNone
@@ -2505,14 +2505,14 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Marca'
+        Caption = 'Marca do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 41
+        ExplicitWidth = 120
       end
       object dbpProdMarca: TDBEdit
         Left = 0
@@ -2539,14 +2539,14 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Grupo'
+        Caption = 'Grupo do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 41
+        ExplicitWidth = 120
       end
       object cbpProdGrupo: TDBLookupComboBox
         Left = 0
@@ -2565,7 +2565,7 @@ object ListaProdutos: TListaProdutos
     end
     object Panel18: TPanel
       Left = 520
-      Top = 6
+      Top = 71
       Width = 400
       Height = 59
       BevelOuter = bvNone
@@ -2576,14 +2576,14 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Modelo'
+        Caption = 'Modelo do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 52
+        ExplicitWidth = 131
       end
       object dbpProdModelo: TDBEdit
         Left = 0
@@ -2609,7 +2609,7 @@ object ListaProdutos: TListaProdutos
     ParentBackground = False
     TabOrder = 2
     ExplicitWidth = 2712
-    object DBNavigator1: TDBNavigator
+    object dbNavProd: TDBNavigator
       AlignWithMargins = True
       Left = 0
       Top = 6
@@ -2644,14 +2644,14 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'C'#243'digo'
+        Caption = 'C'#243'digo do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 49
+        ExplicitWidth = 128
       end
       object epProdCod: TEdit
         Left = 0
@@ -2676,14 +2676,14 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o'
+        Caption = 'Descri'#231#227'o do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 65
+        ExplicitWidth = 144
       end
       object epProdDescricao: TEdit
         Left = 0
@@ -2696,8 +2696,8 @@ object ListaProdutos: TListaProdutos
       end
     end
     object Panel21: TPanel
-      Left = 520
-      Top = 6
+      Left = 16
+      Top = 136
       Width = 400
       Height = 59
       BevelOuter = bvNone
@@ -2708,14 +2708,14 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Marca'
+        Caption = 'Marca do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 41
+        ExplicitWidth = 120
       end
       object epProdMarca: TEdit
         Left = 0
@@ -2728,8 +2728,8 @@ object ListaProdutos: TListaProdutos
       end
     end
     object Panel22: TPanel
-      Left = 16
-      Top = 136
+      Left = 520
+      Top = 6
       Width = 400
       Height = 59
       BevelOuter = bvNone
@@ -2740,14 +2740,14 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Modelo'
+        Caption = 'Modelo do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 52
+        ExplicitWidth = 131
       end
       object epProdModelo: TEdit
         Left = 0
@@ -2772,14 +2772,14 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Grupo'
+        Caption = 'Grupo do Produto'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 41
+        ExplicitWidth = 120
       end
       object epProdGrupo: TEdit
         Left = 0
@@ -2824,44 +2824,43 @@ object ListaProdutos: TListaProdutos
         item
           Expanded = False
           FieldName = 'cod_produto'
-          Title.Caption = 'C'#243'digo'
-          Width = 70
+          Title.Caption = 'C'#243'digo do Produto'
+          Width = 110
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'descricao'
-          Title.Caption = 'Descri'#231#227'o'
+          Title.Caption = 'Descri'#231#227'o do Produto'
           Width = 500
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'marca'
-          Title.Caption = 'Marca'
+          Title.Caption = 'Marca do Produto'
           Width = 200
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'modelo'
-          Title.Caption = 'Modelo'
+          Title.Caption = 'Modelo do Produto'
           Width = 200
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'grupo'
-          Title.Caption = 'Grupo'
+          Title.Caption = 'Grupo do Produto'
           Width = 150
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'data'
-          Title.Caption = 'Data'
-          Width = 70
-          Visible = True
+          Title.Caption = 'Data Cadastro'
+          Visible = False
         end>
     end
   end

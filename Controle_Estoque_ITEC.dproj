@@ -142,18 +142,6 @@
             <Form>CadSetor</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Entrada_Prod.pas">
-            <Form>EntradaProd</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="Saida_Prod.pas">
-            <Form>SaidaProd</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="Cad_Emprestimo.pas">
-            <Form>CadEmprestimo</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="Tela_Devolucao.pas">
             <Form>TelaDevolucao</Form>
             <FormType>dfm</FormType>
@@ -176,18 +164,6 @@
         </DCCReference>
         <DCCReference Include="Lista_Colaborador.pas">
             <Form>ListaColaborador</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="Lista_Entrada.pas">
-            <Form>ListaEntrada</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="Lista_Saida.pas">
-            <Form>ListaSaida</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="Lista_Emprestimo.pas">
-            <Form>ListaEmprestimo</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Cad_Usuario.pas">

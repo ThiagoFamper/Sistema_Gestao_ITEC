@@ -156,7 +156,7 @@ begin
       quantidadeDevolvida := quantidadeSaldo;
       if quantidadeDevolvida = 0 then
       begin
-        showMessage('Não há produtos para devolver!');
+        MessageBox(0, 'Não há produtos para devolver!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         Exit;
       end;
     end
@@ -166,7 +166,7 @@ begin
       quantidadeSaldo := StrToInt(dbDevSaldo.Text);
       if quantidadeDevolvida > quantidadeSaldo then
       begin
-        ShowMessage('Quantidade devolvida não deve ser maior que o saldo do empréstimo!');
+        MessageBox(0, 'Quantidade devolvida não pode ser maior que saldo do empréstimo!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         Exit;
       end;
     end;
@@ -189,7 +189,7 @@ begin
       qryUpdateStatus.ExecSQL;
     end;
 
-    showMessage('Devolução realizada com sucesso!');
+    MessageBox(0, 'Devolução realizada com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
     DesabilitaCampos();
     TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa();

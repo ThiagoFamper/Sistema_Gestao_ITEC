@@ -29,7 +29,7 @@ type
     Panel10: TPanel;
     Panel12: TPanel;
     Panel4: TPanel;
-    DBNavigator1: TDBNavigator;
+    dbNavGrupo: TDBNavigator;
     Panel3: TPanel;
     gpGrupo: TDBGrid;
     Panel13: TPanel;
@@ -72,9 +72,17 @@ implementation
 uses Cad_Grupo, Data_Module, Tela_Principal;
 
 procedure TListaGrupos.SBexcluirClick(Sender: TObject); // botão de excluir
+var
+  resposta: Integer;
 begin
-  if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
-  dm.FDTabGrupo.Delete;
+  resposta := MessageBox(0, 'Você tem certeza que deseja excluir este registro?',
+  'Confirmação de Exclusão', MB_YESNO or MB_ICONWARNING);
+
+  if resposta = IDYES then
+  begin
+    dm.FDTabGrupo.Delete;
+    Filtro;
+  end;
 end;
 
 procedure TListaGrupos.SBcancelarClick(Sender: TObject); // botão de cancelar
@@ -96,6 +104,7 @@ begin
     HabilitaCampos();
     TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa();
+    dm.FDTabGrupo.Open;
     dm.FDTabGrupo.Edit;
     gpGrupo.Enabled      := False;
     SBcancelar.Enabled   := True;
@@ -113,16 +122,16 @@ end;
 
 procedure TListaGrupos.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if dbpGrupoDescricao.Text = '' then
+    if Trim(dbpGrupoDescricao.Text) = '' then
       begin
-        ShowMessage('O campo "Descrição" deve ser preenchido!');
+        MessageBox(0, 'O campo "Descrição" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpGrupoDescricao.SetFocus;
       end
   else
     begin
       dm.FDTabGrupo.Post;
       dm.FDTabGrupo.Close;
-      ShowMessage('Grupo editado com sucesso!');
+      MessageBox(0, 'Grupo editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa();
@@ -135,6 +144,7 @@ begin
       dm.FDTabGrupo.Open;
       dm.FDTabGrupo.Refresh;
       dm.FDTabGrupo.Last;
+      Filtro;
     end;
 end;
 
@@ -160,7 +170,7 @@ end;
 
 procedure TListaGrupos.Filtro; // pesquisa com sql query
 begin
-  qryGrupo.ParamByName('descricao').AsString := '%' + epGrupoDescricao.Text + '%';
+  qryGrupo.ParamByName('descricao').AsString := '%' + Trim(epGrupoDescricao.Text) + '%';
 
   qryGrupo.Close;
   qryGrupo.Open;
@@ -168,7 +178,6 @@ end;
 
 procedure TListaGrupos.FormShow(Sender: TObject);
 begin
-  dm.FDTabGrupo.Open;
   Filtro;
 
   if not TelaPrincipal.isAdmin then
@@ -176,7 +185,6 @@ begin
     SBeditar.Enabled  := False;
     SBexcluir.Enabled := False;
   end;
-
 end;
 
 procedure TListaGrupos.epGrupoDescricaoChange(Sender: TObject);

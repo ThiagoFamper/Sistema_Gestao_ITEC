@@ -43,7 +43,7 @@ object TelaDevolucao: TTelaDevolucao
         Top = 153
         Width = 81
         Height = 25
-        Caption = 'Devolver'
+        Caption = 'Salvar'
         Enabled = False
         TabOrder = 0
         OnClick = bDevolverClick
@@ -2040,7 +2040,7 @@ object TelaDevolucao: TTelaDevolucao
       Width = 73
       Height = 20
       BevelOuter = bvNone
-      Caption = 'Devolver'
+      Caption = 'Devolu'#231#227'o'
       TabOrder = 1
     end
     object Panel3: TPanel

@@ -12,6 +12,7 @@ object CadGrupo: TCadGrupo
   Font.Height = -15
   Font.Name = 'Segoe UI'
   Font.Style = [fsBold]
+  OnShow = FormShow
   TextHeight = 20
   object Panel2: TPanel
     Left = 0
@@ -1785,14 +1786,14 @@ object CadGrupo: TCadGrupo
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o'
+        Caption = 'Descri'#231#227'o do Grupo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 65
+        ExplicitWidth = 132
       end
       object dbGrupoDescricao: TDBEdit
         Left = 0
@@ -1815,29 +1816,29 @@ object CadGrupo: TCadGrupo
     object Panel10: TPanel
       Left = 16
       Top = 6
-      Width = 50
+      Width = 100
       Height = 59
       BevelOuter = bvNone
       TabOrder = 1
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 50
+        Width = 100
         Height = 20
         Align = alTop
-        Caption = 'ID'
+        Caption = 'ID do Grupo'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 15
+        ExplicitWidth = 82
       end
       object dbGrupoID: TDBEdit
         Left = 0
         Top = 20
-        Width = 50
+        Width = 100
         Height = 23
         Align = alTop
         DataField = 'id'
@@ -1859,13 +1860,14 @@ object CadGrupo: TCadGrupo
     Width = 1114
     Height = 525
     Align = alClient
-    DataSource = DM.dsFDTabGrupo
+    DataSource = dsGrupo
     Enabled = False
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
     Font.Name = 'Segoe UI Light'
     Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ParentFont = False
     ReadOnly = True
     TabOrder = 2
@@ -1884,9 +1886,23 @@ object CadGrupo: TCadGrupo
       item
         Expanded = False
         FieldName = 'descricao'
-        Title.Caption = 'Descri'#231#227'o'
+        Title.Caption = 'Descri'#231#227'o do Grupo'
         Width = 500
         Visible = True
       end>
+  end
+  object qryGrupo: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT *'
+      'FROM estoqueitec.grupo'
+      'ORDER BY id DESC')
+    Left = 624
+    Top = 186
+  end
+  object dsGrupo: TDataSource
+    DataSet = qryGrupo
+    Left = 712
+    Top = 186
   end
 end

@@ -93,9 +93,17 @@ implementation
 uses Cad_Colaborador, Data_Module, Tela_Principal;
 
 procedure TListaColaborador.SBexcluirClick(Sender: TObject); // botão de excluir
+var
+  resposta: Integer;
 begin
-  if MessageDlg('Você tem certeza que deseja excluir este registro?',mtConfirmation,[mbyes,mbno],0)=mryes then
-  dm.FDTabColaborador.Delete;
+  resposta := MessageBox(0, 'Você tem certeza que deseja excluir este registro?',
+  'Confirmação de Exclusão', MB_YESNO or MB_ICONWARNING);
+
+  if resposta = IDYES then
+  begin
+    dm.FDTabGrupo.Delete;
+    Filtro;
+  end;
 end;
 
 procedure TListaColaborador.SBcancelarClick(Sender: TObject); // botão de cancelar
@@ -135,32 +143,32 @@ procedure TListaColaborador.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
     if dbpColabDescricao.Text = '' then
       begin
-        ShowMessage('O Campo "Descrição" deve ser preenchido!');
+        MessageBox(0, 'O campo "Nome" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpColabDescricao.SetFocus;
       end
   else
     if dbpColabCargo.Text = '' then
       begin
-        ShowMessage('O Campo "Cargo" deve ser preenchido!');
+        MessageBox(0, 'O campo "Cargo" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpColabCargo.SetFocus;
       end
   else
     if cbpColabSetor.Text = '' then
       begin
-        ShowMessage('O Campo "Setor" deve ser preenchido!');
+        MessageBox(0, 'O campo "Setor" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbpColabSetor.SetFocus;
       end
   else
     if cbpColabSede.Text = '' then
       begin
-        ShowMessage('O Campo "Sede" deve ser preenchido!');
+        MessageBox(0, 'O campo "Sede" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbpColabSede.SetFocus;
       end
   else
     begin
       dm.FDTabColaborador.Post;
       dm.FDTabColaborador.Close;
-      ShowMessage('Colaborador editado com sucesso!');
+      MessageBox(0, 'Colaborador editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos();
       TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa();

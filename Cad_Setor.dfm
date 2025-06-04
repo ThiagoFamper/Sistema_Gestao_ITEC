@@ -12,12 +12,13 @@ object CadSetor: TCadSetor
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnShow = FormShow
   TextHeight = 15
   object Panel5: TPanel
     Left = 0
     Top = 114
     Width = 1118
-    Height = 151
+    Height = 145
     Align = alTop
     BevelEdges = [beBottom]
     Color = clWhitesmoke
@@ -27,29 +28,29 @@ object CadSetor: TCadSetor
     object Panel10: TPanel
       Left = 16
       Top = 6
-      Width = 50
+      Width = 100
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 50
+        Width = 100
         Height = 20
         Align = alTop
-        Caption = 'ID'
+        Caption = 'ID do Setor'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 15
+        ExplicitWidth = 76
       end
       object dbSetorID: TDBEdit
         Left = 0
         Top = 20
-        Width = 50
+        Width = 100
         Height = 23
         Align = alTop
         DataField = 'id'
@@ -71,14 +72,14 @@ object CadSetor: TCadSetor
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o'
+        Caption = 'Descri'#231#227'o do Setor'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 65
+        ExplicitWidth = 126
       end
       object dbSetorDescricao: TDBEdit
         Left = 0
@@ -1844,17 +1845,18 @@ object CadSetor: TCadSetor
   end
   object gSetor: TDBGrid
     Left = 0
-    Top = 265
+    Top = 259
     Width = 1118
-    Height = 506
+    Height = 512
     Align = alClient
-    DataSource = DM.dsFDTabSetor
+    DataSource = dsSetor
     Enabled = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ParentFont = False
     ReadOnly = True
     TabOrder = 2
@@ -1873,9 +1875,23 @@ object CadSetor: TCadSetor
       item
         Expanded = False
         FieldName = 'descricao'
-        Title.Caption = 'Descri'#231#227'o'
+        Title.Caption = 'Descri'#231#227'o do Setor'
         Width = 500
         Visible = True
       end>
+  end
+  object qrySetor: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'SELECT *'
+      'FROM estoqueitec.setor'
+      'ORDER BY id DESC')
+    Left = 576
+    Top = 194
+  end
+  object dsSetor: TDataSource
+    DataSet = qrySetor
+    Left = 656
+    Top = 194
   end
 end
