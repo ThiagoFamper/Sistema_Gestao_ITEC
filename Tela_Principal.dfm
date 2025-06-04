@@ -771,8 +771,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 2
     Visible = False
-    ExplicitLeft = 242
-    ExplicitTop = 87
+    ExplicitHeight = 972
     object Panel29: TPanel
       Left = -1
       Top = 0
@@ -1077,8 +1076,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 3
     Visible = False
-    ExplicitLeft = 488
-    ExplicitTop = 87
+    ExplicitHeight = 972
     object Panel36: TPanel
       Left = 0
       Top = 0
@@ -1713,8 +1711,8 @@ object TelaPrincipal: TTelaPrincipal
     end
   end
   object pnlConteudo: TPanel
-    Left = 1018
-    Top = -71
+    Left = 964
+    Top = -73
     Width = 825
     Height = 986
     BevelOuter = bvNone

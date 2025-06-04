@@ -19,13 +19,15 @@ type
     bEntrar: TButton;
     bCancelar: TButton;
     eLogin: TEdit;
-    eSenha: TEdit;
     qryUsuario: TFDQuery;
+    eSenha: TEdit;
+    mostrarSenha: TImage;
     procedure bEntrarClick(Sender: TObject);
     procedure bCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure eLoginKeyPress(Sender: TObject; var Key: Char);
     procedure eSenhaKeyPress(Sender: TObject; var Key: Char);
+    procedure mostrarSenhaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -94,6 +96,18 @@ procedure TTelaLogin.FormShow(Sender: TObject);
 begin
   dm.FDTabUsuario.Open;
   eLogin.SetFocus;
+end;
+
+procedure TTelaLogin.mostrarSenhaClick(Sender: TObject);
+begin
+  if eSenha.PasswordChar = '*' then
+  begin
+    eSenha.PasswordChar := #0;
+  end
+  else
+  begin
+    eSenha.PasswordChar := '*';
+  end;
 end;
 
 end.
