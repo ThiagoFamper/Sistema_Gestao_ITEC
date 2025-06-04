@@ -2396,7 +2396,6 @@ object ListaUsuario: TListaUsuario
     SQL.Strings = (
       'SELECT *'
       'FROM estoqueitec.usuario'
-      'CASE WHEN admin THEN '#39'Sim'#39' ELSE '#39'N'#227'o'#39' END AS admin'
       'WHERE'
       '    (UPPER(nome) LIKE UPPER(:nome)) AND'
       '    (UPPER(login) LIKE UPPER(:login)) AND'

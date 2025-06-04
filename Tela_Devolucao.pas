@@ -30,7 +30,7 @@ type
     Panel12: TPanel;
     Panel13: TPanel;
     Label9: TLabel;
-    dbDevID: TDBEdit;
+    dbDevProdID: TDBEdit;
     Panel14: TPanel;
     Label11: TLabel;
     dbProdCod: TDBEdit;
@@ -61,7 +61,7 @@ type
     Label5: TLabel;
     dbDevSaldo: TDBEdit;
     eDevQtd: TEdit;
-    dbDevCod: TDBEdit;
+    dbDevID: TDBEdit;
     qryUpdateStatus: TFDQuery;
     Panel15: TPanel;
     DBNavigator1: TDBNavigator;
@@ -136,7 +136,7 @@ end;
 
 procedure TTelaDevolucao.HabilitaCampos; // habilitar campos
 begin
-    dbDevCod.Enabled           := True;
+    dbDevProdID.Enabled        := True;
     dbDevDescricao.Enabled     := True;
     rgDev.Enabled              := True;
     eDevQtd.Enabled            := True;
@@ -147,7 +147,7 @@ procedure TTelaDevolucao.bDevolverClick(Sender: TObject);
 var
   produtoID, emprestimoID, quantidadeSaldo, quantidadeDevolvida: Integer;
 begin
-    produtoID := StrToInt(dbDevCod.Text);
+    produtoID := StrToInt(dbDevProdID.Text);
     emprestimoID := StrToInt(dbDevID.Text);
 
     if rgDev.ItemIndex = 0 then
@@ -202,7 +202,7 @@ end;
 
 procedure TTelaDevolucao.DesabilitaCampos; // desabilitar campos
 begin
-    dbDevCod.Enabled           := False;
+    dbDevProdID.Enabled        := False;
     dbDevDescricao.Enabled     := False;
     dbDevSaldo.Enabled         := False;
     rgDev.Enabled              := False;

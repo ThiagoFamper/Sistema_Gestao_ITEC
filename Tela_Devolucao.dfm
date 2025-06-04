@@ -116,13 +116,13 @@ object TelaDevolucao: TTelaDevolucao
         ParentFont = False
         ExplicitWidth = 15
       end
-      object dbDevID: TDBEdit
+      object dbDevProdID: TDBEdit
         Left = 0
         Top = 20
         Width = 50
         Height = 23
         Align = alTop
-        DataField = 'emprestimo_id'
+        DataField = 'produto_id'
         DataSource = dsEmprestimo
         Enabled = False
         ReadOnly = True
@@ -234,12 +234,12 @@ object TelaDevolucao: TTelaDevolucao
         TabOrder = 0
       end
     end
-    object dbDevCod: TDBEdit
+    object dbDevID: TDBEdit
       Left = 127
       Top = 24
       Width = 50
       Height = 23
-      DataField = 'produto_id'
+      DataField = 'emprestimo_id'
       DataSource = dsEmprestimo
       Enabled = False
       TabOrder = 5
@@ -2084,8 +2084,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitTop = 322
-    ExplicitWidth = 1048
+    ExplicitWidth = 1382
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0

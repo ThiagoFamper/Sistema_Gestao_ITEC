@@ -1712,12 +1712,17 @@ object TelaPrincipal: TTelaPrincipal
   end
   object pnlConteudo: TPanel
     Left = 964
-    Top = -73
-    Width = 825
-    Height = 986
+    Top = 81
+    Width = 191
+    Height = 980
+    Align = alClient
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
     TabOrder = 5
+    ExplicitLeft = 996
+    ExplicitTop = -73
+    ExplicitWidth = 825
+    ExplicitHeight = 986
   end
 end
