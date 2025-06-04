@@ -1026,10 +1026,11 @@ object ListaEstoque: TListaEstoque
     Height = 207
     Align = alTop
     BevelEdges = [beBottom]
+    BevelKind = bkFlat
+    BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1924
     object Panel19: TPanel
       Left = 16
       Top = 6
@@ -1191,76 +1192,92 @@ object ListaEstoque: TListaEstoque
       end
     end
   end
-  object Panel3: TPanel
+  object gEstoque: TDBGrid
+    Left = 0
+    Top = 358
+    Width = 1926
+    Height = 451
+    Hint = 'Pesquisar Produtos'
+    Align = alClient
+    BorderStyle = bsNone
+    DataSource = dsProduto
+    FixedColor = clWhitesmoke
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ParentColor = True
+    ReadOnly = True
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'cod_produto'
+        Title.Caption = 'C'#243'digo'
+        Width = 70
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'descricao'
+        Title.Caption = 'Descri'#231#227'o'
+        Width = 500
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'marca'
+        Title.Caption = 'Marca'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'modelo'
+        Title.Caption = 'Modelo'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'grupo'
+        Title.Caption = 'Grupo'
+        Width = 150
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'saldo'
+        Title.Caption = 'Estoque'
+        Visible = True
+      end>
+  end
+  object Panel4: TPanel
     Left = 0
     Top = 321
     Width = 1926
-    Height = 488
-    Align = alClient
+    Height = 37
+    Align = alTop
+    BevelEdges = [beBottom]
+    BevelKind = bkFlat
     BevelOuter = bvNone
-    TabOrder = 2
-    ExplicitTop = 358
-    ExplicitWidth = 1924
-    ExplicitHeight = 195
-    object gEstoque: TDBGrid
+    Color = clWhitesmoke
+    ParentBackground = False
+    TabOrder = 3
+    ExplicitLeft = 142
+    ExplicitTop = 448
+    ExplicitWidth = 1154
+    object DBNavigator1: TDBNavigator
+      AlignWithMargins = True
       Left = 0
-      Top = 0
-      Width = 1926
-      Height = 488
-      Hint = 'Pesquisar Produtos'
-      Align = alClient
+      Top = 6
+      Width = 224
+      Height = 25
       DataSource = dsProduto
-      FixedColor = clWhitesmoke
-      ParentColor = True
-      ReadOnly = True
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
       TabOrder = 0
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -12
-      TitleFont.Name = 'Segoe UI'
-      TitleFont.Style = []
-      Columns = <
-        item
-          Expanded = False
-          FieldName = 'cod_produto'
-          Title.Caption = 'C'#243'digo'
-          Width = 70
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'descricao'
-          Title.Caption = 'Descri'#231#227'o'
-          Width = 500
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'marca'
-          Title.Caption = 'Marca'
-          Width = 200
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'modelo'
-          Title.Caption = 'Modelo'
-          Width = 200
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'grupo'
-          Title.Caption = 'Grupo'
-          Width = 150
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'saldo'
-          Title.Caption = 'Estoque'
-          Visible = True
-        end>
     end
   end
   object qryProduto: TFDQuery

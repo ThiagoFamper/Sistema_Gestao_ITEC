@@ -35,10 +35,11 @@ type
     Panel23: TPanel;
     Label11: TLabel;
     epProdGrupo: TEdit;
-    Panel3: TPanel;
-    gEstoque: TDBGrid;
     qryProduto: TFDQuery;
     dsProduto: TDataSource;
+    gEstoque: TDBGrid;
+    Panel4: TPanel;
+    DBNavigator1: TDBNavigator;
     procedure SBsairClick(Sender: TObject);
     procedure Filtro;
     procedure epProdCodChange(Sender: TObject);

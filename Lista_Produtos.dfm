@@ -2615,7 +2615,7 @@ object ListaProdutos: TListaProdutos
       Top = 6
       Width = 224
       Height = 25
-      DataSource = DM.dsFDTabProduto
+      DataSource = dsProduto
       VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
       TabOrder = 0
     end
@@ -2811,6 +2811,7 @@ object ListaProdutos: TListaProdutos
       Align = alClient
       DataSource = dsProduto
       FixedColor = clWhitesmoke
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       ParentColor = True
       ReadOnly = True
       TabOrder = 0

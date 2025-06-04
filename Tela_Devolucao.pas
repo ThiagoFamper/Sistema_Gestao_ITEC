@@ -37,8 +37,6 @@ type
     Panel18: TPanel;
     Label16: TLabel;
     dbDevDescricao: TDBEdit;
-    Panel22: TPanel;
-    gDev: TDBGrid;
     Panel23: TPanel;
     Label19: TLabel;
     eDevCod: TEdit;
@@ -65,6 +63,9 @@ type
     eDevQtd: TEdit;
     dbDevCod: TDBEdit;
     qryUpdateStatus: TFDQuery;
+    Panel15: TPanel;
+    DBNavigator1: TDBNavigator;
+    gDev: TDBGrid;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

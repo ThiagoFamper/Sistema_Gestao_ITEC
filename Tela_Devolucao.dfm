@@ -253,6 +253,8 @@ object TelaDevolucao: TTelaDevolucao
     Height = 151
     Align = alTop
     BevelEdges = [beBottom]
+    BevelKind = bkFlat
+    BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
@@ -2069,90 +2071,106 @@ object TelaDevolucao: TTelaDevolucao
       TabOrder = 4
     end
   end
-  object Panel22: TPanel
+  object Panel15: TPanel
     Left = 0
     Top = 265
     Width = 1384
-    Height = 505
-    Align = alClient
+    Height = 37
+    Align = alTop
+    BevelEdges = [beBottom]
+    BevelKind = bkFlat
     BevelOuter = bvNone
+    Caption = 'dsProduto'
+    Color = clWhitesmoke
+    ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1382
-    ExplicitHeight = 497
-    object gDev: TDBGrid
+    ExplicitTop = 322
+    ExplicitWidth = 1048
+    object DBNavigator1: TDBNavigator
+      AlignWithMargins = True
       Left = 0
-      Top = 0
-      Width = 1384
-      Height = 505
-      Hint = 'Pesquisar Devolucao'
-      Align = alClient
+      Top = 6
+      Width = 224
+      Height = 25
       DataSource = dsEmprestimo
-      ReadOnly = True
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
       TabOrder = 0
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -12
-      TitleFont.Name = 'Segoe UI'
-      TitleFont.Style = []
-      StyleElements = []
-      Columns = <
-        item
-          Expanded = False
-          FieldName = 'cod_produto'
-          Title.Caption = 'C'#243'digo Produto'
-          Width = 90
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'descricao_produto'
-          Title.Caption = 'Descri'#231#227'o Produto'
-          Width = 200
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'nome_operador'
-          Title.Caption = 'Emprestador'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'nome_colaborador'
-          Title.Caption = 'Tomador'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'data_emprestimo'
-          Title.Caption = 'Data Empr'#233'stimo'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'data_devolucao'
-          Title.Caption = 'Data Devolu'#231#227'o'
-          Width = 100
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'quantidade'
-          Title.Caption = 'Quantidade'
-          Width = 70
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'saldo'
-          Title.Caption = 'Saldo'
-          Width = 70
-          Visible = True
-        end>
     end
+  end
+  object gDev: TDBGrid
+    Left = 0
+    Top = 302
+    Width = 1384
+    Height = 468
+    Hint = 'Pesquisar Devolucao'
+    Align = alClient
+    DataSource = dsEmprestimo
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ReadOnly = True
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    StyleElements = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'cod_produto'
+        Title.Caption = 'C'#243'digo Produto'
+        Width = 90
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'descricao_produto'
+        Title.Caption = 'Descri'#231#227'o Produto'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nome_operador'
+        Title.Caption = 'Emprestador'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nome_colaborador'
+        Title.Caption = 'Tomador'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'data_emprestimo'
+        Title.Caption = 'Data Empr'#233'stimo'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'data_devolucao'
+        Title.Caption = 'Data Devolu'#231#227'o'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'quantidade'
+        Title.Caption = 'Quantidade'
+        Width = 70
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'saldo'
+        Title.Caption = 'Saldo'
+        Width = 70
+        Visible = True
+      end>
   end
   object qryUpdateEstoque: TFDQuery
     Connection = DM.FDEstoqueItec
@@ -2160,8 +2178,8 @@ object TelaDevolucao: TTelaDevolucao
       'UPDATE estoqueitec.emprestimo_produto'
       'SET saldo = saldo - :quantidade'
       'WHERE id = :emprestimoID;')
-    Left = 640
-    Top = 226
+    Left = 560
+    Top = 242
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2178,8 +2196,8 @@ object TelaDevolucao: TTelaDevolucao
       'UPDATE estoqueitec.estoque'
       'SET saldo = saldo + :quantidade'
       'WHERE produto_id = :produtoID;')
-    Left = 768
-    Top = 226
+    Left = 688
+    Top = 242
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2197,8 +2215,8 @@ object TelaDevolucao: TTelaDevolucao
       'SET qtd_devolvida = qtd_devolvida + :quantidade,'
       'data_devolucao = CURRENT_DATE'
       'WHERE emprestimo_id = :emprestimoID;')
-    Left = 880
-    Top = 226
+    Left = 800
+    Top = 242
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2242,8 +2260,8 @@ object TelaDevolucao: TTelaDevolucao
       '  AND UPPER(c_operador.descricao) LIKE UPPER(:operador)'
       '  AND UPPER(c_colaborador.descricao) LIKE UPPER(:colaborador);'
       '')
-    Left = 992
-    Top = 226
+    Left = 912
+    Top = 242
     ParamData = <
       item
         Name = 'CODIGO'
@@ -2273,8 +2291,8 @@ object TelaDevolucao: TTelaDevolucao
       'UPDATE estoqueitec.emprestimo_produto'
       'SET devolvido = True'
       'WHERE id = :emprestimoID')
-    Left = 519
-    Top = 225
+    Left = 439
+    Top = 241
     ParamData = <
       item
         Name = 'EMPRESTIMOID'

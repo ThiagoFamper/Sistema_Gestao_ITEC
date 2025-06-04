@@ -112,6 +112,29 @@ type
     procedure Panel2Resize(Sender: TObject);
     procedure pnpConEstoqueClick(Sender: TObject);
     procedure Image6Click(Sender: TObject);
+    procedure Image7Click(Sender: TObject);
+    procedure Image8Click(Sender: TObject);
+    procedure Image10Click(Sender: TObject);
+    procedure Image17Click(Sender: TObject);
+    procedure Image18Click(Sender: TObject);
+    procedure Image19Click(Sender: TObject);
+    procedure Image20Click(Sender: TObject);
+    procedure Image21Click(Sender: TObject);
+    procedure Image3Click(Sender: TObject);
+    procedure Image22Click(Sender: TObject);
+    procedure Image23Click(Sender: TObject);
+    procedure Image24Click(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+    procedure Image25Click(Sender: TObject);
+    procedure Image27Click(Sender: TObject);
+    procedure Image26Click(Sender: TObject);
+    procedure Image11Click(Sender: TObject);
+    procedure Image12Click(Sender: TObject);
+    procedure Image13Click(Sender: TObject);
+    procedure Image2Click(Sender: TObject);
+    procedure Image14Click(Sender: TObject);
+    procedure Image16Click(Sender: TObject);
+    procedure Image15Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -155,9 +178,124 @@ begin
   fpConsulta.Enabled        := True;
 end;
 
+procedure TTelaPrincipal.Image10Click(Sender: TObject);
+begin
+  Close();
+end;
+
+procedure TTelaPrincipal.Image11Click(Sender: TObject);
+begin
+  pnpCadProdClick(pnpCadProd);
+end;
+
+procedure TTelaPrincipal.Image12Click(Sender: TObject);
+begin
+  pnpCadColabClick(pnpCadColab);
+end;
+
+procedure TTelaPrincipal.Image13Click(Sender: TObject);
+begin
+  pnpCadSetClick(pnpCadSet);
+end;
+
+procedure TTelaPrincipal.Image14Click(Sender: TObject);
+begin
+  pnpCadGruClick(pnpCadGru);
+end;
+
+procedure TTelaPrincipal.Image15Click(Sender: TObject);
+begin
+  pnpCadVoltarClick(pnpCadVoltar);
+end;
+
+procedure TTelaPrincipal.Image16Click(Sender: TObject);
+begin
+  pnpCadUserClick(pnpCadUser);
+end;
+
+procedure TTelaPrincipal.Image17Click(Sender: TObject);
+begin
+  pnpMovEntClick(pnpMovEnt);
+end;
+
+procedure TTelaPrincipal.Image18Click(Sender: TObject);
+begin
+  pnpMovSaiClick(pnpMovSai);
+end;
+
+procedure TTelaPrincipal.Image19Click(Sender: TObject);
+begin
+  pnpMovEmpClick(pnpMovEmp);
+end;
+
+procedure TTelaPrincipal.Image1Click(Sender: TObject);
+begin
+  pnpConSedeClick(pnpConSede);
+end;
+
+procedure TTelaPrincipal.Image20Click(Sender: TObject);
+begin
+  pnpMovDevclick(pnpMovDev);
+end;
+
+procedure TTelaPrincipal.Image21Click(Sender: TObject);
+begin
+  pnpMovVoltarClick(pnpMovVoltar);
+end;
+
+procedure TTelaPrincipal.Image22Click(Sender: TObject);
+begin
+  pnpConProdClick(pnpConProd);
+end;
+
+procedure TTelaPrincipal.Image23Click(Sender: TObject);
+begin
+  pnpConColabClick(pnpConColab);
+end;
+
+procedure TTelaPrincipal.Image24Click(Sender: TObject);
+begin
+  pnpConSetClick(pnpConSet);
+end;
+
+procedure TTelaPrincipal.Image25Click(Sender: TObject);
+begin
+  pnpConGruClick(pnpConGru);
+end;
+
+procedure TTelaPrincipal.Image26Click(Sender: TObject);
+begin
+  pnpConVoltarClick(pnpConVoltar);
+end;
+
+procedure TTelaPrincipal.Image27Click(Sender: TObject);
+begin
+  pnpConUserClick(pnpConUser);
+end;
+
+procedure TTelaPrincipal.Image2Click(Sender: TObject);
+begin
+  pnpCadSedeClick(pnpCadSede);
+end;
+
+procedure TTelaPrincipal.Image3Click(Sender: TObject);
+begin
+  pnpConEstoqueClick(pnpConEstoque);
+end;
+
 procedure TTelaPrincipal.Image6Click(Sender: TObject);
 begin
   pnpCadClick(pnpCad);
+end;
+
+procedure TTelaPrincipal.Image7Click(Sender: TObject);
+begin
+  pnpMovClick(pnpMov);
+end;
+
+procedure TTelaPrincipal.Image8Click(Sender: TObject);
+begin
+  pnpConsClick(pnpCons);
 end;
 
 procedure TTelaPrincipal.Panel2Resize(Sender: TObject);

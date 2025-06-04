@@ -2328,7 +2328,7 @@ object ListaUsuario: TListaUsuario
       Top = 6
       Width = 224
       Height = 25
-      DataSource = DM.dsFDTabUsuario
+      DataSource = dsUsuario
       VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
       TabOrder = 0
     end
@@ -2351,6 +2351,7 @@ object ListaUsuario: TListaUsuario
       Hint = 'Pesquisar Usuario'
       Align = alClient
       DataSource = dsUsuario
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET

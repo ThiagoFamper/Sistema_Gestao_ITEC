@@ -1764,9 +1764,9 @@ object EntradaProd: TEntradaProd
   end
   object gEntrada: TDBGrid
     Left = 0
-    Top = 393
+    Top = 470
     Width = 1117
-    Height = 478
+    Height = 401
     Align = alClient
     DataSource = DM.dsFDTabEntrada
     Enabled = False
@@ -1775,6 +1775,7 @@ object EntradaProd: TEntradaProd
     Font.Height = -12
     Font.Name = 'Segoe UI'
     Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ParentFont = False
     ReadOnly = True
     TabOrder = 1
@@ -1835,7 +1836,7 @@ object EntradaProd: TEntradaProd
     Left = 0
     Top = 114
     Width = 1117
-    Height = 279
+    Height = 319
     Align = alTop
     BevelEdges = [beBottom]
     BiDiMode = bdLeftToRight
@@ -1843,7 +1844,6 @@ object EntradaProd: TEntradaProd
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1115
     object Panel12: TPanel
       Left = 16
       Top = 6
@@ -2121,14 +2121,38 @@ object EntradaProd: TEntradaProd
       end
     end
   end
+  object Panel6: TPanel
+    Left = 0
+    Top = 433
+    Width = 1117
+    Height = 37
+    Align = alTop
+    BevelEdges = [beBottom]
+    Color = clWhitesmoke
+    ParentBackground = False
+    TabOrder = 3
+    ExplicitLeft = 68
+    ExplicitTop = 454
+    ExplicitWidth = 1457
+    object DBNavigator1: TDBNavigator
+      AlignWithMargins = True
+      Left = 0
+      Top = 6
+      Width = 224
+      Height = 25
+      DataSource = DM.dsFDTabEntrada
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      TabOrder = 0
+    end
+  end
   object qryVerifica: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
       'SELECT COUNT(*) AS qtd'
       'FROM estoqueitec.estoque'
       'WHERE produto_id = :produto_id;')
-    Left = 640
-    Top = 330
+    Left = 808
+    Top = 218
     ParamData = <
       item
         Name = 'PRODUTO_ID'
@@ -2141,8 +2165,8 @@ object EntradaProd: TEntradaProd
       'UPDATE estoqueitec.estoque'
       'SET saldo = saldo + :quantidade'
       'WHERE produto_id = :produto_id;')
-    Left = 744
-    Top = 330
+    Left = 896
+    Top = 218
     ParamData = <
       item
         Name = 'QUANTIDADE'
@@ -2158,8 +2182,8 @@ object EntradaProd: TEntradaProd
     SQL.Strings = (
       'INSERT INTO estoqueitec.estoque (produto_id, saldo)'
       'VALUES (:produto_id, :quantidade);')
-    Left = 856
-    Top = 330
+    Left = 1008
+    Top = 218
     ParamData = <
       item
         Name = 'PRODUTO_ID'

@@ -2192,7 +2192,7 @@ object ListaColaborador: TListaColaborador
       Top = 6
       Width = 224
       Height = 25
-      DataSource = DM.dsFDTabColaborador
+      DataSource = dsColab
       VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
       TabOrder = 0
     end
@@ -2403,6 +2403,7 @@ object ListaColaborador: TListaColaborador
       Hint = 'Pesquisar Colaborador'
       Align = alClient
       DataSource = dsColab
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET

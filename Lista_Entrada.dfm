@@ -2765,6 +2765,7 @@ object ListaEntrada: TListaEntrada
       Hint = 'Pesquisar Entrada'
       Align = alClient
       DataSource = DM.dsFDTabEntrada
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET

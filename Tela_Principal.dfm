@@ -381,7 +381,6 @@ object TelaPrincipal: TTelaPrincipal
     Width = 241
     Height = 980
     Align = alLeft
-    BevelEdges = []
     BevelOuter = bvNone
     Color = clTeal
     ParentBackground = False
@@ -413,6 +412,7 @@ object TelaPrincipal: TTelaPrincipal
       Width = 242
       Height = 450
       AutoSize = True
+      BevelEdges = []
       Caption = 'fpCadastro'
       FlowStyle = fsLeftRightBottomTop
       TabOrder = 1
@@ -451,6 +451,7 @@ object TelaPrincipal: TTelaPrincipal
             CFCC50C1FA4992D4BCC72481B0B099715DF75414C58FCCF3E85F6F68D110B468
             085A34042DBFF540FC33C98518360000000049454E44AE426082}
           Transparent = True
+          OnClick = Image15Click
         end
       end
       object pnpCadUser: TPanel
@@ -516,6 +517,7 @@ object TelaPrincipal: TTelaPrincipal
             116885806B5D9E64B678E81DAA9D7849FB6382009FA47A1F029FE68BC1F314DD
             3AF5215447B1FE79AAB4FDDC01F8A3FCB69F35F08397F38E88BBC62891512223
             58EE02A7EC5C517C2BD3220000000049454E44AE426082}
+          OnClick = Image16Click
         end
       end
       object pnpCadGru: TPanel
@@ -562,6 +564,7 @@ object TelaPrincipal: TTelaPrincipal
             C66576C2D06740DC1E37408B1362B1589CC966B38F77CF267BEFE4D353DDA1A7
             DA0CA3A105880C4B4174B36303F20F84FC2D42E03130AF0000000049454E44AE
             426082}
+          OnClick = Image14Click
         end
       end
       object pnpCadSede: TPanel
@@ -597,6 +600,7 @@ object TelaPrincipal: TTelaPrincipal
             9BD92649926BBEE6FD022620AABF262CCB9AD2A6BA3702D1890EA4CEBC807406
             D2B500C22D80704B6F200FA3704951F62A15A90000000049454E44AE426082}
           Transparent = True
+          OnClick = Image2Click
         end
       end
       object pnpCadSet: TPanel
@@ -648,6 +652,7 @@ object TelaPrincipal: TTelaPrincipal
             1E8F67C816C4C982FEA62910D94C81C8660A44365320B2990291CDB60CC82F77
             CC6A819CCBE5980000000049454E44AE426082}
           Transparent = True
+          OnClick = Image13Click
         end
       end
       object pnpCadColab: TPanel
@@ -692,6 +697,7 @@ object TelaPrincipal: TTelaPrincipal
             2214B24D72C254306B1D336B559C39CD365E5A1888B43010696120D2E21E1418
             DA3302F4B6810000000049454E44AE426082}
           Transparent = True
+          OnClick = Image12Click
         end
       end
       object pnpCadProd: TPanel
@@ -749,6 +755,7 @@ object TelaPrincipal: TTelaPrincipal
             799A4C93AB29408E601A3589F699E97F18588EA0C97B3AB93521D741AD99F265
             FC0B87DEC400D19BFC062B1C5451AC243E890000000049454E44AE426082}
           Transparent = True
+          OnClick = Image11Click
         end
       end
     end
@@ -764,11 +771,12 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 2
     Visible = False
-    ExplicitHeight = 972
+    ExplicitLeft = 242
+    ExplicitTop = 87
     object Panel29: TPanel
-      Left = 0
+      Left = -1
       Top = 0
-      Width = 241
+      Width = 242
       Height = 114
       BevelEdges = [beTop, beRight, beBottom]
       BevelKind = bkFlat
@@ -787,16 +795,19 @@ object TelaPrincipal: TTelaPrincipal
     object fpMovimentacao: TFlowPanel
       Left = 1
       Top = 114
-      Width = 241
-      Height = 322
+      Width = 242
+      Height = 324
       AutoSize = True
+      BevelEdges = []
+      BiDiMode = bdLeftToRight
       Caption = 'fpMovimentacao'
       FlowStyle = fsLeftRightBottomTop
+      ParentBiDiMode = False
       TabOrder = 1
       object pnpMovVoltar: TPanel
         Left = 1
-        Top = 257
-        Width = 239
+        Top = 259
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -828,12 +839,13 @@ object TelaPrincipal: TTelaPrincipal
             CFCC50C1FA4992D4BCC72481B0B099715DF75414C58FCCF3E85F6F68D110B468
             085A34042DBFF540FC33C98518360000000049454E44AE426082}
           Transparent = True
+          OnClick = Image21Click
         end
       end
       object pnpMovDev: TPanel
         Left = 1
-        Top = 193
-        Width = 239
+        Top = 195
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -894,12 +906,13 @@ object TelaPrincipal: TTelaPrincipal
             9FEEF99F6AD8B2CC66CB22D68B4A8BAC59F656ABF5DBF7B2019180960124FEBF
             B2FA29EDB3D96B58E133007E352BFF184B5280515B10D2710000000049454E44
             AE426082}
+          OnClick = Image20Click
         end
       end
       object pnpMovEmp: TPanel
         Left = 1
-        Top = 129
-        Width = 239
+        Top = 131
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -960,12 +973,13 @@ object TelaPrincipal: TTelaPrincipal
             89FFAFBCA831BE9D5DF887E4C34FE9C6FF0B90445E51BD5EA7BD000000004945
             4E44AE426082}
           Transparent = True
+          OnClick = Image19Click
         end
       end
       object pnpMovSai: TPanel
         Left = 1
-        Top = 65
-        Width = 239
+        Top = 67
+        Width = 240
         Height = 64
         BevelEdges = [beRight]
         BevelKind = bkFlat
@@ -1003,13 +1017,14 @@ object TelaPrincipal: TTelaPrincipal
             E8DADD3E337C8FA7D31E0E495B38246DF9062C947D42C63ABBA0000000004945
             4E44AE426082}
           Transparent = True
+          OnClick = Image18Click
         end
       end
       object pnpMovEnt: TPanel
         Left = 1
         Top = 1
-        Width = 239
-        Height = 64
+        Width = 240
+        Height = 66
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1046,6 +1061,7 @@ object TelaPrincipal: TTelaPrincipal
             C09998435775DBA7FB1E4FD31E06A12D0C425BBE001ECE7B4263323031000000
             0049454E44AE426082}
           Transparent = True
+          OnClick = Image17Click
         end
       end
     end
@@ -1061,7 +1077,8 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 3
     Visible = False
-    ExplicitHeight = 972
+    ExplicitLeft = 488
+    ExplicitTop = 87
     object Panel36: TPanel
       Left = 0
       Top = 0
@@ -1087,6 +1104,7 @@ object TelaPrincipal: TTelaPrincipal
       Width = 242
       Height = 514
       AutoSize = True
+      BevelEdges = []
       Caption = 'fpConsulta'
       FlowStyle = fsLeftRightBottomTop
       TabOrder = 1
@@ -1125,6 +1143,7 @@ object TelaPrincipal: TTelaPrincipal
             CFCC50C1FA4992D4BCC72481B0B099715DF75414C58FCCF3E85F6F68D110B468
             085A34042DBFF540FC33C98518360000000049454E44AE426082}
           Transparent = True
+          OnClick = Image26Click
         end
       end
       object pnpConUser: TPanel
@@ -1190,6 +1209,7 @@ object TelaPrincipal: TTelaPrincipal
             116885806B5D9E64B678E81DAA9D7849FB6382009FA47A1F029FE68BC1F314DD
             3AF5215447B1FE79AAB4FDDC01F8A3FCB69F35F08397F38E88BBC62891512223
             58EE02A7EC5C517C2BD3220000000049454E44AE426082}
+          OnClick = Image27Click
         end
       end
       object pnpConGru: TPanel
@@ -1236,6 +1256,7 @@ object TelaPrincipal: TTelaPrincipal
             C66576C2D06740DC1E37408B1362B1589CC966B38F77CF267BEFE4D353DDA1A7
             DA0CA3A105880C4B4174B36303F20F84FC2D42E03130AF0000000049454E44AE
             426082}
+          OnClick = Image25Click
         end
       end
       object pnpConSede: TPanel
@@ -1271,6 +1292,7 @@ object TelaPrincipal: TTelaPrincipal
             9BD92649926BBEE6FD022620AABF262CCB9AD2A6BA3702D1890EA4CEBC807406
             D2B500C22D80704B6F200FA3704951F62A15A90000000049454E44AE426082}
           Transparent = True
+          OnClick = Image1Click
         end
       end
       object pnpConSet: TPanel
@@ -1322,6 +1344,7 @@ object TelaPrincipal: TTelaPrincipal
             1E8F67C816C4C982FEA62910D94C81C8660A44365320B2990291CDB60CC82F77
             CC6A819CCBE5980000000049454E44AE426082}
           Transparent = True
+          OnClick = Image24Click
         end
       end
       object pnpConColab: TPanel
@@ -1366,6 +1389,7 @@ object TelaPrincipal: TTelaPrincipal
             2214B24D72C254306B1D336B559C39CD365E5A1888B43010696120D2E21E1418
             DA3302F4B6810000000049454E44AE426082}
           Transparent = True
+          OnClick = Image23Click
         end
       end
       object pnpConProd: TPanel
@@ -1423,6 +1447,7 @@ object TelaPrincipal: TTelaPrincipal
             799A4C93AB29408E601A3589F699E97F18588EA0C97B3AB93521D741AD99F265
             FC0B87DEC400D19BFC062B1C5451AC243E890000000049454E44AE426082}
           Transparent = True
+          OnClick = Image22Click
         end
       end
       object pnpConEstoque: TPanel
@@ -1461,6 +1486,7 @@ object TelaPrincipal: TTelaPrincipal
             2479E83A66DCBF70FCC5306468F904374D17423275F07A0000000049454E44AE
             426082}
           Transparent = True
+          OnClick = Image3Click
         end
       end
     end
@@ -1501,6 +1527,7 @@ object TelaPrincipal: TTelaPrincipal
       Width = 241
       Height = 258
       AutoSize = True
+      BevelEdges = []
       Caption = 'fpPrincipal'
       FlowStyle = fsLeftRightBottomTop
       TabOrder = 1
@@ -1540,6 +1567,7 @@ object TelaPrincipal: TTelaPrincipal
             106B7188B538C45A1C622D0EB1962B887E0042130FD5D40000000049454E44AE
             426082}
           Transparent = True
+          OnClick = Image10Click
         end
       end
       object pnpCons: TPanel
@@ -1595,6 +1623,7 @@ object TelaPrincipal: TTelaPrincipal
             B686032900330F186BA1FEAA051104D54CF8D7C566CAF40CDBACBBE140044166
             BEA2D9826B02103D85FAA91E84C0DC2FF515A72140CA912688DAA409A2365935
             207F01F4248B42C1E5AA120000000049454E44AE426082}
+          OnClick = Image8Click
         end
       end
       object pnpMov: TPanel
@@ -1635,6 +1664,7 @@ object TelaPrincipal: TTelaPrincipal
             45C3B03C470A81617DB293C72479D7228D49FAF64B16C3F37FE40FA6DFEF2FF7
             7ABDF7C241A218D775ABDD6EF73A6F043724C0ECE2DDEB266FC0C4106A91106A
             91106A91106A991AC80FE5281042FF5C1D8E0000000049454E44AE426082}
+          OnClick = Image7Click
         end
       end
       object pnpCad: TPanel
@@ -1683,16 +1713,13 @@ object TelaPrincipal: TTelaPrincipal
     end
   end
   object pnlConteudo: TPanel
-    Left = 964
-    Top = 81
-    Width = 191
-    Height = 980
-    Align = alClient
+    Left = 1018
+    Top = -71
+    Width = 825
+    Height = 986
     BevelOuter = bvNone
     Color = clWhite
     ParentBackground = False
     TabOrder = 5
-    ExplicitWidth = 189
-    ExplicitHeight = 972
   end
 end

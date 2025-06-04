@@ -53,6 +53,8 @@ type
     Panel21: TPanel;
     Label5: TLabel;
     eEntradaEstoque: TEdit;
+    Panel6: TPanel;
+    DBNavigator1: TDBNavigator;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
