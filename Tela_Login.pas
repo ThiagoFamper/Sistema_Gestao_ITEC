@@ -22,6 +22,8 @@ type
     qryUsuario: TFDQuery;
     eSenha: TEdit;
     mostrarSenha: TImage;
+    login: TImage;
+    senha: TImage;
     procedure bEntrarClick(Sender: TObject);
     procedure bCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
