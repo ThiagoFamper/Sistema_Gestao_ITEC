@@ -26,7 +26,9 @@ uses
   Tela_Entrada in 'Tela_Entrada.pas' {TelaEntrada},
   Tela_Saida in 'Tela_Saida.pas' {TelaSaida},
   Tela_Emprestimo in 'Tela_Emprestimo.pas' {TelaEmprestimo},
-  Lista_Estoque in 'Lista_Estoque.pas' {ListaEstoque};
+  Lista_Estoque in 'Lista_Estoque.pas' {ListaEstoque},
+  Vcl.Themes,
+  Vcl.Styles;
 
 {$R *.res}
 

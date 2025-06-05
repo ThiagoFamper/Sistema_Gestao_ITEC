@@ -86,6 +86,7 @@ object RelatorioProduto: TRelatorioProduto
         Top = 0
         Width = 241
         Height = 23
+        Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 0.944744328706292400
         TabOrder = 0
@@ -123,25 +124,27 @@ object RelatorioProduto: TRelatorioProduto
       end
       object DateTimeFinal: TDateTimePicker
         Left = 83
-        Top = 0
+        Top = 3
         Width = 241
         Height = 23
+        Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 0.944744328706292400
         TabOrder = 0
       end
     end
     object BitBtn1: TBitBtn
-      Left = 115
+      Left = 114
       Top = 200
       Width = 89
       Height = 25
+      Cursor = crHandPoint
       Anchors = []
       Caption = 'Gerar Relat'#243'rio'
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
-      ExplicitLeft = 114
+      ExplicitLeft = 113
       ExplicitTop = 194
     end
   end
@@ -153,35 +156,6 @@ object RelatorioProduto: TRelatorioProduto
     DataSetOptions = []
     Left = 224
     Top = 304
-    FieldDefs = <
-      item
-        FieldName = 'cod_produto'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'grupo_descricao'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'marca'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'modelo'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'data'
-      end>
   end
   object FDQueryRelatProd: TFDQuery
     Connection = DM.FDEstoqueItec

@@ -32,6 +32,7 @@ object RelatorioSaida: TRelatorioSaida
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -44,6 +45,8 @@ object RelatorioSaida: TRelatorioSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     DesignSize = (
       340
       290)
@@ -57,6 +60,7 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 0
         Top = 0
@@ -71,6 +75,7 @@ object RelatorioSaida: TRelatorioSaida
         Top = 0
         Width = 241
         Height = 23
+        Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 0.944744328706292400
         TabOrder = 0
@@ -85,6 +90,7 @@ object RelatorioSaida: TRelatorioSaida
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -99,6 +105,7 @@ object RelatorioSaida: TRelatorioSaida
         Top = 0
         Width = 241
         Height = 23
+        Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 0.944744328706292400
         TabOrder = 0
@@ -113,6 +120,7 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitWidth = 338
     end
     object Panel5: TPanel
       Left = 0
@@ -123,17 +131,21 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 3
+      ExplicitWidth = 338
     end
     object BitBtn1: TBitBtn
-      Left = 103
+      Left = 102
       Top = 192
       Width = 89
       Height = 25
+      Cursor = crHandPoint
       Anchors = []
       Caption = 'Gerar Relat'#243'rio'
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
+      ExplicitLeft = 101
+      ExplicitTop = 186
     end
   end
   object frxRelatSai: TfrxReport
@@ -583,27 +595,5 @@ object RelatorioSaida: TRelatorioSaida
     DataSetOptions = []
     Left = 120
     Top = 296
-    FieldDefs = <
-      item
-        FieldName = 'cod_produto'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'oper'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'quantidade'
-      end
-      item
-        FieldName = 'data_saida'
-      end>
   end
 end

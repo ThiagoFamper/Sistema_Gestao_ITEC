@@ -46,6 +46,7 @@ object TelaLogin: TTelaLogin
     Top = 220
     Width = 23
     Height = 23
+    Cursor = crHandPoint
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000000170000
       00170806000000E02AD4A0000001A44944415478DAED94BD4BC34018C67B0995
@@ -186,6 +187,7 @@ object TelaLogin: TTelaLogin
     Top = 266
     Width = 75
     Height = 25
+    Cursor = crHandPoint
     Caption = 'Entrar'
     TabOrder = 1
     OnClick = bEntrarClick
@@ -195,6 +197,7 @@ object TelaLogin: TTelaLogin
     Top = 266
     Width = 75
     Height = 25
+    Cursor = crHandPoint
     Caption = 'Cancelar'
     TabOrder = 2
     OnClick = bCancelarClick

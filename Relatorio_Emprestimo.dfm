@@ -32,6 +32,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -44,6 +45,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     DesignSize = (
       340
       290)
@@ -56,6 +59,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -67,6 +71,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 0
         Top = 0
@@ -81,6 +86,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         Top = 0
         Width = 241
         Height = 23
+        Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 0.944744328706292400
         TabOrder = 0
@@ -95,6 +101,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -105,6 +112,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -119,21 +127,25 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         Top = 0
         Width = 241
         Height = 23
+        Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 0.944744328706292400
         TabOrder = 0
       end
     end
     object BitBtn1: TBitBtn
-      Left = 108
+      Left = 107
       Top = 199
       Width = 89
       Height = 25
+      Cursor = crHandPoint
       Anchors = []
       Caption = 'Gerar Relat'#243'rio'
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
+      ExplicitLeft = 106
+      ExplicitTop = 193
     end
   end
   object frxRelatEmp: TfrxReport
@@ -667,36 +679,5 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     DataSetOptions = []
     Left = 215
     Top = 296
-    FieldDefs = <
-      item
-        FieldName = 'cod'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'oper'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'quantidade'
-      end
-      item
-        FieldName = 'data'
-        FieldType = fftDateTime
-      end
-      item
-        FieldName = 'colab'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'devolvido'
-      end>
   end
 end

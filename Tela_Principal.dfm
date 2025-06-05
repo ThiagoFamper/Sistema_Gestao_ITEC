@@ -421,6 +421,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 385
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -459,6 +460,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 321
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -525,6 +527,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 257
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -572,6 +575,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 193
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -608,6 +612,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 129
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -660,6 +665,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 65
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -705,6 +711,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 1
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -808,6 +815,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 259
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -846,6 +854,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 195
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -913,6 +922,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 131
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -980,6 +990,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 67
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1024,6 +1035,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 1
         Width = 240
         Height = 66
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1111,6 +1123,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 449
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1149,6 +1162,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 385
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1215,6 +1229,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 321
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1262,6 +1277,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 257
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1298,6 +1314,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 193
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1350,6 +1367,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 129
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1395,6 +1413,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 65
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1453,6 +1472,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 1
         Width = 240
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1499,7 +1519,8 @@ object TelaPrincipal: TTelaPrincipal
     Color = clTeal
     ParentBackground = False
     TabOrder = 4
-    ExplicitHeight = 972
+    ExplicitLeft = -4
+    ExplicitTop = 87
     object Panel3: TPanel
       Left = 0
       Top = 0
@@ -1534,6 +1555,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 193
         Width = 239
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1573,6 +1595,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 129
         Width = 239
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1629,6 +1652,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 65
         Width = 239
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1670,6 +1694,7 @@ object TelaPrincipal: TTelaPrincipal
         Top = 1
         Width = 239
         Height = 64
+        Cursor = crHandPoint
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
@@ -1720,9 +1745,7 @@ object TelaPrincipal: TTelaPrincipal
     Color = clWhite
     ParentBackground = False
     TabOrder = 5
-    ExplicitLeft = 996
-    ExplicitTop = -73
-    ExplicitWidth = 825
-    ExplicitHeight = 986
+    ExplicitWidth = 189
+    ExplicitHeight = 972
   end
 end

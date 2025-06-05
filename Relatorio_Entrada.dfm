@@ -32,6 +32,7 @@ object RelatorioEntrada: TRelatorioEntrada
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -44,6 +45,8 @@ object RelatorioEntrada: TRelatorioEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     DesignSize = (
       340
       290)
@@ -56,6 +59,7 @@ object RelatorioEntrada: TRelatorioEntrada
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -67,6 +71,7 @@ object RelatorioEntrada: TRelatorioEntrada
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 0
         Top = 0
@@ -81,6 +86,7 @@ object RelatorioEntrada: TRelatorioEntrada
         Top = 0
         Width = 241
         Height = 23
+        Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 0.944744328706292400
         TabOrder = 0
@@ -95,6 +101,7 @@ object RelatorioEntrada: TRelatorioEntrada
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -105,6 +112,7 @@ object RelatorioEntrada: TRelatorioEntrada
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -119,21 +127,25 @@ object RelatorioEntrada: TRelatorioEntrada
         Top = 0
         Width = 241
         Height = 23
+        Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 0.944744328706292400
         TabOrder = 0
       end
     end
     object BitBtn1: TBitBtn
-      Left = 109
+      Left = 108
       Top = 200
       Width = 89
       Height = 25
+      Cursor = crHandPoint
       Anchors = []
       Caption = 'Gerar Relat'#243'rio'
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
+      ExplicitLeft = 107
+      ExplicitTop = 194
     end
   end
   object frxDSEnt: TfrxDBDataset
@@ -144,37 +156,6 @@ object RelatorioEntrada: TRelatorioEntrada
     DataSetOptions = []
     Left = 188
     Top = 304
-    FieldDefs = <
-      item
-        FieldName = 'cod_produto'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'oper'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'quantidade'
-      end
-      item
-        FieldName = 'data_entrada'
-      end
-      item
-        FieldName = 'nota_fiscal'
-        FieldType = fftString
-        Size = 20
-      end
-      item
-        FieldName = 'valor_unitario'
-        Size = 64
-      end>
   end
   object FDQueryRelatEnt: TFDQuery
     Connection = DM.FDEstoqueItec
