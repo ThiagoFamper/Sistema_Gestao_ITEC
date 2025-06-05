@@ -1779,7 +1779,7 @@ object CadGrupo: TCadGrupo
       Width = 400
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 0
+      TabOrder = 1
       object Label2: TLabel
         Left = 0
         Top = 0
@@ -1819,7 +1819,7 @@ object CadGrupo: TCadGrupo
       Width = 100
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 1
+      TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0

@@ -2568,7 +2568,7 @@ object ListaProdutos: TListaProdutos
       Width = 400
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 4
+      TabOrder = 5
       object Label6: TLabel
         Left = 0
         Top = 0
@@ -2605,7 +2605,7 @@ object ListaProdutos: TListaProdutos
       Width = 400
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 5
+      TabOrder = 4
       object Label5: TLabel
         Left = 0
         Top = 0

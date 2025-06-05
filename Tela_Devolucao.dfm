@@ -49,7 +49,7 @@ object TelaDevolucao: TTelaDevolucao
         OnClick = bDevolverClick
       end
       object rgDev: TRadioGroup
-        Left = 16
+        Left = 15
         Top = 0
         Width = 201
         Height = 81

@@ -63,7 +63,7 @@ object ListaColaborador: TListaColaborador
       Width = 400
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 1
+      TabOrder = 2
       object Label8: TLabel
         Left = 0
         Top = 0
@@ -95,7 +95,7 @@ object ListaColaborador: TListaColaborador
       Width = 400
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 2
+      TabOrder = 1
       object Label9: TLabel
         Left = 0
         Top = 0

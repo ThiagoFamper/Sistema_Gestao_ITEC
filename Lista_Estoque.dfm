@@ -1114,7 +1114,7 @@ object ListaEstoque: TListaEstoque
       Width = 400
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 2
+      TabOrder = 3
       object Label9: TLabel
         Left = 0
         Top = 0
@@ -1146,7 +1146,7 @@ object ListaEstoque: TListaEstoque
       Width = 400
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 3
+      TabOrder = 2
       object Label10: TLabel
         Left = 0
         Top = 0

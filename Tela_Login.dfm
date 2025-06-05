@@ -169,7 +169,7 @@ object TelaLogin: TTelaLogin
     Width = 306
     Height = 23
     PasswordChar = '*'
-    TabOrder = 4
+    TabOrder = 2
     OnKeyPress = eSenhaKeyPress
   end
   object Panel3: TPanel
@@ -244,7 +244,7 @@ object TelaLogin: TTelaLogin
     Height = 25
     Cursor = crHandPoint
     Caption = 'Entrar'
-    TabOrder = 1
+    TabOrder = 3
     OnClick = bEntrarClick
   end
   object bCancelar: TButton
@@ -254,7 +254,7 @@ object TelaLogin: TTelaLogin
     Height = 25
     Cursor = crHandPoint
     Caption = 'Cancelar'
-    TabOrder = 2
+    TabOrder = 4
     OnClick = bCancelarClick
   end
   object eLogin: TEdit
@@ -262,7 +262,7 @@ object TelaLogin: TTelaLogin
     Top = 155
     Width = 306
     Height = 23
-    TabOrder = 3
+    TabOrder = 1
     OnKeyPress = eLoginKeyPress
   end
   object qryUsuario: TFDQuery

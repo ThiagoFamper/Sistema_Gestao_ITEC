@@ -121,7 +121,7 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 200
         Height = 59
         BevelOuter = bvNone
-        TabOrder = 1
+        TabOrder = 3
         object Label4: TLabel
           Left = 0
           Top = 0
@@ -153,7 +153,7 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 200
         Height = 59
         BevelOuter = bvNone
-        TabOrder = 2
+        TabOrder = 1
         object Label5: TLabel
           Left = 0
           Top = 0
@@ -188,7 +188,7 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 200
         Height = 59
         BevelOuter = bvNone
-        TabOrder = 3
+        TabOrder = 2
         object Label16: TLabel
           Left = 0
           Top = 0
@@ -2410,7 +2410,7 @@ object TelaEmprestimo: TTelaEmprestimo
       Width = 400
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 2
+      TabOrder = 3
       object Label10: TLabel
         Left = 0
         Top = 0
@@ -2442,7 +2442,7 @@ object TelaEmprestimo: TTelaEmprestimo
       Width = 400
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 3
+      TabOrder = 2
       object Label13: TLabel
         Left = 0
         Top = 0
