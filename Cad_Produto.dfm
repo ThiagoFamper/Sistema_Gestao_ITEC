@@ -1916,14 +1916,14 @@ object CadProduto: TCadProduto
         TabOrder = 0
       end
     end
-    object Panel14: TPanel
+    object Panel15: TPanel
       Left = 513
       Top = 136
       Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 4
-      object Label5: TLabel
+      object Label6: TLabel
         Left = 0
         Top = 0
         Width = 400
@@ -1954,14 +1954,14 @@ object CadProduto: TCadProduto
         TabOrder = 0
       end
     end
-    object Panel15: TPanel
+    object Panel14: TPanel
       Left = 513
       Top = 71
       Width = 400
       Height = 59
       BevelOuter = bvNone
       TabOrder = 5
-      object Label6: TLabel
+      object Label5: TLabel
         Left = 0
         Top = 0
         Width = 400

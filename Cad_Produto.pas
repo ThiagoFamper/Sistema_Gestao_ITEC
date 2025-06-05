@@ -38,11 +38,11 @@ type
     Panel13: TPanel;
     Label4: TLabel;
     dbProdMarca: TDBEdit;
-    Panel14: TPanel;
-    Label5: TLabel;
-    cbProdGrupo: TDBLookupComboBox;
     Panel15: TPanel;
     Label6: TLabel;
+    cbProdGrupo: TDBLookupComboBox;
+    Panel14: TPanel;
+    Label5: TLabel;
     dbProdModelo: TDBEdit;
     qryProduto: TFDQuery;
     dsProduto: TDataSource;
