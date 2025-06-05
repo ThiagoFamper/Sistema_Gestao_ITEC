@@ -145,6 +145,7 @@ object TelaEmprestimo: TTelaEmprestimo
           Align = alTop
           Enabled = False
           TabOrder = 0
+          OnKeyPress = dbEmpQtdKeyPress
         end
       end
       object Panel15: TPanel

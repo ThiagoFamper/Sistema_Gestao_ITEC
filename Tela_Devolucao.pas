@@ -86,6 +86,7 @@ type
     procedure eDevColaboradorChange(Sender: TObject);
     procedure SBestoqueClick(Sender: TObject);
     procedure LimpaCampos;
+    procedure eDevQtdKeyPress(Sender: TObject; var Key: Char);
 
   private
     { Private declarations }
@@ -182,6 +183,12 @@ begin
         Exit;
       end
     else
+      if Trim(eDevQtd.Text) = '' then
+      begin
+        MessageBox(0, 'O campo "Quantidade" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+        eDevQtd.SetFocus;
+      end
+    else
       if StrToInt(eDevQtd.Text) <= 0 then
       begin
         MessageBox(0, 'O campo "Quantidade" não pode ser menor ou igual a 0!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
@@ -261,6 +268,14 @@ end;
 procedure TTelaDevolucao.eDevOperadorChange(Sender: TObject);
 begin
   Filtro;
+end;
+
+procedure TTelaDevolucao.eDevQtdKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = '-' then
+  begin
+    Key := #0;
+  end;
 end;
 
 procedure TTelaDevolucao.FormShow(Sender: TObject);

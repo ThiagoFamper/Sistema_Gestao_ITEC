@@ -145,6 +145,7 @@ object TelaSaida: TTelaSaida
           Align = alTop
           Enabled = False
           TabOrder = 0
+          OnKeyPress = dbSaidaQtdKeyPress
         end
       end
       object Panel15: TPanel

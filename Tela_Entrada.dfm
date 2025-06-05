@@ -153,6 +153,7 @@ object TelaEntrada: TTelaEntrada
           DataSource = DM.dsFDTabEntrada
           Enabled = False
           TabOrder = 0
+          OnKeyPress = dbEntradaValorKeyPress
         end
       end
       object Panel19: TPanel
@@ -221,6 +222,7 @@ object TelaEntrada: TTelaEntrada
           DataSource = DM.dsFDTabEntrada
           Enabled = False
           TabOrder = 0
+          OnKeyPress = dbEntradaQtdKeyPress
         end
       end
       object Panel15: TPanel

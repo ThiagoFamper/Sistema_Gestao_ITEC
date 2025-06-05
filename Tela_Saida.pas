@@ -87,6 +87,7 @@ type
     procedure bSaidaClick(Sender: TObject);
     procedure SBestoqueClick(Sender: TObject);
     procedure LimpaCampos;
+    procedure dbSaidaQtdKeyPress(Sender: TObject; var Key: Char);
 
   private
     { Private declarations }
@@ -250,6 +251,14 @@ begin
       dm.FDTabSaida.Last;
       Filtro;
     end;
+end;
+
+procedure TTelaSaida.dbSaidaQtdKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = '-' then
+  begin
+    Key := #0;
+  end;
 end;
 
 procedure TTelaSaida.DesabilitaCampos; // desabilitar campos

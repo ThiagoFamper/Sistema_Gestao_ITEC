@@ -95,6 +95,7 @@ type
     procedure bEmpClick(Sender: TObject);
     procedure SBestoqueClick(Sender: TObject);
     procedure LimpaCampos;
+    procedure dbEmpQtdKeyPress(Sender: TObject; var Key: Char);
 
   private
     { Private declarations }
@@ -274,6 +275,14 @@ begin
       dm.FDTabEmprestimoProd.Last;
       Filtro;
     end;
+end;
+
+procedure TTelaEmprestimo.dbEmpQtdKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = '-' then
+  begin
+    Key := #0;
+  end;
 end;
 
 procedure TTelaEmprestimo.DesabilitaCampos; // desabilitar campos

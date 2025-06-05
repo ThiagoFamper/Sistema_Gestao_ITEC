@@ -97,6 +97,7 @@ object TelaDevolucao: TTelaDevolucao
           Height = 23
           Align = alTop
           TabOrder = 0
+          OnKeyPress = eDevQtdKeyPress
         end
       end
     end

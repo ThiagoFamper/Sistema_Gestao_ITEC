@@ -90,6 +90,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
     procedure SBestoqueClick(Sender: TObject);
+    procedure dbEntradaValorKeyPress(Sender: TObject; var Key: Char);
+    procedure dbEntradaQtdKeyPress(Sender: TObject; var Key: Char);
 
   private
     { Private declarations }
@@ -244,6 +246,22 @@ begin
       dm.FDTabEntrada.Last;
       Filtro;
     end;
+end;
+
+procedure TTelaEntrada.dbEntradaQtdKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = '-' then
+  begin
+    Key := #0;
+  end;
+end;
+
+procedure TTelaEntrada.dbEntradaValorKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = '-' then
+  begin
+    Key := #0;
+  end;
 end;
 
 procedure TTelaEntrada.DesabilitaCampos; // desabilitar campos
