@@ -30,16 +30,9 @@ type
     Label15: TLabel;
     dbSaidaDescricaoProd: TDBEdit;
     Panel2: TPanel;
-    SBsair: TSpeedButton;
-    SBrelatorio: TSpeedButton;
-    SBcancelar: TSpeedButton;
     SpeedButton1: TSpeedButton;
     SBeditar: TSpeedButton;
     Panel6: TPanel;
-    Panel7: TPanel;
-    Panel8: TPanel;
-    Panel11: TPanel;
-    Panel12: TPanel;
     dsProduto: TDataSource;
     qryProduto: TFDQuery;
     qryVerifica: TFDQuery;
@@ -67,8 +60,10 @@ type
     Panel4: TPanel;
     dbNavSaida: TDBNavigator;
     gSaida: TDBGrid;
-    Panel1: TPanel;
+    SBcancelar: TSpeedButton;
+    SBrelatorio: TSpeedButton;
     SBestoque: TSpeedButton;
+    SBsair: TSpeedButton;
     procedure SBcancelarClick(Sender: TObject);
     procedure SBeditarClick(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);

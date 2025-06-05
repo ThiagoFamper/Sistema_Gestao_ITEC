@@ -134,17 +134,17 @@ object RelatorioProduto: TRelatorioProduto
       end
     end
     object BitBtn1: TBitBtn
-      Left = 114
+      Left = 113
       Top = 200
       Width = 89
       Height = 25
       Cursor = crHandPoint
       Anchors = []
-      Caption = 'Gerar Relat'#243'rio'
+      Caption = 'Gerar &Relat'#243'rio'
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
-      ExplicitLeft = 113
+      ExplicitLeft = 112
       ExplicitTop = 194
     end
   end

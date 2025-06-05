@@ -17,8 +17,6 @@ type
     SBrelatorio: TSpeedButton;
     SpeedButton1: TSpeedButton;
     Panel6: TPanel;
-    Panel11: TPanel;
-    Panel12: TPanel;
     Panel5: TPanel;
     Panel19: TPanel;
     Label7: TLabel;

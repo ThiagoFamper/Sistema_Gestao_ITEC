@@ -29,10 +29,16 @@ object ListaEstoque: TListaEstoque
       Left = 343
       Top = 7
       Width = 73
-      Height = 73
+      Height = 99
       Cursor = crHandPoint
       Hint = 'Sair'
+      Caption = 'Fechar'
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -349,18 +355,27 @@ object ListaEstoque: TListaEstoque
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBsairClick
     end
     object SBrelatorio: TSpeedButton
       Left = 247
       Top = 7
       Width = 73
-      Height = 73
+      Height = 99
       Cursor = crHandPoint
       Hint = 'Gerar Relat'#243'rio'
+      Caption = '&Relat'#243'rio'
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -677,8 +692,11 @@ object ListaEstoque: TListaEstoque
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
     end
     object SpeedButton1: TSpeedButton
       Left = 16
@@ -1000,36 +1018,6 @@ object ListaEstoque: TListaEstoque
       ParentFont = False
       TabOrder = 0
     end
-    object Panel11: TPanel
-      Left = 247
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Relat'#243'rio'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 1
-    end
-    object Panel12: TPanel
-      Left = 343
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Fechar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 2
-    end
   end
   object Panel5: TPanel
     Left = 0
@@ -1210,7 +1198,6 @@ object ListaEstoque: TListaEstoque
     Top = 358
     Width = 1926
     Height = 451
-    Hint = 'Pesquisar Produtos'
     Align = alClient
     BorderStyle = bsNone
     DataSource = dsProduto

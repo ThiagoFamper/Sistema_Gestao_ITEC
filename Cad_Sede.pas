@@ -13,17 +13,7 @@ uses
 type
   TCadSede = class(TForm)
     Panel2: TPanel;
-    SBsair: TSpeedButton;
-    SBpesquisar: TSpeedButton;
-    SBsalvar: TSpeedButton;
-    SBcancelar: TSpeedButton;
-    SBnovo: TSpeedButton;
     Panel3: TPanel;
-    Panel7: TPanel;
-    Panel4: TPanel;
-    Panel6: TPanel;
-    Panel8: TPanel;
-    Panel9: TPanel;
     Panel5: TPanel;
     Panel11: TPanel;
     Label2: TLabel;
@@ -34,6 +24,11 @@ type
     gSede: TDBGrid;
     qrySede: TFDQuery;
     dsSede: TDataSource;
+    SBnovo: TSpeedButton;
+    SBcancelar: TSpeedButton;
+    SBsalvar: TSpeedButton;
+    SBpesquisar: TSpeedButton;
+    SBsair: TSpeedButton;
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
     procedure SBnovoClick(Sender: TObject);

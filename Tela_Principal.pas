@@ -10,7 +10,7 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.PG,
   FireDAC.Phys.PGDef, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
   Vcl.Imaging.pngimage, frxSmartMemo, frCoreClasses, frxClass,
-  frxDBSet, frxFDQueryBuilder, frxFDComponents;
+  frxDBSet, frxFDQueryBuilder, frxFDComponents, System.ImageList, Vcl.ImgList;
 
 type
   TTelaPrincipal = class(TForm)
@@ -143,7 +143,6 @@ type
     procedure selecionaMenu(nMENU: integer);
     procedure desabilitaMenu;
     procedure habilitaMenu;
-
   end;
 
 var
@@ -158,19 +157,91 @@ uses Cad_Produto, Cad_Colaborador, Cad_Setor, Cad_Grupo, Lista_Colaborador, List
   Data_Module, Tela_Entrada, Tela_Saida, Tela_Emprestimo, Lista_Estoque;
 
 procedure TTelaPrincipal.desabilitaMenu;
+var
+  i: integer;
 begin
   fpPrincipal.Enabled       := False;
   fpMovimentacao.Enabled    := False;
   fpCadastro.Enabled        := False;
   fpConsulta.Enabled        := False;
+  KeyPreview := False;
+
+  for I := 0 to fpPrincipal.ControlCount - 1 do
+  begin
+    if fpPrincipal.Controls[i] is TPanel then
+    begin
+      (fpPrincipal.Controls[i] as TPanel).Color := RGB(211, 211, 211);
+    end;
+  end;
+
+    for I := 0 to fpMovimentacao.ControlCount - 1 do
+  begin
+    if fpMovimentacao.Controls[i] is TPanel then
+    begin
+      (fpMovimentacao.Controls[i] as TPanel).Color := RGB(211, 211, 211);
+    end;
+  end;
+
+      for I := 0 to fpCadastro.ControlCount - 1 do
+  begin
+    if fpCadastro.Controls[i] is TPanel then
+    begin
+      (fpCadastro.Controls[i] as TPanel).Color := RGB(211, 211, 211);
+    end;
+  end;
+
+      for I := 0 to fpConsulta.ControlCount - 1 do
+  begin
+    if fpConsulta.Controls[i] is TPanel then
+    begin
+      (fpConsulta.Controls[i] as TPanel).Color := RGB(211, 211, 211);
+    end;
+  end;
+
 end;
 
 procedure TTelaPrincipal.habilitaMenu;
+var
+  i: integer;
 begin
   fpPrincipal.Enabled       := True;
   fpMovimentacao.Enabled    := True;
   fpCadastro.Enabled        := True;
   fpConsulta.Enabled        := True;
+  KeyPreview := True;
+
+    for I := 0 to fpPrincipal.ControlCount - 1 do
+  begin
+    if fpPrincipal.Controls[i] is TPanel then
+    begin
+      (fpPrincipal.Controls[i] as TPanel).Color := RGB(255, 255, 255);
+    end;
+  end;
+
+      for I := 0 to fpMovimentacao.ControlCount - 1 do
+  begin
+    if fpMovimentacao.Controls[i] is TPanel then
+    begin
+      (fpMovimentacao.Controls[i] as TPanel).Color := RGB(255, 255, 255);
+    end;
+  end;
+
+      for I := 0 to fpCadastro.ControlCount - 1 do
+  begin
+    if fpCadastro.Controls[i] is TPanel then
+    begin
+      (fpCadastro.Controls[i] as TPanel).Color := RGB(255, 255, 255);
+    end;
+  end;
+
+      for I := 0 to fpConsulta.ControlCount - 1 do
+  begin
+    if fpConsulta.Controls[i] is TPanel then
+    begin
+      (fpConsulta.Controls[i] as TPanel).Color := RGB(255, 255, 255);
+    end;
+  end;
+
 end;
 
 procedure TTelaPrincipal.Image10Click(Sender: TObject);

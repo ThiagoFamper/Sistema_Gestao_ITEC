@@ -243,7 +243,7 @@ object TelaLogin: TTelaLogin
     Width = 75
     Height = 25
     Cursor = crHandPoint
-    Caption = 'Entrar'
+    Caption = '&Entrar'
     TabOrder = 3
     OnClick = bEntrarClick
   end
@@ -253,7 +253,7 @@ object TelaLogin: TTelaLogin
     Width = 75
     Height = 25
     Cursor = crHandPoint
-    Caption = 'Cancelar'
+    Caption = '&Cancelar'
     TabOrder = 4
     OnClick = bCancelarClick
   end

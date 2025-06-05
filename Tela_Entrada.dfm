@@ -110,7 +110,7 @@ object TelaEntrada: TTelaEntrada
         Top = 148
         Width = 81
         Height = 25
-        Caption = 'Salvar'
+        Caption = '&Salvar'
         Enabled = False
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -315,10 +315,16 @@ object TelaEntrada: TTelaEntrada
       Left = 654
       Top = 7
       Width = 73
-      Height = 73
+      Height = 99
       Cursor = crHandPoint
       Hint = 'Sair'
+      Caption = 'Fechar'
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -635,18 +641,27 @@ object TelaEntrada: TTelaEntrada
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBsairClick
     end
     object SBrelatorio: TSpeedButton
       Left = 444
       Top = 7
       Width = 73
-      Height = 73
+      Height = 99
       Cursor = crHandPoint
       Hint = 'Gerar Relat'#243'rio'
+      Caption = '&Relat'#243'rio'
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -963,19 +978,28 @@ object TelaEntrada: TTelaEntrada
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBrelatorioClick
     end
     object SBcancelar: TSpeedButton
-      Left = 345
+      Left = 343
       Top = 7
       Width = 73
-      Height = 73
+      Height = 99
       Cursor = crHandPoint
       Hint = 'Cancelar'
+      Caption = '&Cancelar'
       Enabled = False
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -1292,8 +1316,11 @@ object TelaEntrada: TTelaEntrada
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBcancelarClick
     end
     object SpeedButton1: TSpeedButton
@@ -1602,10 +1629,16 @@ object TelaEntrada: TTelaEntrada
       Left = 249
       Top = 7
       Width = 73
-      Height = 73
+      Height = 99
       Cursor = crHandPoint
-      Hint = 'Editar'
+      Hint = 'Fazer Entrada'
+      Caption = '&Entrada'
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         52270000424D5227000000000000420000002800000032000000320000000100
         20000300000010270000000000000000000000000000000000000000FF0000FF
@@ -1922,18 +1955,27 @@ object TelaEntrada: TTelaEntrada
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000000000000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBeditarClick
     end
     object SBestoque: TSpeedButton
       Left = 549
       Top = 7
       Width = 73
-      Height = 73
+      Height = 99
       Cursor = crHandPoint
-      Hint = 'Pesquisar Colaboradores'
+      Hint = 'Estoque'
+      Caption = 'Estoque'
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         52270000424D5227000000000000420000002800000032000000320000000100
         20000300000010270000000000000000000000000000000000000000FF0000FF
@@ -2250,8 +2292,11 @@ object TelaEntrada: TTelaEntrada
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000000000000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBestoqueClick
     end
     object Panel6: TPanel
@@ -2271,81 +2316,6 @@ object TelaEntrada: TTelaEntrada
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-    end
-    object Panel7: TPanel
-      Left = 247
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Entrada'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 1
-    end
-    object Panel8: TPanel
-      Left = 345
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Cancelar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 2
-    end
-    object Panel11: TPanel
-      Left = 444
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Relat'#243'rio'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 3
-    end
-    object Panel12: TPanel
-      Left = 654
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Fechar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 4
-    end
-    object Panel1: TPanel
-      Left = 547
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Estoque'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 5
     end
   end
   object Panel4: TPanel

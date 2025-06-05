@@ -1,7 +1,7 @@
 object TelaPrincipal: TTelaPrincipal
   Left = 0
   Top = 0
-  Caption = 'Tela Inicial'
+  Caption = 'Sistema de Controle de Estoque ITEC'
   ClientHeight = 1061
   ClientWidth = 1155
   Color = clWhitesmoke
@@ -10,6 +10,7 @@ object TelaPrincipal: TTelaPrincipal
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  KeyPreview = True
   Position = poDesigned
   WindowState = wsMaximized
   OnKeyDown = FormKeyDown
@@ -22,7 +23,7 @@ object TelaPrincipal: TTelaPrincipal
     Height = 81
     Align = alTop
     BevelOuter = bvNone
-    Caption = 'Sistema Controle Estoque ITEC'
+    Caption = 'Controle de Estoque ITEC'
     Color = clTeal
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -40,6 +41,7 @@ object TelaPrincipal: TTelaPrincipal
       Width = 50
       Height = 50
       Cursor = crHandPoint
+      Hint = 'Logout'
       Flat = True
       Glyph.Data = {
         52270000424D5227000000000000420000002800000032000000320000000100
@@ -358,7 +360,7 @@ object TelaPrincipal: TTelaPrincipal
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000000000000000000000000000}
       ParentShowHint = False
-      ShowHint = False
+      ShowHint = True
       OnClick = SBlogoutClick
     end
     object lUsuarioNome: TLabel

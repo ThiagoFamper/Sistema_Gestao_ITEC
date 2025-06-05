@@ -15,17 +15,7 @@ type
   TCadColaborador = class(TForm)
     Panel4: TPanel;
     Panel2: TPanel;
-    SBsair: TSpeedButton;
-    SBpesquisar: TSpeedButton;
-    SBsalvar: TSpeedButton;
-    SBcancelar: TSpeedButton;
-    SBnovo: TSpeedButton;
     Panel3: TPanel;
-    Panel7: TPanel;
-    Panel1: TPanel;
-    Panel5: TPanel;
-    Panel6: TPanel;
-    Panel8: TPanel;
     gColab: TDBGrid;
     Panel10: TPanel;
     Label1: TLabel;
@@ -44,6 +34,11 @@ type
     cbColabSede: TDBLookupComboBox;
     qryColaborador: TFDQuery;
     dsColaborador: TDataSource;
+    SBnovo: TSpeedButton;
+    SBcancelar: TSpeedButton;
+    SBsalvar: TSpeedButton;
+    SBpesquisar: TSpeedButton;
+    SBsair: TSpeedButton;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;

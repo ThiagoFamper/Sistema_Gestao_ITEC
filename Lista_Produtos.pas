@@ -14,20 +14,9 @@ uses
 type
   TListaProdutos = class(TForm)
     Panel2: TPanel;
-    SBsair: TSpeedButton;
     SBrelatorio: TSpeedButton;
-    SBexcluir: TSpeedButton;
-    SBsalvar: TSpeedButton;
-    SBcancelar: TSpeedButton;
     Panel6: TPanel;
     SpeedButton1: TSpeedButton;
-    Panel7: TPanel;
-    SBeditar: TSpeedButton;
-    Panel8: TPanel;
-    Panel9: TPanel;
-    Panel10: TPanel;
-    Panel11: TPanel;
-    Panel12: TPanel;
     Panel1: TPanel;
     Panel4: TPanel;
     dbNavProd: TDBNavigator;
@@ -69,6 +58,11 @@ type
     cbpProdGrupo: TDBLookupComboBox;
     qryProduto: TFDQuery;
     dsProduto: TDataSource;
+    SBeditar: TSpeedButton;
+    SBcancelar: TSpeedButton;
+    SBsalvar: TSpeedButton;
+    SBexcluir: TSpeedButton;
+    SBsair: TSpeedButton;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

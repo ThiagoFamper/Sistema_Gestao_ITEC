@@ -18,16 +18,9 @@ type
     Panel8: TPanel;
     bDevolver: TButton;
     Panel2: TPanel;
-    SBsair: TSpeedButton;
-    SBrelatorio: TSpeedButton;
-    SBcancelar: TSpeedButton;
     SpeedButton1: TSpeedButton;
     SBeditar: TSpeedButton;
     Panel6: TPanel;
-    Panel7: TPanel;
-    Panel3: TPanel;
-    Panel11: TPanel;
-    Panel12: TPanel;
     Panel13: TPanel;
     Label9: TLabel;
     dbDevProdID: TDBEdit;
@@ -66,8 +59,10 @@ type
     Panel15: TPanel;
     dbNavDevolucao: TDBNavigator;
     gDev: TDBGrid;
-    Panel16: TPanel;
+    SBcancelar: TSpeedButton;
+    SBrelatorio: TSpeedButton;
     SBestoque: TSpeedButton;
+    SBsair: TSpeedButton;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

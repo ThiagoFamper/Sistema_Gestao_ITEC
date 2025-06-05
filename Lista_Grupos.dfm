@@ -153,13 +153,19 @@ object ListaGrupos: TListaGrupos
     TabOrder = 2
     ExplicitWidth = 1045
     object SBsair: TSpeedButton
-      Left = 640
+      Left = 636
       Top = 8
       Width = 73
-      Height = 72
+      Height = 98
       Cursor = crHandPoint
       Hint = 'Sair'
+      Caption = 'Fechar'
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -476,18 +482,27 @@ object ListaGrupos: TListaGrupos
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBsairClick
     end
     object SBexcluir: TSpeedButton
-      Left = 549
+      Left = 541
       Top = 8
       Width = 73
-      Height = 72
+      Height = 98
       Cursor = crHandPoint
       Hint = 'Excluir'
+      Caption = 'Excluir'
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -804,19 +819,28 @@ object ListaGrupos: TListaGrupos
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBexcluirClick
     end
     object SBsalvar: TSpeedButton
-      Left = 448
+      Left = 442
       Top = 8
       Width = 73
-      Height = 72
+      Height = 98
       Cursor = crHandPoint
       Hint = 'Salvar'
+      Caption = '&Salvar'
       Enabled = False
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -1133,19 +1157,28 @@ object ListaGrupos: TListaGrupos
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBsalvarClick
     end
     object SBcancelar: TSpeedButton
-      Left = 345
+      Left = 341
       Top = 8
       Width = 73
-      Height = 72
+      Height = 98
       Cursor = crHandPoint
       Hint = 'Cancelar'
+      Caption = '&Cancelar'
       Enabled = False
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -1462,8 +1495,11 @@ object ListaGrupos: TListaGrupos
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBcancelarClick
     end
     object SpeedButton1: TSpeedButton
@@ -1772,10 +1808,16 @@ object ListaGrupos: TListaGrupos
       Left = 247
       Top = 8
       Width = 73
-      Height = 72
+      Height = 98
       Cursor = crHandPoint
       Hint = 'Editar'
+      Caption = '&Editar'
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -2092,8 +2134,11 @@ object ListaGrupos: TListaGrupos
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBeditarClick
     end
     object Panel6: TPanel
@@ -2113,81 +2158,6 @@ object ListaGrupos: TListaGrupos
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-    end
-    object Panel7: TPanel
-      Left = 247
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Editar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 1
-    end
-    object Panel8: TPanel
-      Left = 345
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Cancelar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 2
-    end
-    object Panel9: TPanel
-      Left = 448
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Salvar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 3
-    end
-    object Panel10: TPanel
-      Left = 549
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Excluir'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 4
-    end
-    object Panel12: TPanel
-      Left = 640
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Fechar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 5
     end
   end
   object Panel4: TPanel
@@ -2227,7 +2197,6 @@ object ListaGrupos: TListaGrupos
       Top = 0
       Width = 1047
       Height = 278
-      Hint = 'Pesquisar Grupos'
       Align = alClient
       DataSource = dsGrupo
       Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]

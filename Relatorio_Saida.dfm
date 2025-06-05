@@ -134,17 +134,17 @@ object RelatorioSaida: TRelatorioSaida
       ExplicitWidth = 338
     end
     object BitBtn1: TBitBtn
-      Left = 102
+      Left = 101
       Top = 192
       Width = 89
       Height = 25
       Cursor = crHandPoint
       Anchors = []
-      Caption = 'Gerar Relat'#243'rio'
+      Caption = 'Gerar &Relat'#243'rio'
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
-      ExplicitLeft = 101
+      ExplicitLeft = 100
       ExplicitTop = 186
     end
   end

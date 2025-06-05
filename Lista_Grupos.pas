@@ -23,11 +23,6 @@ type
     SpeedButton1: TSpeedButton;
     SBeditar: TSpeedButton;
     Panel6: TPanel;
-    Panel7: TPanel;
-    Panel8: TPanel;
-    Panel9: TPanel;
-    Panel10: TPanel;
-    Panel12: TPanel;
     Panel4: TPanel;
     dbNavGrupo: TDBNavigator;
     Panel3: TPanel;

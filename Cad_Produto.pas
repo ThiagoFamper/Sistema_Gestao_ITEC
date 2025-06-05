@@ -20,11 +20,6 @@ type
     SBcancelar: TSpeedButton;
     SBnovo: TSpeedButton;
     Panel3: TPanel;
-    Panel7: TPanel;
-    Panel1: TPanel;
-    Panel5: TPanel;
-    Panel6: TPanel;
-    Panel8: TPanel;
     gProd: TDBGrid;
     Panel10: TPanel;
     Label1: TLabel;

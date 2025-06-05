@@ -14,17 +14,7 @@ type
   TCadUsuario = class(TForm)
     Panel4: TPanel;
     Panel2: TPanel;
-    SBsair: TSpeedButton;
-    SBpesquisar: TSpeedButton;
-    SBsalvar: TSpeedButton;
-    SBcancelar: TSpeedButton;
-    SBnovo: TSpeedButton;
     Panel3: TPanel;
-    Panel7: TPanel;
-    Panel1: TPanel;
-    Panel5: TPanel;
-    Panel6: TPanel;
-    Panel8: TPanel;
     gUsuario: TDBGrid;
     Panel10: TPanel;
     Label1: TLabel;
@@ -42,6 +32,11 @@ type
     cbUsuarioAdmin: TCheckBox;
     qryUsuario: TFDQuery;
     dsUsuario: TDataSource;
+    SBnovo: TSpeedButton;
+    SBcancelar: TSpeedButton;
+    SBsalvar: TSpeedButton;
+    SBpesquisar: TSpeedButton;
+    SBsair: TSpeedButton;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;

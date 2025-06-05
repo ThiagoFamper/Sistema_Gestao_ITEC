@@ -26,10 +26,6 @@ type
     SpeedButton1: TSpeedButton;
     SBeditar: TSpeedButton;
     Panel6: TPanel;
-    Panel7: TPanel;
-    Panel8: TPanel;
-    Panel11: TPanel;
-    Panel12: TPanel;
     Panel9: TPanel;
     bEntrada: TButton;
     Panel21: TPanel;
@@ -71,7 +67,6 @@ type
     Panel28: TPanel;
     Label14: TLabel;
     epProdGrupo: TEdit;
-    Panel1: TPanel;
     SBestoque: TSpeedButton;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;

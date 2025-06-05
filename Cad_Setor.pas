@@ -14,17 +14,7 @@ type
   TCadSetor = class(TForm)
     Panel5: TPanel;
     Panel2: TPanel;
-    SBsair: TSpeedButton;
-    SBpesquisar: TSpeedButton;
-    SBsalvar: TSpeedButton;
-    SBcancelar: TSpeedButton;
-    SBnovo: TSpeedButton;
     Panel3: TPanel;
-    Panel7: TPanel;
-    Panel1: TPanel;
-    Panel4: TPanel;
-    Panel6: TPanel;
-    Panel8: TPanel;
     gSetor: TDBGrid;
     Panel10: TPanel;
     Label1: TLabel;
@@ -34,6 +24,11 @@ type
     dbSetorDescricao: TDBEdit;
     qrySetor: TFDQuery;
     dsSetor: TDataSource;
+    SBnovo: TSpeedButton;
+    SBcancelar: TSpeedButton;
+    SBsalvar: TSpeedButton;
+    SBpesquisar: TSpeedButton;
+    SBsair: TSpeedButton;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;

@@ -35,10 +35,16 @@ object CadProduto: TCadProduto
       Left = 631
       Top = 7
       Width = 73
-      Height = 73
+      Height = 99
       Cursor = crHandPoint
       Hint = 'Sair'
+      Caption = 'Fechar'
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -355,18 +361,27 @@ object CadProduto: TCadProduto
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBsairClick
     end
     object SBpesquisar: TSpeedButton
       Left = 539
       Top = 7
       Width = 73
-      Height = 73
+      Height = 99
       Cursor = crHandPoint
-      Hint = 'Pesquisar Colaboradores'
+      Hint = 'Pesquisar'
+      Caption = 'Pesquisar'
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -683,19 +698,28 @@ object CadProduto: TCadProduto
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBpesquisarClick
     end
     object SBsalvar: TSpeedButton
       Left = 443
       Top = 7
       Width = 73
-      Height = 73
+      Height = 99
       Cursor = crHandPoint
       Hint = 'Salvar'
+      Caption = '&Salvar'
       Enabled = False
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -1012,19 +1036,28 @@ object CadProduto: TCadProduto
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBsalvarClick
     end
     object SBcancelar: TSpeedButton
       Left = 347
       Top = 7
       Width = 73
-      Height = 73
+      Height = 99
       Cursor = crHandPoint
       Hint = 'Cancelar'
+      Caption = '&Cancelar'
       Enabled = False
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -1341,18 +1374,27 @@ object CadProduto: TCadProduto
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBcancelarClick
     end
     object SBnovo: TSpeedButton
       Left = 247
       Top = 7
       Width = 73
-      Height = 73
+      Height = 99
       Cursor = crHandPoint
       Hint = 'Novo'
+      Caption = '&Novo'
       Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         46270000424D4627000000000000360000002800000032000000320000000100
         20000000000010270000C40E0000C40E00000000000000000000000000000000
@@ -1669,8 +1711,11 @@ object CadProduto: TCadProduto
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
+      Spacing = 7
       OnClick = SBnovoClick
     end
     object Panel3: TPanel
@@ -1690,81 +1735,6 @@ object CadProduto: TCadProduto
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-    end
-    object Panel7: TPanel
-      Left = 443
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Salvar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 1
-    end
-    object Panel1: TPanel
-      Left = 347
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Cancelar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 2
-    end
-    object Panel5: TPanel
-      Left = 247
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Novo'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 3
-    end
-    object Panel6: TPanel
-      Left = 539
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Pesquisar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 4
-    end
-    object Panel8: TPanel
-      Left = 631
-      Top = 86
-      Width = 73
-      Height = 20
-      BevelOuter = bvNone
-      Caption = 'Fechar'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 5
     end
   end
   object Panel4: TPanel
