@@ -24,6 +24,8 @@ type
     mostrarSenha: TImage;
     login: TImage;
     senha: TImage;
+    esconderSenha: TImage;
+    mostrarSenhaClone: TImage;
     procedure bEntrarClick(Sender: TObject);
     procedure bCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -105,10 +107,12 @@ begin
   if eSenha.PasswordChar = '*' then
   begin
     eSenha.PasswordChar := #0;
+    mostrarSenha.Picture.Assign(esconderSenha.Picture);
   end
   else
   begin
     eSenha.PasswordChar := '*';
+    mostrarSenha.Picture.Assign(mostrarSenhaClone.Picture);
   end;
 end;
 
