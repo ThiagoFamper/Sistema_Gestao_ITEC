@@ -55,7 +55,7 @@ object ListaGrupos: TListaGrupos
         Height = 23
         Align = alTop
         DataField = 'id'
-        DataSource = DM.dsFDTabGrupo
+        DataSource = dsGrupo
         Enabled = False
         TabOrder = 0
       end
@@ -89,7 +89,7 @@ object ListaGrupos: TListaGrupos
         Height = 23
         Align = alTop
         DataField = 'descricao'
-        DataSource = DM.dsFDTabGrupo
+        DataSource = dsGrupo
         Enabled = False
         TabOrder = 0
       end
@@ -2121,6 +2121,12 @@ object ListaGrupos: TListaGrupos
       Height = 20
       BevelOuter = bvNone
       Caption = 'Editar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 1
     end
     object Panel8: TPanel
@@ -2130,6 +2136,12 @@ object ListaGrupos: TListaGrupos
       Height = 20
       BevelOuter = bvNone
       Caption = 'Cancelar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 2
     end
     object Panel9: TPanel
@@ -2139,6 +2151,12 @@ object ListaGrupos: TListaGrupos
       Height = 20
       BevelOuter = bvNone
       Caption = 'Salvar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 3
     end
     object Panel10: TPanel
@@ -2148,6 +2166,12 @@ object ListaGrupos: TListaGrupos
       Height = 20
       BevelOuter = bvNone
       Caption = 'Excluir'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 4
     end
     object Panel12: TPanel
@@ -2157,6 +2181,12 @@ object ListaGrupos: TListaGrupos
       Height = 20
       BevelOuter = bvNone
       Caption = 'Fechar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 5
     end
   end

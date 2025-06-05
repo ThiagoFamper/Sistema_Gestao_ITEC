@@ -57,7 +57,7 @@ type
     FDTabColaboradorClonesetor_id: TLargeintField;
     FDTabColaboradorClonesede_id: TLargeintField;
     Panel4: TPanel;
-    DBNavigator1: TDBNavigator;
+    dbNavEmprestimo: TDBNavigator;
     Panel17: TPanel;
     Panel18: TPanel;
     Label8: TLabel;
@@ -75,6 +75,8 @@ type
     Label14: TLabel;
     epProdGrupo: TEdit;
     gEmp: TDBGrid;
+    SBestoque: TSpeedButton;
+    Panel1: TPanel;
     procedure SBcancelarClick(Sender: TObject);
     procedure SBeditarClick(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
@@ -91,6 +93,8 @@ type
     procedure epProdMarcaChange(Sender: TObject);
     procedure epProdGrupoChange(Sender: TObject);
     procedure bEmpClick(Sender: TObject);
+    procedure SBestoqueClick(Sender: TObject);
+    procedure LimpaCampos;
 
   private
     { Private declarations }
@@ -105,7 +109,7 @@ implementation
 
 {$R *.dfm}
 
-uses Data_Module, Relatorio_Emprestimo, Tela_Principal;
+uses Data_Module, Relatorio_Emprestimo, Tela_Principal, Lista_Estoque;
 
 procedure TTelaEmprestimo.FormShow(Sender: TObject);
 begin
@@ -113,24 +117,27 @@ begin
   Filtro;
 end;
 
-procedure TTelaEmprestimo.SBcancelarClick(Sender: TObject);
+procedure TTelaEmprestimo.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos;
+    LimpaCampos;
     TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa;
     gEmp.Enabled         := True;
     SBrelatorio.Enabled  := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
+    SBestoque.Enabled    := True;
     SBcancelar.Enabled   := False;
     bEmp.Enabled         := False;
     dm.FDTabEmprestimoProd.Cancel;
     dm.FDTabEmprestimoItem.Cancel;
 end;
 
-procedure TTelaEmprestimo.SBeditarClick(Sender: TObject);
+procedure TTelaEmprestimo.SBeditarClick(Sender: TObject); // botão de editar
 begin
     HabilitaCampos;
+    LimpaCampos;
     TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa;
     gEmp.Enabled         := False;
@@ -138,12 +145,18 @@ begin
     SBrelatorio.Enabled  := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
+    SBestoque.Enabled    := False;
     bEmp.Enabled         := True;
     dm.FDTabEmprestimoProd.Open;
     dm.FDTabEmprestimoProd.Append;
     dm.FDTabEmprestimoItem.Open;
     dm.FDTabEmprestimoItem.Append;
     cbEmpOperador.SetFocus;
+end;
+
+procedure TTelaEmprestimo.SBestoqueClick(Sender: TObject);
+begin
+  TelaPrincipal.AbrirFormulario(TListaEstoque); // botão de pesquisar
 end;
 
 procedure TTelaEmprestimo.SBrelatorioClick(Sender: TObject);
@@ -174,27 +187,34 @@ begin
     epProdMarca.Enabled          := True;
     epProdGrupo.Enabled          := True;
     gEmp.Enabled                 := True;
+    dbNavEmprestimo.Enabled      := True;
 end;
 
 procedure TTelaEmprestimo.bEmpClick(Sender: TObject);
 var
   produtoID, quantidade, saldoAtual, emprestimoID: Integer;
 begin
-    if cbEmpOperador.Text = '' then
+    if Trim(cbEmpOperador.Text) = '' then
       begin
         MessageBox(0, 'O campo "Operador" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbEmpOperador.SetFocus;
       end
   else
-    if cbEmpColaborador.Text = '' then
+    if Trim(cbEmpColaborador.Text) = '' then
       begin
         MessageBox(0, 'O campo "Colaborador" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbEmpColaborador.SetFocus;
       end
   else
-    if dbEmpQtd.Text = '' then
+    if Trim(dbEmpQtd.Text) = '' then
       begin
         MessageBox(0, 'O campo "Quantidade" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+        dbEmpQtd.SetFocus;
+      end
+  else
+    if StrToInt(dbEmpQtd.Text) <= 0 then
+      begin
+        MessageBox(0, 'O campo "Quantidade" não pode ser menor ou igual a 0!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbEmpQtd.SetFocus;
       end
   else
@@ -240,11 +260,13 @@ begin
 
       dm.FDTabEmprestimoProd.Close;
       MessageBox(0, 'Empréstimo realizado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
-      DesabilitaCampos();
+      DesabilitaCampos;
+      LimpaCampos;
       TelaPrincipal.habilitaMenu;
       SBsair.Enabled       := True;
       SBcancelar.Enabled   := False;
       SBeditar.Enabled     := True;
+      SBestoque.Enabled    := True;
       SBrelatorio.Enabled  := True;
       bEmp.Enabled         := False;
       dm.FDTabEmprestimoProd.Open;
@@ -269,6 +291,14 @@ begin
     epProdMarca.Enabled          := False;
     epProdGrupo.Enabled          := False;
     gEmp.Enabled                 := False;
+    dbNavEmprestimo.Enabled      := False;
+end;
+
+procedure TTelaEmprestimo.LimpaCampos;
+begin
+  cbEmpOperador.KeyValue := 0;
+  cbEmpColaborador.KeyValue := 0;
+  dbEmpQtd.Clear;
 end;
 
 procedure TTelaEmprestimo.epProdCodChange(Sender: TObject);
@@ -298,11 +328,11 @@ end;
 
 procedure TTelaEmprestimo.Filtro; // pesquisa com sql query
 begin
-  qryProduto.ParamByName('codigo').AsString := '%' + epProdCod.Text + '%';
-  qryProduto.ParamByName('descricao').AsString := '%' + epProdDescricao.Text + '%';
-  qryProduto.ParamByName('marca').AsString := '%' + epProdModelo.Text + '%';
-  qryProduto.ParamByName('modelo').AsString := '%' + epProdMarca.Text + '%';
-  qryProduto.ParamByName('grupo').AsString := '%' + epProdGrupo.Text + '%';
+  qryProduto.ParamByName('codigo').AsString := '%' + Trim(epProdCod.Text) + '%';
+  qryProduto.ParamByName('descricao').AsString := '%' + Trim(epProdDescricao.Text) + '%';
+  qryProduto.ParamByName('marca').AsString := '%' + Trim(epProdModelo.Text) + '%';
+  qryProduto.ParamByName('modelo').AsString := '%' + Trim(epProdMarca.Text) + '%';
+  qryProduto.ParamByName('grupo').AsString := '%' + Trim(epProdGrupo.Text) + '%';
 
   qryProduto.Close;
   qryProduto.Open;

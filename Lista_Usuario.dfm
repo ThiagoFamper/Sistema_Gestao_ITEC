@@ -38,14 +38,14 @@ object ListaUsuario: TListaUsuario
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Nome'
+        Caption = 'Nome do Usu'#225'rio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 41
+        ExplicitWidth = 117
       end
       object epUsuarioNome: TEdit
         Left = 0
@@ -70,14 +70,14 @@ object ListaUsuario: TListaUsuario
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Login'
+        Caption = 'Login do Usu'#225'rio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 37
+        ExplicitWidth = 113
       end
       object epUsuarioLogin: TEdit
         Left = 0
@@ -131,33 +131,33 @@ object ListaUsuario: TListaUsuario
     object Panel13: TPanel
       Left = 16
       Top = 6
-      Width = 50
+      Width = 100
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 50
+        Width = 100
         Height = 20
         Align = alTop
-        Caption = 'ID'
+        Caption = 'ID do Usu'#225'rio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 15
+        ExplicitWidth = 91
       end
       object dbpUsuarioID: TDBEdit
         Left = 0
         Top = 20
-        Width = 50
+        Width = 100
         Height = 23
         Align = alTop
         DataField = 'id'
-        DataSource = DM.dsFDTabUsuario
+        DataSource = dsUsuario
         Enabled = False
         TabOrder = 0
       end
@@ -175,14 +175,14 @@ object ListaUsuario: TListaUsuario
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Nome'
+        Caption = 'Nome do Usu'#225'rio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 41
+        ExplicitWidth = 117
       end
       object dbpUsuarioNome: TDBEdit
         Left = 0
@@ -191,7 +191,7 @@ object ListaUsuario: TListaUsuario
         Height = 23
         Align = alTop
         DataField = 'nome'
-        DataSource = DM.dsFDTabUsuario
+        DataSource = dsUsuario
         Enabled = False
         TabOrder = 0
       end
@@ -209,14 +209,14 @@ object ListaUsuario: TListaUsuario
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Login'
+        Caption = 'Login do Usu'#225'rio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 37
+        ExplicitWidth = 113
       end
       object dbpUsuarioLogin: TDBEdit
         Left = 0
@@ -225,7 +225,7 @@ object ListaUsuario: TListaUsuario
         Height = 23
         Align = alTop
         DataField = 'login'
-        DataSource = DM.dsFDTabUsuario
+        DataSource = dsUsuario
         Enabled = False
         TabOrder = 0
       end
@@ -243,14 +243,14 @@ object ListaUsuario: TListaUsuario
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Senha'
+        Caption = 'Senha do Usu'#225'rio'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 40
+        ExplicitWidth = 116
       end
       object dbpUsuarioSenha: TDBEdit
         Left = 0
@@ -259,7 +259,7 @@ object ListaUsuario: TListaUsuario
         Height = 23
         Align = alTop
         DataField = 'senha'
-        DataSource = DM.dsFDTabUsuario
+        DataSource = dsUsuario
         Enabled = False
         TabOrder = 0
       end
@@ -277,6 +277,7 @@ object ListaUsuario: TListaUsuario
         Top = 3
         Width = 125
         Height = 53
+        Hint = 'Marcar esta caixa dar'#225' permiss'#227'o total do sistema ao Usu'#225'rio'
         Align = alClient
         Caption = 'Administrador'
         Enabled = False
@@ -286,6 +287,8 @@ object ListaUsuario: TListaUsuario
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
         TabOrder = 0
       end
     end
@@ -2272,6 +2275,12 @@ object ListaUsuario: TListaUsuario
       Height = 20
       BevelOuter = bvNone
       Caption = 'Editar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 1
     end
     object Panel8: TPanel
@@ -2281,6 +2290,12 @@ object ListaUsuario: TListaUsuario
       Height = 20
       BevelOuter = bvNone
       Caption = 'Cancelar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 2
     end
     object Panel9: TPanel
@@ -2290,6 +2305,12 @@ object ListaUsuario: TListaUsuario
       Height = 20
       BevelOuter = bvNone
       Caption = 'Salvar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 3
     end
     object Panel10: TPanel
@@ -2299,6 +2320,12 @@ object ListaUsuario: TListaUsuario
       Height = 20
       BevelOuter = bvNone
       Caption = 'Excluir'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 4
     end
     object Panel12: TPanel
@@ -2308,6 +2335,12 @@ object ListaUsuario: TListaUsuario
       Height = 20
       BevelOuter = bvNone
       Caption = 'Fechar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 5
     end
   end
@@ -2322,7 +2355,7 @@ object ListaUsuario: TListaUsuario
     ParentBackground = False
     TabOrder = 3
     ExplicitWidth = 1046
-    object DBNavigator1: TDBNavigator
+    object dbNavUsuario: TDBNavigator
       AlignWithMargins = True
       Left = 0
       Top = 6
@@ -2360,33 +2393,33 @@ object ListaUsuario: TListaUsuario
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
       StyleElements = []
+      OnDrawColumnCell = gpUsuarioDrawColumnCell
       Columns = <
         item
           Expanded = False
           FieldName = 'nome'
-          Title.Caption = 'Nome'
+          Title.Caption = 'Nome do Usu'#225'rio'
           Width = 200
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'login'
-          Title.Caption = 'Login'
+          Title.Caption = 'Login do Usu'#225'rio'
           Width = 200
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'senha'
-          Title.Caption = 'Senha'
+          Title.Caption = 'Senha do Usu'#225'rio'
           Width = 200
           Visible = True
         end
         item
           Expanded = False
-          FieldName = 'admin'
-          Title.Caption = 'Admin'
-          Width = 70
+          Title.Caption = 'Usu'#225'rio '#233' Admin?'
+          Width = 100
           Visible = True
         end>
     end

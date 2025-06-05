@@ -2326,6 +2326,12 @@ object ListaProdutos: TListaProdutos
       Height = 20
       BevelOuter = bvNone
       Caption = 'Editar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 1
     end
     object Panel8: TPanel
@@ -2335,6 +2341,12 @@ object ListaProdutos: TListaProdutos
       Height = 20
       BevelOuter = bvNone
       Caption = 'Cancelar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 2
     end
     object Panel9: TPanel
@@ -2344,6 +2356,12 @@ object ListaProdutos: TListaProdutos
       Height = 20
       BevelOuter = bvNone
       Caption = 'Salvar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 3
     end
     object Panel10: TPanel
@@ -2353,6 +2371,12 @@ object ListaProdutos: TListaProdutos
       Height = 20
       BevelOuter = bvNone
       Caption = 'Excluir'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 4
     end
     object Panel11: TPanel
@@ -2362,6 +2386,12 @@ object ListaProdutos: TListaProdutos
       Height = 20
       BevelOuter = bvNone
       Caption = 'Relat'#243'rio'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 5
     end
     object Panel12: TPanel
@@ -2371,6 +2401,12 @@ object ListaProdutos: TListaProdutos
       Height = 20
       BevelOuter = bvNone
       Caption = 'Fechar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 6
     end
   end
@@ -2419,7 +2455,7 @@ object ListaProdutos: TListaProdutos
         BevelInner = bvLowered
         BevelOuter = bvRaised
         DataField = 'id'
-        DataSource = DM.dsFDTabProduto
+        DataSource = dsProduto
         Enabled = False
         TabOrder = 0
       end
@@ -2453,7 +2489,7 @@ object ListaProdutos: TListaProdutos
         Height = 23
         Align = alTop
         DataField = 'cod_produto'
-        DataSource = DM.dsFDTabProduto
+        DataSource = dsProduto
         Enabled = False
         TabOrder = 0
       end
@@ -2487,7 +2523,7 @@ object ListaProdutos: TListaProdutos
         Height = 23
         Align = alTop
         DataField = 'descricao'
-        DataSource = DM.dsFDTabProduto
+        DataSource = dsProduto
         Enabled = False
         TabOrder = 0
       end
@@ -2521,7 +2557,7 @@ object ListaProdutos: TListaProdutos
         Height = 23
         Align = alTop
         DataField = 'marca'
-        DataSource = DM.dsFDTabProduto
+        DataSource = dsProduto
         Enabled = False
         TabOrder = 0
       end
@@ -2555,7 +2591,7 @@ object ListaProdutos: TListaProdutos
         Height = 23
         Align = alTop
         DataField = 'grupo_id'
-        DataSource = DM.dsFDTabProduto
+        DataSource = dsProduto
         Enabled = False
         KeyField = 'id'
         ListField = 'descricao'
@@ -2592,7 +2628,7 @@ object ListaProdutos: TListaProdutos
         Height = 23
         Align = alTop
         DataField = 'modelo'
-        DataSource = DM.dsFDTabProduto
+        DataSource = dsProduto
         Enabled = False
         TabOrder = 0
       end

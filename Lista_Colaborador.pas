@@ -29,7 +29,7 @@ type
     Panel10: TPanel;
     Panel12: TPanel;
     Panel4: TPanel;
-    DBNavigator1: TDBNavigator;
+    dbNavColab: TDBNavigator;
     Panel3: TPanel;
     gpColab: TDBGrid;
     Panel13: TPanel;
@@ -96,23 +96,27 @@ procedure TListaColaborador.SBexcluirClick(Sender: TObject); // botão de excluir
 var
   resposta: Integer;
 begin
-  resposta := MessageBox(0, 'Você tem certeza que deseja excluir este registro?',
+  resposta := MessageBox(0, PChar('Você tem certeza que deseja excluir este registro: ' + dbpColabDescricao.Text + '?'),
   'Confirmação de Exclusão', MB_YESNO or MB_ICONWARNING);
 
   if resposta = IDYES then
   begin
-    dm.FDTabGrupo.Delete;
-    Filtro;
+    try
+      dm.FDTabColaborador.Delete;
+      MessageBox(0, 'Colaborador excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
+      Filtro;
+    except
+        MessageBox(0, 'Colaborador está sendo utilizado em outro registro!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+    end;
   end;
 end;
 
 procedure TListaColaborador.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
-    DesabilitaCampos();
+    DesabilitaCampos;
     TelaPrincipal.habilitaMenu;
-    HabilitaCamposPesquisa();
+    HabilitaCamposPesquisa;
     dm.FDTabColaborador.Cancel;
-    gpColab.Enabled      := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -122,16 +126,17 @@ end;
 
 procedure TListaColaborador.SBeditarClick(Sender: TObject); // botão de editar
 begin
-    HabilitaCampos();
+    HabilitaCampos;
     TelaPrincipal.desabilitaMenu;
-    DesabilitaCamposPesquisa();
+    DesabilitaCamposPesquisa;
+    dm.FDTabColaborador.Open;
     dm.FDTabColaborador.Edit;
-    gpColab.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBexcluir.Enabled    := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
+    dbpColabDescricao.SetFocus;
 end;
 
 procedure TListaColaborador.SBsairClick(Sender: TObject);
@@ -141,25 +146,25 @@ end;
 
 procedure TListaColaborador.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if dbpColabDescricao.Text = '' then
+    if Trim(dbpColabDescricao.Text) = '' then
       begin
         MessageBox(0, 'O campo "Nome" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpColabDescricao.SetFocus;
       end
   else
-    if dbpColabCargo.Text = '' then
+    if Trim(dbpColabCargo.Text) = '' then
       begin
         MessageBox(0, 'O campo "Cargo" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpColabCargo.SetFocus;
       end
   else
-    if cbpColabSetor.Text = '' then
+    if Trim(cbpColabSetor.Text) = '' then
       begin
         MessageBox(0, 'O campo "Setor" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbpColabSetor.SetFocus;
       end
   else
-    if cbpColabSede.Text = '' then
+    if Trim(cbpColabSede.Text) = '' then
       begin
         MessageBox(0, 'O campo "Sede" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbpColabSede.SetFocus;
@@ -169,10 +174,9 @@ begin
       dm.FDTabColaborador.Post;
       dm.FDTabColaborador.Close;
       MessageBox(0, 'Colaborador editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
-      DesabilitaCampos();
+      DesabilitaCampos;
       TelaPrincipal.habilitaMenu;
-      HabilitaCamposPesquisa();
-      gpColab.Enabled      := True;
+      HabilitaCamposPesquisa;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
       SBeditar.Enabled     := True;
@@ -181,6 +185,7 @@ begin
       dm.FDTabColaborador.Open;
       dm.FDTabColaborador.Refresh;
       dm.FDTabColaborador.Last;
+      Filtro;
     end;
 end;
 
@@ -206,6 +211,8 @@ begin
     epColabCargo.Enabled            := False;
     epColabSetor.Enabled            := False;
     epColabSede.Enabled             := False;
+    gpColab.Enabled                 := False;
+    dbNavColab.Enabled              := False;
 end;
 
 procedure TListaColaborador.epColabDescricaoChange(Sender: TObject);
@@ -234,14 +241,16 @@ begin
     epColabCargo.Enabled            := True;
     epColabSetor.Enabled            := True;
     epColabSede.Enabled             := True;
+    gpColab.Enabled                 := True;
+    dbNavColab.Enabled              := True;
 end;
 
 procedure TListaColaborador.Filtro; // pesquisa com sql query
 begin
-  qryColab.ParamByName('descricao').AsString := '%' + epColabDescricao.Text + '%';
-  qryColab.ParamByName('cargo').AsString := '%' + epColabCargo.Text + '%';
-  qryColab.ParamByName('setor').AsString := '%' + epColabSetor.Text + '%';
-  qryColab.ParamByName('sede').AsString := '%' + epColabSede.Text + '%';
+  qryColab.ParamByName('descricao').AsString := '%' + Trim(epColabDescricao.Text) + '%';
+  qryColab.ParamByName('cargo').AsString := '%' + Trim(epColabCargo.Text) + '%';
+  qryColab.ParamByName('setor').AsString := '%' + Trim(epColabSetor.Text) + '%';
+  qryColab.ParamByName('sede').AsString := '%' + Trim(epColabSede.Text) + '%';
 
   qryColab.Close;
   qryColab.Open;
@@ -249,7 +258,6 @@ end;
 
 procedure TListaColaborador.FormShow(Sender: TObject);
 begin
-  dm.FDTabColaborador.Open;
   Filtro;
 
   if not TelaPrincipal.isAdmin then

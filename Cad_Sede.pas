@@ -70,14 +70,14 @@ begin
   SBnovo.Enabled       := True;
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
-  DesabilitaCampos();
+  DesabilitaCampos;
   TelaPrincipal.habilitaMenu;
   dm.FDTabSede.Cancel;
 end;
 
 procedure TCadSede.SBnovoClick(Sender: TObject); // botão de novo
 begin
-  HabilitaCampos();
+  HabilitaCampos;
   TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
@@ -102,7 +102,7 @@ begin
       dm.FDTabSede.Close;
       MessageBox(0, 'Sede cadastrada com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       TelaPrincipal.habilitaMenu;
-      DesabilitaCampos();
+      DesabilitaCampos;
       SBpesquisar.Enabled  := True;
       SBsair.Enabled       := True;
       SBnovo.Enabled       := True;

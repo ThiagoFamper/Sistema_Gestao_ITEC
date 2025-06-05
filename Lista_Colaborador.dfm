@@ -38,14 +38,14 @@ object ListaColaborador: TListaColaborador
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o'
+        Caption = 'Nome do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 65
+        ExplicitWidth = 151
       end
       object epColabDescricao: TEdit
         Left = 0
@@ -70,14 +70,14 @@ object ListaColaborador: TListaColaborador
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Setor'
+        Caption = 'Setor do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 35
+        ExplicitWidth = 145
       end
       object epColabSetor: TEdit
         Left = 0
@@ -102,14 +102,14 @@ object ListaColaborador: TListaColaborador
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Cargo'
+        Caption = 'Cargo do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 40
+        ExplicitWidth = 150
       end
       object epColabCargo: TEdit
         Left = 0
@@ -134,14 +134,14 @@ object ListaColaborador: TListaColaborador
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Sede'
+        Caption = 'Sede do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 33
+        ExplicitWidth = 143
       end
       object epColabSede: TEdit
         Left = 0
@@ -2136,6 +2136,12 @@ object ListaColaborador: TListaColaborador
       Height = 20
       BevelOuter = bvNone
       Caption = 'Editar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 1
     end
     object Panel8: TPanel
@@ -2145,6 +2151,12 @@ object ListaColaborador: TListaColaborador
       Height = 20
       BevelOuter = bvNone
       Caption = 'Cancelar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 2
     end
     object Panel9: TPanel
@@ -2154,6 +2166,12 @@ object ListaColaborador: TListaColaborador
       Height = 20
       BevelOuter = bvNone
       Caption = 'Salvar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 3
     end
     object Panel10: TPanel
@@ -2163,6 +2181,12 @@ object ListaColaborador: TListaColaborador
       Height = 20
       BevelOuter = bvNone
       Caption = 'Excluir'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 4
     end
     object Panel12: TPanel
@@ -2172,6 +2196,12 @@ object ListaColaborador: TListaColaborador
       Height = 20
       BevelOuter = bvNone
       Caption = 'Fechar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 5
     end
   end
@@ -2186,7 +2216,7 @@ object ListaColaborador: TListaColaborador
     ParentBackground = False
     TabOrder = 3
     ExplicitWidth = 1455
-    object DBNavigator1: TDBNavigator
+    object dbNavColab: TDBNavigator
       AlignWithMargins = True
       Left = 0
       Top = 6
@@ -2212,33 +2242,33 @@ object ListaColaborador: TListaColaborador
     object Panel13: TPanel
       Left = 16
       Top = 6
-      Width = 50
+      Width = 140
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 50
+        Width = 140
         Height = 20
         Align = alTop
-        Caption = 'ID'
+        Caption = 'ID do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 15
+        ExplicitWidth = 125
       end
       object dbpColabID: TDBEdit
         Left = 0
         Top = 20
-        Width = 50
+        Width = 140
         Height = 23
         Align = alTop
         DataField = 'id'
-        DataSource = DM.dsFDTabColaborador
+        DataSource = dsColab
         Enabled = False
         TabOrder = 0
       end
@@ -2256,14 +2286,14 @@ object ListaColaborador: TListaColaborador
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o'
+        Caption = 'Nome do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 65
+        ExplicitWidth = 151
       end
       object dbpColabDescricao: TDBEdit
         Left = 0
@@ -2272,7 +2302,7 @@ object ListaColaborador: TListaColaborador
         Height = 23
         Align = alTop
         DataField = 'descricao'
-        DataSource = DM.dsFDTabColaborador
+        DataSource = dsColab
         Enabled = False
         TabOrder = 0
       end
@@ -2290,14 +2320,14 @@ object ListaColaborador: TListaColaborador
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Cargo'
+        Caption = 'Cargo do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 40
+        ExplicitWidth = 150
       end
       object dbpColabCargo: TDBEdit
         Left = 0
@@ -2306,7 +2336,7 @@ object ListaColaborador: TListaColaborador
         Height = 23
         Align = alTop
         DataField = 'cargo'
-        DataSource = DM.dsFDTabColaborador
+        DataSource = dsColab
         Enabled = False
         TabOrder = 0
       end
@@ -2324,14 +2354,14 @@ object ListaColaborador: TListaColaborador
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Setor'
+        Caption = 'Setor do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 35
+        ExplicitWidth = 145
       end
       object cbpColabSetor: TDBLookupComboBox
         Left = 0
@@ -2340,7 +2370,8 @@ object ListaColaborador: TListaColaborador
         Height = 23
         Align = alTop
         DataField = 'setor_id'
-        DataSource = DM.dsFDTabColaborador
+        DataSource = dsColab
+        Enabled = False
         KeyField = 'id'
         ListField = 'descricao'
         ListSource = DM.dsFDTabSetor
@@ -2360,14 +2391,14 @@ object ListaColaborador: TListaColaborador
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Sede'
+        Caption = 'Sede do Colaborador'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 33
+        ExplicitWidth = 143
       end
       object cbpColabSede: TDBLookupComboBox
         Left = 0
@@ -2376,7 +2407,8 @@ object ListaColaborador: TListaColaborador
         Height = 23
         Align = alTop
         DataField = 'sede_id'
-        DataSource = DM.dsFDTabColaborador
+        DataSource = dsColab
+        Enabled = False
         KeyField = 'id'
         ListField = 'descricao'
         ListSource = DM.dsFDTabSede
@@ -2416,28 +2448,28 @@ object ListaColaborador: TListaColaborador
         item
           Expanded = False
           FieldName = 'descricao'
-          Title.Caption = 'Descri'#231#227'o'
+          Title.Caption = 'Nome do Colaborador'
           Width = 500
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'cargo'
-          Title.Caption = 'Cargo'
+          Title.Caption = 'Cargo do Colaborador'
           Width = 200
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'setor'
-          Title.Caption = 'Setor'
+          Title.Caption = 'Setor do Colaborador'
           Width = 200
           Visible = True
         end
         item
           Expanded = False
           FieldName = 'sede'
-          Title.Caption = 'Sede'
+          Title.Caption = 'Sede do Colaborador'
           Width = 200
           Visible = True
         end>

@@ -70,7 +70,7 @@ begin
   SBnovo.Enabled       := True;
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
-  DesabilitaCampos();
+  DesabilitaCampos;
   TelaPrincipal.habilitaMenu;
   TelaPrincipal.habilitaMenu;
   dm.FDTabGrupo.Cancel;
@@ -78,7 +78,7 @@ end;
 
 procedure TCadGrupo.SBnovoClick(Sender: TObject); // botão de novo
 begin
-  HabilitaCampos();
+  HabilitaCampos;
   TelaPrincipal.desabilitaMenu;
   TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
@@ -103,7 +103,7 @@ begin
       dm.FDTabGrupo.Post;
       dm.FDTabGrupo.Close;
       MessageBox(0, 'Grupo cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
-      DesabilitaCampos();
+      DesabilitaCampos;
       TelaPrincipal.habilitaMenu;
       TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;

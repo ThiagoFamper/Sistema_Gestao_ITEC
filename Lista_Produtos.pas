@@ -106,13 +106,18 @@ procedure TListaProdutos.SBexcluirClick(Sender: TObject); // botão de excluir
 var
   resposta: Integer;
 begin
-  resposta := MessageBox(0, 'Você tem certeza que deseja excluir este registro?',
+  resposta := MessageBox(0, PChar('Você tem certeza que deseja excluir este registro: ' + dbpProdDescricao.Text + '?'),
   'Confirmação de Exclusão', MB_YESNO or MB_ICONWARNING);
 
   if resposta = IDYES then
   begin
-    dm.FDTabGrupo.Delete;
-    Filtro;
+    try
+      dm.FDTabProduto.Delete;
+      MessageBox(0, 'Produto excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
+      Filtro;
+    except
+        MessageBox(0, 'Produto está sendo utilizado em outro registro!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+    end;
   end;
 end;
 
@@ -125,11 +130,10 @@ end;
 
 procedure TListaProdutos.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
-    DesabilitaCampos();
+    DesabilitaCampos;
     TelaPrincipal.habilitaMenu;
-    HabilitaCamposPesquisa();
+    HabilitaCamposPesquisa;
     dm.FDTabProduto.Cancel;
-    gpProd.Enabled      := True;
     SBrelatorio.Enabled  := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
@@ -140,17 +144,18 @@ end;
 
 procedure TListaProdutos.SBeditarClick(Sender: TObject); // botão de editar
 begin
-    HabilitaCampos();
+    HabilitaCampos;
     TelaPrincipal.desabilitaMenu;
-    DesabilitaCamposPesquisa();
+    DesabilitaCamposPesquisa;
+    dm.FDTabProduto.Open;
     dm.FDTabProduto.Edit;
-    gpProd.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBrelatorio.Enabled  := False;
     SBexcluir.Enabled    := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
+    dbpProdCod.SetFocus;
 end;
 
 procedure TListaProdutos.SBsairClick(Sender: TObject);
@@ -160,31 +165,31 @@ end;
 
 procedure TListaProdutos.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if dbpProdCod.Text = '' then
+    if Trim(dbpProdCod.Text) = '' then
       begin
         MessageBox(0, 'O campo "Código" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpProdCod.SetFocus;
       end
   else
-    if dbpProdDescricao.Text = '' then
+    if Trim(dbpProdDescricao.Text) = '' then
       begin
         MessageBox(0, 'O campo "Descrição" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpProdDescricao.SetFocus;
       end
   else
-    if dbpProdMarca.Text = '' then
+    if Trim(dbpProdMarca.Text) = '' then
       begin
         MessageBox(0, 'O campo "Marca" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpProdMarca.SetFocus;
       end
   else
-    if dbpProdModelo.Text = '' then
+    if Trim(dbpProdModelo.Text) = '' then
       begin
         MessageBox(0, 'O campo "Modelo" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpProdModelo.SetFocus;
       end
   else
-    if cbpProdGrupo.Text = '' then
+    if Trim(cbpProdGrupo.Text) = '' then
       begin
         MessageBox(0, 'O campo "Grupo" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         cbpProdGrupo.SetFocus;
@@ -194,10 +199,9 @@ begin
       dm.FDTabProduto.Post;
       dm.FDTabProduto.Close;
       MessageBox(0, 'Produto editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
-      DesabilitaCampos();
+      DesabilitaCampos;
       TelaPrincipal.habilitaMenu;
-      HabilitaCamposPesquisa();
-      gpProd.Enabled      := True;
+      HabilitaCamposPesquisa;
       SBrelatorio.Enabled  := True;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
@@ -207,6 +211,7 @@ begin
       dm.FDTabProduto.Open;
       dm.FDTabProduto.Refresh;
       dm.FDTabProduto.Last;
+      Filtro;
     end;
 end;
 
@@ -235,6 +240,8 @@ begin
     epProdModelo.Enabled         := False;
     epProdMarca.Enabled          := False;
     epProdGrupo.Enabled          := False;
+    gpProd.Enabled               := False;
+    dbNavProd.Enabled            := False;
 end;
 
 procedure TListaProdutos.HabilitaCamposPesquisa; // habilitar campos de pesquisa
@@ -244,15 +251,17 @@ begin
     epProdModelo.Enabled         := True;
     epProdMarca.Enabled          := True;
     epProdGrupo.Enabled          := True;
+    gpProd.Enabled               := True;
+    dbNavProd.Enabled            := True;
 end;
 
 procedure TListaProdutos.Filtro; // pesquisa com sql query
 begin
-  qryProduto.ParamByName('codigo').AsString := '%' + epProdCod.Text + '%';
-  qryProduto.ParamByName('descricao').AsString := '%' + epProdDescricao.Text + '%';
-  qryProduto.ParamByName('marca').AsString := '%' + epProdMarca.Text + '%';
-  qryProduto.ParamByName('modelo').AsString := '%' + epProdModelo.Text + '%';
-  qryProduto.ParamByName('grupo').AsString := '%' + epProdGrupo.Text + '%';
+  qryProduto.ParamByName('codigo').AsString := '%' + Trim(epProdCod.Text) + '%';
+  qryProduto.ParamByName('descricao').AsString := '%' + Trim(epProdDescricao.Text) + '%';
+  qryProduto.ParamByName('marca').AsString := '%' + Trim(epProdMarca.Text) + '%';
+  qryProduto.ParamByName('modelo').AsString := '%' + Trim(epProdModelo.Text) + '%';
+  qryProduto.ParamByName('grupo').AsString := '%' + Trim(epProdGrupo.Text) + '%';
 
   qryProduto.Close;
   qryProduto.Open;
@@ -260,7 +269,6 @@ end;
 
 procedure TListaProdutos.FormShow(Sender: TObject);
 begin
-  dm.FDTabProduto.Open;
   Filtro;
 
   if not TelaPrincipal.isAdmin then

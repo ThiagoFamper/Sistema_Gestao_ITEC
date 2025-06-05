@@ -53,7 +53,7 @@ type
     Label15: TLabel;
     dbEntradaDescricao: TDBEdit;
     Panel4: TPanel;
-    DBNavigator1: TDBNavigator;
+    dbNavEntrada: TDBNavigator;
     gEntrada: TDBGrid;
     Panel17: TPanel;
     Panel18: TPanel;
@@ -71,6 +71,8 @@ type
     Panel28: TPanel;
     Label14: TLabel;
     epProdGrupo: TEdit;
+    Panel1: TPanel;
+    SBestoque: TSpeedButton;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
@@ -87,7 +89,7 @@ type
     procedure epProdGrupoChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
-    procedure dbEntradaQtdKeyPress(Sender: TObject; var Key: Char);
+    procedure SBestoqueClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -102,17 +104,17 @@ implementation
 
 {$R *.dfm}
 
-uses Data_Module, Relatorio_Entrada, Tela_Principal;
+uses Data_Module, Relatorio_Entrada, Tela_Principal, Lista_Estoque;
 
 procedure TTelaEntrada.SBcancelarClick(Sender: TObject);
 begin
     DesabilitaCampos;
     TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa;
-    gEntrada.Enabled     := True;
     SBrelatorio.Enabled  := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
+    SBestoque.Enabled    := True;
     SBcancelar.Enabled   := False;
     bEntrada.Enabled     := False;
     dm.FDTabEntrada.Cancel;
@@ -123,15 +125,20 @@ begin
     HabilitaCampos;
     TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa;
-    gEntrada.Enabled     := False;
     SBcancelar.Enabled   := True;
     SBrelatorio.Enabled  := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
+    SBestoque.Enabled    := False;
     bEntrada.Enabled     := True;
     dm.FDTabEntrada.Open;
     dm.FDTabEntrada.Append;
     cbEntradaOperador.SetFocus;
+end;
+
+procedure TTelaEntrada.SBestoqueClick(Sender: TObject);
+begin
+  TelaPrincipal.AbrirFormulario(TListaEstoque); // botão de pesquisar
 end;
 
 procedure TTelaEntrada.SBrelatorioClick(Sender: TObject);
@@ -177,15 +184,21 @@ begin
         dbEntradaValor.SetFocus;
       end
   else
+    if StrToInt(dbEntradaValor.Text) <= 0 then
+      begin
+        MessageBox(0, 'O campo "Valor Unitário" não pode ser menor ou igual a 0!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+        dbEntradaValor.SetFocus;
+      end
+  else
     if Trim(dbEntradaQtd.Text) = '' then
       begin
         MessageBox(0, 'O campo "Quantidade" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbEntradaQtd.SetFocus;
       end
   else
-    if dbEntradaQtd.Text = '0' then
+    if StrToInt(dbEntradaQtd.Text) <= 0 then
       begin
-        MessageBox(0, 'O campo "Quantidade" não pode ser 0!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+        MessageBox(0, 'O campo "Quantidade" não pode ser menor ou igual a 0!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbEntradaQtd.SetFocus;
       end
   else
@@ -222,6 +235,7 @@ begin
       TelaPrincipal.habilitaMenu;
       SBsair.Enabled       := True;
       SBeditar.Enabled     := True;
+      SBestoque.Enabled    := True;
       SBcancelar.Enabled   := False;
       SBrelatorio.Enabled  := True;
       bEntrada.Enabled     := False;
@@ -230,14 +244,6 @@ begin
       dm.FDTabEntrada.Last;
       Filtro;
     end;
-end;
-
-procedure TTelaEntrada.dbEntradaQtdKeyPress(Sender: TObject; var Key: Char);
-begin
-  if not CharInSet(Key, ['0'..'9', #8]) then
-  begin
-    Key := #0;
-  end;
 end;
 
 procedure TTelaEntrada.DesabilitaCampos; // desabilitar campos
@@ -256,6 +262,7 @@ begin
     epProdMarca.Enabled          := False;
     epProdGrupo.Enabled          := False;
     gEntrada.Enabled             := False;
+    dbNavEntrada.Enabled         := False;
 end;
 
 procedure TTelaEntrada.epProdCodChange(Sender: TObject);
@@ -291,15 +298,16 @@ begin
     epProdMarca.Enabled          := True;
     epProdGrupo.Enabled          := True;
     gEntrada.Enabled             := True;
+    dbNavEntrada.Enabled         := True;
 end;
 
 procedure TTelaEntrada.Filtro; // pesquisa com sql query
 begin
-  qryProduto.ParamByName('codigo').AsString := '%' + epProdCod.Text + '%';
-  qryProduto.ParamByName('descricao').AsString := '%' + epProdDescricao.Text + '%';
-  qryProduto.ParamByName('marca').AsString := '%' + epProdModelo.Text + '%';
-  qryProduto.ParamByName('modelo').AsString := '%' + epProdMarca.Text + '%';
-  qryProduto.ParamByName('grupo').AsString := '%' + epProdGrupo.Text + '%';
+  qryProduto.ParamByName('codigo').AsString := '%' + Trim(epProdCod.Text) + '%';
+  qryProduto.ParamByName('descricao').AsString := '%' + Trim(epProdDescricao.Text) + '%';
+  qryProduto.ParamByName('marca').AsString := '%' + Trim(epProdModelo.Text) + '%';
+  qryProduto.ParamByName('modelo').AsString := '%' + Trim(epProdMarca.Text) + '%';
+  qryProduto.ParamByName('grupo').AsString := '%' + Trim(epProdGrupo.Text) + '%';
 
   qryProduto.Close;
   qryProduto.Open;
@@ -307,7 +315,6 @@ end;
 
 procedure TTelaEntrada.FormShow(Sender: TObject);
 begin
-  dm.FDTabProduto.Open;
   Filtro;
 end;
 

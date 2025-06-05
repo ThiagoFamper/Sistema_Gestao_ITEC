@@ -75,14 +75,14 @@ begin
   SBnovo.Enabled       := True;
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
-  DesabilitaCampos();
+  DesabilitaCampos;
   TelaPrincipal.habilitaMenu;
   dm.FDTabUsuario.Cancel;
 end;
 
 procedure TCadUsuario.SBnovoClick(Sender: TObject); // botão de novo
 begin
-  HabilitaCampos();
+  HabilitaCampos;
   TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
@@ -125,12 +125,12 @@ begin
       end
   else
     begin
-      dm.FDTabUsuario.FieldByName('Admin').AsBoolean := cbUsuarioAdmin.Checked;
+      dm.FDTabUsuario.FieldByName('admin').AsBoolean := cbUsuarioAdmin.Checked;
       dm.FDTabUsuario.Post;
       dm.FDTabUsuario.Close;
       MessageBox(0, 'Usuário cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       TelaPrincipal.habilitaMenu;
-      DesabilitaCampos();
+      DesabilitaCampos;
       SBpesquisar.Enabled  := True;
       SBsair.Enabled       := True;
       SBnovo.Enabled       := True;

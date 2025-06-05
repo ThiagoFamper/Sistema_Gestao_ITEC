@@ -29,33 +29,33 @@ object ListaSetor: TListaSetor
     object Panel13: TPanel
       Left = 16
       Top = 6
-      Width = 50
+      Width = 100
       Height = 59
       BevelOuter = bvNone
       TabOrder = 0
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 50
+        Width = 100
         Height = 20
         Align = alTop
-        Caption = 'ID'
+        Caption = 'ID do Setor'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 15
+        ExplicitWidth = 76
       end
       object dbpSetorID: TDBEdit
         Left = 0
         Top = 20
-        Width = 50
+        Width = 100
         Height = 23
         Align = alTop
         DataField = 'id'
-        DataSource = DM.dsFDTabSetor
+        DataSource = dsSetor
         Enabled = False
         TabOrder = 0
       end
@@ -73,14 +73,14 @@ object ListaSetor: TListaSetor
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o'
+        Caption = 'Descri'#231#227'o do Setor'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 65
+        ExplicitWidth = 126
       end
       object dbpSetorDescricao: TDBEdit
         Left = 0
@@ -89,7 +89,7 @@ object ListaSetor: TListaSetor
         Height = 23
         Align = alTop
         DataField = 'descricao'
-        DataSource = DM.dsFDTabSetor
+        DataSource = dsSetor
         Enabled = False
         TabOrder = 0
       end
@@ -119,14 +119,14 @@ object ListaSetor: TListaSetor
         Width = 400
         Height = 20
         Align = alTop
-        Caption = 'Descri'#231#227'o'
+        Caption = 'Descri'#231#227'o do Setor'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 65
+        ExplicitWidth = 126
       end
       object epSetorDescricao: TEdit
         Left = 0
@@ -2121,6 +2121,12 @@ object ListaSetor: TListaSetor
       Height = 20
       BevelOuter = bvNone
       Caption = 'Editar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 1
     end
     object Panel8: TPanel
@@ -2130,6 +2136,12 @@ object ListaSetor: TListaSetor
       Height = 20
       BevelOuter = bvNone
       Caption = 'Cancelar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 2
     end
     object Panel9: TPanel
@@ -2139,6 +2151,12 @@ object ListaSetor: TListaSetor
       Height = 20
       BevelOuter = bvNone
       Caption = 'Salvar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 3
     end
     object Panel10: TPanel
@@ -2148,6 +2166,12 @@ object ListaSetor: TListaSetor
       Height = 20
       BevelOuter = bvNone
       Caption = 'Excluir'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 4
     end
     object Panel12: TPanel
@@ -2157,6 +2181,12 @@ object ListaSetor: TListaSetor
       Height = 20
       BevelOuter = bvNone
       Caption = 'Fechar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 5
     end
   end
@@ -2171,7 +2201,7 @@ object ListaSetor: TListaSetor
     ParentBackground = False
     TabOrder = 3
     ExplicitWidth = 1046
-    object DBNavigator1: TDBNavigator
+    object dbNavSetor: TDBNavigator
       AlignWithMargins = True
       Left = 0
       Top = 6
@@ -2213,7 +2243,7 @@ object ListaSetor: TListaSetor
         item
           Expanded = False
           FieldName = 'descricao'
-          Title.Caption = 'Descri'#231#227'o'
+          Title.Caption = 'Descri'#231#227'o do Setor'
           Width = 500
           Visible = True
         end>

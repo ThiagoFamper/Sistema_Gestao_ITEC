@@ -1007,6 +1007,12 @@ object ListaEstoque: TListaEstoque
       Height = 20
       BevelOuter = bvNone
       Caption = 'Relat'#243'rio'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 1
     end
     object Panel12: TPanel
@@ -1016,6 +1022,12 @@ object ListaEstoque: TListaEstoque
       Height = 20
       BevelOuter = bvNone
       Caption = 'Fechar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 2
     end
   end

@@ -28,7 +28,7 @@ type
     Panel10: TPanel;
     Panel12: TPanel;
     Panel4: TPanel;
-    DBNavigator1: TDBNavigator;
+    dbNavUsuario: TDBNavigator;
     Panel3: TPanel;
     gpUsuario: TDBGrid;
     Panel13: TPanel;
@@ -69,6 +69,8 @@ type
     procedure epUsuarioNomeChange(Sender: TObject);
     procedure epUsuarioLoginChange(Sender: TObject);
     procedure cbpUsuarioAdminClick(Sender: TObject);
+    procedure gpUsuarioDrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
 
   private
     { Private declarations }
@@ -89,23 +91,27 @@ procedure TListaUsuario.SBexcluirClick(Sender: TObject); // botão de excluir
 var
   resposta: Integer;
 begin
-  resposta := MessageBox(0, 'Você tem certeza que deseja excluir este registro?',
+  resposta := MessageBox(0, PChar('Você tem certeza que deseja excluir este registro: ' + dbpUsuarioNome.Text + '?'),
   'Confirmação de Exclusão', MB_YESNO or MB_ICONWARNING);
 
   if resposta = IDYES then
   begin
-    dm.FDTabGrupo.Delete;
-    Filtro;
+    try
+      dm.FDTabUsuario.Delete;
+      MessageBox(0, 'Usuário excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
+      Filtro;
+    except
+        MessageBox(0, 'Usuário está sendo utilizado em outro registro!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+    end;
   end;
 end;
 
 procedure TListaUsuario.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
-    DesabilitaCampos();
+    DesabilitaCampos;
     TelaPrincipal.habilitaMenu;
-    HabilitaCamposPesquisa();
+    HabilitaCamposPesquisa;
     dm.FDTabUsuario.Cancel;
-    gpUsuario.Enabled    := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -115,16 +121,17 @@ end;
 
 procedure TListaUsuario.SBeditarClick(Sender: TObject); // botão de editar
 begin
-    HabilitaCampos();
+    HabilitaCampos;
     TelaPrincipal.desabilitaMenu;
-    DesabilitaCamposPesquisa();
+    DesabilitaCamposPesquisa;
+    dm.FDTabUsuario.Open;
     dm.FDTabUsuario.Edit;
-    gpUsuario.Enabled    := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBexcluir.Enabled    := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
+    dbpUsuarioNome.SetFocus;
 end;
 
 procedure TListaUsuario.SBsairClick(Sender: TObject);
@@ -134,33 +141,32 @@ end;
 
 procedure TListaUsuario.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if dbpUsuarioNome.Text = '' then
+    if Trim(dbpUsuarioNome.Text) = '' then
       begin
         MessageBox(0, 'O campo "Nome" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpUsuarioNome.SetFocus;
       end
   else
-    if dbpUsuarioLogin.Text = '' then
+    if Trim(dbpUsuarioLogin.Text) = '' then
       begin
         MessageBox(0, 'O campo "Login" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpUsuarioLogin.SetFocus;
       end
   else
-    if dbpUsuarioSenha.Text = '' then
+    if Trim(dbpUsuarioSenha.Text) = '' then
       begin
         MessageBox(0, 'O campo "Senha" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpUsuarioSenha.SetFocus;
       end
   else
     begin
-      dm.FDTabUsuario.FieldByName('Admin').AsBoolean := dbpUsuarioAdmin.Checked;
+      dm.FDTabUsuario.FieldByName('admin').AsBoolean := dbpUsuarioAdmin.Checked;
       dm.FDTabUsuario.Post;
       dm.FDTabUsuario.Close;
       MessageBox(0, 'Usuário editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
-      DesabilitaCampos();
+      DesabilitaCampos;
       TelaPrincipal.habilitaMenu;
-      HabilitaCamposPesquisa();
-      gpUsuario.Enabled    := True;
+      HabilitaCamposPesquisa;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
       SBeditar.Enabled     := True;
@@ -169,6 +175,7 @@ begin
       dm.FDTabUsuario.Open;
       dm.FDTabUsuario.Refresh;
       dm.FDTabUsuario.Close;
+      Filtro;
     end;
 end;
 
@@ -198,6 +205,8 @@ begin
     epUsuarioNome.Enabled          := False;
     epUsuarioLogin.Enabled         := False;
     cbpUsuarioAdmin.Enabled        := False;
+    gpUsuario.Enabled              := False;
+    dbNavUsuario.Enabled           := False;
 end;
 
 procedure TListaUsuario.epUsuarioNomeChange(Sender: TObject);
@@ -212,8 +221,8 @@ end;
 
 procedure TListaUsuario.Filtro; // pesquisa com sql query
 begin
-  qryUsuario.ParamByName('nome').AsString := '%' + epUsuarioNome.Text + '%';
-  qryUsuario.ParamByName('login').AsString := '%' + epUsuarioLogin.Text + '%';
+  qryUsuario.ParamByName('nome').AsString := '%' + Trim(epUsuarioNome.Text) + '%';
+  qryUsuario.ParamByName('login').AsString := '%' + Trim(epUsuarioLogin.Text) + '%';
   qryUsuario.ParamByName('admin').AsBoolean := cbpUsuarioAdmin.Checked;
 
   qryUsuario.Close;
@@ -233,11 +242,34 @@ begin
 
 end;
 
+procedure TListaUsuario.gpUsuarioDrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+var
+  TextToDraw: string;
+begin
+  if Column.Title.Caption = 'Usuário é Admin?' then
+  begin
+    if qryUsuario.FieldByName('admin').AsBoolean then
+      TextToDraw := 'Sim'
+    else
+      TextToDraw := 'Não';
+
+    gpUsuario.Canvas.FillRect(Rect);
+    gpUsuario.Canvas.TextRect(Rect, Rect.Left + 2, Rect.Top + 2, TextToDraw);
+  end
+  else
+  begin
+    gpUsuario.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+  end;
+end;
+
 procedure TListaUsuario.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     epUsuarioNome.Enabled          := True;
     epUsuarioLogin.Enabled         := True;
     cbpUsuarioAdmin.Enabled        := True;
+    gpUsuario.Enabled              := True;
+    dbNavUsuario.Enabled           := True;
 end;
 
 end.

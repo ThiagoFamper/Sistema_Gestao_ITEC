@@ -102,9 +102,6 @@ type
     procedure pnpConProdClick(Sender: TObject);
     procedure pnpConGruClick(Sender: TObject);
     procedure pnpConUserClick(Sender: TObject);
-    procedure pnpConEntClick(Sender: TObject);
-    procedure pnpConSaiClick(Sender: TObject);
-    procedure pnpConEmpClick(Sender: TObject);
     procedure pnpCadSedeClick(Sender: TObject);
     procedure pnpConSedeClick(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -156,9 +153,7 @@ implementation
 
 {$R *.dfm}
 
-uses Cad_Produto, Cad_Colaborador, Cad_Setor, Entrada_Prod, Saida_Prod,
-  Cad_Emprestimo, Cad_Grupo, Lista_Colaborador, Lista_Emprestimo,
-  Lista_Entrada, Lista_Grupos, Lista_Produtos, Lista_Saida, Lista_Setor,
+uses Cad_Produto, Cad_Colaborador, Cad_Setor, Cad_Grupo, Lista_Colaborador, Lista_Grupos, Lista_Produtos, Lista_Setor,
   Tela_Devolucao, Cad_usuario, Lista_Usuario, Tela_Login, Lista_Sede, Cad_Sede,
   Data_Module, Tela_Entrada, Tela_Saida, Tela_Emprestimo, Lista_Estoque;
 
@@ -322,11 +317,6 @@ begin
     selecionaMenu(3);
   end;
 
-  if Key = VK_F3 then
-  begin
-    selecionaMenu(1);
-  end;
-
   if Key = VK_BACK then
   begin
     selecionaMenu(0);
@@ -458,16 +448,6 @@ begin
   AbrirFormulario(TListaColaborador); // abre a tela de consulta colaborador
 end;
 
-procedure TTelaPrincipal.pnpConEmpClick(Sender: TObject);
-begin
-  AbrirFormulario(TListaEmprestimo); // abre a tela de consulta emprestimo
-end;
-
-procedure TTelaPrincipal.pnpConEntClick(Sender: TObject);
-begin
-  AbrirFormulario(TListaEntrada); // abre a tela de consulta entrada de produto
-end;
-
 procedure TTelaPrincipal.pnpConEstoqueClick(Sender: TObject);
 begin
   AbrirFormulario(TListaEstoque);  // abre a tela de consulta estoque
@@ -481,11 +461,6 @@ end;
 procedure TTelaPrincipal.pnpConProdClick(Sender: TObject);
 begin
   AbrirFormulario(TListaProdutos);  // abre a tela de consulta produto
-end;
-
-procedure TTelaPrincipal.pnpConSaiClick(Sender: TObject);
-begin
-  AbrirFormulario(TListaSaida); // abre a tela de consulta saida de produto
 end;
 
 procedure TTelaPrincipal.pnpConsClick(Sender: TObject);

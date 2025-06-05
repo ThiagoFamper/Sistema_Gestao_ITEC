@@ -29,7 +29,7 @@ type
     Panel10: TPanel;
     Panel12: TPanel;
     Panel4: TPanel;
-    DBNavigator1: TDBNavigator;
+    dbNavSetor: TDBNavigator;
     Panel3: TPanel;
     gpSetor: TDBGrid;
     Panel13: TPanel;
@@ -75,23 +75,27 @@ procedure TListaSetor.SBexcluirClick(Sender: TObject); // botão de excluir
 var
   resposta: Integer;
 begin
-  resposta := MessageBox(0, 'Você tem certeza que deseja excluir este registro?',
+  resposta := MessageBox(0, PChar('Você tem certeza que deseja excluir este registro: ' + dbpSetorDescricao.Text + '?'),
   'Confirmação de Exclusão', MB_YESNO or MB_ICONWARNING);
 
   if resposta = IDYES then
   begin
-    dm.FDTabGrupo.Delete;
-    Filtro;
+    try
+      dm.FDTabSetor.Delete;
+      MessageBox(0, 'Setor excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
+      Filtro;
+    except
+        MessageBox(0, 'Setor está sendo utilizado em outro registro!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+    end;
   end;
 end;
 
 procedure TListaSetor.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
-    DesabilitaCampos();
+    DesabilitaCampos;
     TelaPrincipal.habilitaMenu;
-    HabilitaCamposPesquisa();
+    HabilitaCamposPesquisa;
     dm.FDTabSetor.Cancel;
-    gpSetor.Enabled      := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -101,16 +105,17 @@ end;
 
 procedure TListaSetor.SBeditarClick(Sender: TObject); // botão de editar
 begin
-    HabilitaCampos();
+    HabilitaCampos;
     TelaPrincipal.desabilitaMenu;
-    DesabilitaCamposPesquisa();
+    DesabilitaCamposPesquisa;
+    dm.FDTabSetor.Open;
     dm.FDTabSetor.Edit;
-    gpSetor.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBexcluir.Enabled    := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
+    dbpSetorDescricao.SetFocus;
 end;
 
 procedure TListaSetor.SBsairClick(Sender: TObject);
@@ -120,7 +125,7 @@ end;
 
 procedure TListaSetor.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if dbpSetorDescricao.Text = '' then
+    if Trim(dbpSetorDescricao.Text) = '' then
       begin
         MessageBox(0, 'O campo "Descrição" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpSetorDescricao.SetFocus;
@@ -130,10 +135,9 @@ begin
       dm.FDTabSetor.Post;
       dm.FDTabSetor.Close;
       MessageBox(0, 'Setor editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
-      DesabilitaCampos();
+      DesabilitaCampos;
       TelaPrincipal.habilitaMenu;
-      HabilitaCamposPesquisa();
-      gpSetor.Enabled      := True;
+      HabilitaCamposPesquisa;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
       SBeditar.Enabled     := True;
@@ -142,6 +146,7 @@ begin
       dm.FDTabSetor.Open;
       dm.FDTabSetor.Refresh;
       dm.FDTabSetor.Last;
+      Filtro;
     end;
 end;
 
@@ -158,16 +163,20 @@ end;
 procedure TListaSetor.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
     epSetorDescricao.Enabled            := False;
+    gpSetor.Enabled                     := False;
+    dbNavSetor.Enabled                  := False;
 end;
 
 procedure TListaSetor.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     epSetorDescricao.Enabled            := True;
+    gpSetor.Enabled                     := True;
+    dbNavSetor.Enabled                  := True;
 end;
 
 procedure TListaSetor.Filtro; // pesquisa com sql query
 begin
-  qrySetor.ParamByName('descricao').AsString := '%' + epSetorDescricao.Text + '%';
+  qrySetor.ParamByName('descricao').AsString := '%' + Trim(epSetorDescricao.Text) + '%';
 
   qrySetor.Close;
   qrySetor.Open;
@@ -175,7 +184,6 @@ end;
 
 procedure TListaSetor.FormShow(Sender: TObject);
 begin
-  dm.FDTabSetor.Open;
   Filtro;
 
   if not TelaPrincipal.isAdmin then

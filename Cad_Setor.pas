@@ -64,14 +64,14 @@ begin
   SBnovo.Enabled       := True;
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
-  DesabilitaCampos();
+  DesabilitaCampos;
   TelaPrincipal.habilitaMenu;
   dm.FDTabSetor.Cancel;
 end;
 
 procedure TCadSetor.SBnovoClick(Sender: TObject); // botão de novo
 begin
-  HabilitaCampos();
+  HabilitaCampos;
   TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
@@ -105,7 +105,7 @@ begin
       dm.FDTabSetor.Post;
       dm.FDTabSetor.Close;
       MessageBox(0, 'Setor cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
-      DesabilitaCampos();
+      DesabilitaCampos;
       TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
       SBsair.Enabled       := True;

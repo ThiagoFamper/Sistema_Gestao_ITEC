@@ -64,8 +64,10 @@ type
     dbDevID: TDBEdit;
     qryUpdateStatus: TFDQuery;
     Panel15: TPanel;
-    DBNavigator1: TDBNavigator;
+    dbNavDevolucao: TDBNavigator;
     gDev: TDBGrid;
+    Panel16: TPanel;
+    SBestoque: TSpeedButton;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -82,6 +84,8 @@ type
     procedure eDevDescricaoChange(Sender: TObject);
     procedure eDevOperadorChange(Sender: TObject);
     procedure eDevColaboradorChange(Sender: TObject);
+    procedure SBestoqueClick(Sender: TObject);
+    procedure LimpaCampos;
 
   private
     { Private declarations }
@@ -96,7 +100,7 @@ implementation
 
 {$R *.dfm}
 
-uses Data_Module, Relatorio_Devolucao, Tela_Principal;
+uses Data_Module, Relatorio_Devolucao, Tela_Principal, Lista_Estoque;
 
 procedure TTelaDevolucao.SBrelatorioClick(Sender: TObject);
 begin
@@ -107,26 +111,35 @@ end;
 
 procedure TTelaDevolucao.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
-    DesabilitaCampos();
+    DesabilitaCampos;
+    LimpaCampos;
     TelaPrincipal.habilitaMenu;
-    HabilitaCamposPesquisa();
+    HabilitaCamposPesquisa;
     dm.FDTabEmprestimoProd.Cancel;
     SBrelatorio.Enabled  := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
+    SBestoque.Enabled    := True;
     SBcancelar.Enabled   := False;
 end;
 
 procedure TTelaDevolucao.SBeditarClick(Sender: TObject); // botão de editar
 begin
-    HabilitaCampos();
+    HabilitaCampos;
+    LimpaCampos;
     TelaPrincipal.desabilitaMenu;
-    DesabilitaCamposPesquisa();
+    DesabilitaCamposPesquisa;
     dm.FDTabEmprestimoProd.Edit;
     SBcancelar.Enabled   := True;
     SBrelatorio.Enabled  := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
+    SBestoque.Enabled    := False;
+end;
+
+procedure TTelaDevolucao.SBestoqueClick(Sender: TObject);
+begin
+  TelaPrincipal.AbrirFormulario(TListaEstoque); // botão de pesquisar
 end;
 
 procedure TTelaDevolucao.SBsairClick(Sender: TObject);
@@ -136,8 +149,6 @@ end;
 
 procedure TTelaDevolucao.HabilitaCampos; // habilitar campos
 begin
-    dbDevProdID.Enabled        := True;
-    dbDevDescricao.Enabled     := True;
     rgDev.Enabled              := True;
     eDevQtd.Enabled            := True;
     bDevolver.Enabled          := True;
@@ -166,9 +177,17 @@ begin
       quantidadeSaldo := StrToInt(dbDevSaldo.Text);
       if quantidadeDevolvida > quantidadeSaldo then
       begin
-        MessageBox(0, 'Quantidade devolvida não pode ser maior que saldo do empréstimo!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+        MessageBox(0, 'Quantidade devolvida não pode ser maior que a quantidade sendo utilizada!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+        eDevQtd.SetFocus;
         Exit;
-      end;
+      end
+    else
+      if StrToInt(eDevQtd.Text) <= 0 then
+      begin
+        MessageBox(0, 'O campo "Quantidade" não pode ser menor ou igual a 0!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+        eDevQtd.SetFocus;
+        Exit;
+      end
     end;
 
     qryUpdateEmp.Params.ParamByName('quantidade').AsInteger := quantidadeDevolvida;
@@ -190,21 +209,20 @@ begin
     end;
 
     MessageBox(0, 'Devolução realizada com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
-    DesabilitaCampos();
+    DesabilitaCampos;
+    LimpaCampos;
     TelaPrincipal.habilitaMenu;
-    HabilitaCamposPesquisa();
+    HabilitaCamposPesquisa;
     SBrelatorio.Enabled  := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
+    SBestoque.Enabled    := True;
     SBcancelar.Enabled   := False;
     Filtro;
 end;
 
 procedure TTelaDevolucao.DesabilitaCampos; // desabilitar campos
 begin
-    dbDevProdID.Enabled        := False;
-    dbDevDescricao.Enabled     := False;
-    dbDevSaldo.Enabled         := False;
     rgDev.Enabled              := False;
     eDevQtd.Enabled            := False;
     bDevolver.Enabled          := False;
@@ -216,6 +234,13 @@ begin
     eDevDescricao.Enabled      := False;
     eDevOperador.Enabled       := False;
     gDev.Enabled               := False;
+    dbNavDevolucao.Enabled     := False;
+end;
+
+procedure TTelaDevolucao.LimpaCampos;
+begin
+  rgDev.ItemIndex := 1;
+  eDevQtd.Clear;
 end;
 
 procedure TTelaDevolucao.eDevCodChange(Sender: TObject);
@@ -250,6 +275,7 @@ begin
     eDevDescricao.Enabled      := True;
     eDevOperador.Enabled       := True;
     gDev.Enabled               := True;
+    dbNavDevolucao.Enabled     := True;
 end;
 
 procedure TTelaDevolucao.rgDevClick(Sender: TObject);
@@ -266,10 +292,10 @@ end;
 
 procedure TTelaDevolucao.Filtro; // pesquisa com sql query
 begin
-  qryEmprestimo.ParamByName('codigo').AsString := '%' + eDevCod.Text + '%';
-  qryEmprestimo.ParamByName('descricao').AsString := '%' + eDevDescricao.Text + '%';
-  qryEmprestimo.ParamByName('operador').AsString := '%' + eDevOperador.Text + '%';
-  qryEmprestimo.ParamByName('colaborador').AsString := '%' + eDevColaborador.Text + '%';
+  qryEmprestimo.ParamByName('codigo').AsString := '%' + Trim(eDevCod.Text) + '%';
+  qryEmprestimo.ParamByName('descricao').AsString := '%' + Trim(eDevDescricao.Text) + '%';
+  qryEmprestimo.ParamByName('operador').AsString := '%' + Trim(eDevOperador.Text) + '%';
+  qryEmprestimo.ParamByName('colaborador').AsString := '%' + Trim(eDevColaborador.Text) + '%';
 
   qryEmprestimo.Close;
   qryEmprestimo.Open;

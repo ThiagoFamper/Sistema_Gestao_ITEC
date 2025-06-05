@@ -75,23 +75,27 @@ procedure TListaGrupos.SBexcluirClick(Sender: TObject); // botão de excluir
 var
   resposta: Integer;
 begin
-  resposta := MessageBox(0, 'Você tem certeza que deseja excluir este registro?',
+  resposta := MessageBox(0, PChar('Você tem certeza que deseja excluir este registro: ' + dbpGrupoDescricao.Text + '?'),
   'Confirmação de Exclusão', MB_YESNO or MB_ICONWARNING);
 
   if resposta = IDYES then
   begin
-    dm.FDTabGrupo.Delete;
-    Filtro;
+    try
+      dm.FDTabGrupo.Delete;
+      MessageBox(0, 'Grupo excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
+      Filtro;
+    except
+        MessageBox(0, 'Grupo está sendo utilizado em outro registro!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+    end;
   end;
 end;
 
 procedure TListaGrupos.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
-    DesabilitaCampos();
+    DesabilitaCampos;
     TelaPrincipal.habilitaMenu;
-    HabilitaCamposPesquisa();
+    HabilitaCamposPesquisa;
     dm.FDTabGrupo.Cancel;
-    gpGrupo.Enabled      := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -101,12 +105,11 @@ end;
 
 procedure TListaGrupos.SBeditarClick(Sender: TObject); // botão de editar
 begin
-    HabilitaCampos();
+    HabilitaCampos;
     TelaPrincipal.desabilitaMenu;
-    DesabilitaCamposPesquisa();
+    DesabilitaCamposPesquisa;
     dm.FDTabGrupo.Open;
     dm.FDTabGrupo.Edit;
-    gpGrupo.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBexcluir.Enabled    := False;
@@ -132,10 +135,9 @@ begin
       dm.FDTabGrupo.Post;
       dm.FDTabGrupo.Close;
       MessageBox(0, 'Grupo editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
-      DesabilitaCampos();
+      DesabilitaCampos;
       TelaPrincipal.habilitaMenu;
-      HabilitaCamposPesquisa();
-      gpGrupo.Enabled      := True;
+      HabilitaCamposPesquisa;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
       SBeditar.Enabled     := True;
@@ -161,11 +163,15 @@ end;
 procedure TListaGrupos.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
     epGrupoDescricao.Enabled            := False;
+    dbNavGrupo.Enabled                  := False;
+    gpGrupo.Enabled                     := False;
 end;
 
 procedure TListaGrupos.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     epGrupoDescricao.Enabled            := True;
+    dbNavGrupo.Enabled                  := True;
+    gpGrupo.Enabled                     := True;
 end;
 
 procedure TListaGrupos.Filtro; // pesquisa com sql query

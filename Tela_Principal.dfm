@@ -33,7 +33,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentFont = False
     TabOrder = 0
     OnResize = Panel2Resize
-    ExplicitWidth = 1153
+    ExplicitTop = -6
     object SBlogout: TSpeedButton
       Left = 32
       Top = 16
@@ -364,12 +364,12 @@ object TelaPrincipal: TTelaPrincipal
     object lUsuarioNome: TLabel
       Left = 88
       Top = 31
-      Width = 109
-      Height = 23
+      Width = 95
+      Height = 20
       Caption = 'lUsuarioNome'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
-      Font.Height = -17
+      Font.Height = -15
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
@@ -1519,8 +1519,7 @@ object TelaPrincipal: TTelaPrincipal
     Color = clTeal
     ParentBackground = False
     TabOrder = 4
-    ExplicitLeft = -4
-    ExplicitTop = 87
+    ExplicitHeight = 972
     object Panel3: TPanel
       Left = 0
       Top = 0
@@ -1698,7 +1697,7 @@ object TelaPrincipal: TTelaPrincipal
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
-        Caption = '     Cadastro (F3)'
+        Caption = '     Cadastro'
         Color = clWhite
         ParentBackground = False
         TabOrder = 3

@@ -34,7 +34,7 @@ type
     Panel10: TPanel;
     Panel12: TPanel;
     Panel4: TPanel;
-    DBNavigator1: TDBNavigator;
+    dbNavSede: TDBNavigator;
     Panel3: TPanel;
     gpSede: TDBGrid;
     Panel11: TPanel;
@@ -74,23 +74,27 @@ procedure TListaSede.SBexcluirClick(Sender: TObject); // botão de excluir
 var
   resposta: Integer;
 begin
-  resposta := MessageBox(0, 'Você tem certeza que deseja excluir este registro?',
+  resposta := MessageBox(0, PChar('Você tem certeza que deseja excluir este registro: ' + dbpSedeDescricao.Text + '?'),
   'Confirmação de Exclusão', MB_YESNO or MB_ICONWARNING);
 
   if resposta = IDYES then
   begin
-    dm.FDTabGrupo.Delete;
-    Filtro;
+    try
+      dm.FDTabSede.Delete;
+      MessageBox(0, 'Sede excluída com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
+      Filtro;
+    except
+        MessageBox(0, 'Sede está sendo utilizada em outro registro!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+    end;
   end;
 end;
 
 procedure TListaSede.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
-    DesabilitaCampos();
+    DesabilitaCampos;
     TelaPrincipal.habilitaMenu;
-    HabilitaCamposPesquisa();
+    HabilitaCamposPesquisa;
     dm.FDTabSede.Cancel;
-    gpSede.Enabled      := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -100,16 +104,17 @@ end;
 
 procedure TListaSede.SBeditarClick(Sender: TObject); // botão de editar
 begin
-    HabilitaCampos();
+    HabilitaCampos;
     TelaPrincipal.desabilitaMenu;
-    DesabilitaCamposPesquisa();
+    DesabilitaCamposPesquisa;
+    dm.FDTabSede.Open;
     dm.FDTabSede.Edit;
-    gpSede.Enabled      := False;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
     SBexcluir.Enabled    := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
+    dbpSedeDescricao.SetFocus;
 end;
 
 procedure TListaSede.SBsairClick(Sender: TObject);
@@ -119,7 +124,7 @@ end;
 
 procedure TListaSede.SBsalvarClick(Sender: TObject); // botão de salvar
 begin
-    if dbpSedeDescricao.Text = '' then
+    if Trim(dbpSedeDescricao.Text) = '' then
       begin
         MessageBox(0, 'O campo "Descrição" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         dbpSedeDescricao.SetFocus;
@@ -129,10 +134,9 @@ begin
       dm.FDTabSede.Post;
       dm.FDTabSede.Close;
       MessageBox(0, 'Sede editada com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
-      DesabilitaCampos();
+      DesabilitaCampos;
       TelaPrincipal.habilitaMenu;
-      HabilitaCamposPesquisa();
-      gpSede.Enabled       := True;
+      HabilitaCamposPesquisa;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
       SBeditar.Enabled     := True;
@@ -141,6 +145,7 @@ begin
       dm.FDTabSede.Open;
       dm.FDTabSede.Refresh;
       dm.FDTabSede.Last;
+      Filtro;
     end;
 end;
 
@@ -157,16 +162,20 @@ end;
 procedure TListaSede.DesabilitaCamposPesquisa; // desabilitar campos de pesquisa
 begin
     epSedeDescricao.Enabled            := False;
+    gpSede.Enabled                     := False;
+    dbNavSede.Enabled                  := False;
 end;
 
 procedure TListaSede.HabilitaCamposPesquisa; // habilitar campos de pesquisa
 begin
     epSedeDescricao.Enabled            := True;
+    gpSede.Enabled                     := True;
+    dbNavSede.Enabled                  := True;
 end;
 
 procedure TListaSede.Filtro; // pesquisa com sql query
 begin
-  qrySede.ParamByName('descricao').AsString := '%' + epSedeDescricao.Text + '%';
+  qrySede.ParamByName('descricao').AsString := '%' + Trim(epSedeDescricao.Text) + '%';
 
   qrySede.Close;
   qrySede.Open;
@@ -174,7 +183,6 @@ end;
 
 procedure TListaSede.FormShow(Sender: TObject);
 begin
-  dm.FDTabSede.Open;
   Filtro;
 
   if not TelaPrincipal.isAdmin then

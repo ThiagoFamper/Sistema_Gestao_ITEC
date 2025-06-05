@@ -74,14 +74,14 @@ begin
   SBnovo.Enabled       := True;
   SBsalvar.Enabled     := False;
   SBcancelar.Enabled   := False;
-  DesabilitaCampos();
+  DesabilitaCampos;
   TelaPrincipal.habilitaMenu;
   dm.FDTabColaborador.Cancel;
 end;
 
 procedure TCadColaborador.SBnovoClick(Sender: TObject); // botão de novo
 begin
-  HabilitaCampos();
+  HabilitaCampos;
   TelaPrincipal.desabilitaMenu;
   SBcancelar.Enabled   := True;
   SBsalvar.Enabled     := True;
@@ -133,7 +133,7 @@ begin
       dm.FDTabColaborador.Post;
       dm.FDTabColaborador.Close;
       MessageBox(0, 'Colaborador cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
-      DesabilitaCampos();
+      DesabilitaCampos;
       TelaPrincipal.habilitaMenu;
       SBpesquisar.Enabled  := True;
       SBsair.Enabled       := True;
