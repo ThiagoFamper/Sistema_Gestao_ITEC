@@ -73,17 +73,16 @@ object RelatorioEntrada: TRelatorioEntrada
       TabOrder = 1
       ExplicitWidth = 332
       object Label1: TLabel
-        Left = 0
-        Top = 0
-        Width = 334
-        Height = 15
-        Align = alTop
+        Left = 10
+        Top = 6
+        Width = 67
+        Height = 21
+        AutoSize = False
         Caption = 'Data Inicial:'
-        ExplicitWidth = 61
       end
       object DateTimeInicial: TDateTimePicker
         Left = 83
-        Top = 0
+        Top = 3
         Width = 241
         Height = 23
         Cursor = crHandPoint
@@ -114,17 +113,16 @@ object RelatorioEntrada: TRelatorioEntrada
       TabOrder = 3
       ExplicitWidth = 332
       object Label2: TLabel
-        Left = 0
-        Top = 0
-        Width = 334
+        Left = 10
+        Top = 14
+        Width = 61
         Height = 15
-        Align = alTop
+        AutoSize = False
         Caption = 'Data Final:'
-        ExplicitWidth = 55
       end
       object DateTimeFinal: TDateTimePicker
-        Left = 83
-        Top = 0
+        Left = 85
+        Top = 10
         Width = 241
         Height = 23
         Cursor = crHandPoint
@@ -134,7 +132,7 @@ object RelatorioEntrada: TRelatorioEntrada
       end
     end
     object BitBtn1: TBitBtn
-      Left = 106
+      Left = 103
       Top = 200
       Width = 89
       Height = 25
@@ -144,7 +142,7 @@ object RelatorioEntrada: TRelatorioEntrada
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
-      ExplicitLeft = 105
+      ExplicitLeft = 102
       ExplicitTop = 194
     end
   end

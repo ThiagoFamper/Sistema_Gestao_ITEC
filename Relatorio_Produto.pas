@@ -64,7 +64,7 @@ end;
 
 procedure TRelatorioProduto.FormShow(Sender: TObject);
 begin
-  DateTimeInicial.Date := EncodeDate(YearOf(Date), 1, 1);
+  DateTimeInicial.Date := EncodeDate(YearOf(Date), MonthOf(Date), 1);
   DateTimeFinal.Date := Date;
   BitBtn1.Left := (ClientWidth - BitBtn1.Width) div 2;  // centraliza verticalmente o botão de gerar relatório em tempo de execução
 end;

@@ -18,14 +18,14 @@ type
     FDQueryRelatDev: TFDQuery;
     frxDSRelatDev: TfrxDBDataset;
     Panel5: TPanel;
-    Label2: TLabel;
     DateTimeFinal: TDateTimePicker;
     Panel4: TPanel;
     Panel3: TPanel;
-    Label1: TLabel;
     DateTimeInicial: TDateTimePicker;
     Panel2: TPanel;
     BitBtn1: TBitBtn;
+    Label1: TLabel;
+    Label2: TLabel;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
@@ -60,7 +60,7 @@ end;
 
 procedure TRelatorioDevolucao.FormShow(Sender: TObject);
 begin
-  DateTimeInicial.Date := EncodeDate(YearOf(Date), 1, 1);
+  DateTimeInicial.Date := EncodeDate(YearOf(Date), MonthOf(Date), 1);
   DateTimeFinal.Date := Date;
   BitBtn1.Left := (ClientWidth - BitBtn1.Width) div 2;  // centraliza verticalmente o botão de gerar relatório em tempo de execução
 end;

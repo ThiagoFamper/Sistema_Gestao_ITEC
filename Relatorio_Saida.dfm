@@ -62,17 +62,16 @@ object RelatorioSaida: TRelatorioSaida
       TabOrder = 0
       ExplicitWidth = 332
       object Label1: TLabel
-        Left = 0
-        Top = 0
-        Width = 334
-        Height = 15
-        Align = alTop
+        Left = 10
+        Top = 6
+        Width = 67
+        Height = 21
+        AutoSize = False
         Caption = 'Data Inicial:'
-        ExplicitWidth = 61
       end
       object DateTimeInicial: TDateTimePicker
         Left = 83
-        Top = 0
+        Top = 3
         Width = 241
         Height = 23
         Cursor = crHandPoint
@@ -92,17 +91,16 @@ object RelatorioSaida: TRelatorioSaida
       TabOrder = 1
       ExplicitWidth = 332
       object Label2: TLabel
-        Left = 0
-        Top = 0
-        Width = 334
+        Left = 10
+        Top = 6
+        Width = 61
         Height = 15
-        Align = alTop
+        AutoSize = False
         Caption = 'Data Final:'
-        ExplicitWidth = 55
       end
       object DateTimeFinal: TDateTimePicker
         Left = 83
-        Top = 0
+        Top = 3
         Width = 241
         Height = 23
         Cursor = crHandPoint
@@ -134,7 +132,7 @@ object RelatorioSaida: TRelatorioSaida
       ExplicitWidth = 338
     end
     object BitBtn1: TBitBtn
-      Left = 100
+      Left = 99
       Top = 192
       Width = 89
       Height = 25
@@ -144,7 +142,7 @@ object RelatorioSaida: TRelatorioSaida
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
-      ExplicitLeft = 99
+      ExplicitLeft = 98
       ExplicitTop = 186
     end
   end
