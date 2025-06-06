@@ -34,14 +34,14 @@ object TelaPrincipal: TTelaPrincipal
     ParentFont = False
     TabOrder = 0
     OnResize = Panel2Resize
-    ExplicitTop = -6
+    ExplicitWidth = 1153
     object SBlogout: TSpeedButton
       Left = 32
       Top = 16
       Width = 50
       Height = 50
       Cursor = crHandPoint
-      Hint = 'Logout'
+      Hint = 'Sair'
       Flat = True
       Glyph.Data = {
         52270000424D5227000000000000420000002800000032000000320000000100
@@ -1560,7 +1560,7 @@ object TelaPrincipal: TTelaPrincipal
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
-        Caption = 'Sair'
+        Caption = 'Fechar'
         Color = clWhite
         ParentBackground = False
         TabOrder = 0
