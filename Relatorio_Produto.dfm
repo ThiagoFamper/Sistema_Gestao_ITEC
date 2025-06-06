@@ -78,17 +78,17 @@ object RelatorioProduto: TRelatorioProduto
         Width = 334
         Height = 15
         Align = alTop
-        Caption = 'Data Inicial'
-        ExplicitWidth = 58
+        Caption = 'Data Inicial:'
+        ExplicitWidth = 61
       end
       object DateTimeInicial: TDateTimePicker
         Left = 83
-        Top = 0
+        Top = 3
         Width = 241
         Height = 23
         Cursor = crHandPoint
         Date = 45789.000000000000000000
-        Time = 0.944744328706292400
+        Time = 45789.000000000000000000
         TabOrder = 0
       end
     end
@@ -119,8 +119,8 @@ object RelatorioProduto: TRelatorioProduto
         Width = 334
         Height = 15
         Align = alTop
-        Caption = 'Data Final'
-        ExplicitWidth = 52
+        Caption = 'Data Final:'
+        ExplicitWidth = 55
       end
       object DateTimeFinal: TDateTimePicker
         Left = 83
@@ -129,12 +129,12 @@ object RelatorioProduto: TRelatorioProduto
         Height = 23
         Cursor = crHandPoint
         Date = 45789.000000000000000000
-        Time = 0.944744328706292400
+        Time = 45789.000000000000000000
         TabOrder = 0
       end
     end
     object BitBtn1: TBitBtn
-      Left = 113
+      Left = 112
       Top = 200
       Width = 89
       Height = 25
@@ -144,7 +144,7 @@ object RelatorioProduto: TRelatorioProduto
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
-      ExplicitLeft = 112
+      ExplicitLeft = 111
       ExplicitTop = 194
     end
   end

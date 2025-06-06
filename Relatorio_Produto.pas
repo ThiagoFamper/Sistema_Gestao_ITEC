@@ -8,7 +8,7 @@ uses
   frxSmartMemo, frCoreClasses, frxClass, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, frxDBSet, Vcl.ExtCtrls;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, frxDBSet, Vcl.ExtCtrls, DateUtils;
 
 type
   TRelatorioProduto = class(TForm)
@@ -58,12 +58,14 @@ begin
     frxRelatProd.ShowReport;
   except
     on E: Exception do
-      ShowMessage('Erro ao gerar relatório: ' + E.Message);
+      MessageBox(0, 'Erro ao gerar relatório!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
   end;
 end;
 
 procedure TRelatorioProduto.FormShow(Sender: TObject);
 begin
+  DateTimeInicial.Date := EncodeDate(YearOf(Date), 1, 1);
+  DateTimeFinal.Date := Date;
   BitBtn1.Left := (ClientWidth - BitBtn1.Width) div 2;  // centraliza verticalmente o botão de gerar relatório em tempo de execução
 end;
 

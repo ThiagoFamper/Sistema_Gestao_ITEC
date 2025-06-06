@@ -219,14 +219,14 @@ object TelaDevolucao: TTelaDevolucao
         Width = 200
         Height = 20
         Align = alTop
-        Caption = 'Sendo Utilizado'
+        Caption = 'Em Uso'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 106
+        ExplicitWidth = 50
       end
       object dbDevSaldo: TDBEdit
         Left = 0
@@ -2510,8 +2510,8 @@ object TelaDevolucao: TTelaDevolucao
       item
         Expanded = False
         FieldName = 'saldo'
-        Title.Caption = 'Sendo Utilizado'
-        Width = 100
+        Title.Caption = 'Em Uso'
+        Width = 50
         Visible = True
       end>
   end
