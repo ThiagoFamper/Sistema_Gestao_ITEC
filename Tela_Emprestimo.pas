@@ -24,9 +24,6 @@ type
     Panel10: TPanel;
     Label4: TLabel;
     dbEmpQtd: TEdit;
-    Panel15: TPanel;
-    Label5: TLabel;
-    cbEmpOperador: TDBLookupComboBox;
     Panel19: TPanel;
     Label16: TLabel;
     Panel29: TPanel;
@@ -42,13 +39,6 @@ type
     qryUpdateEstoque: TFDQuery;
     qryInsertEstoque: TFDQuery;
     cbEmpColaborador: TDBLookupComboBox;
-    FDTabColaboradorClone: TFDTable;
-    dsColaboradorClone: TDataSource;
-    FDTabColaboradorCloneid: TLargeintField;
-    FDTabColaboradorClonedescricao: TWideStringField;
-    FDTabColaboradorClonecargo: TWideStringField;
-    FDTabColaboradorClonesetor_id: TLargeintField;
-    FDTabColaboradorClonesede_id: TLargeintField;
     Panel4: TPanel;
     dbNavEmprestimo: TDBNavigator;
     Panel17: TPanel;
@@ -147,7 +137,7 @@ begin
     dm.FDTabEmprestimoProd.Append;
     dm.FDTabEmprestimoItem.Open;
     dm.FDTabEmprestimoItem.Append;
-    cbEmpOperador.SetFocus;
+    cbEmpColaborador.SetFocus;
 end;
 
 procedure TTelaEmprestimo.SBestoqueClick(Sender: TObject);
@@ -170,7 +160,6 @@ end;
 
 procedure TTelaEmprestimo.HabilitaCampos; // habilitar campos
 begin
-    cbEmpOperador.Enabled      := True;
     dbEmpQtd.Enabled           := True;
     cbEmpColaborador.Enabled   := True;
 end;
@@ -190,12 +179,6 @@ procedure TTelaEmprestimo.bEmpClick(Sender: TObject);
 var
   produtoID, quantidade, saldoAtual, emprestimoID: Integer;
 begin
-    if Trim(cbEmpOperador.Text) = '' then
-      begin
-        MessageBox(0, 'O campo "Operador" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
-        cbEmpOperador.SetFocus;
-      end
-  else
     if Trim(cbEmpColaborador.Text) = '' then
       begin
         MessageBox(0, 'O campo "Colaborador" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
@@ -239,7 +222,7 @@ begin
       dm.FDTabEmprestimoProd.FieldByName('saldo').AsInteger := quantidade;
       dm.FDTabEmprestimoProd.FieldByName('quantidade').AsInteger := quantidade;
       dm.FDTabEmprestimoProd.FieldByName('produto_id').AsInteger := produtoID;
-      dm.FDTabEmprestimoProd.FieldByName('operador').AsInteger := cbEmpOperador.KeyValue;
+      dm.FDTabEmprestimoProd.FieldByName('operador').AsInteger := TelaPrincipal.usuarioID;
       dm.FDTabEmprestimoProd.FieldByName('colaborador_id').AsInteger := cbEmpColaborador.KeyValue;
       dm.FDTabEmprestimoProd.Post;
       dm.FDTabEmprestimoProd.Refresh;
@@ -282,7 +265,6 @@ end;
 
 procedure TTelaEmprestimo.DesabilitaCampos; // desabilitar campos
 begin
-    cbEmpOperador.Enabled      := False;
     dbEmpQtd.Enabled           := False;
     cbEmpColaborador.Enabled   := False;
 end;
@@ -300,7 +282,6 @@ end;
 
 procedure TTelaEmprestimo.LimpaCampos;
 begin
-  cbEmpOperador.KeyValue := 0;
   cbEmpColaborador.KeyValue := 0;
   dbEmpQtd.Clear;
 end;

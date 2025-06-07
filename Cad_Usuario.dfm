@@ -81,16 +81,18 @@ object CadUsuario: TCadUsuario
         ParentFont = False
         ExplicitWidth = 117
       end
-      object dbUsuarioNome: TDBEdit
+      object dbUsuarioNome: TDBLookupComboBox
         Left = 0
         Top = 20
         Width = 400
         Height = 23
         Align = alTop
-        Color = clBtnHighlight
         DataField = 'nome'
         DataSource = DM.dsFDTabUsuario
         Enabled = False
+        KeyField = 'id'
+        ListField = 'descricao'
+        ListSource = DM.dsFDTabColaborador
         TabOrder = 0
       end
     end
@@ -170,15 +172,16 @@ object CadUsuario: TCadUsuario
       BevelKind = bkSoft
       BevelOuter = bvNone
       TabOrder = 4
-      object cbUsuarioAdmin: TCheckBox
-        AlignWithMargins = True
-        Left = 3
-        Top = 3
-        Width = 121
-        Height = 49
-        Hint = 'Marcar esta caixa dar'#225' permiss'#227'o total do sistema ao Usu'#225'rio'
+      object cbUsuarioAdmin: TDBCheckBox
+        Left = 0
+        Top = 0
+        Width = 127
+        Height = 55
+        Hint = 'Marcar esta caixa dar'#225' acesso total do sistema ao Usu'#225'rio'
         Align = alClient
         Caption = 'Administrador'
+        DataField = 'admin'
+        DataSource = DM.dsFDTabUsuario
         Enabled = False
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -189,6 +192,7 @@ object CadUsuario: TCadUsuario
         ParentShowHint = False
         ShowHint = True
         TabOrder = 0
+        ExplicitTop = -2
       end
     end
   end
@@ -1943,7 +1947,7 @@ object CadUsuario: TCadUsuario
       end
       item
         Expanded = False
-        FieldName = 'nome'
+        FieldName = 'nomec'
         Title.Caption = 'Nome do Usu'#225'rio'
         Width = 200
         Visible = True
@@ -1973,9 +1977,10 @@ object CadUsuario: TCadUsuario
   object qryUsuario: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
-      'SELECT *'
-      'FROM estoqueitec.usuario'
-      'ORDER BY id DESC')
+      'SELECT u.*, c.descricao AS nomec'
+      'FROM estoqueitec.usuario u'
+      'JOIN estoqueitec.colaborador c ON c.id = nome'
+      'ORDER BY u.id DESC')
     Left = 544
     Top = 274
   end

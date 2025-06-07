@@ -34,9 +34,6 @@ type
     Label18: TLabel;
     Panel10: TPanel;
     Label4: TLabel;
-    Panel15: TPanel;
-    Label5: TLabel;
-    cbEntradaOperador: TDBLookupComboBox;
     qryVerifica: TFDQuery;
     qryUpdateEstoque: TFDQuery;
     qryInsertEstoque: TFDQuery;
@@ -130,7 +127,7 @@ begin
     bEntrada.Enabled     := True;
     dm.FDTabEntrada.Open;
     dm.FDTabEntrada.Append;
-    cbEntradaOperador.SetFocus;
+    dbEntradaNF.SetFocus;
 end;
 
 procedure TTelaEntrada.SBestoqueClick(Sender: TObject);
@@ -153,7 +150,6 @@ end;
 
 procedure TTelaEntrada.HabilitaCampos; // habilitar campos
 begin
-    cbEntradaOperador.Enabled      := True;
     dbEntradaNF.Enabled            := True;
     dbEntradaValor.Enabled         := True;
     dbEntradaQtd.Enabled           := True;
@@ -163,12 +159,6 @@ procedure TTelaEntrada.bEntradaClick(Sender: TObject);
 var
   produtoID, quantidade: Integer;
 begin
-    if Trim(cbEntradaOperador.Text) = '' then
-      begin
-        MessageBox(0, 'O campo "Operador" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
-        cbEntradaOperador.SetFocus;
-      end
-  else
     if Trim(dbEntradaNF.Text) = '' then
       begin
         MessageBox(0, 'O campo "Nota Fiscal" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
@@ -205,6 +195,7 @@ begin
       quantidade := StrToInt(dbEntradaQtd.Text);
 
       dm.FDTabEntrada.FieldByName('produto_id').AsInteger := produtoID;
+      dm.FDTabEntrada.FieldByName('operador').AsInteger := TelaPrincipal.usuarioID;
       dm.FDTabEntrada.Post;
 
       qryVerifica.Close;
@@ -261,7 +252,6 @@ end;
 
 procedure TTelaEntrada.DesabilitaCampos; // desabilitar campos
 begin
-    cbEntradaOperador.Enabled      := False;
     dbEntradaNF.Enabled            := False;
     dbEntradaValor.Enabled         := False;
     dbEntradaQtd.Enabled           := False;

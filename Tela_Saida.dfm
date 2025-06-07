@@ -106,7 +106,7 @@ object TelaSaida: TTelaSaida
       ParentBackground = False
       TabOrder = 2
       object bSaida: TButton
-        Left = 211
+        Left = 74
         Top = 146
         Width = 81
         Height = 25
@@ -117,11 +117,11 @@ object TelaSaida: TTelaSaida
       end
       object Panel10: TPanel
         Left = 23
-        Top = 65
+        Top = 0
         Width = 200
         Height = 59
         BevelOuter = bvNone
-        TabOrder = 2
+        TabOrder = 1
         object Label4: TLabel
           Left = 0
           Top = 0
@@ -148,48 +148,13 @@ object TelaSaida: TTelaSaida
           OnKeyPress = dbSaidaQtdKeyPress
         end
       end
-      object Panel15: TPanel
-        Left = 23
-        Top = 0
-        Width = 200
-        Height = 59
-        BevelOuter = bvNone
-        TabOrder = 1
-        object Label5: TLabel
-          Left = 0
-          Top = 0
-          Width = 200
-          Height = 20
-          Align = alTop
-          Caption = 'Operador da Sa'#237'da'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentFont = False
-          ExplicitWidth = 126
-        end
-        object cbSaidaOperador: TDBLookupComboBox
-          Left = 0
-          Top = 20
-          Width = 200
-          Height = 23
-          Align = alTop
-          Enabled = False
-          KeyField = 'id'
-          ListField = 'descricao'
-          ListSource = DM.dsFDTabColaborador
-          TabOrder = 0
-        end
-      end
       object Panel19: TPanel
-        Left = 263
-        Top = 0
+        Left = 23
+        Top = 65
         Width = 200
         Height = 59
         BevelOuter = bvNone
-        TabOrder = 3
+        TabOrder = 2
         object Label16: TLabel
           Left = 0
           Top = 0

@@ -102,8 +102,6 @@ begin
 end;
 
 procedure TCadProduto.SBsalvarClick(Sender: TObject); // botão de salvar
-var
-  NewID: Integer;
 begin
     if Trim(dbProdCod.Text) = '' then
       begin

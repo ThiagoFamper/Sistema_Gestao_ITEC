@@ -38,6 +38,7 @@ type
     SBsalvar: TSpeedButton;
     SBexcluir: TSpeedButton;
     SBsair: TSpeedButton;
+    qryUpdateSetor: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -127,7 +128,9 @@ begin
       end
   else
     begin
-      dm.FDTabSetor.Post;
+      qryUpdateSetor.ParamByName('descricao').AsString := dbpSetorDescricao.Text;
+      qryUpdateSetor.ParamByName('id').AsInteger := StrToInt(dbpSetorID.Text);
+      qryUpdateSetor.ExecSQL;
       dm.FDTabSetor.Close;
       MessageBox(0, 'Setor editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos;

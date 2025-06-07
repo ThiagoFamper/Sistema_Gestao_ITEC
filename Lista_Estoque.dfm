@@ -697,6 +697,7 @@ object ListaEstoque: TListaEstoque
       ParentShowHint = False
       ShowHint = True
       Spacing = 7
+      OnClick = SBrelatorioClick
     end
     object SpeedButton1: TSpeedButton
       Left = 16

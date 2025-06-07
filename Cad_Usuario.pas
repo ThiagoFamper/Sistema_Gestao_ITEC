@@ -21,7 +21,6 @@ type
     dbUsuarioID: TDBEdit;
     Panel11: TPanel;
     Label5: TLabel;
-    dbUsuarioNome: TDBEdit;
     Panel12: TPanel;
     Label2: TLabel;
     dbUsuarioLogin: TDBEdit;
@@ -29,7 +28,6 @@ type
     Label3: TLabel;
     dbUsuarioSenha: TDBEdit;
     Panel14: TPanel;
-    cbUsuarioAdmin: TCheckBox;
     qryUsuario: TFDQuery;
     dsUsuario: TDataSource;
     SBnovo: TSpeedButton;
@@ -37,6 +35,8 @@ type
     SBsalvar: TSpeedButton;
     SBpesquisar: TSpeedButton;
     SBsair: TSpeedButton;
+    dbUsuarioNome: TDBLookupComboBox;
+    cbUsuarioAdmin: TDBCheckBox;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;

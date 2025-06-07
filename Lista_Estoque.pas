@@ -46,6 +46,7 @@ type
     procedure epProdMarcaChange(Sender: TObject);
     procedure epProdGrupoChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure SBrelatorioClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -60,7 +61,15 @@ implementation
 
 {$R *.dfm}
 
-uses Tela_Principal, Data_Module;
+uses Tela_Principal, Data_Module, Relatorio_Produto;
+
+procedure TListaEstoque.SBrelatorioClick(Sender: TObject);
+begin
+  if not Assigned(RelatorioProduto) then
+    Application.CreateForm(TRelatorioProduto, RelatorioProduto);
+
+  RelatorioProduto.ShowModal;
+end;
 
 procedure TListaEstoque.SBsairClick(Sender: TObject);
 begin

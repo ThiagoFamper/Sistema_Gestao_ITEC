@@ -25,7 +25,6 @@ type
     Label1: TLabel;
     dbpUsuarioID: TDBEdit;
     Panel14: TPanel;
-    dbpUsuarioNome: TDBEdit;
     Label5: TLabel;
     Panel15: TPanel;
     Label2: TLabel;
@@ -41,7 +40,6 @@ type
     Label6: TLabel;
     epUsuarioLogin: TEdit;
     Panel19: TPanel;
-    dbpUsuarioAdmin: TCheckBox;
     cbpUsuarioAdmin: TCheckBox;
     qryUsuario: TFDQuery;
     dsUsuario: TDataSource;
@@ -50,6 +48,9 @@ type
     SBsalvar: TSpeedButton;
     SBexcluir: TSpeedButton;
     SBsair: TSpeedButton;
+    dbpUsuarioNome: TDBLookupComboBox;
+    dbpUsuarioAdmin: TDBCheckBox;
+    qryUpdateUsuario: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -155,8 +156,12 @@ begin
       end
   else
     begin
-      dm.FDTabUsuario.FieldByName('admin').AsBoolean := dbpUsuarioAdmin.Checked;
-      dm.FDTabUsuario.Post;
+      qryUpdateUsuario.ParamByName('nome').AsInteger := dbpUsuarioNome.KeyValue;
+      qryUpdateUsuario.ParamByName('login').AsString := dbpUsuarioLogin.Text;
+      qryUpdateUsuario.ParamByName('senha').AsString := dbpUsuarioSenha.Text;
+      qryUpdateUsuario.ParamByName('admin').AsBoolean := dbpUsuarioAdmin.Checked;
+      qryUpdateUsuario.ParamByName('id').AsInteger := StrToInt(dbpUsuarioID.Text);
+      qryUpdateUsuario.ExecSQL;
       dm.FDTabUsuario.Close;
       MessageBox(0, 'Usuário editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos;

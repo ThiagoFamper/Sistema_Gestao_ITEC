@@ -268,8 +268,9 @@ object TelaLogin: TTelaLogin
   object qryUsuario: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
-      'SELECT nome, login, senha, admin'
+      'SELECT c.descricao AS nomec, nome, login, senha, admin'
       'FROM estoqueitec.usuario'
+      'JOIN estoqueitec.colaborador c ON c.id = nome'
       'WHERE UPPER(login) = UPPER(:login)'
       'AND senha = :senha;')
     Left = 456

@@ -14,7 +14,6 @@ uses
 type
   TListaProdutos = class(TForm)
     Panel2: TPanel;
-    SBrelatorio: TSpeedButton;
     Panel6: TPanel;
     SpeedButton1: TSpeedButton;
     Panel1: TPanel;
@@ -63,6 +62,7 @@ type
     SBsalvar: TSpeedButton;
     SBexcluir: TSpeedButton;
     SBsair: TSpeedButton;
+    qryUpdateProd: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -72,7 +72,6 @@ type
     procedure SBeditarClick(Sender: TObject);
     procedure SBcancelarClick(Sender: TObject);
     procedure SBsalvarClick(Sender: TObject);
-    procedure SBrelatorioClick(Sender: TObject);
     procedure Filtro;
     procedure epProdCodChange(Sender: TObject);
     procedure epProdDescricaoChange(Sender: TObject);
@@ -94,7 +93,7 @@ implementation
 
 {$R *.dfm}
 
-uses Cad_Produto, Data_Module, Relatorio_Produto, Tela_Principal;
+uses Cad_Produto, Data_Module, Tela_Principal;
 
 procedure TListaProdutos.SBexcluirClick(Sender: TObject); // botão de excluir
 var
@@ -115,20 +114,12 @@ begin
   end;
 end;
 
-procedure TListaProdutos.SBrelatorioClick(Sender: TObject);
-begin
-  Application.CreateForm(TRelatorioProduto, RelatorioProduto);
-  RelatorioProduto.ShowModal;
-  RelatorioProduto.Free;
-end;
-
 procedure TListaProdutos.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos;
     TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa;
     dm.FDTabProduto.Cancel;
-    SBrelatorio.Enabled  := True;
     SBexcluir.Enabled    := True;
     SBsair.Enabled       := True;
     SBeditar.Enabled     := True;
@@ -145,7 +136,6 @@ begin
     dm.FDTabProduto.Edit;
     SBcancelar.Enabled   := True;
     SBsalvar.Enabled     := True;
-    SBrelatorio.Enabled  := False;
     SBexcluir.Enabled    := False;
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
@@ -190,13 +180,18 @@ begin
       end
   else
     begin
-      dm.FDTabProduto.Post;
+      qryUpdateProd.ParamByName('codigo').AsString := dbpProdCod.Text;
+      qryUpdateProd.ParamByName('descricao').AsString := dbpProdDescricao.Text;
+      qryUpdateProd.ParamByName('marca').AsString := dbpProdMarca.Text;
+      qryUpdateProd.ParamByName('modelo').AsString := dbpProdModelo.Text;
+      qryUpdateProd.ParamByName('grupo').AsInteger := cbpProdGrupo.KeyValue;
+      qryUpdateProd.ParamByName('id').AsInteger := StrToInt(dbpProdID.Text);
+      qryUpdateProd.ExecSQL;
       dm.FDTabProduto.Close;
       MessageBox(0, 'Produto editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos;
       TelaPrincipal.habilitaMenu;
       HabilitaCamposPesquisa;
-      SBrelatorio.Enabled  := True;
       SBexcluir.Enabled    := True;
       SBsair.Enabled       := True;
       SBeditar.Enabled     := True;

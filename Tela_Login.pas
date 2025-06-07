@@ -65,8 +65,9 @@ begin
     begin
       Application.CreateForm(TTelaPrincipal, TelaPrincipal);
 
-      TelaPrincipal.usuarioLogado := FieldByName('nome').AsString;
+      TelaPrincipal.usuarioLogado := FieldByName('nomec').AsString;
       TelaPrincipal.isAdmin := FieldByName('admin').AsBoolean;
+      TelaPrincipal.usuarioID := FieldByName('nome').AsInteger;
 
       Self.Hide;
       TelaPrincipal.Show;

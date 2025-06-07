@@ -171,7 +171,6 @@ object DM: TDM
     Top = 420
   end
   object FDTabUsuario: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDEstoqueItec
     Transaction = FDTransaction1
@@ -181,15 +180,10 @@ object DM: TDM
     TableName = 'usuario'
     Left = 40
     Top = 508
-    object FDTabUsuarioid: TIntegerField
+    object FDTabUsuarioid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object FDTabUsuarionome: TWideStringField
-      FieldName = 'nome'
-      Origin = 'nome'
-      Size = 80
     end
     object FDTabUsuariologin: TWideStringField
       FieldName = 'login'
@@ -204,6 +198,10 @@ object DM: TDM
     object FDTabUsuarioadmin: TBooleanField
       FieldName = 'admin'
       Origin = '"admin"'
+    end
+    object FDTabUsuarionome: TLargeintField
+      FieldName = 'nome'
+      Origin = 'nome'
     end
   end
   object dsFDTabUsuario: TDataSource

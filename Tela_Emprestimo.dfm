@@ -106,8 +106,8 @@ object TelaEmprestimo: TTelaEmprestimo
       ParentBackground = False
       TabOrder = 2
       object bEmp: TButton
-        Left = 211
-        Top = 146
+        Left = 83
+        Top = 138
         Width = 81
         Height = 25
         Caption = '&Salvar'
@@ -116,12 +116,12 @@ object TelaEmprestimo: TTelaEmprestimo
         OnClick = bEmpClick
       end
       object Panel10: TPanel
-        Left = 279
-        Top = 0
+        Left = 23
+        Top = 65
         Width = 200
         Height = 59
         BevelOuter = bvNone
-        TabOrder = 3
+        TabOrder = 2
         object Label4: TLabel
           Left = 0
           Top = 0
@@ -148,48 +148,13 @@ object TelaEmprestimo: TTelaEmprestimo
           OnKeyPress = dbEmpQtdKeyPress
         end
       end
-      object Panel15: TPanel
+      object Panel19: TPanel
         Left = 23
         Top = 0
         Width = 200
         Height = 59
         BevelOuter = bvNone
         TabOrder = 1
-        object Label5: TLabel
-          Left = 0
-          Top = 0
-          Width = 200
-          Height = 20
-          Align = alTop
-          Caption = 'Emprestador'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentFont = False
-          ExplicitWidth = 85
-        end
-        object cbEmpOperador: TDBLookupComboBox
-          Left = 0
-          Top = 20
-          Width = 200
-          Height = 23
-          Align = alTop
-          Enabled = False
-          KeyField = 'id'
-          ListField = 'descricao'
-          ListSource = DM.dsFDTabColaborador
-          TabOrder = 0
-        end
-      end
-      object Panel19: TPanel
-        Left = 23
-        Top = 65
-        Width = 200
-        Height = 59
-        BevelOuter = bvNone
-        TabOrder = 2
         object Label16: TLabel
           Left = 0
           Top = 0
@@ -214,7 +179,7 @@ object TelaEmprestimo: TTelaEmprestimo
           Enabled = False
           KeyField = 'id'
           ListField = 'descricao'
-          ListSource = dsColaboradorClone
+          ListSource = DM.dsFDTabColaborador
           TabOrder = 0
         end
       end
@@ -2623,46 +2588,5 @@ object TelaEmprestimo: TTelaEmprestimo
         Name = 'EMPRESTIMO_ID'
         ParamType = ptInput
       end>
-  end
-  object FDTabColaboradorClone: TFDTable
-    Active = True
-    IndexFieldNames = 'id'
-    MasterSource = DM.dsFDTabColaborador
-    Connection = DM.FDEstoqueItec
-    Transaction = DM.FDTransaction1
-    UpdateTransaction = DM.FDTransaction1
-    ResourceOptions.AssignedValues = [rvEscapeExpand]
-    SchemaName = 'estoqueitec'
-    TableName = 'colaborador'
-    Left = 793
-    Top = 43
-    object FDTabColaboradorCloneid: TLargeintField
-      FieldName = 'id'
-      Origin = 'id'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object FDTabColaboradorClonedescricao: TWideStringField
-      FieldName = 'descricao'
-      Origin = 'descricao'
-      Size = 75
-    end
-    object FDTabColaboradorClonecargo: TWideStringField
-      FieldName = 'cargo'
-      Origin = 'cargo'
-      Size = 45
-    end
-    object FDTabColaboradorClonesetor_id: TLargeintField
-      FieldName = 'setor_id'
-      Origin = 'setor_id'
-    end
-    object FDTabColaboradorClonesede_id: TLargeintField
-      FieldName = 'sede_id'
-      Origin = 'sede_id'
-    end
-  end
-  object dsColaboradorClone: TDataSource
-    DataSet = FDTabColaboradorClone
-    Left = 937
-    Top = 43
   end
 end

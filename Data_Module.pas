@@ -28,11 +28,6 @@ type
     FDTabSetordescricao: TWideStringField;
     FDTabUsuario: TFDTable;
     dsFDTabUsuario: TDataSource;
-    FDTabUsuarioid: TIntegerField;
-    FDTabUsuarionome: TWideStringField;
-    FDTabUsuariologin: TWideStringField;
-    FDTabUsuariosenha: TWideStringField;
-    FDTabUsuarioadmin: TBooleanField;
     FDTabEntrada: TFDTable;
     dsFDTabEntrada: TDataSource;
     FDTabEmprestimoProd: TFDTable;
@@ -89,6 +84,11 @@ type
     FDTabSaidaoperador: TLargeintField;
     FDTabSaidadescricao: TWideStringField;
     FDTabSaidaproduto_id: TLargeintField;
+    FDTabUsuarioid: TLargeintField;
+    FDTabUsuariologin: TWideStringField;
+    FDTabUsuariosenha: TWideStringField;
+    FDTabUsuarioadmin: TBooleanField;
+    FDTabUsuarionome: TLargeintField;
   private
     { Private declarations }
   public

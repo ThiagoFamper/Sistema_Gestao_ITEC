@@ -56,6 +56,7 @@ type
     SBsalvar: TSpeedButton;
     SBexcluir: TSpeedButton;
     SBsair: TSpeedButton;
+    qryUpdateColaborador: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -166,7 +167,12 @@ begin
       end
   else
     begin
-      dm.FDTabColaborador.Post;
+      qryUpdateColaborador.ParamByName('descricao').AsString := dbpColabDescricao.Text;
+      qryUpdateColaborador.ParamByName('cargo').AsString := dbpColabCargo.Text;
+      qryUpdateColaborador.ParamByName('setor').AsInteger := StrToInt(cbpColabSetor.KeyValue);
+      qryUpdateColaborador.ParamByName('sede').AsInteger := StrToInt(cbpColabSede.KeyValue);
+      qryUpdateColaborador.ParamByName('id').AsInteger := StrToInt(dbpColabID.Text);
+      qryUpdateColaborador.ExecSQL;
       dm.FDTabColaborador.Close;
       MessageBox(0, 'Colaborador editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos;

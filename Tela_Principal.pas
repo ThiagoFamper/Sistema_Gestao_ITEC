@@ -139,6 +139,7 @@ type
     { Public declarations }
     usuarioLogado: string;
     isAdmin: Boolean;
+    usuarioID: integer;
     procedure AbrirFormulario(ClasseForm: TFormClass);
     procedure selecionaMenu(nMENU: integer);
     procedure desabilitaMenu;

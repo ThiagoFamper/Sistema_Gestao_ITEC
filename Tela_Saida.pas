@@ -23,9 +23,6 @@ type
     bSaida: TButton;
     Panel10: TPanel;
     Label4: TLabel;
-    Panel15: TPanel;
-    Label5: TLabel;
-    cbSaidaOperador: TDBLookupComboBox;
     Panel29: TPanel;
     Label15: TLabel;
     dbSaidaDescricaoProd: TDBEdit;
@@ -130,7 +127,7 @@ begin
     bSaida.Enabled       := True;
     dm.FDTabSaida.Open;
     dm.FDTabSaida.Append;
-    cbSaidaOperador.SetFocus;
+    dbSaidaQtd.SetFocus;
 end;
 
 procedure TTelaSaida.SBestoqueClick(Sender: TObject);
@@ -153,7 +150,6 @@ end;
 
 procedure TTelaSaida.HabilitaCampos; // habilitar campos
 begin
-    cbSaidaOperador.Enabled      := True;
     dbSaidaQtd.Enabled           := True;
     dbSaidaDescricao.Enabled     := True;
 end;
@@ -173,12 +169,6 @@ procedure TTelaSaida.bSaidaClick(Sender: TObject);
 var
   produtoID, quantidade, saldoAtual: Integer;
 begin
-    if Trim(cbSaidaOperador.Text) = '' then
-      begin
-        MessageBox(0, 'O campo "Operador" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
-        cbSaidaOperador.SetFocus;
-      end
-  else
     if Trim(dbSaidaQtd.Text) = '' then
       begin
         MessageBox(0, 'O campo "Quantidade" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
@@ -222,7 +212,7 @@ begin
       dm.FDTabSaida.FieldByName('produto_id').AsInteger := produtoID;
       dm.FDTabSaida.FieldByName('quantidade').AsInteger := quantidade;
       dm.FDTabSaida.FieldByName('descricao').AsString   := dbSaidaDescricao.Text;
-      dm.FDTabSaida.FieldByName('operador').AsInteger   := cbSaidaOperador.KeyValue;
+      dm.FDTabSaida.FieldByName('operador').AsInteger   := TelaPrincipal.usuarioID;
       dm.FDTabSaida.Post;
 
       qryUpdateEstoque.ParamByName('produto_id').AsInteger := produtoID;
@@ -258,7 +248,6 @@ end;
 
 procedure TTelaSaida.DesabilitaCampos; // desabilitar campos
 begin
-    cbSaidaOperador.Enabled      := False;
     dbSaidaQtd.Enabled           := False;
     dbSaidaDescricao.Enabled     := False;
 end;
@@ -276,7 +265,6 @@ end;
 
 procedure TTelaSaida.LimpaCampos;
 begin
-  cbSaidaOperador.KeyValue := 0;
   dbSaidaQtd.Clear;
   dbSaidaDescricao.Clear;
 end;

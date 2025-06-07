@@ -2482,4 +2482,37 @@ object ListaColaborador: TListaColaborador
         ParamType = ptInput
       end>
   end
+  object qryUpdateColaborador: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'UPDATE estoqueitec.colaborador'
+      'SET descricao = :descricao,'
+      '    cargo = :cargo,'
+      '    setor_id = :setor,'
+      '    sede_id = :sede'
+      'WHERE id = :id')
+    Left = 576
+    Top = 250
+    ParamData = <
+      item
+        Name = 'DESCRICAO'
+        ParamType = ptInput
+      end
+      item
+        Name = 'CARGO'
+        ParamType = ptInput
+      end
+      item
+        Name = 'SETOR'
+        ParamType = ptInput
+      end
+      item
+        Name = 'SEDE'
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID'
+        ParamType = ptInput
+      end>
+  end
 end

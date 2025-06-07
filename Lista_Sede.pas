@@ -37,6 +37,7 @@ type
     SBsalvar: TSpeedButton;
     SBexcluir: TSpeedButton;
     SBsair: TSpeedButton;
+    qryUpdateSede: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -126,7 +127,9 @@ begin
       end
   else
     begin
-      dm.FDTabSede.Post;
+      qryUpdateSede.ParamByName('descricao').AsString := dbpSedeDescricao.Text;
+      qryUpdateSede.ParamByName('id').AsInteger := StrToInt(dbpSedeID.Text);
+      qryUpdateSede.ExecSQL;
       dm.FDTabSede.Close;
       MessageBox(0, 'Sede editada com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos;

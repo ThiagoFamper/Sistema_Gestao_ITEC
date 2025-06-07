@@ -122,12 +122,12 @@ object TelaEntrada: TTelaEntrada
         OnClick = bEntradaClick
       end
       object Panel21: TPanel
-        Left = 295
-        Top = 0
+        Left = 23
+        Top = 65
         Width = 200
         Height = 59
         BevelOuter = bvNone
-        TabOrder = 3
+        TabOrder = 2
         object Label19: TLabel
           Left = 0
           Top = 0
@@ -158,11 +158,11 @@ object TelaEntrada: TTelaEntrada
       end
       object Panel19: TPanel
         Left = 23
-        Top = 65
+        Top = 0
         Width = 200
         Height = 59
         BevelOuter = bvNone
-        TabOrder = 2
+        TabOrder = 1
         object Label18: TLabel
           Left = 0
           Top = 0
@@ -191,12 +191,12 @@ object TelaEntrada: TTelaEntrada
         end
       end
       object Panel10: TPanel
-        Left = 295
-        Top = 65
+        Left = 287
+        Top = 0
         Width = 200
         Height = 59
         BevelOuter = bvNone
-        TabOrder = 4
+        TabOrder = 3
         object Label4: TLabel
           Left = 0
           Top = 0
@@ -223,43 +223,6 @@ object TelaEntrada: TTelaEntrada
           Enabled = False
           TabOrder = 0
           OnKeyPress = dbEntradaQtdKeyPress
-        end
-      end
-      object Panel15: TPanel
-        Left = 23
-        Top = 0
-        Width = 200
-        Height = 59
-        BevelOuter = bvNone
-        TabOrder = 1
-        object Label5: TLabel
-          Left = 0
-          Top = 0
-          Width = 200
-          Height = 20
-          Align = alTop
-          Caption = 'Operador da Entrada'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentFont = False
-          ExplicitWidth = 140
-        end
-        object cbEntradaOperador: TDBLookupComboBox
-          Left = 0
-          Top = 20
-          Width = 200
-          Height = 23
-          Align = alTop
-          DataField = 'operador'
-          DataSource = DM.dsFDTabEntrada
-          Enabled = False
-          KeyField = 'id'
-          ListField = 'descricao'
-          ListSource = DM.dsFDTabColaborador
-          TabOrder = 0
         end
       end
     end
@@ -2607,7 +2570,7 @@ object TelaEntrada: TTelaEntrada
     SQL.Strings = (
       'INSERT INTO estoqueitec.estoque (produto_id, saldo)'
       'VALUES (:produto_id, :quantidade);')
-    Left = 744
+    Left = 752
     Top = 250
     ParamData = <
       item

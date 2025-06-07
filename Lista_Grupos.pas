@@ -38,6 +38,7 @@ type
     epGrupoDescricao: TEdit;
     dsGrupo: TDataSource;
     qryGrupo: TFDQuery;
+    qryUpdateGrupo: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -127,7 +128,9 @@ begin
       end
   else
     begin
-      dm.FDTabGrupo.Post;
+      qryUpdateGrupo.ParamByName('descricao').AsString := dbpGrupoDescricao.Text;
+      qryUpdateGrupo.ParamByName('id').AsInteger := StrToInt(dbpGrupoID.Text);
+      qryUpdateGrupo.ExecSQL;
       dm.FDTabGrupo.Close;
       MessageBox(0, 'Grupo editado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos;

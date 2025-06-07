@@ -3,7 +3,7 @@ object RelatorioProduto: TRelatorioProduto
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Relat'#243'rio de Produto'
+  Caption = 'Relat'#243'rio de Estoque'
   ClientHeight = 355
   ClientWidth = 340
   Color = clBtnFace
@@ -22,7 +22,7 @@ object RelatorioProduto: TRelatorioProduto
     Height = 65
     Align = alTop
     BevelOuter = bvNone
-    Caption = 'Relat'#243'rio de Produto'
+    Caption = 'Relat'#243'rio de Estoque'
     Color = clCadetblue
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
@@ -132,7 +132,7 @@ object RelatorioProduto: TRelatorioProduto
       end
     end
     object BitBtn1: TBitBtn
-      Left = 111
+      Left = 108
       Top = 200
       Width = 89
       Height = 25
@@ -142,7 +142,7 @@ object RelatorioProduto: TRelatorioProduto
       Layout = blGlyphTop
       TabOrder = 4
       OnClick = BitBtn1Click
-      ExplicitLeft = 110
+      ExplicitLeft = 107
       ExplicitTop = 194
     end
   end

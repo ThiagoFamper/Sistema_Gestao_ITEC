@@ -184,7 +184,7 @@ object ListaUsuario: TListaUsuario
         ParentFont = False
         ExplicitWidth = 117
       end
-      object dbpUsuarioNome: TDBEdit
+      object dbpUsuarioNome: TDBLookupComboBox
         Left = 0
         Top = 20
         Width = 400
@@ -193,6 +193,9 @@ object ListaUsuario: TListaUsuario
         DataField = 'nome'
         DataSource = dsUsuario
         Enabled = False
+        KeyField = 'id'
+        ListField = 'descricao'
+        ListSource = DM.dsFDTabColaborador
         TabOrder = 0
       end
     end
@@ -271,15 +274,16 @@ object ListaUsuario: TListaUsuario
       Height = 59
       BevelOuter = bvNone
       TabOrder = 4
-      object dbpUsuarioAdmin: TCheckBox
-        AlignWithMargins = True
-        Left = 3
-        Top = 3
-        Width = 125
-        Height = 53
-        Hint = 'Marcar esta caixa dar'#225' permiss'#227'o total do sistema ao Usu'#225'rio'
+      object dbpUsuarioAdmin: TDBCheckBox
+        Left = 0
+        Top = 0
+        Width = 131
+        Height = 59
+        Hint = 'Marcar esta caixa dar'#225' acesso total do sistema ao Usu'#225'rio'
         Align = alClient
         Caption = 'Administrador'
+        DataField = 'admin'
+        DataSource = dsUsuario
         Enabled = False
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -2366,7 +2370,7 @@ object ListaUsuario: TListaUsuario
       Columns = <
         item
           Expanded = False
-          FieldName = 'nome'
+          FieldName = 'nomec'
           Title.Caption = 'Nome do Usu'#225'rio'
           Width = 200
           Visible = True
@@ -2396,12 +2400,15 @@ object ListaUsuario: TListaUsuario
   object qryUsuario: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
-      'SELECT *'
-      'FROM estoqueitec.usuario'
+      
+        'SELECT u.id, u.nome, u.login, u.senha, u.admin, c.descricao AS n' +
+        'omec'
+      'FROM estoqueitec.usuario u'
+      'JOIN estoqueitec.colaborador c ON c.id = u.nome'
       'WHERE'
-      '    (UPPER(nome) LIKE UPPER(:nome)) AND'
-      '    (UPPER(login) LIKE UPPER(:login)) AND'
-      '    (admin = :admin);'
+      '    (UPPER(c.descricao) LIKE UPPER(:nome)) AND'
+      '    (UPPER(u.login) LIKE UPPER(:login)) AND'
+      '    (u.admin = :admin);'
       '')
     Left = 760
     Top = 186
@@ -2409,6 +2416,7 @@ object ListaUsuario: TListaUsuario
       item
         Name = 'NOME'
         ParamType = ptInput
+        Value = Null
       end
       item
         Name = 'LOGIN'
@@ -2423,5 +2431,38 @@ object ListaUsuario: TListaUsuario
     DataSet = qryUsuario
     Left = 848
     Top = 186
+  end
+  object qryUpdateUsuario: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'UPDATE estoqueitec.usuario'
+      'SET nome = :nome,'
+      '    login = :login,'
+      '    senha = :senha,'
+      '    admin = :admin'
+      'WHERE id = :id')
+    Left = 648
+    Top = 186
+    ParamData = <
+      item
+        Name = 'NOME'
+        ParamType = ptInput
+      end
+      item
+        Name = 'LOGIN'
+        ParamType = ptInput
+      end
+      item
+        Name = 'SENHA'
+        ParamType = ptInput
+      end
+      item
+        Name = 'ADMIN'
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID'
+        ParamType = ptInput
+      end>
   end
 end

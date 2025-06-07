@@ -2239,4 +2239,22 @@ object ListaSede: TListaSede
     Left = 880
     Top = 138
   end
+  object qryUpdateSede: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'UPDATE estoqueitec.sede'
+      'SET descricao = :descricao'
+      'WHERE id = :id')
+    Left = 704
+    Top = 138
+    ParamData = <
+      item
+        Name = 'DESCRICAO'
+        ParamType = ptInput
+      end
+      item
+        Name = 'ID'
+        ParamType = ptInput
+      end>
+  end
 end
