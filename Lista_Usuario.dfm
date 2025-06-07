@@ -2400,9 +2400,7 @@ object ListaUsuario: TListaUsuario
   object qryUsuario: TFDQuery
     Connection = DM.FDEstoqueItec
     SQL.Strings = (
-      
-        'SELECT u.id, u.nome, u.login, u.senha, u.admin, c.descricao AS n' +
-        'omec'
+      'SELECT u.*, c.descricao AS nomec'
       'FROM estoqueitec.usuario u'
       'JOIN estoqueitec.colaborador c ON c.id = u.nome'
       'WHERE'

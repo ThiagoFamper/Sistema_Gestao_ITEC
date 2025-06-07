@@ -192,7 +192,6 @@ object CadUsuario: TCadUsuario
         ParentShowHint = False
         ShowHint = True
         TabOrder = 0
-        ExplicitTop = -2
       end
     end
   end

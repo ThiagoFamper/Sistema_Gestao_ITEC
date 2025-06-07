@@ -86,6 +86,7 @@ begin
   SBnovo.Enabled       := False;
   dm.FDTabUsuario.Open;
   dm.FDTabUsuario.Append;
+  cbUsuarioAdmin.Checked := False;
   dbUsuarioNome.SetFocus;
 end;
 
@@ -120,24 +121,27 @@ begin
       end
   else
     begin
-      dm.FDTabUsuario.FieldByName('admin').AsBoolean := cbUsuarioAdmin.Checked;
-      dm.FDTabUsuario.Post;
-      dm.FDTabUsuario.Close;
-      MessageBox(0, 'Usuário cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
-      TelaPrincipal.habilitaMenu;
-      DesabilitaCampos;
-      SBpesquisar.Enabled  := True;
-      SBsair.Enabled       := True;
-      SBnovo.Enabled       := True;
-      SBsalvar.Enabled     := False;
-      SBcancelar.Enabled   := False;
-      dm.FDTabUsuario.Open;
-      dm.FDTabUsuario.Refresh;
-      dm.FDTabUsuario.Last;
-      qryUsuario.Close;
-      qryUsuario.Open;
+      try
+        dm.FDTabUsuario.FieldByName('admin').AsBoolean := cbUsuarioAdmin.Checked;
+        dm.FDTabUsuario.Post;
+        dm.FDTabUsuario.Close;
+        MessageBox(0, 'Usuário cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
+        TelaPrincipal.habilitaMenu;
+        DesabilitaCampos;
+        SBpesquisar.Enabled  := True;
+        SBsair.Enabled       := True;
+        SBnovo.Enabled       := True;
+        SBsalvar.Enabled     := False;
+        SBcancelar.Enabled   := False;
+        dm.FDTabUsuario.Open;
+        dm.FDTabUsuario.Refresh;
+        dm.FDTabUsuario.Last;
+        qryUsuario.Close;
+        qryUsuario.Open;
+      except
+        MessageBox(0, PChar('O Login "' + dbUsuarioLogin.Text + '" já foi cadastrado!'), 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+      end;
     end;
-
 end;
 
 procedure TCadUsuario.FormShow(Sender: TObject);
