@@ -4,7 +4,7 @@ object TelaDevolucao: TTelaDevolucao
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Devolu'#231#227'o de Produto'
-  ClientHeight = 1012
+  ClientHeight = 1026
   ClientWidth = 1384
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,31 +16,33 @@ object TelaDevolucao: TTelaDevolucao
   TextHeight = 15
   object Panel5: TPanel
     Left = 0
-    Top = 770
+    Top = 819
     Width = 1384
-    Height = 242
+    Height = 207
     Align = alBottom
     BevelEdges = []
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 762
-    ExplicitWidth = 1382
+    ExplicitTop = 808
     object Panel8: TPanel
-      Left = 544
-      Top = 6
+      Left = 809
+      Top = 0
       Width = 809
-      Height = 223
+      Height = 207
+      Align = alLeft
       BevelEdges = [beLeft]
       BevelKind = bkFlat
       BevelOuter = bvNone
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
+      ExplicitLeft = 815
+      ExplicitHeight = 204
       object bDevolver: TButton
-        Left = 72
-        Top = 153
+        Left = 404
+        Top = 170
         Width = 81
         Height = 25
         Caption = '&Salvar'
@@ -49,8 +51,8 @@ object TelaDevolucao: TTelaDevolucao
         OnClick = bDevolverClick
       end
       object rgDev: TRadioGroup
-        Left = 15
-        Top = 0
+        Left = 16
+        Top = 6
         Width = 201
         Height = 81
         Caption = 'Devolver todos os produtos?'
@@ -69,8 +71,8 @@ object TelaDevolucao: TTelaDevolucao
         OnClick = rgDevClick
       end
       object Panel10: TPanel
-        Left = 15
-        Top = 88
+        Left = 16
+        Top = 93
         Width = 200
         Height = 59
         BevelOuter = bvNone
@@ -101,156 +103,171 @@ object TelaDevolucao: TTelaDevolucao
         end
       end
     end
-    object Panel13: TPanel
-      Left = 16
-      Top = 6
-      Width = 100
-      Height = 59
+    object Panel3: TPanel
+      Left = 0
+      Top = 0
+      Width = 809
+      Height = 207
+      Align = alLeft
+      BevelEdges = []
       BevelOuter = bvNone
+      Color = clWhitesmoke
+      ParentBackground = False
       TabOrder = 1
-      object Label9: TLabel
-        Left = 0
-        Top = 0
+      ExplicitLeft = 307
+      ExplicitTop = 6
+      ExplicitHeight = 242
+      object Panel13: TPanel
+        Left = 16
+        Top = 6
         Width = 100
-        Height = 20
-        Align = alTop
-        Caption = 'ID do Produto'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 94
+        Height = 59
+        BevelOuter = bvNone
+        TabOrder = 0
+        object Label9: TLabel
+          Left = 0
+          Top = 0
+          Width = 100
+          Height = 20
+          Align = alTop
+          Caption = 'ID do Produto'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          ExplicitWidth = 94
+        end
+        object dbDevProdID: TDBEdit
+          Left = 0
+          Top = 20
+          Width = 100
+          Height = 23
+          Align = alTop
+          DataField = 'produto_id'
+          DataSource = dsEmprestimo
+          Enabled = False
+          ReadOnly = True
+          TabOrder = 0
+        end
       end
-      object dbDevProdID: TDBEdit
-        Left = 0
-        Top = 20
-        Width = 100
+      object Panel14: TPanel
+        Left = 16
+        Top = 71
+        Width = 200
+        Height = 59
+        BevelOuter = bvNone
+        TabOrder = 1
+        object Label11: TLabel
+          Left = 0
+          Top = 0
+          Width = 200
+          Height = 20
+          Align = alTop
+          Caption = 'C'#243'digo do Produto'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          ExplicitWidth = 128
+        end
+        object dbProdCod: TDBEdit
+          Left = 0
+          Top = 20
+          Width = 200
+          Height = 23
+          Align = alTop
+          DataField = 'cod_produto'
+          DataSource = dsEmprestimo
+          Enabled = False
+          ReadOnly = True
+          TabOrder = 0
+        end
+      end
+      object Panel18: TPanel
+        Left = 16
+        Top = 136
+        Width = 200
+        Height = 59
+        BevelOuter = bvNone
+        TabOrder = 2
+        object Label16: TLabel
+          Left = 0
+          Top = 0
+          Width = 200
+          Height = 20
+          Align = alTop
+          Caption = 'Descri'#231#227'o do Produto'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          ExplicitWidth = 144
+        end
+        object dbDevDescricao: TDBEdit
+          Left = 0
+          Top = 20
+          Width = 200
+          Height = 23
+          Align = alTop
+          DataField = 'descricao_produto'
+          DataSource = dsEmprestimo
+          Enabled = False
+          ReadOnly = True
+          TabOrder = 0
+        end
+      end
+      object dbDevID: TDBEdit
+        Left = 199
+        Top = 32
+        Width = 50
         Height = 23
-        Align = alTop
-        DataField = 'produto_id'
+        DataField = 'emprestimo_id'
         DataSource = dsEmprestimo
         Enabled = False
-        ReadOnly = True
-        TabOrder = 0
+        TabOrder = 3
+        Visible = False
       end
-    end
-    object Panel14: TPanel
-      Left = 16
-      Top = 71
-      Width = 200
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 2
-      object Label11: TLabel
-        Left = 0
-        Top = 0
+      object Panel9: TPanel
+        Left = 343
+        Top = 6
         Width = 200
-        Height = 20
-        Align = alTop
-        Caption = 'C'#243'digo do Produto'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 128
+        Height = 59
+        BevelOuter = bvNone
+        TabOrder = 4
+        object Label5: TLabel
+          Left = 0
+          Top = 0
+          Width = 200
+          Height = 20
+          Align = alTop
+          Caption = 'Em Uso'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          ExplicitWidth = 50
+        end
+        object dbDevSaldo: TDBEdit
+          Left = 0
+          Top = 20
+          Width = 200
+          Height = 23
+          Align = alTop
+          DataField = 'saldo'
+          DataSource = dsEmprestimo
+          Enabled = False
+          ReadOnly = True
+          TabOrder = 0
+        end
       end
-      object dbProdCod: TDBEdit
-        Left = 0
-        Top = 20
-        Width = 200
-        Height = 23
-        Align = alTop
-        DataField = 'cod_produto'
-        DataSource = dsEmprestimo
-        Enabled = False
-        ReadOnly = True
-        TabOrder = 0
-      end
-    end
-    object Panel18: TPanel
-      Left = 16
-      Top = 136
-      Width = 200
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 3
-      object Label16: TLabel
-        Left = 0
-        Top = 0
-        Width = 200
-        Height = 20
-        Align = alTop
-        Caption = 'Descri'#231#227'o do Produto'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 144
-      end
-      object dbDevDescricao: TDBEdit
-        Left = 0
-        Top = 20
-        Width = 200
-        Height = 23
-        Align = alTop
-        DataField = 'descricao_produto'
-        DataSource = dsEmprestimo
-        Enabled = False
-        ReadOnly = True
-        TabOrder = 0
-      end
-    end
-    object Panel9: TPanel
-      Left = 263
-      Top = 6
-      Width = 200
-      Height = 59
-      BevelOuter = bvNone
-      TabOrder = 4
-      object Label5: TLabel
-        Left = 0
-        Top = 0
-        Width = 200
-        Height = 20
-        Align = alTop
-        Caption = 'Em Uso'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        ParentFont = False
-        ExplicitWidth = 50
-      end
-      object dbDevSaldo: TDBEdit
-        Left = 0
-        Top = 20
-        Width = 200
-        Height = 23
-        Align = alTop
-        DataField = 'saldo'
-        DataSource = dsEmprestimo
-        Enabled = False
-        ReadOnly = True
-        TabOrder = 0
-      end
-    end
-    object dbDevID: TDBEdit
-      Left = 143
-      Top = 24
-      Width = 50
-      Height = 23
-      DataField = 'emprestimo_id'
-      DataSource = dsEmprestimo
-      Enabled = False
-      TabOrder = 5
-      Visible = False
     end
   end
   object Panel1: TPanel
@@ -265,7 +282,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1382
     object Panel23: TPanel
       Left = 16
       Top = 6
@@ -407,7 +423,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1382
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -2428,7 +2443,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1382
     object dbNavDevolucao: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2444,7 +2458,7 @@ object TelaDevolucao: TTelaDevolucao
     Left = 0
     Top = 302
     Width = 1384
-    Height = 468
+    Height = 517
     Hint = 'Pesquisar Devolucao'
     Align = alClient
     DataSource = dsEmprestimo

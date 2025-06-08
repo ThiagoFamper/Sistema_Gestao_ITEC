@@ -21,15 +21,6 @@ type
     SpeedButton1: TSpeedButton;
     SBeditar: TSpeedButton;
     Panel6: TPanel;
-    Panel13: TPanel;
-    Label9: TLabel;
-    dbDevProdID: TDBEdit;
-    Panel14: TPanel;
-    Label11: TLabel;
-    dbProdCod: TDBEdit;
-    Panel18: TPanel;
-    Label16: TLabel;
-    dbDevDescricao: TDBEdit;
     Panel23: TPanel;
     Label19: TLabel;
     eDevCod: TEdit;
@@ -50,11 +41,7 @@ type
     Panel4: TPanel;
     Label2: TLabel;
     eDevColaborador: TEdit;
-    Panel9: TPanel;
-    Label5: TLabel;
-    dbDevSaldo: TDBEdit;
     eDevQtd: TEdit;
-    dbDevID: TDBEdit;
     qryUpdateStatus: TFDQuery;
     Panel15: TPanel;
     dbNavDevolucao: TDBNavigator;
@@ -63,6 +50,20 @@ type
     SBrelatorio: TSpeedButton;
     SBestoque: TSpeedButton;
     SBsair: TSpeedButton;
+    Panel3: TPanel;
+    Panel13: TPanel;
+    Label9: TLabel;
+    dbDevProdID: TDBEdit;
+    Panel14: TPanel;
+    Label11: TLabel;
+    dbProdCod: TDBEdit;
+    Panel18: TPanel;
+    Label16: TLabel;
+    dbDevDescricao: TDBEdit;
+    dbDevID: TDBEdit;
+    Panel9: TPanel;
+    Label5: TLabel;
+    dbDevSaldo: TDBEdit;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -222,6 +223,7 @@ begin
     SBcancelar.Enabled   := False;
     Filtro;
 end;
+
 
 procedure TTelaDevolucao.DesabilitaCampos; // desabilitar campos
 begin

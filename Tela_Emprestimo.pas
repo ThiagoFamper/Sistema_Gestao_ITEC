@@ -13,12 +13,6 @@ uses
 type
   TTelaEmprestimo = class(TForm)
     Panel5: TPanel;
-    Panel13: TPanel;
-    Label11: TLabel;
-    dbEmpID: TDBEdit;
-    Panel14: TPanel;
-    Label12: TLabel;
-    dbEmpCod: TDBEdit;
     Panel9: TPanel;
     bEmp: TButton;
     Panel10: TPanel;
@@ -26,9 +20,6 @@ type
     dbEmpQtd: TEdit;
     Panel19: TPanel;
     Label16: TLabel;
-    Panel29: TPanel;
-    Label15: TLabel;
-    dbEmpDescricao: TDBEdit;
     Panel2: TPanel;
     SpeedButton1: TSpeedButton;
     SBeditar: TSpeedButton;
@@ -62,6 +53,16 @@ type
     SBrelatorio: TSpeedButton;
     SBestoque: TSpeedButton;
     SBsair: TSpeedButton;
+    Panel3: TPanel;
+    Panel13: TPanel;
+    Label11: TLabel;
+    dbEmpID: TDBEdit;
+    Panel14: TPanel;
+    Label12: TLabel;
+    dbEmpCod: TDBEdit;
+    Panel29: TPanel;
+    Label15: TLabel;
+    dbEmpDescricao: TDBEdit;
     procedure SBcancelarClick(Sender: TObject);
     procedure SBeditarClick(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);

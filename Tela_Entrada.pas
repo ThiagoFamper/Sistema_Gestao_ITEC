@@ -13,12 +13,6 @@ uses
 type
   TTelaEntrada = class(TForm)
     Panel5: TPanel;
-    Panel13: TPanel;
-    Label11: TLabel;
-    dbEntradaID: TDBEdit;
-    Panel14: TPanel;
-    Label12: TLabel;
-    dbEntradaCod: TDBEdit;
     Panel2: TPanel;
     SBsair: TSpeedButton;
     SBrelatorio: TSpeedButton;
@@ -42,9 +36,6 @@ type
     dbEntradaQtd: TDBEdit;
     dsProduto: TDataSource;
     qryProduto: TFDQuery;
-    Panel29: TPanel;
-    Label15: TLabel;
-    dbEntradaDescricao: TDBEdit;
     Panel4: TPanel;
     dbNavEntrada: TDBNavigator;
     gEntrada: TDBGrid;
@@ -65,6 +56,16 @@ type
     Label14: TLabel;
     epProdGrupo: TEdit;
     SBestoque: TSpeedButton;
+    Panel3: TPanel;
+    Panel13: TPanel;
+    Label11: TLabel;
+    dbEntradaID: TDBEdit;
+    Panel14: TPanel;
+    Label12: TLabel;
+    dbEntradaCod: TDBEdit;
+    Panel29: TPanel;
+    Label15: TLabel;
+    dbEntradaDescricao: TDBEdit;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;

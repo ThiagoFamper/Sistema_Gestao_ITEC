@@ -13,19 +13,10 @@ uses
 type
   TTelaSaida = class(TForm)
     Panel5: TPanel;
-    Panel13: TPanel;
-    Label11: TLabel;
-    dbSaidaID: TDBEdit;
-    Panel14: TPanel;
-    Label12: TLabel;
-    dbSaidaCod: TDBEdit;
     Panel9: TPanel;
     bSaida: TButton;
     Panel10: TPanel;
     Label4: TLabel;
-    Panel29: TPanel;
-    Label15: TLabel;
-    dbSaidaDescricaoProd: TDBEdit;
     Panel2: TPanel;
     SpeedButton1: TSpeedButton;
     SBeditar: TSpeedButton;
@@ -61,6 +52,16 @@ type
     SBrelatorio: TSpeedButton;
     SBestoque: TSpeedButton;
     SBsair: TSpeedButton;
+    Panel3: TPanel;
+    Panel13: TPanel;
+    Label11: TLabel;
+    dbSaidaID: TDBEdit;
+    Panel14: TPanel;
+    Label12: TLabel;
+    dbSaidaCod: TDBEdit;
+    Panel29: TPanel;
+    Label15: TLabel;
+    dbSaidaDescricaoProd: TDBEdit;
     procedure SBcancelarClick(Sender: TObject);
     procedure SBeditarClick(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
