@@ -2045,8 +2045,6 @@ object TelaEntrada: TTelaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = -8
-    ExplicitTop = 347
     object dbNavEntrada: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2124,8 +2122,6 @@ object TelaEntrada: TTelaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitLeft = 249
-    ExplicitTop = 299
     object Panel18: TPanel
       Left = 16
       Top = 6
@@ -2287,7 +2283,7 @@ object TelaEntrada: TTelaEntrada
       end
     end
   end
-  object GridPanel1: TGridPanel
+  object gpEntrada: TGridPanel
     Left = 0
     Top = 680
     Width = 1546
@@ -2318,21 +2314,22 @@ object TelaEntrada: TTelaEntrada
         Value = 100.000000000000000000
       end>
     TabOrder = 4
-    ExplicitLeft = -8
-    ExplicitTop = 593
     object Panel3: TPanel
       Left = 1
       Top = 1
-      Width = 736
-      Height = 184
+      Width = 772
+      Height = 191
+      Align = alClient
       BevelEdges = []
       BevelOuter = bvNone
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
+      ExplicitLeft = -5
+      ExplicitTop = 6
       object Panel13: TPanel
-        Left = 12
-        Top = 6
+        Left = 15
+        Top = 5
         Width = 100
         Height = 59
         BevelOuter = bvNone
@@ -2365,7 +2362,7 @@ object TelaEntrada: TTelaEntrada
         end
       end
       object Panel14: TPanel
-        Left = 12
+        Left = 15
         Top = 71
         Width = 200
         Height = 59
@@ -2399,7 +2396,7 @@ object TelaEntrada: TTelaEntrada
         end
       end
       object Panel29: TPanel
-        Left = 12
+        Left = 15
         Top = 136
         Width = 200
         Height = 59
@@ -2437,16 +2434,22 @@ object TelaEntrada: TTelaEntrada
       Left = 773
       Top = 1
       Width = 772
-      Height = 183
+      Height = 191
+      Align = alClient
       BevelEdges = [beLeft]
       BevelKind = bkFlat
       BevelOuter = bvNone
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 1
+      OnResize = Panel9Resize
+      ExplicitLeft = 774
+      ExplicitTop = 6
+      ExplicitWidth = 773
+      ExplicitHeight = 183
       object bEntrada: TButton
         Left = 460
-        Top = 138
+        Top = 154
         Width = 81
         Height = 25
         Caption = '&Salvar'
@@ -2462,7 +2465,7 @@ object TelaEntrada: TTelaEntrada
       end
       object Panel21: TPanel
         Left = 16
-        Top = 66
+        Top = 70
         Width = 200
         Height = 59
         BevelOuter = bvNone
@@ -2497,7 +2500,7 @@ object TelaEntrada: TTelaEntrada
       end
       object Panel19: TPanel
         Left = 16
-        Top = 1
+        Top = 5
         Width = 200
         Height = 59
         BevelOuter = bvNone

@@ -12,11 +12,6 @@ uses
 
 type
   TTelaSaida = class(TForm)
-    Panel5: TPanel;
-    Panel9: TPanel;
-    bSaida: TButton;
-    Panel10: TPanel;
-    Label4: TLabel;
     Panel2: TPanel;
     SpeedButton1: TSpeedButton;
     SBeditar: TSpeedButton;
@@ -25,10 +20,6 @@ type
     qryProduto: TFDQuery;
     qryVerifica: TFDQuery;
     qryUpdateEstoque: TFDQuery;
-    Panel19: TPanel;
-    Label16: TLabel;
-    dbSaidaDescricao: TEdit;
-    dbSaidaQtd: TEdit;
     Panel17: TPanel;
     Panel18: TPanel;
     Label8: TLabel;
@@ -52,6 +43,7 @@ type
     SBrelatorio: TSpeedButton;
     SBestoque: TSpeedButton;
     SBsair: TSpeedButton;
+    gpSaida: TGridPanel;
     Panel3: TPanel;
     Panel13: TPanel;
     Label11: TLabel;
@@ -62,6 +54,14 @@ type
     Panel29: TPanel;
     Label15: TLabel;
     dbSaidaDescricaoProd: TDBEdit;
+    Panel9: TPanel;
+    bSaida: TButton;
+    Panel10: TPanel;
+    Label4: TLabel;
+    dbSaidaQtd: TEdit;
+    Panel19: TPanel;
+    Label16: TLabel;
+    dbSaidaDescricao: TEdit;
     procedure SBcancelarClick(Sender: TObject);
     procedure SBeditarClick(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
@@ -81,6 +81,7 @@ type
     procedure SBestoqueClick(Sender: TObject);
     procedure LimpaCampos;
     procedure dbSaidaQtdKeyPress(Sender: TObject; var Key: Char);
+    procedure Panel9Resize(Sender: TObject);
 
   private
     { Private declarations }
@@ -270,6 +271,14 @@ begin
   dbSaidaDescricao.Clear;
 end;
 
+procedure TTelaSaida.Panel9Resize(Sender: TObject);
+begin
+  // Centraliza horizontalmente o botão dentro do painel
+  bSaida.Left := (Panel9.Width - bSaida.Width) div 2;
+  // Centraliza verticalmente o botão dentro do painel
+  bSaida.Top := (Panel9.Height - bSaida.Height * 2) div 1;
+end;
+
 procedure TTelaSaida.epProdCodChange(Sender: TObject);
 begin
   Filtro;
@@ -310,6 +319,10 @@ end;
 procedure TTelaSaida.FormShow(Sender: TObject);
 begin
   Filtro;
+  // Centraliza horizontalmente o botão dentro do painel
+  bSaida.Left := (Panel9.Width - bSaida.Width) div 2;
+  // Centraliza verticalmente o botão dentro do painel
+  bSaida.Top := (Panel9.Height - bSaida.Height * 2) div 1
 end;
 
 end.

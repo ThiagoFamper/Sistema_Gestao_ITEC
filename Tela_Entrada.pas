@@ -44,7 +44,7 @@ type
     Label14: TLabel;
     epProdGrupo: TEdit;
     SBestoque: TSpeedButton;
-    GridPanel1: TGridPanel;
+    gpEntrada: TGridPanel;
     Panel3: TPanel;
     Panel13: TPanel;
     Label11: TLabel;
@@ -85,6 +85,7 @@ type
     procedure SBestoqueClick(Sender: TObject);
     procedure dbEntradaValorKeyPress(Sender: TObject; var Key: Char);
     procedure dbEntradaQtdKeyPress(Sender: TObject; var Key: Char);
+    procedure Panel9Resize(Sender: TObject);
 
   private
     { Private declarations }
@@ -235,6 +236,8 @@ begin
     end;
 end;
 
+
+
 procedure TTelaEntrada.dbEntradaQtdKeyPress(Sender: TObject; var Key: Char);
 begin
   if Key = '-' then
@@ -305,6 +308,14 @@ begin
     dbNavEntrada.Enabled         := True;
 end;
 
+procedure TTelaEntrada.Panel9Resize(Sender: TObject);
+begin
+  // Centraliza horizontalmente o botão dentro do painel
+  bEntrada.Left := (Panel9.Width - bEntrada.Width) div 2;
+  // Centraliza verticalmente o botão dentro do painel
+  bEntrada.Top := (Panel9.Height - bEntrada.Height * 2) div 1;
+end;
+
 procedure TTelaEntrada.Filtro; // pesquisa com sql query
 begin
   qryProduto.ParamByName('codigo').AsString := '%' + Trim(epProdCod.Text) + '%';
@@ -320,6 +331,10 @@ end;
 procedure TTelaEntrada.FormShow(Sender: TObject);
 begin
   Filtro;
+  // Centraliza horizontalmente o botão dentro do painel
+    bEntrada.Left := (Panel9.Width - bEntrada.Width) div 2;
+  // Centraliza verticalmente o botão dentro do painel
+    bEntrada.Top := (Panel9.Height - bEntrada.Height * 2) div 1;
 end;
 
 end.

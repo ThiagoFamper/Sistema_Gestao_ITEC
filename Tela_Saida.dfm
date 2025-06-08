@@ -14,219 +14,6 @@ object TelaSaida: TTelaSaida
   Font.Style = []
   OnShow = FormShow
   TextHeight = 15
-  object Panel5: TPanel
-    Left = 0
-    Top = 638
-    Width = 1121
-    Height = 207
-    Align = alBottom
-    BevelOuter = bvNone
-    Color = clWhitesmoke
-    ParentBackground = False
-    TabOrder = 0
-    object Panel9: TPanel
-      Left = 692
-      Top = 0
-      Width = 692
-      Height = 207
-      Align = alLeft
-      BevelEdges = [beLeft]
-      BevelKind = bkFlat
-      BevelOuter = bvNone
-      Color = clWhitesmoke
-      ParentBackground = False
-      TabOrder = 0
-      object bSaida: TButton
-        Left = 460
-        Top = 170
-        Width = 81
-        Height = 25
-        Caption = '&Salvar'
-        Enabled = False
-        TabOrder = 0
-        OnClick = bSaidaClick
-      end
-      object Panel10: TPanel
-        Left = 16
-        Top = 6
-        Width = 200
-        Height = 59
-        BevelOuter = bvNone
-        TabOrder = 1
-        object Label4: TLabel
-          Left = 0
-          Top = 0
-          Width = 200
-          Height = 20
-          Align = alTop
-          Caption = 'Quantidade da Sa'#237'da'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentFont = False
-          ExplicitWidth = 140
-        end
-        object dbSaidaQtd: TEdit
-          Left = 0
-          Top = 20
-          Width = 200
-          Height = 23
-          Align = alTop
-          Enabled = False
-          TabOrder = 0
-          OnKeyPress = dbSaidaQtdKeyPress
-        end
-      end
-      object Panel19: TPanel
-        Left = 16
-        Top = 71
-        Width = 200
-        Height = 59
-        BevelOuter = bvNone
-        TabOrder = 2
-        object Label16: TLabel
-          Left = 0
-          Top = 0
-          Width = 200
-          Height = 20
-          Align = alTop
-          Caption = 'Descri'#231#227'o da Sa'#237'da'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentFont = False
-          ExplicitWidth = 127
-        end
-        object dbSaidaDescricao: TEdit
-          Left = 0
-          Top = 20
-          Width = 200
-          Height = 23
-          Align = alTop
-          Enabled = False
-          TabOrder = 0
-        end
-      end
-    end
-    object Panel3: TPanel
-      Left = 0
-      Top = 0
-      Width = 692
-      Height = 207
-      Align = alLeft
-      BevelEdges = []
-      BevelOuter = bvNone
-      Color = clWhitesmoke
-      ParentBackground = False
-      TabOrder = 1
-      object Panel13: TPanel
-        Left = 16
-        Top = 6
-        Width = 100
-        Height = 59
-        BevelOuter = bvNone
-        TabOrder = 0
-        object Label11: TLabel
-          Left = 0
-          Top = 0
-          Width = 100
-          Height = 20
-          Align = alTop
-          Caption = 'ID do Produto'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentFont = False
-          ExplicitWidth = 94
-        end
-        object dbSaidaID: TDBEdit
-          Left = 0
-          Top = 20
-          Width = 100
-          Height = 23
-          Align = alTop
-          DataField = 'id'
-          DataSource = dsProduto
-          Enabled = False
-          TabOrder = 0
-        end
-      end
-      object Panel14: TPanel
-        Left = 16
-        Top = 71
-        Width = 200
-        Height = 59
-        BevelOuter = bvNone
-        TabOrder = 1
-        object Label12: TLabel
-          Left = 0
-          Top = 0
-          Width = 200
-          Height = 20
-          Align = alTop
-          Caption = 'C'#243'digo do Produto'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentFont = False
-          ExplicitWidth = 128
-        end
-        object dbSaidaCod: TDBEdit
-          Left = 0
-          Top = 20
-          Width = 200
-          Height = 23
-          Align = alTop
-          DataField = 'cod_produto'
-          DataSource = dsProduto
-          Enabled = False
-          TabOrder = 0
-        end
-      end
-      object Panel29: TPanel
-        Left = 16
-        Top = 136
-        Width = 200
-        Height = 59
-        BevelOuter = bvNone
-        TabOrder = 2
-        object Label15: TLabel
-          Left = 0
-          Top = 0
-          Width = 200
-          Height = 20
-          Align = alTop
-          Caption = 'Descri'#231#227'o do Produto'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -15
-          Font.Name = 'Segoe UI'
-          Font.Style = []
-          ParentFont = False
-          ExplicitWidth = 144
-        end
-        object dbSaidaDescricaoProd: TDBEdit
-          Left = 0
-          Top = 20
-          Width = 200
-          Height = 23
-          Align = alTop
-          DataField = 'descricao'
-          DataSource = dsProduto
-          Enabled = False
-          TabOrder = 0
-        end
-      end
-    end
-  end
   object Panel2: TPanel
     Left = 0
     Top = 0
@@ -238,7 +25,7 @@ object TelaSaida: TTelaSaida
     BevelOuter = bvNone
     Color = clTeal
     ParentBackground = False
-    TabOrder = 1
+    TabOrder = 0
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -2257,7 +2044,7 @@ object TelaSaida: TTelaSaida
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
-    TabOrder = 2
+    TabOrder = 1
     object Panel18: TPanel
       Left = 16
       Top = 6
@@ -2430,7 +2217,7 @@ object TelaSaida: TTelaSaida
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
-    TabOrder = 3
+    TabOrder = 2
     object dbNavSaida: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2446,13 +2233,13 @@ object TelaSaida: TTelaSaida
     Left = 0
     Top = 357
     Width = 1121
-    Height = 281
+    Height = 295
     Hint = 'Pesquisar Entrada'
     Align = alClient
     DataSource = dsProduto
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ReadOnly = True
-    TabOrder = 4
+    TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -2502,6 +2289,250 @@ object TelaSaida: TTelaSaida
         Width = 70
         Visible = True
       end>
+  end
+  object gpSaida: TGridPanel
+    Left = 0
+    Top = 652
+    Width = 1121
+    Height = 193
+    Align = alBottom
+    ColumnCollection = <
+      item
+        Value = 50.000000000000000000
+      end
+      item
+        Value = 50.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = Panel3
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = Panel9
+        Row = 0
+      end>
+    RowCollection = <
+      item
+        Value = 100.000000000000000000
+      end>
+    TabOrder = 4
+    ExplicitLeft = 80
+    ExplicitTop = 616
+    ExplicitWidth = 977
+    object Panel3: TPanel
+      Left = 1
+      Top = 1
+      Width = 560
+      Height = 191
+      Align = alClient
+      BevelEdges = []
+      BevelOuter = bvNone
+      Color = clWhitesmoke
+      ParentBackground = False
+      TabOrder = 0
+      ExplicitLeft = 152
+      ExplicitTop = 76
+      ExplicitWidth = 185
+      ExplicitHeight = 41
+      object Panel13: TPanel
+        Left = 16
+        Top = 5
+        Width = 100
+        Height = 59
+        BevelOuter = bvNone
+        TabOrder = 0
+        object Label11: TLabel
+          Left = 0
+          Top = 0
+          Width = 100
+          Height = 20
+          Align = alTop
+          Caption = 'ID do Produto'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          ExplicitWidth = 94
+        end
+        object dbSaidaID: TDBEdit
+          Left = 0
+          Top = 20
+          Width = 100
+          Height = 23
+          Align = alTop
+          DataField = 'id'
+          DataSource = dsProduto
+          Enabled = False
+          TabOrder = 0
+        end
+      end
+      object Panel14: TPanel
+        Left = 16
+        Top = 71
+        Width = 200
+        Height = 59
+        BevelOuter = bvNone
+        TabOrder = 1
+        object Label12: TLabel
+          Left = 0
+          Top = 0
+          Width = 200
+          Height = 20
+          Align = alTop
+          Caption = 'C'#243'digo do Produto'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          ExplicitWidth = 128
+        end
+        object dbSaidaCod: TDBEdit
+          Left = 0
+          Top = 20
+          Width = 200
+          Height = 23
+          Align = alTop
+          DataField = 'cod_produto'
+          DataSource = dsProduto
+          Enabled = False
+          TabOrder = 0
+        end
+      end
+      object Panel29: TPanel
+        Left = 16
+        Top = 136
+        Width = 200
+        Height = 59
+        BevelOuter = bvNone
+        TabOrder = 2
+        object Label15: TLabel
+          Left = 0
+          Top = 0
+          Width = 200
+          Height = 20
+          Align = alTop
+          Caption = 'Descri'#231#227'o do Produto'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          ExplicitWidth = 144
+        end
+        object dbSaidaDescricaoProd: TDBEdit
+          Left = 0
+          Top = 20
+          Width = 200
+          Height = 23
+          Align = alTop
+          DataField = 'descricao'
+          DataSource = dsProduto
+          Enabled = False
+          TabOrder = 0
+        end
+      end
+    end
+    object Panel9: TPanel
+      Left = 561
+      Top = 1
+      Width = 559
+      Height = 191
+      Align = alClient
+      BevelEdges = [beLeft]
+      BevelKind = bkFlat
+      BevelOuter = bvNone
+      Color = clWhitesmoke
+      ParentBackground = False
+      TabOrder = 1
+      OnResize = Panel9Resize
+      ExplicitLeft = 640
+      ExplicitTop = 76
+      ExplicitWidth = 185
+      ExplicitHeight = 41
+      object bSaida: TButton
+        Left = 460
+        Top = 154
+        Width = 81
+        Height = 25
+        Caption = '&Salvar'
+        Enabled = False
+        TabOrder = 0
+        OnClick = bSaidaClick
+      end
+      object Panel10: TPanel
+        Left = 16
+        Top = 6
+        Width = 200
+        Height = 59
+        BevelOuter = bvNone
+        TabOrder = 1
+        object Label4: TLabel
+          Left = 0
+          Top = 0
+          Width = 200
+          Height = 20
+          Align = alTop
+          Caption = 'Quantidade da Sa'#237'da'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          ExplicitWidth = 140
+        end
+        object dbSaidaQtd: TEdit
+          Left = 0
+          Top = 20
+          Width = 200
+          Height = 23
+          Align = alTop
+          Enabled = False
+          TabOrder = 0
+          OnKeyPress = dbSaidaQtdKeyPress
+        end
+      end
+      object Panel19: TPanel
+        Left = 16
+        Top = 71
+        Width = 200
+        Height = 59
+        BevelOuter = bvNone
+        TabOrder = 2
+        object Label16: TLabel
+          Left = 0
+          Top = 0
+          Width = 200
+          Height = 20
+          Align = alTop
+          Caption = 'Descri'#231#227'o da Sa'#237'da'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -15
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          ExplicitWidth = 127
+        end
+        object dbSaidaDescricao: TEdit
+          Left = 0
+          Top = 20
+          Width = 200
+          Height = 23
+          Align = alTop
+          Enabled = False
+          TabOrder = 0
+        end
+      end
+    end
   end
   object dsProduto: TDataSource
     DataSet = qryProduto

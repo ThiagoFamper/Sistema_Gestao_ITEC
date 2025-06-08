@@ -12,14 +12,6 @@ uses
 
 type
   TTelaEmprestimo = class(TForm)
-    Panel5: TPanel;
-    Panel9: TPanel;
-    bEmp: TButton;
-    Panel10: TPanel;
-    Label4: TLabel;
-    dbEmpQtd: TEdit;
-    Panel19: TPanel;
-    Label16: TLabel;
     Panel2: TPanel;
     SpeedButton1: TSpeedButton;
     SBeditar: TSpeedButton;
@@ -29,7 +21,6 @@ type
     qryVerifica: TFDQuery;
     qryUpdateEstoque: TFDQuery;
     qryInsertEstoque: TFDQuery;
-    cbEmpColaborador: TDBLookupComboBox;
     Panel4: TPanel;
     dbNavEmprestimo: TDBNavigator;
     Panel17: TPanel;
@@ -53,6 +44,7 @@ type
     SBrelatorio: TSpeedButton;
     SBestoque: TSpeedButton;
     SBsair: TSpeedButton;
+    gpEmp: TGridPanel;
     Panel3: TPanel;
     Panel13: TPanel;
     Label11: TLabel;
@@ -63,6 +55,14 @@ type
     Panel29: TPanel;
     Label15: TLabel;
     dbEmpDescricao: TDBEdit;
+    Panel9: TPanel;
+    bEmp: TButton;
+    Panel10: TPanel;
+    Label4: TLabel;
+    dbEmpQtd: TEdit;
+    Panel19: TPanel;
+    Label16: TLabel;
+    cbEmpColaborador: TDBLookupComboBox;
     procedure SBcancelarClick(Sender: TObject);
     procedure SBeditarClick(Sender: TObject);
     procedure SBrelatorioClick(Sender: TObject);
@@ -82,6 +82,7 @@ type
     procedure SBestoqueClick(Sender: TObject);
     procedure LimpaCampos;
     procedure dbEmpQtdKeyPress(Sender: TObject; var Key: Char);
+    procedure Panel9Resize(Sender: TObject);
 
   private
     { Private declarations }
@@ -102,6 +103,10 @@ procedure TTelaEmprestimo.FormShow(Sender: TObject);
 begin
   dm.FDTabProduto.Open;
   Filtro;
+  // Centraliza horizontalmente o botão dentro do painel
+  bEmp.Left := (Panel9.Width - bEmp.Width) div 2;
+  // Centraliza verticalmente o botão dentro do painel
+  bEmp.Top := (Panel9.Height - bEmp.Height * 2) div 1;
 end;
 
 procedure TTelaEmprestimo.SBcancelarClick(Sender: TObject); // botão de cancelar
@@ -285,6 +290,14 @@ procedure TTelaEmprestimo.LimpaCampos;
 begin
   cbEmpColaborador.KeyValue := 0;
   dbEmpQtd.Clear;
+end;
+
+procedure TTelaEmprestimo.Panel9Resize(Sender: TObject);
+begin
+  // Centraliza horizontalmente o botão dentro do painel
+  bEmp.Left := (Panel9.Width - bEmp.Width) div 2;
+  // Centraliza verticalmente o botão dentro do painel
+  bEmp.Top := (Panel9.Height - bEmp.Height * 2) div 1;
 end;
 
 procedure TTelaEmprestimo.epProdCodChange(Sender: TObject);

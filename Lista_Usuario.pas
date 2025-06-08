@@ -32,7 +32,6 @@ type
     Panel16: TPanel;
     Label4: TLabel;
     dbpUsuarioSenha: TDBEdit;
-    Panel17: TPanel;
     Panel11: TPanel;
     Label8: TLabel;
     epUsuarioNome: TEdit;
@@ -49,8 +48,9 @@ type
     SBexcluir: TSpeedButton;
     SBsair: TSpeedButton;
     dbpUsuarioNome: TDBLookupComboBox;
-    dbpUsuarioAdmin: TDBCheckBox;
     qryUpdateUsuario: TFDQuery;
+    Panel7: TPanel;
+    dbpUsuarioAdmin: TDBCheckBox;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;

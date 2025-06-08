@@ -13,10 +13,7 @@ uses
 
 type
   TTelaDevolucao = class(TForm)
-    Panel5: TPanel;
     Panel1: TPanel;
-    Panel8: TPanel;
-    bDevolver: TButton;
     Panel2: TPanel;
     SpeedButton1: TSpeedButton;
     SBeditar: TSpeedButton;
@@ -32,16 +29,12 @@ type
     eDevOperador: TEdit;
     qryUpdateEstoque: TFDQuery;
     qryUpdateEmp: TFDQuery;
-    rgDev: TRadioGroup;
     qryUpdateItem: TFDQuery;
-    Panel10: TPanel;
-    Label1: TLabel;
     qryEmprestimo: TFDQuery;
     dsEmprestimo: TDataSource;
     Panel4: TPanel;
     Label2: TLabel;
     eDevColaborador: TEdit;
-    eDevQtd: TEdit;
     qryUpdateStatus: TFDQuery;
     Panel15: TPanel;
     dbNavDevolucao: TDBNavigator;
@@ -50,6 +43,7 @@ type
     SBrelatorio: TSpeedButton;
     SBestoque: TSpeedButton;
     SBsair: TSpeedButton;
+    gpDevolucao: TGridPanel;
     Panel3: TPanel;
     Panel13: TPanel;
     Label9: TLabel;
@@ -64,6 +58,12 @@ type
     Panel9: TPanel;
     Label5: TLabel;
     dbDevSaldo: TDBEdit;
+    Panel8: TPanel;
+    bDevolver: TButton;
+    rgDev: TRadioGroup;
+    Panel10: TPanel;
+    Label1: TLabel;
+    eDevQtd: TEdit;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -83,6 +83,7 @@ type
     procedure SBestoqueClick(Sender: TObject);
     procedure LimpaCampos;
     procedure eDevQtdKeyPress(Sender: TObject; var Key: Char);
+    procedure Panel8Resize(Sender: TObject);
 
   private
     { Private declarations }
@@ -247,6 +248,14 @@ begin
   eDevQtd.Clear;
 end;
 
+procedure TTelaDevolucao.Panel8Resize(Sender: TObject);
+begin
+  // Centraliza horizontalmente o botão dentro do painel
+  bDevolver.Left := (Panel8.Width - bDevolver.Width) div 2;
+  // Centraliza verticalmente o botão dentro do painel
+  bDevolver.Top := (Panel8.Height - bDevolver.Height * 2) div 1;
+end;
+
 procedure TTelaDevolucao.eDevCodChange(Sender: TObject);
 begin
   Filtro;
@@ -279,6 +288,10 @@ procedure TTelaDevolucao.FormShow(Sender: TObject);
 begin
     dm.FDTabEmprestimoProd.Open;
     Filtro;
+    // Centraliza horizontalmente o botão dentro do painel
+    bDevolver.Left := (Panel8.Width - bDevolver.Width) div 2;
+    // Centraliza verticalmente o botão dentro do painel
+    bDevolver.Top := (Panel8.Height - bDevolver.Height * 2) div 1;
 end;
 
 procedure TTelaDevolucao.HabilitaCamposPesquisa; // habilitar campos de pesquisa

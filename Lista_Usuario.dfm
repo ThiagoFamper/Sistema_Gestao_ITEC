@@ -24,7 +24,6 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1046
     object Panel11: TPanel
       Left = 16
       Top = 6
@@ -126,8 +125,8 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 524
-    ExplicitWidth = 1046
+    ExplicitLeft = -40
+    ExplicitTop = 538
     object Panel13: TPanel
       Left = 16
       Top = 6
@@ -267,18 +266,20 @@ object ListaUsuario: TListaUsuario
         TabOrder = 0
       end
     end
-    object Panel17: TPanel
+    object Panel7: TPanel
       Left = 517
       Top = 71
       Width = 131
       Height = 59
+      BevelKind = bkFlat
       BevelOuter = bvNone
       TabOrder = 4
       object dbpUsuarioAdmin: TDBCheckBox
-        Left = 0
-        Top = 0
-        Width = 131
-        Height = 59
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 121
+        Height = 49
         Hint = 'Marcar esta caixa dar'#225' acesso total do sistema ao Usu'#225'rio'
         Align = alClient
         Caption = 'Administrador'
@@ -294,6 +295,10 @@ object ListaUsuario: TListaUsuario
         ParentShowHint = False
         ShowHint = True
         TabOrder = 0
+        ExplicitLeft = -8
+        ExplicitTop = -10
+        ExplicitWidth = 131
+        ExplicitHeight = 59
       end
     end
   end
@@ -309,7 +314,6 @@ object ListaUsuario: TListaUsuario
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1046
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -2328,7 +2332,6 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1046
     object dbNavUsuario: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2348,8 +2351,6 @@ object ListaUsuario: TListaUsuario
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1046
-    ExplicitHeight = 230
     object gpUsuario: TDBGrid
       Left = 0
       Top = 0
