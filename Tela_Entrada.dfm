@@ -5,7 +5,7 @@ object TelaEntrada: TTelaEntrada
   BorderStyle = bsSingle
   Caption = 'Entrada de Produto'
   ClientHeight = 873
-  ClientWidth = 1127
+  ClientWidth = 1546
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,15 +17,14 @@ object TelaEntrada: TTelaEntrada
   object Panel5: TPanel
     Left = 0
     Top = 666
-    Width = 1127
+    Width = 1546
     Height = 207
     Align = alBottom
     BevelOuter = bvNone
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 656
-    ExplicitWidth = 809
+    ExplicitWidth = 1127
     object Panel9: TPanel
       Left = 809
       Top = 0
@@ -38,7 +37,6 @@ object TelaEntrada: TTelaEntrada
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
-      ExplicitHeight = 204
       object bEntrada: TButton
         Left = 404
         Top = 170
@@ -125,7 +123,7 @@ object TelaEntrada: TTelaEntrada
         end
       end
       object Panel10: TPanel
-        Left = 343
+        Left = 247
         Top = 6
         Width = 200
         Height = 59
@@ -171,9 +169,6 @@ object TelaEntrada: TTelaEntrada
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 72
-      ExplicitTop = -2
-      ExplicitHeight = 213
       object Panel13: TPanel
         Left = 16
         Top = 6
@@ -281,7 +276,7 @@ object TelaEntrada: TTelaEntrada
   object Panel2: TPanel
     Left = 0
     Top = 0
-    Width = 1127
+    Width = 1546
     Height = 114
     Align = alTop
     BevelEdges = [beTop, beBottom]
@@ -290,7 +285,7 @@ object TelaEntrada: TTelaEntrada
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1048
+    ExplicitWidth = 1127
     object SBsair: TSpeedButton
       Left = 654
       Top = 7
@@ -2301,7 +2296,7 @@ object TelaEntrada: TTelaEntrada
   object Panel4: TPanel
     Left = 0
     Top = 322
-    Width = 1127
+    Width = 1546
     Height = 37
     Align = alTop
     BevelEdges = [beBottom]
@@ -2310,7 +2305,7 @@ object TelaEntrada: TTelaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1048
+    ExplicitWidth = 1127
     object dbNavEntrada: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2325,7 +2320,7 @@ object TelaEntrada: TTelaEntrada
   object gEntrada: TDBGrid
     Left = 0
     Top = 359
-    Width = 1127
+    Width = 1546
     Height = 307
     Hint = 'Pesquisar Entrada'
     Align = alClient
@@ -2379,7 +2374,7 @@ object TelaEntrada: TTelaEntrada
   object Panel17: TPanel
     Left = 0
     Top = 114
-    Width = 1127
+    Width = 1546
     Height = 208
     Align = alTop
     BevelEdges = [beBottom]
@@ -2388,7 +2383,7 @@ object TelaEntrada: TTelaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 4
-    ExplicitWidth = 1048
+    ExplicitWidth = 1127
     object Panel18: TPanel
       Left = 16
       Top = 6

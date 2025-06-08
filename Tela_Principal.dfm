@@ -34,7 +34,6 @@ object TelaPrincipal: TTelaPrincipal
     ParentFont = False
     TabOrder = 0
     OnResize = Panel2Resize
-    ExplicitWidth = 1153
     object SBlogout: TSpeedButton
       Left = 32
       Top = 16
@@ -388,7 +387,6 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 1
     Visible = False
-    ExplicitHeight = 972
     object Panel21: TPanel
       Left = 0
       Top = 0
@@ -780,7 +778,6 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 2
     Visible = False
-    ExplicitHeight = 972
     object Panel29: TPanel
       Left = -1
       Top = 0
@@ -803,7 +800,7 @@ object TelaPrincipal: TTelaPrincipal
     object fpMovimentacao: TFlowPanel
       Left = 1
       Top = 114
-      Width = 242
+      Width = 241
       Height = 324
       AutoSize = True
       BevelEdges = []
@@ -815,7 +812,7 @@ object TelaPrincipal: TTelaPrincipal
       object pnpMovVoltar: TPanel
         Left = 1
         Top = 259
-        Width = 240
+        Width = 239
         Height = 64
         Cursor = crHandPoint
         BevelEdges = [beRight]
@@ -854,7 +851,7 @@ object TelaPrincipal: TTelaPrincipal
       object pnpMovDev: TPanel
         Left = 1
         Top = 195
-        Width = 240
+        Width = 239
         Height = 64
         Cursor = crHandPoint
         BevelEdges = [beRight]
@@ -922,7 +919,7 @@ object TelaPrincipal: TTelaPrincipal
       object pnpMovEmp: TPanel
         Left = 1
         Top = 131
-        Width = 240
+        Width = 239
         Height = 64
         Cursor = crHandPoint
         BevelEdges = [beRight]
@@ -990,7 +987,7 @@ object TelaPrincipal: TTelaPrincipal
       object pnpMovSai: TPanel
         Left = 1
         Top = 67
-        Width = 240
+        Width = 239
         Height = 64
         Cursor = crHandPoint
         BevelEdges = [beRight]
@@ -1035,7 +1032,7 @@ object TelaPrincipal: TTelaPrincipal
       object pnpMovEnt: TPanel
         Left = 1
         Top = 1
-        Width = 240
+        Width = 239
         Height = 66
         Cursor = crHandPoint
         BevelEdges = [beRight]
@@ -1090,7 +1087,6 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 3
     Visible = False
-    ExplicitHeight = 972
     object Panel36: TPanel
       Left = 0
       Top = 0
@@ -1521,7 +1517,6 @@ object TelaPrincipal: TTelaPrincipal
     Color = clTeal
     ParentBackground = False
     TabOrder = 4
-    ExplicitHeight = 972
     object Panel3: TPanel
       Left = 0
       Top = 0
@@ -1746,7 +1741,5 @@ object TelaPrincipal: TTelaPrincipal
     Color = clWhite
     ParentBackground = False
     TabOrder = 5
-    ExplicitWidth = 189
-    ExplicitHeight = 972
   end
 end

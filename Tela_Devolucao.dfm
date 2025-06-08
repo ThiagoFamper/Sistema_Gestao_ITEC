@@ -25,7 +25,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 808
     object Panel8: TPanel
       Left = 809
       Top = 0
@@ -38,8 +37,6 @@ object TelaDevolucao: TTelaDevolucao
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 815
-      ExplicitHeight = 204
       object bDevolver: TButton
         Left = 404
         Top = 170
@@ -114,9 +111,6 @@ object TelaDevolucao: TTelaDevolucao
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 307
-      ExplicitTop = 6
-      ExplicitHeight = 242
       object Panel13: TPanel
         Left = 16
         Top = 6
@@ -223,8 +217,8 @@ object TelaDevolucao: TTelaDevolucao
         end
       end
       object dbDevID: TDBEdit
-        Left = 199
-        Top = 32
+        Left = 166
+        Top = 24
         Width = 50
         Height = 23
         DataField = 'emprestimo_id'
@@ -234,7 +228,7 @@ object TelaDevolucao: TTelaDevolucao
         Visible = False
       end
       object Panel9: TPanel
-        Left = 343
+        Left = 247
         Top = 6
         Width = 200
         Height = 59
