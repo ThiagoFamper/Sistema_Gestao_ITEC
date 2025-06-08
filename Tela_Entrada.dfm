@@ -24,11 +24,10 @@ object TelaEntrada: TTelaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1127
     object Panel9: TPanel
-      Left = 809
+      Left = 692
       Top = 0
-      Width = 809
+      Width = 692
       Height = 207
       Align = alLeft
       BevelEdges = [beLeft]
@@ -38,7 +37,7 @@ object TelaEntrada: TTelaEntrada
       ParentBackground = False
       TabOrder = 0
       object bEntrada: TButton
-        Left = 404
+        Left = 460
         Top = 170
         Width = 81
         Height = 25
@@ -161,7 +160,7 @@ object TelaEntrada: TTelaEntrada
     object Panel3: TPanel
       Left = 0
       Top = 0
-      Width = 809
+      Width = 692
       Height = 207
       Align = alLeft
       BevelEdges = []
@@ -285,7 +284,6 @@ object TelaEntrada: TTelaEntrada
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1127
     object SBsair: TSpeedButton
       Left = 654
       Top = 7
@@ -2305,7 +2303,6 @@ object TelaEntrada: TTelaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1127
     object dbNavEntrada: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2383,7 +2380,6 @@ object TelaEntrada: TTelaEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 4
-    ExplicitWidth = 1127
     object Panel18: TPanel
       Left = 16
       Top = 6

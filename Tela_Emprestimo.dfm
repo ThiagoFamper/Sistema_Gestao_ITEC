@@ -24,11 +24,10 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 590
     object Panel9: TPanel
-      Left = 809
+      Left = 692
       Top = 0
-      Width = 809
+      Width = 692
       Height = 207
       Align = alLeft
       BevelEdges = [beLeft]
@@ -37,10 +36,8 @@ object TelaEmprestimo: TTelaEmprestimo
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 815
-      ExplicitTop = 6
       object bEmp: TButton
-        Left = 404
+        Left = 460
         Top = 170
         Width = 81
         Height = 25
@@ -121,7 +118,7 @@ object TelaEmprestimo: TTelaEmprestimo
     object Panel3: TPanel
       Left = 0
       Top = 0
-      Width = 809
+      Width = 692
       Height = 207
       Align = alLeft
       BevelEdges = []
@@ -129,9 +126,6 @@ object TelaEmprestimo: TTelaEmprestimo
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 324
-      ExplicitTop = -44
-      ExplicitHeight = 213
       object Panel13: TPanel
         Left = 16
         Top = 6

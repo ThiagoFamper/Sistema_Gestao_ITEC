@@ -26,9 +26,9 @@ object TelaDevolucao: TTelaDevolucao
     ParentBackground = False
     TabOrder = 0
     object Panel8: TPanel
-      Left = 809
+      Left = 692
       Top = 0
-      Width = 809
+      Width = 692
       Height = 207
       Align = alLeft
       BevelEdges = [beLeft]
@@ -38,7 +38,7 @@ object TelaDevolucao: TTelaDevolucao
       ParentBackground = False
       TabOrder = 0
       object bDevolver: TButton
-        Left = 404
+        Left = 460
         Top = 170
         Width = 81
         Height = 25
@@ -103,7 +103,7 @@ object TelaDevolucao: TTelaDevolucao
     object Panel3: TPanel
       Left = 0
       Top = 0
-      Width = 809
+      Width = 692
       Height = 207
       Align = alLeft
       BevelEdges = []
