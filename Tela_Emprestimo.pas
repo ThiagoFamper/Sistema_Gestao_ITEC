@@ -104,9 +104,7 @@ begin
   dm.FDTabProduto.Open;
   Filtro;
   // Centraliza horizontalmente o botão dentro do painel
-  bEmp.Left := (Panel9.Width - bEmp.Width) div 2;
-  // Centraliza verticalmente o botão dentro do painel
-  bEmp.Top := (Panel9.Height - bEmp.Height * 2) div 1;
+  bEmp.Left := (Panel9.Width - bEmp.Width) div 10;
 end;
 
 procedure TTelaEmprestimo.SBcancelarClick(Sender: TObject); // botão de cancelar
@@ -295,9 +293,7 @@ end;
 procedure TTelaEmprestimo.Panel9Resize(Sender: TObject);
 begin
   // Centraliza horizontalmente o botão dentro do painel
-  bEmp.Left := (Panel9.Width - bEmp.Width) div 2;
-  // Centraliza verticalmente o botão dentro do painel
-  bEmp.Top := (Panel9.Height - bEmp.Height * 2) div 1;
+  bEmp.Left := (Panel9.Width - bEmp.Width) div 10;
 end;
 
 procedure TTelaEmprestimo.epProdCodChange(Sender: TObject);

@@ -2233,7 +2233,7 @@ object TelaSaida: TTelaSaida
     Left = 0
     Top = 357
     Width = 1121
-    Height = 295
+    Height = 288
     Hint = 'Pesquisar Entrada'
     Align = alClient
     DataSource = dsProduto
@@ -2292,9 +2292,9 @@ object TelaSaida: TTelaSaida
   end
   object gpSaida: TGridPanel
     Left = 0
-    Top = 652
+    Top = 645
     Width = 1121
-    Height = 193
+    Height = 200
     Align = alBottom
     ColumnCollection = <
       item
@@ -2319,24 +2319,17 @@ object TelaSaida: TTelaSaida
         Value = 100.000000000000000000
       end>
     TabOrder = 4
-    ExplicitLeft = 80
-    ExplicitTop = 616
-    ExplicitWidth = 977
     object Panel3: TPanel
       Left = 1
       Top = 1
       Width = 560
-      Height = 191
+      Height = 198
       Align = alClient
       BevelEdges = []
       BevelOuter = bvNone
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 152
-      ExplicitTop = 76
-      ExplicitWidth = 185
-      ExplicitHeight = 41
       object Panel13: TPanel
         Left = 16
         Top = 5
@@ -2444,7 +2437,7 @@ object TelaSaida: TTelaSaida
       Left = 561
       Top = 1
       Width = 559
-      Height = 191
+      Height = 198
       Align = alClient
       BevelEdges = [beLeft]
       BevelKind = bkFlat
@@ -2453,13 +2446,11 @@ object TelaSaida: TTelaSaida
       ParentBackground = False
       TabOrder = 1
       OnResize = Panel9Resize
-      ExplicitLeft = 640
-      ExplicitTop = 76
-      ExplicitWidth = 185
-      ExplicitHeight = 41
+      ExplicitLeft = 567
+      ExplicitTop = 6
       object bSaida: TButton
-        Left = 460
-        Top = 154
+        Left = 68
+        Top = 157
         Width = 81
         Height = 25
         Caption = '&Salvar'
@@ -2469,7 +2460,7 @@ object TelaSaida: TTelaSaida
       end
       object Panel10: TPanel
         Left = 16
-        Top = 6
+        Top = 5
         Width = 200
         Height = 59
         BevelOuter = bvNone
@@ -2502,7 +2493,7 @@ object TelaSaida: TTelaSaida
       end
       object Panel19: TPanel
         Left = 16
-        Top = 71
+        Top = 70
         Width = 200
         Height = 59
         BevelOuter = bvNone

@@ -311,9 +311,7 @@ end;
 procedure TTelaEntrada.Panel9Resize(Sender: TObject);
 begin
   // Centraliza horizontalmente o botão dentro do painel
-  bEntrada.Left := (Panel9.Width - bEntrada.Width) div 2;
-  // Centraliza verticalmente o botão dentro do painel
-  bEntrada.Top := (Panel9.Height - bEntrada.Height * 2) div 1;
+  bEntrada.Left := (Panel9.Width - bEntrada.Width) div 10;
 end;
 
 procedure TTelaEntrada.Filtro; // pesquisa com sql query
@@ -332,9 +330,7 @@ procedure TTelaEntrada.FormShow(Sender: TObject);
 begin
   Filtro;
   // Centraliza horizontalmente o botão dentro do painel
-    bEntrada.Left := (Panel9.Width - bEntrada.Width) div 2;
-  // Centraliza verticalmente o botão dentro do painel
-    bEntrada.Top := (Panel9.Height - bEntrada.Height * 2) div 1;
+    bEntrada.Left := (Panel9.Width - bEntrada.Width) div 10;
 end;
 
 end.

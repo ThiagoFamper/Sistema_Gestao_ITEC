@@ -4,7 +4,7 @@ object TelaDevolucao: TTelaDevolucao
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Devolu'#231#227'o de Produto'
-  ClientHeight = 1026
+  ClientHeight = 1107
   ClientWidth = 1384
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -2202,7 +2202,7 @@ object TelaDevolucao: TTelaDevolucao
     Left = 0
     Top = 302
     Width = 1384
-    Height = 531
+    Height = 605
     Hint = 'Pesquisar Devolucao'
     Align = alClient
     DataSource = dsEmprestimo
@@ -2275,9 +2275,9 @@ object TelaDevolucao: TTelaDevolucao
   end
   object gpDevolucao: TGridPanel
     Left = 0
-    Top = 833
+    Top = 907
     Width = 1384
-    Height = 193
+    Height = 200
     Align = alBottom
     ColumnCollection = <
       item
@@ -2302,20 +2302,17 @@ object TelaDevolucao: TTelaDevolucao
         Value = 100.000000000000000000
       end>
     TabOrder = 4
-    ExplicitTop = 800
     object Panel3: TPanel
       Left = 1
       Top = 1
       Width = 691
-      Height = 191
+      Height = 198
       Align = alClient
       BevelEdges = []
       BevelOuter = bvNone
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = -5
-      ExplicitTop = 6
       object Panel13: TPanel
         Left = 16
         Top = 5
@@ -2472,7 +2469,7 @@ object TelaDevolucao: TTelaDevolucao
       Left = 692
       Top = 1
       Width = 691
-      Height = 191
+      Height = 198
       Align = alClient
       BevelEdges = [beLeft]
       BevelKind = bkFlat
@@ -2481,12 +2478,9 @@ object TelaDevolucao: TTelaDevolucao
       ParentBackground = False
       TabOrder = 1
       OnResize = Panel8Resize
-      ExplicitLeft = 698
-      ExplicitTop = 6
-      ExplicitHeight = 224
       object bDevolver: TButton
-        Left = 460
-        Top = 154
+        Left = 68
+        Top = 157
         Width = 81
         Height = 25
         Caption = '&Salvar'

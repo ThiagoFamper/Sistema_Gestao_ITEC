@@ -274,9 +274,9 @@ end;
 procedure TTelaSaida.Panel9Resize(Sender: TObject);
 begin
   // Centraliza horizontalmente o botão dentro do painel
-  bSaida.Left := (Panel9.Width - bSaida.Width) div 2;
+  bSaida.Left := (Panel9.Width - bSaida.Width) div 10;
   // Centraliza verticalmente o botão dentro do painel
-  bSaida.Top := (Panel9.Height - bSaida.Height * 2) div 1;
+  //bSaida.Top := Panel19.Top + Panel19.Height + ((Panel9.Height - (Panel19.Top + Panel19.Height) - bSaida.Height) div 1);
 end;
 
 procedure TTelaSaida.epProdCodChange(Sender: TObject);
@@ -320,9 +320,9 @@ procedure TTelaSaida.FormShow(Sender: TObject);
 begin
   Filtro;
   // Centraliza horizontalmente o botão dentro do painel
-  bSaida.Left := (Panel9.Width - bSaida.Width) div 2;
+  bSaida.Left := (Panel9.Width - bSaida.Width) div 10;
   // Centraliza verticalmente o botão dentro do painel
-  bSaida.Top := (Panel9.Height - bSaida.Height * 2) div 1
+  //bSaida.Top := Panel19.Top + Panel19.Height + ((Panel9.Height - (Panel19.Top + Panel19.Height) - bSaida.Height) div 1);
 end;
 
 end.

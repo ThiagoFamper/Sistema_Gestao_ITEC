@@ -2060,7 +2060,7 @@ object TelaEntrada: TTelaEntrada
     Left = 0
     Top = 359
     Width = 1546
-    Height = 321
+    Height = 314
     Hint = 'Pesquisar Entrada'
     Align = alClient
     DataSource = dsProduto
@@ -2285,9 +2285,9 @@ object TelaEntrada: TTelaEntrada
   end
   object gpEntrada: TGridPanel
     Left = 0
-    Top = 680
+    Top = 673
     Width = 1546
-    Height = 193
+    Height = 200
     Align = alBottom
     Color = clWhitesmoke
     ColumnCollection = <
@@ -2314,19 +2314,19 @@ object TelaEntrada: TTelaEntrada
         Value = 100.000000000000000000
       end>
     TabOrder = 4
+    ExplicitTop = 680
     object Panel3: TPanel
       Left = 1
       Top = 1
       Width = 772
-      Height = 191
+      Height = 198
       Align = alClient
       BevelEdges = []
       BevelOuter = bvNone
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = -5
-      ExplicitTop = 6
+      ExplicitHeight = 191
       object Panel13: TPanel
         Left = 15
         Top = 5
@@ -2434,7 +2434,7 @@ object TelaEntrada: TTelaEntrada
       Left = 773
       Top = 1
       Width = 772
-      Height = 191
+      Height = 198
       Align = alClient
       BevelEdges = [beLeft]
       BevelKind = bkFlat
@@ -2443,13 +2443,10 @@ object TelaEntrada: TTelaEntrada
       ParentBackground = False
       TabOrder = 1
       OnResize = Panel9Resize
-      ExplicitLeft = 774
-      ExplicitTop = 6
-      ExplicitWidth = 773
-      ExplicitHeight = 183
+      ExplicitHeight = 191
       object bEntrada: TButton
-        Left = 460
-        Top = 154
+        Left = 60
+        Top = 157
         Width = 81
         Height = 25
         Caption = '&Salvar'

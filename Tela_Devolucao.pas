@@ -251,9 +251,7 @@ end;
 procedure TTelaDevolucao.Panel8Resize(Sender: TObject);
 begin
   // Centraliza horizontalmente o botão dentro do painel
-  bDevolver.Left := (Panel8.Width - bDevolver.Width) div 2;
-  // Centraliza verticalmente o botão dentro do painel
-  bDevolver.Top := (Panel8.Height - bDevolver.Height * 2) div 1;
+  bDevolver.Left := (Panel8.Width - bDevolver.Width) div 10;
 end;
 
 procedure TTelaDevolucao.eDevCodChange(Sender: TObject);
@@ -289,9 +287,7 @@ begin
     dm.FDTabEmprestimoProd.Open;
     Filtro;
     // Centraliza horizontalmente o botão dentro do painel
-    bDevolver.Left := (Panel8.Width - bDevolver.Width) div 2;
-    // Centraliza verticalmente o botão dentro do painel
-    bDevolver.Top := (Panel8.Height - bDevolver.Height * 2) div 1;
+    bDevolver.Left := (Panel8.Width - bDevolver.Width) div 10;
 end;
 
 procedure TTelaDevolucao.HabilitaCamposPesquisa; // habilitar campos de pesquisa

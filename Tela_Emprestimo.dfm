@@ -2233,7 +2233,7 @@ object TelaEmprestimo: TTelaEmprestimo
     Left = 0
     Top = 357
     Width = 1154
-    Height = 294
+    Height = 287
     Hint = 'Pesquisar Entrada'
     Align = alClient
     DataSource = dsProduto
@@ -2292,9 +2292,9 @@ object TelaEmprestimo: TTelaEmprestimo
   end
   object gpEmp: TGridPanel
     Left = 0
-    Top = 651
+    Top = 644
     Width = 1154
-    Height = 193
+    Height = 200
     Align = alBottom
     ColumnCollection = <
       item
@@ -2319,24 +2319,19 @@ object TelaEmprestimo: TTelaEmprestimo
         Value = 100.000000000000000000
       end>
     TabOrder = 4
-    ExplicitLeft = 50
-    ExplicitTop = 600
-    ExplicitWidth = 1049
+    ExplicitTop = 651
     object Panel3: TPanel
       Left = 1
       Top = 1
       Width = 576
-      Height = 191
+      Height = 198
       Align = alClient
       BevelEdges = []
       BevelOuter = bvNone
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 170
-      ExplicitTop = 76
-      ExplicitWidth = 185
-      ExplicitHeight = 41
+      ExplicitHeight = 191
       object Panel13: TPanel
         Left = 16
         Top = 6
@@ -2444,7 +2439,7 @@ object TelaEmprestimo: TTelaEmprestimo
       Left = 577
       Top = 1
       Width = 576
-      Height = 191
+      Height = 198
       Align = alClient
       BevelEdges = [beLeft]
       BevelKind = bkFlat
@@ -2453,13 +2448,10 @@ object TelaEmprestimo: TTelaEmprestimo
       ParentBackground = False
       TabOrder = 1
       OnResize = Panel9Resize
-      ExplicitLeft = 694
-      ExplicitTop = 76
-      ExplicitWidth = 185
-      ExplicitHeight = 41
+      ExplicitHeight = 191
       object bEmp: TButton
-        Left = 428
-        Top = 154
+        Left = 68
+        Top = 157
         Width = 81
         Height = 25
         Caption = '&Salvar'
