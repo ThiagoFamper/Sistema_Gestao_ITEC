@@ -260,6 +260,7 @@ end;
 procedure TListaColaborador.FormShow(Sender: TObject);
 begin
   Filtro;
+  epColabDescricao.SetFocus;
 
   if not TelaPrincipal.isAdmin then
   begin

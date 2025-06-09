@@ -47,6 +47,7 @@ implementation
 
 uses Data_Module, Tela_Principal;
 
+// botão de entrar
 procedure TTelaLogin.bEntrarClick(Sender: TObject);
 begin
     with qryUsuario do
@@ -72,15 +73,15 @@ begin
       Self.Hide;
       TelaPrincipal.Show;
     end;
-
     end;
 end;
 
-procedure TTelaLogin.bCancelarClick(Sender: TObject);
+procedure TTelaLogin.bCancelarClick(Sender: TObject); // botão de cancelar
 begin
   Application.Terminate;
 end;
 
+// set focus com enter
 procedure TTelaLogin.eLoginKeyPress(Sender: TObject; var Key: Char);
 begin
   if key = #13 then
@@ -103,6 +104,7 @@ begin
   eLogin.SetFocus;
 end;
 
+// botão para mostrar a senha
 procedure TTelaLogin.mostrarSenhaClick(Sender: TObject);
 begin
   if eSenha.PasswordChar = '*' then

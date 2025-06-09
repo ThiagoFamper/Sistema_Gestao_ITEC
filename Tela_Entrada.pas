@@ -102,7 +102,7 @@ implementation
 
 uses Data_Module, Relatorio_Entrada, Tela_Principal, Lista_Estoque;
 
-procedure TTelaEntrada.SBcancelarClick(Sender: TObject);
+procedure TTelaEntrada.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
     DesabilitaCampos;
     TelaPrincipal.habilitaMenu;
@@ -116,7 +116,7 @@ begin
     dm.FDTabEntrada.Cancel;
 end;
 
-procedure TTelaEntrada.SBeditarClick(Sender: TObject);
+procedure TTelaEntrada.SBeditarClick(Sender: TObject); // botão de entrada
 begin
     HabilitaCampos;
     TelaPrincipal.desabilitaMenu;
@@ -134,9 +134,10 @@ end;
 
 procedure TTelaEntrada.SBestoqueClick(Sender: TObject);
 begin
-  TelaPrincipal.AbrirFormulario(TListaEstoque); // botão de pesquisar
+  TelaPrincipal.AbrirFormulario(TListaEstoque); // botão de estoque
 end;
 
+// botão de relatório
 procedure TTelaEntrada.SBrelatorioClick(Sender: TObject);
 begin
   if not Assigned(RelatorioEntrada) then
@@ -204,6 +205,7 @@ begin
       qryVerifica.ParamByName('produto_id').AsInteger := produtoID;
       qryVerifica.Open;
 
+      // verifica se o produto ja existe em estoque, caso sim faz update, se não faz insert
       if qryVerifica.FieldByName('qtd').AsInteger > 0 then
       begin
         qryUpdateEstoque.ParamByName('produto_id').AsInteger := produtoID;
@@ -236,8 +238,7 @@ begin
     end;
 end;
 
-
-
+// impede valores negativos na quantidade e valor
 procedure TTelaEntrada.dbEntradaQtdKeyPress(Sender: TObject; var Key: Char);
 begin
   if Key = '-' then
@@ -329,6 +330,7 @@ end;
 procedure TTelaEntrada.FormShow(Sender: TObject);
 begin
   Filtro;
+  epProdCod.SetFocus;
   // Centraliza horizontalmente o botão dentro do painel
     bEntrada.Left := (Panel9.Width - bEntrada.Width) div 10;
 end;

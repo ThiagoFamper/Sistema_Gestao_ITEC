@@ -100,6 +100,7 @@ implementation
 
 uses Data_Module, Relatorio_Devolucao, Tela_Principal, Lista_Estoque;
 
+// botão de relatório
 procedure TTelaDevolucao.SBrelatorioClick(Sender: TObject);
 begin
   Application.CreateForm(TRelatorioDevolucao, RelatorioDevolucao);
@@ -121,7 +122,7 @@ begin
     SBcancelar.Enabled   := False;
 end;
 
-procedure TTelaDevolucao.SBeditarClick(Sender: TObject); // botão de editar
+procedure TTelaDevolucao.SBeditarClick(Sender: TObject); // botão de devolucao
 begin
     HabilitaCampos;
     LimpaCampos;
@@ -133,11 +134,12 @@ begin
     SBsair.Enabled       := False;
     SBeditar.Enabled     := False;
     SBestoque.Enabled    := False;
+    eDevQtd.SetFocus;
 end;
 
 procedure TTelaDevolucao.SBestoqueClick(Sender: TObject);
 begin
-  TelaPrincipal.AbrirFormulario(TListaEstoque); // botão de pesquisar
+  TelaPrincipal.AbrirFormulario(TListaEstoque); // botão de estoque
 end;
 
 procedure TTelaDevolucao.SBsairClick(Sender: TObject);
@@ -194,18 +196,22 @@ begin
       end
     end;
 
+    // faz update no emprestimo
     qryUpdateEmp.Params.ParamByName('quantidade').AsInteger := quantidadeDevolvida;
     qryUpdateEmp.Params.ParamByName('produtoID').AsInteger := produtoID;
     qryUpdateEmp.ExecSQL;
 
+    // faz update no estoque
     qryUpdateEstoque.Params.ParamByName('quantidade').AsInteger := quantidadeDevolvida;
     qryUpdateEstoque.Params.ParamByName('emprestimoID').AsInteger := emprestimoID;
     qryUpdateEstoque.ExecSQL;
 
+    // faz update no item emprestimo
     qryUpdateItem.Params.ParamByName('quantidade').AsInteger := quantidadeDevolvida;
     qryUpdateItem.Params.ParamByName('emprestimoID').AsInteger := emprestimoID;
     qryUpdateItem.ExecSQL;
 
+    // se devolveu tudo o devolvido fica igual a true
     if (quantidadeSaldo - quantidadeDevolvida = 0) then
     begin
       qryUpdateStatus.Params.ParamByName('emprestimoID').AsInteger := emprestimoID;
@@ -242,7 +248,7 @@ begin
     dbNavDevolucao.Enabled     := False;
 end;
 
-procedure TTelaDevolucao.LimpaCampos;
+procedure TTelaDevolucao.LimpaCampos; // limpa os campos
 begin
   rgDev.ItemIndex := 1;
   eDevQtd.Clear;
@@ -274,6 +280,7 @@ begin
   Filtro;
 end;
 
+// impede valores negativos na quantidade
 procedure TTelaDevolucao.eDevQtdKeyPress(Sender: TObject; var Key: Char);
 begin
   if Key = '-' then
@@ -284,8 +291,8 @@ end;
 
 procedure TTelaDevolucao.FormShow(Sender: TObject);
 begin
-    dm.FDTabEmprestimoProd.Open;
     Filtro;
+    eDevCod.SetFocus;
     // Centraliza horizontalmente o botão dentro do painel
     bDevolver.Left := (Panel8.Width - bDevolver.Width) div 10;
 end;
@@ -299,6 +306,7 @@ begin
     dbNavDevolucao.Enabled     := True;
 end;
 
+// habilita e desabilita quantidade dependendo se vai devolver tudo ou não
 procedure TTelaDevolucao.rgDevClick(Sender: TObject);
 begin
     if rgDev.ItemIndex = 0 then
@@ -308,6 +316,7 @@ begin
     else
     begin
       eDevQtd.Enabled := True;
+      eDevQtd.SetFocus;
     end;
 end;
 

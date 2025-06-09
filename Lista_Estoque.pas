@@ -63,6 +63,7 @@ implementation
 
 uses Tela_Principal, Data_Module, Relatorio_Produto;
 
+// botão de relatório
 procedure TListaEstoque.SBrelatorioClick(Sender: TObject);
 begin
   if not Assigned(RelatorioProduto) then
@@ -116,6 +117,7 @@ end;
 procedure TListaEstoque.FormShow(Sender: TObject);
 begin
   Filtro;
+  epProdCod.SetFocus;
 end;
 
 end.

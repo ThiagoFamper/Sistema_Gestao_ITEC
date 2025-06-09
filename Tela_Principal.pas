@@ -157,6 +157,7 @@ uses Cad_Produto, Cad_Colaborador, Cad_Setor, Cad_Grupo, Lista_Colaborador, List
   Tela_Devolucao, Cad_usuario, Lista_Usuario, Tela_Login, Lista_Sede, Cad_Sede,
   Data_Module, Tela_Entrada, Tela_Saida, Tela_Emprestimo, Lista_Estoque;
 
+// desabilita todos os menus
 procedure TTelaPrincipal.desabilitaMenu;
 var
   i: integer;
@@ -201,6 +202,7 @@ begin
 
 end;
 
+// habilita todos os menus
 procedure TTelaPrincipal.habilitaMenu;
 var
   i: integer;
@@ -245,6 +247,7 @@ begin
 
 end;
 
+// clica no panel mesmo clicando na imagem
 procedure TTelaPrincipal.Image10Click(Sender: TObject);
 begin
   Close();
@@ -376,6 +379,7 @@ begin
   lUsuarioNome.Top := (Panel2.Height - lUsuarioNome.Height) div 2;
 end;
 
+// reconhece atalhos
 procedure TTelaPrincipal.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -415,7 +419,7 @@ begin
   selecionaMenu(0);
 
   lUsuarioNome.Caption := usuarioLogado;
-
+  // esconde panels se n for admin
   if not isAdmin then
   begin
     pnpCad.Enabled    := False;

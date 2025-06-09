@@ -101,8 +101,8 @@ uses Data_Module, Relatorio_Emprestimo, Tela_Principal, Lista_Estoque;
 
 procedure TTelaEmprestimo.FormShow(Sender: TObject);
 begin
-  dm.FDTabProduto.Open;
   Filtro;
+  epProdCod.SetFocus;
   // Centraliza horizontalmente o botão dentro do painel
   bEmp.Left := (Panel9.Width - bEmp.Width) div 10;
 end;
@@ -124,7 +124,7 @@ begin
     dm.FDTabEmprestimoItem.Cancel;
 end;
 
-procedure TTelaEmprestimo.SBeditarClick(Sender: TObject); // botão de editar
+procedure TTelaEmprestimo.SBeditarClick(Sender: TObject); // botão de emprestimo
 begin
     HabilitaCampos;
     LimpaCampos;
@@ -146,9 +146,10 @@ end;
 
 procedure TTelaEmprestimo.SBestoqueClick(Sender: TObject);
 begin
-  TelaPrincipal.AbrirFormulario(TListaEstoque); // botão de pesquisar
+  TelaPrincipal.AbrirFormulario(TListaEstoque); // botão de estoque
 end;
 
+// botão de relatório
 procedure TTelaEmprestimo.SBrelatorioClick(Sender: TObject);
 begin
   if not Assigned(RelatorioEmprestimo) then
@@ -209,6 +210,7 @@ begin
       qryVerifica.ParamByName('produto_id').AsInteger := produtoID;
       qryVerifica.Open;
 
+    // verifica se o produto existe no estoque
     if qryVerifica.IsEmpty then
     begin
       MessageBox(0, 'Produto não encontrado no estoque!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
@@ -217,6 +219,7 @@ begin
 
       saldoAtual := qryVerifica.FieldByName('saldo').AsInteger;
 
+    // verifica se tem produto suficiente para o emprestimo
     if saldoAtual < quantidade then
     begin
       MessageBox(0, 'Estoque insuficiente para este empréstimo!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
@@ -234,10 +237,12 @@ begin
 
       emprestimoID := dm.FDTabEmprestimoProd.FieldByName('id').AsInteger;
 
+      // faz update no estoque para tirar o produto
       qryUpdateEstoque.ParamByName('produto_id').AsInteger := produtoID;
       qryUpdateEstoque.ParamByName('quantidade').AsInteger := quantidade;
       qryUpdateEstoque.ExecSQL;
 
+      // salva o emprestimo id na tabela item emprestimo
       qryInsertEstoque.ParamByName('emprestimo_id').AsInteger := emprestimoID;
       qryInsertEstoque.ExecSQL;
 
@@ -259,6 +264,7 @@ begin
     end;
 end;
 
+// impede valores negativos na quantidade
 procedure TTelaEmprestimo.dbEmpQtdKeyPress(Sender: TObject; var Key: Char);
 begin
   if Key = '-' then

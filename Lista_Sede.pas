@@ -182,6 +182,7 @@ end;
 procedure TListaSede.FormShow(Sender: TObject);
 begin
   Filtro;
+  epSedeDescricao.SetFocus;
 
   if not TelaPrincipal.isAdmin then
   begin

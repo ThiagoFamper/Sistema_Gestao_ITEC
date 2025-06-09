@@ -150,6 +150,7 @@ begin
   qryUsuario.Open;
 end;
 
+// desenha sim e não no campo admin
 procedure TCadUsuario.gUsuarioDrawColumnCell(Sender: TObject; const Rect: TRect;
   DataCol: Integer; Column: TColumn; State: TGridDrawState);
 var

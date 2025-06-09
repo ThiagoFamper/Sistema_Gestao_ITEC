@@ -114,7 +114,7 @@ begin
     dm.FDTabSaida.Cancel;
 end;
 
-procedure TTelaSaida.SBeditarClick(Sender: TObject); // botão de editar
+procedure TTelaSaida.SBeditarClick(Sender: TObject); // botão de saida
 begin
     HabilitaCampos;
     LimpaCampos;
@@ -134,9 +134,10 @@ end;
 
 procedure TTelaSaida.SBestoqueClick(Sender: TObject);
 begin
-  TelaPrincipal.AbrirFormulario(TListaEstoque); // botão de pesquisar
+  TelaPrincipal.AbrirFormulario(TListaEstoque); // botão de estoque
 end;
 
+// botão de relatório
 procedure TTelaSaida.SBrelatorioClick(Sender: TObject);
 begin
   if not Assigned(RelatorioSaida) then
@@ -197,6 +198,7 @@ begin
       qryVerifica.ParamByName('produto_id').AsInteger := produtoID;
       qryVerifica.Open;
 
+    // verifica se o produto existe no estoque
     if qryVerifica.IsEmpty then
     begin
       MessageBox(0, 'Produto não encontrado no estoque!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
@@ -205,6 +207,7 @@ begin
 
       saldoAtual := qryVerifica.FieldByName('saldo').AsInteger;
 
+    // verifica se tem produto suficiente para a saida
     if saldoAtual < quantidade then
     begin
       MessageBox(0, 'Estoque insuficiente para esta saída!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
@@ -240,6 +243,7 @@ begin
     end;
 end;
 
+// impede valores negativos na quantidade
 procedure TTelaSaida.dbSaidaQtdKeyPress(Sender: TObject; var Key: Char);
 begin
   if Key = '-' then
@@ -319,6 +323,7 @@ end;
 procedure TTelaSaida.FormShow(Sender: TObject);
 begin
   Filtro;
+  epProdCod.SetFocus;
   // Centraliza horizontalmente o botão dentro do painel
   bSaida.Left := (Panel9.Width - bSaida.Width) div 10;
   // Centraliza verticalmente o botão dentro do painel

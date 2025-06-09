@@ -259,6 +259,7 @@ end;
 procedure TListaProdutos.FormShow(Sender: TObject);
 begin
   Filtro;
+  epProdCod.SetFocus;
 
   if not TelaPrincipal.isAdmin then
   begin

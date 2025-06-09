@@ -183,6 +183,7 @@ end;
 procedure TListaGrupos.FormShow(Sender: TObject);
 begin
   Filtro;
+  epGrupoDescricao.SetFocus;
 
   if not TelaPrincipal.isAdmin then
   begin

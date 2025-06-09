@@ -26,6 +26,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1382
     object Panel23: TPanel
       Left = 16
       Top = 6
@@ -167,6 +168,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1382
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -2187,6 +2189,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1382
     object dbNavDevolucao: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2302,6 +2305,8 @@ object TelaDevolucao: TTelaDevolucao
         Value = 100.000000000000000000
       end>
     TabOrder = 4
+    ExplicitTop = 899
+    ExplicitWidth = 1382
     object Panel3: TPanel
       Left = 1
       Top = 1

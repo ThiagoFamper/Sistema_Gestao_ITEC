@@ -231,8 +231,8 @@ end;
 
 procedure TListaUsuario.FormShow(Sender: TObject);
 begin
-  dm.FDTabUsuario.Open;
   Filtro;
+  epUsuarioNome.SetFocus;
 
   if not TelaPrincipal.isAdmin then
   begin
@@ -242,6 +242,7 @@ begin
 
 end;
 
+// desenha sim e não no campo admin
 procedure TListaUsuario.gpUsuarioDrawColumnCell(Sender: TObject;
   const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
 var

@@ -3,7 +3,7 @@ object ListaSetor: TListaSetor
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'v'
+  Caption = 'Consulta de Setor'
   ClientHeight = 735
   ClientWidth = 1048
   Color = clBtnFace

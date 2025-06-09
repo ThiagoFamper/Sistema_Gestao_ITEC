@@ -24,6 +24,7 @@ object ListaEstoque: TListaEstoque
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1924
     object SBsair: TSpeedButton
       Left = 343
       Top = 7
@@ -1017,7 +1018,6 @@ object ListaEstoque: TListaEstoque
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
-      ExplicitTop = 2
     end
   end
   object Panel5: TPanel
@@ -1032,6 +1032,7 @@ object ListaEstoque: TListaEstoque
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1924
     object Panel19: TPanel
       Left = 16
       Top = 6
@@ -1267,6 +1268,7 @@ object ListaEstoque: TListaEstoque
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1924
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
