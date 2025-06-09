@@ -34,6 +34,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentFont = False
     TabOrder = 0
     OnResize = Panel2Resize
+    ExplicitWidth = 1153
     object SBlogout: TSpeedButton
       Left = 32
       Top = 16
@@ -387,6 +388,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 1
     Visible = False
+    ExplicitHeight = 972
     object Panel21: TPanel
       Left = 0
       Top = 0
@@ -778,6 +780,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 2
     Visible = False
+    ExplicitHeight = 972
     object Panel29: TPanel
       Left = -1
       Top = 0
@@ -1087,6 +1090,7 @@ object TelaPrincipal: TTelaPrincipal
     ParentBackground = False
     TabOrder = 3
     Visible = False
+    ExplicitHeight = 972
     object Panel36: TPanel
       Left = 0
       Top = 0
@@ -1474,7 +1478,7 @@ object TelaPrincipal: TTelaPrincipal
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
-        Caption = 'Estoque'
+        Caption = '   Estoque (3)'
         Color = clWhite
         ParentBackground = False
         TabOrder = 7
@@ -1517,6 +1521,7 @@ object TelaPrincipal: TTelaPrincipal
     Color = clTeal
     ParentBackground = False
     TabOrder = 4
+    ExplicitHeight = 972
     object Panel3: TPanel
       Left = 0
       Top = 0
@@ -1741,5 +1746,7 @@ object TelaPrincipal: TTelaPrincipal
     Color = clWhite
     ParentBackground = False
     TabOrder = 5
+    ExplicitWidth = 189
+    ExplicitHeight = 972
   end
 end

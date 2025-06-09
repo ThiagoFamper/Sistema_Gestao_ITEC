@@ -389,7 +389,7 @@ begin
     selecionaMenu(3);
   end;
 
-  if Key = VK_BACK then
+  if Key = VK_ESCAPE then
   begin
     selecionaMenu(0);
   end;
@@ -402,6 +402,11 @@ begin
   if Key = Ord('2') then
   begin
     AbrirFormulario(TTelaDevolucao);
+  end;
+
+  if Key = Ord('3') then
+  begin
+    AbrirFormulario(TListaEstoque);
   end;
 end;
 
@@ -417,6 +422,8 @@ begin
     pnpCad.Visible    := False;
     pnpMovEnt.Enabled := False;
     pnpMovEnt.Visible := False;
+    pnpMovSai.Enabled := False;
+    pnpMovSai.Visible := False;
   end;
 
 end;
