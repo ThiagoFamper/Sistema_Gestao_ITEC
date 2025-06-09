@@ -427,7 +427,7 @@ object TelaPrincipal: TTelaPrincipal
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
-        Caption = 'Voltar'
+        Caption = 'Voltar (Esc)'
         Color = clWhite
         ParentBackground = False
         TabOrder = 0
@@ -821,7 +821,7 @@ object TelaPrincipal: TTelaPrincipal
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
-        Caption = 'Voltar'
+        Caption = 'Voltar (Esc)'
         Color = clWhite
         ParentBackground = False
         TabOrder = 0
@@ -1129,7 +1129,7 @@ object TelaPrincipal: TTelaPrincipal
         BevelEdges = [beRight]
         BevelKind = bkFlat
         BevelOuter = bvNone
-        Caption = 'Voltar'
+        Caption = 'Voltar (Esc)'
         Color = clWhite
         ParentBackground = False
         TabOrder = 0
