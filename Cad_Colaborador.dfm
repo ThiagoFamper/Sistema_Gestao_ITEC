@@ -25,7 +25,8 @@ object CadColaborador: TCadColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1124
+    ExplicitLeft = 80
+    ExplicitTop = 250
     object Panel10: TPanel
       Left = 16
       Top = 6
@@ -203,6 +204,64 @@ object CadColaborador: TCadColaborador
       end
     end
   end
+  object gColab: TDBGrid
+    Left = 0
+    Top = 321
+    Width = 1126
+    Height = 473
+    Align = alClient
+    DataSource = dsColaborador
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    StyleElements = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'descricao'
+        Title.Caption = 'Nome do Colaborador'
+        Width = 500
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cargo'
+        Title.Caption = 'Cargo do Colaborador'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'setor'
+        Title.Caption = 'Setor do Colaborador'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'sede'
+        Title.Caption = 'Sede do Colaborador'
+        Width = 200
+        Visible = True
+      end>
+  end
   object Panel2: TPanel
     Left = 0
     Top = 0
@@ -214,8 +273,10 @@ object CadColaborador: TCadColaborador
     BevelOuter = bvNone
     Color = clTeal
     ParentBackground = False
-    TabOrder = 1
-    ExplicitWidth = 1124
+    TabOrder = 2
+    ExplicitLeft = 330
+    ExplicitTop = 84
+    ExplicitWidth = 817
     object SBnovo: TSpeedButton
       Left = 247
       Top = 7
@@ -554,7 +615,7 @@ object CadColaborador: TCadColaborador
       OnClick = SBnovoClick
     end
     object SBcancelar: TSpeedButton
-      Left = 343
+      Left = 347
       Top = 7
       Width = 73
       Height = 99
@@ -1920,65 +1981,9 @@ object CadColaborador: TCadColaborador
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
+      ExplicitTop = -2
+      ExplicitHeight = 114
     end
-  end
-  object gColab: TDBGrid
-    Left = 0
-    Top = 321
-    Width = 1126
-    Height = 473
-    Align = alClient
-    DataSource = dsColaborador
-    Enabled = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Segoe UI'
-    Font.Style = []
-    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-    ParentFont = False
-    ReadOnly = True
-    TabOrder = 2
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -12
-    TitleFont.Name = 'Segoe UI'
-    TitleFont.Style = []
-    StyleElements = []
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'id'
-        Visible = False
-      end
-      item
-        Expanded = False
-        FieldName = 'descricao'
-        Title.Caption = 'Nome do Colaborador'
-        Width = 500
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'cargo'
-        Title.Caption = 'Cargo do Colaborador'
-        Width = 200
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'setor'
-        Title.Caption = 'Setor do Colaborador'
-        Width = 200
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'sede'
-        Title.Caption = 'Sede do Colaborador'
-        Width = 200
-        Visible = True
-      end>
   end
   object qryColaborador: TFDQuery
     Connection = DM.FDEstoqueItec

@@ -14,8 +14,6 @@ uses
 type
   TCadColaborador = class(TForm)
     Panel4: TPanel;
-    Panel2: TPanel;
-    Panel3: TPanel;
     gColab: TDBGrid;
     Panel10: TPanel;
     Label1: TLabel;
@@ -34,11 +32,13 @@ type
     cbColabSede: TDBLookupComboBox;
     qryColaborador: TFDQuery;
     dsColaborador: TDataSource;
+    Panel2: TPanel;
     SBnovo: TSpeedButton;
     SBcancelar: TSpeedButton;
     SBsalvar: TSpeedButton;
     SBpesquisar: TSpeedButton;
     SBsair: TSpeedButton;
+    Panel3: TPanel;
     procedure SBsairClick(Sender: TObject);
     procedure HabilitaCampos;
     procedure DesabilitaCampos;
