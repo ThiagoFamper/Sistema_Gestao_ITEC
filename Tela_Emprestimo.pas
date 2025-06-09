@@ -82,7 +82,6 @@ type
     procedure SBestoqueClick(Sender: TObject);
     procedure LimpaCampos;
     procedure dbEmpQtdKeyPress(Sender: TObject; var Key: Char);
-    procedure Panel9Resize(Sender: TObject);
 
   private
     { Private declarations }
@@ -103,8 +102,6 @@ procedure TTelaEmprestimo.FormShow(Sender: TObject);
 begin
   Filtro;
   epProdCod.SetFocus;
-  // Centraliza horizontalmente o botão dentro do painel
-  bEmp.Left := (Panel9.Width - bEmp.Width) div 10;
 end;
 
 procedure TTelaEmprestimo.SBcancelarClick(Sender: TObject); // botão de cancelar
@@ -223,6 +220,7 @@ begin
     if saldoAtual < quantidade then
     begin
       MessageBox(0, 'Estoque insuficiente para este empréstimo!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+      dbEmpQtd.SetFocus;
       Exit;
     end;
 
@@ -294,12 +292,6 @@ procedure TTelaEmprestimo.LimpaCampos;
 begin
   cbEmpColaborador.KeyValue := 0;
   dbEmpQtd.Clear;
-end;
-
-procedure TTelaEmprestimo.Panel9Resize(Sender: TObject);
-begin
-  // Centraliza horizontalmente o botão dentro do painel
-  bEmp.Left := (Panel9.Width - bEmp.Width) div 10;
 end;
 
 procedure TTelaEmprestimo.epProdCodChange(Sender: TObject);

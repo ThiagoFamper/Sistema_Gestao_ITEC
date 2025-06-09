@@ -2450,10 +2450,9 @@ object TelaSaida: TTelaSaida
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 1
-      OnResize = Panel9Resize
       object bSaida: TButton
-        Left = 68
-        Top = 157
+        Left = 75
+        Top = 149
         Width = 81
         Height = 25
         Caption = '&Salvar'

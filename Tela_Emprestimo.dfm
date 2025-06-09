@@ -2335,6 +2335,7 @@ object TelaEmprestimo: TTelaEmprestimo
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 575
       object Panel13: TPanel
         Left = 16
         Top = 6
@@ -2450,10 +2451,11 @@ object TelaEmprestimo: TTelaEmprestimo
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 1
-      OnResize = Panel9Resize
+      ExplicitLeft = 576
+      ExplicitWidth = 575
       object bEmp: TButton
-        Left = 68
-        Top = 157
+        Left = 75
+        Top = 149
         Width = 81
         Height = 25
         Caption = '&Salvar'

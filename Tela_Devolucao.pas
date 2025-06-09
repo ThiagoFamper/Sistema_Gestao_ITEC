@@ -83,7 +83,6 @@ type
     procedure SBestoqueClick(Sender: TObject);
     procedure LimpaCampos;
     procedure eDevQtdKeyPress(Sender: TObject; var Key: Char);
-    procedure Panel8Resize(Sender: TObject);
 
   private
     { Private declarations }
@@ -254,12 +253,6 @@ begin
   eDevQtd.Clear;
 end;
 
-procedure TTelaDevolucao.Panel8Resize(Sender: TObject);
-begin
-  // Centraliza horizontalmente o botão dentro do painel
-  bDevolver.Left := (Panel8.Width - bDevolver.Width) div 10;
-end;
-
 procedure TTelaDevolucao.eDevCodChange(Sender: TObject);
 begin
   Filtro;
@@ -293,8 +286,6 @@ procedure TTelaDevolucao.FormShow(Sender: TObject);
 begin
     Filtro;
     eDevCod.SetFocus;
-    // Centraliza horizontalmente o botão dentro do painel
-    bDevolver.Left := (Panel8.Width - bDevolver.Width) div 10;
 end;
 
 procedure TTelaDevolucao.HabilitaCamposPesquisa; // habilitar campos de pesquisa

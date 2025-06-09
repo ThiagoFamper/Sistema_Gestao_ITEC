@@ -127,6 +127,7 @@ begin
       end
   else
     begin
+    try
       qryUpdateSede.ParamByName('descricao').AsString := dbpSedeDescricao.Text;
       qryUpdateSede.ParamByName('id').AsInteger := StrToInt(dbpSedeID.Text);
       qryUpdateSede.ExecSQL;
@@ -144,6 +145,10 @@ begin
       dm.FDTabSede.Refresh;
       dm.FDTabSede.Last;
       Filtro;
+    except
+      MessageBox(0, PChar('A Sede "' + dbpSedeDescricao.Text + '" já foi cadastrada!'), 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+      dbpSedeDescricao.SetFocus;
+    end;
     end;
 end;
 

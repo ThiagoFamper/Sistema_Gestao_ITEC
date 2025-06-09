@@ -81,7 +81,6 @@ type
     procedure SBestoqueClick(Sender: TObject);
     procedure LimpaCampos;
     procedure dbSaidaQtdKeyPress(Sender: TObject; var Key: Char);
-    procedure Panel9Resize(Sender: TObject);
 
   private
     { Private declarations }
@@ -187,7 +186,7 @@ begin
     if Trim(dbSaidaDescricao.Text) = '' then
       begin
         MessageBox(0, 'O campo "Descrição" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
-        dbSaidaQtd.SetFocus;
+        dbSaidaDescricao.SetFocus;
       end
   else
     begin
@@ -211,6 +210,7 @@ begin
     if saldoAtual < quantidade then
     begin
       MessageBox(0, 'Estoque insuficiente para esta saída!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+      dbSaidaQtd.SetFocus;
       Exit;
     end;
 
@@ -275,14 +275,6 @@ begin
   dbSaidaDescricao.Clear;
 end;
 
-procedure TTelaSaida.Panel9Resize(Sender: TObject);
-begin
-  // Centraliza horizontalmente o botão dentro do painel
-  bSaida.Left := (Panel9.Width - bSaida.Width) div 10;
-  // Centraliza verticalmente o botão dentro do painel
-  //bSaida.Top := Panel19.Top + Panel19.Height + ((Panel9.Height - (Panel19.Top + Panel19.Height) - bSaida.Height) div 1);
-end;
-
 procedure TTelaSaida.epProdCodChange(Sender: TObject);
 begin
   Filtro;
@@ -324,10 +316,6 @@ procedure TTelaSaida.FormShow(Sender: TObject);
 begin
   Filtro;
   epProdCod.SetFocus;
-  // Centraliza horizontalmente o botão dentro do painel
-  bSaida.Left := (Panel9.Width - bSaida.Width) div 10;
-  // Centraliza verticalmente o botão dentro do painel
-  //bSaida.Top := Panel19.Top + Panel19.Height + ((Panel9.Height - (Panel19.Top + Panel19.Height) - bSaida.Height) div 1);
 end;
 
 end.

@@ -93,6 +93,7 @@ begin
       end
   else
     begin
+    try
       dm.FDTabSede.Post;
       dm.FDTabSede.Close;
       MessageBox(0, 'Sede cadastrada com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
@@ -108,6 +109,10 @@ begin
       dm.FDTabSede.Last;
       qrySede.Close;
       qrySede.Open;
+    except
+      MessageBox(0, PChar('A Sede "' + dbSedeDescricao.Text + '" já foi cadastrada!'), 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+      dbSedeDescricao.SetFocus;
+    end;
     end;
 end;
 

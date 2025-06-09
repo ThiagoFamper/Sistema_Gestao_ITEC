@@ -95,6 +95,7 @@ begin
       end
   else
     begin
+    try
       dm.FDTabGrupo.Post;
       dm.FDTabGrupo.Close;
       MessageBox(0, 'Grupo cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
@@ -111,6 +112,10 @@ begin
       dm.FDTabGrupo.Last;
       qryGrupo.Close;
       qryGrupo.Open;
+    except
+      MessageBox(0, PChar('O Grupo "' + dbGrupoDescricao.Text + '" já foi cadastrado!'), 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+      dbGrupoDescricao.SetFocus;
+    end;
     end;
 end;
 

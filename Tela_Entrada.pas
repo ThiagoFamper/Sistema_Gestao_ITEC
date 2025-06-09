@@ -85,7 +85,6 @@ type
     procedure SBestoqueClick(Sender: TObject);
     procedure dbEntradaValorKeyPress(Sender: TObject; var Key: Char);
     procedure dbEntradaQtdKeyPress(Sender: TObject; var Key: Char);
-    procedure Panel9Resize(Sender: TObject);
 
   private
     { Private declarations }
@@ -309,12 +308,6 @@ begin
     dbNavEntrada.Enabled         := True;
 end;
 
-procedure TTelaEntrada.Panel9Resize(Sender: TObject);
-begin
-  // Centraliza horizontalmente o botão dentro do painel
-  bEntrada.Left := (Panel9.Width - bEntrada.Width) div 10;
-end;
-
 procedure TTelaEntrada.Filtro; // pesquisa com sql query
 begin
   qryProduto.ParamByName('codigo').AsString := '%' + Trim(epProdCod.Text) + '%';
@@ -331,8 +324,6 @@ procedure TTelaEntrada.FormShow(Sender: TObject);
 begin
   Filtro;
   epProdCod.SetFocus;
-  // Centraliza horizontalmente o botão dentro do painel
-    bEntrada.Left := (Panel9.Width - bEntrada.Width) div 10;
 end;
 
 end.

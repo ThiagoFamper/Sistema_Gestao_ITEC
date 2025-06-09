@@ -180,6 +180,7 @@ begin
       end
   else
     begin
+    try
       qryUpdateProd.ParamByName('codigo').AsString := dbpProdCod.Text;
       qryUpdateProd.ParamByName('descricao').AsString := dbpProdDescricao.Text;
       qryUpdateProd.ParamByName('marca').AsString := dbpProdMarca.Text;
@@ -201,6 +202,10 @@ begin
       dm.FDTabProduto.Refresh;
       dm.FDTabProduto.Last;
       Filtro;
+    except
+      MessageBox(0, PChar('O Código "' + dbpProdCod.Text + '" já foi cadastrado!'), 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+      dbpProdCod.SetFocus;
+    end;
     end;
 end;
 

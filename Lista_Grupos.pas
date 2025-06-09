@@ -128,6 +128,7 @@ begin
       end
   else
     begin
+    try
       qryUpdateGrupo.ParamByName('descricao').AsString := dbpGrupoDescricao.Text;
       qryUpdateGrupo.ParamByName('id').AsInteger := StrToInt(dbpGrupoID.Text);
       qryUpdateGrupo.ExecSQL;
@@ -145,6 +146,10 @@ begin
       dm.FDTabGrupo.Refresh;
       dm.FDTabGrupo.Last;
       Filtro;
+    except
+      MessageBox(0, PChar('O Grupo "' + dbpGrupoDescricao.Text + '" já foi cadastrado!'), 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+      dbpGrupoDescricao.SetFocus;
+    end;
     end;
 end;
 

@@ -97,6 +97,7 @@ begin
       end
   else
     begin
+    try
       dm.FDTabSetor.Post;
       dm.FDTabSetor.Close;
       MessageBox(0, 'Setor cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
@@ -112,6 +113,10 @@ begin
       dm.FDTabSetor.Last;
       qrySetor.Close;
       qrySetor.Open;
+    except
+      MessageBox(0, PChar('O Setor "' + dbSetorDescricao.Text + '" já foi cadastrado!'), 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+      dbSetorDescricao.SetFocus;
+    end;
     end;
 
 end;

@@ -156,6 +156,7 @@ begin
       end
   else
     begin
+    try
       qryUpdateUsuario.ParamByName('nome').AsInteger := dbpUsuarioNome.KeyValue;
       qryUpdateUsuario.ParamByName('login').AsString := dbpUsuarioLogin.Text;
       qryUpdateUsuario.ParamByName('senha').AsString := dbpUsuarioSenha.Text;
@@ -176,6 +177,10 @@ begin
       dm.FDTabUsuario.Refresh;
       dm.FDTabUsuario.Close;
       Filtro;
+    except
+      MessageBox(0, PChar('O Login "' + dbpUsuarioLogin.Text + '" já foi cadastrado!'), 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+      dbpUsuarioLogin.SetFocus;
+    end;
     end;
 end;
 

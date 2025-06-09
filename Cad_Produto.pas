@@ -134,6 +134,7 @@ begin
       end
   else
     begin
+    try
       dm.FDTabProduto.Post;
       dm.FDTabProduto.Close;
       MessageBox(0, 'Produto cadastrado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
@@ -149,6 +150,10 @@ begin
       dm.FDTabProduto.Last;
       qryProduto.Close;
       qryProduto.Open;
+    except
+      MessageBox(0, PChar('O Código "' + dbProdCod.Text + '" já foi cadastrado!'), 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+      dbProdCod.SetFocus;
+    end;
     end;
 
 end;

@@ -128,6 +128,7 @@ begin
       end
   else
     begin
+    try
       qryUpdateSetor.ParamByName('descricao').AsString := dbpSetorDescricao.Text;
       qryUpdateSetor.ParamByName('id').AsInteger := StrToInt(dbpSetorID.Text);
       qryUpdateSetor.ExecSQL;
@@ -145,6 +146,10 @@ begin
       dm.FDTabSetor.Refresh;
       dm.FDTabSetor.Last;
       Filtro;
+    except
+      MessageBox(0, PChar('O Setor "' + dbpSetorDescricao.Text + '" já foi cadastrado!'), 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+      dbpSetorDescricao.SetFocus;
+    end;
     end;
 end;
 

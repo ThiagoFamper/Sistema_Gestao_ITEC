@@ -2330,7 +2330,6 @@ object TelaEntrada: TTelaEntrada
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 771
       object Panel13: TPanel
         Left = 15
         Top = 5
@@ -2446,12 +2445,9 @@ object TelaEntrada: TTelaEntrada
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 1
-      OnResize = Panel9Resize
-      ExplicitLeft = 772
-      ExplicitWidth = 771
       object bEntrada: TButton
-        Left = 60
-        Top = 157
+        Left = 74
+        Top = 149
         Width = 81
         Height = 25
         Caption = '&Salvar'

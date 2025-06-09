@@ -2482,9 +2482,8 @@ object TelaDevolucao: TTelaDevolucao
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 1
-      OnResize = Panel8Resize
       object bDevolver: TButton
-        Left = 68
+        Left = 75
         Top = 157
         Width = 81
         Height = 25

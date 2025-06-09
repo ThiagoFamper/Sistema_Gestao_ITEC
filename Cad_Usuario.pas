@@ -140,6 +140,7 @@ begin
         qryUsuario.Open;
       except
         MessageBox(0, PChar('O Login "' + dbUsuarioLogin.Text + '" já foi cadastrado!'), 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+        dbUsuarioLogin.SetFocus;
       end;
     end;
 end;
