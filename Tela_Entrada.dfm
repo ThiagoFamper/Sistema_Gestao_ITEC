@@ -2153,6 +2153,7 @@ object TelaEntrada: TTelaEntrada
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdCodChange
       end
@@ -2185,6 +2186,7 @@ object TelaEntrada: TTelaEntrada
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 75
         TabOrder = 0
         OnChange = epProdDescricaoChange
       end
@@ -2217,6 +2219,7 @@ object TelaEntrada: TTelaEntrada
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdMarcaChange
       end
@@ -2249,6 +2252,7 @@ object TelaEntrada: TTelaEntrada
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdModeloChange
       end
@@ -2281,6 +2285,7 @@ object TelaEntrada: TTelaEntrada
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdGrupoChange
       end
@@ -2330,6 +2335,7 @@ object TelaEntrada: TTelaEntrada
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 771
       object Panel13: TPanel
         Left = 15
         Top = 5
@@ -2445,6 +2451,8 @@ object TelaEntrada: TTelaEntrada
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 1
+      ExplicitLeft = 772
+      ExplicitWidth = 771
       object bEntrada: TButton
         Left = 74
         Top = 149
@@ -2492,6 +2500,7 @@ object TelaEntrada: TTelaEntrada
           DataField = 'valor_unitario'
           DataSource = DM.dsFDTabEntrada
           Enabled = False
+          MaxLength = 9
           TabOrder = 0
           OnKeyPress = dbEntradaValorKeyPress
         end
@@ -2527,6 +2536,7 @@ object TelaEntrada: TTelaEntrada
           DataField = 'nota_fiscal'
           DataSource = DM.dsFDTabEntrada
           Enabled = False
+          MaxLength = 20
           TabOrder = 0
         end
       end
@@ -2561,6 +2571,7 @@ object TelaEntrada: TTelaEntrada
           DataField = 'quantidade'
           DataSource = DM.dsFDTabEntrada
           Enabled = False
+          MaxLength = 9
           TabOrder = 0
           OnKeyPress = dbEntradaQtdKeyPress
         end

@@ -53,6 +53,7 @@ object ListaUsuario: TListaUsuario
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 75
         TabOrder = 0
         OnChange = epUsuarioNomeChange
       end
@@ -85,6 +86,7 @@ object ListaUsuario: TListaUsuario
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epUsuarioLoginChange
       end
@@ -230,6 +232,7 @@ object ListaUsuario: TListaUsuario
         DataField = 'login'
         DataSource = dsUsuario
         Enabled = False
+        MaxLength = 45
         TabOrder = 0
       end
     end
@@ -264,6 +267,7 @@ object ListaUsuario: TListaUsuario
         DataField = 'senha'
         DataSource = dsUsuario
         Enabled = False
+        MaxLength = 255
         TabOrder = 0
       end
     end

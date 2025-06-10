@@ -172,24 +172,25 @@ begin
     end
     else
     begin
-      quantidadeDevolvida := StrToInt(eDevQtd.Text);
-      quantidadeSaldo := StrToInt(dbDevSaldo.Text);
-      if quantidadeDevolvida > quantidadeSaldo then
-      begin
-        MessageBox(0, 'Quantidade devolvida não pode ser maior que a quantidade sendo utilizada!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
-        eDevQtd.SetFocus;
-        Exit;
-      end
-    else
       if Trim(eDevQtd.Text) = '' then
       begin
         MessageBox(0, 'O campo "Quantidade" deve ser preenchido!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         eDevQtd.SetFocus;
+        Exit;
       end
-    else
+      else
+      quantidadeDevolvida := StrToInt(eDevQtd.Text);
+      quantidadeSaldo := StrToInt(dbDevSaldo.Text);
       if StrToInt(eDevQtd.Text) <= 0 then
       begin
         MessageBox(0, 'O campo "Quantidade" não pode ser menor ou igual a 0!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+        eDevQtd.SetFocus;
+        Exit;
+      end
+      else
+      if quantidadeDevolvida > quantidadeSaldo then
+      begin
+        MessageBox(0, 'Quantidade devolvida não pode ser maior que a quantidade em uso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
         eDevQtd.SetFocus;
         Exit;
       end
@@ -276,7 +277,7 @@ end;
 // impede valores negativos na quantidade
 procedure TTelaDevolucao.eDevQtdKeyPress(Sender: TObject; var Key: Char);
 begin
-  if Key = '-' then
+  if not CharInSet(Key, ['0'..'9', #8]) then
   begin
     Key := #0;
   end;

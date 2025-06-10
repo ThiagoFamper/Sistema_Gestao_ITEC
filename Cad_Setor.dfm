@@ -90,6 +90,7 @@ object CadSetor: TCadSetor
         DataField = 'descricao'
         DataSource = DM.dsFDTabSetor
         Enabled = False
+        MaxLength = 75
         TabOrder = 0
       end
     end

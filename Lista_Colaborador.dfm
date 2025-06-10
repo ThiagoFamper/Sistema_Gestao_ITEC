@@ -53,6 +53,7 @@ object ListaColaborador: TListaColaborador
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 75
         TabOrder = 0
         OnChange = epColabDescricaoChange
       end
@@ -85,6 +86,7 @@ object ListaColaborador: TListaColaborador
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 75
         TabOrder = 0
         OnChange = epColabSetorChange
       end
@@ -117,6 +119,7 @@ object ListaColaborador: TListaColaborador
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epColabCargoChange
       end
@@ -149,6 +152,7 @@ object ListaColaborador: TListaColaborador
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epColabSedeChange
       end
@@ -2274,6 +2278,7 @@ object ListaColaborador: TListaColaborador
         DataField = 'descricao'
         DataSource = dsColab
         Enabled = False
+        MaxLength = 75
         TabOrder = 0
       end
     end
@@ -2308,6 +2313,7 @@ object ListaColaborador: TListaColaborador
         DataField = 'cargo'
         DataSource = dsColab
         Enabled = False
+        MaxLength = 45
         TabOrder = 0
       end
     end

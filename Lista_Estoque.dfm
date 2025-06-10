@@ -1061,6 +1061,7 @@ object ListaEstoque: TListaEstoque
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdCodChange
       end
@@ -1093,6 +1094,7 @@ object ListaEstoque: TListaEstoque
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 75
         TabOrder = 0
         OnChange = epProdDescricaoChange
       end
@@ -1125,6 +1127,7 @@ object ListaEstoque: TListaEstoque
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdMarcaChange
       end
@@ -1157,6 +1160,7 @@ object ListaEstoque: TListaEstoque
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdModeloChange
       end
@@ -1189,6 +1193,7 @@ object ListaEstoque: TListaEstoque
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdGrupoChange
       end

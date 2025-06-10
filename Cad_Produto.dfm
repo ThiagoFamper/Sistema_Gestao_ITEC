@@ -1815,6 +1815,7 @@ object CadProduto: TCadProduto
         DataField = 'cod_produto'
         DataSource = DM.dsFDTabProduto
         Enabled = False
+        MaxLength = 45
         TabOrder = 0
       end
     end
@@ -1849,6 +1850,7 @@ object CadProduto: TCadProduto
         DataField = 'descricao'
         DataSource = DM.dsFDTabProduto
         Enabled = False
+        MaxLength = 75
         TabOrder = 0
       end
     end
@@ -1883,6 +1885,7 @@ object CadProduto: TCadProduto
         DataField = 'marca'
         DataSource = DM.dsFDTabProduto
         Enabled = False
+        MaxLength = 45
         TabOrder = 0
       end
     end
@@ -1955,6 +1958,7 @@ object CadProduto: TCadProduto
         DataField = 'modelo'
         DataSource = DM.dsFDTabProduto
         Enabled = False
+        MaxLength = 45
         TabOrder = 0
       end
     end

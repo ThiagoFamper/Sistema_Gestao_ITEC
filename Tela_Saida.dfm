@@ -2075,6 +2075,7 @@ object TelaSaida: TTelaSaida
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdCodChange
       end
@@ -2107,6 +2108,7 @@ object TelaSaida: TTelaSaida
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 75
         TabOrder = 0
         OnChange = epProdDescricaoChange
       end
@@ -2139,6 +2141,7 @@ object TelaSaida: TTelaSaida
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdMarcaChange
       end
@@ -2171,6 +2174,7 @@ object TelaSaida: TTelaSaida
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdModeloChange
       end
@@ -2203,6 +2207,7 @@ object TelaSaida: TTelaSaida
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdGrupoChange
       end
@@ -2489,6 +2494,7 @@ object TelaSaida: TTelaSaida
           Height = 23
           Align = alTop
           Enabled = False
+          MaxLength = 9
           TabOrder = 0
           OnKeyPress = dbSaidaQtdKeyPress
         end
@@ -2522,6 +2528,7 @@ object TelaSaida: TTelaSaida
           Height = 23
           Align = alTop
           Enabled = False
+          MaxLength = 75
           TabOrder = 0
         end
       end

@@ -240,7 +240,7 @@ end;
 // impede valores negativos na quantidade e valor
 procedure TTelaEntrada.dbEntradaQtdKeyPress(Sender: TObject; var Key: Char);
 begin
-  if Key = '-' then
+  if not CharInSet(Key, ['0'..'9', #8]) then
   begin
     Key := #0;
   end;
@@ -248,7 +248,7 @@ end;
 
 procedure TTelaEntrada.dbEntradaValorKeyPress(Sender: TObject; var Key: Char);
 begin
-  if Key = '-' then
+  if not CharInSet(Key, ['0'..'9', #8]) then
   begin
     Key := #0;
   end;

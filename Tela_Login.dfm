@@ -168,6 +168,7 @@ object TelaLogin: TTelaLogin
     Top = 220
     Width = 306
     Height = 23
+    MaxLength = 255
     PasswordChar = '*'
     TabOrder = 2
     OnKeyPress = eSenhaKeyPress
@@ -262,6 +263,7 @@ object TelaLogin: TTelaLogin
     Top = 155
     Width = 306
     Height = 23
+    MaxLength = 45
     TabOrder = 1
     OnKeyPress = eLoginKeyPress
   end

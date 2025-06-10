@@ -2099,6 +2099,7 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdCodChange
       end
@@ -2131,6 +2132,7 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 75
         TabOrder = 0
         OnChange = epProdDescricaoChange
       end
@@ -2163,6 +2165,7 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdMarcaChange
       end
@@ -2195,6 +2198,7 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdModeloChange
       end
@@ -2227,6 +2231,7 @@ object TelaEmprestimo: TTelaEmprestimo
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdGrupoChange
       end
@@ -2335,7 +2340,6 @@ object TelaEmprestimo: TTelaEmprestimo
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 575
       object Panel13: TPanel
         Left = 16
         Top = 6
@@ -2451,8 +2455,6 @@ object TelaEmprestimo: TTelaEmprestimo
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 576
-      ExplicitWidth = 575
       object bEmp: TButton
         Left = 75
         Top = 149
@@ -2492,6 +2494,7 @@ object TelaEmprestimo: TTelaEmprestimo
           Height = 23
           Align = alTop
           Enabled = False
+          MaxLength = 9
           TabOrder = 0
           OnKeyPress = dbEmpQtdKeyPress
         end

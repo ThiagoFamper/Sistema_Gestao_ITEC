@@ -91,6 +91,7 @@ object ListaSede: TListaSede
         DataField = 'descricao'
         DataSource = dsSede
         Enabled = False
+        MaxLength = 45
         TabOrder = 0
       end
     end
@@ -134,6 +135,7 @@ object ListaSede: TListaSede
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epSedeDescricaoChange
       end

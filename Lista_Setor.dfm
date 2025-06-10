@@ -91,6 +91,7 @@ object ListaSetor: TListaSetor
         DataField = 'descricao'
         DataSource = dsSetor
         Enabled = False
+        MaxLength = 75
         TabOrder = 0
       end
     end
@@ -134,6 +135,7 @@ object ListaSetor: TListaSetor
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 75
         TabOrder = 0
         OnChange = epSetorDescricaoChange
       end

@@ -265,7 +265,7 @@ end;
 // impede valores negativos na quantidade
 procedure TTelaEmprestimo.dbEmpQtdKeyPress(Sender: TObject; var Key: Char);
 begin
-  if Key = '-' then
+  if not CharInSet(Key, ['0'..'9', #8]) then
   begin
     Key := #0;
   end;

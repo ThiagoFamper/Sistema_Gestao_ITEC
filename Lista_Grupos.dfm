@@ -91,6 +91,7 @@ object ListaGrupos: TListaGrupos
         DataField = 'descricao'
         DataSource = dsGrupo
         Enabled = False
+        MaxLength = 45
         TabOrder = 0
       end
     end
@@ -134,6 +135,7 @@ object ListaGrupos: TListaGrupos
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epGrupoDescricaoChange
       end

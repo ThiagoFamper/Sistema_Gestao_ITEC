@@ -1779,6 +1779,7 @@ object CadSede: TCadSede
         Font.Height = -12
         Font.Name = 'Segoe UI'
         Font.Style = []
+        MaxLength = 45
         ParentFont = False
         TabOrder = 0
       end

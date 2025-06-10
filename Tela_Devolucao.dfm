@@ -55,6 +55,7 @@ object TelaDevolucao: TTelaDevolucao
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = eDevCodChange
       end
@@ -87,8 +88,10 @@ object TelaDevolucao: TTelaDevolucao
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 75
         TabOrder = 0
         OnChange = eDevDescricaoChange
+        ExplicitTop = 26
       end
     end
     object Panel25: TPanel
@@ -119,6 +122,7 @@ object TelaDevolucao: TTelaDevolucao
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 75
         TabOrder = 0
         OnChange = eDevOperadorChange
       end
@@ -151,6 +155,7 @@ object TelaDevolucao: TTelaDevolucao
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 75
         TabOrder = 0
         OnChange = eDevColaboradorChange
       end
@@ -2435,7 +2440,7 @@ object TelaDevolucao: TTelaDevolucao
         Visible = False
       end
       object Panel9: TPanel
-        Left = 247
+        Left = 246
         Top = 5
         Width = 200
         Height = 59
@@ -2540,6 +2545,8 @@ object TelaDevolucao: TTelaDevolucao
           Width = 200
           Height = 23
           Align = alTop
+          Enabled = False
+          MaxLength = 9
           TabOrder = 0
           OnKeyPress = eDevQtdKeyPress
         end

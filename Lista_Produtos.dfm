@@ -2118,7 +2118,9 @@ object ListaProdutos: TListaProdutos
         DataField = 'cod_produto'
         DataSource = dsProduto
         Enabled = False
+        MaxLength = 45
         TabOrder = 0
+        ExplicitTop = 26
       end
     end
     object Panel15: TPanel
@@ -2152,6 +2154,7 @@ object ListaProdutos: TListaProdutos
         DataField = 'descricao'
         DataSource = dsProduto
         Enabled = False
+        MaxLength = 75
         TabOrder = 0
       end
     end
@@ -2186,6 +2189,7 @@ object ListaProdutos: TListaProdutos
         DataField = 'marca'
         DataSource = dsProduto
         Enabled = False
+        MaxLength = 45
         TabOrder = 0
       end
     end
@@ -2257,6 +2261,7 @@ object ListaProdutos: TListaProdutos
         DataField = 'modelo'
         DataSource = dsProduto
         Enabled = False
+        MaxLength = 45
         TabOrder = 0
       end
     end
@@ -2322,6 +2327,7 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdCodChange
       end
@@ -2354,6 +2360,7 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 75
         TabOrder = 0
         OnChange = epProdDescricaoChange
       end
@@ -2386,6 +2393,7 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdMarcaChange
       end
@@ -2418,6 +2426,7 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdModeloChange
       end
@@ -2450,6 +2459,7 @@ object ListaProdutos: TListaProdutos
         Width = 400
         Height = 23
         Align = alTop
+        MaxLength = 45
         TabOrder = 0
         OnChange = epProdGrupoChange
       end
