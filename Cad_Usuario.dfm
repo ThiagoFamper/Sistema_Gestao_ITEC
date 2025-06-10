@@ -127,7 +127,6 @@ object CadUsuario: TCadUsuario
         DataField = 'login'
         DataSource = DM.dsFDTabUsuario
         Enabled = False
-        MaxLength = 45
         TabOrder = 0
       end
     end
@@ -162,7 +161,6 @@ object CadUsuario: TCadUsuario
         DataField = 'senha'
         DataSource = DM.dsFDTabUsuario
         Enabled = False
-        MaxLength = 255
         TabOrder = 0
       end
     end

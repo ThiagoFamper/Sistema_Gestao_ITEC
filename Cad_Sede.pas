@@ -118,7 +118,7 @@ end;
 
 procedure TCadSede.SBsairClick(Sender: TObject);
 begin
-  close(); // botão de sair
+  Close; // botão de sair
 end;
 
 procedure TCadSede.FormShow(Sender: TObject);

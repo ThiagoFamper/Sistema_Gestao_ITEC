@@ -85,7 +85,7 @@ end;
 
 procedure TCadSetor.SBsairClick(Sender: TObject);
 begin
-  close(); // botão de sair
+  Close; // botão de sair
 end;
 
 procedure TCadSetor.SBsalvarClick(Sender: TObject); // botão de salvar

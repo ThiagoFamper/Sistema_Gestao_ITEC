@@ -2335,7 +2335,6 @@ object TelaEntrada: TTelaEntrada
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 771
       object Panel13: TPanel
         Left = 15
         Top = 5
@@ -2451,8 +2450,6 @@ object TelaEntrada: TTelaEntrada
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 772
-      ExplicitWidth = 771
       object bEntrada: TButton
         Left = 74
         Top = 149
@@ -2536,7 +2533,6 @@ object TelaEntrada: TTelaEntrada
           DataField = 'nota_fiscal'
           DataSource = DM.dsFDTabEntrada
           Enabled = False
-          MaxLength = 20
           TabOrder = 0
         end
       end

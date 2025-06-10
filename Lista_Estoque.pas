@@ -74,7 +74,7 @@ end;
 
 procedure TListaEstoque.SBsairClick(Sender: TObject);
 begin
-  Close(); // botão de sair
+  Close; // botão de sair
 end;
 
 procedure TListaEstoque.epProdCodChange(Sender: TObject);

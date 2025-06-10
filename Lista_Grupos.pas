@@ -116,7 +116,7 @@ end;
 
 procedure TListaGrupos.SBsairClick(Sender: TObject);
 begin
-  Close(); // botão de sair
+  Close; // botão de sair
 end;
 
 procedure TListaGrupos.SBsalvarClick(Sender: TObject); // botão de salvar

@@ -95,7 +95,7 @@ end;
 
 procedure TCadColaborador.SBsairClick(Sender: TObject);
 begin
-  close(); // botão de sair
+  Close; // botão de sair
 end;
 
 procedure TCadColaborador.SBsalvarClick(Sender: TObject); // botão de salvar

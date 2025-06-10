@@ -121,7 +121,7 @@ end;
 
 procedure TCadGrupo.SBsairClick(Sender: TObject);
 begin
-  close(); // botão de sair
+  close; // botão de sair
 end;
 
 procedure TCadGrupo.FormShow(Sender: TObject);

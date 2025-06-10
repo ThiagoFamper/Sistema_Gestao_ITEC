@@ -137,7 +137,7 @@ end;
 
 procedure TListaColaborador.SBsairClick(Sender: TObject);
 begin
-  Close(); // botão de sair
+  Close; // botão de sair
 end;
 
 procedure TListaColaborador.SBsalvarClick(Sender: TObject); // botão de salvar

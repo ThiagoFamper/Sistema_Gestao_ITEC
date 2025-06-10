@@ -91,9 +91,7 @@ object CadColaborador: TCadColaborador
         DataField = 'descricao'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
-        MaxLength = 75
         TabOrder = 0
-        ExplicitTop = 26
       end
     end
     object Panel13: TPanel
@@ -127,7 +125,6 @@ object CadColaborador: TCadColaborador
         DataField = 'cargo'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
-        MaxLength = 45
         TabOrder = 0
       end
     end

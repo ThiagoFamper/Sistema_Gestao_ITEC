@@ -147,7 +147,7 @@ end;
 
 procedure TTelaSaida.SBsairClick(Sender: TObject);
 begin
-  Close(); // botão de sair
+  Close; // botão de sair
 end;
 
 procedure TTelaSaida.HabilitaCampos; // habilitar campos

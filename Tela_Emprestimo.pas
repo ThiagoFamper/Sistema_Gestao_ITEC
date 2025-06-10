@@ -157,7 +157,7 @@ end;
 
 procedure TTelaEmprestimo.SBsairClick(Sender: TObject);
 begin
-  Close(); // botão de sair
+  Close; // botão de sair
 end;
 
 procedure TTelaEmprestimo.HabilitaCampos; // habilitar campos

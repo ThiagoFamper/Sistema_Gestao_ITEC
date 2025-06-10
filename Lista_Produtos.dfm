@@ -2120,7 +2120,6 @@ object ListaProdutos: TListaProdutos
         Enabled = False
         MaxLength = 45
         TabOrder = 0
-        ExplicitTop = 26
       end
     end
     object Panel15: TPanel

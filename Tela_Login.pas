@@ -78,7 +78,7 @@ end;
 
 procedure TTelaLogin.bCancelarClick(Sender: TObject); // botão de cancelar
 begin
-  Application.Terminate;
+  Close;
 end;
 
 // set focus com enter

@@ -91,7 +91,6 @@ object TelaDevolucao: TTelaDevolucao
         MaxLength = 75
         TabOrder = 0
         OnChange = eDevDescricaoChange
-        ExplicitTop = 26
       end
     end
     object Panel25: TPanel

@@ -116,7 +116,7 @@ end;
 
 procedure TListaSetor.SBsairClick(Sender: TObject);
 begin
-  Close(); // botão de sair
+  Close; // botão de sair
 end;
 
 procedure TListaSetor.SBsalvarClick(Sender: TObject); // botão de salvar

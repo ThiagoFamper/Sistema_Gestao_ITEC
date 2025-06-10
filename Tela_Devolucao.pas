@@ -143,7 +143,7 @@ end;
 
 procedure TTelaDevolucao.SBsairClick(Sender: TObject);
 begin
-  Close(); // botão de sair
+  Close; // botão de sair
 end;
 
 procedure TTelaDevolucao.HabilitaCampos; // habilitar campos
