@@ -32,7 +32,6 @@ object RelatorioProduto: TRelatorioProduto
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -45,11 +44,6 @@ object RelatorioProduto: TRelatorioProduto
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 338
-    ExplicitHeight = 282
-    DesignSize = (
-      340
-      290)
     object Panel2: TPanel
       Left = 0
       Top = 0
@@ -59,7 +53,6 @@ object RelatorioProduto: TRelatorioProduto
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -71,10 +64,9 @@ object RelatorioProduto: TRelatorioProduto
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
-        Top = 6
+        Top = 3
         Width = 67
         Height = 21
         AutoSize = False
@@ -100,7 +92,6 @@ object RelatorioProduto: TRelatorioProduto
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -111,10 +102,9 @@ object RelatorioProduto: TRelatorioProduto
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
-        Top = 6
+        Top = 3
         Width = 61
         Height = 15
         AutoSize = False
@@ -131,19 +121,74 @@ object RelatorioProduto: TRelatorioProduto
         TabOrder = 0
       end
     end
-    object BitBtn1: TBitBtn
-      Left = 108
-      Top = 200
-      Width = 89
-      Height = 25
-      Cursor = crHandPoint
-      Anchors = []
-      Caption = 'Gerar &Relat'#243'rio'
-      Layout = blGlyphTop
+    object GridPanel1: TGridPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 179
+      Width = 334
+      Height = 108
+      Align = alClient
+      BevelOuter = bvNone
+      ColumnCollection = <
+        item
+          Value = 25.000000000000000000
+        end
+        item
+          Value = 25.000000000000000000
+        end
+        item
+          Value = 25.000000000000000000
+        end
+        item
+          Value = 25.000000000000000000
+        end>
+      ControlCollection = <
+        item
+          Column = 1
+          Control = BitBtn1
+          Row = 0
+        end
+        item
+          Column = 2
+          Control = BitBtn2
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end>
       TabOrder = 4
-      OnClick = BitBtn1Click
-      ExplicitLeft = 107
-      ExplicitTop = 194
+      ExplicitLeft = 106
+      ExplicitTop = 216
+      ExplicitWidth = 185
+      ExplicitHeight = 41
+      DesignSize = (
+        334
+        108)
+      object BitBtn1: TBitBtn
+        Left = 85
+        Top = 41
+        Width = 80
+        Height = 25
+        Cursor = crHandPoint
+        Anchors = []
+        Caption = '&Relat'#243'rio'
+        Layout = blGlyphTop
+        TabOrder = 0
+        OnClick = BitBtn1Click
+        ExplicitLeft = 88
+      end
+      object BitBtn2: TBitBtn
+        Left = 169
+        Top = 41
+        Width = 80
+        Height = 25
+        Anchors = []
+        Caption = 'Cancelar'
+        TabOrder = 1
+        OnClick = BitBtn2Click
+        ExplicitLeft = 171
+      end
     end
   end
   object frxDSRelatProd: TfrxDBDataset
@@ -152,8 +197,8 @@ object RelatorioProduto: TRelatorioProduto
     DataSet = FDQueryRelatProd
     BCDToCurrency = False
     DataSetOptions = []
-    Left = 224
-    Top = 304
+    Left = 208
+    Top = 48
   end
   object FDQueryRelatProd: TFDQuery
     Connection = DM.FDEstoqueItec
@@ -173,8 +218,8 @@ object RelatorioProduto: TRelatorioProduto
       '  p.data BETWEEN :data_inicial AND :data_final'
       'ORDER BY '
       '  p.data;')
-    Left = 128
-    Top = 304
+    Left = 112
+    Top = 48
     ParamData = <
       item
         Name = 'DATA_INICIAL'
@@ -205,8 +250,8 @@ object RelatorioProduto: TRelatorioProduto
       'begin'
       ''
       'end.')
-    Left = 39
-    Top = 304
+    Left = 31
+    Top = 48
     Datasets = <
       item
         DataSet = frxDSRelatProd

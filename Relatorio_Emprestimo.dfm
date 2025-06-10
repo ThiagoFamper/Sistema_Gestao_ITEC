@@ -32,7 +32,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -45,11 +44,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 338
-    ExplicitHeight = 282
-    DesignSize = (
-      340
-      290)
     object Panel2: TPanel
       Left = 0
       Top = 0
@@ -59,7 +53,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -71,10 +64,9 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
-        Top = 6
+        Top = 3
         Width = 67
         Height = 21
         AutoSize = False
@@ -100,7 +92,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -111,10 +102,9 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
-        Top = 6
+        Top = 3
         Width = 61
         Height = 15
         AutoSize = False
@@ -131,19 +121,72 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         TabOrder = 0
       end
     end
-    object BitBtn1: TBitBtn
-      Left = 104
-      Top = 199
-      Width = 89
-      Height = 25
-      Cursor = crHandPoint
-      Anchors = []
-      Caption = 'Gerar &Relat'#243'rio'
-      Layout = blGlyphTop
+    object GridPanel1: TGridPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 179
+      Width = 334
+      Height = 108
+      Align = alClient
+      BevelOuter = bvNone
+      ColumnCollection = <
+        item
+          Value = 25.000000000000000000
+        end
+        item
+          Value = 25.000000000000000000
+        end
+        item
+          Value = 25.000000000000000000
+        end
+        item
+          Value = 25.000000000000000000
+        end>
+      ControlCollection = <
+        item
+          Column = 1
+          Control = BitBtn1
+          Row = 0
+        end
+        item
+          Column = 2
+          Control = BitBtn2
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end>
       TabOrder = 4
-      OnClick = BitBtn1Click
-      ExplicitLeft = 103
-      ExplicitTop = 193
+      ExplicitLeft = 56
+      ExplicitTop = 164
+      DesignSize = (
+        334
+        108)
+      object BitBtn1: TBitBtn
+        Left = 85
+        Top = 41
+        Width = 80
+        Height = 25
+        Cursor = crHandPoint
+        Anchors = []
+        Caption = '&Relat'#243'rio'
+        Layout = blGlyphTop
+        TabOrder = 0
+        OnClick = BitBtn1Click
+        ExplicitLeft = 88
+      end
+      object BitBtn2: TBitBtn
+        Left = 169
+        Top = 41
+        Width = 80
+        Height = 25
+        Anchors = []
+        Caption = 'Cancelar'
+        TabOrder = 1
+        OnClick = BitBtn2Click
+        ExplicitLeft = 171
+      end
     end
   end
   object frxRelatEmp: TfrxReport
@@ -162,8 +205,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       'begin'
       ''
       'end.')
-    Left = 32
-    Top = 296
+    Left = 24
+    Top = 48
     Datasets = <
       item
         DataSet = frxDSRelatEmp
@@ -680,8 +723,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       'ORDER BY'
       '  emp.data_emprestimo;'
       '   ')
-    Left = 120
-    Top = 296
+    Left = 112
+    Top = 48
     ParamData = <
       item
         Name = 'DATA_INICIAL'
@@ -702,7 +745,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     DataSet = FDQueryRelatEmp
     BCDToCurrency = False
     DataSetOptions = []
-    Left = 215
-    Top = 296
+    Left = 207
+    Top = 48
   end
 end

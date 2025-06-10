@@ -32,7 +32,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -46,11 +45,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 338
-    ExplicitHeight = 282
-    DesignSize = (
-      340
-      290)
     object Panel5: TPanel
       AlignWithMargins = True
       Left = 3
@@ -60,10 +54,9 @@ object RelatorioDevolucao: TRelatorioDevolucao
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
-        Top = 6
+        Top = 3
         Width = 61
         Height = 15
         AutoSize = False
@@ -89,7 +82,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -101,10 +93,9 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
-        Top = 6
+        Top = 3
         Width = 67
         Height = 21
         AutoSize = False
@@ -130,21 +121,83 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitWidth = 338
     end
-    object BitBtn1: TBitBtn
-      Left = 103
-      Top = 192
-      Width = 89
-      Height = 25
-      Cursor = crHandPoint
-      Anchors = []
-      Caption = 'Gerar &Relat'#243'rio'
-      Layout = blGlyphTop
+    object GridPanel1: TGridPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 179
+      Width = 334
+      Height = 108
+      Align = alClient
+      BevelOuter = bvNone
+      ColumnCollection = <
+        item
+          Value = 25.000000000000000000
+        end
+        item
+          Value = 25.000000000000000000
+        end
+        item
+          Value = 25.000000000000000000
+        end
+        item
+          Value = 25.000000000000000000
+        end>
+      ControlCollection = <
+        item
+          Column = 1
+          Control = BitBtn1
+          Row = 0
+        end
+        item
+          Column = 2
+          Control = BitBtn2
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end>
       TabOrder = 4
-      OnClick = BitBtn1Click
-      ExplicitLeft = 102
-      ExplicitTop = 186
+      DesignSize = (
+        334
+        108)
+      object BitBtn1: TBitBtn
+        Left = 85
+        Top = 41
+        Width = 80
+        Height = 25
+        Cursor = crHandPoint
+        Anchors = []
+        Caption = '&Relat'#243'rio'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        Layout = blGlyphTop
+        ParentFont = False
+        TabOrder = 0
+        OnClick = BitBtn1Click
+        ExplicitLeft = 84
+      end
+      object BitBtn2: TBitBtn
+        Left = 169
+        Top = 41
+        Width = 80
+        Height = 25
+        Anchors = []
+        Caption = 'Cancelar'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        OnClick = BitBtn2Click
+        ExplicitLeft = 167
+      end
     end
   end
   object frxRelatDev: TfrxReport
@@ -163,8 +216,8 @@ object RelatorioDevolucao: TRelatorioDevolucao
       'begin'
       ''
       'end.')
-    Left = 36
-    Top = 304
+    Left = 204
+    Top = 56
     Datasets = <
       item
         DataSet = frxDSRelatDev
@@ -753,7 +806,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       'order by'
       '  ip.data_devolucao')
     Left = 120
-    Top = 304
+    Top = 56
     ParamData = <
       item
         Name = 'DATA_INICIAL'
@@ -774,7 +827,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
     DataSet = FDQueryRelatDev
     BCDToCurrency = False
     DataSetOptions = []
-    Left = 211
-    Top = 304
+    Left = 29
+    Top = 56
   end
 end

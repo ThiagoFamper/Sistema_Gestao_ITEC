@@ -32,7 +32,6 @@ object RelatorioSaida: TRelatorioSaida
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -45,11 +44,6 @@ object RelatorioSaida: TRelatorioSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 338
-    ExplicitHeight = 282
-    DesignSize = (
-      340
-      290)
     object Panel2: TPanel
       AlignWithMargins = True
       Left = 3
@@ -60,7 +54,6 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
         Top = 6
@@ -89,7 +82,6 @@ object RelatorioSaida: TRelatorioSaida
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
         Top = 6
@@ -118,7 +110,6 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitWidth = 338
     end
     object Panel5: TPanel
       Left = 0
@@ -129,21 +120,75 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitWidth = 338
     end
-    object BitBtn1: TBitBtn
-      Left = 99
-      Top = 192
-      Width = 89
-      Height = 25
-      Cursor = crHandPoint
-      Anchors = []
-      Caption = 'Gerar &Relat'#243'rio'
-      Layout = blGlyphTop
+    object GridPanel1: TGridPanel
+      AlignWithMargins = True
+      Left = 3
+      Top = 179
+      Width = 334
+      Height = 108
+      Align = alClient
+      BevelOuter = bvNone
+      ColumnCollection = <
+        item
+          Value = 25.000000000000000000
+        end
+        item
+          Value = 25.000000000000000000
+        end
+        item
+          Value = 25.000000000000000000
+        end
+        item
+          Value = 25.000000000000000000
+        end>
+      ControlCollection = <
+        item
+          Column = 1
+          Control = BitBtn1
+          Row = 0
+        end
+        item
+          Column = 2
+          Control = BitBtn2
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end>
       TabOrder = 4
-      OnClick = BitBtn1Click
-      ExplicitLeft = 98
-      ExplicitTop = 186
+      ExplicitLeft = 88
+      ExplicitTop = 224
+      ExplicitWidth = 185
+      ExplicitHeight = 41
+      DesignSize = (
+        334
+        108)
+      object BitBtn1: TBitBtn
+        Left = 85
+        Top = 41
+        Width = 80
+        Height = 25
+        Cursor = crHandPoint
+        Anchors = []
+        Caption = '&Relat'#243'rio'
+        Layout = blGlyphTop
+        TabOrder = 0
+        OnClick = BitBtn1Click
+        ExplicitLeft = 88
+      end
+      object BitBtn2: TBitBtn
+        Left = 169
+        Top = 41
+        Width = 80
+        Height = 25
+        Anchors = []
+        Caption = 'Cancelar'
+        TabOrder = 1
+        OnClick = BitBtn2Click
+        ExplicitLeft = 171
+      end
     end
   end
   object frxRelatSai: TfrxReport
@@ -162,8 +207,8 @@ object RelatorioSaida: TRelatorioSaida
       'begin'
       ''
       'end.')
-    Left = 50
-    Top = 296
+    Left = 18
+    Top = 40
     Datasets = <
       item
         DataSet = frxDSRelatSai
@@ -569,8 +614,8 @@ object RelatorioSaida: TRelatorioSaida
       '  sp.data_saida BETWEEN :data_inicial AND :data_final'
       'ORDER BY '
       '  sp.data_saida;')
-    Left = 206
-    Top = 296
+    Left = 174
+    Top = 40
     ParamData = <
       item
         Name = 'DATA_INICIAL'
@@ -591,7 +636,7 @@ object RelatorioSaida: TRelatorioSaida
     DataSet = FDQueryRelatSai
     BCDToCurrency = False
     DataSetOptions = []
-    Left = 120
-    Top = 296
+    Left = 88
+    Top = 40
   end
 end

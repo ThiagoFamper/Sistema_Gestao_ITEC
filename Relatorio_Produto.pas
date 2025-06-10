@@ -25,9 +25,12 @@ type
     Panel5: TPanel;
     Label2: TLabel;
     DateTimeFinal: TDateTimePicker;
+    GridPanel1: TGridPanel;
     BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -62,11 +65,15 @@ begin
   end;
 end;
 
+procedure TRelatorioProduto.BitBtn2Click(Sender: TObject);
+begin
+  Close;
+end;
+
 procedure TRelatorioProduto.FormShow(Sender: TObject);
 begin
   DateTimeInicial.Date := EncodeDate(YearOf(Date), MonthOf(Date), 1);
   DateTimeFinal.Date := Date;
-  BitBtn1.Left := (ClientWidth - BitBtn1.Width) div 2;  // centraliza verticalmente o botão de gerar relatório em tempo de execução
 end;
 
 end.
