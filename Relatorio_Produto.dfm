@@ -181,8 +181,6 @@ object RelatorioProduto: TRelatorioProduto
         Layout = blGlyphTop
         TabOrder = 0
         OnClick = BitBtn1Click
-        ExplicitLeft = 84
-        ExplicitTop = 37
       end
       object BitBtn2: TBitBtn
         Left = 169
@@ -193,8 +191,6 @@ object RelatorioProduto: TRelatorioProduto
         Caption = '&Cancelar'
         TabOrder = 1
         OnClick = BitBtn2Click
-        ExplicitLeft = 167
-        ExplicitTop = 37
       end
     end
   end

@@ -239,7 +239,7 @@ object TelaLogin: TTelaLogin
     end
   end
   object bEntrar: TButton
-    Left = 160
+    Left = 173
     Top = 266
     Width = 75
     Height = 25
@@ -249,7 +249,7 @@ object TelaLogin: TTelaLogin
     OnClick = bEntrarClick
   end
   object bCancelar: TButton
-    Left = 256
+    Left = 269
     Top = 266
     Width = 75
     Height = 25
