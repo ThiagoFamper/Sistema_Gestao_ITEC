@@ -28,7 +28,7 @@ object TelaEntrada: TTelaEntrada
     TabOrder = 0
     ExplicitWidth = 1544
     object SBsair: TSpeedButton
-      Left = 654
+      Left = 646
       Top = 7
       Width = 73
       Height = 99

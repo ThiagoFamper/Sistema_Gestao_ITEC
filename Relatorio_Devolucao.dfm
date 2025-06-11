@@ -32,6 +32,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -45,6 +46,8 @@ object RelatorioDevolucao: TRelatorioDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     object Panel5: TPanel
       AlignWithMargins = True
       Left = 3
@@ -54,6 +57,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
         Top = 3
@@ -82,6 +86,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -93,6 +98,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
         Top = 3
@@ -121,6 +127,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 3
+      ExplicitWidth = 338
     end
     object GridPanel1: TGridPanel
       AlignWithMargins = True
@@ -159,6 +166,8 @@ object RelatorioDevolucao: TRelatorioDevolucao
           Value = 100.000000000000000000
         end>
       TabOrder = 4
+      ExplicitWidth = 332
+      ExplicitHeight = 100
       DesignSize = (
         334
         108)
@@ -179,7 +188,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
         ParentFont = False
         TabOrder = 0
         OnClick = BitBtn1Click
-        ExplicitLeft = 84
       end
       object BitBtn2: TBitBtn
         Left = 169
@@ -187,7 +195,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         Width = 80
         Height = 25
         Anchors = []
-        Caption = 'Cancelar'
+        Caption = '&Cancelar'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -12
@@ -196,7 +204,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
         ParentFont = False
         TabOrder = 1
         OnClick = BitBtn2Click
-        ExplicitLeft = 167
       end
     end
   end

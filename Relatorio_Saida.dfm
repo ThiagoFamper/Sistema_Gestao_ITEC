@@ -32,6 +32,7 @@ object RelatorioSaida: TRelatorioSaida
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -44,6 +45,8 @@ object RelatorioSaida: TRelatorioSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     object Panel2: TPanel
       AlignWithMargins = True
       Left = 3
@@ -54,6 +57,7 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
         Top = 6
@@ -82,6 +86,7 @@ object RelatorioSaida: TRelatorioSaida
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
         Top = 6
@@ -110,6 +115,7 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitWidth = 338
     end
     object Panel5: TPanel
       Left = 0
@@ -120,6 +126,7 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 3
+      ExplicitWidth = 338
     end
     object GridPanel1: TGridPanel
       AlignWithMargins = True
@@ -158,10 +165,8 @@ object RelatorioSaida: TRelatorioSaida
           Value = 100.000000000000000000
         end>
       TabOrder = 4
-      ExplicitLeft = 88
-      ExplicitTop = 224
-      ExplicitWidth = 185
-      ExplicitHeight = 41
+      ExplicitWidth = 332
+      ExplicitHeight = 100
       DesignSize = (
         334
         108)
@@ -176,7 +181,6 @@ object RelatorioSaida: TRelatorioSaida
         Layout = blGlyphTop
         TabOrder = 0
         OnClick = BitBtn1Click
-        ExplicitLeft = 88
       end
       object BitBtn2: TBitBtn
         Left = 169
@@ -184,10 +188,9 @@ object RelatorioSaida: TRelatorioSaida
         Width = 80
         Height = 25
         Anchors = []
-        Caption = 'Cancelar'
+        Caption = '&Cancelar'
         TabOrder = 1
         OnClick = BitBtn2Click
-        ExplicitLeft = 171
       end
     end
   end

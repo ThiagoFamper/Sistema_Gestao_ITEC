@@ -32,6 +32,7 @@ object RelatorioProduto: TRelatorioProduto
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -44,6 +45,8 @@ object RelatorioProduto: TRelatorioProduto
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     object Panel2: TPanel
       Left = 0
       Top = 0
@@ -53,6 +56,7 @@ object RelatorioProduto: TRelatorioProduto
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -64,6 +68,7 @@ object RelatorioProduto: TRelatorioProduto
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
         Top = 3
@@ -92,6 +97,7 @@ object RelatorioProduto: TRelatorioProduto
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -102,6 +108,7 @@ object RelatorioProduto: TRelatorioProduto
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
         Top = 3
@@ -158,10 +165,8 @@ object RelatorioProduto: TRelatorioProduto
           Value = 100.000000000000000000
         end>
       TabOrder = 4
-      ExplicitLeft = 106
-      ExplicitTop = 216
-      ExplicitWidth = 185
-      ExplicitHeight = 41
+      ExplicitWidth = 332
+      ExplicitHeight = 100
       DesignSize = (
         334
         108)
@@ -176,7 +181,8 @@ object RelatorioProduto: TRelatorioProduto
         Layout = blGlyphTop
         TabOrder = 0
         OnClick = BitBtn1Click
-        ExplicitLeft = 88
+        ExplicitLeft = 84
+        ExplicitTop = 37
       end
       object BitBtn2: TBitBtn
         Left = 169
@@ -184,10 +190,11 @@ object RelatorioProduto: TRelatorioProduto
         Width = 80
         Height = 25
         Anchors = []
-        Caption = 'Cancelar'
+        Caption = '&Cancelar'
         TabOrder = 1
         OnClick = BitBtn2Click
-        ExplicitLeft = 171
+        ExplicitLeft = 167
+        ExplicitTop = 37
       end
     end
   end

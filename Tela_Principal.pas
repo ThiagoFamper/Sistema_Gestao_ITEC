@@ -563,7 +563,7 @@ end;
 
 procedure TTelaPrincipal.pnpSairClick(Sender: TObject);
 begin
-  Close;
+  Application.Terminate;
 end;
 
 procedure TTelaPrincipal.SBlogoutClick(Sender: TObject);

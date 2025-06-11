@@ -1679,7 +1679,7 @@ object TelaSaida: TTelaSaida
       OnClick = SBestoqueClick
     end
     object SBsair: TSpeedButton
-      Left = 654
+      Left = 646
       Top = 7
       Width = 73
       Height = 99
