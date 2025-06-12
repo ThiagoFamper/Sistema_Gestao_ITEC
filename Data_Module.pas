@@ -61,7 +61,6 @@ type
     FDTabColaboradorsede_id: TLargeintField;
     FDTabSaidaid: TLargeintField;
     FDTabSaidaquantidade: TIntegerField;
-    FDTabSaidadata_saida: TDateField;
     FDTabSaidaoperador: TLargeintField;
     FDTabSaidadescricao: TWideStringField;
     FDTabSaidaproduto_id: TLargeintField;
@@ -73,22 +72,23 @@ type
     FDTabEmprestimoProdid: TLargeintField;
     FDTabEmprestimoProdproduto_id: TLargeintField;
     FDTabEmprestimoProdquantidade: TIntegerField;
-    FDTabEmprestimoProddata_emprestimo: TSQLTimeStampField;
     FDTabEmprestimoProdsaldo: TIntegerField;
     FDTabEmprestimoProdoperador: TLargeintField;
     FDTabEmprestimoProddevolvido: TBooleanField;
     FDTabEmprestimoProdcolaborador_id: TLargeintField;
     FDTabEmprestimoItemid: TLargeintField;
-    FDTabEmprestimoItemdata_devolucao: TSQLTimeStampField;
     FDTabEmprestimoItemqtd_devolvida: TIntegerField;
     FDTabEmprestimoItememprestimo_id: TLargeintField;
     FDTabEntradaid: TLargeintField;
     FDTabEntradaproduto_id: TLargeintField;
     FDTabEntradaquantidade: TIntegerField;
-    FDTabEntradadata_entrada: TSQLTimeStampField;
     FDTabEntradanota_fiscal: TWideStringField;
     FDTabEntradavalor_unitario: TFMTBCDField;
     FDTabEntradaoperador: TLargeintField;
+    FDTabEntradadata_entrada: TSQLTimeStampField;
+    FDTabEmprestimoProddata_emprestimo: TSQLTimeStampField;
+    FDTabSaidadata_saida: TSQLTimeStampField;
+    FDTabEmprestimoItemdata_devolucao: TSQLTimeStampField;
   private
     { Private declarations }
   public

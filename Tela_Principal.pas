@@ -166,6 +166,7 @@ begin
   fpMovimentacao.Enabled    := False;
   fpCadastro.Enabled        := False;
   fpConsulta.Enabled        := False;
+  SBlogout.Enabled          := False;
   KeyPreview := False;
 
   for I := 0 to fpPrincipal.ControlCount - 1 do
@@ -211,6 +212,7 @@ begin
   fpMovimentacao.Enabled    := True;
   fpCadastro.Enabled        := True;
   fpConsulta.Enabled        := True;
+  SBlogout.Enabled          := True;
   KeyPreview := True;
 
     for I := 0 to fpPrincipal.ControlCount - 1 do

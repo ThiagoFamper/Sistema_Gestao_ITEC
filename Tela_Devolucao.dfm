@@ -26,6 +26,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1382
     object Panel23: TPanel
       Left = 16
       Top = 6
@@ -171,6 +172,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1382
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -2191,6 +2193,7 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
+    ExplicitWidth = 1382
     object dbNavDevolucao: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2259,7 +2262,7 @@ object TelaDevolucao: TTelaDevolucao
         Expanded = False
         FieldName = 'data_devolucao'
         Title.Caption = 'Data da Devolu'#231#227'o'
-        Width = 110
+        Width = 120
         Visible = True
       end
       item
@@ -2306,6 +2309,8 @@ object TelaDevolucao: TTelaDevolucao
         Value = 100.000000000000000000
       end>
     TabOrder = 4
+    ExplicitTop = 899
+    ExplicitWidth = 1382
     object Panel3: TPanel
       Left = 1
       Top = 1
@@ -2317,6 +2322,7 @@ object TelaDevolucao: TTelaDevolucao
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
+      ExplicitWidth = 690
       object Panel13: TPanel
         Left = 16
         Top = 5
@@ -2481,6 +2487,8 @@ object TelaDevolucao: TTelaDevolucao
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 1
+      ExplicitLeft = 691
+      ExplicitWidth = 690
       object bDevolver: TButton
         Left = 75
         Top = 157
@@ -2636,8 +2644,8 @@ object TelaDevolucao: TTelaDevolucao
       '  AND UPPER(p.cod_produto) LIKE UPPER(:codigo)'
       '  AND UPPER(p.descricao) LIKE UPPER(:descricao)'
       '  AND UPPER(c_operador.descricao) LIKE UPPER(:operador)'
-      '  AND UPPER(c_colaborador.descricao) LIKE UPPER(:colaborador);'
-      '')
+      '  AND UPPER(c_colaborador.descricao) LIKE UPPER(:colaborador)'
+      'ORDER BY ep.data_emprestimo DESC;')
     Left = 912
     Top = 242
     ParamData = <

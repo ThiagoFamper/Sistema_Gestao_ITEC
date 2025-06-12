@@ -43,6 +43,11 @@ object TelaPrincipal: TTelaPrincipal
       Cursor = crHandPoint
       Hint = 'Sair'
       Flat = True
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Glyph.Data = {
         52270000424D5227000000000000420000002800000032000000320000000100
         20000300000010270000000000000000000000000000000000000000FF0000FF
@@ -359,6 +364,8 @@ object TelaPrincipal: TTelaPrincipal
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         00000000000000000000000000000000000000000000}
+      Layout = blGlyphTop
+      ParentFont = False
       ParentShowHint = False
       ShowHint = True
       OnClick = SBlogoutClick

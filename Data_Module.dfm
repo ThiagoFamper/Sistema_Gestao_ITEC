@@ -1,6 +1,7 @@
 object DM: TDM
-  Height = 517
-  Width = 795
+  Height = 646
+  Width = 994
+  PixelsPerInch = 120
   object FDEstoqueItec: TFDConnection
     Params.Strings = (
       'Database=estoqueitec'
@@ -10,23 +11,23 @@ object DM: TDM
       'DriverID=PG')
     Connected = True
     LoginPrompt = False
-    Left = 40
-    Top = 24
+    Left = 50
+    Top = 30
   end
   object FDTransaction1: TFDTransaction
     Connection = FDEstoqueItec
-    Left = 136
-    Top = 24
+    Left = 170
+    Top = 30
   end
   object FDPhysPgDriverLink1: TFDPhysPgDriverLink
     VendorLib = 'C:\Program Files (x86)\PostgreSQL\psqlODBC\bin\libpq.dll'
-    Left = 248
-    Top = 24
+    Left = 310
+    Top = 30
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 368
-    Top = 24
+    Left = 460
+    Top = 30
   end
   object FDTabProduto: TFDTable
     IndexFieldNames = 'id'
@@ -36,8 +37,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'produto'
-    Left = 32
-    Top = 112
+    Left = 40
+    Top = 140
     object FDTabProdutoid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -73,8 +74,8 @@ object DM: TDM
   end
   object dsFDTabProduto: TDataSource
     DataSet = FDTabProduto
-    Left = 128
-    Top = 112
+    Left = 160
+    Top = 140
   end
   object FDTabGrupo: TFDTable
     IndexFieldNames = 'id'
@@ -84,8 +85,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'grupo'
-    Left = 32
-    Top = 184
+    Left = 40
+    Top = 230
     object FDTabGrupoid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -98,13 +99,13 @@ object DM: TDM
   end
   object dsFDTabGrupo: TDataSource
     DataSet = FDTabGrupo
-    Left = 128
-    Top = 184
+    Left = 160
+    Top = 230
   end
   object dsFDTabColaborador: TDataSource
     DataSet = FDTabColaborador
-    Left = 166
-    Top = 259
+    Left = 208
+    Top = 324
   end
   object FDTabColaborador: TFDTable
     IndexFieldNames = 'id'
@@ -114,8 +115,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'colaborador'
-    Left = 45
-    Top = 259
+    Left = 56
+    Top = 324
     object FDTabColaboradorid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -147,8 +148,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'setor'
-    Left = 32
-    Top = 336
+    Left = 40
+    Top = 420
     object FDTabSetorid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -162,8 +163,8 @@ object DM: TDM
   end
   object dsFDTabSetor: TDataSource
     DataSet = FDTabSetor
-    Left = 115
-    Top = 336
+    Left = 144
+    Top = 420
   end
   object FDTabUsuario: TFDTable
     IndexFieldNames = 'id'
@@ -173,8 +174,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'usuario'
-    Left = 32
-    Top = 406
+    Left = 40
+    Top = 508
     object FDTabUsuarioid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -201,8 +202,8 @@ object DM: TDM
   end
   object dsFDTabUsuario: TDataSource
     DataSet = FDTabUsuario
-    Left = 128
-    Top = 406
+    Left = 160
+    Top = 508
   end
   object FDTabEntrada: TFDTable
     IndexFieldNames = 'id'
@@ -212,8 +213,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'entrada_produto'
-    Left = 237
-    Top = 112
+    Left = 296
+    Top = 140
     object FDTabEntradaid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -226,11 +227,6 @@ object DM: TDM
     object FDTabEntradaquantidade: TIntegerField
       FieldName = 'quantidade'
       Origin = 'quantidade'
-    end
-    object FDTabEntradadata_entrada: TSQLTimeStampField
-      FieldName = 'data_entrada'
-      Origin = 'data_entrada'
-      ProviderFlags = [pfInUpdate]
     end
     object FDTabEntradanota_fiscal: TWideStringField
       FieldName = 'nota_fiscal'
@@ -246,11 +242,16 @@ object DM: TDM
       FieldName = 'operador'
       Origin = 'operador'
     end
+    object FDTabEntradadata_entrada: TSQLTimeStampField
+      FieldName = 'data_entrada'
+      Origin = 'data_entrada'
+      ProviderFlags = [pfInUpdate]
+    end
   end
   object dsFDTabEntrada: TDataSource
     DataSet = FDTabEntrada
-    Left = 333
-    Top = 112
+    Left = 416
+    Top = 140
   end
   object FDTabEmprestimoProd: TFDTable
     IndexFieldNames = 'id'
@@ -260,8 +261,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'emprestimo_produto'
-    Left = 262
-    Top = 182
+    Left = 328
+    Top = 228
     object FDTabEmprestimoProdid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -274,11 +275,6 @@ object DM: TDM
     object FDTabEmprestimoProdquantidade: TIntegerField
       FieldName = 'quantidade'
       Origin = 'quantidade'
-    end
-    object FDTabEmprestimoProddata_emprestimo: TSQLTimeStampField
-      FieldName = 'data_emprestimo'
-      Origin = 'data_emprestimo'
-      ProviderFlags = [pfInUpdate]
     end
     object FDTabEmprestimoProdsaldo: TIntegerField
       FieldName = 'saldo'
@@ -296,11 +292,16 @@ object DM: TDM
       FieldName = 'colaborador_id'
       Origin = 'colaborador_id'
     end
+    object FDTabEmprestimoProddata_emprestimo: TSQLTimeStampField
+      FieldName = 'data_emprestimo'
+      Origin = 'data_emprestimo'
+      ProviderFlags = [pfInUpdate]
+    end
   end
   object dsFDTabEmprestimoProd: TDataSource
     DataSet = FDTabEmprestimoProd
-    Left = 410
-    Top = 182
+    Left = 513
+    Top = 228
   end
   object FDTabSaida: TFDTable
     IndexFieldNames = 'id'
@@ -310,8 +311,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'saida_produto'
-    Left = 288
-    Top = 259
+    Left = 360
+    Top = 324
     object FDTabSaidaid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
@@ -319,10 +320,6 @@ object DM: TDM
     object FDTabSaidaquantidade: TIntegerField
       FieldName = 'quantidade'
       Origin = 'quantidade'
-    end
-    object FDTabSaidadata_saida: TDateField
-      FieldName = 'data_saida'
-      Origin = 'data_saida'
     end
     object FDTabSaidaoperador: TLargeintField
       FieldName = 'operador'
@@ -337,11 +334,16 @@ object DM: TDM
       FieldName = 'produto_id'
       Origin = 'produto_id'
     end
+    object FDTabSaidadata_saida: TSQLTimeStampField
+      FieldName = 'data_saida'
+      Origin = 'data_saida'
+      ProviderFlags = [pfInUpdate]
+    end
   end
   object dsFDTabSaida: TDataSource
     DataSet = FDTabSaida
-    Left = 371
-    Top = 259
+    Left = 464
+    Top = 324
   end
   object FDTabEstoque: TFDTable
     IndexFieldNames = 'id'
@@ -351,8 +353,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'estoque'
-    Left = 230
-    Top = 336
+    Left = 288
+    Top = 420
     object FDTabEstoqueid: TLargeintField
       FieldName = 'id'
     end
@@ -365,8 +367,8 @@ object DM: TDM
   end
   object dsFDTabEstoque: TDataSource
     DataSet = FDTabEstoque
-    Left = 326
-    Top = 336
+    Left = 408
+    Top = 420
   end
   object FDTabEmprestimoItem: TFDTable
     IndexFieldNames = 'id'
@@ -376,17 +378,12 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'item_emprestimo'
-    Left = 262
-    Top = 406
+    Left = 328
+    Top = 508
     object FDTabEmprestimoItemid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object FDTabEmprestimoItemdata_devolucao: TSQLTimeStampField
-      FieldName = 'data_devolucao'
-      Origin = 'data_devolucao'
-      ProviderFlags = [pfInUpdate]
     end
     object FDTabEmprestimoItemqtd_devolvida: TIntegerField
       FieldName = 'qtd_devolvida'
@@ -396,16 +393,21 @@ object DM: TDM
       FieldName = 'emprestimo_id'
       Origin = 'emprestimo_id'
     end
+    object FDTabEmprestimoItemdata_devolucao: TSQLTimeStampField
+      FieldName = 'data_devolucao'
+      Origin = 'data_devolucao'
+      ProviderFlags = [pfInUpdate]
+    end
   end
   object dsFDTabEmprestimoItem: TDataSource
     DataSet = FDTabEmprestimoItem
-    Left = 410
-    Top = 406
+    Left = 513
+    Top = 508
   end
   object dsFDTabSede: TDataSource
     DataSet = FDTabSede
-    Left = 646
-    Top = 400
+    Left = 808
+    Top = 500
   end
   object FDTabSede: TFDTable
     IndexFieldNames = 'id'
@@ -415,8 +417,8 @@ object DM: TDM
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     SchemaName = 'estoqueitec'
     TableName = 'sede'
-    Left = 550
-    Top = 400
+    Left = 688
+    Top = 500
     object FDTabSedeid: TLargeintField
       FieldName = 'id'
       Origin = 'id'

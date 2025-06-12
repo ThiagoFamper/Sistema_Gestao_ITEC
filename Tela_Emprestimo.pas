@@ -119,6 +119,7 @@ begin
     bEmp.Enabled         := False;
     dm.FDTabEmprestimoProd.Cancel;
     dm.FDTabEmprestimoItem.Cancel;
+    dm.FDTabColaborador.Close;
 end;
 
 procedure TTelaEmprestimo.SBeditarClick(Sender: TObject); // botão de emprestimo
@@ -246,9 +247,11 @@ begin
       qryInsertEstoque.ExecSQL;
 
       dm.FDTabEmprestimoProd.Close;
+      dm.FDTabColaborador.Close;
       MessageBox(0, 'Empréstimo realizado com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       DesabilitaCampos;
       LimpaCampos;
+      HabilitaCamposPesquisa;
       TelaPrincipal.habilitaMenu;
       SBsair.Enabled       := True;
       SBcancelar.Enabled   := False;
