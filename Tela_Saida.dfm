@@ -2512,14 +2512,14 @@ object TelaSaida: TTelaSaida
           Width = 200
           Height = 20
           Align = alTop
-          Caption = 'Descri'#231#227'o da Sa'#237'da'
+          Caption = 'Motivo da Sa'#237'da'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -15
           Font.Name = 'Segoe UI'
           Font.Style = []
           ParentFont = False
-          ExplicitWidth = 127
+          ExplicitWidth = 109
         end
         object dbSaidaDescricao: TEdit
           Left = 0
