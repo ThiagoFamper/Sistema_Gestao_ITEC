@@ -70,6 +70,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 45789.000000000000000000
+        Kind = dtkDateTime
         TabOrder = 0
       end
     end
@@ -109,6 +110,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 45789.000000000000000000
+        Kind = dtkDateTime
         TabOrder = 0
       end
     end
@@ -667,7 +669,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
           AllowVectorExport = True
           Left = 609.990506330000000000
           Width = 98.267755590000000000
-          Height = 64.252010000000000000
+          Height = 75.590600000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'data_dev'
@@ -784,12 +786,12 @@ object RelatorioDevolucao: TRelatorioDevolucao
       '  p.descricao,'
       '  o.descricao AS oper,'
       '  emp.quantidade,'
-      '  TO_CHAR(emp.data_emprestimo, '#39'DD/MM/YYYY'#39') as data_emp,'
+      '  emp.data_emprestimo as data_emp,'
       '  c.descricao as colab,'
       
         '  CASE WHEN emp.devolvido THEN '#39'Sim'#39' ELSE '#39'N'#227'o'#39' END AS devolvido' +
         ','
-      '  TO_CHAR(ip.data_devolucao, '#39'DD/MM/YYYY'#39') as data_dev,'
+      '  ip.data_devolucao as data_dev,'
       '  ip.qtd_devolvida'
       'from'
       '  estoqueitec.emprestimo_produto emp'
@@ -804,19 +806,19 @@ object RelatorioDevolucao: TRelatorioDevolucao
       'where'
       '  ip.data_devolucao between :data_inicial and :data_final'
       'order by'
-      '  ip.data_devolucao DESC, emp.id DESC')
+      '  ip.data_devolucao DESC')
     Left = 120
     Top = 56
     ParamData = <
       item
         Name = 'DATA_INICIAL'
-        DataType = ftDate
+        DataType = ftDateTime
         ParamType = ptInput
         Value = Null
       end
       item
         Name = 'DATA_FINAL'
-        DataType = ftDate
+        DataType = ftDateTime
         ParamType = ptInput
         Value = Null
       end>

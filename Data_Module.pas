@@ -38,9 +38,6 @@ type
     dsFDTabEstoque: TDataSource;
     FDTabEmprestimoItem: TFDTable;
     dsFDTabEmprestimoItem: TDataSource;
-    FDTabEmprestimoItemid: TLargeintField;
-    FDTabEmprestimoItemdata_devolucao: TDateField;
-    FDTabEmprestimoItemqtd_devolvida: TIntegerField;
     dsFDTabSede: TDataSource;
     FDTabSede: TFDTable;
     FDTabSedeid: TLargeintField;
@@ -48,7 +45,6 @@ type
     FDTabEstoqueid: TLargeintField;
     FDTabEstoquesaldo: TIntegerField;
     FDTabEstoqueproduto_id: TLargeintField;
-    FDTabEmprestimoItememprestimo_id: TLargeintField;
     FDTabProdutoid: TLargeintField;
     FDTabProdutocod_produto: TWideStringField;
     FDTabProdutodescricao: TWideStringField;
@@ -56,13 +52,6 @@ type
     FDTabProdutomodelo: TWideStringField;
     FDTabProdutogrupo_id: TLargeintField;
     FDTabProdutodata: TDateField;
-    FDTabEntradaid: TLargeintField;
-    FDTabEntradaproduto_id: TLargeintField;
-    FDTabEntradaquantidade: TIntegerField;
-    FDTabEntradadata_entrada: TDateField;
-    FDTabEntradanota_fiscal: TWideStringField;
-    FDTabEntradavalor_unitario: TFMTBCDField;
-    FDTabEntradaoperador: TLargeintField;
     FDTabGrupoid: TLargeintField;
     FDTabGrupodescricao: TWideStringField;
     FDTabColaboradorid: TLargeintField;
@@ -70,14 +59,6 @@ type
     FDTabColaboradorcargo: TWideStringField;
     FDTabColaboradorsetor_id: TLargeintField;
     FDTabColaboradorsede_id: TLargeintField;
-    FDTabEmprestimoProdid: TLargeintField;
-    FDTabEmprestimoProdproduto_id: TLargeintField;
-    FDTabEmprestimoProdquantidade: TIntegerField;
-    FDTabEmprestimoProddata_emprestimo: TDateField;
-    FDTabEmprestimoProdsaldo: TIntegerField;
-    FDTabEmprestimoProdoperador: TLargeintField;
-    FDTabEmprestimoProddevolvido: TBooleanField;
-    FDTabEmprestimoProdcolaborador_id: TLargeintField;
     FDTabSaidaid: TLargeintField;
     FDTabSaidaquantidade: TIntegerField;
     FDTabSaidadata_saida: TDateField;
@@ -89,6 +70,25 @@ type
     FDTabUsuariosenha: TWideStringField;
     FDTabUsuarioadmin: TBooleanField;
     FDTabUsuarionome: TLargeintField;
+    FDTabEmprestimoProdid: TLargeintField;
+    FDTabEmprestimoProdproduto_id: TLargeintField;
+    FDTabEmprestimoProdquantidade: TIntegerField;
+    FDTabEmprestimoProddata_emprestimo: TSQLTimeStampField;
+    FDTabEmprestimoProdsaldo: TIntegerField;
+    FDTabEmprestimoProdoperador: TLargeintField;
+    FDTabEmprestimoProddevolvido: TBooleanField;
+    FDTabEmprestimoProdcolaborador_id: TLargeintField;
+    FDTabEmprestimoItemid: TLargeintField;
+    FDTabEmprestimoItemdata_devolucao: TSQLTimeStampField;
+    FDTabEmprestimoItemqtd_devolvida: TIntegerField;
+    FDTabEmprestimoItememprestimo_id: TLargeintField;
+    FDTabEntradaid: TLargeintField;
+    FDTabEntradaproduto_id: TLargeintField;
+    FDTabEntradaquantidade: TIntegerField;
+    FDTabEntradadata_entrada: TSQLTimeStampField;
+    FDTabEntradanota_fiscal: TWideStringField;
+    FDTabEntradavalor_unitario: TFMTBCDField;
+    FDTabEntradaoperador: TLargeintField;
   private
     { Private declarations }
   public

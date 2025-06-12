@@ -50,8 +50,8 @@ procedure TRelatorioEmprestimo.BitBtn1Click(Sender: TObject);
 begin
   try
     FDQueryRelatEmp.Close;
-    FDQueryRelatEmp.ParamByName('data_inicial').AsDate := DateTimeInicial.Date;
-    FDQueryRelatEmp.ParamByName('data_final').AsDate := DateTimeFinal.Date;
+    FDQueryRelatEmp.ParamByName('data_inicial').AsDateTime := DateTimeInicial.DateTime;
+    FDQueryRelatEmp.ParamByName('data_final').AsDateTime := DateTimeFinal.DateTime;
     FDQueryRelatEmp.Open;
 
     frxRelatEmp.ShowReport;
@@ -68,8 +68,8 @@ end;
 
 procedure TRelatorioEmprestimo.FormShow(Sender: TObject);
 begin
-  DateTimeInicial.Date := EncodeDate(YearOf(Date), MonthOf(Date), 1);
-  DateTimeFinal.Date := Date;
+  DateTimeInicial.DateTime := EncodeDate(YearOf(Date), MonthOf(Date), 1);
+  DateTimeFinal.DateTime := Date;
 end;
 
 end.

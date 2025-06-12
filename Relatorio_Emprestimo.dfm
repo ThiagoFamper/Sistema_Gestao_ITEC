@@ -73,13 +73,14 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         Caption = 'Data Inicial:'
       end
       object DateTimeInicial: TDateTimePicker
-        Left = 83
+        Left = 85
         Top = 3
         Width = 241
         Height = 23
         Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 45789.000000000000000000
+        Kind = dtkDateTime
         TabOrder = 0
       end
     end
@@ -111,13 +112,14 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         Caption = 'Data Final:'
       end
       object DateTimeFinal: TDateTimePicker
-        Left = 83
+        Left = 85
         Top = 3
         Width = 241
         Height = 23
         Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 45789.000000000000000000
+        Kind = dtkDateTime
         TabOrder = 0
       end
     end
@@ -343,7 +345,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         end
         object Memo3: TfrxMemoView
           AllowVectorExport = True
-          Width = 59.213914040000000000
+          Width = 78.111564040000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -361,8 +363,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         end
         object Memo4: TfrxMemoView
           AllowVectorExport = True
-          Left = 59.213914040000000000
-          Width = 216.993470420000000000
+          Left = 78.111564040000000000
+          Width = 303.922660420000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -380,8 +382,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         end
         object Memo5: TfrxMemoView
           AllowVectorExport = True
-          Left = 276.207384460000000000
-          Width = 137.685441570000000000
+          Left = 382.034224460000000000
+          Width = 107.449201570000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -393,13 +395,13 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8W = (
-            'OPERADOR')
+            'EMPRESTADOR')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo6: TfrxMemoView
           AllowVectorExport = True
-          Left = 413.892826030000000000
+          Left = 489.483426030000000000
           Width = 41.584720100000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -418,7 +420,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         end
         object Memo7: TfrxMemoView
           AllowVectorExport = True
-          Left = 455.477546130000000000
+          Left = 531.068146130000000000
           Width = 97.100628310000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -437,8 +439,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         end
         object Memo8: TfrxMemoView
           AllowVectorExport = True
-          Left = 552.578174440000000000
-          Width = 150.043521360000000000
+          Left = 628.168774440000000000
+          Width = 74.452921360000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -450,7 +452,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8W = (
-            'COLABORADOR')
+            'TOMADOR')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -489,7 +491,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         RowCount = 0
         object Memo10: TfrxMemoView
           AllowVectorExport = True
-          Width = 59.213914040000000000
+          Width = 78.111564040000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -510,8 +512,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         end
         object Memo11: TfrxMemoView
           AllowVectorExport = True
-          Left = 59.213914040000000000
-          Width = 216.993470420000000000
+          Left = 78.111564040000000000
+          Width = 303.922660420000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -532,8 +534,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         end
         object Memo12: TfrxMemoView
           AllowVectorExport = True
-          Left = 276.207384460000000000
-          Width = 137.685441570000000000
+          Left = 382.034224460000000000
+          Width = 107.449201570000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -554,7 +556,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         end
         object Memo13: TfrxMemoView
           AllowVectorExport = True
-          Left = 413.892826030000000000
+          Left = 489.483426030000000000
           Width = 41.584720100000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -576,7 +578,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         end
         object Memo14: TfrxMemoView
           AllowVectorExport = True
-          Left = 455.477546130000000000
+          Left = 531.068146130000000000
           Width = 97.100628310000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -598,8 +600,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         end
         object Memo15: TfrxMemoView
           AllowVectorExport = True
-          Left = 552.578174440000000000
-          Width = 150.043521360000000000
+          Left = 628.168774440000000000
+          Width = 74.452921360000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -721,20 +723,20 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       'WHERE '
       '  emp.data_emprestimo BETWEEN :data_inicial AND :data_final'
       'ORDER BY'
-      '  emp.data_emprestimo DESC, emp.id DESC'
+      '  emp.data_emprestimo DESC'
       '   ')
     Left = 112
     Top = 48
     ParamData = <
       item
         Name = 'DATA_INICIAL'
-        DataType = ftDate
+        DataType = ftDateTime
         ParamType = ptInput
         Value = Null
       end
       item
         Name = 'DATA_FINAL'
-        DataType = ftDate
+        DataType = ftDateTime
         ParamType = ptInput
         Value = Null
       end>
@@ -768,7 +770,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       end
       item
         FieldName = 'data'
-        FieldType = fftDateTime
       end
       item
         FieldName = 'oper'

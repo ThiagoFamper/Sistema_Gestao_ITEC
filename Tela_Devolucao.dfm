@@ -2588,19 +2588,22 @@ object TelaDevolucao: TTelaDevolucao
     SQL.Strings = (
       'UPDATE estoqueitec.item_emprestimo'
       'SET qtd_devolvida = qtd_devolvida + :quantidade,'
-      'data_devolucao = CURRENT_DATE'
+      'data_devolucao = CURRENT_TIMESTAMP'
       'WHERE emprestimo_id = :emprestimoID;')
     Left = 800
     Top = 242
     ParamData = <
       item
         Name = 'QUANTIDADE'
+        DataType = ftInteger
         ParamType = ptInput
         Value = Null
       end
       item
         Name = 'EMPRESTIMOID'
+        DataType = ftLargeint
         ParamType = ptInput
+        Value = Null
       end>
   end
   object qryEmprestimo: TFDQuery

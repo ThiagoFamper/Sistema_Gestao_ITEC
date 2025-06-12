@@ -217,6 +217,7 @@ object DM: TDM
     object FDTabEntradaid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
     object FDTabEntradaproduto_id: TLargeintField
       FieldName = 'produto_id'
@@ -226,9 +227,10 @@ object DM: TDM
       FieldName = 'quantidade'
       Origin = 'quantidade'
     end
-    object FDTabEntradadata_entrada: TDateField
+    object FDTabEntradadata_entrada: TSQLTimeStampField
       FieldName = 'data_entrada'
       Origin = 'data_entrada'
+      ProviderFlags = [pfInUpdate]
     end
     object FDTabEntradanota_fiscal: TWideStringField
       FieldName = 'nota_fiscal'
@@ -263,6 +265,7 @@ object DM: TDM
     object FDTabEmprestimoProdid: TLargeintField
       FieldName = 'id'
       Origin = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
     object FDTabEmprestimoProdproduto_id: TLargeintField
       FieldName = 'produto_id'
@@ -272,9 +275,10 @@ object DM: TDM
       FieldName = 'quantidade'
       Origin = 'quantidade'
     end
-    object FDTabEmprestimoProddata_emprestimo: TDateField
+    object FDTabEmprestimoProddata_emprestimo: TSQLTimeStampField
       FieldName = 'data_emprestimo'
       Origin = 'data_emprestimo'
+      ProviderFlags = [pfInUpdate]
     end
     object FDTabEmprestimoProdsaldo: TIntegerField
       FieldName = 'saldo'
@@ -379,9 +383,10 @@ object DM: TDM
       Origin = 'id'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
-    object FDTabEmprestimoItemdata_devolucao: TDateField
+    object FDTabEmprestimoItemdata_devolucao: TSQLTimeStampField
       FieldName = 'data_devolucao'
       Origin = 'data_devolucao'
+      ProviderFlags = [pfInUpdate]
     end
     object FDTabEmprestimoItemqtd_devolvida: TIntegerField
       FieldName = 'qtd_devolvida'

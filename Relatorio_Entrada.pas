@@ -50,8 +50,8 @@ procedure TRelatorioEntrada.BitBtn1Click(Sender: TObject);
 begin
   try
     FDQueryRelatEnt.Close;
-    FDQueryRelatEnt.ParamByName('data_inicial').AsDate := DateTimeInicial.Date;
-    FDQueryRelatEnt.ParamByName('data_final').AsDate := DateTimeFinal.Date;
+    FDQueryRelatEnt.ParamByName('data_inicial').AsDateTime := DateTimeInicial.DateTime;
+    FDQueryRelatEnt.ParamByName('data_final').AsDateTime := DateTimeFinal.DateTime;
     FDQueryRelatEnt.Open;
 
     frxRelatEnt.ShowReport;
@@ -68,8 +68,8 @@ end;
 
 procedure TRelatorioEntrada.FormShow(Sender: TObject);
 begin
-  DateTimeInicial.Date := EncodeDate(YearOf(Date), MonthOf(Date), 1);
-  DateTimeFinal.Date := Date;
+  DateTimeInicial.DateTime := EncodeDate(YearOf(Date), MonthOf(Date), 1);
+  DateTimeFinal.DateTime := Date;
 end;
 
 end.
