@@ -24,7 +24,6 @@ object CadSetor: TCadSetor
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1116
     object Panel10: TPanel
       Left = 16
       Top = 6
@@ -106,7 +105,6 @@ object CadSetor: TCadSetor
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1116
     object SBnovo: TSpeedButton
       Left = 247
       Top = 7
@@ -1463,7 +1461,7 @@ object CadSetor: TCadSetor
       Width = 73
       Height = 99
       Cursor = crHandPoint
-      Hint = 'Sair'
+      Hint = 'Fechar'
       Caption = 'Fechar'
       Flat = True
       Font.Charset = DEFAULT_CHARSET

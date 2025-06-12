@@ -1970,7 +1970,7 @@ object ListaUsuario: TListaUsuario
       Width = 73
       Height = 98
       Cursor = crHandPoint
-      Hint = 'Sair'
+      Hint = 'Fechar'
       Caption = 'Fechar'
       Flat = True
       Font.Charset = DEFAULT_CHARSET

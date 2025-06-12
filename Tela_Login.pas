@@ -16,8 +16,6 @@ type
     lSenha: TLabel;
     Panel3: TPanel;
     Image1: TImage;
-    bEntrar: TButton;
-    bCancelar: TButton;
     eLogin: TEdit;
     qryUsuario: TFDQuery;
     eSenha: TEdit;
@@ -26,6 +24,9 @@ type
     senha: TImage;
     esconderSenha: TImage;
     mostrarSenhaClone: TImage;
+    GridPanel1: TGridPanel;
+    bEntrar: TButton;
+    bCancelar: TButton;
     procedure bEntrarClick(Sender: TObject);
     procedure bCancelarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);

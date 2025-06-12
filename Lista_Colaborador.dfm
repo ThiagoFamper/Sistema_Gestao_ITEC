@@ -24,7 +24,6 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1455
     object Panel19: TPanel
       Left = 16
       Top = 6
@@ -170,7 +169,6 @@ object ListaColaborador: TListaColaborador
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1455
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -1829,7 +1827,7 @@ object ListaColaborador: TListaColaborador
       Width = 73
       Height = 98
       Cursor = crHandPoint
-      Hint = 'Sair'
+      Hint = 'Fechar'
       Caption = 'Fechar'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -2189,7 +2187,6 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1455
     object dbNavColab: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2211,8 +2208,6 @@ object ListaColaborador: TListaColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 522
-    ExplicitWidth = 1455
     object Panel13: TPanel
       Left = 16
       Top = 6
@@ -2401,8 +2396,6 @@ object ListaColaborador: TListaColaborador
     BevelEdges = []
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1455
-    ExplicitHeight = 223
     object gpColab: TDBGrid
       Left = 0
       Top = 0

@@ -238,26 +238,6 @@ object TelaLogin: TTelaLogin
         0049454E44AE426082}
     end
   end
-  object bEntrar: TButton
-    Left = 173
-    Top = 266
-    Width = 75
-    Height = 25
-    Cursor = crHandPoint
-    Caption = '&Entrar'
-    TabOrder = 3
-    OnClick = bEntrarClick
-  end
-  object bCancelar: TButton
-    Left = 269
-    Top = 266
-    Width = 75
-    Height = 25
-    Cursor = crHandPoint
-    Caption = '&Cancelar'
-    TabOrder = 4
-    OnClick = bCancelarClick
-  end
   object eLogin: TEdit
     Left = 104
     Top = 155
@@ -266,6 +246,71 @@ object TelaLogin: TTelaLogin
     MaxLength = 45
     TabOrder = 1
     OnKeyPress = eLoginKeyPress
+  end
+  object GridPanel1: TGridPanel
+    AlignWithMargins = True
+    Left = 3
+    Top = 249
+    Width = 507
+    Height = 69
+    Align = alBottom
+    BevelOuter = bvNone
+    ColumnCollection = <
+      item
+        Value = 25.000000000000000000
+      end
+      item
+        Value = 25.000000000000000000
+      end
+      item
+        Value = 25.000000000000000000
+      end
+      item
+        Value = 25.000000000000000000
+      end>
+    ControlCollection = <
+      item
+        Column = 1
+        Control = bEntrar
+        Row = 0
+      end
+      item
+        Column = 2
+        Control = bCancelar
+        Row = 0
+      end>
+    RowCollection = <
+      item
+        Value = 100.000000000000000000
+      end>
+    TabOrder = 3
+    DesignSize = (
+      507
+      69)
+    object bEntrar: TButton
+      Left = 150
+      Top = 23
+      Width = 80
+      Height = 25
+      Cursor = crHandPoint
+      Anchors = []
+      Caption = '&Entrar'
+      TabOrder = 0
+      OnClick = bEntrarClick
+      ExplicitLeft = 154
+    end
+    object bCancelar: TButton
+      Left = 276
+      Top = 23
+      Width = 80
+      Height = 25
+      Cursor = crHandPoint
+      Anchors = []
+      Caption = '&Cancelar'
+      TabOrder = 1
+      OnClick = bCancelarClick
+      ExplicitLeft = 283
+    end
   end
   object qryUsuario: TFDQuery
     Connection = DM.FDEstoqueItec
@@ -276,7 +321,7 @@ object TelaLogin: TTelaLogin
       'WHERE UPPER(login) = UPPER(:login)'
       'AND senha = :senha;')
     Left = 456
-    Top = 267
+    Top = 115
     ParamData = <
       item
         Name = 'LOGIN'

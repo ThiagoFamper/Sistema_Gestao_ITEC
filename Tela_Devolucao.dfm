@@ -26,7 +26,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1382
     object Panel23: TPanel
       Left = 16
       Top = 6
@@ -172,7 +171,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clTeal
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1382
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -1830,7 +1828,7 @@ object TelaDevolucao: TTelaDevolucao
       Width = 73
       Height = 99
       Cursor = crHandPoint
-      Hint = 'Sair'
+      Hint = 'Fechar'
       Caption = 'Fechar'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -2193,7 +2191,6 @@ object TelaDevolucao: TTelaDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1382
     object dbNavDevolucao: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2309,8 +2306,6 @@ object TelaDevolucao: TTelaDevolucao
         Value = 100.000000000000000000
       end>
     TabOrder = 4
-    ExplicitTop = 899
-    ExplicitWidth = 1382
     object Panel3: TPanel
       Left = 1
       Top = 1
@@ -2322,7 +2317,6 @@ object TelaDevolucao: TTelaDevolucao
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 690
       object Panel13: TPanel
         Left = 16
         Top = 5
@@ -2487,8 +2481,6 @@ object TelaDevolucao: TTelaDevolucao
       Color = clWhitesmoke
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 691
-      ExplicitWidth = 690
       object bDevolver: TButton
         Left = 75
         Top = 157

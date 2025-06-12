@@ -36,7 +36,7 @@ object CadProduto: TCadProduto
       Width = 73
       Height = 99
       Cursor = crHandPoint
-      Hint = 'Sair'
+      Hint = 'Fechar'
       Caption = 'Fechar'
       Flat = True
       Font.Charset = DEFAULT_CHARSET

@@ -24,8 +24,6 @@ object ListaSede: TListaSede
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitTop = 508
-    ExplicitWidth = 1045
     object Panel13: TPanel
       Left = 16
       Top = 6
@@ -106,7 +104,6 @@ object ListaSede: TListaSede
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1045
     object Panel11: TPanel
       Left = 16
       Top = 6
@@ -153,7 +150,6 @@ object ListaSede: TListaSede
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1045
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -1812,7 +1808,7 @@ object ListaSede: TListaSede
       Width = 73
       Height = 98
       Cursor = crHandPoint
-      Hint = 'Sair'
+      Hint = 'Fechar'
       Caption = 'Fechar'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
@@ -2172,7 +2168,6 @@ object ListaSede: TListaSede
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1045
     object dbNavSede: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2192,8 +2187,6 @@ object ListaSede: TListaSede
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1045
-    ExplicitHeight = 276
     object gpSede: TDBGrid
       Left = 0
       Top = 0
