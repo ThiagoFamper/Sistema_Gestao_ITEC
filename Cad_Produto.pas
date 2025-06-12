@@ -86,6 +86,7 @@ begin
   SBpesquisar.Enabled  := False;
   SBsair.Enabled       := False;
   SBnovo.Enabled       := False;
+  dm.FDTabGrupo.Open;
   dm.FDTabProduto.Open;
   dm.FDTabProduto.Append;
   dbProdCod.SetFocus;

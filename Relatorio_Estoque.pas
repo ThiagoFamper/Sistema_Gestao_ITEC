@@ -51,8 +51,8 @@ procedure TRelatorioEstoque.bRelatClick(Sender: TObject);
 begin
   try
     FDQueryRelatProd.Close;
-    FDQueryRelatProd.ParamByName('data_inicial').AsDate := DateTimeInicial.Date;
-    FDQueryRelatProd.ParamByName('data_final').AsDate := DateTimeFinal.Date;
+    FDQueryRelatProd.ParamByName('data_inicial').AsDateTime := DateTimeInicial.DateTime;
+    FDQueryRelatProd.ParamByName('data_final').AsDateTime := DateTimeFinal.DateTime;
     FDQueryRelatProd.Open;
 
     frxRelatProd.ShowReport;
@@ -71,8 +71,8 @@ end;
 // arruma datas automaticamente
 procedure TRelatorioEstoque.FormShow(Sender: TObject);
 begin
-  DateTimeInicial.Date := EncodeDate(YearOf(Date), MonthOf(Date), 1);
-  DateTimeFinal.Date := Now;
+  DateTimeInicial.DateTime := EncodeDate(YearOf(Date), MonthOf(Date), 1);
+  DateTimeFinal.DateTime := Now;
 end;
 
 end.

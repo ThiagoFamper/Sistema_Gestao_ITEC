@@ -51,8 +51,8 @@ procedure TRelatorioSaida.bRelatClick(Sender: TObject);
 begin
   try
     FDQueryRelatSai.Close;
-    FDQueryRelatSai.ParamByName('data_inicial').AsDate := DateTimeInicial.Date;
-    FDQueryRelatSai.ParamByName('data_final').AsDate := DateTimeFinal.Date;
+    FDQueryRelatSai.ParamByName('data_inicial').AsDateTime := DateTimeInicial.DateTime;
+    FDQueryRelatSai.ParamByName('data_final').AsDateTime := DateTimeFinal.DateTime;
     FDQueryRelatSai.Open;
 
     frxRelatSai.ShowReport;
@@ -71,8 +71,8 @@ end;
 // arruma datas automaticamente
 procedure TRelatorioSaida.FormShow(Sender: TObject);
 begin
-  DateTimeInicial.Date := EncodeDate(YearOf(Date), MonthOf(Date), 1);
-  DateTimeFinal.Date := Now;
+  DateTimeInicial.DateTime := EncodeDate(YearOf(Date), MonthOf(Date), 1);
+  DateTimeFinal.DateTime := Now;
 end;
 
 end.

@@ -24,7 +24,6 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1046
     object Panel11: TPanel
       Left = 16
       Top = 6
@@ -128,8 +127,6 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 524
-    ExplicitWidth = 1046
     object Panel13: TPanel
       Left = 16
       Top = 6
@@ -315,7 +312,6 @@ object ListaUsuario: TListaUsuario
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1046
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -2334,7 +2330,6 @@ object ListaUsuario: TListaUsuario
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1046
     object dbNavUsuario: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2354,8 +2349,6 @@ object ListaUsuario: TListaUsuario
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1046
-    ExplicitHeight = 230
     object gpUsuario: TDBGrid
       Left = 0
       Top = 0

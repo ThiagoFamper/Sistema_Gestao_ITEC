@@ -45,13 +45,6 @@ type
     FDTabEstoqueid: TLargeintField;
     FDTabEstoquesaldo: TIntegerField;
     FDTabEstoqueproduto_id: TLargeintField;
-    FDTabProdutoid: TLargeintField;
-    FDTabProdutocod_produto: TWideStringField;
-    FDTabProdutodescricao: TWideStringField;
-    FDTabProdutomarca: TWideStringField;
-    FDTabProdutomodelo: TWideStringField;
-    FDTabProdutogrupo_id: TLargeintField;
-    FDTabProdutodata: TDateField;
     FDTabGrupoid: TLargeintField;
     FDTabGrupodescricao: TWideStringField;
     FDTabColaboradorid: TLargeintField;
@@ -59,11 +52,6 @@ type
     FDTabColaboradorcargo: TWideStringField;
     FDTabColaboradorsetor_id: TLargeintField;
     FDTabColaboradorsede_id: TLargeintField;
-    FDTabSaidaid: TLargeintField;
-    FDTabSaidaquantidade: TIntegerField;
-    FDTabSaidaoperador: TLargeintField;
-    FDTabSaidadescricao: TWideStringField;
-    FDTabSaidaproduto_id: TLargeintField;
     FDTabUsuarioid: TLargeintField;
     FDTabUsuariologin: TWideStringField;
     FDTabUsuariosenha: TWideStringField;
@@ -87,8 +75,20 @@ type
     FDTabEntradaoperador: TLargeintField;
     FDTabEntradadata_entrada: TSQLTimeStampField;
     FDTabEmprestimoProddata_emprestimo: TSQLTimeStampField;
-    FDTabSaidadata_saida: TSQLTimeStampField;
     FDTabEmprestimoItemdata_devolucao: TSQLTimeStampField;
+    FDTabSaidaid: TLargeintField;
+    FDTabSaidaproduto_id: TLargeintField;
+    FDTabSaidaquantidade: TIntegerField;
+    FDTabSaidadata_saida: TSQLTimeStampField;
+    FDTabSaidaoperador: TLargeintField;
+    FDTabSaidadescricao: TWideStringField;
+    FDTabProdutoid: TLargeintField;
+    FDTabProdutocod_produto: TWideStringField;
+    FDTabProdutodescricao: TWideStringField;
+    FDTabProdutomarca: TWideStringField;
+    FDTabProdutomodelo: TWideStringField;
+    FDTabProdutogrupo_id: TLargeintField;
+    FDTabProdutodata: TSQLTimeStampField;
   private
     { Private declarations }
   public

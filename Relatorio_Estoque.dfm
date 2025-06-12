@@ -32,7 +32,6 @@ object RelatorioEstoque: TRelatorioEstoque
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -45,8 +44,6 @@ object RelatorioEstoque: TRelatorioEstoque
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 338
-    ExplicitHeight = 282
     object Panel2: TPanel
       Left = 0
       Top = 0
@@ -56,7 +53,6 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -68,7 +64,6 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
         Top = 3
@@ -98,7 +93,6 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -109,7 +103,6 @@ object RelatorioEstoque: TRelatorioEstoque
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
         Top = 3
@@ -167,8 +160,6 @@ object RelatorioEstoque: TRelatorioEstoque
           Value = 100.000000000000000000
         end>
       TabOrder = 4
-      ExplicitWidth = 332
-      ExplicitHeight = 100
       DesignSize = (
         334
         108)
@@ -204,6 +195,35 @@ object RelatorioEstoque: TRelatorioEstoque
     DataSetOptions = []
     Left = 208
     Top = 48
+    FieldDefs = <
+      item
+        FieldName = 'cod_produto'
+        FieldType = fftString
+        Size = 45
+      end
+      item
+        FieldName = 'descricao'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'grupo_descricao'
+        FieldType = fftString
+        Size = 45
+      end
+      item
+        FieldName = 'marca'
+        FieldType = fftString
+        Size = 45
+      end
+      item
+        FieldName = 'modelo'
+        FieldType = fftString
+        Size = 45
+      end
+      item
+        FieldName = 'data'
+      end>
   end
   object FDQueryRelatProd: TFDQuery
     Connection = DM.FDEstoqueItec
@@ -214,7 +234,7 @@ object RelatorioEstoque: TRelatorioEstoque
       '  g.descricao AS grupo_descricao,'
       '  p.marca,'
       '  p.modelo,'
-      '  TO_CHAR(p.data, '#39'DD/MM/YYYY'#39') AS data'
+      '  p.data AS data'
       'FROM '
       '  estoqueitec.produto p'
       'JOIN '
@@ -222,19 +242,19 @@ object RelatorioEstoque: TRelatorioEstoque
       'WHERE '
       '  p.data BETWEEN :data_inicial AND :data_final'
       'ORDER BY '
-      '  p.data;')
+      '  p.data')
     Left = 112
     Top = 48
     ParamData = <
       item
         Name = 'DATA_INICIAL'
-        DataType = ftDate
+        DataType = ftDateTime
         ParamType = ptInput
         Value = Null
       end
       item
         Name = 'DATA_FINAL'
-        DataType = ftDate
+        DataType = ftDateTime
         ParamType = ptInput
         Value = Null
       end>
@@ -509,7 +529,7 @@ object RelatorioEstoque: TRelatorioEstoque
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 37.795300000000000000
+        Height = 75.590600000000000000
         Top = 151.181200000000000000
         Width = 786.142240000000000000
         DataSet = frxDSRelatProd
@@ -623,7 +643,7 @@ object RelatorioEstoque: TRelatorioEstoque
           AllowVectorExport = True
           Left = 703.760908980000000000
           Width = 82.380867240000000000
-          Height = 18.897650000000000000
+          Height = 75.590600000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'data'
@@ -649,7 +669,7 @@ object RelatorioEstoque: TRelatorioEstoque
         FillGap.Right = 0
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 249.448980000000000000
+        Top = 287.244280000000000000
         Width = 786.142240000000000000
         object Memo15: TfrxMemoView
           Align = baWidth

@@ -32,7 +32,6 @@ object RelatorioEntrada: TRelatorioEntrada
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -45,8 +44,6 @@ object RelatorioEntrada: TRelatorioEntrada
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 338
-    ExplicitHeight = 282
     object Panel2: TPanel
       Left = 0
       Top = 0
@@ -56,7 +53,6 @@ object RelatorioEntrada: TRelatorioEntrada
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -68,7 +64,6 @@ object RelatorioEntrada: TRelatorioEntrada
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
         Top = 3
@@ -98,7 +93,6 @@ object RelatorioEntrada: TRelatorioEntrada
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -109,7 +103,6 @@ object RelatorioEntrada: TRelatorioEntrada
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
         Top = 3
@@ -167,8 +160,6 @@ object RelatorioEntrada: TRelatorioEntrada
           Value = 100.000000000000000000
         end>
       TabOrder = 4
-      ExplicitWidth = 332
-      ExplicitHeight = 100
       DesignSize = (
         334
         108)
@@ -204,6 +195,37 @@ object RelatorioEntrada: TRelatorioEntrada
     DataSetOptions = []
     Left = 172
     Top = 48
+    FieldDefs = <
+      item
+        FieldName = 'cod_produto'
+        FieldType = fftString
+        Size = 45
+      end
+      item
+        FieldName = 'descricao'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'oper'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'quantidade'
+      end
+      item
+        FieldName = 'data_entrada'
+      end
+      item
+        FieldName = 'nota_fiscal'
+        FieldType = fftString
+        Size = 20
+      end
+      item
+        FieldName = 'valor_unitario'
+        Size = 64
+      end>
   end
   object FDQueryRelatEnt: TFDQuery
     Connection = DM.FDEstoqueItec

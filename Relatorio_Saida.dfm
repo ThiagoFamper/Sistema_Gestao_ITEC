@@ -32,7 +32,6 @@ object RelatorioSaida: TRelatorioSaida
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -45,8 +44,6 @@ object RelatorioSaida: TRelatorioSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 338
-    ExplicitHeight = 282
     object Panel2: TPanel
       AlignWithMargins = True
       Left = 3
@@ -57,7 +54,6 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
         Top = 6
@@ -87,7 +83,6 @@ object RelatorioSaida: TRelatorioSaida
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
         Top = 6
@@ -117,7 +112,6 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitWidth = 338
     end
     object Panel5: TPanel
       Left = 0
@@ -128,7 +122,6 @@ object RelatorioSaida: TRelatorioSaida
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitWidth = 338
     end
     object GridPanel1: TGridPanel
       AlignWithMargins = True
@@ -167,8 +160,6 @@ object RelatorioSaida: TRelatorioSaida
           Value = 100.000000000000000000
         end>
       TabOrder = 4
-      ExplicitWidth = 332
-      ExplicitHeight = 100
       DesignSize = (
         334
         108)
@@ -183,7 +174,6 @@ object RelatorioSaida: TRelatorioSaida
         Layout = blGlyphTop
         TabOrder = 0
         OnClick = bRelatClick
-        ExplicitLeft = 83
       end
       object bCancelar: TBitBtn
         Left = 169
@@ -449,7 +439,7 @@ object RelatorioSaida: TRelatorioSaida
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 37.795300000000000000
+        Height = 71.811070000000000000
         Top = 151.181200000000000000
         Width = 786.142240000000000000
         DataSet = frxDSRelatSai
@@ -541,8 +531,9 @@ object RelatorioSaida: TRelatorioSaida
         object Memo12: TfrxMemoView
           AllowVectorExport = True
           Left = 707.843323180000000000
+          Top = 3.779530000000000000
           Width = 74.518923040000000000
-          Height = 18.897650000000000000
+          Height = 64.252010000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'data_saida'
@@ -568,7 +559,7 @@ object RelatorioSaida: TRelatorioSaida
         FillGap.Right = 0
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 249.448980000000000000
+        Top = 283.464750000000000000
         Width = 786.142240000000000000
         object Memo13: TfrxMemoView
           Align = baWidth
@@ -609,7 +600,7 @@ object RelatorioSaida: TRelatorioSaida
       '  p.descricao,'
       '  c.descricao AS oper,'
       '  sp.quantidade,'
-      '  TO_CHAR(sp.data_saida, '#39'DD/MM/YYYY'#39') AS data_saida'
+      '  sp.data_saida AS data_saida'
       'FROM '
       '  estoqueitec.saida_produto sp'
       'JOIN '
@@ -619,19 +610,19 @@ object RelatorioSaida: TRelatorioSaida
       'WHERE '
       '  sp.data_saida BETWEEN :data_inicial AND :data_final'
       'ORDER BY '
-      '  sp.data_saida;')
+      '  sp.data_saida')
     Left = 174
     Top = 40
     ParamData = <
       item
         Name = 'DATA_INICIAL'
-        DataType = ftDate
+        DataType = ftDateTime
         ParamType = ptInput
         Value = Null
       end
       item
         Name = 'DATA_FINAL'
-        DataType = ftDate
+        DataType = ftDateTime
         ParamType = ptInput
         Value = Null
       end>
@@ -644,5 +635,27 @@ object RelatorioSaida: TRelatorioSaida
     DataSetOptions = []
     Left = 88
     Top = 40
+    FieldDefs = <
+      item
+        FieldName = 'cod_produto'
+        FieldType = fftString
+        Size = 45
+      end
+      item
+        FieldName = 'descricao'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'oper'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'quantidade'
+      end
+      item
+        FieldName = 'data_saida'
+      end>
   end
 end
