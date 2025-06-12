@@ -74,6 +74,7 @@ object RelatorioSaida: TRelatorioSaida
         Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 45789.000000000000000000
+        Kind = dtkDateTime
         TabOrder = 0
       end
     end
@@ -96,13 +97,14 @@ object RelatorioSaida: TRelatorioSaida
         Caption = 'Data Final:'
       end
       object DateTimeFinal: TDateTimePicker
-        Left = 83
+        Left = 77
         Top = 3
         Width = 241
         Height = 23
         Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 45789.000000000000000000
+        Kind = dtkDateTime
         TabOrder = 0
       end
     end
@@ -152,12 +154,12 @@ object RelatorioSaida: TRelatorioSaida
       ControlCollection = <
         item
           Column = 1
-          Control = BitBtn1
+          Control = bRelat
           Row = 0
         end
         item
           Column = 2
-          Control = BitBtn2
+          Control = bCancelar
           Row = 0
         end>
       RowCollection = <
@@ -170,7 +172,7 @@ object RelatorioSaida: TRelatorioSaida
       DesignSize = (
         334
         108)
-      object BitBtn1: TBitBtn
+      object bRelat: TBitBtn
         Left = 85
         Top = 41
         Width = 80
@@ -180,9 +182,10 @@ object RelatorioSaida: TRelatorioSaida
         Caption = '&Relat'#243'rio'
         Layout = blGlyphTop
         TabOrder = 0
-        OnClick = BitBtn1Click
+        OnClick = bRelatClick
+        ExplicitLeft = 83
       end
-      object BitBtn2: TBitBtn
+      object bCancelar: TBitBtn
         Left = 169
         Top = 41
         Width = 80
@@ -190,7 +193,7 @@ object RelatorioSaida: TRelatorioSaida
         Anchors = []
         Caption = '&Cancelar'
         TabOrder = 1
-        OnClick = BitBtn2Click
+        OnClick = bCancelarClick
       end
     end
   end

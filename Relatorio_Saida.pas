@@ -26,11 +26,11 @@ type
     Label1: TLabel;
     Label2: TLabel;
     GridPanel1: TGridPanel;
-    BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
-    procedure BitBtn1Click(Sender: TObject);
+    bRelat: TBitBtn;
+    bCancelar: TBitBtn;
+    procedure bRelatClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure BitBtn2Click(Sender: TObject);
+    procedure bCancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,13 +46,10 @@ implementation
 
 uses Data_Module;
 
-procedure TRelatorioSaida.BitBtn1Click(Sender: TObject);
+// botão de gerar relatório
+procedure TRelatorioSaida.bRelatClick(Sender: TObject);
 begin
   try
-    // Garante que não há transações com erro pendente
-    if DM.FDEstoqueItec.InTransaction then
-      DM.FDEstoqueItec.Rollback;
-
     FDQueryRelatSai.Close;
     FDQueryRelatSai.ParamByName('data_inicial').AsDate := DateTimeInicial.Date;
     FDQueryRelatSai.ParamByName('data_final').AsDate := DateTimeFinal.Date;
@@ -65,15 +62,17 @@ begin
   end;
 end;
 
-procedure TRelatorioSaida.BitBtn2Click(Sender: TObject);
+// botão de cancelar
+procedure TRelatorioSaida.bCancelarClick(Sender: TObject);
 begin
   Close;
 end;
 
+// arruma datas automaticamente
 procedure TRelatorioSaida.FormShow(Sender: TObject);
 begin
   DateTimeInicial.Date := EncodeDate(YearOf(Date), MonthOf(Date), 1);
-  DateTimeFinal.Date := Date;
+  DateTimeFinal.Date := Now;
 end;
 
 end.

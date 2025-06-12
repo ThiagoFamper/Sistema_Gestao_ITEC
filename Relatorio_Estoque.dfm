@@ -32,6 +32,7 @@ object RelatorioEstoque: TRelatorioEstoque
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -44,6 +45,8 @@ object RelatorioEstoque: TRelatorioEstoque
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     object Panel2: TPanel
       Left = 0
       Top = 0
@@ -53,6 +56,7 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -64,6 +68,7 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
         Top = 3
@@ -80,6 +85,7 @@ object RelatorioEstoque: TRelatorioEstoque
         Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 45789.000000000000000000
+        Kind = dtkDateTime
         TabOrder = 0
       end
     end
@@ -92,6 +98,7 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -102,6 +109,7 @@ object RelatorioEstoque: TRelatorioEstoque
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
         Top = 3
@@ -118,6 +126,7 @@ object RelatorioEstoque: TRelatorioEstoque
         Cursor = crHandPoint
         Date = 45789.000000000000000000
         Time = 45789.000000000000000000
+        Kind = dtkDateTime
         TabOrder = 0
       end
     end
@@ -145,12 +154,12 @@ object RelatorioEstoque: TRelatorioEstoque
       ControlCollection = <
         item
           Column = 1
-          Control = BitBtn1
+          Control = bRelat
           Row = 0
         end
         item
           Column = 2
-          Control = BitBtn2
+          Control = bCancelar
           Row = 0
         end>
       RowCollection = <
@@ -158,10 +167,12 @@ object RelatorioEstoque: TRelatorioEstoque
           Value = 100.000000000000000000
         end>
       TabOrder = 4
+      ExplicitWidth = 332
+      ExplicitHeight = 100
       DesignSize = (
         334
         108)
-      object BitBtn1: TBitBtn
+      object bRelat: TBitBtn
         Left = 85
         Top = 41
         Width = 80
@@ -171,9 +182,9 @@ object RelatorioEstoque: TRelatorioEstoque
         Caption = '&Relat'#243'rio'
         Layout = blGlyphTop
         TabOrder = 0
-        OnClick = BitBtn1Click
+        OnClick = bRelatClick
       end
-      object BitBtn2: TBitBtn
+      object bCancelar: TBitBtn
         Left = 169
         Top = 41
         Width = 80
@@ -181,7 +192,7 @@ object RelatorioEstoque: TRelatorioEstoque
         Anchors = []
         Caption = '&Cancelar'
         TabOrder = 1
-        OnClick = BitBtn2Click
+        OnClick = bCancelarClick
       end
     end
   end
@@ -193,35 +204,6 @@ object RelatorioEstoque: TRelatorioEstoque
     DataSetOptions = []
     Left = 208
     Top = 48
-    FieldDefs = <
-      item
-        FieldName = 'cod_produto'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'grupo_descricao'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'marca'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'modelo'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'data'
-      end>
   end
   object FDQueryRelatProd: TFDQuery
     Connection = DM.FDEstoqueItec

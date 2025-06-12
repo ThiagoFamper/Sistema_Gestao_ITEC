@@ -32,6 +32,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -45,6 +46,8 @@ object RelatorioDevolucao: TRelatorioDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     object Panel5: TPanel
       AlignWithMargins = True
       Left = 3
@@ -54,6 +57,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
         Top = 3
@@ -83,6 +87,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -94,6 +99,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
         Top = 3
@@ -123,6 +129,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 3
+      ExplicitWidth = 338
     end
     object GridPanel1: TGridPanel
       AlignWithMargins = True
@@ -148,12 +155,12 @@ object RelatorioDevolucao: TRelatorioDevolucao
       ControlCollection = <
         item
           Column = 1
-          Control = BitBtn1
+          Control = bRelat
           Row = 0
         end
         item
           Column = 2
-          Control = BitBtn2
+          Control = bCancelar
           Row = 0
         end>
       RowCollection = <
@@ -161,10 +168,12 @@ object RelatorioDevolucao: TRelatorioDevolucao
           Value = 100.000000000000000000
         end>
       TabOrder = 4
+      ExplicitWidth = 332
+      ExplicitHeight = 100
       DesignSize = (
         334
         108)
-      object BitBtn1: TBitBtn
+      object bRelat: TBitBtn
         Left = 85
         Top = 41
         Width = 80
@@ -180,9 +189,9 @@ object RelatorioDevolucao: TRelatorioDevolucao
         Layout = blGlyphTop
         ParentFont = False
         TabOrder = 0
-        OnClick = BitBtn1Click
+        OnClick = bRelatClick
       end
-      object BitBtn2: TBitBtn
+      object bCancelar: TBitBtn
         Left = 169
         Top = 41
         Width = 80
@@ -196,7 +205,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
         Font.Style = []
         ParentFont = False
         TabOrder = 1
-        OnClick = BitBtn2Click
+        OnClick = bCancelarClick
       end
     end
   end
@@ -831,41 +840,5 @@ object RelatorioDevolucao: TRelatorioDevolucao
     DataSetOptions = []
     Left = 29
     Top = 56
-    FieldDefs = <
-      item
-        FieldName = 'cod_produto'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'oper'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'quantidade'
-      end
-      item
-        FieldName = 'data_emp'
-      end
-      item
-        FieldName = 'colab'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'devolvido'
-      end
-      item
-        FieldName = 'data_dev'
-      end
-      item
-        FieldName = 'qtd_devolvida'
-      end>
   end
 end

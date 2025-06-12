@@ -32,6 +32,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -44,6 +45,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     object Panel2: TPanel
       Left = 0
       Top = 0
@@ -53,6 +56,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -64,6 +68,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
         Top = 3
@@ -93,6 +98,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -103,6 +109,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
         Top = 3
@@ -147,12 +154,12 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       ControlCollection = <
         item
           Column = 1
-          Control = BitBtn1
+          Control = bRelat
           Row = 0
         end
         item
           Column = 2
-          Control = BitBtn2
+          Control = bCancelar
           Row = 0
         end>
       RowCollection = <
@@ -160,10 +167,12 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
           Value = 100.000000000000000000
         end>
       TabOrder = 4
+      ExplicitWidth = 332
+      ExplicitHeight = 100
       DesignSize = (
         334
         108)
-      object BitBtn1: TBitBtn
+      object bRelat: TBitBtn
         Left = 85
         Top = 41
         Width = 80
@@ -173,9 +182,9 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         Caption = '&Relat'#243'rio'
         Layout = blGlyphTop
         TabOrder = 0
-        OnClick = BitBtn1Click
+        OnClick = bRelatClick
       end
-      object BitBtn2: TBitBtn
+      object bCancelar: TBitBtn
         Left = 169
         Top = 41
         Width = 80
@@ -183,7 +192,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
         Anchors = []
         Caption = '&Cancelar'
         TabOrder = 1
-        OnClick = BitBtn2Click
+        OnClick = bCancelarClick
       end
     end
   end
@@ -749,35 +758,5 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     DataSetOptions = []
     Left = 207
     Top = 48
-    FieldDefs = <
-      item
-        FieldName = 'cod'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'colab'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'quantidade'
-      end
-      item
-        FieldName = 'data'
-      end
-      item
-        FieldName = 'oper'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'devolvido'
-      end>
   end
 end
