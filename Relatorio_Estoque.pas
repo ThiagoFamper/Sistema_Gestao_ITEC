@@ -14,9 +14,9 @@ type
   TRelatorioEstoque = class(TForm)
     Panel6: TPanel;
     Panel1: TPanel;
-    frxDSRelatProd: TfrxDBDataset;
-    FDQueryRelatProd: TFDQuery;
-    frxRelatProd: TfrxReport;
+    frxDSRelatEstoque: TfrxDBDataset;
+    FDQueryRelatEstoque: TFDQuery;
+    frxRelatEstoque: TfrxReport;
     Panel2: TPanel;
     Panel3: TPanel;
     Label1: TLabel;
@@ -50,12 +50,12 @@ uses Data_Module;
 procedure TRelatorioEstoque.bRelatClick(Sender: TObject);
 begin
   try
-    FDQueryRelatProd.Close;
-    FDQueryRelatProd.ParamByName('data_inicial').AsDateTime := DateTimeInicial.DateTime;
-    FDQueryRelatProd.ParamByName('data_final').AsDateTime := DateTimeFinal.DateTime;
-    FDQueryRelatProd.Open;
+    FDQueryRelatEstoque.Close;
+    FDQueryRelatEstoque.ParamByName('data_inicial').AsDateTime := DateTimeInicial.DateTime;
+    FDQueryRelatEstoque.ParamByName('data_final').AsDateTime := DateTimeFinal.DateTime;
+    FDQueryRelatEstoque.Open;
 
-    frxRelatProd.ShowReport;
+    frxRelatEstoque.ShowReport;
   except
     on E: Exception do
       MessageBox(0, 'Erro ao gerar relatório!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);

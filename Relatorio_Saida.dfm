@@ -193,10 +193,10 @@ object RelatorioSaida: TRelatorioSaida
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection, pbWatermarks]
     PreviewOptions.Zoom = 1.000000000000000000
-    PrintOptions.Printer = 'Padr'#227'o'
+    PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 45809.901100810190000000
-    ReportOptions.LastChange = 45809.973019756940000000
+    ReportOptions.CreateDate = 45820.594575081020000000
+    ReportOptions.LastChange = 45820.594575081020000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -220,26 +220,27 @@ object RelatorioSaida: TRelatorioSaida
         Font.Name = 'Arial'
         Font.Style = [fsBold]
         Frame.Typ = []
-        Fill.BackColor = clGray
+        Fill.BackColor = clBlack
       end
       item
         Name = 'Header'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clMaroon
+        Font.Color = clWhite
         Font.Height = -13
         Font.Name = 'Arial'
         Font.Style = [fsBold]
         Frame.Typ = []
+        Fill.BackColor = clBlack
       end
       item
         Name = 'Group header'
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clMaroon
+        Font.Color = clWindowText
         Font.Height = -13
         Font.Name = 'Arial'
         Font.Style = [fsBold]
         Frame.Typ = []
-        Fill.BackColor = 16053492
+        Fill.BackColor = 52479
       end
       item
         Name = 'Data'
@@ -266,7 +267,7 @@ object RelatorioSaida: TRelatorioSaida
         Font.Height = -13
         Font.Name = 'Arial'
         Font.Style = []
-        Frame.Typ = [ftBottom]
+        Frame.Typ = []
         Frame.Width = 2.000000000000000000
       end>
     Watermarks = <>
@@ -278,10 +279,10 @@ object RelatorioSaida: TRelatorioSaida
       PaperWidth = 210.000000000000000000
       PaperHeight = 297.000000000000000000
       PaperSize = 9
-      LeftMargin = 1.000000000000000000
-      RightMargin = 1.000000000000000000
-      TopMargin = 1.000000000000000000
-      BottomMargin = 1.000000000000000000
+      LeftMargin = 5.000000000000000000
+      RightMargin = 5.000000000000000000
+      TopMargin = 5.000000000000000000
+      BottomMargin = 5.000000000000000000
       Frame.Typ = []
       MirrorMode = []
       object ReportTitle1: TfrxReportTitle
@@ -293,11 +294,11 @@ object RelatorioSaida: TRelatorioSaida
         Frame.Typ = []
         Height = 26.456710000000000000
         Top = 18.897650000000000000
-        Width = 786.142240000000000000
+        Width = 755.906000000000000000
         object Memo1: TfrxMemoView
           Align = baWidth
           AllowVectorExport = True
-          Width = 786.142211914062500000
+          Width = 755.906005859375000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -307,7 +308,7 @@ object RelatorioSaida: TRelatorioSaida
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = []
-          Fill.BackColor = clGray
+          Fill.BackColor = clBlack
           HAlign = haCenter
           Memo.UTF8W = (
             'Relat'#243'rio Sa'#237'da de Produto')
@@ -325,10 +326,11 @@ object RelatorioSaida: TRelatorioSaida
         Frame.Typ = []
         Height = 22.677180000000000000
         Top = 68.031540000000000000
-        Width = 786.142240000000000000
+        Width = 755.906000000000000000
         object Memo2: TfrxMemoView
           AllowVectorExport = True
-          Width = 789.921306220000000000
+          Left = -49.133890000000000000
+          Width = 718.110236220000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -337,99 +339,129 @@ object RelatorioSaida: TRelatorioSaida
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
-          Frame.Typ = [ftBottom]
+          Frame.Typ = []
           Frame.Width = 2.000000000000000000
           ParentFont = False
           Style = 'Header line'
         end
         object Memo3: TfrxMemoView
           AllowVectorExport = True
-          Width = 77.796491890000000000
+          Width = 110.378511650000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
+          Font.Color = clWhite
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
-          Frame.Typ = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Fill.BackColor = clGray
+          HAlign = haCenter
           Memo.UTF8W = (
-            'C'#211'DIGO')
+            'COD. PRODUTO')
           ParentFont = False
-          Style = 'Header'
+          VAlign = vaCenter
         end
         object Memo4: TfrxMemoView
           AllowVectorExport = True
-          Left = 77.796491890000000000
-          Width = 245.090697710000000000
+          Left = 110.378511650000000000
+          Width = 311.521536840000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
+          Font.Color = clWhite
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
-          Frame.Typ = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Fill.BackColor = clGray
+          HAlign = haCenter
           Memo.UTF8W = (
-            'DESCRI'#199#195'O')
+            'DESCRI'#199#195'O PRODUTO')
           ParentFont = False
-          Style = 'Header'
+          VAlign = vaCenter
         end
         object Memo5: TfrxMemoView
           AllowVectorExport = True
-          Left = 322.887189600000000000
-          Width = 188.099819760000000000
+          Left = 421.900048490000000000
+          Width = 110.507610180000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
+          Font.Color = clWhite
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
-          Frame.Typ = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Fill.BackColor = clGray
+          HAlign = haCenter
           Memo.UTF8W = (
             'OPERADOR')
           ParentFont = False
-          Style = 'Header'
+          VAlign = vaCenter
         end
         object Memo6: TfrxMemoView
           AllowVectorExport = True
-          Left = 545.002779360000000000
-          Width = 117.486183820000000000
+          Left = 532.407658670000000000
+          Width = 41.515543940000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
+          Font.Color = clWhite
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
-          Frame.Typ = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Fill.BackColor = clGray
+          HAlign = haCenter
           Memo.UTF8W = (
-            'QUANTIDADE')
+            'QTDE')
           ParentFont = False
-          Style = 'Header'
+          VAlign = vaCenter
         end
         object Memo7: TfrxMemoView
           AllowVectorExport = True
-          Left = 707.843323180000000000
-          Width = 40.503153040000000000
+          Left = 573.923202610000000000
+          Width = 70.105993230000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
+          Font.Color = clWhite
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
-          Frame.Typ = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Fill.BackColor = clGray
+          HAlign = haCenter
           Memo.UTF8W = (
             'DATA')
           ParentFont = False
-          Style = 'Header'
+          VAlign = vaCenter
+        end
+        object Memo8: TfrxMemoView
+          AllowVectorExport = True
+          Left = 644.029195850000000000
+          Width = 111.876340370000000000
+          Height = 22.677180000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          Fill.BackColor = clGray
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'MOTIVO')
+          ParentFont = False
+          VAlign = vaCenter
         end
       end
       object MasterData1: TfrxMasterData
@@ -439,16 +471,16 @@ object RelatorioSaida: TRelatorioSaida
         FillGap.Bottom = 0
         FillGap.Right = 0
         Frame.Typ = []
-        Height = 71.811070000000000000
+        Height = 56.692913390000000000
         Top = 151.181200000000000000
-        Width = 786.142240000000000000
+        Width = 755.906000000000000000
         DataSet = frxDSRelatSai
         DataSetName = 'frxDSRelatSai'
         RowCount = 0
-        object Memo8: TfrxMemoView
+        object Memo9: TfrxMemoView
           AllowVectorExport = True
-          Width = 77.796491890000000000
-          Height = 18.897650000000000000
+          Width = 110.378511650000000000
+          Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'cod_produto'
@@ -459,17 +491,18 @@ object RelatorioSaida: TRelatorioSaida
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
-          Frame.Typ = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDSRelatSai."cod_produto"]')
           ParentFont = False
-          Style = 'Data'
+          VAlign = vaCenter
         end
-        object Memo9: TfrxMemoView
+        object Memo10: TfrxMemoView
           AllowVectorExport = True
-          Left = 77.796491890000000000
-          Width = 245.090697710000000000
-          Height = 18.897650000000000000
+          Left = 110.378511650000000000
+          Width = 311.521536840000000000
+          Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'descricao'
@@ -480,17 +513,18 @@ object RelatorioSaida: TRelatorioSaida
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
-          Frame.Typ = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDSRelatSai."descricao"]')
           ParentFont = False
-          Style = 'Data'
+          VAlign = vaCenter
         end
-        object Memo10: TfrxMemoView
+        object Memo11: TfrxMemoView
           AllowVectorExport = True
-          Left = 322.887189600000000000
-          Width = 188.099819760000000000
-          Height = 18.897650000000000000
+          Left = 421.900048490000000000
+          Width = 110.507610180000000000
+          Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'oper'
@@ -501,17 +535,18 @@ object RelatorioSaida: TRelatorioSaida
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
-          Frame.Typ = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDSRelatSai."oper"]')
           ParentFont = False
-          Style = 'Data'
+          VAlign = vaCenter
         end
-        object Memo11: TfrxMemoView
+        object Memo12: TfrxMemoView
           AllowVectorExport = True
-          Left = 571.459489360000000000
-          Width = 71.811040710000000000
-          Height = 18.897650000000000000
+          Left = 532.407658670000000000
+          Width = 41.515543940000000000
+          Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'quantidade'
@@ -522,18 +557,18 @@ object RelatorioSaida: TRelatorioSaida
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
-          Frame.Typ = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDSRelatSai."quantidade"]')
           ParentFont = False
-          Style = 'Data'
+          VAlign = vaCenter
         end
-        object Memo12: TfrxMemoView
+        object Memo13: TfrxMemoView
           AllowVectorExport = True
-          Left = 707.843323180000000000
-          Top = 3.779530000000000000
-          Width = 74.518923040000000000
-          Height = 64.252010000000000000
+          Left = 573.923202610000000000
+          Width = 70.105993230000000000
+          Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
           DataField = 'data_saida'
@@ -544,11 +579,34 @@ object RelatorioSaida: TRelatorioSaida
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
-          Frame.Typ = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDSRelatSai."data_saida"]')
           ParentFont = False
-          Style = 'Data'
+          VAlign = vaCenter
+        end
+        object Memo14: TfrxMemoView
+          AllowVectorExport = True
+          Left = 644.029195850000000000
+          Width = 111.876340370000000000
+          Height = 56.692950000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
+          DataField = 'desc_saida'
+          DataSet = frxDSRelatSai
+          DataSetName = 'frxDSRelatSai'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[frxDSRelatSai."desc_saida"]')
+          ParentFont = False
+          VAlign = vaCenter
         end
       end
       object PageFooter1: TfrxPageFooter
@@ -559,16 +617,16 @@ object RelatorioSaida: TRelatorioSaida
         FillGap.Right = 0
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 283.464750000000000000
-        Width = 786.142240000000000000
-        object Memo13: TfrxMemoView
+        Top = 268.346630000000000000
+        Width = 755.906000000000000000
+        object Memo15: TfrxMemoView
           Align = baWidth
           AllowVectorExport = True
-          Width = 786.142211914062500000
+          Width = 755.906005859375000000
           Frame.Typ = [ftTop]
           Frame.Width = 2.000000000000000000
         end
-        object Memo14: TfrxMemoView
+        object Memo16: TfrxMemoView
           AllowVectorExport = True
           Top = 1.000000000000000000
           Height = 22.677180000000000000
@@ -577,17 +635,19 @@ object RelatorioSaida: TRelatorioSaida
           Memo.UTF8W = (
             '[Date] [Time]')
         end
-        object Memo15: TfrxMemoView
+        object Memo17: TfrxMemoView
           Align = baRight
           AllowVectorExport = True
-          Left = 710.551611914062500000
+          Left = 680.315405859375000000
           Top = 1.000000000000000000
           Width = 75.590600000000000000
           Height = 22.677180000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
-            'Page [Page#]')
+            'P'#225'gina [Page#]')
         end
       end
     end
@@ -600,7 +660,8 @@ object RelatorioSaida: TRelatorioSaida
       '  p.descricao,'
       '  c.descricao AS oper,'
       '  sp.quantidade,'
-      '  sp.data_saida AS data_saida'
+      '  sp.data_saida AS data_saida,'
+      '  sp.descricao AS desc_saida'
       'FROM '
       '  estoqueitec.saida_produto sp'
       'JOIN '
@@ -610,7 +671,7 @@ object RelatorioSaida: TRelatorioSaida
       'WHERE '
       '  sp.data_saida BETWEEN :data_inicial AND :data_final'
       'ORDER BY '
-      '  sp.data_saida')
+      '  sp.data_saida DESC')
     Left = 174
     Top = 40
     ParamData = <
@@ -656,6 +717,11 @@ object RelatorioSaida: TRelatorioSaida
       end
       item
         FieldName = 'data_saida'
+      end
+      item
+        FieldName = 'desc_saida'
+        FieldType = fftString
+        Size = 75
       end>
   end
 end
