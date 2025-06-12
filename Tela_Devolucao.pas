@@ -127,7 +127,6 @@ begin
     LimpaCampos;
     TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa;
-    dm.FDTabEmprestimoProd.Edit;
     SBcancelar.Enabled   := True;
     SBrelatorio.Enabled  := False;
     SBsair.Enabled       := False;

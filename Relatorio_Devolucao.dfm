@@ -32,7 +32,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -46,8 +45,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 338
-    ExplicitHeight = 282
     object Panel5: TPanel
       AlignWithMargins = True
       Left = 3
@@ -57,7 +54,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
         Top = 3
@@ -86,7 +82,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -98,7 +93,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
         Top = 3
@@ -127,7 +121,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitWidth = 338
     end
     object GridPanel1: TGridPanel
       AlignWithMargins = True
@@ -166,8 +159,6 @@ object RelatorioDevolucao: TRelatorioDevolucao
           Value = 100.000000000000000000
         end>
       TabOrder = 4
-      ExplicitWidth = 332
-      ExplicitHeight = 100
       DesignSize = (
         334
         108)
@@ -791,7 +782,7 @@ object RelatorioDevolucao: TRelatorioDevolucao
       'select'
       '  p.cod_produto,'
       '  p.descricao,'
-      '  c.descricao AS oper,'
+      '  o.descricao AS oper,'
       '  emp.quantidade,'
       '  TO_CHAR(emp.data_emprestimo, '#39'DD/MM/YYYY'#39') as data_emp,'
       '  c.descricao as colab,'
@@ -805,13 +796,15 @@ object RelatorioDevolucao: TRelatorioDevolucao
       'join'
       '  estoqueitec.produto p ON p.id = emp.produto_id'
       'join'
-      '  estoqueitec.colaborador c ON c.id = emp.operador'
+      '  estoqueitec.colaborador c ON c.id = emp.colaborador_id'
+      'join'
+      '  estoqueitec.colaborador o ON o.id = emp.operador'
       'join'
       '  estoqueitec.item_emprestimo ip ON ip.id = emp.id'
       'where'
       '  ip.data_devolucao between :data_inicial and :data_final'
       'order by'
-      '  ip.data_devolucao')
+      '  ip.data_devolucao DESC, emp.id DESC')
     Left = 120
     Top = 56
     ParamData = <
@@ -836,5 +829,41 @@ object RelatorioDevolucao: TRelatorioDevolucao
     DataSetOptions = []
     Left = 29
     Top = 56
+    FieldDefs = <
+      item
+        FieldName = 'cod_produto'
+        FieldType = fftString
+        Size = 45
+      end
+      item
+        FieldName = 'descricao'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'oper'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'quantidade'
+      end
+      item
+        FieldName = 'data_emp'
+      end
+      item
+        FieldName = 'colab'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'devolvido'
+      end
+      item
+        FieldName = 'data_dev'
+      end
+      item
+        FieldName = 'qtd_devolvida'
+      end>
   end
 end

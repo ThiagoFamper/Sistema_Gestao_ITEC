@@ -205,8 +205,8 @@
             <Form>RelatorioDevolucao</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Relatorio_Produto.pas">
-            <Form>RelatorioProduto</Form>
+        <DCCReference Include="Relatorio_Estoque.pas">
+            <Form>RelatorioEstoque</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Tela_Entrada.pas">

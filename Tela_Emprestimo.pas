@@ -134,6 +134,7 @@ begin
     SBeditar.Enabled     := False;
     SBestoque.Enabled    := False;
     bEmp.Enabled         := True;
+    dm.FDTabColaborador.Open;
     dm.FDTabEmprestimoProd.Open;
     dm.FDTabEmprestimoProd.Append;
     dm.FDTabEmprestimoItem.Open;

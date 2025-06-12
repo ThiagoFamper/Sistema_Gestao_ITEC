@@ -22,7 +22,7 @@ uses
   Relatorio_Saida in 'Relatorio_Saida.pas' {RelatorioSaida},
   Relatorio_Emprestimo in 'Relatorio_Emprestimo.pas' {RelatorioEmprestimo},
   Relatorio_Devolucao in 'Relatorio_Devolucao.pas' {RelatorioDevolucao},
-  Relatorio_Produto in 'Relatorio_Produto.pas' {RelatorioProduto},
+  Relatorio_Estoque in 'Relatorio_Estoque.pas' {RelatorioEstoque},
   Tela_Entrada in 'Tela_Entrada.pas' {TelaEntrada},
   Tela_Saida in 'Tela_Saida.pas' {TelaSaida},
   Tela_Emprestimo in 'Tela_Emprestimo.pas' {TelaEmprestimo},
@@ -56,7 +56,7 @@ begin
   Application.CreateForm(TRelatorioSaida, RelatorioSaida);
   Application.CreateForm(TRelatorioEmprestimo, RelatorioEmprestimo);
   Application.CreateForm(TRelatorioDevolucao, RelatorioDevolucao);
-  Application.CreateForm(TRelatorioProduto, RelatorioProduto);
+  Application.CreateForm(TRelatorioEstoque, RelatorioEstoque);
   Application.CreateForm(TTelaEntrada, TelaEntrada);
   Application.CreateForm(TTelaSaida, TelaSaida);
   Application.CreateForm(TTelaEmprestimo, TelaEmprestimo);

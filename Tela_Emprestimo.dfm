@@ -26,7 +26,6 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1152
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -2046,7 +2045,6 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1152
     object dbNavEmprestimo: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2070,7 +2068,6 @@ object TelaEmprestimo: TTelaEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1152
     object Panel18: TPanel
       Left = 16
       Top = 6
@@ -2327,8 +2324,6 @@ object TelaEmprestimo: TTelaEmprestimo
         Value = 100.000000000000000000
       end>
     TabOrder = 4
-    ExplicitTop = 636
-    ExplicitWidth = 1152
     object Panel3: TPanel
       Left = 1
       Top = 1

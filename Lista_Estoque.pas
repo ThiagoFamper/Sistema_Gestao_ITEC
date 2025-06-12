@@ -61,15 +61,15 @@ implementation
 
 {$R *.dfm}
 
-uses Tela_Principal, Data_Module, Relatorio_Produto;
+uses Tela_Principal, Data_Module, Relatorio_Estoque;
 
 // botão de relatório
 procedure TListaEstoque.SBrelatorioClick(Sender: TObject);
 begin
-  if not Assigned(RelatorioProduto) then
-    Application.CreateForm(TRelatorioProduto, RelatorioProduto);
+  if not Assigned(RelatorioEstoque) then
+    Application.CreateForm(TRelatorioEstoque, RelatorioEstoque);
 
-  RelatorioProduto.ShowModal;
+  RelatorioEstoque.ShowModal;
 end;
 
 procedure TListaEstoque.SBsairClick(Sender: TObject);

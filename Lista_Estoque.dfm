@@ -3,7 +3,7 @@ object ListaEstoque: TListaEstoque
   Top = 0
   Caption = 'Consulta de Estoque'
   ClientHeight = 809
-  ClientWidth = 1926
+  ClientWidth = 1924
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +15,7 @@ object ListaEstoque: TListaEstoque
   object Panel2: TPanel
     Left = 0
     Top = 0
-    Width = 1926
+    Width = 1924
     Height = 114
     Align = alTop
     BevelEdges = [beTop, beBottom]
@@ -24,7 +24,6 @@ object ListaEstoque: TListaEstoque
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1924
     object SBsair: TSpeedButton
       Left = 343
       Top = 7
@@ -1023,7 +1022,7 @@ object ListaEstoque: TListaEstoque
   object Panel5: TPanel
     Left = 0
     Top = 114
-    Width = 1926
+    Width = 1924
     Height = 207
     Align = alTop
     BevelEdges = [beBottom]
@@ -1032,7 +1031,6 @@ object ListaEstoque: TListaEstoque
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1924
     object Panel19: TPanel
       Left = 16
       Top = 6
@@ -1202,7 +1200,7 @@ object ListaEstoque: TListaEstoque
   object gEstoque: TDBGrid
     Left = 0
     Top = 358
-    Width = 1926
+    Width = 1924
     Height = 451
     Align = alClient
     BorderStyle = bsNone
@@ -1264,7 +1262,7 @@ object ListaEstoque: TListaEstoque
   object Panel4: TPanel
     Left = 0
     Top = 321
-    Width = 1926
+    Width = 1924
     Height = 37
     Align = alTop
     BevelEdges = [beBottom]
@@ -1273,7 +1271,6 @@ object ListaEstoque: TListaEstoque
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 1924
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0

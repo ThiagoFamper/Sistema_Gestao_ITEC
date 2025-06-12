@@ -32,7 +32,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -45,8 +44,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 338
-    ExplicitHeight = 282
     object Panel2: TPanel
       Left = 0
       Top = 0
@@ -56,7 +53,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -68,7 +64,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
         Top = 3
@@ -97,7 +92,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -108,7 +102,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
         Top = 3
@@ -165,8 +158,6 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
           Value = 100.000000000000000000
         end>
       TabOrder = 4
-      ExplicitWidth = 332
-      ExplicitHeight = 100
       DesignSize = (
         334
         108)
@@ -203,7 +194,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     PrintOptions.Printer = 'Padr'#227'o'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45809.854796400460000000
-    ReportOptions.LastChange = 45814.699649375000000000
+    ReportOptions.LastChange = 45819.841510775460000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -695,10 +686,12 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
           Top = 1.000000000000000000
           Width = 75.590600000000000000
           Height = 22.677180000000000000
+          ContentScaleOptions.Constraints.MaxIterationValue = 0
+          ContentScaleOptions.Constraints.MinIterationValue = 0
           Frame.Typ = []
           HAlign = haRight
           Memo.UTF8W = (
-            'Page [Page#]')
+            'P'#225'gina [Page#]')
         end
       end
     end
@@ -711,10 +704,10 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       'select'
       '   p.cod_produto AS cod,'
       '   p.descricao,'
-      '   c.descricao AS oper,'
+      '   c.descricao AS colab,'
       '   emp.quantidade,'
       '   emp.data_emprestimo AS data,'
-      '   c.descricao AS colab,'
+      '   o.descricao AS oper,'
       '   CASE WHEN emp.devolvido THEN '#39'Sim'#39' ELSE '#39'N'#227'o'#39' '
       '   END AS devolvido'
       'FROM '
@@ -722,11 +715,13 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       'JOIN'
       '  estoqueitec.produto p ON p.id = emp.produto_id'
       'JOIN'
-      '  estoqueitec.colaborador c ON c.id = emp.operador'
+      '  estoqueitec.colaborador o ON o.id = emp.operador'
+      'JOIN'
+      '  estoqueitec.colaborador c ON c.id = emp.colaborador_id'
       'WHERE '
       '  emp.data_emprestimo BETWEEN :data_inicial AND :data_final'
       'ORDER BY'
-      '  emp.data_emprestimo;'
+      '  emp.data_emprestimo DESC, emp.id DESC'
       '   ')
     Left = 112
     Top = 48
@@ -752,5 +747,36 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     DataSetOptions = []
     Left = 207
     Top = 48
+    FieldDefs = <
+      item
+        FieldName = 'cod'
+        FieldType = fftString
+        Size = 45
+      end
+      item
+        FieldName = 'descricao'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'colab'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'quantidade'
+      end
+      item
+        FieldName = 'data'
+        FieldType = fftDateTime
+      end
+      item
+        FieldName = 'oper'
+        FieldType = fftString
+        Size = 75
+      end
+      item
+        FieldName = 'devolvido'
+      end>
   end
 end

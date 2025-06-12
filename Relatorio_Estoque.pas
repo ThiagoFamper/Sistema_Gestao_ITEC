@@ -1,4 +1,4 @@
-unit Relatorio_Produto;
+unit Relatorio_Estoque;
 
 interface
 
@@ -11,7 +11,7 @@ uses
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, frxDBSet, Vcl.ExtCtrls, DateUtils;
 
 type
-  TRelatorioProduto = class(TForm)
+  TRelatorioEstoque = class(TForm)
     Panel6: TPanel;
     Panel1: TPanel;
     frxDSRelatProd: TfrxDBDataset;
@@ -38,7 +38,7 @@ type
   end;
 
 var
-  RelatorioProduto: TRelatorioProduto;
+  RelatorioEstoque: TRelatorioEstoque;
 
 implementation
 
@@ -46,7 +46,7 @@ implementation
 
 uses Data_Module;
 
-procedure TRelatorioProduto.BitBtn1Click(Sender: TObject);
+procedure TRelatorioEstoque.BitBtn1Click(Sender: TObject);
 begin
   try
     // Garante que não há transações com erro pendente
@@ -65,12 +65,12 @@ begin
   end;
 end;
 
-procedure TRelatorioProduto.BitBtn2Click(Sender: TObject);
+procedure TRelatorioEstoque.BitBtn2Click(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TRelatorioProduto.FormShow(Sender: TObject);
+procedure TRelatorioEstoque.FormShow(Sender: TObject);
 begin
   DateTimeInicial.Date := EncodeDate(YearOf(Date), MonthOf(Date), 1);
   DateTimeFinal.Date := Date;
