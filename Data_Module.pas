@@ -86,9 +86,8 @@ type
     FDTabProdutocod_produto: TWideStringField;
     FDTabProdutodescricao: TWideStringField;
     FDTabProdutomarca: TWideStringField;
-    FDTabProdutomodelo: TWideStringField;
     FDTabProdutogrupo_id: TLargeintField;
-    FDTabProdutodata: TSQLTimeStampField;
+    FDTabProdutomodelo: TWideStringField;
   private
     { Private declarations }
   public

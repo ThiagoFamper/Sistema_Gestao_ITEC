@@ -24,6 +24,7 @@ object ListaEstoque: TListaEstoque
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1922
     object SBsair: TSpeedButton
       Left = 343
       Top = 7
@@ -1031,6 +1032,7 @@ object ListaEstoque: TListaEstoque
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1922
     object Panel19: TPanel
       Left = 16
       Top = 6
@@ -1158,7 +1160,7 @@ object ListaEstoque: TListaEstoque
         Width = 400
         Height = 23
         Align = alTop
-        MaxLength = 45
+        MaxLength = 75
         TabOrder = 0
         OnChange = epProdModeloChange
       end
@@ -1271,6 +1273,7 @@ object ListaEstoque: TListaEstoque
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
+    ExplicitWidth = 1922
     object DBNavigator1: TDBNavigator
       AlignWithMargins = True
       Left = 0
