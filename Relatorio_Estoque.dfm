@@ -13,7 +13,6 @@ object RelatorioEstoque: TRelatorioEstoque
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
-  OnShow = FormShow
   TextHeight = 15
   object Panel6: TPanel
     Left = 0
@@ -65,22 +64,18 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelOuter = bvNone
       TabOrder = 1
       object Label1: TLabel
-        Left = 10
+        Left = 38
         Top = 3
-        Width = 67
-        Height = 21
+        Width = 39
+        Height = 15
         AutoSize = False
-        Caption = 'Data Inicial:'
+        Caption = 'Marca:'
       end
-      object DateTimeInicial: TDateTimePicker
-        Left = 83
+      object DBLookupComboMarca: TDBLookupComboBox
+        Left = 88
         Top = 3
         Width = 241
         Height = 23
-        Cursor = crHandPoint
-        Date = 45789.000000000000000000
-        Time = 45789.000000000000000000
-        Kind = dtkDateTime
         TabOrder = 0
       end
     end
@@ -93,6 +88,20 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
+      object Label3: TLabel
+        Left = 41
+        Top = 3
+        Width = 44
+        Height = 15
+        Caption = 'Modelo:'
+      end
+      object DBLookupComboModelo: TDBLookupComboBox
+        Left = 91
+        Top = 3
+        Width = 241
+        Height = 23
+        TabOrder = 0
+      end
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -104,22 +113,18 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelOuter = bvNone
       TabOrder = 3
       object Label2: TLabel
-        Left = 10
+        Left = 38
         Top = 3
-        Width = 61
+        Width = 41
         Height = 15
         AutoSize = False
-        Caption = 'Data Final:'
+        Caption = 'Grupo:'
       end
-      object DateTimeFinal: TDateTimePicker
-        Left = 83
+      object DBLookupComboGrupo: TDBLookupComboBox
+        Left = 88
         Top = 3
         Width = 241
         Height = 23
-        Cursor = crHandPoint
-        Date = 45789.000000000000000000
-        Time = 45789.000000000000000000
-        Kind = dtkDateTime
         TabOrder = 0
       end
     end
@@ -173,7 +178,6 @@ object RelatorioEstoque: TRelatorioEstoque
         Caption = '&Relat'#243'rio'
         Layout = blGlyphTop
         TabOrder = 0
-        OnClick = bRelatClick
       end
       object bCancelar: TBitBtn
         Left = 169
@@ -193,8 +197,8 @@ object RelatorioEstoque: TRelatorioEstoque
     DataSet = FDQueryRelatEstoque
     BCDToCurrency = False
     DataSetOptions = []
-    Left = 216
-    Top = 48
+    Left = 72
+    Top = 65528
     FieldDefs = <
       item
         FieldName = 'cod_produto'
@@ -219,13 +223,13 @@ object RelatorioEstoque: TRelatorioEstoque
       item
         FieldName = 'modelo'
         FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'data'
+        Size = 75
       end
       item
         FieldName = 'saldo'
+      end
+      item
+        FieldName = 'data'
       end>
   end
   object FDQueryRelatEstoque: TFDQuery
@@ -237,20 +241,22 @@ object RelatorioEstoque: TRelatorioEstoque
       '  g.descricao AS grupo_descricao,'
       '  p.marca,'
       '  p.modelo,'
-      '  p.data AS data,'
-      '  es.saldo'
+      '  es.saldo,'
+      '  ep.data_entrada AS data'
       'FROM '
       '  estoqueitec.produto p'
       'JOIN '
       '  estoqueitec.grupo g ON g.id = p.grupo_id'
       'JOIN '
       '  estoqueitec.estoque es ON es.produto_id = p.id'
+      'JOIN '
+      '  estoqueitec.entrada_produto ep ON ep.produto_id = p.id'
       'WHERE '
-      '  p.data BETWEEN :data_inicial AND :data_final'
+      '  ep.data_entrada BETWEEN :data_inicial AND :data_final'
       'ORDER BY '
-      '  p.data DESC')
-    Left = 112
-    Top = 48
+      '  ep.data_entrada DESC')
+    Left = 160
+    Top = 8
     ParamData = <
       item
         Name = 'DATA_INICIAL'
@@ -281,8 +287,7 @@ object RelatorioEstoque: TRelatorioEstoque
       'begin'
       ''
       'end.')
-    Left = 23
-    Top = 48
+    Left = 7
     Datasets = <
       item
         DataSet = frxDSRelatEstoque
@@ -772,5 +777,17 @@ object RelatorioEstoque: TRelatorioEstoque
         end
       end
     end
+  end
+  object FDQueryGrupo: TFDQuery
+    Left = 147
+    Top = 309
+  end
+  object FDQueryModelo: TFDQuery
+    Left = 288
+    Top = 289
+  end
+  object FDQueryMarca: TFDQuery
+    Left = 32
+    Top = 289
   end
 end
