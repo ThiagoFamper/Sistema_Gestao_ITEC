@@ -25,7 +25,6 @@ object CadColaborador: TCadColaborador
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1124
     object Panel10: TPanel
       Left = 16
       Top = 6
@@ -91,7 +90,6 @@ object CadColaborador: TCadColaborador
         DataField = 'descricao'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
-        MaxLength = 75
         TabOrder = 0
       end
     end
@@ -126,7 +124,6 @@ object CadColaborador: TCadColaborador
         DataField = 'cargo'
         DataSource = DM.dsFDTabColaborador
         Enabled = False
-        MaxLength = 45
         TabOrder = 0
       end
     end
@@ -275,7 +272,6 @@ object CadColaborador: TCadColaborador
     Color = clTeal
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1124
     object SBnovo: TSpeedButton
       Left = 247
       Top = 7

@@ -13,6 +13,8 @@ object RelatorioEstoque: TRelatorioEstoque
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnClose = FormClose
+  OnShow = FormShow
   TextHeight = 15
   object Panel6: TPanel
     Left = 0
@@ -64,19 +66,20 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelOuter = bvNone
       TabOrder = 1
       object Label1: TLabel
-        Left = 38
+        Left = 17
         Top = 3
         Width = 39
         Height = 15
         AutoSize = False
         Caption = 'Marca:'
       end
-      object DBLookupComboMarca: TDBLookupComboBox
-        Left = 88
+      object EditMarca: TEdit
+        Left = 77
         Top = 3
         Width = 241
         Height = 23
         TabOrder = 0
+        OnKeyPress = EditMarcaKeyPress
       end
     end
     object Panel4: TPanel
@@ -89,18 +92,19 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelOuter = bvNone
       TabOrder = 2
       object Label3: TLabel
-        Left = 41
+        Left = 20
         Top = 3
         Width = 44
         Height = 15
         Caption = 'Modelo:'
       end
-      object DBLookupComboModelo: TDBLookupComboBox
-        Left = 91
+      object EditModelo: TEdit
+        Left = 80
         Top = 3
         Width = 241
         Height = 23
         TabOrder = 0
+        OnKeyPress = EditModeloKeyPress
       end
     end
     object Panel5: TPanel
@@ -113,15 +117,15 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelOuter = bvNone
       TabOrder = 3
       object Label2: TLabel
-        Left = 38
+        Left = 17
         Top = 3
         Width = 41
         Height = 15
         AutoSize = False
         Caption = 'Grupo:'
       end
-      object DBLookupComboGrupo: TDBLookupComboBox
-        Left = 88
+      object EditGrupo: TEdit
+        Left = 77
         Top = 3
         Width = 241
         Height = 23
@@ -178,6 +182,7 @@ object RelatorioEstoque: TRelatorioEstoque
         Caption = '&Relat'#243'rio'
         Layout = blGlyphTop
         TabOrder = 0
+        OnClick = bRelatClick
       end
       object bCancelar: TBitBtn
         Left = 169
@@ -197,8 +202,8 @@ object RelatorioEstoque: TRelatorioEstoque
     DataSet = FDQueryRelatEstoque
     BCDToCurrency = False
     DataSetOptions = []
-    Left = 72
-    Top = 65528
+    Left = 104
+    Top = 48
     FieldDefs = <
       item
         FieldName = 'cod_produto'
@@ -227,9 +232,6 @@ object RelatorioEstoque: TRelatorioEstoque
       end
       item
         FieldName = 'saldo'
-      end
-      item
-        FieldName = 'data'
       end>
   end
   object FDQueryRelatEstoque: TFDQuery
@@ -241,35 +243,17 @@ object RelatorioEstoque: TRelatorioEstoque
       '  g.descricao AS grupo_descricao,'
       '  p.marca,'
       '  p.modelo,'
-      '  es.saldo,'
-      '  ep.data_entrada AS data'
+      '  es.saldo'
       'FROM '
       '  estoqueitec.produto p'
       'JOIN '
       '  estoqueitec.grupo g ON g.id = p.grupo_id'
       'JOIN '
       '  estoqueitec.estoque es ON es.produto_id = p.id'
-      'JOIN '
-      '  estoqueitec.entrada_produto ep ON ep.produto_id = p.id'
-      'WHERE '
-      '  ep.data_entrada BETWEEN :data_inicial AND :data_final'
-      'ORDER BY '
-      '  ep.data_entrada DESC')
-    Left = 160
-    Top = 8
-    ParamData = <
-      item
-        Name = 'DATA_INICIAL'
-        DataType = ftDateTime
-        ParamType = ptInput
-        Value = Null
-      end
-      item
-        Name = 'DATA_FINAL'
-        DataType = ftDateTime
-        ParamType = ptInput
-        Value = Null
-      end>
+      ''
+      '')
+    Left = 208
+    Top = 48
   end
   object frxRelatEstoque: TfrxReport
     Version = '2025.2.1'
@@ -279,15 +263,16 @@ object RelatorioEstoque: TRelatorioEstoque
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 45820.586085312500000000
-    ReportOptions.LastChange = 45820.586085312500000000
+    ReportOptions.CreateDate = 45823.096026944400000000
+    ReportOptions.LastChange = 45823.096026944400000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
       'begin'
       ''
       'end.')
-    Left = 7
+    Left = 23
+    Top = 48
     Datasets = <
       item
         DataSet = frxDSRelatEstoque
@@ -394,7 +379,7 @@ object RelatorioEstoque: TRelatorioEstoque
           Fill.BackColor = clBlack
           HAlign = haCenter
           Memo.UTF8W = (
-            'Relat'#243'rio Estoque de Produto')
+            'Relat'#243'rio de Estoque')
           ParentFont = False
           Style = 'Title'
           VAlign = vaCenter
@@ -412,11 +397,8 @@ object RelatorioEstoque: TRelatorioEstoque
         Width = 771.024120000000000000
         object Memo2: TfrxMemoView
           AllowVectorExport = True
-          Left = -56.692950000000000000
-          Width = 718.110236220000000000
+          Width = 718.110236220472000000
           Height = 22.677180000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -429,7 +411,7 @@ object RelatorioEstoque: TRelatorioEstoque
         end
         object Memo3: TfrxMemoView
           AllowVectorExport = True
-          Width = 107.235217940000000000
+          Width = 107.199241700000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -442,15 +424,14 @@ object RelatorioEstoque: TRelatorioEstoque
           Fill.BackColor = clGray
           HAlign = haCenter
           Memo.UTF8W = (
-            'COD. PRODUTO'
-            '')
+            'COD. PRODUTO')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo4: TfrxMemoView
           AllowVectorExport = True
-          Left = 107.235217940000000000
-          Width = 290.091379970000000000
+          Left = 107.199241700000000000
+          Width = 286.241336530000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -469,28 +450,8 @@ object RelatorioEstoque: TRelatorioEstoque
         end
         object Memo5: TfrxMemoView
           AllowVectorExport = True
-          Left = 397.326597910000000000
-          Width = 52.973728560000000000
-          Height = 22.677180000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWhite
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Fill.BackColor = clGray
-          HAlign = haCenter
-          Memo.UTF8W = (
-            'GRUPO')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo6: TfrxMemoView
-          AllowVectorExport = True
-          Left = 450.300326470000000000
-          Width = 53.882850800000000000
+          Left = 393.440578220000000000
+          Width = 95.415660540000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -507,10 +468,10 @@ object RelatorioEstoque: TRelatorioEstoque
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo7: TfrxMemoView
+        object Memo6: TfrxMemoView
           AllowVectorExport = True
-          Left = 504.183177270000000000
-          Width = 147.374844060000000000
+          Left = 488.856238770000000000
+          Width = 130.311781830000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -527,10 +488,10 @@ object RelatorioEstoque: TRelatorioEstoque
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo8: TfrxMemoView
+        object Memo7: TfrxMemoView
           AllowVectorExport = True
-          Left = 651.558021330000000000
-          Width = 69.679770810000000000
+          Left = 619.168020590000000000
+          Width = 102.075383840000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -543,14 +504,14 @@ object RelatorioEstoque: TRelatorioEstoque
           Fill.BackColor = clGray
           HAlign = haCenter
           Memo.UTF8W = (
-            'DATA')
+            'GRUPO')
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo9: TfrxMemoView
+        object Memo8: TfrxMemoView
           AllowVectorExport = True
-          Left = 721.237792140000000000
-          Width = 49.785864080000000000
+          Left = 721.243404440000000000
+          Width = 49.780251780000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -581,9 +542,9 @@ object RelatorioEstoque: TRelatorioEstoque
         DataSet = frxDSRelatEstoque
         DataSetName = 'frxDSRelatEstoque'
         RowCount = 0
-        object Memo10: TfrxMemoView
+        object Memo9: TfrxMemoView
           AllowVectorExport = True
-          Width = 107.235217940000000000
+          Width = 107.199241700000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -602,10 +563,10 @@ object RelatorioEstoque: TRelatorioEstoque
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo11: TfrxMemoView
+        object Memo10: TfrxMemoView
           AllowVectorExport = True
-          Left = 107.235217940000000000
-          Width = 290.091379970000000000
+          Left = 107.199241700000000000
+          Width = 286.241336530000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -624,32 +585,10 @@ object RelatorioEstoque: TRelatorioEstoque
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo12: TfrxMemoView
+        object Memo11: TfrxMemoView
           AllowVectorExport = True
-          Left = 397.326597910000000000
-          Width = 52.973728560000000000
-          Height = 56.692950000000000000
-          ContentScaleOptions.Constraints.MaxIterationValue = 0
-          ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataField = 'grupo_descricao'
-          DataSet = frxDSRelatEstoque
-          DataSetName = 'frxDSRelatEstoque'
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8W = (
-            '[frxDSRelatEstoque."grupo_descricao"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo13: TfrxMemoView
-          AllowVectorExport = True
-          Left = 450.300326470000000000
-          Width = 53.882850800000000000
+          Left = 393.440578220000000000
+          Width = 95.415660540000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -668,10 +607,10 @@ object RelatorioEstoque: TRelatorioEstoque
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo14: TfrxMemoView
+        object Memo12: TfrxMemoView
           AllowVectorExport = True
-          Left = 504.183177270000000000
-          Width = 147.374844060000000000
+          Left = 488.856238770000000000
+          Width = 130.311781830000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -690,14 +629,14 @@ object RelatorioEstoque: TRelatorioEstoque
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo15: TfrxMemoView
+        object Memo13: TfrxMemoView
           AllowVectorExport = True
-          Left = 651.558021330000000000
-          Width = 69.679770810000000000
+          Left = 619.168020590000000000
+          Width = 102.075383840000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
-          DataField = 'data'
+          DataField = 'grupo_descricao'
           DataSet = frxDSRelatEstoque
           DataSetName = 'frxDSRelatEstoque'
           Font.Charset = DEFAULT_CHARSET
@@ -708,14 +647,14 @@ object RelatorioEstoque: TRelatorioEstoque
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frxDSRelatEstoque."data"]')
+            '[frxDSRelatEstoque."grupo_descricao"]')
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo16: TfrxMemoView
+        object Memo14: TfrxMemoView
           AllowVectorExport = True
-          Left = 721.237792140000000000
-          Width = 49.785864080000000000
+          Left = 721.243404440000000000
+          Width = 49.780251780000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -745,14 +684,14 @@ object RelatorioEstoque: TRelatorioEstoque
         Height = 26.456710000000000000
         Top = 268.346630000000000000
         Width = 771.024120000000000000
-        object Memo17: TfrxMemoView
+        object Memo15: TfrxMemoView
           Align = baWidth
           AllowVectorExport = True
           Width = 771.024108886718800000
           Frame.Typ = [ftTop]
           Frame.Width = 2.000000000000000000
         end
-        object Memo18: TfrxMemoView
+        object Memo16: TfrxMemoView
           AllowVectorExport = True
           Top = 1.000000000000000000
           Height = 22.677180000000000000
@@ -761,7 +700,7 @@ object RelatorioEstoque: TRelatorioEstoque
           Memo.UTF8W = (
             '[Date] [Time]')
         end
-        object Memo19: TfrxMemoView
+        object Memo17: TfrxMemoView
           Align = baRight
           AllowVectorExport = True
           Left = 695.433508886718800000
@@ -778,16 +717,9 @@ object RelatorioEstoque: TRelatorioEstoque
       end
     end
   end
-  object FDQueryGrupo: TFDQuery
-    Left = 147
-    Top = 309
-  end
-  object FDQueryModelo: TFDQuery
-    Left = 288
-    Top = 289
-  end
-  object FDQueryMarca: TFDQuery
-    Left = 32
-    Top = 289
+  object dsRelatEstoque: TDataSource
+    DataSet = FDQueryRelatEstoque
+    Left = 296
+    Top = 49
   end
 end

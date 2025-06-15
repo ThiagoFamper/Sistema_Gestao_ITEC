@@ -230,7 +230,6 @@ begin
     Filtro;
 end;
 
-
 procedure TTelaDevolucao.DesabilitaCampos; // desabilitar campos
 begin
     rgDev.Enabled              := False;
@@ -245,6 +244,7 @@ begin
     eDevOperador.Enabled       := False;
     gDev.Enabled               := False;
     dbNavDevolucao.Enabled     := False;
+    eDevColaborador.Enabled    := False;
 end;
 
 procedure TTelaDevolucao.LimpaCampos; // limpa os campos

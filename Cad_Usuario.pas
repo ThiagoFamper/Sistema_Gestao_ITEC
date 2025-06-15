@@ -84,6 +84,7 @@ begin
   SBpesquisar.Enabled  := False;
   SBsair.Enabled       := False;
   SBnovo.Enabled       := False;
+  dm.FDTabColaborador.Open;
   dm.FDTabUsuario.Open;
   dm.FDTabUsuario.Append;
   cbUsuarioAdmin.Checked := False;

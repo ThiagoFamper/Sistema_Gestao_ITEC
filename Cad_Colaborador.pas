@@ -83,6 +83,8 @@ begin
   SBpesquisar.Enabled  := False;
   SBsair.Enabled       := False;
   SBnovo.Enabled       := False;
+  dm.FDTabSetor.Open;
+  dm.FDTabSede.Open;
   dm.FDTabColaborador.Open;
   dm.FDTabColaborador.Append;
   dbColabDescricao.SetFocus;

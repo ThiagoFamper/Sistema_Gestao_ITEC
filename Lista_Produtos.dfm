@@ -27,7 +27,6 @@ object ListaProdutos: TListaProdutos
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 2712
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -2049,8 +2048,6 @@ object ListaProdutos: TListaProdutos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 553
-    ExplicitWidth = 2712
     object Panel13: TPanel
       Left = 16
       Top = 6
@@ -2275,7 +2272,6 @@ object ListaProdutos: TListaProdutos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 2712
     object dbNavProd: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2297,7 +2293,6 @@ object ListaProdutos: TListaProdutos
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 3
-    ExplicitWidth = 2712
     object Panel19: TPanel
       Left = 16
       Top = 6
@@ -2472,8 +2467,6 @@ object ListaProdutos: TListaProdutos
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 2712
-    ExplicitHeight = 195
     object gpProd: TDBGrid
       Left = 0
       Top = 0

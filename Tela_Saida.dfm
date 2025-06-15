@@ -26,7 +26,6 @@ object TelaSaida: TTelaSaida
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1119
     object SpeedButton1: TSpeedButton
       Left = 16
       Top = 16
@@ -2046,7 +2045,6 @@ object TelaSaida: TTelaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1119
     object Panel18: TPanel
       Left = 16
       Top = 6
@@ -2114,12 +2112,12 @@ object TelaSaida: TTelaSaida
       end
     end
     object Panel22: TPanel
-      Left = 520
-      Top = 6
+      Left = 16
+      Top = 136
       Width = 400
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 3
+      TabOrder = 2
       object Label10: TLabel
         Left = 0
         Top = 0
@@ -2147,12 +2145,12 @@ object TelaSaida: TTelaSaida
       end
     end
     object Panel27: TPanel
-      Left = 16
-      Top = 136
+      Left = 520
+      Top = 6
       Width = 400
       Height = 59
       BevelOuter = bvNone
-      TabOrder = 2
+      TabOrder = 3
       object Label13: TLabel
         Left = 0
         Top = 0
@@ -2199,7 +2197,7 @@ object TelaSaida: TTelaSaida
         Font.Name = 'Segoe UI'
         Font.Style = []
         ParentFont = False
-        ExplicitWidth = 120
+        ExplicitTop = -6
       end
       object epProdGrupo: TEdit
         Left = 0
@@ -2225,7 +2223,6 @@ object TelaSaida: TTelaSaida
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 2
-    ExplicitWidth = 1119
     object dbNavSaida: TDBNavigator
       AlignWithMargins = True
       Left = 0
@@ -2327,8 +2324,6 @@ object TelaSaida: TTelaSaida
         Value = 100.000000000000000000
       end>
     TabOrder = 4
-    ExplicitTop = 637
-    ExplicitWidth = 1119
     object Panel3: TPanel
       Left = 1
       Top = 1

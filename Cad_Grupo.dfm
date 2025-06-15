@@ -26,7 +26,6 @@ object CadGrupo: TCadGrupo
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1112
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1742,7 +1741,6 @@ object CadGrupo: TCadGrupo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 1112
     object Panel11: TPanel
       Left = 16
       Top = 71
@@ -1779,7 +1777,6 @@ object CadGrupo: TCadGrupo
         Font.Height = -12
         Font.Name = 'Segoe UI'
         Font.Style = []
-        MaxLength = 45
         ParentFont = False
         TabOrder = 0
       end
