@@ -236,6 +236,7 @@ end;
 
 procedure TListaUsuario.FormShow(Sender: TObject);
 begin
+  dm.FDTabColaborador.Open;
   Filtro;
   epUsuarioNome.SetFocus;
 

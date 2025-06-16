@@ -259,6 +259,8 @@ end;
 
 procedure TListaColaborador.FormShow(Sender: TObject);
 begin
+  dm.FDTabSetor.Open;
+  dm.FDTabSede.Open;
   Filtro;
   epColabDescricao.SetFocus;
 

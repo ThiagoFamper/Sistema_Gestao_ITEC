@@ -263,6 +263,7 @@ end;
 
 procedure TListaProdutos.FormShow(Sender: TObject);
 begin
+  dm.FDTabGrupo.Open;
   Filtro;
   epProdCod.SetFocus;
 
