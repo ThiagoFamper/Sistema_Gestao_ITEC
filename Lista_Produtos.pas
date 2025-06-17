@@ -125,6 +125,10 @@ end;
 
 procedure TListaProdutos.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
+  if dm.FDTabProduto.State in [dsEdit, dsInsert] then
+  begin
+    dm.FDTabProduto.Cancel;
+  end;
     DesabilitaCampos;
     TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa;

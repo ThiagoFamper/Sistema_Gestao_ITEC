@@ -118,6 +118,10 @@ end;
 
 procedure TListaColaborador.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
+  if dm.FDTabColaborador.State in [dsEdit, dsInsert] then
+  begin
+    dm.FDTabColaborador.Cancel;
+  end;
     DesabilitaCampos;
     TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa;

@@ -97,6 +97,10 @@ end;
 
 procedure TListaGrupos.SBcancelarClick(Sender: TObject); // botão de cancelar
 begin
+  if dm.FDTabGrupo.State in [dsEdit, dsInsert] then
+  begin
+    dm.FDTabGrupo.Cancel;
+  end;
     DesabilitaCampos;
     TelaPrincipal.habilitaMenu;
     HabilitaCamposPesquisa;
