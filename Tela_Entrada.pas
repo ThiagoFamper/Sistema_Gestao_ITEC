@@ -117,6 +117,11 @@ end;
 
 procedure TTelaEntrada.SBeditarClick(Sender: TObject); // botão de entrada
 begin
+  if Trim(dbEntradaID.Text) = '' then
+  begin
+    MessageBox(0, 'Selecione um registro válido para a entrada!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+    Exit;
+  end;
     HabilitaCampos;
     TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa;

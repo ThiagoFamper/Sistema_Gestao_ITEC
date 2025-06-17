@@ -92,6 +92,12 @@ procedure TListaColaborador.SBexcluirClick(Sender: TObject); // botão de excluir
 var
   resposta: Integer;
 begin
+  if Trim(dbpColabID.Text) = '' then
+  begin
+    MessageBox(0, 'Selecione um registro válido para excluir!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+    Exit;
+  end;
+
   resposta := MessageBox(0, PChar('Você tem certeza que deseja excluir este registro: ' + dbpColabDescricao.Text + '?'),
   'Confirmação de Exclusão', MB_YESNO or MB_ICONWARNING);
 
@@ -122,6 +128,11 @@ end;
 
 procedure TListaColaborador.SBeditarClick(Sender: TObject); // botão de editar
 begin
+  if Trim(dbpColabID.Text) = '' then
+  begin
+    MessageBox(0, 'Selecione um registro válido para editar!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+    Exit;
+  end;
     HabilitaCampos;
     TelaPrincipal.desabilitaMenu;
     DesabilitaCamposPesquisa;

@@ -115,6 +115,11 @@ end;
 
 procedure TTelaSaida.SBeditarClick(Sender: TObject); // botão de saida
 begin
+  if Trim(dbSaidaID.Text) = '' then
+  begin
+    MessageBox(0, 'Selecione um registro válido para a saída!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+    Exit;
+  end;
     HabilitaCampos;
     LimpaCampos;
     TelaPrincipal.desabilitaMenu;

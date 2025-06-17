@@ -421,7 +421,7 @@ begin
   selecionaMenu(0);
 
   lUsuarioNome.Caption := usuarioLogado;
-  // esconde panels se n for admin
+  // esconde panels se não for admin
   if not isAdmin then
   begin
     pnpCad.Enabled    := False;
@@ -430,8 +430,8 @@ begin
     pnpMovEnt.Visible := False;
     pnpMovSai.Enabled := False;
     pnpMovSai.Visible := False;
-    pnpCadUser.Enabled := False;
-    pnpCadUser.Visible := False;
+    pnpConUser.Enabled := False;
+    pnpConUser.Visible := False;
   end;
 
 end;

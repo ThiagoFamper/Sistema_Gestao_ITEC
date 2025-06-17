@@ -124,6 +124,11 @@ end;
 
 procedure TTelaEmprestimo.SBeditarClick(Sender: TObject); // botão de emprestimo
 begin
+  if Trim(dbEmpID.Text) = '' then
+  begin
+    MessageBox(0, 'Selecione um registro válido para o empréstimo!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+    Exit;
+  end;
     HabilitaCampos;
     LimpaCampos;
     TelaPrincipal.desabilitaMenu;

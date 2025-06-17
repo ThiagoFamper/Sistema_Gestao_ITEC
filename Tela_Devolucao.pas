@@ -123,6 +123,11 @@ end;
 
 procedure TTelaDevolucao.SBeditarClick(Sender: TObject); // botão de devolucao
 begin
+  if Trim(dbDevID.Text) = '' then
+  begin
+    MessageBox(0, 'Selecione um registro válido para a devolução!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+    Exit;
+  end;
     HabilitaCampos;
     LimpaCampos;
     TelaPrincipal.desabilitaMenu;
