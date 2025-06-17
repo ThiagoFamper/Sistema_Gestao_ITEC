@@ -430,6 +430,8 @@ begin
     pnpMovEnt.Visible := False;
     pnpMovSai.Enabled := False;
     pnpMovSai.Visible := False;
+    pnpCadUser.Enabled := False;
+    pnpCadUser.Visible := False;
   end;
 
 end;

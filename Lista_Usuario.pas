@@ -51,6 +51,7 @@ type
     qryUpdateUsuario: TFDQuery;
     Panel7: TPanel;
     dbpUsuarioAdmin: TDBCheckBox;
+    qryDelete: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -92,13 +93,11 @@ begin
 
   if resposta = IDYES then
   begin
-    try
-      dm.FDTabUsuario.Delete;
+      qryDelete.ParamByName('id').AsInteger := StrToInt(dbpUsuarioID.Text);
+      qryDelete.ExecSQL;
+      Filtro;
       MessageBox(0, 'Usuário excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       Filtro;
-    except
-        MessageBox(0, 'Usuário está sendo utilizado em outro registro!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
-    end;
   end;
 end;
 
