@@ -33,6 +33,7 @@ object RelatorioEstoque: TRelatorioEstoque
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -45,6 +46,8 @@ object RelatorioEstoque: TRelatorioEstoque
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     object Panel2: TPanel
       Left = 0
       Top = 0
@@ -54,6 +57,7 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -65,6 +69,7 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 17
         Top = 3
@@ -78,6 +83,7 @@ object RelatorioEstoque: TRelatorioEstoque
         Top = 3
         Width = 241
         Height = 23
+        MaxLength = 45
         TabOrder = 0
         OnKeyPress = EditMarcaKeyPress
       end
@@ -91,6 +97,7 @@ object RelatorioEstoque: TRelatorioEstoque
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitWidth = 338
       object Label3: TLabel
         Left = 20
         Top = 3
@@ -103,6 +110,7 @@ object RelatorioEstoque: TRelatorioEstoque
         Top = 3
         Width = 241
         Height = 23
+        MaxLength = 75
         TabOrder = 0
         OnKeyPress = EditModeloKeyPress
       end
@@ -116,6 +124,7 @@ object RelatorioEstoque: TRelatorioEstoque
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 17
         Top = 3
@@ -129,6 +138,7 @@ object RelatorioEstoque: TRelatorioEstoque
         Top = 3
         Width = 241
         Height = 23
+        MaxLength = 45
         TabOrder = 0
       end
     end
@@ -169,6 +179,8 @@ object RelatorioEstoque: TRelatorioEstoque
           Value = 100.000000000000000000
         end>
       TabOrder = 4
+      ExplicitWidth = 332
+      ExplicitHeight = 100
       DesignSize = (
         334
         108)
@@ -204,35 +216,6 @@ object RelatorioEstoque: TRelatorioEstoque
     DataSetOptions = []
     Left = 104
     Top = 48
-    FieldDefs = <
-      item
-        FieldName = 'cod_produto'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'descricao'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'grupo_descricao'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'marca'
-        FieldType = fftString
-        Size = 45
-      end
-      item
-        FieldName = 'modelo'
-        FieldType = fftString
-        Size = 75
-      end
-      item
-        FieldName = 'saldo'
-      end>
   end
   object FDQueryRelatEstoque: TFDQuery
     Connection = DM.FDEstoqueItec
