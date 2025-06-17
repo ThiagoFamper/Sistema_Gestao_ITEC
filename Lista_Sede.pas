@@ -38,6 +38,7 @@ type
     SBexcluir: TSpeedButton;
     SBsair: TSpeedButton;
     qryUpdateSede: TFDQuery;
+    qryDelete: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -83,7 +84,8 @@ begin
   begin
     try
       dm.FDTabSede.Open;
-      dm.FDTabSede.Delete;
+      qryDelete.ParamByName('id').AsInteger := StrToInt(dbpSedeID.Text);
+      qryDelete.ExecSQL;
       MessageBox(0, 'Sede excluída com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       Filtro;
     except

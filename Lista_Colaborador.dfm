@@ -2521,4 +2521,17 @@ object ListaColaborador: TListaColaborador
         ParamType = ptInput
       end>
   end
+  object qryDelete: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'DELETE FROM estoqueitec.colaborador WHERE id = :id')
+    Left = 472
+    Top = 250
+    ParamData = <
+      item
+        Name = 'ID'
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
 end

@@ -63,6 +63,7 @@ type
     SBexcluir: TSpeedButton;
     SBsair: TSpeedButton;
     qryUpdateProd: TFDQuery;
+    qryDelete: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -112,7 +113,8 @@ begin
   begin
     try
       dm.FDTabProduto.Open;
-      dm.FDTabProduto.Delete;
+      qryDelete.ParamByName('id').AsInteger := StrToInt(dbpProdID.Text);
+      qryDelete.ExecSQL;
       MessageBox(0, 'Produto excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       Filtro;
     except

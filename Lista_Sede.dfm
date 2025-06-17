@@ -2259,4 +2259,17 @@ object ListaSede: TListaSede
         ParamType = ptInput
       end>
   end
+  object qryDelete: TFDQuery
+    Connection = DM.FDEstoqueItec
+    SQL.Strings = (
+      'DELETE FROM estoqueitec.sede WHERE id = :id')
+    Left = 600
+    Top = 138
+    ParamData = <
+      item
+        Name = 'ID'
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
 end

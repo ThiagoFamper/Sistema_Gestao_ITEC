@@ -57,6 +57,7 @@ type
     SBexcluir: TSpeedButton;
     SBsair: TSpeedButton;
     qryUpdateColaborador: TFDQuery;
+    qryDelete: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -105,7 +106,8 @@ begin
   begin
     try
       dm.FDTabColaborador.Open;
-      dm.FDTabColaborador.Delete;
+      qryDelete.ParamByName('id').AsInteger := StrToInt(dbpColabID.Text);
+      qryDelete.ExecSQL;
       MessageBox(0, 'Colaborador excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       Filtro;
     except

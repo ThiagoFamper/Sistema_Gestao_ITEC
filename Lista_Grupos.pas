@@ -39,6 +39,7 @@ type
     dsGrupo: TDataSource;
     qryGrupo: TFDQuery;
     qryUpdateGrupo: TFDQuery;
+    qryDelete: TFDQuery;
     procedure HabilitaCampos;
     procedure HabilitaCamposPesquisa;
     procedure DesabilitaCampos;
@@ -84,7 +85,8 @@ begin
   begin
     try
       dm.FDTabGrupo.Open;
-      dm.FDTabGrupo.Delete;
+      qryDelete.ParamByName('id').AsInteger := StrToInt(dbpGrupoID.Text);
+      qryDelete.ExecSQL;
       MessageBox(0, 'Grupo excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       Filtro;
     except
