@@ -83,6 +83,7 @@ begin
   if resposta = IDYES then
   begin
     try
+      dm.FDTabGrupo.Open;
       dm.FDTabGrupo.Delete;
       MessageBox(0, 'Grupo excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       Filtro;

@@ -104,6 +104,7 @@ begin
   if resposta = IDYES then
   begin
     try
+      dm.FDTabColaborador.Open;
       dm.FDTabColaborador.Delete;
       MessageBox(0, 'Colaborador excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       Filtro;

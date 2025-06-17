@@ -111,6 +111,7 @@ begin
   if resposta = IDYES then
   begin
     try
+      dm.FDTabProduto.Open;
       dm.FDTabProduto.Delete;
       MessageBox(0, 'Produto excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       Filtro;

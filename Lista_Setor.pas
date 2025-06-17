@@ -83,6 +83,7 @@ begin
   if resposta = IDYES then
   begin
     try
+      dm.FDTabSetor.Open;
       dm.FDTabSetor.Delete;
       MessageBox(0, 'Setor excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       Filtro;

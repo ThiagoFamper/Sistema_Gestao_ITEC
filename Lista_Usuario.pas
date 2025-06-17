@@ -99,6 +99,7 @@ begin
 
   if resposta = IDYES then
   begin
+      dm.FDTabUsuario.Open;
       qryDelete.ParamByName('id').AsInteger := StrToInt(dbpUsuarioID.Text);
       qryDelete.ExecSQL;
       MessageBox(0, 'Usuário excluído com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);

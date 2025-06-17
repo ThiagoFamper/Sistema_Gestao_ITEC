@@ -82,6 +82,7 @@ begin
   if resposta = IDYES then
   begin
     try
+      dm.FDTabSede.Open;
       dm.FDTabSede.Delete;
       MessageBox(0, 'Sede excluída com sucesso!', 'Controle de Estoque ITEC', MB_OK or MB_ICONINFORMATION);
       Filtro;

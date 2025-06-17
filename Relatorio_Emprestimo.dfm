@@ -32,6 +32,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 338
   end
   object Panel1: TPanel
     Left = 0
@@ -44,6 +45,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     Color = clWhitesmoke
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 338
+    ExplicitHeight = 282
     object Panel2: TPanel
       Left = 0
       Top = 0
@@ -53,6 +56,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitWidth = 338
     end
     object Panel3: TPanel
       AlignWithMargins = True
@@ -64,6 +68,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = []
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitWidth = 332
       object Label1: TLabel
         Left = 10
         Top = 3
@@ -93,6 +98,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       BevelEdges = [beBottom]
       BevelOuter = bvNone
       TabOrder = 2
+      ExplicitWidth = 338
     end
     object Panel5: TPanel
       AlignWithMargins = True
@@ -103,6 +109,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 3
+      ExplicitWidth = 332
       object Label2: TLabel
         Left = 10
         Top = 3
@@ -160,6 +167,8 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
           Value = 100.000000000000000000
         end>
       TabOrder = 4
+      ExplicitWidth = 332
+      ExplicitHeight = 100
       DesignSize = (
         334
         108)
@@ -196,7 +205,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 45820.564373240740000000
-    ReportOptions.LastChange = 45820.564373240740000000
+    ReportOptions.LastChange = 45825.735278206020000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -382,7 +391,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
           Fill.BackColor = clGray
           HAlign = haCenter
           Memo.UTF8W = (
-            'EMPRESTADOR')
+            'SOLICITANTE')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -442,7 +451,7 @@ object RelatorioEmprestimo: TRelatorioEmprestimo
           Fill.BackColor = clGray
           HAlign = haCenter
           Memo.UTF8W = (
-            'SOLICITANTE')
+            'EMPRESTADOR')
           ParentFont = False
           VAlign = vaCenter
         end

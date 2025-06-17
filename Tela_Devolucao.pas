@@ -305,6 +305,8 @@ end;
 // habilita e desabilita quantidade dependendo se vai devolver tudo ou não
 procedure TTelaDevolucao.rgDevClick(Sender: TObject);
 begin
+  if bDevolver.Enabled = True then
+  begin
     if rgDev.ItemIndex = 0 then
     begin
       eDevQtd.Enabled := False;
@@ -314,6 +316,7 @@ begin
       eDevQtd.Enabled := True;
       eDevQtd.SetFocus;
     end;
+  end;
 end;
 
 procedure TTelaDevolucao.Filtro; // pesquisa com sql query
