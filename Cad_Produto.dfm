@@ -30,6 +30,7 @@ object CadProduto: TCadProduto
     Color = clTeal
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1106
     object SBsair: TSpeedButton
       Left = 631
       Top = 7
@@ -1748,6 +1749,7 @@ object CadProduto: TCadProduto
     ParentBiDiMode = False
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1106
     object Panel10: TPanel
       Left = 17
       Top = 4
@@ -2019,13 +2021,6 @@ object CadProduto: TCadProduto
         FieldName = 'grupo'
         Title.Caption = 'Grupo do Produto'
         Width = 200
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'data'
-        Title.Caption = 'Data Cadastro'
-        Width = 100
         Visible = True
       end>
   end
