@@ -138,6 +138,7 @@ begin
     SBeditar.Enabled     := True;
     SBcancelar.Enabled   := False;
     SBsalvar.Enabled     := False;
+    Filtro;
 end;
 
 procedure TListaProdutos.SBeditarClick(Sender: TObject); // botão de editar
