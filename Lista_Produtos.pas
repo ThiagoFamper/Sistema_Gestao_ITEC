@@ -102,7 +102,7 @@ var
 begin
   if Trim(dbpProdID.Text) = '' then
   begin
-    MessageBox(0, 'Selecione um registro válido para editar!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
+    MessageBox(0, 'Selecione um registro válido para excluir!', 'Controle de Estoque ITEC', MB_OK or MB_ICONERROR);
     Exit;
   end;
 
