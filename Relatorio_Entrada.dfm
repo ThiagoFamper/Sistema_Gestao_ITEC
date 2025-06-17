@@ -440,7 +440,7 @@ object RelatorioEntrada: TRelatorioEntrada
         object Memo4: TfrxMemoView
           AllowVectorExport = True
           Left = 107.422155430000000000
-          Width = 272.164852250000000000
+          Width = 260.826262250000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -459,7 +459,7 @@ object RelatorioEntrada: TRelatorioEntrada
         end
         object Memo5: TfrxMemoView
           AllowVectorExport = True
-          Left = 379.587007690000000000
+          Left = 368.248417690000000000
           Width = 110.838822690000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -479,7 +479,7 @@ object RelatorioEntrada: TRelatorioEntrada
         end
         object Memo6: TfrxMemoView
           AllowVectorExport = True
-          Left = 490.425830370000000000
+          Left = 479.087240370000000000
           Width = 41.344004590000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -499,8 +499,8 @@ object RelatorioEntrada: TRelatorioEntrada
         end
         object Memo7: TfrxMemoView
           AllowVectorExport = True
-          Left = 531.769834960000000000
-          Width = 68.102350000000000000
+          Left = 520.431244960000000000
+          Width = 79.440940000000000000
           Height = 22.677180000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -596,7 +596,7 @@ object RelatorioEntrada: TRelatorioEntrada
         object Memo11: TfrxMemoView
           AllowVectorExport = True
           Left = 107.422155430000000000
-          Width = 272.164852250000000000
+          Width = 260.826262250000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
@@ -618,7 +618,7 @@ object RelatorioEntrada: TRelatorioEntrada
         end
         object Memo12: TfrxMemoView
           AllowVectorExport = True
-          Left = 379.587007690000000000
+          Left = 368.248417690000000000
           Width = 110.838822690000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -641,7 +641,7 @@ object RelatorioEntrada: TRelatorioEntrada
         end
         object Memo13: TfrxMemoView
           AllowVectorExport = True
-          Left = 490.425830370000000000
+          Left = 479.087240370000000000
           Width = 41.344004590000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
@@ -664,8 +664,8 @@ object RelatorioEntrada: TRelatorioEntrada
         end
         object Memo14: TfrxMemoView
           AllowVectorExport = True
-          Left = 531.769834960000000000
-          Width = 68.102350000000000000
+          Left = 520.431244960000000000
+          Width = 79.440940000000000000
           Height = 56.692950000000000000
           ContentScaleOptions.Constraints.MaxIterationValue = 0
           ContentScaleOptions.Constraints.MinIterationValue = 0
